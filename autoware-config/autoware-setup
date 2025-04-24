@@ -1,0 +1,150 @@
+#!/usr/bin/env bash
+AUTOWARE_HOME=/opt/autoware
+
+if ! pidof systemd >/dev/null 2>&1; then
+    echo 'systemd is not present. assuming container environment.'
+    systemd_found=false
+else
+    systemd_found=true
+fi
+
+print_help() {
+    cat <<EOF
+Usage: autoware-setup [OPTIONS]
+
+Setup or revert Autoware environment.
+
+Options:
+  --help        Show this help message and exit
+  --revert      Revert the setup changes made previously
+                (e.g., disable multicast on loopback interface)
+
+This script must be run as root.
+
+Examples:
+  sudo autoware-setup           # Apply setup
+  sudo autoware-setup --revert  # Revert changes
+EOF
+}
+
+check_root() {
+    if [ "$EUID" -ne 0 ]; then
+	echo "Please run as root"
+	exit
+    fi
+}
+
+apply_setup() {
+    check_root
+
+    install -dm755 /etc/sysctl.d
+    install -Dm755 "$AUTOWARE_HOME/10-cyclone-max.conf" /etc/sysctl.d/10-cyclone-max.conf
+    echo 'Created /etc/sysctl.d/10-cyclone-max.conf'
+    sysctl -p /etc/sysctl.d/10-cyclone-max.conf 2>/dev/null
+
+    install -dm755 /etc/systemd/system
+    install -Dm755 "$AUTOWARE_HOME/multicast-lo.service" /etc/systemd/system/multicast-lo.service
+    echo 'Created /etc/systemd/system/multicast-lo.service'
+    systemctl daemon-reload
+    systemctl enable multicast-lo.service
+    systemctl restart multicast-lo.service
+    echo 'Enabled multicast on lo interface'
+
+    echo '# Run this command to activate Autoware runtime environment.'
+    echo "source $AUTOWARE_HOME/autoware-env"
+}
+
+revert_setup() {
+    check_root
+
+    rm -f /etc/sysctl.d/10-cyclone-max.conf
+    echo 'Removed /etc/sysctl.d/10-cyclone-max.conf'
+
+    systemctl disable multicast-lo.service 2>/dev/null || true
+    rm -f /etc/systemd/system/multicast-lo.service
+    systemctl daemon-reload
+    echo 'Removed /etc/systemd/system/multicast-lo.service'
+
+    ip link set lo multicast off 2>/dev/null \
+	&& echo 'Disabled multicast on lo interface' \
+	    || echo 'Warning: unable to disable multicast on lo interface'
+}
+
+apply_setup_in_container() {
+    check_root
+
+    # Increase the maximum receive buffer size for network packets
+    (
+	sysctl -w net.core.rmem_max=2147483647 &&
+	sysctl -w net.ipv4.ipfrag_time=3 &&
+	sysctl -w net.ipv4.ipfrag_high_thresh=134217728
+    ) 2>/dev/null \
+	&& echo 'Configured network parameters' \
+	    || echo 'Warning: unable to configure network parameters'
+
+    ip link set lo multicast on 2>/dev/null \
+	&& echo 'Enabled multicast on lo interface' \
+	    || echo "Warning: cannot enable multicast on lo"
+    
+
+    echo '# Run this command to activate Autoware runtime environment.'
+    echo "source $AUTOWARE_HOME/autoware-env"
+}
+
+revert_setup_in_container() {
+    check_root
+    echo 'Warning: Revering network parameters in container is not supported'
+
+    ip link set lo multicast off 2>/dev/null \
+	&& echo 'Disabled multicast on lo interface' \
+	    || echo 'Warning: unable to disable multicast on lo interface'
+}
+
+
+main() {
+    OPTIONS=$(getopt -o h --long help,revert -n 'autoware-setup' -- "$@")
+    if [ $? -ne 0 ]; then
+        echo "Error parsing options." >&2
+        exit 1
+    fi
+    eval set -- "$OPTIONS"
+
+    revert=false
+
+    while true; do
+        case "$1" in
+            --help|-h)
+                print_help
+                exit 0
+                ;;
+            --revert)
+                revert=true
+                shift
+                ;;
+            --)
+                shift
+                break
+                ;;
+            *)
+                echo "Unexpected option: $1"
+                exit 1
+                ;;
+        esac
+    done
+
+    if $systemd_found; then
+	if $revert; then
+            revert_setup
+	else
+            apply_setup
+	fi
+    else
+	if $revert; then
+            revert_setup_in_container
+	else
+            apply_setup_in_container
+	fi
+    fi
+}
+
+main "$@"
