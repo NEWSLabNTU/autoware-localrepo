@@ -1,0 +1,38 @@
+# Maintainer: Jerry Lin <jerry73204@gmail.com>
+pkgname=autoware-theme
+pkgver=2025.2
+pkgrel=1
+pkgdesc="Autoware RViz theme"
+arch=('any')
+url="https://autoware.org/"
+license=('MIT')
+depends=(qt5ct)
+makedepends=(rsync)
+source=(
+    apply-autoware-theme
+    autoware-rviz-icons.zip
+    autoware.qss
+    qt5ct.conf
+)
+sha256sums=(
+    934dec24d8de8b8496e17b04f5689d2fda6d60d890794710ae9e7f90e4e51eea
+    cc94c434062764b7150cdf032848a8c102a9b6ad1551f0f026566ab06768b572
+    d4b965259e0f0fc32462451e0091c442b77b1fab6ad1b0f08682d3f5094b4300
+    ff078fc64180e8b76727b9e873af926e1d2c9c62a1358d7bc3d20886b5f6c0ff
+)
+noextract=()
+
+package() {
+    theme_dir="$pkgdir/opt/autoware/theme"
+    bin_dir="$pkgdir/usr/bin"
+    qss_dir="$pkgdir/usr/share/qt5ct/qss"
+
+    install -dm755 "$theme_dir"
+    install -dm755 "$bin_dir"
+    install -dm755 "$qss_dir"
+
+    rsync -avP "$srcdir/autoware-rviz-icons/" "$theme_dir/rviz-icons"
+    install -Dm644 "$srcdir/qt5ct.conf" "$theme_dir/qt5ct.conf"
+    install -Dm644 "$srcdir/autoware.qss" "$qss_dir/autoware.qss"
+    install -Dm755 "$srcdir/apply-autoware-theme" "$bin_dir/apply-autoware-theme"
+}

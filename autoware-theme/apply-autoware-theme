@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Source file
+SOURCE_FILE="/opt/autoware/theme/qt5ct.conf"
+# Destination directory and file
+DEST_DIR="$HOME/.config/qt5ct"
+DEST_FILE="$DEST_DIR/qt5ct.conf"
+
+# Check if source file exists
+if [ ! -f "$SOURCE_FILE" ]; then
+    echo "Error: Source file $SOURCE_FILE does not exist."
+    exit 1
+fi
+
+# Create destination directory if it doesn't exist
+mkdir -p "$DEST_DIR"
+
+# If destination file exists, rename it to qt5ct.conf.N
+if [ -f "$DEST_FILE" ]; then
+    N=1
+    while [ -f "$DEST_DIR/qt5ct.conf.$N" ]; do
+        ((N++))
+    done
+    mv "$DEST_FILE" "$DEST_DIR/qt5ct.conf.$N"
+    echo "Existing $DEST_FILE renamed to qt5ct.conf.$N"
+fi
+
+# Copy the source file to the destination
+cp "$SOURCE_FILE" "$DEST_FILE"
+
+# Verify the copy operation
+if [ $? -eq 0 ]; then
+    echo "Successfully copied $SOURCE_FILE to $DEST_FILE"
+else
+    echo "Error: Failed to copy $SOURCE_FILE to $DEST_FILE"
+    exit 1
+fi
+
+# Set appropriate permissions for the config file
+chmod 644 "$DEST_FILE"
