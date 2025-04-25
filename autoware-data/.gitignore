@@ -1,0 +1,11 @@
+/pkg/
+/src/
+/*.deb
+
+# downloaded files
+/*.tar.gz
+/*.onnx
+/*.yaml
+/*.txt
+/*.csv
+/*.table

@@ -1,0 +1,248 @@
+# Maintainer: Jerry Lin <jerry73204@gmail.com>
+pkgname=autoware-data
+pkgver=2025.2
+pkgrel=1
+pkgdesc="Autoware data files"
+arch=('any')
+url="https://autoware.org/"
+license=('MIT')
+depends=()
+makedepends=()
+source=(
+    'resources.tar.gz::https://s3.ap-northeast-2.wasabisys.com/pinto-model-zoo/136_road-segmentation-adas-0001/resources.tar.gz'
+    'pts_voxel_encoder_pointpainting.onnx::https://awf.ml.dev.web.auto/perception/models/pointpainting/v4/pts_voxel_encoder_pointpainting.onnx'
+    'pts_backbone_neck_head_pointpainting.onnx::https://awf.ml.dev.web.auto/perception/models/pointpainting/v4/pts_backbone_neck_head_pointpainting.onnx'
+    'detection_class_remapper.param.yaml::https://awf.ml.dev.web.auto/perception/models/pointpainting/v4/detection_class_remapper.param.yaml'
+    'pointpainting_ml_package.param.yaml::https://awf.ml.dev.web.auto/perception/models/pointpainting/v4/pointpainting_ml_package.param.yaml'
+    'vlp-16.onnx::https://awf.ml.dev.web.auto/perception/models/lidar_apollo_instance_segmentation/vlp-16.onnx'
+    'hdl-64.onnx::https://awf.ml.dev.web.auto/perception/models/lidar_apollo_instance_segmentation/hdl-64.onnx'
+    'vls-128.onnx::https://awf.ml.dev.web.auto/perception/models/lidar_apollo_instance_segmentation/vls-128.onnx'
+    'pts_voxel_encoder_centerpoint.onnx::https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_voxel_encoder_centerpoint.onnx'
+    'pts_backbone_neck_head_centerpoint.onnx::https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_backbone_neck_head_centerpoint.onnx'
+    'pts_voxel_encoder_centerpoint_tiny.onnx::https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_voxel_encoder_centerpoint_tiny.onnx'
+    'pts_backbone_neck_head_centerpoint_tiny.onnx::https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_backbone_neck_head_centerpoint_tiny.onnx'
+    'centerpoint_ml_package.param.yaml::https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/centerpoint_ml_package.param.yaml'
+    'centerpoint_tiny_ml_package.param.yaml::https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/centerpoint_tiny_ml_package.param.yaml'
+    'centerpoint_sigma_ml_package.param.yaml::https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/centerpoint_sigma_ml_package.param.yaml'
+    'detection_class_remapper.param.yaml::https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/detection_class_remapper.param.yaml'
+    'deploy_metadata.yaml::https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/deploy_metadata.yaml'
+    'transfusion.onnx::https://awf.ml.dev.web.auto/perception/models/transfusion/t4xx1_90m/v2.1/transfusion.onnx'
+    'transfusion_ml_package.param.yaml::https://awf.ml.dev.web.auto/perception/models/transfusion/t4xx1_90m/v2.1/transfusion_ml_package.param.yaml'
+    'detection_class_remapper.param.yaml::https://awf.ml.dev.web.auto/perception/models/transfusion/t4xx1_90m/v2.1/detection_class_remapper.param.yaml'
+    'yolox-tiny.onnx::https://awf.ml.dev.web.auto/perception/models/yolox-tiny.onnx'
+    'yolox-sPlus-opt.onnx::https://awf.ml.dev.web.auto/perception/models/yolox-sPlus-opt.onnx'
+    'yolox-sPlus-opt.EntropyV2-calibration.table::https://awf.ml.dev.web.auto/perception/models/yolox-sPlus-opt.EntropyV2-calibration.table'
+    'yolox-sPlus-T4-960x960-pseudo-finetune.onnx::https://awf.ml.dev.web.auto/perception/models/object_detection_yolox_s/v1/yolox-sPlus-T4-960x960-pseudo-finetune.onnx'
+    'yolox-sPlus-T4-960x960-pseudo-finetune.EntropyV2-calibration.table::https://awf.ml.dev.web.auto/perception/models/object_detection_yolox_s/v1/yolox-sPlus-T4-960x960-pseudo-finetune.EntropyV2-calibration.table'
+    'label.txt::https://awf.ml.dev.web.auto/perception/models/label.txt'
+    'yolox-sPlus-opt-pseudoV2-T4-960x960-T4-seg16cls.onnx::https://awf.ml.dev.web.auto/perception/models/object_detection_semseg_yolox_s/v1/yolox-sPlus-opt-pseudoV2-T4-960x960-T4-seg16cls.onnx'
+    'yolox-sPlus-opt-pseudoV2-T4-960x960-T4-seg16cls.EntropyV2-calibration.table::https://awf.ml.dev.web.auto/perception/models/object_detection_semseg_yolox_s/v1/yolox-sPlus-opt-pseudoV2-T4-960x960-T4-seg16cls.EntropyV2-calibration.table'
+    'semseg_color_map.csv::https://awf.ml.dev.web.auto/perception/models/object_detection_semseg_yolox_s/v1/semseg_color_map.csv'
+    'tensorrt_rtmdet_onnx_models.tar.gz::https://autoware-files.s3.us-west-2.amazonaws.com/models/tensorrt_rtmdet_onnx_models.tar.gz'
+    'traffic_light_classifier_mobilenetv2_batch_1.onnx::https://awf.ml.dev.web.auto/perception/models/traffic_light_classifier/v2/traffic_light_classifier_mobilenetv2_batch_1.onnx'
+    'traffic_light_classifier_mobilenetv2_batch_4.onnx::https://awf.ml.dev.web.auto/perception/models/traffic_light_classifier/v2/traffic_light_classifier_mobilenetv2_batch_4.onnx'
+    'traffic_light_classifier_mobilenetv2_batch_6.onnx::https://awf.ml.dev.web.auto/perception/models/traffic_light_classifier/v2/traffic_light_classifier_mobilenetv2_batch_6.onnx'
+    'traffic_light_classifier_efficientNet_b1_batch_1.onnx::https://awf.ml.dev.web.auto/perception/models/traffic_light_classifier/v2/traffic_light_classifier_efficientNet_b1_batch_1.onnx'
+    'traffic_light_classifier_efficientNet_b1_batch_4.onnx::https://awf.ml.dev.web.auto/perception/models/traffic_light_classifier/v2/traffic_light_classifier_efficientNet_b1_batch_4.onnx'
+    'traffic_light_classifier_efficientNet_b1_batch_6.onnx::https://awf.ml.dev.web.auto/perception/models/traffic_light_classifier/v2/traffic_light_classifier_efficientNet_b1_batch_6.onnx'
+    'ped_traffic_light_classifier_mobilenetv2_batch_1.onnx::https://awf.ml.dev.web.auto/perception/models/traffic_light_classifier/v3/ped_traffic_light_classifier_mobilenetv2_batch_1.onnx'
+    'ped_traffic_light_classifier_mobilenetv2_batch_4.onnx::https://awf.ml.dev.web.auto/perception/models/traffic_light_classifier/v3/ped_traffic_light_classifier_mobilenetv2_batch_4.onnx'
+    'ped_traffic_light_classifier_mobilenetv2_batch_6.onnx::https://awf.ml.dev.web.auto/perception/models/traffic_light_classifier/v3/ped_traffic_light_classifier_mobilenetv2_batch_6.onnx'
+    'lamp_labels.txt::https://awf.ml.dev.web.auto/perception/models/traffic_light_classifier/v2/lamp_labels.txt'
+    'lamp_labels_ped.txt::https://awf.ml.dev.web.auto/perception/models/traffic_light_classifier/v3/lamp_labels_ped.txt'
+    'tlr_car_ped_yolox_s_batch_1.onnx::https://awf.ml.dev.web.auto/perception/models/tlr_yolox_s/v3/tlr_car_ped_yolox_s_batch_1.onnx'
+    'tlr_car_ped_yolox_s_batch_4.onnx::https://awf.ml.dev.web.auto/perception/models/tlr_yolox_s/v3/tlr_car_ped_yolox_s_batch_4.onnx'
+    'tlr_car_ped_yolox_s_batch_6.onnx::https://awf.ml.dev.web.auto/perception/models/tlr_yolox_s/v3/tlr_car_ped_yolox_s_batch_6.onnx'
+    'tlr_labels.txt::https://awf.ml.dev.web.auto/perception/models/tlr_yolox_s/v3/tlr_labels.txt'
+)
+sha256sums=(
+    '1f660e15f95074bade32b1f80dbf618e9cee1f0b9f76d3f4671cb9be7f56eb3a'
+    '3ca452ea5ca9467bf782955f75704ba8466841e275e8b8acd991b9911d53249e'
+    '7fe62fcebe0e0f62a000d06aa94d779feb444d933671a4a3189fe01be8c19a00'
+    'c711f8875ece9b527dfe31ffc75f8c0de2e77945ef67860a959a4e04c36772d5'
+    '2a72f75ca4b49c6b88c0bd2f34c634173420d76a6925e6298d9ca5e012df3f32'
+    'eec521ebad7553d0ea2c90472a293aecb7499ab592632f0e100481c8196eb421'
+    '86348d8c4bced750f54288b01cc471c0d4f1ec9c693466169ef19413731e6ecc'
+    '95ef950bb694bd6de91b7e47f5d191d557e92a7f5e2a6bdf655a8b5eed4075cc'
+    'dc1a876580d86ee7a341d543f8ade2ede7f43bd032dc5b44155b1f0175405764'
+    '3fe7e128955646740c41a25be0c8f141d5a94594fe79d7405fe2a859e391542e'
+    '2c53465715c1fd2e9dc5727ef3fca74f4cdf0538f74286b0946e219d0ca5693b'
+    '9bb0b634f3664bd098ce7d6a3d8a9fb7cc8d9b8252b27f302c71e43316bab551'
+    '54b88fa0c1bbd6d611d1ec55e483d05bed7a4c0e15877c05eb7d9cf240246ab8'
+    '6a40d2282b9c36cc547add7d016f315329c875b6f571dd5c612c6892fbaaabb5'
+    '9946b342a6f457b19fdfe9f02041dbd3cf0b9cefe052663e04e241ec2b6e9c76'
+    'c711f8875ece9b527dfe31ffc75f8c0de2e77945ef67860a959a4e04c36772d5'
+    '152536f053c3750b60d349800e1b983b418029d6dadf087614a00c661942a178'
+    '1d8f0ee6d59ccc3cca914f9892f6ac8f0a9e35082abb91da183c00e3e2c2718a'
+    '476f7727adc17a823962f2e09ba23d40f3116c50be48361d98179d054cd131b6'
+    'c711f8875ece9b527dfe31ffc75f8c0de2e77945ef67860a959a4e04c36772d5'
+    '471a665f4243e654dff62578394e508db22ee29fe65d9e389dfc3b0f2dee1255'
+    '36b0832177b01e6b278e00c7369f1de71e616c36261cbae50f0753d41289da01'
+    'b9e9d7da33342262ccaea4469b4d02b8abb32b6d7bf737f9e0883fece1b8f580'
+    'f5054e8a890c3be86dc1b4b89a5a36fb2279d4f6110b0159e793be062641bf65'
+    'cc378d327db5616b0b3a4d077bf37100c25a50ecd22d2b542f54098da100f34c'
+    '3540a365bfd6d8afb1b5d8df4ec47f82cb984760d3270c9b41dbbb3422d09a0c'
+    '73b3812432cedf65cebf02ca4cb630542fc3b1671c4c0fbf7cee50fa38e416a8'
+    '28cd6524d4bcdb2809592a225d28330433e58dc02c92169ea555b44c1a51a584'
+    '3d93ca05f31b63424d7d7246a01a2365953705a0ed3323ba5b6fddd744a4bfea'
+    'eaf6fe9caf1b4a0211dc3b0f4068b1fd6c1d35fe1582cc2aed95b8ed9468c598'
+    '455b71b3b20d3a96aa0e49f32714ba50421f668a2f9b9907c30b1346ac8a3703'
+    '41bb79a23a4ac57956adb8e9cb3904420db1b0cd032e97b670cc4f8b174ae3fe'
+    'e4792eed6a46fdbd02be2f3a4f1ce91f36fa77698493caf3102e445178c0f058'
+    '55ebb0d117a5e8943f8d1c6769f1d856b533079d4d871d8e923255cc992ad48a'
+    '684e29843e3128eadb774018730644b3ab9b0a06dc4cdaeed579c2f3fa5d5265'
+    '44d94540fa8b89dfb39cd9a8523cf010ddfb10ea2f1f9b53bf3618ce7f4912ad'
+    'b52632fee96d1bc99922e743335ebfd49d6a0645c8a04e615f156e38661add24'
+    'ef0a3052857cdc6f380da524560548b40e9e46f876cccf3cd0cb40ccddae9892'
+    'b56700551254afa985916d03b74372ebc675f2d9b76ee0e39c46e88c37744a4f'
+    '1a5a49eeec5593963eab8d70f48b8a01bfb07e753e9688eb1510ad26e803579d'
+    '5427e1b7c2e33acd9565ede29e77992c38137bcf7d7074c73ebbc38080c6bcac'
+    '1ad633066a1195006f4709f8fa07800dd65a74a814b3efb4c99bcc5a1a7962f6'
+    'cf93eb1e1a97aefc6edd0c0c4d77c7f5fc2aa1e81e3c5c9cd49d976173d03a04'
+    '0b05a89fb30f1f92c6ec687d48e8ceda4da6f81cbd82d8a102d168753a6cedb6'
+    'a2a91f5fe9c2e68e3e3647a272bb9bb25cd07631a1990a3fb15efddce7691131'
+)
+noextract=(
+    'resources.tar.gz'
+    'tensorrt_rtmdet_onnx_models.tar.gz'
+)
+
+package() {
+    target_dir="$pkgdir/opt/autoware/data"
+    install -dm755 "$target_dir"
+
+    install -dm755 "$target_dir/yabloc_pose_initializer"
+    tar -xf "$srcdir/resources.tar.gz" -C "$target_dir/yabloc_pose_initializer"
+
+    install -dm755 "$target_dir/image_projection_based_fusion"
+    install -Dm644 "$srcdir/pts_voxel_encoder_pointpainting.onnx" "$target_dir/image_projection_based_fusion/pts_voxel_encoder_pointpainting.onnx"
+
+    install -dm755 "$target_dir/image_projection_based_fusion"
+    install -Dm644 "$srcdir/pts_backbone_neck_head_pointpainting.onnx" "$target_dir/image_projection_based_fusion/pts_backbone_neck_head_pointpainting.onnx"
+
+    install -dm755 "$target_dir/image_projection_based_fusion"
+    install -Dm644 "$srcdir/detection_class_remapper.param.yaml" "$target_dir/image_projection_based_fusion/detection_class_remapper.param.yaml"
+
+    install -dm755 "$target_dir/image_projection_based_fusion"
+    install -Dm644 "$srcdir/pointpainting_ml_package.param.yaml" "$target_dir/image_projection_based_fusion/pointpainting_ml_package.param.yaml"
+
+    install -dm755 "$target_dir/lidar_apollo_instance_segmentation"
+    install -Dm644 "$srcdir/vlp-16.onnx" "$target_dir/lidar_apollo_instance_segmentation/vlp-16.onnx"
+
+    install -dm755 "$target_dir/lidar_apollo_instance_segmentation"
+    install -Dm644 "$srcdir/hdl-64.onnx" "$target_dir/lidar_apollo_instance_segmentation/hdl-64.onnx"
+
+    install -dm755 "$target_dir/lidar_apollo_instance_segmentation"
+    install -Dm644 "$srcdir/vls-128.onnx" "$target_dir/lidar_apollo_instance_segmentation/vls-128.onnx"
+
+    install -dm755 "$target_dir/lidar_centerpoint"
+    install -Dm644 "$srcdir/pts_voxel_encoder_centerpoint.onnx" "$target_dir/lidar_centerpoint/pts_voxel_encoder_centerpoint.onnx"
+
+    install -dm755 "$target_dir/lidar_centerpoint"
+    install -Dm644 "$srcdir/pts_backbone_neck_head_centerpoint.onnx" "$target_dir/lidar_centerpoint/pts_backbone_neck_head_centerpoint.onnx"
+
+    install -dm755 "$target_dir/lidar_centerpoint"
+    install -Dm644 "$srcdir/pts_voxel_encoder_centerpoint_tiny.onnx" "$target_dir/lidar_centerpoint/pts_voxel_encoder_centerpoint_tiny.onnx"
+
+    install -dm755 "$target_dir/lidar_centerpoint"
+    install -Dm644 "$srcdir/pts_backbone_neck_head_centerpoint_tiny.onnx" "$target_dir/lidar_centerpoint/pts_backbone_neck_head_centerpoint_tiny.onnx"
+
+    install -dm755 "$target_dir/lidar_centerpoint"
+    install -Dm644 "$srcdir/centerpoint_ml_package.param.yaml" "$target_dir/lidar_centerpoint/centerpoint_ml_package.param.yaml"
+
+    install -dm755 "$target_dir/lidar_centerpoint"
+    install -Dm644 "$srcdir/centerpoint_tiny_ml_package.param.yaml" "$target_dir/lidar_centerpoint/centerpoint_tiny_ml_package.param.yaml"
+
+    install -dm755 "$target_dir/lidar_centerpoint"
+    install -Dm644 "$srcdir/centerpoint_sigma_ml_package.param.yaml" "$target_dir/lidar_centerpoint/centerpoint_sigma_ml_package.param.yaml"
+
+    install -dm755 "$target_dir/lidar_centerpoint"
+    install -Dm644 "$srcdir/detection_class_remapper.param.yaml" "$target_dir/lidar_centerpoint/detection_class_remapper.param.yaml"
+
+    install -dm755 "$target_dir/lidar_centerpoint"
+    install -Dm644 "$srcdir/deploy_metadata.yaml" "$target_dir/lidar_centerpoint/deploy_metadata.yaml"
+
+    install -dm755 "$target_dir/lidar_transfusion"
+    install -Dm644 "$srcdir/transfusion.onnx" "$target_dir/lidar_transfusion/transfusion.onnx"
+
+    install -dm755 "$target_dir/lidar_transfusion"
+    install -Dm644 "$srcdir/transfusion_ml_package.param.yaml" "$target_dir/lidar_transfusion/transfusion_ml_package.param.yaml"
+
+    install -dm755 "$target_dir/lidar_transfusion"
+    install -Dm644 "$srcdir/detection_class_remapper.param.yaml" "$target_dir/lidar_transfusion/detection_class_remapper.param.yaml"
+
+    install -dm755 "$target_dir/tensorrt_yolox"
+    install -Dm644 "$srcdir/yolox-tiny.onnx" "$target_dir/tensorrt_yolox/yolox-tiny.onnx"
+
+    install -dm755 "$target_dir/tensorrt_yolox"
+    install -Dm644 "$srcdir/yolox-sPlus-opt.onnx" "$target_dir/tensorrt_yolox/yolox-sPlus-opt.onnx"
+
+    install -dm755 "$target_dir/tensorrt_yolox"
+    install -Dm644 "$srcdir/yolox-sPlus-opt.EntropyV2-calibration.table" "$target_dir/tensorrt_yolox/yolox-sPlus-opt.EntropyV2-calibration.table"
+
+    install -dm755 "$target_dir/tensorrt_yolox"
+    install -Dm644 "$srcdir/yolox-sPlus-T4-960x960-pseudo-finetune.onnx" "$target_dir/tensorrt_yolox/yolox-sPlus-T4-960x960-pseudo-finetune.onnx"
+
+    install -dm755 "$target_dir/tensorrt_yolox"
+    install -Dm644 "$srcdir/yolox-sPlus-T4-960x960-pseudo-finetune.EntropyV2-calibration.table" "$target_dir/tensorrt_yolox/yolox-sPlus-T4-960x960-pseudo-finetune.EntropyV2-calibration.table"
+
+    install -dm755 "$target_dir/tensorrt_yolox"
+    install -Dm644 "$srcdir/label.txt" "$target_dir/tensorrt_yolox/label.txt"
+
+    install -dm755 "$target_dir/tensorrt_yolox"
+    install -Dm644 "$srcdir/yolox-sPlus-opt-pseudoV2-T4-960x960-T4-seg16cls.onnx" "$target_dir/tensorrt_yolox/yolox-sPlus-opt-pseudoV2-T4-960x960-T4-seg16cls.onnx"
+
+    install -dm755 "$target_dir/tensorrt_yolox"
+    install -Dm644 "$srcdir/yolox-sPlus-opt-pseudoV2-T4-960x960-T4-seg16cls.EntropyV2-calibration.table" "$target_dir/tensorrt_yolox/yolox-sPlus-opt-pseudoV2-T4-960x960-T4-seg16cls.EntropyV2-calibration.table"
+
+    install -dm755 "$target_dir/tensorrt_yolox"
+    install -Dm644 "$srcdir/semseg_color_map.csv" "$target_dir/tensorrt_yolox/semseg_color_map.csv"
+
+    install -dm755 "$target_dir/tensorrt_rtmdet"
+    tar -xf "$srcdir/tensorrt_rtmdet_onnx_models.tar.gz" -C "$target_dir/tensorrt_rtmdet"
+
+    install -dm755 "$target_dir/traffic_light_classifier"
+    install -Dm644 "$srcdir/traffic_light_classifier_mobilenetv2_batch_1.onnx" "$target_dir/traffic_light_classifier/traffic_light_classifier_mobilenetv2_batch_1.onnx"
+
+    install -dm755 "$target_dir/traffic_light_classifier"
+    install -Dm644 "$srcdir/traffic_light_classifier_mobilenetv2_batch_4.onnx" "$target_dir/traffic_light_classifier/traffic_light_classifier_mobilenetv2_batch_4.onnx"
+
+    install -dm755 "$target_dir/traffic_light_classifier"
+    install -Dm644 "$srcdir/traffic_light_classifier_mobilenetv2_batch_6.onnx" "$target_dir/traffic_light_classifier/traffic_light_classifier_mobilenetv2_batch_6.onnx"
+
+    install -dm755 "$target_dir/traffic_light_classifier"
+    install -Dm644 "$srcdir/traffic_light_classifier_efficientNet_b1_batch_1.onnx" "$target_dir/traffic_light_classifier/traffic_light_classifier_efficientNet_b1_batch_1.onnx"
+
+    install -dm755 "$target_dir/traffic_light_classifier"
+    install -Dm644 "$srcdir/traffic_light_classifier_efficientNet_b1_batch_4.onnx" "$target_dir/traffic_light_classifier/traffic_light_classifier_efficientNet_b1_batch_4.onnx"
+
+    install -dm755 "$target_dir/traffic_light_classifier"
+    install -Dm644 "$srcdir/traffic_light_classifier_efficientNet_b1_batch_6.onnx" "$target_dir/traffic_light_classifier/traffic_light_classifier_efficientNet_b1_batch_6.onnx"
+
+    install -dm755 "$target_dir/traffic_light_classifier"
+    install -Dm644 "$srcdir/ped_traffic_light_classifier_mobilenetv2_batch_1.onnx" "$target_dir/traffic_light_classifier/ped_traffic_light_classifier_mobilenetv2_batch_1.onnx"
+
+    install -dm755 "$target_dir/traffic_light_classifier"
+    install -Dm644 "$srcdir/ped_traffic_light_classifier_mobilenetv2_batch_4.onnx" "$target_dir/traffic_light_classifier/ped_traffic_light_classifier_mobilenetv2_batch_4.onnx"
+
+    install -dm755 "$target_dir/traffic_light_classifier"
+    install -Dm644 "$srcdir/ped_traffic_light_classifier_mobilenetv2_batch_6.onnx" "$target_dir/traffic_light_classifier/ped_traffic_light_classifier_mobilenetv2_batch_6.onnx"
+
+    install -dm755 "$target_dir/traffic_light_classifier"
+    install -Dm644 "$srcdir/lamp_labels.txt" "$target_dir/traffic_light_classifier/lamp_labels.txt"
+
+    install -dm755 "$target_dir/traffic_light_classifier"
+    install -Dm644 "$srcdir/lamp_labels_ped.txt" "$target_dir/traffic_light_classifier/lamp_labels_ped.txt"
+
+    install -dm755 "$target_dir/traffic_light_fine_detector"
+    install -Dm644 "$srcdir/tlr_car_ped_yolox_s_batch_1.onnx" "$target_dir/traffic_light_fine_detector/tlr_car_ped_yolox_s_batch_1.onnx"
+
+    install -dm755 "$target_dir/traffic_light_fine_detector"
+    install -Dm644 "$srcdir/tlr_car_ped_yolox_s_batch_4.onnx" "$target_dir/traffic_light_fine_detector/tlr_car_ped_yolox_s_batch_4.onnx"
+
+    install -dm755 "$target_dir/traffic_light_fine_detector"
+    install -Dm644 "$srcdir/tlr_car_ped_yolox_s_batch_6.onnx" "$target_dir/traffic_light_fine_detector/tlr_car_ped_yolox_s_batch_6.onnx"
+
+    install -dm755 "$target_dir/traffic_light_fine_detector"
+    install -Dm644 "$srcdir/tlr_labels.txt" "$target_dir/traffic_light_fine_detector/tlr_labels.txt"
+}

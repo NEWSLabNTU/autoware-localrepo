@@ -65,6 +65,7 @@ find "$package_dir" -mindepth 1 -maxdepth 1 -type f -name '*.deb' | \
 parallel --lb ::: \
 	 'cd autoware-runtime && makedeb -d' \
 	 'cd autoware-theme && makedeb -d' \
+	 'cd autoware-data && makedeb -d' \
 	 'cd autoware-config && makedeb -d' \
 	 'cd autoware-full && makedeb -d'
 
@@ -74,6 +75,7 @@ tmp_dir="$(mktemp -d)"
 (
     find_files "$package_dir/*.deb"
     find_one_file 'autoware-theme/autoware-theme_*.deb'
+    find_one_file 'autoware-data/autoware-data_*.deb'
     find_one_file 'autoware-runtime/autoware-runtime_*.deb'
     find_one_file 'autoware-config/autoware-config_*.deb'
     find_one_file 'autoware-full/autoware-full_*.deb'
