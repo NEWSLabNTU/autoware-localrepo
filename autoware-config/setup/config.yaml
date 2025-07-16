@@ -1,0 +1,18 @@
+# Autoware Setup Configuration
+version: "1.0"
+
+settings:
+  ansible_path: "/opt/autoware/ansible"
+  log_path: "/var/log/autoware-setup"
+  
+versions:
+  cuda: "12.3"
+  cudnn: "8.9.7"
+  tensorrt: "8.6.1"
+  rosdistro: "humble"
+  rmw_implementation: "rmw_cyclonedds_cpp"
+
+defaults:
+  install_nvidia: false
+  install_devel: false
+  verbose: false

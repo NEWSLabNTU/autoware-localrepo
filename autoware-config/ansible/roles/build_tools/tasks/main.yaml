@@ -1,0 +1,61 @@
+# CUSTOM: Modified - only configure if ccache is already installed
+- name: Check if ccache is installed
+  ansible.builtin.command: which ccache
+  register: ccache_check
+  changed_when: false
+  failed_when: false
+
+- name: Configure ccache if installed
+  when: ccache_check.rc == 0
+  block:
+    - name: Add CCACHE_DIR to .bashrc
+      ansible.builtin.lineinfile:
+        dest: ~/.bashrc
+        line: export CCACHE_DIR="/var/tmp/ccache"
+        state: present
+        create: true
+        mode: 0644
+
+    - name: Add CCACHE_DIR to .bashrc of local user
+      become: true
+      ansible.builtin.lineinfile:
+        dest: /etc/skel/.bashrc
+        line: export CCACHE_DIR="$HOME/.ccache"
+        state: present
+        create: true
+        mode: 0644
+
+    - name: Export CC to ccache
+      ansible.builtin.lineinfile:
+        dest: ~/.bashrc
+        line: export CC="/usr/lib/ccache/gcc"
+        state: present
+        create: true
+        mode: 0644
+
+    - name: Export CXX to ccache
+      ansible.builtin.lineinfile:
+        dest: ~/.bashrc
+        line: export CXX="/usr/lib/ccache/g++"
+        state: present
+        create: true
+        mode: 0644
+
+    - name: Create ccache directory
+      ansible.builtin.file:
+        path: /var/tmp/ccache
+        state: directory
+        mode: 0755
+
+# CUSTOM: Add colcon build configuration
+- name: Configure colcon defaults
+  ansible.builtin.copy:
+    dest: ~/.config/colcon/defaults.yaml
+    content: |
+      build:
+        symlink-install: true
+        cmake-args:
+          - -DCMAKE_BUILD_TYPE=Release
+          - -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+    mode: 0644
+    force: no

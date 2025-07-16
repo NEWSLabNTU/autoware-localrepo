@@ -1,3 +1,7 @@
 /pkg/
 /src/
 /*.deb
+
+# Generated archives
+/ansible.tar.gz
+/setup.tar.gz

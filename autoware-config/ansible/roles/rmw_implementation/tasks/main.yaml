@@ -1,0 +1,31 @@
+# CUSTOM: Modified - removed package installation, configuration only
+- name: Configure RMW implementation in environment
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/environment
+    regexp: '^RMW_IMPLEMENTATION='
+    line: 'RMW_IMPLEMENTATION={{ rmw_implementation }}'
+    create: yes
+    mode: '0644'
+
+- name: Add RMW_IMPLEMENTATION to .bashrc
+  ansible.builtin.lineinfile:
+    dest: "{{ item }}"
+    line: export RMW_IMPLEMENTATION={{ rmw_implementation }}
+    state: present
+    create: true
+    mode: 0644
+  loop:
+    - ~/.bashrc
+    - /etc/skel/.bashrc
+
+# CUSTOM: Add CYCLONEDDS_URI configuration
+- name: Configure CYCLONEDDS_URI in environment
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/environment
+    regexp: '^CYCLONEDDS_URI='
+    line: 'CYCLONEDDS_URI=/etc/cyclonedds.xml'
+    create: yes
+    mode: '0644'
+  when: rmw_implementation == "rmw_cyclonedds_cpp"

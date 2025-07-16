@@ -2,11 +2,16 @@
 pkgname=autoware-config
 pkgver=2025.2
 pkgrel=1
-pkgdesc="A package that includes all Autoware packages"
+pkgdesc="Configuration and setup tools for Autoware"
 arch=('any')
 url="https://autoware.org/"
 license=('MIT')
-depends=(ros-humble-rmw-cyclonedds-cpp)
+depends=(
+    ros-humble-rmw-cyclonedds-cpp
+    python3
+    python3-yaml
+    ansible
+)
 makedepends=()
 source=(
     cyclonedds.xml
@@ -14,15 +19,22 @@ source=(
     multicast-lo.service
     autoware-env
     autoware-setup
+    ansible.tar.gz
+    setup.tar.gz
 )
 sha256sums=(
     '5c4fbcd0d0c1937d2c59147b8486ede548d7995b544f8298bb7a82fa69ede450'
     'dbac312cbc27ec82b0c7d47cbef899262b81204ffe1ce532740b34b33cab51ce'
     '78c4fce8b1ab40089b2ea485c64bbaa4741675ab1c9dd6a3368084398e3b8eb6'
     '2531c1ba63564d79a5a9f7ae846622f451e9c8bdcc63223c5a12ddce1f70a066'
-    '427339913fca6f668321a7fa91c9e75e86a9dfddac06c75a03da856b661d17ab'
+    'SKIP'
+    'SKIP'
+    'SKIP'
 )
-noextract=()
+noextract=(
+    ansible.tar.gz
+    setup.tar.gz
+)
 
 package() {
     autoware_dir="$pkgdir/opt/autoware"
@@ -31,9 +43,18 @@ package() {
     install -dm755 "$autoware_dir"
     install -dm755 "$bin_dir"
 
+    # Install configuration files
     install -Dm644 "$srcdir/cyclonedds.xml" "$autoware_dir/cyclonedds.xml"
     install -Dm644 "$srcdir/10-cyclone-max.conf" "$autoware_dir/10-cyclone-max.conf"
     install -Dm644 "$srcdir/multicast-lo.service" "$autoware_dir/multicast-lo.service"
     install -Dm644 "$srcdir/autoware-env" "$autoware_dir/autoware-env"
+
+    # Install setup script
     install -Dm755 "$srcdir/autoware-setup" "$bin_dir/autoware-setup"
+
+    # Extract and install Ansible playbooks
+    tar -xzf "$srcdir/ansible.tar.gz" -C "$autoware_dir"
+
+    # Extract and install setup configuration
+    tar -xzf "$srcdir/setup.tar.gz" -C "$autoware_dir"
 }

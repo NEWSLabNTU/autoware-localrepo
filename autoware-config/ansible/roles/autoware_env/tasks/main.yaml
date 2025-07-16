@@ -1,0 +1,45 @@
+---
+# Environment setup for Autoware
+- name: Set Autoware environment variables
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/environment
+    regexp: "^{{ item.key }}="
+    line: "{{ item.key }}={{ item.value }}"
+    state: present
+  loop:
+    - { key: "AUTOWARE_HOME", value: "/opt/autoware" }
+    - { key: "AUTOWARE_DATA_PATH", value: "/opt/autoware/data" }
+
+- name: Create convenience aliases
+  ansible.builtin.blockinfile:
+    path: ~/.bashrc
+    block: |
+      # Autoware aliases
+      alias autoware-check='autoware-setup --verify'
+      alias colcon-build-autoware='colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
+    marker: "# {mark} ANSIBLE MANAGED BLOCK - AUTOWARE ALIASES"
+    create: yes
+
+- name: Create system-wide convenience aliases
+  become: true
+  ansible.builtin.blockinfile:
+    path: /etc/skel/.bashrc
+    block: |
+      # Autoware aliases
+      alias autoware-check='autoware-setup --verify'
+      alias colcon-build-autoware='colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
+    marker: "# {mark} ANSIBLE MANAGED BLOCK - AUTOWARE ALIASES"
+
+- name: Ensure Autoware environment script is sourced
+  ansible.builtin.lineinfile:
+    path: ~/.bashrc
+    line: "[ -f /opt/autoware/autoware-env ] && source /opt/autoware/autoware-env"
+    state: present
+
+- name: Ensure Autoware environment script is sourced system-wide
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/skel/.bashrc
+    line: "[ -f /opt/autoware/autoware-env ] && source /opt/autoware/autoware-env"
+    state: present
