@@ -1,0 +1,38 @@
+# Autoware 2025.02 Build Automation
+
+# Build ROS packages for amd64
+build-amd64:
+    cd amd64 && just build
+
+# Build ROS packages for arm64 (if available)
+build-arm64:
+    cd arm64 && just build
+
+# Build all debhelper packages
+build-packages:
+    @echo "Building autoware-config..."
+    cd packages/autoware-config && dpkg-buildpackage -us -uc -b
+    @echo "Building autoware-theme..."
+    cd packages/autoware-theme && dpkg-buildpackage -us -uc -b
+    @echo "Building autoware-runtime..."
+    cd packages/autoware-runtime && dpkg-buildpackage -us -uc -b
+    @echo "Building autoware-full..."
+    cd packages/autoware-full && dpkg-buildpackage -us -uc -b
+
+# Consolidate all .deb files to output directory
+consolidate:
+    mkdir -p output/amd64 output/arm64 output/all
+    @echo "Copying ROS packages from amd64 build..."
+    -cp amd64/build/packages/*.deb output/amd64/ 2>/dev/null
+    @echo "Copying meta-packages..."
+    -mv packages/*/*.deb output/all/ 2>/dev/null
+    @echo "Done. Check output/ directory."
+
+# Clean build artifacts
+clean:
+    rm -rf output/
+    rm -f packages/*/*.deb packages/*/*.buildinfo packages/*/*.changes
+    cd amd64 && just clean 2>/dev/null || true
+
+# Build everything for amd64
+all: build-amd64 build-packages consolidate

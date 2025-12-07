@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	install -d $(CURDIR)/debian/autoware-config/opt/autoware
+	install -m 644 src/cyclonedds.xml $(CURDIR)/debian/autoware-config/opt/autoware/
+	install -m 755 src/autoware-env $(CURDIR)/debian/autoware-config/opt/autoware/
+	install -m 755 src/autoware-setup $(CURDIR)/debian/autoware-config/opt/autoware/
+	install -d $(CURDIR)/debian/autoware-config/etc/sysctl.d
+	install -m 644 src/10-cyclone-max.conf $(CURDIR)/debian/autoware-config/etc/sysctl.d/
+	install -d $(CURDIR)/debian/autoware-config/etc/systemd/system
+	install -m 644 src/multicast-lo.service $(CURDIR)/debian/autoware-config/etc/systemd/system/

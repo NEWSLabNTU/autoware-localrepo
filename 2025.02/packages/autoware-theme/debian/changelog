@@ -1,0 +1,6 @@
+autoware-theme (2025.02-1) jammy; urgency=medium
+
+  * Initial release
+  * Qt5 theme and RViz icons for Autoware
+
+ -- Jerry Lin <jerry73204@gmail.com>  Sun, 07 Dec 2025 17:52:32 +0000
