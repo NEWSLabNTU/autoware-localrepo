@@ -3,10 +3,16 @@
 *.tar.gz
 *.table
 *.csv
-*.txt
 *.param.yaml
 deploy_metadata.yaml
+downloads/
 
 # Build artifacts
 *.deb
-downloads/
+
+# Debhelper build artifacts
+debian/.debhelper/
+debian/*.substvars
+debian/autoware-data/
+debian/debhelper-build-stamp
+debian/files

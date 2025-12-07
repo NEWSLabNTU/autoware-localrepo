@@ -87,7 +87,7 @@ def generate_control():
 Section: misc
 Priority: optional
 Maintainer: {MAINTAINER}
-Build-Depends: debhelper-compat (= 13), wget, ca-certificates
+Build-Depends: debhelper-compat (= 13), aria2, ca-certificates
 Standards-Version: 4.6.2
 
 Package: {PACKAGE_NAME}
@@ -103,28 +103,35 @@ Description: {DESCRIPTION}
 """
 
 
+def generate_aria2_input(downloads):
+    """Generate aria2c input file content."""
+    lines = []
+    for dl in downloads:
+        lines.append(dl['url'])
+        lines.append(f"  out={dl['dest_path']}")
+        lines.append(f"  dir=downloads")
+        if dl['sha256']:
+            lines.append(f"  checksum=sha-256={dl['sha256']}")
+        lines.append("")  # Empty line between entries
+    return "\n".join(lines)
+
+
 def generate_rules(downloads):
-    """Generate debian/rules content."""
-    # Group downloads by parent directory
-    download_commands = []
+    """Generate debian/rules content with aria2c for parallel downloads."""
     install_commands = []
+    destdir = "$(CURDIR)/debian/autoware-data"
 
     for dl in downloads:
         parent = dl['parent_dir']
-        filename = dl['filename']
-        url = dl['url']
         dest_path = dl['dest_path']
-
-        # Download command
-        download_commands.append(f'\twget -q -O downloads/{dest_path} "{url}"')
 
         # Install command
         if dl['is_tarball']:
-            install_commands.append(f'\tinstall -d $(DESTDIR){INSTALL_DIR}/{parent}')
-            install_commands.append(f'\ttar -xf downloads/{dest_path} -C $(DESTDIR){INSTALL_DIR}/{parent}')
+            install_commands.append(f'\tinstall -d {destdir}{INSTALL_DIR}/{parent}')
+            install_commands.append(f'\ttar -xf downloads/{dest_path} -C {destdir}{INSTALL_DIR}/{parent}')
         else:
-            install_commands.append(f'\tinstall -d $(DESTDIR){INSTALL_DIR}/{parent}')
-            install_commands.append(f'\tinstall -m 644 downloads/{dest_path} $(DESTDIR){INSTALL_DIR}/{parent}/')
+            install_commands.append(f'\tinstall -d {destdir}{INSTALL_DIR}/{parent}')
+            install_commands.append(f'\tinstall -m 644 downloads/{dest_path} {destdir}{INSTALL_DIR}/{parent}/')
 
     # Get unique parent directories for mkdir
     parent_dirs = sorted(set(dl['parent_dir'] for dl in downloads))
@@ -138,13 +145,14 @@ export DH_VERBOSE = 1
 \tdh $@
 
 override_dh_auto_build:
-\t@echo "Downloading model files..."
+\t@echo "Creating download directories..."
 {chr(10).join(mkdir_commands)}
-{chr(10).join(download_commands)}
+\t@echo "Downloading model files with aria2c..."
+\taria2c -i downloads.txt -j 8 --continue=true --auto-file-renaming=false --allow-overwrite=true
 \t@echo "Downloads complete."
 
 override_dh_auto_install:
-\tinstall -d $(DESTDIR){INSTALL_DIR}
+\tinstall -d {destdir}{INSTALL_DIR}
 {chr(10).join(install_commands)}
 
 override_dh_auto_clean:
@@ -205,6 +213,11 @@ def write_debian_files(debian_dir, downloads, version="1.0.0"):
     """Write all debian files to the specified directory."""
     debian_dir = Path(debian_dir)
     debian_dir.mkdir(parents=True, exist_ok=True)
+
+    # Write downloads.txt (aria2c input file) in parent directory
+    output_dir = debian_dir.parent
+    (output_dir / 'downloads.txt').write_text(generate_aria2_input(downloads))
+    print(f"  Written: {output_dir / 'downloads.txt'}")
 
     # Write control
     (debian_dir / 'control').write_text(generate_control())

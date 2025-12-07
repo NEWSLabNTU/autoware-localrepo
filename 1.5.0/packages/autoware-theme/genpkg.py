@@ -122,6 +122,31 @@ chmod 644 "$DEST_FILE"
 '''
 
 
+def generate_aria2_input(version: str) -> str:
+    """Generate aria2c input file content."""
+    base_url = RAW_BASE_URL.format(version=version)
+    lines = []
+
+    # Add main theme files
+    for filename in THEME_FILES:
+        url = f"{base_url}/{filename}"
+        lines.append(url)
+        lines.append(f"  out={filename}")
+        lines.append(f"  dir=downloads")
+        lines.append("")
+
+    # Add icon files
+    for subdir, files in ICON_DIRS.items():
+        for filename in files:
+            url = f"{base_url}/autoware-rviz-icons/{subdir}/{filename}"
+            lines.append(url)
+            lines.append(f"  out=autoware-rviz-icons/{subdir}/{filename}")
+            lines.append(f"  dir=downloads")
+            lines.append("")
+
+    return "\n".join(lines)
+
+
 def generate_debian_files(version: str, output_dir: Path) -> None:
     """Generate debian packaging files."""
     debian_dir = output_dir / "debian"
@@ -148,7 +173,7 @@ def generate_debian_files(version: str, output_dir: Path) -> None:
 Section: misc
 Priority: optional
 Maintainer: Jerry Lin <jerry73204@gmail.com>
-Build-Depends: debhelper-compat (= 13), wget, ca-certificates
+Build-Depends: debhelper-compat (= 13), aria2, ca-certificates
 Standards-Version: 4.6.2
 
 Package: autoware-theme
@@ -188,53 +213,38 @@ License: Apache-2.0
 """
     (debian_dir / "copyright").write_text(copyright_text)
 
-    # Generate rules file with downloads
-    base_url = RAW_BASE_URL.format(version=version)
+    # Generate aria2c input content and write to file
+    aria2_input = generate_aria2_input(version)
+    (output_dir / "downloads.txt").write_text(aria2_input)
 
-    rules_lines = [
-        "#!/usr/bin/make -f",
-        "",
-        "export DH_VERBOSE = 1",
-        "",
-        "%:",
-        "\tdh $@",
-        "",
-        "override_dh_auto_build:",
-        '\t@echo "Downloading theme files..."',
-    ]
+    # Generate rules file with aria2c for parallel downloads
+    rules_content = """#!/usr/bin/make -f
 
-    # Download main theme files
-    rules_lines.append("\tmkdir -p downloads")
-    for filename in THEME_FILES:
-        url = f"{base_url}/{filename}"
-        rules_lines.append(f'\twget -q -O downloads/{filename} "{url}"')
+export DH_VERBOSE = 1
 
-    # Download icon directories
-    for subdir, files in ICON_DIRS.items():
-        rules_lines.append(f"\tmkdir -p downloads/autoware-rviz-icons/{subdir}")
-        for filename in files:
-            url = f"{base_url}/autoware-rviz-icons/{subdir}/{filename}"
-            rules_lines.append(f'\twget -q -O downloads/autoware-rviz-icons/{subdir}/{filename} "{url}"')
+%:
+\tdh $@
 
-    rules_lines.append('\t@echo "Downloads complete."')
-    rules_lines.append("")
+override_dh_auto_build:
+\t@echo "Creating download directories..."
+\tmkdir -p downloads/autoware-rviz-icons/active
+\tmkdir -p downloads/autoware-rviz-icons/disabled
+\tmkdir -p downloads/autoware-rviz-icons/primary
+\t@echo "Downloading theme files with aria2c..."
+\taria2c -i downloads.txt -j 8 --continue=true --auto-file-renaming=false --allow-overwrite=true
+\t@echo "Downloads complete."
 
-    # Install section
-    rules_lines.extend([
-        "override_dh_auto_install:",
-        "\tinstall -d $(DESTDIR)/opt/autoware/theme",
-        "\tinstall -m 644 downloads/autoware.qss $(DESTDIR)/opt/autoware/theme/",
-        "\tinstall -m 644 downloads/qt5ct.conf $(DESTDIR)/opt/autoware/theme/",
-        "\tcp -r downloads/autoware-rviz-icons $(DESTDIR)/opt/autoware/theme/",
-        "\tinstall -d $(DESTDIR)/usr/bin",
-        "\tinstall -m 755 apply-autoware-theme $(DESTDIR)/usr/bin/",
-        "",
-        "override_dh_auto_clean:",
-        "\trm -rf downloads/",
-        "",
-    ])
+override_dh_auto_install:
+\tinstall -d $(CURDIR)/debian/autoware-theme/opt/autoware/theme
+\tinstall -m 644 downloads/autoware.qss $(CURDIR)/debian/autoware-theme/opt/autoware/theme/
+\tinstall -m 644 downloads/qt5ct.conf $(CURDIR)/debian/autoware-theme/opt/autoware/theme/
+\tcp -r downloads/autoware-rviz-icons $(CURDIR)/debian/autoware-theme/opt/autoware/theme/
+\tinstall -d $(CURDIR)/debian/autoware-theme/usr/bin
+\tinstall -m 755 apply-autoware-theme $(CURDIR)/debian/autoware-theme/usr/bin/
 
-    rules_content = "\n".join(rules_lines)
+override_dh_auto_clean:
+\trm -rf downloads/
+"""
     rules_file = debian_dir / "rules"
     rules_file.write_text(rules_content)
     rules_file.chmod(0o755)

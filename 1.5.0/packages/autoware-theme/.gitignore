@@ -1,5 +1,13 @@
 # Downloaded theme files (from official Autoware repo)
 src/
+downloads/
 
 # Build artifacts
 *.deb
+
+# Debhelper build artifacts
+debian/.debhelper/
+debian/*.substvars
+debian/autoware-theme/
+debian/debhelper-build-stamp
+debian/files
