@@ -2,7 +2,7 @@ Source: autoware-data
 Section: misc
 Priority: optional
 Maintainer: Jerry Lin <jerry73204@gmail.com>
-Build-Depends: debhelper-compat (= 13), wget, ca-certificates
+Build-Depends: debhelper-compat (= 13), aria2, ca-certificates
 Standards-Version: 4.6.2
 
 Package: autoware-data
