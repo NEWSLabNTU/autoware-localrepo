@@ -6,8 +6,10 @@ creates a local APT repository for easy installation on Debian/Ubuntu systems.
 ## Prerequisites
 
 - **Ubuntu 22.04** (Jammy) operating system
-- **Docker** for building ROS packages via colcon2deb
-- **debhelper** package (`sudo apt install debhelper devscripts`)
+- **Docker** for building ROS packages
+- **colcon2deb** for building ROS packages into Debian packages
+  - Install from [https://github.com/NEWSLabNTU/colcon2deb](https://github.com/NEWSLabNTU/colcon2deb)
+- **debhelper** package (`sudo apt install debhelper devscripts aria2`)
 - **just** command runner (`cargo install just` or from package manager)
 
 ## Repository Structure
