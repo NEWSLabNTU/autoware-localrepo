@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-collision-detector
+Section: misc
+Priority: optional
+Maintainer: Kyoichi Sugahara <kyoichi.sugahara@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, libpcl-dev, ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-diagnostic-msgs, ros-humble-diagnostic-updater, ros-humble-eigen3-cmake-module, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-collision-detector
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, libpcl-dev, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-diagnostic-msgs, ros-humble-diagnostic-updater, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
+Description: The collision_detector package

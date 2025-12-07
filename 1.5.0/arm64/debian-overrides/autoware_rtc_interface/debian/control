@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-rtc-interface
+Section: misc
+Priority: optional
+Maintainer: Fumiya Watanabe <fumiya.watanabe@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-test-utils <!nocheck>, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-tier4-rtc-msgs, ros-humble-unique-identifier-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-rtc-interface
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-tier4-rtc-msgs, ros-humble-unique-identifier-msgs
+Description: The autoware_rtc_interface package

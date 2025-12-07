@@ -1,0 +1,30 @@
+ros-humble-autoware-command-mode-types (0.48.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-command-mode-types (0.47.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-command-mode-types (0.47.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-command-mode-types (0.46.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
+  * feat(command_mode_types): create package (#10825 <https://github.com/autowarefoundation/autoware_universe/issues/10825>)
+    * feat(command_mode_types): create package
+    * remove unused dependency
+    ---------
+  * Contributors: TaikiYamada4, Takagi, Isamu
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
+
+

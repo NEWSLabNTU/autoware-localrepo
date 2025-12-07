@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-adapi-visualizers
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), python3-pytest <!nocheck>, ros-humble-ament-copyright <!nocheck>, ros-humble-ament-pep257 <!nocheck>, python3-all, python3-setuptools, dh-python
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-adapi-visualizers
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-geometry-msgs, ros-humble-rclpy, ros-humble-tf-transformations, ros-humble-visualization-msgs
+Description: The adapi_visualizers package

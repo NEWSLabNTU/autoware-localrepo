@@ -1,0 +1,38 @@
+ros-humble-autoware-command-mode-switcher (0.48.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-command-mode-switcher (0.47.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-command-mode-switcher (0.47.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_command_mode_switcher_plugins): publish hazard lights c… (#10952 <https://github.com/autowarefoundation/autoware_universe/issues/10952>)
+    * feat(autoware_command_mode_switcher_plugins): publish hazard lights command (#2142 <https://github.com/autowarefoundation/autoware_universe/issues/2142>)
+    * feat: add publisher
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    * fix: remove hazard lishts hz from parm struct
+    * fix: add hazard lights hz param
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * Contributors: Tetsuhiro Kawaguchi
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-command-mode-switcher (0.46.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
+  * feat(command_mode_switcher): create package (#10170 <https://github.com/autowarefoundation/autoware_universe/issues/10170>)
+  * Contributors: TaikiYamada4, Takagi, Isamu
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
+
+

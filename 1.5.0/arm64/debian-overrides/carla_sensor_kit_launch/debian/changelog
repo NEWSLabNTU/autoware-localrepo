@@ -1,0 +1,11 @@
+ros-humble-carla-sensor-kit-launch (0.48.0-0jammy) jammy; urgency=high
+
+  * fix(carla_sensor_kit_description): align package version
+  * Merge remote-tracking branch 'origin/main' into release-humble-0.48.0
+  * feat(autoware_launch): add CARLA sensor kit support packages (#1655 <https://github.com/autowarefoundation/autoware_launch/issues/1655>)
+    Co-authored-by: Yukihiro Saito <mailto:yukky.saito@gmail.com>
+  * Contributors: Max-Bin, mitsudome-r
+
+ -- Autoware Maintainer <noreply@example.com>  Sat, 15 Nov 2025 16:00:00 -0000
+
+

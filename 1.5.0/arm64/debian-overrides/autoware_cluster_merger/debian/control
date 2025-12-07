@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-cluster-merger
+Section: misc
+Priority: optional
+Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-test-utils, ros-humble-autoware-utils, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-perception-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-cluster-merger
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-test-utils, ros-humble-autoware-utils, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-perception-msgs
+Description: The ROS 2 cluster merger package

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-planning-test-manager
+Section: misc
+Priority: optional
+Maintainer: Kyoichi Sugahara <kyoichi.sugahara@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-component-interface-specs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-test-utils, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-tf2-msgs, ros-humble-tf2-ros, ros-humble-unique-identifier-msgs, ros-humble-yaml-cpp-vendor
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-planning-test-manager
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-component-interface-specs, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-test-utils, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-tf2-msgs, ros-humble-tf2-ros, ros-humble-unique-identifier-msgs, ros-humble-yaml-cpp-vendor
+Description: ROS 2 node for testing interface of the nodes in planning module

@@ -1,0 +1,12 @@
+Source: ros-humble-nebula-sensor-driver
+Section: misc
+Priority: optional
+Maintainer: MAP IV <contact@map4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-nebula-sensor-driver
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-nebula-common, ros-humble-nebula-decoders, ros-humble-nebula-examples, ros-humble-nebula-hw-interfaces, ros-humble-nebula-ros, ros-humble-nebula-tests
+Description: Meta package for nebula sensor drivers related packages

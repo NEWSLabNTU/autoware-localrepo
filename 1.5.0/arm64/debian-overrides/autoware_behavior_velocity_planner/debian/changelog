@@ -1,0 +1,78 @@
+ros-humble-autoware-behavior-velocity-planner (1.5.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)
+    * replace ament_auto_package to autoware_ament_auto_package
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * feat(behavior_velocity_planner and behavior_velocity_planner_common)!: replace PathWithLaneId with Trajectory<> class (#681 <https://github.com/autowarefoundation/autoware_core/issues/681>)
+    Co-authored-by: mitukou1109 <mailto:mitukou1109@gmail.com>
+  * feat(behavior_velocity_planner): support processing_time for behavior_velocity_planner (#677 <https://github.com/autowarefoundation/autoware_core/issues/677>)
+    support processing time for bvp
+  * feat(autoware_behavior_velocity_planner): add roundabout module param path (#603 <https://github.com/autowarefoundation/autoware_core/issues/603>)
+    feat(behavior_velocity_planner): add roundabout module parameter path
+  * chore(behavior_velocity_planner): remove bvp run_out (#629 <https://github.com/autowarefoundation/autoware_core/issues/629>)
+  * fix(autoware_behavior_velocity_planner): enable empty no_ground_pointcloud (#614 <https://github.com/autowarefoundation/autoware_core/issues/614>)
+    fix psim bug
+  * fix(autoware_behavior_velocity_planner): let is_ready be false if  no ground pointcloud is null (#610 <https://github.com/autowarefoundation/autoware_core/issues/610>)
+    * fix no_ground_pointcloud bug
+    * refactor code
+    ---------
+  * chore: bump version (1.4.0) and update changelog (#608 <https://github.com/autowarefoundation/autoware_core/issues/608>)
+  * Contributors: Kem (TiankuiXian), Mamoru Sobue, Mete Fatih Cırıt, Sho Iwasawa, Yuki TAKAGI, Yutaka Kondo, mitsudome-r
+
+ -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-behavior-velocity-planner (1.4.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * chore(motion_velocity_planner, behavior_velocity_planner): unifiy module load srv (#585 <https://github.com/autowarefoundation/autoware_core/issues/585>)
+    port srv
+  * chore: bump version to 1.3.0 (#554 <https://github.com/autowarefoundation/autoware_core/issues/554>)
+  * Contributors: Ryohsuke Mitsudome, Yuki TAKAGI
+
+ -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-behavior-velocity-planner (1.3.0-0jammy) jammy; urgency=high
+
+  * fix: to be consistent version in all package.xml(s)
+  * feat(planning_factor): add console output option (#513 <https://github.com/autowarefoundation/autoware_core/issues/513>)
+    fix param json
+    fix param json
+    snake_case
+    set default
+  * feat(behavior_velocity_planner): improve module registraion/deletion log (#503 <https://github.com/autowarefoundation/autoware_core/issues/503>)
+    feat(behavior_velocity_planner): imporve module registraion log
+    update
+    update
+    ho
+  * chore: no longer support ROS 2 Galactic (#492 <https://github.com/autowarefoundation/autoware_core/issues/492>)
+  * fix(autoware_behavior_velocity_planner): fix deprecated autoware_utils header (#442 <https://github.com/autowarefoundation/autoware_core/issues/442>)
+  * feat(behavior_velocity_planner)!: remove unused function extendLine (#457 <https://github.com/autowarefoundation/autoware_core/issues/457>)
+    * remove unused function
+    * remove unused parameter
+    ---------
+  * chore: bump up version to 1.1.0 (#462 <https://github.com/autowarefoundation/autoware_core/issues/462>) (#464 <https://github.com/autowarefoundation/autoware_core/issues/464>)
+  * feat(behavior_velocity_planner)!: only wait for the required subscriptions (#433 <https://github.com/autowarefoundation/autoware_core/issues/433>)
+  * Contributors: Kosuke Takeuchi, Masaki Baba, Mitsuhiro Sakamoto, Takayuki Murooka, Yutaka Kondo, github-actions
+
+ -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Sun, 22 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-behavior-velocity-planner (1.1.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-behavior-velocity-planner (1.0.0-0jammy) jammy; urgency=high
+
+  * chore: update version in package.xml
+  * feat:  port  autoware_behavior_velocity_planner from autoware.universe to autoware.core (#230 <https://github.com/autowarefoundation/autoware_core/issues/230>)
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+    Co-authored-by: 心刚 <mailto:90366790+liuXinGangChina@users.noreply.github.com>
+  * Contributors: Ryohsuke Mitsudome, storrrrrrrrm
+
+ -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Sun, 30 Mar 2025 16:00:00 -0000
+
+

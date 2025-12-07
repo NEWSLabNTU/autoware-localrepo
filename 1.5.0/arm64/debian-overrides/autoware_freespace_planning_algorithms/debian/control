@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-freespace-planning-algorithms
+Section: misc
+Priority: optional
+Maintainer: Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), nlohmann-json3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pybind11-vendor, ros-humble-python-cmake-module, ros-humble-rosbag2-cpp, ros-humble-rosbag2-storage, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-freespace-planning-algorithms
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, nlohmann-json3-dev, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pybind11-vendor, ros-humble-rosbag2-cpp, ros-humble-rosbag2-storage, ros-humble-rosbag2-storage-mcap, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs
+Description: The autoware_freespace_planning_algorithms package

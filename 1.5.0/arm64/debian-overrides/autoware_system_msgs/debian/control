@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-system-msgs
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-common-msgs, ros-humble-builtin-interfaces, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rosidl-default-generators, ros-humble-std-msgs, ros-humble-unique-identifier-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-system-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-common-msgs, ros-humble-builtin-interfaces, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rosidl-default-runtime, ros-humble-std-msgs, ros-humble-unique-identifier-msgs
+Description: Autoware system messages package.

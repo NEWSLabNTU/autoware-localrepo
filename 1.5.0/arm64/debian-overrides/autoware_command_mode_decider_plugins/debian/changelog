@@ -1,0 +1,34 @@
+ros-humble-autoware-command-mode-decider-plugins (0.48.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix(command_mode_decider): fix mode continuation condition (#11158 <https://github.com/autowarefoundation/autoware_universe/issues/11158>)
+  * Contributors: Ryohsuke Mitsudome, Takagi, Isamu
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-command-mode-decider-plugins (0.47.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-command-mode-decider-plugins (0.47.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_command_mode_decider): add initialize (#10935 <https://github.com/autowarefoundation/autoware_universe/issues/10935>)
+    * feat: add initialize
+    * fix: override in plugins
+    ---------
+  * feat(command_mode_decider): reflect message porting (#10858 <https://github.com/autowarefoundation/autoware_universe/issues/10858>)
+  * Contributors: Takagi, Isamu, Tetsuhiro Kawaguchi
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-command-mode-decider-plugins (0.46.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
+  * feat(command_mode_decider): create package (#10171 <https://github.com/autowarefoundation/autoware_universe/issues/10171>)
+  * Contributors: TaikiYamada4, Takagi, Isamu
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
+
+

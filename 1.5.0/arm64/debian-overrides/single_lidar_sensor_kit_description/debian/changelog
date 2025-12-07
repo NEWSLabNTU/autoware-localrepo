@@ -1,0 +1,101 @@
+ros-humble-single-lidar-sensor-kit-description (0.48.0-0jammy) jammy; urgency=high
+
+
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Sat, 15 Nov 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.47.0-0jammy) jammy; urgency=high
+
+
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.46.0-0jammy) jammy; urgency=high
+
+
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Thu, 19 Jun 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.45.3-0jammy) jammy; urgency=high
+
+
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Wed, 16 Jul 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.45.2-0jammy) jammy; urgency=high
+
+
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Fri, 27 Jun 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.45.1-0jammy) jammy; urgency=high
+
+
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Thu, 26 Jun 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.45.0-0jammy) jammy; urgency=high
+
+
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Wed, 21 May 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.44.3-0jammy) jammy; urgency=high
+
+
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Mon, 09 Jun 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.44.2-0jammy) jammy; urgency=high
+
+
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Thu, 29 May 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.44.1-0jammy) jammy; urgency=high
+
+
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Sun, 11 May 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.44.0-0jammy) jammy; urgency=high
+
+  * Merge commit 'bdbc8e8' into bump-up-version-to-0.44.0
+  * chore: bump version to 0.44.0 (#1411 <https://github.com/autowarefoundation/autoware_launch/issues/1411>)
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Wed, 30 Apr 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.43.1-0jammy) jammy; urgency=high
+
+  * chore: set all versions to 0.43.0 (#1384 <https://github.com/autowarefoundation/autoware_launch/issues/1384>)
+  * feat(*_launch): move here (#1369 <https://github.com/autowarefoundation/autoware_launch/issues/1369>)
+  * Contributors: Mete Fatih Cırıt
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Mon, 31 Mar 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.43.0-0jammy) jammy; urgency=high
+
+
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Thu, 27 Mar 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.42.0-0jammy) jammy; urgency=high
+
+
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Thu, 27 Mar 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.41.0-0jammy) jammy; urgency=high
+
+
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Tue, 11 Feb 2025 16:00:00 -0000
+
+ros-humble-single-lidar-sensor-kit-description (0.39.0-0jammy) jammy; urgency=high
+
+  * feat(single_lidar_sensor_kit): add single_lidar_sensor_kit
+  * Contributors: beginningfan
+
+ -- beginning.fan <beginning.fan@autocore.ai>  Wed, 11 Dec 2024 16:00:00 -0000
+
+

@@ -1,0 +1,128 @@
+ros-humble-awsim-labs-sensor-kit-launch (0.48.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into release-humble-0.48.0
+  * chore: necessary mod to run with latest gyro scale estimation changes (#1633 <https://github.com/autowarefoundation/autoware_launch/issues/1633>)
+  * Contributors: SergioReyesSan, mitsudome-r
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Sat, 15 Nov 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.47.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_pointcloud_preprocessor): add remappings (#1563 <https://github.com/autowarefoundation/autoware_launch/issues/1563>)
+  * Contributors: Amadeusz Szymko
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.46.0-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 19 Jun 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.45.3-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 16 Jul 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.45.2-0jammy) jammy; urgency=high
+
+  0.45.1 (2025-06-27)
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Fri, 27 Jun 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.45.0-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 21 May 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.44.3-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Mon, 09 Jun 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.44.2-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 29 May 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.44.1-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Sun, 11 May 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.44.0-0jammy) jammy; urgency=high
+
+  * Merge commit 'bdbc8e8' into bump-up-version-to-0.44.0
+  * chore: bump version to 0.44.0 (#1411 <https://github.com/autowarefoundation/autoware_launch/issues/1411>)
+  * feat: remove individual_params references (#1403 <https://github.com/autowarefoundation/autoware_launch/issues/1403>)
+  * chore(sensor_kit_launch): remove unused has_static_tf_only param (#1393 <https://github.com/autowarefoundation/autoware_launch/issues/1393>)
+  * chore: set all versions to 0.43.0 (#1384 <https://github.com/autowarefoundation/autoware_launch/issues/1384>)
+  * feat(*_launch): move here (#1369 <https://github.com/autowarefoundation/autoware_launch/issues/1369>)
+  * Contributors: Amadeusz Szymko, Mete Fatih Cırıt, Ryohsuke Mitsudome, Yutaka Kondo
+  * feat: remove individual_params references (#1403 <https://github.com/autowarefoundation/autoware_launch/issues/1403>)
+  * chore(sensor_kit_launch): remove unused has_static_tf_only param (#1393 <https://github.com/autowarefoundation/autoware_launch/issues/1393>)
+  * chore: set all versions to 0.43.0 (#1384 <https://github.com/autowarefoundation/autoware_launch/issues/1384>)
+  * feat(*_launch): move here (#1369 <https://github.com/autowarefoundation/autoware_launch/issues/1369>)
+  * Contributors: Amadeusz Szymko, Mete Fatih Cırıt
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 30 Apr 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.43.1-0jammy) jammy; urgency=high
+
+  * chore: set all versions to 0.43.0 (#1384 <https://github.com/autowarefoundation/autoware_launch/issues/1384>)
+  * feat(*_launch): move here (#1369 <https://github.com/autowarefoundation/autoware_launch/issues/1369>)
+  * Contributors: Mete Fatih Cırıt
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Mon, 31 Mar 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.43.0-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 27 Mar 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.42.0-0jammy) jammy; urgency=high
+
+  * Merge branch 'main' into humble
+  * refactor(awsim_labs_sensor_kit_launch): removed tamagawa_imu_driver (#25 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/25>)
+  * feat(awsim_labs_sensor_kit_launch): awsim lab load concatenate node parameters (#9 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/9>)
+  * Contributors: Esteve Fernandez, M. Fatih Cırıt, Yi-Hsiang Fang (Vivid)
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 27 Mar 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.41.1-0jammy) jammy; urgency=high
+
+  * feat(awsim_labs_sensor_kit_launch): awsim lab load concatenate node parameters (#9 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/9>)
+  * Contributors: Yi-Hsiang Fang (Vivid)
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 12 Feb 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.41.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into HEAD
+  * fix(awsim_labs_sensor_kit_launch): add autoware prefix to vehicle_velocity_converter (#11 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/11>)
+  * chore: sync files (#14 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/14>)
+    Co-authored-by: github-actions <mailto:github-actions@github.com>
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: M. Fatih Cırıt <mailto:mfc@autoware.org>
+  * Contributors: Masaki Baba, Ryohsuke Mitsudome, awf-autoware-bot[bot]
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Tue, 11 Feb 2025 16:00:00 -0000
+
+ros-humble-awsim-labs-sensor-kit-launch (0.39.0-0jammy) jammy; urgency=high
+
+  * feat: ring outlier filter and distortion correction node load from param file (#6 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/6>)
+  * chore(package_xml): added autoware_ prefix to gnss_poser (#4 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/4>)
+  * refactor: renamed the package name imu_corrector to autoware_imu_corrector (#5 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/5>)
+  * refactor!: pointcloud_preprocessor prefix package and namespace with autoware (#3 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/3>)
+  * refactor: update for the awsim_labs (#2 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/2>)
+  * Contributors: A. Sena Yılmaz, Amadeusz Szymko, Kenzo Lobos Tsunekawa, M. Fatih Cırıt, TaikiYamada4
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 11 Dec 2024 16:00:00 -0000
+
+

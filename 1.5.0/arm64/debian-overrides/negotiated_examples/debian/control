@@ -1,0 +1,12 @@
+Source: ros-humble-negotiated-examples
+Section: misc
+Priority: optional
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-negotiated, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rclcpp-lifecycle, ros-humble-std-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-negotiated-examples
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-launch, ros-humble-launch-ros, ros-humble-negotiated, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rclcpp-lifecycle, ros-humble-std-msgs
+Description: Examples for negotiated publishers/subscriptions

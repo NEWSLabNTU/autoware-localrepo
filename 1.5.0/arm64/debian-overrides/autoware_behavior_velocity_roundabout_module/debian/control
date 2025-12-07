@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-behavior-velocity-roundabout-module
+Section: misc
+Priority: optional
+Maintainer: Hisaki Yukinari <yukinari.hisaki.2@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-dev, libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-behavior-velocity-intersection-module, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-behavior-velocity-rtc-interface, ros-humble-autoware-cmake, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-interpolation, ros-humble-autoware-lanelet2-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-rtc-interface, ros-humble-autoware-test-utils, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-eigen3-cmake-module, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tier4-planning-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-behavior-velocity-roundabout-module
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, libeigen3-dev, ros-humble-autoware-behavior-velocity-intersection-module, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-behavior-velocity-rtc-interface, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-interpolation, ros-humble-autoware-lanelet2-utils, ros-humble-autoware-motion-utils, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-rtc-interface, ros-humble-autoware-test-utils, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tier4-planning-msgs, ros-humble-visualization-msgs
+Description: The autoware_behavior_velocity_roundabout_module package

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-external-velocity-limit-selector
+Section: misc
+Priority: optional
+Maintainer: Satoshi Ota <satoshi.ota@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-generate-parameter-library, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-ros-testing <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-external-velocity-limit-selector
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-generate-parameter-library, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-ros2cli, ros-humble-topic-tools
+Description: The autoware_external_velocity_limit_selector ROS 2 package

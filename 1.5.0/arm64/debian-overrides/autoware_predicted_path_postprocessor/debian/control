@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-predicted-path-postprocessor
+Section: misc
+Priority: optional
+Maintainer: Kotaro Uetake <kotaro.uetake@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-interpolation, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-geometry, ros-humble-autoware-utils-system, ros-humble-lanelet2-core, ros-humble-lanelet2-routing, ros-humble-lanelet2-traffic-rules, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-predicted-path-postprocessor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-interpolation, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-geometry, ros-humble-autoware-utils-system, ros-humble-lanelet2-core, ros-humble-lanelet2-routing, ros-humble-lanelet2-traffic-rules, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: The ROS 2 package for post-processing predicted paths.

@@ -1,0 +1,25 @@
+ros-humble-autoware-trajectory-modifier (0.48.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * feat(trajectory modifier): add trajectory modifier (#11277 <https://github.com/autowarefoundation/autoware_universe/issues/11277>)
+    * first commit, add general plugin structure
+    * added stop point fixer
+    * parameter declaration fixed
+    * update README
+    * add tests
+    * clangd suggestions
+    * pre-commit
+    * add missing line at end of file
+    * fix tests
+    * add more maintainers
+    * split autoware_utils
+    * Fix review comments
+    * fix removing sub
+    * pre-commit
+    ---------
+    Co-authored-by: Go Sakayori <mailto:gsakayori@gmail.com>
+  * Contributors: Ryohsuke Mitsudome, danielsanchezaran
+
+ -- Daniel Sanchez <daniel.sanchez@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
+
+

@@ -1,0 +1,45 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+export LDFLAGS=
+export PKG_CONFIG_PATH=/opt/ros/humble/lib/pkgconfig
+# Disable LTO for CUDA packages - LTO causes symbol conflicts with fatbinData
+export DEB_CFLAGS_MAINT_APPEND=-DNDEBUG -fno-lto
+export DEB_CXXFLAGS_MAINT_APPEND=-DNDEBUG -fno-lto
+export DEB_LDFLAGS_MAINT_APPEND=-fno-lto
+
+ifneq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
+	BUILD_TESTING_ARG=-DBUILD_TESTING=OFF
+endif
+
+DEB_HOST_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+
+%:
+	dh $@ -v --buildsystem=cmake --builddirectory=.obj-$(DEB_HOST_GNU_TYPE)
+
+override_dh_auto_configure:
+	if [ -f "/opt/ros/humble/setup.sh" ]; then . "/opt/ros/humble/setup.sh"; fi && \
+	dh_auto_configure -- \
+		-DCMAKE_INSTALL_PREFIX="/opt/ros/humble" \
+		-DAMENT_PREFIX_PATH="/opt/ros/humble" \
+		-DCMAKE_PREFIX_PATH="/opt/ros/humble" \
+		$(BUILD_TESTING_ARG)
+
+override_dh_auto_build:
+	if [ -f "/opt/ros/humble/setup.sh" ]; then . "/opt/ros/humble/setup.sh"; fi && \
+	dh_auto_build
+
+override_dh_auto_test:
+	echo -- Running tests. Even if one of them fails the build is not canceled.
+	if [ -f "/opt/ros/humble/setup.sh" ]; then . "/opt/ros/humble/setup.sh"; fi && \
+	dh_auto_test || true
+
+override_dh_shlibdeps:
+	if [ -f "/opt/ros/humble/setup.sh" ]; then . "/opt/ros/humble/setup.sh"; fi && \
+	dh_shlibdeps -l$(CURDIR)/debian/ros-humble-autoware-cuda-pointcloud-preprocessor//opt/ros/humble/lib/:$(CURDIR)/debian/ros-humble-autoware-cuda-pointcloud-preprocessor//opt/ros/humble/opt/autoware_cuda_pointcloud_preprocessor/lib/
+
+override_dh_auto_install:
+	if [ -f "/opt/ros/humble/setup.sh" ]; then . "/opt/ros/humble/setup.sh"; fi && \
+	dh_auto_install

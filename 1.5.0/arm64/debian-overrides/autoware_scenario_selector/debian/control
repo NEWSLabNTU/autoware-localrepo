@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-scenario-selector
+Section: misc
+Priority: optional
+Maintainer: Taiki Tanaka <taiki.tanaka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-planning-test-manager, ros-humble-autoware-route-handler, ros-humble-autoware-utils, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-scenario-selector
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-planning-test-manager, ros-humble-autoware-route-handler, ros-humble-autoware-utils, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-ros2cli, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs, ros-humble-topic-tools
+Description: The autoware_scenario_selector ROS 2 package

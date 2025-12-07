@@ -1,0 +1,44 @@
+ros-humble-autoware-internal-metric-msgs (1.12.0-0jammy) jammy; urgency=high
+
+
+
+ -- Temkei Kem <temkei.kem@tier4.jp>  Thu, 24 Jul 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-metric-msgs (1.11.0-0jammy) jammy; urgency=high
+
+
+
+ -- Temkei Kem <temkei.kem@tier4.jp>  Tue, 22 Jul 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-metric-msgs (1.10.0-0jammy) jammy; urgency=high
+
+
+
+ -- Temkei Kem <temkei.kem@tier4.jp>  Mon, 02 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-metric-msgs (1.9.0-0jammy) jammy; urgency=high
+
+
+
+ -- Temkei Kem <temkei.kem@tier4.jp>  Thu, 22 May 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-metric-msgs (1.8.1-0jammy) jammy; urgency=high
+
+
+
+ -- Temkei Kem <temkei.kem@tier4.jp>  Sun, 06 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-metric-msgs (1.8.0-0jammy) jammy; urgency=high
+
+
+
+ -- Temkei Kem <temkei.kem@tier4.jp>  Wed, 26 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-metric-msgs (1.7.0-0jammy) jammy; urgency=high
+
+  * feat: port Metric.msg and MetricArray.msg from tier4_metric_msgs (#52 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/52>)
+  * Contributors: NorahXiong
+
+ -- Temkei Kem <temkei.kem@tier4.jp>  Wed, 05 Mar 2025 16:00:00 -0000
+
+

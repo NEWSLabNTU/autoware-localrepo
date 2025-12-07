@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-command-mode-decider-plugins
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-command-mode-decider, ros-humble-autoware-command-mode-types, ros-humble-autoware-lint-common <!nocheck>, ros-humble-pluginlib
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-command-mode-decider-plugins
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-command-mode-decider, ros-humble-autoware-command-mode-types, ros-humble-pluginlib
+Description: The autoware_command_mode_decider_plugins package

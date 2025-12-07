@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-stop-mode-operator
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-control-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-vehicle-cmd-gate, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-updater, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-system-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-stop-mode-operator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-control-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-vehicle-cmd-gate, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-updater, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-system-msgs
+Description: The autoware_stop_mode_operator package

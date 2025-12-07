@@ -1,0 +1,31 @@
+ros-humble-autoware-marker-utils (1.5.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)
+    * replace ament_auto_package to autoware_ament_auto_package
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * chore(autoware_marker_utils): convert hard code into function  (#627 <https://github.com/autowarefoundation/autoware_core/issues/627>)
+  * feat(autoware_marker_utils): add marker conversion utils for debug marker (#559 <https://github.com/autowarefoundation/autoware_core/issues/559>)
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: Mamoru Sobue <mailto:hilo.soblin@gmail.com>
+  * chore: bump version (1.4.0) and update changelog (#608 <https://github.com/autowarefoundation/autoware_core/issues/608>)
+  * Contributors: Mete Fatih Cırıt, Sarun MUKDAPITAK, Yutaka Kondo, mitsudome-r
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-marker-utils (1.4.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * feat(autoware_marker_utils): add marker utils package in common for marker conversion (#555 <https://github.com/autowarefoundation/autoware_core/issues/555>)
+    fixed PR #470 <https://github.com/autowarefoundation/autoware_core/issues/470>
+  * Contributors: Giovanni Muhammad Raditya, Ryohsuke Mitsudome
+  * Merge remote-tracking branch 'origin/main' into humble
+  * feat(autoware_marker_utils): add marker utils package in common for marker conversion (#555 <https://github.com/autowarefoundation/autoware_core/issues/555>)
+    fixed PR #470 <https://github.com/autowarefoundation/autoware_core/issues/470>
+  * Contributors: Giovanni Muhammad Raditya, Ryohsuke Mitsudome
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+
+

@@ -1,0 +1,8 @@
+ros-humble-cuda-blackboard (0.1.0-0jammy) jammy; urgency=high
+
+  * Initial release
+  * Contributors: Kenzo Lobos-Tsunekawa
+
+ -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Sun, 16 Mar 2025 16:00:00 -0000
+
+

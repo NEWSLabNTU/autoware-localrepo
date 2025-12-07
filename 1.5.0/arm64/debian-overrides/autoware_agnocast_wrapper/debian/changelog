@@ -1,0 +1,62 @@
+ros-humble-autoware-agnocast-wrapper (0.48.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix(agnocast_wrapper): fix const rvalue reference binding error in AgnocastPollingSubscriber (#11425 <https://github.com/autowarefoundation/autoware_universe/issues/11425>)
+    fix AgnocastPollingSubscriber in agnocast_wrapper
+  * feat(autoware_agnocast_wrapper): support runtime fallback to ROS 2 behavior (#11060 <https://github.com/autowarefoundation/autoware_universe/issues/11060>)
+    * Create message_ptr
+    * Create use_agnocast
+    * Create Subscription
+    * Create Publisher
+    * Create PollingSubscriber (wip)
+    * Allow copying message_ptr with shared ownership
+    * style(pre-commit): autofix
+    * Fix typo
+    * fix
+    * fix
+    * style(pre-commit): autofix
+    * fix for tidy
+    * fix tidy
+    * style(pre-commit): autofix
+    * try avoiding cpplint error
+    * fix
+    * fix ament_lint_commont to autoware_lint_common
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: Koichi Imai <mailto:koichi.imai.2@tier4.jp>
+    Co-authored-by: Koichi Imai <mailto:45482193+Koichi98@users.noreply.github.com>
+    Co-authored-by: Takahiro Ishikawa-Aso <mailto:sykwer@gmail.com>
+    Co-authored-by: pre-commit-ci-lite[bot] <117423508+pre-commit-ci-lite[bot]@users.noreply.github.com>
+  * Contributors: Guojun Wu, Koichi Imai, Ryohsuke Mitsudome
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 17 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-agnocast-wrapper (0.47.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-agnocast-wrapper (0.47.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-agnocast-wrapper (0.46.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Thu, 19 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-agnocast-wrapper (0.45.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
+  * chore: re-introduce agnocast and fix version to v2.1.0 (#10526 <https://github.com/autowarefoundation/autoware_universe/issues/10526>)
+    delete colcon ignore and fix agnocast version to v2.1.0
+  * Contributors: TaikiYamada4, Takahiro Ishikawa-Aso
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 21 May 2025 16:00:00 -0000
+
+

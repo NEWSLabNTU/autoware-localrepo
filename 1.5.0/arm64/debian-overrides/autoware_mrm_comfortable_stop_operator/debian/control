@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-mrm-comfortable-stop-operator
+Section: misc
+Priority: optional
+Maintainer: Makoto Kurihara <makoto.kurihara@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-tier4-system-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-mrm-comfortable-stop-operator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-tier4-system-msgs
+Description: The MRM comfortable stop operator package

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-core
+Section: misc
+Priority: optional
+Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-core
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-core-api, ros-humble-autoware-core-control, ros-humble-autoware-core-localization, ros-humble-autoware-core-map, ros-humble-autoware-core-perception, ros-humble-autoware-core-planning, ros-humble-autoware-core-sensing, ros-humble-autoware-core-vehicle, ros-humble-autoware-global-parameter-loader, ros-humble-rviz2
+Description: The autoware_core package

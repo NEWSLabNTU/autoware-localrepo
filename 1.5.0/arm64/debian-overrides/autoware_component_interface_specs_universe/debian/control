@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-component-interface-specs-universe
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-localization-msgs, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-nav-msgs, ros-humble-rcl, ros-humble-rclcpp, ros-humble-rosidl-runtime-cpp, ros-humble-tier4-control-msgs, ros-humble-tier4-planning-msgs, ros-humble-tier4-vehicle-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-component-interface-specs-universe
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-localization-msgs, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-nav-msgs, ros-humble-rcl, ros-humble-rclcpp, ros-humble-rosidl-runtime-cpp, ros-humble-tier4-control-msgs, ros-humble-tier4-planning-msgs, ros-humble-tier4-vehicle-msgs
+Description: The autoware_component_interface_specs_universe package

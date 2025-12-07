@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-behavior-velocity-virtual-traffic-light-module
+Section: misc
+Priority: optional
+Maintainer: Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), nlohmann-json3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-cmake, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-tier4-planning-msgs, ros-humble-tier4-v2x-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-behavior-velocity-virtual-traffic-light-module
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, nlohmann-json3-dev, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-tier4-planning-msgs, ros-humble-tier4-v2x-msgs, ros-humble-visualization-msgs
+Description: The autoware_behavior_velocity_virtual_traffic_light_module package

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-vehicle-info-utils
+Section: misc
+Priority: optional
+Maintainer: Taiki Tanaka <taiki.tanaka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-index-cpp <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-utils, ros-humble-rclcpp
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-vehicle-info-utils
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-utils, ros-humble-rclcpp
+Description: The autoware_vehicle_info_utils package

@@ -1,0 +1,12 @@
+Source: ros-humble-carla-sensor-kit-launch
+Section: misc
+Priority: optional
+Maintainer: Autoware Maintainer <noreply@example.com>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-carla-sensor-kit-description
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-carla-sensor-kit-launch
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-carla-sensor-kit-description
+Description: The carla_sensor_kit_launch package - Launch files for CARLA sensor kit

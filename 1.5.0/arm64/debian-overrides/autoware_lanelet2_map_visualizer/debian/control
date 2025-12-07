@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-lanelet2-map-visualizer
+Section: misc
+Priority: optional
+Maintainer: Yamato Ando <yamato.ando@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-loader <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-launch-testing-ament-cmake <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-lanelet2-map-visualizer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-visualization-msgs
+Description: The autoware_lanelet2_map_visualizer package

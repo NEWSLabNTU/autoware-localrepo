@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-dummy-diag-publisher
+Section: misc
+Priority: optional
+Maintainer: Fumihito Ito <fumihito.ito@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libfmt-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-diagnostic-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-dummy-diag-publisher
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, ros-humble-diagnostic-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rqt-reconfigure, ros-humble-rqt-robot-monitor, ros-humble-rqt-runtime-monitor
+Description: The dummy_diag_publisher ROS 2 package

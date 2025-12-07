@@ -1,0 +1,12 @@
+Source: ros-humble-negotiated-interfaces
+Section: misc
+Priority: optional
+Maintainer: Chris Lalancette <clalancette@openrobotics.org>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-lint-common <!nocheck>, ros-humble-rosidl-default-generators
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-negotiated-interfaces
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-rosidl-default-runtime
+Description: A package containing the negotiation message definitions.

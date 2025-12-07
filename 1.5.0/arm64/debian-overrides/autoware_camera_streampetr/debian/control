@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-camera-streampetr
+Section: misc
+Priority: optional
+Maintainer: samrat <samratthapa120@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, ros-humble-ament-clang-format <!nocheck>, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-tensorrt-common, ros-humble-autoware-utils, ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-image-transport, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2-geometry-msgs, ros-humble-tf2-msgs, ros-humble-tf2-ros
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-camera-streampetr
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-tensorrt-common, ros-humble-autoware-utils, ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-image-transport, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2-geometry-msgs, ros-humble-tf2-msgs, ros-humble-tf2-ros
+Description: autoware_camera_streampetr

@@ -1,0 +1,119 @@
+ros-humble-autoware-internal-planning-msgs (1.12.0-0jammy) jammy; urgency=high
+
+  * chore(autoware_internal_planning_msgs): unifiy module load srv (#76 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/76>)
+  * Contributors: Yuki TAKAGI
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 24 Jul 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-planning-msgs (1.11.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_internal_planning_msgs): add new message definitions for new planning framework (#73 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/73>)
+    * feat(msgs): add new message definitions for CandidateTrajectories, CandidateTrajectory, GeneratorInfo, ScoredCandidateTrajectories, and ScoredCandidateTrajectory
+    * fix(msgs): correct message type from TrajectoryGeneratorInfo to GeneratorInfo in CandidateTrajectories.msg
+    * feat(msgs): add message definitions for CandidateTrajectories and related messages in CMakeLists.txt
+    * refactor(msgs): simplify ScoredCandidateTrajectory by removing unnecessary fields
+    ---------
+  * Contributors: Yukihiro Saito
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Tue, 22 Jul 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-planning-msgs (1.10.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 02 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-planning-msgs (1.9.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 22 May 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-planning-msgs (1.8.1-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 06 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-planning-msgs (1.8.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_internal_planning_msgs): port routing services from tier4_planning_msgs (#55 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/55>)
+  * Contributors: Ryohsuke Mitsudome
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 26 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-planning-msgs (1.7.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 05 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-planning-msgs (1.6.0-0jammy) jammy; urgency=high
+
+  * feat: port VelocityLimit messages from tier4_planning_msgs (#49 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/49>)
+  * Contributors: Ryohsuke Mitsudome
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-planning-msgs (1.5.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_internal_planning_msgs): adaption to autoware_motion_utils (#45 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/45>)
+    * feat(autoware_internal_planning_msgs): add msg required by autoware_motion_utils
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * fix(autoware_internal_planning_msgs): fix PathPoint type error cause by duplicate definition in repo autoware_msgs and autoware_internal_msgs (#46 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/46>)
+    * fix(autoware_internal_planning_msgs): fix PathPoint type error cause by duplicate definition in repo autoware_msgs and autoware_internal_msgs
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * Contributors: NorahXiong
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 22 Jan 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-planning-msgs (1.4.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_internal_planning_msgs): add Scenario.msg (#43 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/43>)
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * feat(autoware_internal_planning_msgs): add PathWithLaneId.msg (#42 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/42>)
+    * feat(autoware_internal_planning_msgs): add PathWithLaneId.msg
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * Contributors: cyn-liu
+  * feat(autoware_internal_planning_msgs): add Scenario.msg (#43 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/43>)
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * feat(autoware_internal_planning_msgs): add PathWithLaneId.msg (#42 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/42>)
+    * feat(autoware_internal_planning_msgs): add PathWithLaneId.msg
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * Contributors: cyn-liu
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Tue, 14 Jan 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-planning-msgs (1.3.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 25 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-internal-planning-msgs (1.2.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 18 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-internal-planning-msgs (1.1.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 30 Jun 2024 16:00:00 -0000
+
+ros-humble-autoware-internal-planning-msgs (1.0.1-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 09 May 2024 16:00:00 -0000
+
+

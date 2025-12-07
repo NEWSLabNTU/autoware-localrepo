@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-traffic-light-classifier
+Section: misc
+Priority: optional
+Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-filesystem-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest, ros-humble-autoware-cmake, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-autoware-tensorrt-classifier, ros-humble-autoware-tensorrt-common, ros-humble-autoware-traffic-light-utils, ros-humble-autoware-utils, ros-humble-cv-bridge, ros-humble-image-transport, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tier4-perception-msgs, wget
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-traffic-light-classifier
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-filesystem-dev, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-autoware-tensorrt-classifier, ros-humble-autoware-tensorrt-common, ros-humble-autoware-traffic-light-utils, ros-humble-autoware-utils, ros-humble-cv-bridge, ros-humble-image-transport, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tier4-perception-msgs
+Description: The autoware_traffic_light_classifier package

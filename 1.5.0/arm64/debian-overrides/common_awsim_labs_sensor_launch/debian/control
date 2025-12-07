@@ -1,0 +1,12 @@
+Source: ros-humble-common-awsim-labs-sensor-launch
+Section: misc
+Priority: optional
+Maintainer: Piotr Jaroszek <piotr.jaroszek@robotec.ai>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-lint-common <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-common-awsim-labs-sensor-launch
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-velodyne-driver, ros-humble-velodyne-pointcloud
+Description: The common_sensor_launch package

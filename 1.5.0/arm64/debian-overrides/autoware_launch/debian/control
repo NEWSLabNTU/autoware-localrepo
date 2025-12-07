@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-launch
+Section: misc
+Priority: optional
+Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-lint-common <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-launch
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-bson, python3-tornado, ros-humble-autoware-adapi-adaptors, ros-humble-autoware-global-parameter-loader, ros-humble-rviz2, ros-humble-tier4-autoware-api-launch, ros-humble-tier4-control-launch, ros-humble-tier4-localization-launch, ros-humble-tier4-map-launch, ros-humble-tier4-perception-launch, ros-humble-tier4-planning-launch, ros-humble-tier4-sensing-launch, ros-humble-tier4-simulator-launch, ros-humble-tier4-system-launch, ros-humble-tier4-vehicle-launch
+Description: The autoware_launch package

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-tensorrt-bevformer
+Section: misc
+Priority: optional
+Maintainer: Selventhiran Rengaraj <selventhiran@multicorewareinc.com>
+Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, libopencv-dev, ros-humble-ament-cmake-auto, ros-humble-ament-index-cpp, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-localization-msgs, ros-humble-autoware-perception-msgs, ros-humble-cv-bridge, ros-humble-eigen3-cmake-module, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-tensorrt-bevformer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, libopencv-dev, ros-humble-ament-index-cpp, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-localization-msgs, ros-humble-autoware-perception-msgs, ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-visualization-msgs
+Description: TensorRT implementation of BEVFormer for Autoware

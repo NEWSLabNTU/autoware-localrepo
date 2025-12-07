@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-adapi-version-msgs
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-rosidl-default-generators
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-adapi-version-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-rosidl-default-runtime
+Description: The Autoware AD API version interfaces

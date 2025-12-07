@@ -1,0 +1,12 @@
+Source: ros-humble-sample-sensor-kit-launch
+Section: misc
+Priority: optional
+Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-lint-common <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-sample-sensor-kit-launch
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-gnss-poser, ros-humble-autoware-pointcloud-preprocessor, ros-humble-autoware-vehicle-velocity-converter, ros-humble-common-sensor-launch, ros-humble-topic-tools, ros-humble-ublox-gps, ros-humble-usb-cam
+Description: The sample_sensor_kit_launch package

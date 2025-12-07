@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-internal-metric-msgs
+Section: misc
+Priority: optional
+Maintainer: Temkei Kem <temkei.kem@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-builtin-interfaces, ros-humble-rosidl-default-generators
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-internal-metric-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime
+Description: The autoware_internal_metric_msgs package

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-node
+Section: misc
+Priority: optional
+Maintainer: Mete Fatih Cırıt <mfc@autoware.org>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rclcpp
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-node
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-rclcpp
+Description: Autoware Node is an Autoware Core package designed to provide a base class for all nodes in the system.
