@@ -1,0 +1,12 @@
+Source: ros-humble-parameter-estimator
+Section: misc
+Priority: optional
+Maintainer: Taiki Tanaka <taiki.tanaka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-estimator-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-sensor-msgs, ros-humble-tier4-calibration-msgs, ros-humble-tier4-debug-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-parameter-estimator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-estimator-utils, ros-humble-geometry-msgs, ros-humble-plotjuggler, ros-humble-plotjuggler-ros, ros-humble-rclcpp, ros-humble-sensor-msgs, ros-humble-tier4-calibration-msgs, ros-humble-tier4-debug-msgs
+Description: The parameter_estimator

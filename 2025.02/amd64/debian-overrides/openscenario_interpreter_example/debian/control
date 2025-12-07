@@ -1,0 +1,12 @@
+Source: ros-humble-openscenario-interpreter-example
+Section: misc
+Priority: optional
+Maintainer: Tatsuya Yamasaki <tatsuya.yamasaki@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-all-dev, libboost-dev, ros-humble-ament-cmake, ros-humble-ament-cmake-clang-format <!nocheck>, ros-humble-ament-cmake-copyright <!nocheck>, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-cmake-pep257 <!nocheck>, ros-humble-ament-cmake-xmllint <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-system-msgs, ros-humble-rclcpp, ros-humble-tier4-simulation-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-openscenario-interpreter-example
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, libboost-dev, ros-humble-autoware-system-msgs, ros-humble-rclcpp, ros-humble-tier4-simulation-msgs
+Description: Examples for some TIER IV OpenSCENARIO Interpreter's features

@@ -1,0 +1,67 @@
+ros-humble-autoware-planning-topic-converter (0.40.0-0jammy) jammy; urgency=high
+
+  * Merge branch 'main' into release-0.40.0
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * fix(cpplint): include what you use - planning (#9570 <https://github.com/autowarefoundation/autoware.universe/issues/9570>)
+  * 0.39.0
+  * update changelog
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, M. Fatih Cırıt, Ryohsuke Mitsudome, Yutaka Kondo
+
+ -- Satoshi OTA <satoshi.ota@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-planning-topic-converter (0.39.0-0jammy) jammy; urgency=high
+
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Yutaka Kondo
+
+ -- Satoshi OTA <satoshi.ota@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-planning-topic-converter (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * refactor(universe_utils/motion_utils)!: add autoware namespace (#7594 <https://github.com/autowarefoundation/autoware.universe/issues/7594>)
+  * refactor(motion_utils)!: add autoware prefix and include dir (#7539 <https://github.com/autowarefoundation/autoware.universe/issues/7539>)
+    refactor(motion_utils): add autoware prefix and include dir
+  * feat(autoware_universe_utils)!: rename from tier4_autoware_utils (#7538 <https://github.com/autowarefoundation/autoware.universe/issues/7538>)
+    Co-authored-by: kosuke55 <mailto:kosuke.tnp@gmail.com>
+  * feat(planning_topic_converter): rename to include/autoware/{package_name} (#7515 <https://github.com/autowarefoundation/autoware.universe/issues/7515>)
+    * feat(planning_topic_converter): rename to include/autoware/{package_name}
+    * fix
+    ---------
+  * chore(autoware_planning_topic_converter): add prefix autoware_ (#7296 <https://github.com/autowarefoundation/autoware.universe/issues/7296>)
+    chore(autoware_planning_topic_converter): rename
+  * Contributors: Kosuke Takeuchi, Satoshi OTA, Takayuki Murooka, Yutaka Kondo
+
+ -- Satoshi OTA <satoshi.ota@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-planning-topic-converter (0.26.0-0jammy) jammy; urgency=high
+
+
+
+ -- Satoshi OTA <satoshi.ota@tier4.jp>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

@@ -1,0 +1,12 @@
+Source: ros-humble-tier4-hmi-msgs
+Section: misc
+Priority: optional
+Maintainer: Kah Hooi Tan <kahhooi.tan@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-builtin-interfaces, ros-humble-rosidl-default-generators, ros-humble-tier4-external-api-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tier4-hmi-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime, ros-humble-tier4-external-api-msgs
+Description: The tier4_hmi_msgs package

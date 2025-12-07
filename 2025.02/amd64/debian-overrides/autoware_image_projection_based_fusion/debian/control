@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-image-projection-based-fusion
+Section: misc
+Priority: optional
+Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-euclidean-cluster, ros-humble-autoware-lidar-centerpoint, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-point-types, ros-humble-autoware-universe-utils, ros-humble-cv-bridge, ros-humble-image-geometry, ros-humble-image-transport, ros-humble-message-filters, ros-humble-perception-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2-eigen, ros-humble-tf2-ros, ros-humble-tf2-sensor-msgs, ros-humble-tier4-perception-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-image-projection-based-fusion
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-euclidean-cluster, ros-humble-autoware-lidar-centerpoint, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-point-types, ros-humble-autoware-universe-utils, ros-humble-cv-bridge, ros-humble-image-geometry, ros-humble-image-transport, ros-humble-message-filters, ros-humble-perception-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2-eigen, ros-humble-tf2-ros, ros-humble-tf2-sensor-msgs, ros-humble-tier4-perception-msgs
+Description: The autoware_image_projection_based_fusion package

@@ -1,0 +1,12 @@
+Source: ros-humble-status-monitor
+Section: misc
+Priority: optional
+Maintainer: Tatsuya Yamasaki <tatsuya.yamasaki@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-all-dev, nlohmann-json3-dev, ros-humble-ament-cmake
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-status-monitor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, nlohmann-json3-dev
+Description: none

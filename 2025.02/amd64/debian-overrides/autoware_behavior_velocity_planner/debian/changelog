@@ -1,0 +1,103 @@
+ros-humble-autoware-behavior-velocity-planner (0.40.0-0jammy) jammy; urgency=high
+
+  * Merge branch 'main' into release-0.40.0
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * fix(cpplint): include what you use - planning (#9570 <https://github.com/autowarefoundation/autoware.universe/issues/9570>)
+  * feat(behavior_velocity_planner)!: remove stop_reason (#9452 <https://github.com/autowarefoundation/autoware.universe/issues/9452>)
+  * refactor(autoware_behavior_velocity_planner_common,autoware_behavior_velocity_planner): separate param files (#9470 <https://github.com/autowarefoundation/autoware.universe/issues/9470>)
+    * refactor(autoware_behavior_velocity_planner_common,autoware_behavior_velocity_planner): separate param files
+    * Update planning/autoware_static_centerline_generator/test/test_static_centerline_generator.test.py
+    Co-authored-by: Kyoichi Sugahara <mailto:32741405+kyoichi-sugahara@users.noreply.github.com>
+    * fix
+    ---------
+    Co-authored-by: Kyoichi Sugahara <mailto:32741405+kyoichi-sugahara@users.noreply.github.com>
+  * 0.39.0
+  * update changelog
+  * Merge commit '6a1ddbd08bd' into release-0.39.0
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix(autoware_behavior_velocity_planner): fix clang-diagnostic-format-security (#9411 <https://github.com/autowarefoundation/autoware.universe/issues/9411>)
+    fix: clang-diagnostic-format-security
+  * feat(behavior_velocity_planner): replace first_stop_path_point_index (#9296 <https://github.com/autowarefoundation/autoware.universe/issues/9296>)
+    * feat(behavior_velocity_planner): replace first_stop_path_point_index
+    * add const
+    * Update planning/behavior_velocity_planner/autoware_behavior_velocity_traffic_light_module/src/scene.cpp
+    Co-authored-by: Kosuke Takeuchi <mailto:kosuke.tnp@gmail.com>
+    * Update planning/behavior_velocity_planner/autoware_behavior_velocity_planner/src/planner_manager.cpp
+    Co-authored-by: Kosuke Takeuchi <mailto:kosuke.tnp@gmail.com>
+    ---------
+    Co-authored-by: Kosuke Takeuchi <mailto:kosuke.tnp@gmail.com>
+  * fix(bvp): remove callback group (#9294 <https://github.com/autowarefoundation/autoware.universe/issues/9294>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * fix(bvp): use polling subscriber (#9242 <https://github.com/autowarefoundation/autoware.universe/issues/9242>)
+    * fix(bvp): use polling subscriber
+    * fix: use newest policy
+    ---------
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, M. Fatih Cırıt, Mamoru Sobue, Ryohsuke Mitsudome, Satoshi OTA, Yukinari Hisaki, Yutaka Kondo, kobayu858
+
+ -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-behavior-velocity-planner (0.39.0-0jammy) jammy; urgency=high
+
+  * Merge commit '6a1ddbd08bd' into release-0.39.0
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * fix(bvp): use polling subscriber (#9242 <https://github.com/autowarefoundation/autoware.universe/issues/9242>)
+    * fix(bvp): use polling subscriber
+    * fix: use newest policy
+    ---------
+  * Contributors: Esteve Fernandez, Satoshi OTA, Yutaka Kondo
+
+ -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-behavior-velocity-planner (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * fix(autoware_behavior_velocity_planner): fix passedByValue (#8213 <https://github.com/autowarefoundation/autoware.universe/issues/8213>)
+    fix:passedByValue
+  * chore(autoware_behavior_velocity_planner): remove no_prefix function from tests (#7589 <https://github.com/autowarefoundation/autoware.universe/issues/7589>)
+  * feat: add autoware_ prefix to lanelet2_extension (#7640 <https://github.com/autowarefoundation/autoware.universe/issues/7640>)
+  * refactor(autoware_behavior_velocity_speed_bump_module): prefix package and namespace with autoware (#7467 <https://github.com/autowarefoundation/autoware.universe/issues/7467>)
+  * refactor(universe_utils/motion_utils)!: add autoware namespace (#7594 <https://github.com/autowarefoundation/autoware.universe/issues/7594>)
+  * refactor(behavior_velocity_no_drivable_lane_module): prefix package and namespace with autoware (#7469 <https://github.com/autowarefoundation/autoware.universe/issues/7469>)
+  * refactor(motion_utils)!: add autoware prefix and include dir (#7539 <https://github.com/autowarefoundation/autoware.universe/issues/7539>)
+    refactor(motion_utils): add autoware prefix and include dir
+  * feat(autoware_universe_utils)!: rename from tier4_autoware_utils (#7538 <https://github.com/autowarefoundation/autoware.universe/issues/7538>)
+    Co-authored-by: kosuke55 <mailto:kosuke.tnp@gmail.com>
+  * chore(behavior_velocity_planner): fix CODEOWNERS and page links (#7534 <https://github.com/autowarefoundation/autoware.universe/issues/7534>)
+    * chore(behavior_velocity_planner): fix CODEOWNERS and page links
+    * fix: fix page link
+    ---------
+  * refactor(velocity_smoother): rename to include/autoware/{package_name} (#7533 <https://github.com/autowarefoundation/autoware.universe/issues/7533>)
+  * chore(behavior_velocity_planner): move packages (#7526 <https://github.com/autowarefoundation/autoware.universe/issues/7526>)
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, Kosuke Takeuchi, Takayuki Murooka, Yutaka Kondo, kobayu858
+
+ -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-behavior-velocity-planner (0.26.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-planning-data-analyzer
+Section: misc
+Priority: optional
+Maintainer: Satoshi Ota <satoshi.ota@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-frenet-planner, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-path-sampler, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-msgs, ros-humble-eigen3-cmake-module, ros-humble-magic-enum, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-cpp, ros-humble-std-srvs, ros-humble-tf2-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-planning-data-analyzer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-frenet-planner, ros-humble-autoware-map-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-path-sampler, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-msgs, ros-humble-magic-enum, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-cpp, ros-humble-std-srvs, ros-humble-tf2-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs, ros-humble-visualization-msgs
+Description: The autoware_planning_data_analyzer package

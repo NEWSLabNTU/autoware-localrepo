@@ -1,0 +1,11 @@
+ros-humble-autoware-cmake (1.0.0-0jammy) jammy; urgency=high
+
+  * Merge pull request #1 <https://github.com/youtalk/autoware_cmake/issues/1> from youtalk/import-from-autoware-common
+    feat: import from autoware_common
+  * add maintainer
+  * move to autoware_cmake
+  * Contributors: Yutaka Kondo
+
+ -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Wed, 01 May 2024 16:00:00 -0000
+
+

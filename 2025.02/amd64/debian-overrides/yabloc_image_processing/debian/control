@@ -1,0 +1,12 @@
+Source: ros-humble-yabloc-image-processing
+Section: misc
+Priority: optional
+Maintainer: Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-universe-utils, ros-humble-cv-bridge, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-visualization-msgs, ros-humble-yabloc-common
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-yabloc-image-processing
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-universe-utils, ros-humble-cv-bridge, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-visualization-msgs, ros-humble-yabloc-common
+Description: YabLoc image processing package

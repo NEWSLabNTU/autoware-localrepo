@@ -1,0 +1,12 @@
+Source: ros-humble-openscenario-preprocessor-msgs
+Section: misc
+Priority: optional
+Maintainer: Kotaro Yoshimoto <kotaro.yoshimoto@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-builtin-interfaces, ros-humble-rosidl-default-generators, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-openscenario-preprocessor-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
+Description: ROS message types for package openscenario_preprocessor

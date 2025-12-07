@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-qp-interface
+Section: misc
+Priority: optional
+Maintainer: Takayuki Murooka <takayuki.murooka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, libeigen3-dev <!nocheck>, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-osqp-vendor, ros-humble-proxsuite, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-qp-interface
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-osqp-vendor, ros-humble-proxsuite, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: Interface for the QP solvers

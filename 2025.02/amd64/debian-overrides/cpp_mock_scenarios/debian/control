@@ -1,0 +1,12 @@
+Source: ros-humble-cpp-mock-scenarios
+Section: misc
+Priority: optional
+Maintainer: masaya <masaya.kataoka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-cmake-clang-format <!nocheck>, ros-humble-ament-cmake-copyright <!nocheck>, ros-humble-ament-cmake-lint-cmake <!nocheck>, ros-humble-ament-cmake-pep257 <!nocheck>, ros-humble-ament-cmake-xmllint <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-generate-parameter-library, ros-humble-kashiwanoha-map, ros-humble-simple-junit, ros-humble-simple-sensor-simulator, ros-humble-traffic-simulator
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-cpp-mock-scenarios
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ament-cmake-test, ros-humble-behavior-tree-plugin, ros-humble-generate-parameter-library, ros-humble-kashiwanoha-map, ros-humble-openscenario-visualization, ros-humble-scenario-test-runner, ros-humble-simple-junit, ros-humble-simple-sensor-simulator, ros-humble-traffic-simulator
+Description: C++ mock scenarios

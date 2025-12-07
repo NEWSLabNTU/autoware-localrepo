@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-lanelet2-map-validator
+Section: misc
+Priority: optional
+Maintainer: Taiki Yamada <taiki.yamada@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), nlohmann-json3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-lanelet2-core, ros-humble-lanelet2-io, ros-humble-lanelet2-maps, ros-humble-lanelet2-projection, ros-humble-lanelet2-routing, ros-humble-lanelet2-traffic-rules, ros-humble-lanelet2-validation
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-lanelet2-map-validator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, nlohmann-json3-dev, ros-humble-autoware-lanelet2-extension, ros-humble-lanelet2-core, ros-humble-lanelet2-io, ros-humble-lanelet2-maps, ros-humble-lanelet2-projection, ros-humble-lanelet2-routing, ros-humble-lanelet2-traffic-rules, ros-humble-lanelet2-validation
+Description: Validation tool for lanelet2 maps especially for Autoware usage

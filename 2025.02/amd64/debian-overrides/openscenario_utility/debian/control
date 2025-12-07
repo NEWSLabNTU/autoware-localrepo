@@ -1,0 +1,12 @@
+Source: ros-humble-openscenario-utility
+Section: misc
+Priority: optional
+Maintainer: Tatsuya Yamasaki <tatsuya.yamasaki@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), python3-numpy, python3-yaml, ros-humble-ament-cmake, ros-humble-ament-cmake-python, ros-humble-rclpy
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-openscenario-utility
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-numpy, python3-yaml, ros-humble-rclpy
+Description: Utility tools for ASAM OpenSCENARIO 1.2.0

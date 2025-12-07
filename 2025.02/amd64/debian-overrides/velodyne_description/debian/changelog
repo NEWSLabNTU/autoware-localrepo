@@ -1,0 +1,109 @@
+ros-humble-velodyne-description (2.0.2-0jammy) jammy; urgency=high
+
+  * Adds tf_prefix SDF parameter
+  * Contributors: Micho Radovnikovich
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Sun, 26 Dec 2021 16:00:00 -0000
+
+ros-humble-velodyne-description (2.0.1-0jammy) jammy; urgency=high
+
+
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Wed, 13 Oct 2021 16:00:00 -0000
+
+ros-humble-velodyne-description (2.0.0-0jammy) jammy; urgency=high
+
+  * Merged in ROS2 Foxy support (pull request #14)
+    * Remove support for old Gazebo versions
+    * Lazy subscriber using timer in the absence of publisher connection callback
+    * Python launch file
+    * Add env-hooks for GAZEBO_MODEL_PATH
+  * Contributors: Kevin Hallenbeck, Gonzalo de Pedro, Joep Tool
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Mon, 11 Oct 2021 16:00:00 -0000
+
+ros-humble-velodyne-description (1.0.12-0jammy) jammy; urgency=high
+
+
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Mon, 29 Mar 2021 16:00:00 -0000
+
+ros-humble-velodyne-description (1.0.11-0jammy) jammy; urgency=high
+
+  * Add organize_cloud parameter to match velodyne_pointcloud
+  * Contributors: Kevin Hallenbeck
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Mon, 22 Feb 2021 16:00:00 -0000
+
+ros-humble-velodyne-description (1.0.10-0jammy) jammy; urgency=high
+
+  * Change PointCloud visualization type from flat squares to points in example rviz config
+  * Bump minimum CMake version to 3.0.2 in all CMakeLists.txt
+  * Fix xacro macro instantiation
+  * Contributors: Kevin Hallenbeck, Micho Radovnikovich
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Sun, 02 Aug 2020 16:00:00 -0000
+
+ros-humble-velodyne-description (1.0.9-0jammy) jammy; urgency=high
+
+
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Thu, 07 Mar 2019 16:00:00 -0000
+
+ros-humble-velodyne-description (1.0.8-0jammy) jammy; urgency=high
+
+
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Fri, 07 Sep 2018 16:00:00 -0000
+
+ros-humble-velodyne-description (1.0.7-0jammy) jammy; urgency=high
+
+  * Added GPU support
+  * Updated inertia tensors for VLP-16 and HDL-32E to realistic values
+  * Removed unnecessary file extraction code in cmake
+  * Contributors: Kevin Hallenbeck, Max Schwarz
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Mon, 02 Jul 2018 16:00:00 -0000
+
+ros-humble-velodyne-description (1.0.6-0jammy) jammy; urgency=high
+
+  * Use robotNamespace as prefix for PointCloud2 topic frame_id by default
+  * Contributors: Micho Radovnikovich
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Mon, 16 Oct 2017 16:00:00 -0000
+
+ros-humble-velodyne-description (1.0.5-0jammy) jammy; urgency=high
+
+  * Increased minimum collision range to prevent self-clipping when in motion
+  * Added many URDF parameters, and set example sample count to reasonable values
+  * Launch rviz with gazebo
+  * Contributors: Kevin Hallenbeck
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Mon, 04 Sep 2017 16:00:00 -0000
+
+ros-humble-velodyne-description (1.0.4-0jammy) jammy; urgency=high
+
+  * Updated package.xml format to version 2
+  * Contributors: Kevin Hallenbeck
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Sun, 23 Apr 2017 16:00:00 -0000
+
+ros-humble-velodyne-description (1.0.3-0jammy) jammy; urgency=high
+
+  * Contributors: Kevin Hallenbeck
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Fri, 12 Aug 2016 16:00:00 -0000
+
+ros-humble-velodyne-description (1.0.2-0jammy) jammy; urgency=high
+
+  * Moved M_PI property out of macro to support multiple instances
+  * Materials caused problems with more than one sensors. Removed.
+  * Added example urdf and gazebo
+  * Changed to DAE meshes
+  * Added meshes. Added HDL-32E.
+  * Start from block laser
+  * Contributors: Kevin Hallenbeck
+
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Tue, 02 Feb 2016 16:00:00 -0000
+
+

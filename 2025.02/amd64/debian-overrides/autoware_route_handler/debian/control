@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-route-handler
+Section: misc
+Priority: optional
+Maintainer: Fumiya Watanabe <fumiya.watanabe@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libyaml-cpp-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-test-utils, ros-humble-autoware-universe-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-ros
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-route-handler
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libyaml-cpp-dev, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-test-utils, ros-humble-autoware-universe-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-ros
+Description: The route_handling package

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-smart-mpc-trajectory-follower
+Section: misc
+Priority: optional
+Maintainer: Masayuki Aino <masayuki.aino@proxima-ai-tech.com>
+Build-Depends: debhelper (>= 9.0.0), python3-scipy, python3-torch, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-python, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-index-python <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-control-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-testing <!nocheck>, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-cmd-gate, ros-humble-autoware-vehicle-msgs, ros-humble-pybind11-vendor, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-ros-testing <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-smart-mpc-trajectory-follower
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-scipy, python3-torch, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-control-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-cmd-gate, ros-humble-autoware-vehicle-msgs, ros-humble-pybind11-vendor, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-ros2launch
+Description: Nodes to follow a trajectory by generating control commands using smart mpc

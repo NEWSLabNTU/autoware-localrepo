@@ -1,0 +1,12 @@
+Source: ros-humble-eagleye-msgs
+Section: misc
+Priority: optional
+Maintainer: osamu.sekino <osamu.sekino@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rosidl-default-generators, ros-humble-rtklib-msgs, ros-humble-sensor-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-eagleye-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rosidl-default-runtime, ros-humble-rtklib-msgs, ros-humble-sensor-msgs
+Description: The eagleye_msgs package

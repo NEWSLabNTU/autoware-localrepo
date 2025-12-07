@@ -1,0 +1,122 @@
+ros-humble-autoware-compare-map-segmentation (0.40.0-0jammy) jammy; urgency=high
+
+  * Merge branch 'main' into release-0.40.0
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * chore(compare_map_segmentation): rename defined type (#9181 <https://github.com/autowarefoundation/autoware.universe/issues/9181>)
+  * fix(cpplint): include what you use - perception (#9569 <https://github.com/autowarefoundation/autoware.universe/issues/9569>)
+  * 0.39.0
+  * update changelog
+  * Merge commit '6a1ddbd08bd' into release-0.39.0
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(compare_map_segmentation): add maintainer (#9371 <https://github.com/autowarefoundation/autoware.universe/issues/9371>)
+  * fix(compare_map_segmentation): timer period mismatched with parameter (#9259 <https://github.com/autowarefoundation/autoware.universe/issues/9259>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * fix(autoware_compare_map_segmentation): fix cppcheck constVariableReference (#9196 <https://github.com/autowarefoundation/autoware.universe/issues/9196>)
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, M. Fatih Cırıt, Ryohsuke Mitsudome, Ryuta Kambe, Yutaka Kondo, badai nguyen
+
+ -- amc-nu <abrahammonrroy@yahoo.com>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-compare-map-segmentation (0.39.0-0jammy) jammy; urgency=high
+
+  * Merge commit '6a1ddbd08bd' into release-0.39.0
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * fix(autoware_compare_map_segmentation): fix cppcheck constVariableReference (#9196 <https://github.com/autowarefoundation/autoware.universe/issues/9196>)
+  * Contributors: Esteve Fernandez, Ryuta Kambe, Yutaka Kondo
+
+ -- amc-nu <abrahammonrroy@yahoo.com>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-compare-map-segmentation (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * refactor(autoware_point_types): prefix namespace with autoware::point_types (#9169 <https://github.com/autowarefoundation/autoware.universe/issues/9169>)
+  * refactor(autoware_compare_map_segmentation): resolve clang-tidy error in autoware_compare_map_segmentation (#9162 <https://github.com/autowarefoundation/autoware.universe/issues/9162>)
+    * refactor(autoware_compare_map_segmentation): resolve clang-tidy error in autoware_compare_map_segmentation
+    * style(pre-commit): autofix
+    * include message_filters as SYSTEM
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * fix(compare_map_segmentation): add missing mutex lock (#9097 <https://github.com/autowarefoundation/autoware.universe/issues/9097>)
+    * fix(compare_map_segmentation): missing mutux
+    * chore: rename mutex_
+    * fix: remove unnecessary mutex
+    * fix: typos
+    * chore: minimize mutex scope
+    * chore: change to lock_guard
+    * fix: check tree initialization
+    * fix: memory ordering
+    * fix: replace all static_map_loader_mutex_
+    ---------
+  * fix(compare_map_segmentation): throw runtime error when using non-split map pointcloud for DynamicMapLoader (#9024 <https://github.com/autowarefoundation/autoware.universe/issues/9024>)
+    * fix(compare_map_segmentation): throw runtime error when using non-split map pointcloud for DynamicMapLoader
+    * chore: typo
+    * fix: launch
+    * Update perception/autoware_compare_map_segmentation/schema/voxel_distance_based_compare_map_filter.schema.json
+    Co-authored-by: Yoshi Ri <mailto:yoshiyoshidetteiu@gmail.com>
+    * fix: change to RCLCPP_ERROR
+    ---------
+    Co-authored-by: Yoshi Ri <mailto:yoshiyoshidetteiu@gmail.com>
+  * chore(compare_map_segmentation): add node tests (#8907 <https://github.com/autowarefoundation/autoware.universe/issues/8907>)
+    * chore(compare_map_segmentation): add test for voxel_based_compare_map_filter
+    * feat: add test for other compare map filter
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * fix(autoware_compare_map_segmentation): typo bug fix (#8939 <https://github.com/autowarefoundation/autoware.universe/issues/8939>)
+    fix(compare_map_filter): typo bug fix
+  * fix(autoware_compare_map_segmentation): fix unusedFunction (#8725 <https://github.com/autowarefoundation/autoware.universe/issues/8725>)
+    fix:unusedFunction
+  * fix(compare_map_segmentation): use squared distance to compare threshold (#8744 <https://github.com/autowarefoundation/autoware.universe/issues/8744>)
+    fix: use square distance to compare threshold
+  * fix(autoware_compare_map_segmentation): fix unusedFunction (#8565 <https://github.com/autowarefoundation/autoware.universe/issues/8565>)
+    fix:unusedFunction
+  * fix(autoware_compare_map_segmentation): fix cppcheck warnings of functionStatic (#8263 <https://github.com/autowarefoundation/autoware.universe/issues/8263>)
+    * fix: deal with functionStatic warnings
+    * fix: deal with functionStatic warnings
+    * fix: remove unnecessary const
+    * fix: build error
+    ---------
+  * fix(autoware_compare_map_segmentation): fix uninitMemberVar (#8338 <https://github.com/autowarefoundation/autoware.universe/issues/8338>)
+    fix:uninitMemberVar
+  * fix(autoware_compare_map_segmentation): fix passedByValue (#8233 <https://github.com/autowarefoundation/autoware.universe/issues/8233>)
+    fix:passedByValue
+  * fix(autoware_compare_map_segmentation): fix redundantInitialization warning (#8226 <https://github.com/autowarefoundation/autoware.universe/issues/8226>)
+  * revert: revert "refactor(autoware_map_msgs): modify pcd metadata msg (#7852 <https://github.com/autowarefoundation/autoware.universe/issues/7852>)" (#8180 <https://github.com/autowarefoundation/autoware.universe/issues/8180>)
+  * refactor(autoware_map_msgs): modify pcd metadata msg (#7852 <https://github.com/autowarefoundation/autoware.universe/issues/7852>)
+  * refactor(compare_map_segmentation): add package name prefix of autoware_ (#8005 <https://github.com/autowarefoundation/autoware.universe/issues/8005>)
+    * refactor(compare_map_segmentation): add package name prefix of autoware_
+    * docs: update Readme
+    ---------
+  * Contributors: Esteve Fernandez, Ryohsuke Mitsudome, Ryuta Kambe, Yamato Ando, Yoshi Ri, Yukinari Hisaki, Yutaka Kondo, badai nguyen, kobayu858, taisa1
+
+ -- amc-nu <abrahammonrroy@yahoo.com>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-compare-map-segmentation (0.26.0-0jammy) jammy; urgency=high
+
+
+
+ -- amc-nu <abrahammonrroy@yahoo.com>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

@@ -1,0 +1,12 @@
+Source: ros-humble-tier4-control-rviz-plugin
+Section: misc
+Priority: optional
+Maintainer: Taiki Tanaka <taiki.tanaka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-control-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-msgs, ros-humble-rviz-common, ros-humble-rviz-default-plugins, ros-humble-rviz-ogre-vendor, ros-humble-tier4-control-msgs, ros-humble-tier4-external-api-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tier4-control-rviz-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-autoware-control-msgs, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-msgs, ros-humble-rviz-common, ros-humble-rviz-default-plugins, ros-humble-rviz-ogre-vendor, ros-humble-tier4-control-msgs, ros-humble-tier4-external-api-msgs
+Description: The tier4_vehicle_rviz_plugin package

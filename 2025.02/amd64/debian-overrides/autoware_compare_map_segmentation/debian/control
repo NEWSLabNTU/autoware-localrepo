@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-compare-map-segmentation
+Section: misc
+Priority: optional
+Maintainer: amc-nu <abrahammonrroy@yahoo.com>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-point-types, ros-humble-autoware-pointcloud-preprocessor, ros-humble-autoware-test-utils, ros-humble-autoware-universe-utils, ros-humble-grid-map-pcl, ros-humble-grid-map-ros, ros-humble-nav-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-compare-map-segmentation
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-map-msgs, ros-humble-autoware-point-types, ros-humble-autoware-pointcloud-preprocessor, ros-humble-autoware-test-utils, ros-humble-autoware-universe-utils, ros-humble-grid-map-pcl, ros-humble-grid-map-ros, ros-humble-nav-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs
+Description: The ROS 2 autoware_compare_map_segmentation package

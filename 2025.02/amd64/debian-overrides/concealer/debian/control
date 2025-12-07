@@ -1,0 +1,12 @@
+Source: ros-humble-concealer
+Section: misc
+Priority: optional
+Maintainer: Tatsuya Yamasaki <tatsuya.yamasaki@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-dev, ros-humble-ament-cmake, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-clang-format <!nocheck>, ros-humble-ament-cmake-copyright <!nocheck>, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-cmake-lint-cmake <!nocheck>, ros-humble-ament-index-cpp, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-control-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-scenario-simulator-exception, ros-humble-std-msgs, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-external-api-msgs, ros-humble-tier4-planning-msgs, ros-humble-tier4-rtc-msgs, ros-humble-traffic-simulator-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-concealer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, ros-humble-ament-index-cpp, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-control-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-scenario-simulator-exception, ros-humble-std-msgs, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-external-api-msgs, ros-humble-tier4-planning-msgs, ros-humble-tier4-rtc-msgs, ros-humble-traffic-simulator-msgs
+Description: Provides a class 'Autoware' to conceal miscellaneous things to simplify Autoware management of the simulator.

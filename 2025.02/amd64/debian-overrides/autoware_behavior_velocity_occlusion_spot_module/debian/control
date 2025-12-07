@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-behavior-velocity-occlusion-spot-module
+Section: misc
+Priority: optional
+Maintainer: Taiki Tanaka <taiki.tanaka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-dev, libopencv-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-cmake, ros-humble-autoware-grid-map-utils, ros-humble-autoware-interpolation, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-grid-map-ros, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-behavior-velocity-occlusion-spot-module
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, libopencv-dev, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-grid-map-utils, ros-humble-autoware-interpolation, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-grid-map-ros, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-visualization-msgs
+Description: The autoware_behavior_velocity_occlusion_spot_module package

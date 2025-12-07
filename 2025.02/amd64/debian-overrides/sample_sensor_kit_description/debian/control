@@ -1,0 +1,12 @@
+Source: ros-humble-sample-sensor-kit-description
+Section: misc
+Priority: optional
+Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-velodyne-description
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-sample-sensor-kit-description
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-velodyne-description
+Description: The sample_sensor_kit_description package

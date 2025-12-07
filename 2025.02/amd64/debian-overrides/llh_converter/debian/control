@@ -1,0 +1,12 @@
+Source: ros-humble-llh-converter
+Section: misc
+Priority: optional
+Maintainer: Tomoya-Sato <tomoya.sato@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libgeographic-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-llh-converter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgeographic-dev
+Description: The height converter package between ellipsoid and orthometric

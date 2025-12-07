@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-gnss-poser
+Section: misc
+Priority: optional
+Maintainer: Yamato Ando <yamato.ando@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-dev, libgeographic-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-component-interface-specs, ros-humble-autoware-component-interface-utils, ros-humble-autoware-geography-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-sensing-msgs, ros-humble-geographic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-gnss-poser
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgeographic-dev, ros-humble-autoware-component-interface-specs, ros-humble-autoware-component-interface-utils, ros-humble-autoware-geography-utils, ros-humble-autoware-sensing-msgs, ros-humble-geographic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs
+Description: The ROS 2 autoware_gnss_poser package

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-cuda-utils
+Section: misc
+Priority: optional
+Maintainer: Manato Hirabayashi <manato.hirabayashi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-cuda-utils
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, 
+Description: cuda utility library

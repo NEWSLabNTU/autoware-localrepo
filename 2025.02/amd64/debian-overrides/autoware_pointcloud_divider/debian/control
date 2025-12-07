@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-pointcloud-divider
+Section: misc
+Priority: optional
+Maintainer: Anh Nguyen <anh.nguyen.2@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libpcl-dev, libyaml-cpp-dev, ros-humble-ament-cmake-auto, ros-humble-autoware-cmake, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-pointcloud-divider
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, libyaml-cpp-dev, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-ros2launch
+Description: A package for dividing PCD files to non-overlapped segments

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-route-client
+Section: misc
+Priority: optional
+Maintainer: Fumiya Watanabe <fumiya.watanabe@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-geometry-msgs, ros-humble-rclpy, ros-humble-std-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-route-client
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-geometry-msgs, ros-humble-rclpy, ros-humble-std-msgs
+Description: The autoware_route_client package

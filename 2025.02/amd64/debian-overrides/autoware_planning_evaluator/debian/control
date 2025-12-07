@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-planning-evaluator
+Section: misc
+Priority: optional
+Maintainer: Maxime CLEMENT <maxime.clement@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, nlohmann-json3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-index-cpp <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-universe-utils, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-tier4-metric-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-planning-evaluator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, nlohmann-json3-dev, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-universe-utils, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-tier4-metric-msgs
+Description: ROS 2 node for evaluating planners

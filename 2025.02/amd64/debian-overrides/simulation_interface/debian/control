@@ -1,0 +1,12 @@
+Source: ros-humble-simulation-interface
+Section: misc
+Priority: optional
+Maintainer: Masaya Kataoka <masaya.kataoka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-all-dev, libprotobuf-dev, libprotobuf23, libprotoc-dev, protobuf-compiler, ros-humble-ament-cmake, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-clang-format <!nocheck>, ros-humble-ament-cmake-copyright <!nocheck>, ros-humble-ament-cmake-lint-cmake <!nocheck>, ros-humble-ament-cmake-pep257 <!nocheck>, ros-humble-ament-cmake-xmllint <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-control-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-builtin-interfaces, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rosgraph-msgs, ros-humble-scenario-simulator-exception, ros-humble-status-monitor, ros-humble-traffic-simulator-msgs, ros-humble-zmqpp-vendor
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-simulation-interface
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, libprotobuf-dev, libprotobuf23, libprotoc-dev, protobuf-compiler, ros-humble-autoware-control-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-builtin-interfaces, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rosgraph-msgs, ros-humble-scenario-simulator-exception, ros-humble-status-monitor, ros-humble-traffic-simulator-msgs, ros-humble-zmqpp-vendor
+Description: packages to define interface between simulator and scenario interpreter

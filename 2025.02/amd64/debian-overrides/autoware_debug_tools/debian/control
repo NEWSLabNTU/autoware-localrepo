@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-debug-tools
+Section: misc
+Priority: optional
+Maintainer: Yukinari Hisaki <yhisaki31@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), python3-pytest <!nocheck>, ros-humble-ament-copyright <!nocheck>, ros-humble-ament-flake8 <!nocheck>, ros-humble-ament-pep257 <!nocheck>, python3-all, python3-setuptools, dh-python
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-debug-tools
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, ros-humble-rclpy, ros-humble-tier4-debug-msgs
+Description: The autoware_debug_tools package

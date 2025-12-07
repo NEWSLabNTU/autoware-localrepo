@@ -1,0 +1,12 @@
+Source: ros-humble-tier4-control-launch
+Section: misc
+Priority: optional
+Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tier4-control-launch
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-control-evaluator, ros-humble-autoware-external-cmd-converter, ros-humble-autoware-external-cmd-selector, ros-humble-autoware-lane-departure-checker, ros-humble-autoware-shift-decider, ros-humble-autoware-trajectory-follower-node, ros-humble-autoware-vehicle-cmd-gate
+Description: The tier4_control_launch package

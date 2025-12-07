@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-test-node
+Section: misc
+Priority: optional
+Maintainer: M. Fatih Cırıt <mfc@autoware.org>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-autoware-cmake, ros-humble-autoware-node, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rclcpp-lifecycle
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-test-node
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-node, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rclcpp-lifecycle
+Description: Test package for Autoware Node.

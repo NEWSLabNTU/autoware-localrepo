@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-map-height-fitter
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libpcl-common1.12, ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-geometry-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-localization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-map-height-fitter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-common1.12, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-geometry-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-localization-msgs
+Description: The autoware_map_height_fitter package

@@ -1,0 +1,12 @@
+Source: ros-humble-simple-sensor-simulator
+Section: misc
+Priority: optional
+Maintainer: masaya kataoka <masaya.kataoka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-all-dev, libeigen3-dev, libgoogle-glog-dev, libpcl-dev, ros-humble-ament-cmake, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-clang-format <!nocheck>, ros-humble-ament-cmake-copyright <!nocheck>, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-cmake-lint-cmake <!nocheck>, ros-humble-ament-cmake-pep257 <!nocheck>, ros-humble-ament-cmake-xmllint <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-embree-vendor, ros-humble-geographic-msgs, ros-humble-geometry, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-simulation-interface, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-traffic-simulator, ros-humble-traffic-simulator-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-simple-sensor-simulator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, libeigen3-dev, libgoogle-glog-dev, libpcl-dev, ros-humble-autoware-perception-msgs, ros-humble-embree-vendor, ros-humble-geographic-msgs, ros-humble-geometry, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rviz2, ros-humble-simulation-interface, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-traffic-simulator, ros-humble-traffic-simulator-msgs, ros-humble-visualization-msgs
+Description: simple_sensor_simulator package

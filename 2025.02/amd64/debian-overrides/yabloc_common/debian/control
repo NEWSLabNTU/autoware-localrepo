@@ -1,0 +1,12 @@
+Source: ros-humble-yabloc-common
+Section: misc
+Priority: optional
+Maintainer: Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-ros, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-signal-processing, ros-humble-autoware-universe-utils, ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosidl-default-generators, ros-humble-sensor-msgs, ros-humble-sophus, ros-humble-std-msgs, ros-humble-tf2-ros, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-yabloc-common
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-signal-processing, ros-humble-autoware-universe-utils, ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosidl-default-runtime, ros-humble-sensor-msgs, ros-humble-sophus, ros-humble-std-msgs, ros-humble-tf2-ros, ros-humble-visualization-msgs
+Description: YabLoc common library

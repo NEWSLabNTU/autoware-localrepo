@@ -1,0 +1,12 @@
+Source: ros-humble-control-debug-tools
+Section: misc
+Priority: optional
+Maintainer: Zhe Shen <zhe.shen@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-control-debug-tools
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, 
+Description: The control_debug_tools package

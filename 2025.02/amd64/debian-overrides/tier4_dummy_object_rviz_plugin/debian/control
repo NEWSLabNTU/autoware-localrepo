@@ -1,0 +1,12 @@
+Source: ros-humble-tier4-dummy-object-rviz-plugin
+Section: misc
+Priority: optional
+Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-dev, libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rviz-common, ros-humble-rviz-default-plugins, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-simulation-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tier4-dummy-object-rviz-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-rviz-common, ros-humble-rviz-default-plugins, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-simulation-msgs
+Description: The tier4_dummy_object_rviz_plugin package

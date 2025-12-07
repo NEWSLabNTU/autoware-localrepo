@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-trajectory
+Section: misc
+Priority: optional
+Maintainer: Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-planning-msgs, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tier4-planning-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-trajectory
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-planning-msgs, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tier4-planning-msgs
+Description: The autoware_trajectory package

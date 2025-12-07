@@ -1,0 +1,12 @@
+Source: ros-humble-system-diagnostic-monitor
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-system-diagnostic-monitor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-diagnostic-graph-aggregator, ros-humble-diagnostic-msgs, ros-humble-rclpy, ros-humble-tier4-system-msgs
+Description: The system_diagnostic_monitor package

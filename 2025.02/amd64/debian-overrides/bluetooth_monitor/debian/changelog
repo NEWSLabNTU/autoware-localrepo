@@ -1,0 +1,116 @@
+ros-humble-bluetooth-monitor (0.40.0-0jammy) jammy; urgency=high
+
+  * Merge branch 'main' into release-0.40.0
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * fix(cpplint): include what you use - system (#9573 <https://github.com/autowarefoundation/autoware.universe/issues/9573>)
+  * 0.39.0
+  * update changelog
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, M. Fatih Cırıt, Ryohsuke Mitsudome, Yutaka Kondo
+
+ -- Fumihito Ito <fumihito.ito@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-bluetooth-monitor (0.39.0-0jammy) jammy; urgency=high
+
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Yutaka Kondo
+
+ -- Fumihito Ito <fumihito.ito@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-bluetooth-monitor (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * fix(docs): fix file name for bluetooth monitor schema (#8308 <https://github.com/autowarefoundation/autoware.universe/issues/8308>)
+    * fix file name for schema
+    * the variable name should be addresses instead
+    ---------
+  * fix(bluetooth_monitor): fix unreadVariable (#8371 <https://github.com/autowarefoundation/autoware.universe/issues/8371>)
+    fix:unreadVariable
+  * fix(bluetooth_monitor): apply cppcheck-suppress for cstyleCast (#7869 <https://github.com/autowarefoundation/autoware.universe/issues/7869>)
+  * Contributors: Koichi98, Yutaka Kondo, Yuxuan Liu, kobayu858
+
+ -- Fumihito Ito <fumihito.ito@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-bluetooth-monitor (0.26.0-0jammy) jammy; urgency=high
+
+  * refactor(bluetooth_monitor): rework parameters (#5239 <https://github.com/autowarefoundation/autoware.universe/issues/5239>)
+    * refactor(bluetooth_monitor): rework parameters
+    * style(pre-commit): autofix
+    * doc(bluetooth_monitor): fix default for integer parameters
+    * doc(bluetooth_monitor): add default for parameter addresses
+    * style(pre-commit): autofix
+    * doc(bluetooth_monitor): fix parameter description
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * build: mark autoware_cmake as <buildtool_depend> (#3616 <https://github.com/autowarefoundation/autoware.universe/issues/3616>)
+    * build: mark autoware_cmake as <buildtool_depend>
+    with <build_depend>, autoware_cmake is automatically exported with ament_target_dependencies() (unecessary)
+    * style(pre-commit): autofix
+    * chore: fix pre-commit errors
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: Kenji Miyake <mailto:kenji.miyake@tier4.jp>
+  * chore: sync files (#3227 <https://github.com/autowarefoundation/autoware.universe/issues/3227>)
+    * chore: sync files
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: kenji-miyake <mailto:kenji-miyake@users.noreply.github.com>
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * build(bluetooth_monitor): add build dependency (#2738 <https://github.com/autowarefoundation/autoware.universe/issues/2738>)
+  * ci(pre-commit): format SVG files (#2172 <https://github.com/autowarefoundation/autoware.universe/issues/2172>)
+    * ci(pre-commit): format SVG files
+    * ci(pre-commit): autofix
+    * apply pre-commit
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * feat(bluetooth_monitor): run bluetooth monitor with new parameter (#1111 <https://github.com/autowarefoundation/autoware.universe/issues/1111>)
+    * feat(bluetooth_monitor): run bluetooth monitor with new parameter
+    * ci(pre-commit): autofix
+    * Fixed a build error in humble
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * feat(bluetooth_monitor): add functionality to monitor Bluetooth connection (#862 <https://github.com/autowarefoundation/autoware.universe/issues/862>)
+    * feat(bluetooth_monitor): add functionality to monitor Bluetooth connection
+    * ci(pre-commit): autofix
+    * Fixed a typo
+    * Add a dependency
+    * Fixed pre-commit errors
+    * ci(pre-commit): autofix
+    * Fixed pre-commit errors
+    * Fixed uncrustify errors
+    * ci(pre-commit): autofix
+    * use autoware_cmake
+    * Fixed license, Fixed CMakeLists.txt, and Use register_node_macro
+    * Fixed license
+    * Fixed link title
+    * changed the way to run l2ping
+    * ci(pre-commit): autofix
+    * fixed clang tidy error and  removed unnecessary dependencies in CMakeLists.txt
+    * corrected dependency in package.xml
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * Contributors: Esteve Fernandez, Kenji Miyake, Vincent Richard, Yuqi Huai, awf-autoware-bot[bot], ito-san
+
+ -- Fumihito Ito <fumihito.ito@tier4.jp>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

@@ -1,0 +1,12 @@
+Source: ros-humble-tier4-debug-tools
+Section: misc
+Priority: optional
+Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-universe-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tier4-debug-tools
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-rtree, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-universe-utils, ros-humble-geometry-msgs, ros-humble-launch-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rclpy, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs
+Description: The tier4_debug_tools package

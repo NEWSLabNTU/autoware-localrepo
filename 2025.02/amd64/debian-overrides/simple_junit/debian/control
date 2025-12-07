@@ -1,0 +1,12 @@
+Source: ros-humble-simple-junit
+Section: misc
+Priority: optional
+Maintainer: Masaya Kataoka <masaya.kataoka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-all-dev, libpugixml-dev, ros-humble-ament-cmake, ros-humble-ament-cmake-clang-format <!nocheck>, ros-humble-ament-cmake-copyright <!nocheck>, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-cmake-lint-cmake <!nocheck>, ros-humble-ament-cmake-pep257 <!nocheck>, ros-humble-ament-cmake-xmllint <!nocheck>, ros-humble-ament-index-cpp, ros-humble-ament-lint-auto <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-simple-junit
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, libpugixml-dev, ros-humble-ament-index-cpp
+Description: Lightweight JUnit library for ROS 2

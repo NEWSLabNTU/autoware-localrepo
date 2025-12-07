@@ -1,0 +1,12 @@
+Source: ros-humble-rtc-manager-rviz-plugin
+Section: misc
+Priority: optional
+Maintainer: Taiki Tanaka <taiki.tanaka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rclcpp, ros-humble-rviz-common, ros-humble-tier4-external-api-msgs, ros-humble-tier4-planning-msgs, ros-humble-tier4-rtc-msgs, ros-humble-unique-identifier-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-rtc-manager-rviz-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-rclcpp, ros-humble-rviz-common, ros-humble-tier4-external-api-msgs, ros-humble-tier4-planning-msgs, ros-humble-tier4-rtc-msgs, ros-humble-unique-identifier-msgs
+Description: The rtc manager rviz plugin package

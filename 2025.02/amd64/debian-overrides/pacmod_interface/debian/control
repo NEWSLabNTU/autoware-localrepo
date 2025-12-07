@@ -1,0 +1,12 @@
+Source: ros-humble-pacmod-interface
+Section: misc
+Priority: optional
+Maintainer: Tomoya Kimura <tomoya.kimura@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-control-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-can-msgs, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-nav-msgs, ros-humble-pacmod3-msgs, ros-humble-rclcpp, ros-humble-std-msgs, ros-humble-tier4-api-msgs, ros-humble-tier4-api-utils, ros-humble-tier4-debug-msgs, ros-humble-tier4-external-api-msgs, ros-humble-tier4-vehicle-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-pacmod-interface
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-control-msgs, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-can-msgs, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-nav-msgs, ros-humble-pacmod3-msgs, ros-humble-rclcpp, ros-humble-std-msgs, ros-humble-tier4-api-msgs, ros-humble-tier4-api-utils, ros-humble-tier4-debug-msgs, ros-humble-tier4-external-api-msgs, ros-humble-tier4-vehicle-msgs
+Description: AutonomouStuff pacmod interface as a ROS 2 node
