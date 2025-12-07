@@ -1,5 +1,19 @@
-# editor
+# Build outputs
+*/output/
+repo/
+
+# colcon2deb builds
+*/*/build/
+
+# Debian build artifacts
+*.deb
+*.ddeb
+*.buildinfo
+*.changes
+
+# Editor files
 *~
 .*~
 *.swp
 *.swo
+.*.~undo-tree~
