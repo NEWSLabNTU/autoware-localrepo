@@ -73,6 +73,67 @@ cd ..
 just create-repo
 ```
 
+## Build Process
+
+The build process consists of two main stages:
+
+### Stage 1: Build ROS Packages (colcon2deb)
+
+ROS packages are built inside Docker containers using [colcon2deb](https://github.com/NEWSLabNTU/colcon2deb). This stage:
+
+1. Launches a Docker container with ROS 2 Humble and build dependencies
+2. Runs `rosdep` to resolve and install system dependencies
+3. Compiles the Autoware workspace with `colcon build`
+4. Generates Debian packaging metadata using `bloom`
+5. Builds individual `.deb` packages for each ROS package
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  Docker Container (ROS 2 Humble)                            │
+│  ┌─────────┐   ┌─────────┐   ┌─────────┐   ┌─────────────┐  │
+│  │ rosdep  │ → │ colcon  │ → │  bloom  │ → │ dpkg-build  │  │
+│  │ install │   │  build  │   │generate │   │  package    │  │
+│  └─────────┘   └─────────┘   └─────────┘   └─────────────┘  │
+└─────────────────────────────────────────────────────────────┘
+                              ↓
+                    build/packages/*.deb
+```
+
+### Stage 2: Build Meta-Packages (debhelper)
+
+Meta-packages are built on the host using standard Debian tooling:
+
+| Package           | Build Process                                              |
+|-------------------|------------------------------------------------------------|
+| `autoware-config` | Installs CycloneDDS config and environment scripts        |
+| `autoware-theme`  | Downloads RViz icons/theme from GitHub via aria2c         |
+| `autoware-data`   | Downloads ML models (ONNX files) from GitHub via aria2c   |
+| `autoware-runtime`| Meta-package with dependencies on all ROS packages         |
+| `autoware-full`   | Meta-package for complete installation                     |
+
+For `autoware-theme` and `autoware-data`, the `genpkg.py` script:
+1. Downloads file lists from Autoware GitHub repository
+2. Generates `downloads.txt` for aria2c parallel downloads
+3. Generates `debian/rules` with download and install commands
+
+```bash
+# Regenerate debian files for autoware-data
+cd packages/autoware-data
+python3 genpkg.py --version 2025.02
+```
+
+### Stage 3: Create APT Repository
+
+```bash
+# Consolidate all .deb files
+just consolidate
+
+# Generate Packages index
+just create-repo
+```
+
+This creates a local APT repository in `repo/` with proper package indices.
+
 ## Package Types
 
 | Package              | Architecture | Description                                |
