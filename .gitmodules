@@ -1,0 +1,4 @@
+[submodule "2025.02/amd64/source"]
+	path = 2025.02/amd64/source
+	url = https://github.com/NEWSLabNTU/autoware.git
+	branch = 2025.02-ws
