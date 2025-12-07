@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-shift-decider
+Section: misc
+Priority: optional
+Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-cmake-cppcheck <!nocheck>, ros-humble-ament-cmake-cpplint <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-control-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-msgs, ros-humble-generate-parameter-library, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-shift-decider
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-control-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-msgs, ros-humble-generate-parameter-library, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: The autoware_shift_decider package

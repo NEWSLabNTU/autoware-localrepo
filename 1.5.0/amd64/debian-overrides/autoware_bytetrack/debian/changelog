@@ -1,0 +1,201 @@
+ros-humble-autoware-bytetrack (0.48.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix(tier4_perception_launch): add yolox 2d detection launch with bytetrack (#11104 <https://github.com/autowarefoundation/autoware_universe/issues/11104>)
+    * fix(tensorrt_yolox): add bytetrack option for launch
+    * style(pre-commit): autofix
+    * fix: update multi_yolox
+    * fix: bytetrack topics
+    * fix: disable when build only
+    * style(pre-commit): autofix
+    * revert all
+    * fix: add 2d detection launch
+    * style(pre-commit): autofix
+    * fix typo
+    * fix: string to int
+    * fix: adding bytetrack node name
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * Contributors: Ryohsuke Mitsudome, badai nguyen
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.47.1-0jammy) jammy; urgency=high
+
+
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.47.0-0jammy) jammy; urgency=high
+
+  * feat: enhance bytracker classification management (#10898 <https://github.com/autowarefoundation/autoware_universe/issues/10898>)
+    * feat: enhance bytracker classification management
+    * fix a bug in score reset after switching label
+    * feat: update the score rule for same label
+    ---------
+  * Contributors: Yuxuan Liu
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.46.0-0jammy) jammy; urgency=high
+
+
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.45.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
+  * chore: perception code owner update (#10645 <https://github.com/autowarefoundation/autoware_universe/issues/10645>)
+    * chore: update maintainers in multiple perception packages
+    * Revert "chore: update maintainers in multiple perception packages"
+    This reverts commit f2838c33d6cd82bd032039e2a12b9cb8ba6eb584.
+    * chore: update maintainers in multiple perception packages
+    * chore: add Kok Seang Tan as maintainer in multiple perception packages
+    ---------
+  * Contributors: Taekjin LEE, TaikiYamada4
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.44.2-0jammy) jammy; urgency=high
+
+
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.44.1-0jammy) jammy; urgency=high
+
+
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.44.0-0jammy) jammy; urgency=high
+
+
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.43.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
+  * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
+  * refactor: add autoware_cuda_dependency_meta (#10073 <https://github.com/autowarefoundation/autoware_universe/issues/10073>)
+  * Contributors: Esteve Fernandez, Hayato Mizushima, Yutaka Kondo
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.42.0-0jammy) jammy; urgency=high
+
+
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.41.2-0jammy) jammy; urgency=high
+
+  * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
+  * Contributors: Ryohsuke Mitsudome
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.41.1-0jammy) jammy; urgency=high
+
+
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.41.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * fix(autoware_bytetrack): fix bugprone-reserved-identifier (#9647 <https://github.com/autowarefoundation/autoware_universe/issues/9647>)
+    fix: bugprone-reserved-identifier
+  * Contributors: Fumiya Watanabe, kobayu858
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.40.0-0jammy) jammy; urgency=high
+
+  * Merge branch 'main' into release-0.40.0
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware_universe/issues/9588>)
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware_universe/issues/9588>)
+  * feat(bytetrack): remove unreachable code block from lapjv.h (#9563 <https://github.com/autowarefoundation/autoware_universe/issues/9563>)
+  * fix(cpplint): include what you use - perception (#9569 <https://github.com/autowarefoundation/autoware_universe/issues/9569>)
+  * fix(autoware_bytetrack): update visualizer param path and not to set default value (#9490 <https://github.com/autowarefoundation/autoware_universe/issues/9490>)
+    fix: update visualizer param path and not to set default value
+  * fix(autoware_bytetrack): fix clang-diagnostic-implicit-const-int-float-conversion (#9513 <https://github.com/autowarefoundation/autoware_universe/issues/9513>)
+    fix: clang-diagnostic-implicit-const-int-float-conversion
+  * fix(autoware_bytetrack): fix clang-diagnostic-implicit-const-int-float-conversion (#9468 <https://github.com/autowarefoundation/autoware_universe/issues/9468>)
+  * 0.39.0
+  * update changelog
+  * Merge commit '6a1ddbd08bd' into release-0.39.0
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware_universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware_universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * refactor(cuda_utils): prefix package and namespace with autoware (#9171 <https://github.com/autowarefoundation/autoware_universe/issues/9171>)
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, Kotaro Uetake, M. Fatih Cırıt, Ryohsuke Mitsudome, Yutaka Kondo, kobayu858
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.39.0-0jammy) jammy; urgency=high
+
+  * Merge commit '6a1ddbd08bd' into release-0.39.0
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware_universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware_universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * refactor(cuda_utils): prefix package and namespace with autoware (#9171 <https://github.com/autowarefoundation/autoware_universe/issues/9171>)
+  * Contributors: Esteve Fernandez, Yutaka Kondo
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * refactor(tensorrt_common)!: fix namespace, directory structure & move to perception namespace (#9099 <https://github.com/autowarefoundation/autoware_universe/issues/9099>)
+    * refactor(tensorrt_common)!: fix namespace, directory structure & move to perception namespace
+    * refactor(tensorrt_common): directory structure
+    * style(pre-commit): autofix
+    * fix(tensorrt_common): correct package name for logging
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: Kenzo Lobos Tsunekawa <mailto:kenzo.lobos@tier4.jp>
+  * refactor(kalman_filter): prefix package and namespace with autoware (#7787 <https://github.com/autowarefoundation/autoware_universe/issues/7787>)
+    * refactor(kalman_filter): prefix package and namespace with autoware
+    * move headers to include/autoware/
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * refactor(bytetrack):  fix namespace and directory structure (#8125 <https://github.com/autowarefoundation/autoware_universe/issues/8125>)
+    * chore: fix namespace
+    * chore: change include name
+    * refactor: rename perception/bytetrack to perception/autoware_bytetrack
+    * refactor: fix node exe
+    ---------
+    Co-authored-by: Taekjin LEE <mailto:taekjin.lee@tier4.jp>
+  * Contributors: Amadeusz Szymko, Esteve Fernandez, Yoshi Ri, Yutaka Kondo
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-bytetrack (0.26.0-0jammy) jammy; urgency=high
+
+
+
+ -- Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

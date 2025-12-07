@@ -1,0 +1,12 @@
+Source: ros-humble-eagleye-can-velocity-converter
+Section: misc
+Priority: optional
+Maintainer: Osamu Sekino <osamu.sekino@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-can-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-eagleye-can-velocity-converter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-can-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp
+Description: The can_velocity_converter package

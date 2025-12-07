@@ -1,0 +1,12 @@
+Source: ros-humble-nebula-common
+Section: misc
+Priority: optional
+Maintainer: MAP IV <contact@map4.jp>
+Build-Depends: debhelper (>= 9.0.0), libpcl-dev, libyaml-cpp-dev, nlohmann-json3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ros-environment
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-nebula-common
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, libyaml-cpp-dev, nlohmann-json3-dev
+Description: Nebula Common Libraries and headers

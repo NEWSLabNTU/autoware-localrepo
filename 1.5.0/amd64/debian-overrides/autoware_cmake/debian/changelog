@@ -1,0 +1,38 @@
+ros-humble-autoware-cmake (1.1.0-0jammy) jammy; urgency=high
+
+  * feat: add autoware_ament_auto_package() macro (#37 <https://github.com/autowarefoundation/autoware_cmake/issues/37>)
+  * feat: jazzy-porting, add jazzy distro condition for jazzy related compiling (#35 <https://github.com/autowarefoundation/autoware_cmake/issues/35>)
+    cmake env::jazzy-porting::add jazzy distro condition for jazzy related compiling
+  * fix: when using CMake >= 3.24 use CMAKE_COMPILE_WARNING_AS_ERROR variable instead of setting -Werror directly (#33 <https://github.com/autowarefoundation/autoware_cmake/issues/33>)
+  * Contributors: Silvio Traversaro, Yutaka Kondo, 心刚
+
+ -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Sun, 09 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-cmake (1.0.2-0jammy) jammy; urgency=high
+
+  * fix(autoware_package.cmake): workaround to avoid missing tinyxml2::tinyxml2 (#24 <https://github.com/autowarefoundation/autoware_cmake/issues/24>)
+    * add tinyxml2 workaround
+    * move
+    ---------
+  * Contributors: Yutaka Kondo
+
+ -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Mon, 07 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-cmake (1.0.1-0jammy) jammy; urgency=high
+
+  * fix(autoware_cmake): fix links to issues in CHANGELOG.rst files (#13 <https://github.com/autowarefoundation/autoware_cmake/issues/13>)
+  * Contributors: Esteve Fernandez
+
+ -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Sun, 16 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-cmake (1.0.0-0jammy) jammy; urgency=high
+
+  * Merge pull request #1 <https://github.com/autowarefoundation/autoware_cmake/issues/1> from youtalk/import-from-autoware-common
+    feat: import from autoware_common
+  * add maintainer
+  * move to autoware_cmake
+  * Contributors: Yutaka Kondo
+
+ -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Wed, 01 May 2024 16:00:00 -0000
+
+

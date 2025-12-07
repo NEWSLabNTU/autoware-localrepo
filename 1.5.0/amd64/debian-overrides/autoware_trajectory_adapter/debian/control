@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-trajectory-adapter
+Section: misc
+Priority: optional
+Maintainer: Daniel Sanchez <daniel.sanchez@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils-debug, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-trajectory-adapter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils-debug, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: The autoware_trajectory_adapter package

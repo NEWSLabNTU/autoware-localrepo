@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-diagnostic-graph-aggregator
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-index-cpp, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-diagnostic-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-srvs, ros-humble-tier4-system-msgs, ros-humble-yaml-cpp-vendor
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-diagnostic-graph-aggregator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ament-index-cpp, ros-humble-diagnostic-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-srvs, ros-humble-tier4-system-msgs, ros-humble-yaml-cpp-vendor
+Description: The diagnostic_graph_aggregator package

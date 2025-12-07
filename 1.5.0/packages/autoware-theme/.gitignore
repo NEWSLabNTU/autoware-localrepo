@@ -1,0 +1,5 @@
+# Downloaded theme files (from official Autoware repo)
+src/
+
+# Build artifacts
+*.deb

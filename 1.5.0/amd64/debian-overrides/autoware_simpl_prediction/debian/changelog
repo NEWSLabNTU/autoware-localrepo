@@ -1,0 +1,29 @@
+ros-humble-autoware-simpl-prediction (0.48.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * docs(simpl_prediction): modify incorrect parameter schema file (#11422 <https://github.com/autowarefoundation/autoware_universe/issues/11422>)
+    * docs: modify incorrect parameter schema file
+    * chore: update maintainers and codeowners
+    ---------
+  * feat(tier4_perception_launch): add an option to choose prediction model type (#11232 <https://github.com/autowarefoundation/autoware_universe/issues/11232>)
+    * feat: add option to choose if launch map-based or simpl
+    * fix: modify data_path
+    ---------
+  * Contributors: Kotaro Uetake, Ryohsuke Mitsudome
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-simpl-prediction (0.47.1-0jammy) jammy; urgency=high
+
+
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-simpl-prediction (0.47.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_simpl): add ML-based motion prediction node (#10824 <https://github.com/autowarefoundation/autoware_universe/issues/10824>)
+  * Contributors: Kotaro Uetake
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+
+

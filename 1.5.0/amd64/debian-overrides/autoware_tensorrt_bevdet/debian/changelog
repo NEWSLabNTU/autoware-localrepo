@@ -1,0 +1,27 @@
+ros-humble-autoware-tensorrt-bevdet (0.48.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix: tf2 uses hpp headers in rolling (and is backported) (#11620 <https://github.com/autowarefoundation/autoware_universe/issues/11620>)
+  * feat(planning, perception): replace wall_timer with generic timer (#11005 <https://github.com/autowarefoundation/autoware_universe/issues/11005>)
+    * feat(planning, perception): replace wall_timer with generic timer
+    * use rclcpp::create_timer
+    * remove period_ns
+    ---------
+  * Contributors: Mamoru Sobue, Ryohsuke Mitsudome, Tim Clephas
+
+ -- Cynthia <cynthia.liu@autocore.ai>  Mon, 17 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-tensorrt-bevdet (0.47.1-0jammy) jammy; urgency=high
+
+
+
+ -- Cynthia <cynthia.liu@autocore.ai>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-tensorrt-bevdet (0.47.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_bevdet): implementation of bevdet using tensorrt (#10441 <https://github.com/autowarefoundation/autoware_universe/issues/10441>)
+  * Contributors: rahulsundar-mcw
+
+ -- Cynthia <cynthia.liu@autocore.ai>  Sun, 10 Aug 2025 16:00:00 -0000
+
+

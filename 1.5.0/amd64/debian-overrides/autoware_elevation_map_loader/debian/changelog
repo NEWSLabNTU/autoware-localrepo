@@ -1,0 +1,160 @@
+ros-humble-autoware-elevation-map-loader (0.48.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * feat(planning, perception): replace wall_timer with generic timer (#11005 <https://github.com/autowarefoundation/autoware_universe/issues/11005>)
+    * feat(planning, perception): replace wall_timer with generic timer
+    * use rclcpp::create_timer
+    * remove period_ns
+    ---------
+  * Contributors: Mamoru Sobue, Ryohsuke Mitsudome
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.47.1-0jammy) jammy; urgency=high
+
+
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.47.0-0jammy) jammy; urgency=high
+
+
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.46.0-0jammy) jammy; urgency=high
+
+
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.45.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
+  * feat(elevation_map_loader): improve log message (#10620 <https://github.com/autowarefoundation/autoware_universe/issues/10620>)
+  * chore(elevation_map): add @asa-naki to maitainer (#10621 <https://github.com/autowarefoundation/autoware_universe/issues/10621>)
+  * build(autoware_elevation_map_loader): add map_msgs dependency (#10533 <https://github.com/autowarefoundation/autoware_universe/issues/10533>)
+  * Contributors: Esteve Fernandez, Kosuke Takeuchi, TaikiYamada4
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.44.2-0jammy) jammy; urgency=high
+
+
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.44.1-0jammy) jammy; urgency=high
+
+
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.44.0-0jammy) jammy; urgency=high
+
+
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.43.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
+  * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
+  * Contributors: Hayato Mizushima, Yutaka Kondo
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.42.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * feat(elevation_map_loader): add grid_map_rviz_plugin to dependency (#10137 <https://github.com/autowarefoundation/autoware_universe/issues/10137>)
+  * feat(autoware_utils): replace autoware_universe_utils with autoware_utils  (#10191 <https://github.com/autowarefoundation/autoware_universe/issues/10191>)
+  * Contributors: Fumiya Watanabe, Kosuke Takeuchi, 心刚
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.41.2-0jammy) jammy; urgency=high
+
+  * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
+  * Contributors: Ryohsuke Mitsudome
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.41.1-0jammy) jammy; urgency=high
+
+
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.41.0-0jammy) jammy; urgency=high
+
+
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.40.0-0jammy) jammy; urgency=high
+
+  * Merge branch 'main' into release-0.40.0
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware_universe/issues/9588>)
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware_universe/issues/9588>)
+  * fix(autoware_elevation_map_loader): fix clang-diagnostic-format-security (#9492 <https://github.com/autowarefoundation/autoware_universe/issues/9492>)
+  * 0.39.0
+  * update changelog
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware_universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware_universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, Ryohsuke Mitsudome, Yutaka Kondo, kobayu858
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.39.0-0jammy) jammy; urgency=high
+
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware_universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware_universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Yutaka Kondo
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * refactor(autoware_grid_map_utils): prefix folder structure with autoware/ (#9170 <https://github.com/autowarefoundation/autoware_universe/issues/9170>)
+  * fix(autoware_elevation_map_loader): fix functionConst (#8293 <https://github.com/autowarefoundation/autoware_universe/issues/8293>)
+    fix: functionConst
+  * refactor(elevation_map_loader): add package name prefix autoware_, fix namespace and directory structure (#7988 <https://github.com/autowarefoundation/autoware_universe/issues/7988>)
+    * refactor: add namespace, remove unused dependencies, file structure
+    chore: remove unused dependencies
+    style(pre-commit): autofix
+    * refactor: rename elevation_map_loader to autoware_elevation_map_loader
+    Rename the elevation_map_loader package to autoware_elevation_map_loader to align with the Autoware naming convention.
+    style(pre-commit): autofix
+  * Contributors: Esteve Fernandez, Hayate TOBA, Taekjin LEE, Yutaka Kondo
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-elevation-map-loader (0.26.0-0jammy) jammy; urgency=high
+
+
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-predicted-path-checker
+Section: misc
+Priority: optional
+Maintainer: Berkay Karaman <berkay@leodrive.ai>
+Build-Depends: debhelper (>= 9.0.0), libboost-all-dev, libeigen3-dev, libeigen3-dev <!nocheck>, ros-humble-ament-cmake, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-component-interface-specs-universe, ros-humble-autoware-component-interface-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-control-msgs, ros-humble-tier4-external-api-msgs, ros-humble-tier4-planning-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-predicted-path-checker
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, libeigen3-dev, ros-humble-autoware-component-interface-specs-universe, ros-humble-autoware-component-interface-utils, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-control-msgs, ros-humble-tier4-external-api-msgs, ros-humble-tier4-planning-msgs
+Description: The predicted_path_checker package

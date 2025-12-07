@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-planning-validator-test-utils
+Section: misc
+Priority: optional
+Maintainer: Alqudah Mohammad <alqudah.mohammad@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-angles, ros-humble-autoware-cmake, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-planning-test-manager, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-planning-validator-test-utils
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-angles, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-planning-test-manager, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp
+Description: package for common test utils for planning validator

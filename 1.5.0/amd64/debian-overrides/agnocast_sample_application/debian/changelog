@@ -1,0 +1,50 @@
+ros-humble-agnocast-sample-application (2.1.2-0jammy) jammy; urgency=high
+
+  * feat(agnocastlib): cie spin (#669 <https://github.com/tier4/agnocast/issues/669>)
+  * fix(agnocastlib): stop possessing shared pointer to nodes in agnocast executor (#664 <https://github.com/tier4/agnocast/issues/664>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 17 Aug 2025 16:00:00 -0000
+
+ros-humble-agnocast-sample-application (2.1.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 12 May 2025 16:00:00 -0000
+
+ros-humble-agnocast-sample-application (2.1.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 14 Apr 2025 16:00:00 -0000
+
+ros-humble-agnocast-sample-application (2.0.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 02 Apr 2025 16:00:00 -0000
+
+ros-humble-agnocast-sample-application (2.0.0-0jammy) jammy; urgency=high
+
+  * fix: use AGNOCAST prefix for MEMPOOL_SIZE (#580 <https://github.com/tier4/agnocast/issues/580>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Tue, 01 Apr 2025 16:00:00 -0000
+
+ros-humble-agnocast-sample-application (1.0.2-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Thu, 13 Mar 2025 16:00:00 -0000
+
+ros-humble-agnocast-sample-application (1.0.1-0jammy) jammy; urgency=high
+
+  * chore: remove callback_group_test in sample (#461 <https://github.com/tier4/agnocast/issues/461>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 09 Mar 2025 16:00:00 -0000
+
+ros-humble-agnocast-sample-application (1.0.0-0jammy) jammy; urgency=high
+
+  * First release.
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sat, 02 Mar 2024 16:00:00 -0000
+
+

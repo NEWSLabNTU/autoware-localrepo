@@ -1,0 +1,132 @@
+ros-humble-common-awsim-labs-sensor-launch (0.48.0-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Sat, 15 Nov 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.47.0-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.46.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * feat: add paramter for diag msg (#1429 <https://github.com/autowarefoundation/autoware_launch/issues/1429>)
+    * feat: add paramter for diag msg
+    * chore: update mismatch threshold
+    * chore: udpate variable name
+    * chore: fix parameter naming
+    * chore: add cropbox parameter
+    ---------
+  * Contributors: Yi-Hsiang Fang (Vivid), github-actions
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 19 Jun 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.45.3-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 16 Jul 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.45.2-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Fri, 27 Jun 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.45.1-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 26 Jun 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.45.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * feat(ring_outlier_filter): update node parameters (#1421 <https://github.com/autowarefoundation/autoware_launch/issues/1421>)
+  * Contributors: Kotaro Uetake, github-actions
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 21 May 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.44.3-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Mon, 09 Jun 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.44.2-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 29 May 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.44.1-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Sun, 11 May 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.44.0-0jammy) jammy; urgency=high
+
+  * Merge commit 'bdbc8e8' into bump-up-version-to-0.44.0
+  * chore: bump version to 0.44.0 (#1411 <https://github.com/autowarefoundation/autoware_launch/issues/1411>)
+  * chore: set all versions to 0.43.0 (#1384 <https://github.com/autowarefoundation/autoware_launch/issues/1384>)
+  * feat(*_launch): move here (#1369 <https://github.com/autowarefoundation/autoware_launch/issues/1369>)
+  * Contributors: Mete Fatih Cırıt, Ryohsuke Mitsudome, Yutaka Kondo
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 30 Apr 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.43.1-0jammy) jammy; urgency=high
+
+  * chore: set all versions to 0.43.0 (#1384 <https://github.com/autowarefoundation/autoware_launch/issues/1384>)
+  * feat(*_launch): move here (#1369 <https://github.com/autowarefoundation/autoware_launch/issues/1369>)
+  * Contributors: Mete Fatih Cırıt
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Mon, 31 Mar 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.43.0-0jammy) jammy; urgency=high
+
+
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 27 Mar 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.42.0-0jammy) jammy; urgency=high
+
+  * fix(common_awsim_labs_sensor_launch): update the glog plugin namespace (#22 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/22>)
+  * Contributors: Mete Fatih Cırıt
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 27 Mar 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.41.1-0jammy) jammy; urgency=high
+
+  * fix(common_awsim_labs_sensor_launch): update the glog plugin namespace (#22 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/22>)
+  * Contributors: Mete Fatih Cırıt
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 12 Feb 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.41.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into HEAD
+  * chore: remove unnecessary dependency to velodyne_monitor (#19 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/19>)
+  * chore: sync files (#14 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/14>)
+    Co-authored-by: github-actions <mailto:github-actions@github.com>
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: M. Fatih Cırıt <mailto:mfc@autoware.org>
+  * refactor(glog_component): prefix package and namespace with autoware (#10 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/10>)
+  * Contributors: Esteve Fernandez, Ryohsuke Mitsudome, awf-autoware-bot[bot]
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Tue, 11 Feb 2025 16:00:00 -0000
+
+ros-humble-common-awsim-labs-sensor-launch (0.39.0-0jammy) jammy; urgency=high
+
+  * feat(common_awsim_labs_sensor_launch): distortion corrector add new param (#7 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/7>)
+  * feat: ring outlier filter and distortion correction node load from param file (#6 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/6>)
+  * refactor!: pointcloud_preprocessor prefix package and namespace with autoware (#3 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/3>)
+  * refactor: update for the awsim_labs (#2 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/2>)
+  * Contributors: A. Sena Yılmaz, Amadeusz Szymko, M. Fatih Cırıt, Yi-Hsiang Fang (Vivid)
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 11 Dec 2024 16:00:00 -0000
+
+

@@ -1,0 +1,74 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE = 1
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	@echo "Downloading theme files..."
+	mkdir -p downloads
+	wget -q -O downloads/autoware.qss "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware.qss"
+	wget -q -O downloads/qt5ct.conf "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/qt5ct.conf"
+	mkdir -p downloads/autoware-rviz-icons/active
+	wget -q -O downloads/autoware-rviz-icons/active/downarrow.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/active/downarrow.svg"
+	wget -q -O downloads/autoware-rviz-icons/active/uparrow.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/active/uparrow.svg"
+	mkdir -p downloads/autoware-rviz-icons/disabled
+	wget -q -O downloads/autoware-rviz-icons/disabled/branch-end.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/branch-end.svg"
+	wget -q -O downloads/autoware-rviz-icons/disabled/branch-more.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/branch-more.svg"
+	wget -q -O downloads/autoware-rviz-icons/disabled/downarrow.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/downarrow.svg"
+	wget -q -O downloads/autoware-rviz-icons/disabled/leftarrow.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/leftarrow.svg"
+	wget -q -O downloads/autoware-rviz-icons/disabled/radiobutton_checked.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/radiobutton_checked.svg"
+	wget -q -O downloads/autoware-rviz-icons/disabled/radiobutton_unchecked.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/radiobutton_unchecked.svg"
+	wget -q -O downloads/autoware-rviz-icons/disabled/rightarrow.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/rightarrow.svg"
+	wget -q -O downloads/autoware-rviz-icons/disabled/uparrow.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/uparrow.svg"
+	wget -q -O downloads/autoware-rviz-icons/disabled/vline.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/vline.svg"
+	mkdir -p downloads/autoware-rviz-icons/primary
+	wget -q -O downloads/autoware-rviz-icons/primary/add.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/add.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/branch-closed.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/branch-closed.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/branch-end.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/branch-end.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/branch-more.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/branch-more.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/branch-open.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/branch-open.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/checkbox_checked_disabled.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_checked_disabled.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/checkbox_checked_enabled.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_checked_enabled.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/checkbox_checked_hovered.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_checked_hovered.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/checkbox_checked_pressed.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_checked_pressed.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/checkbox_indeterminate_disabled.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_indeterminate_disabled.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/checkbox_indeterminate_enabled.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_indeterminate_enabled.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/checkbox_indeterminate_hovered.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_indeterminate_hovered.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/checkbox_indeterminate_pressed.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_indeterminate_pressed.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/checkbox_unchecked_disabled.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_unchecked_disabled.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/checkbox_unchecked_enabled.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_unchecked_enabled.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/checkbox_unchecked_hovered.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_unchecked_hovered.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/checkbox_unchecked_pressed.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_unchecked_pressed.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/close.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/close.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/downarrow.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/downarrow.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/float.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/float.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/leftarrow.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/leftarrow.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/minus.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/minus.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/more.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/more.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/radiobutton_checked.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/radiobutton_checked.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/radiobutton_checked_invert.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/radiobutton_checked_invert.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/radiobutton_unchecked.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/radiobutton_unchecked.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/radiobutton_unchecked_invert.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/radiobutton_unchecked_invert.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/rightarrow.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/rightarrow.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/sizegrip.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/sizegrip.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/slider.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/slider.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/splitter-horizontal.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/splitter-horizontal.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/splitter-vertical.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/splitter-vertical.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/tab_close.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/tab_close.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/toolbar-handle-horizontal.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/toolbar-handle-horizontal.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/toolbar-handle-vertical.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/toolbar-handle-vertical.svg"
+	wget -q -O downloads/autoware-rviz-icons/primary/uparrow.svg "https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/1.5.0/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/uparrow.svg"
+	@echo "Downloads complete."
+
+override_dh_auto_install:
+	install -d $(DESTDIR)/opt/autoware/theme
+	install -m 644 downloads/autoware.qss $(DESTDIR)/opt/autoware/theme/
+	install -m 644 downloads/qt5ct.conf $(DESTDIR)/opt/autoware/theme/
+	cp -r downloads/autoware-rviz-icons $(DESTDIR)/opt/autoware/theme/
+	install -d $(DESTDIR)/usr/bin
+	install -m 755 apply-autoware-theme $(DESTDIR)/usr/bin/
+
+override_dh_auto_clean:
+	rm -rf downloads/

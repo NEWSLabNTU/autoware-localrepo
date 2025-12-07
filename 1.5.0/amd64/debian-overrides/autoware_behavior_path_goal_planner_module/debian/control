@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-behavior-path-goal-planner-module
+Section: misc
+Priority: optional
+Maintainer: Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), librange-v3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-index-cpp <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-behavior-path-planner, ros-humble-autoware-behavior-path-planner-common, ros-humble-autoware-bezier-sampler, ros-humble-autoware-cmake, ros-humble-autoware-freespace-planning-algorithms, ros-humble-autoware-lanelet2-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-rtc-interface, ros-humble-autoware-test-utils, ros-humble-autoware-trajectory, ros-humble-autoware-utils, ros-humble-eigen3-cmake-module, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-behavior-path-goal-planner-module
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, librange-v3-dev, ros-humble-autoware-behavior-path-planner, ros-humble-autoware-behavior-path-planner-common, ros-humble-autoware-bezier-sampler, ros-humble-autoware-freespace-planning-algorithms, ros-humble-autoware-lanelet2-utils, ros-humble-autoware-motion-utils, ros-humble-autoware-rtc-interface, ros-humble-autoware-test-utils, ros-humble-autoware-trajectory, ros-humble-autoware-utils, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-visualization-msgs
+Description: The autoware_behavior_path_goal_planner_module package

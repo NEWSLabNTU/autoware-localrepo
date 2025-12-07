@@ -1,0 +1,160 @@
+ros-humble-autoware-radar-static-pointcloud-filter (0.48.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.47.1-0jammy) jammy; urgency=high
+
+
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.47.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.46.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
+  * chore(radar): delete maintainer for radar packages (#10815 <https://github.com/autowarefoundation/autoware_universe/issues/10815>)
+    * chore(radar): delete maintainer name
+    * fix typo
+    ---------
+  * Contributors: Satoshi Tanaka, TaikiYamada4
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.45.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.44.2-0jammy) jammy; urgency=high
+
+
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.44.1-0jammy) jammy; urgency=high
+
+
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.44.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix(autoware_radar_static_pointcloud_filter): lookup timestamp and er… (#10350 <https://github.com/autowarefoundation/autoware_universe/issues/10350>)
+    fix(autoware_radar_static_pointcloud_filter): lookup timestamp and error handling
+  * fix(autoware_radar_static_pointcloud_filter): add dependencies and use correct qos (#10328 <https://github.com/autowarefoundation/autoware_universe/issues/10328>)
+    * fix(autoware_radar_static_pointcloud_filter): add dependencies
+    * fix(autoware_radar_static_pointcloud_filter): use correct qos
+    ---------
+  * Contributors: Mehmet Emin BAŞOĞLU, Ryohsuke Mitsudome
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.43.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
+  * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
+  * Contributors: Hayato Mizushima, Yutaka Kondo
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.42.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * feat(autoware_utils): replace autoware_universe_utils with autoware_utils  (#10191 <https://github.com/autowarefoundation/autoware_universe/issues/10191>)
+  * chore: refine maintainer list (#10110 <https://github.com/autowarefoundation/autoware_universe/issues/10110>)
+    * chore: remove Miura from maintainer
+    * chore: add Taekjin-san to perception_utils package maintainer
+    ---------
+  * Contributors: Fumiya Watanabe, Shunsuke Miura, 心刚
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.41.2-0jammy) jammy; urgency=high
+
+  * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
+  * Contributors: Ryohsuke Mitsudome
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.41.1-0jammy) jammy; urgency=high
+
+
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.41.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.40.0-0jammy) jammy; urgency=high
+
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware_universe/issues/9588>)
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware_universe/issues/9588>)
+  * 0.39.0
+  * update changelog
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware_universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware_universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, Ryohsuke Mitsudome, Yutaka Kondo
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.39.0-0jammy) jammy; urgency=high
+
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware_universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware_universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Yutaka Kondo
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * refactor(radar_scan_to_pointcloud2, radar_static_pointcloud_filter, radar_threshold_filter)!: add package name prefix of autoware_ (#8132 <https://github.com/autowarefoundation/autoware_universe/issues/8132>)
+    * refactor(radar_scan_to_pointcloud2): rename package and update references
+    fix: rename package folder
+    * refactor(radar_static_pointcloud_filter): rename package and update references
+    refactor: update launch file name for autoware_radar_static_pointcloud_filter
+    * refactor(radar_threshold_filter): rename package and update references
+    ---------
+  * Contributors: Taekjin LEE, Yutaka Kondo
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-radar-static-pointcloud-filter (0.26.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

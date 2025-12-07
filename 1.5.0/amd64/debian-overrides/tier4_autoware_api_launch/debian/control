@@ -1,0 +1,12 @@
+Source: ros-humble-tier4-autoware-api-launch
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tier4-autoware-api-launch
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-adaptors, ros-humble-autoware-default-adapi-universe, ros-humble-autoware-iv-external-api-adaptor, ros-humble-autoware-iv-internal-api-adaptor, ros-humble-awapi-awiv-adapter, ros-humble-rosbridge-server, ros-humble-tier4-autoware-api-extension, ros-humble-tier4-deprecated-api-adapter, ros-humble-topic-tools
+Description: The tier4_autoware_api_launch package

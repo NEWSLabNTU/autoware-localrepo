@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-euclidean-cluster-object-detector
+Section: misc
+Priority: optional
+Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libpcl-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-autoware-point-types, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-diagnostics, ros-humble-autoware-utils-system, ros-humble-geometry-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-euclidean-cluster-object-detector
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, ros-humble-autoware-crop-box-filter, ros-humble-autoware-perception-msgs, ros-humble-autoware-point-types, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-diagnostics, ros-humble-autoware-utils-system, ros-humble-geometry-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs
+Description: The autoware_euclidean_cluster_object_detector package

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-ar-tag-based-localizer
+Section: misc
+Priority: optional
+Maintainer: Masahiro Sakamoto <masahiro.sakamoto@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-index-cpp <!nocheck>, ros-humble-aruco, ros-humble-autoware-cmake, ros-humble-autoware-landmark-manager, ros-humble-autoware-localization-util, ros-humble-autoware-utils-geometry, ros-humble-cv-bridge, ros-humble-diagnostic-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-ar-tag-based-localizer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-aruco, ros-humble-autoware-landmark-manager, ros-humble-autoware-localization-util, ros-humble-autoware-utils-geometry, ros-humble-cv-bridge, ros-humble-diagnostic-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-visualization-msgs
+Description: The autoware_ar_tag_based_localizer package

@@ -1,0 +1,20 @@
+ros-humble-autoware-diagnostic-graph-test-examples (0.48.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-diagnostic-graph-test-examples (0.47.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-diagnostic-graph-test-examples (0.47.0-0jammy) jammy; urgency=high
+
+  * feat(diagnostic_graph_aggregator): diagnostic graph test interface (#10455 <https://github.com/autowarefoundation/autoware_universe/issues/10455>)
+  * Contributors: Takagi, Isamu
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+
+

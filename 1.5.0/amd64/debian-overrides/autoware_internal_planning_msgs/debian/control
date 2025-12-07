@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-internal-planning-msgs
+Section: misc
+Priority: optional
+Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-common-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-builtin-interfaces, ros-humble-geometry-msgs, ros-humble-rosidl-default-generators, ros-humble-std-msgs, ros-humble-unique-identifier-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-internal-planning-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-common-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-builtin-interfaces, ros-humble-geometry-msgs, ros-humble-rosidl-default-runtime, ros-humble-std-msgs, ros-humble-unique-identifier-msgs
+Description: The autoware_internal_planning_msgs package

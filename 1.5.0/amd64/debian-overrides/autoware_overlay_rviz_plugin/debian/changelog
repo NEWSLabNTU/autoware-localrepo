@@ -1,0 +1,21 @@
+ros-humble-autoware-overlay-rviz-plugin (0.3.0-0jammy) jammy; urgency=high
+
+
+
+ -- Khalil Selyan <khalil@leodrive.ai>  Sat, 15 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-overlay-rviz-plugin (0.2.0-0jammy) jammy; urgency=high
+
+
+
+ -- Khalil Selyan <khalil@leodrive.ai>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-overlay-rviz-plugin (0.1.0-0jammy) jammy; urgency=high
+
+  * feat: port autoware_overlay_rviz_plugin from Autoware Universe (#7 <https://github.com/autowarefoundation/autoware_rviz_plugins/issues/7>)
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * Contributors: Ryohsuke Mitsudome
+
+ -- Khalil Selyan <khalil@leodrive.ai>  Fri, 27 Jun 2025 16:00:00 -0000
+
+

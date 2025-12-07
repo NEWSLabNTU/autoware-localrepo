@@ -1,0 +1,12 @@
+Source: ros-humble-agnocast-sample-application
+Section: misc
+Priority: optional
+Maintainer: Takahiro Ishikawa-Aso <sykwer@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-agnocast-sample-interfaces, ros-humble-agnocastlib, ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-agnocast-sample-application
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-agnocast-sample-interfaces, ros-humble-agnocastlib, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: A sample application for Agnocast.

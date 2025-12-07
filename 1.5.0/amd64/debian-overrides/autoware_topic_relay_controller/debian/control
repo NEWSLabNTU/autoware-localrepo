@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-topic-relay-controller
+Section: misc
+Priority: optional
+Maintainer: Makoto Kurihara <makoto.kurihara@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-msgs, ros-humble-tier4-system-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-topic-relay-controller
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-msgs, ros-humble-tier4-system-msgs
+Description: The topic_relay_controller ROS 2 package

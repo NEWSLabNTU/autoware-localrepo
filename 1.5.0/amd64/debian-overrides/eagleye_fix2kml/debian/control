@@ -1,0 +1,12 @@
+Source: ros-humble-eagleye-fix2kml
+Section: misc
+Priority: optional
+Maintainer: OsamuSekino <osamu.sekino@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-eagleye-msgs, ros-humble-rclcpp, ros-humble-rclpy, ros-humble-std-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-eagleye-fix2kml
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-eagleye-msgs, ros-humble-rclcpp, ros-humble-rclpy, ros-humble-std-msgs
+Description: The eagleye_fix2kml package

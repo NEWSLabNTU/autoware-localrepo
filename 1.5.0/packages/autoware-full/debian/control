@@ -1,0 +1,17 @@
+Source: autoware-full
+Section: misc
+Priority: optional
+Maintainer: Jerry Lin <jerry73204@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: autoware-full
+Architecture: any
+Depends: ${misc:Depends},
+         autoware-config,
+         autoware-theme,
+         autoware-runtime
+Description: Autoware complete installation meta-package
+ This meta-package installs all Autoware components including
+ configuration files, visual theme, and runtime packages.
+ Install this package for a complete Autoware setup.

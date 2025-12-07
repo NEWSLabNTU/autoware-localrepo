@@ -1,0 +1,80 @@
+ros-humble-autoware-sensing-msgs (1.11.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Wed, 22 Oct 2025 16:00:00 -0000
+
+ros-humble-autoware-sensing-msgs (1.10.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_sensing_msgs): add PointCloud meta info msgs (#142 <https://github.com/autowarefoundation/autoware_msgs/issues/142>)
+    Co-authored-by: Mete Fatih Cırıt <mailto:mfc@autoware.org>
+  * chore: update maintainer for autoware_msgs packages (#143 <https://github.com/autowarefoundation/autoware_msgs/issues/143>)
+  * Contributors: Amadeusz Szymko, Ryohsuke Mitsudome
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Thu, 17 Jul 2025 16:00:00 -0000
+
+ros-humble-autoware-sensing-msgs (1.9.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Tue, 17 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-sensing-msgs (1.8.0-0jammy) jammy; urgency=high
+
+  * chore: fix email domain (#133 <https://github.com/autowarefoundation/autoware_msgs/issues/133>)
+  * chore: update maintainers (#132 <https://github.com/autowarefoundation/autoware_msgs/issues/132>)
+  * Contributors: Mete Fatih Cırıt
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Tue, 20 May 2025 16:00:00 -0000
+
+ros-humble-autoware-sensing-msgs (1.7.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_sensing_msgs): implement the proposed universal radar messages (#120 <https://github.com/autowarefoundation/autoware_msgs/issues/120>)
+    Co-authored-by: Taekjin LEE <mailto:technolojin@gmail.com>
+    Co-authored-by: Mete Fatih Cırıt <mailto:xmfcx@users.noreply.github.com>
+  * Contributors: Kenzo Lobos Tsunekawa
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Sun, 20 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-sensing-msgs (1.6.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Sun, 06 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-sensing-msgs (1.5.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Tue, 01 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-sensing-msgs (1.4.0-0jammy) jammy; urgency=high
+
+  * fix(autoware_msgs): fix links to issues in CHANGELOG.rst files (#108 <https://github.com/autowarefoundation/autoware_msgs/issues/108>)
+  * Contributors: Esteve Fernandez
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Mon, 24 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-sensing-msgs (1.3.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-sensing-msgs (1.2.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Mon, 30 Sep 2024 16:00:00 -0000
+
+ros-humble-autoware-sensing-msgs (1.1.0-0jammy) jammy; urgency=high
+
+  * chore: update package.xml and fix CMakeLists.txt (#91 <https://github.com/autowarefoundation/autoware_msgs/issues/91>)
+    update package.xml and fix cmakefiles
+  * feat(sensing-messages): add sensing messages (#24 <https://github.com/autowarefoundation/autoware_msgs/issues/24>)
+    * feat(sensing-messages): add sensing messages
+  * Contributors: M. Fatih Cırıt, Yutaka Kondo
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Thu, 09 May 2024 16:00:00 -0000
+
+

@@ -1,0 +1,200 @@
+ros-humble-autoware-traffic-light-map-based-detector (0.48.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix: tf2 uses hpp headers in rolling (and is backported) (#11620 <https://github.com/autowarefoundation/autoware_universe/issues/11620>)
+  * Contributors: Ryohsuke Mitsudome, Tim Clephas
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.47.1-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.47.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.46.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.45.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
+  * refactor(autoware_traffic_light_map_based_detector): split utils and add test (#10353 <https://github.com/autowarefoundation/autoware_universe/issues/10353>)
+    * split utils and add test
+    * style(pre-commit): autofix
+    * chore
+    * fix pre-commit
+    * change name for include guard
+    * fix cmake
+    * fix
+    * refactor
+    * fix name
+    * merge similar function
+    * change file name from utils to process
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * chore: update traffic light packages code owner (#10644 <https://github.com/autowarefoundation/autoware_universe/issues/10644>)
+    chore: add Taekjin Lee as maintainer to multiple perception packages
+  * Contributors: Masato Saeki, Taekjin LEE, TaikiYamada4
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.44.2-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.44.1-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.44.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.43.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
+  * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
+  * Contributors: Hayato Mizushima, Yutaka Kondo
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.42.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * feat(autoware_utils): replace autoware_universe_utils with autoware_utils  (#10191 <https://github.com/autowarefoundation/autoware_universe/issues/10191>)
+  * chore: refine maintainer list (#10110 <https://github.com/autowarefoundation/autoware_universe/issues/10110>)
+    * chore: remove Miura from maintainer
+    * chore: add Taekjin-san to perception_utils package maintainer
+    ---------
+  * feat(autoware_traffic_light_map_based_detector): created the schema file,updated the readme file and deleted the default parameter in node files code (#10107 <https://github.com/autowarefoundation/autoware_universe/issues/10107>)
+    * feat(autoware_traffic_light_map_based_detector): Created the schema file,updated the readme file and deleted the default parameter in node files code
+    * style(pre-commit): autofix
+    * move params from launch to param
+    * chore
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: MasatoSaeki <mailto:masato.saeki@tier4.jp>
+  * Contributors: Fumiya Watanabe, Shunsuke Miura, Vishal Chauhan, 心刚
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.41.2-0jammy) jammy; urgency=high
+
+  * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
+  * Contributors: Ryohsuke Mitsudome
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.41.1-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.41.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * chore(autoware_traffic_light_map_based_detector): modify docs (#9817 <https://github.com/autowarefoundation/autoware_universe/issues/9817>)
+    * modify docs
+    * fix title
+    * fix docs
+    * fix word
+    * add comment about debug markers
+    * fix docs
+    ---------
+  * Contributors: Fumiya Watanabe, Masato Saeki
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.40.0-0jammy) jammy; urgency=high
+
+  * Merge branch 'main' into release-0.40.0
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware_universe/issues/9588>)
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware_universe/issues/9588>)
+  * fix(cpplint): include what you use - perception (#9569 <https://github.com/autowarefoundation/autoware_universe/issues/9569>)
+  * 0.39.0
+  * update changelog
+  * Merge commit '6a1ddbd08bd' into release-0.39.0
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * chore(autoware_traffic_light*): add maintainer (#9280 <https://github.com/autowarefoundation/autoware_universe/issues/9280>)
+    * add fundamental commit
+    * add forgot package
+    ---------
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware_universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware_universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, M. Fatih Cırıt, Masato Saeki, Ryohsuke Mitsudome, Yutaka Kondo
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.39.0-0jammy) jammy; urgency=high
+
+  * Merge commit '6a1ddbd08bd' into release-0.39.0
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * chore(autoware_traffic_light*): add maintainer (#9280 <https://github.com/autowarefoundation/autoware_universe/issues/9280>)
+    * add fundamental commit
+    * add forgot package
+    ---------
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware_universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware_universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Masato Saeki, Yutaka Kondo
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * fix(autoware_traffic_light_map_based_detector): output from screen to both (#8411 <https://github.com/autowarefoundation/autoware_universe/issues/8411>)
+  * fix(traffic_light_map_based_detector): fix funcArgNamesDifferent (#8155 <https://github.com/autowarefoundation/autoware_universe/issues/8155>)
+    fix:funcArgNamesDifferent
+  * refactor(traffic_light_*)!: add package name prefix of autoware_ (#8159 <https://github.com/autowarefoundation/autoware_universe/issues/8159>)
+    * chore: rename traffic_light_fine_detector to autoware_traffic_light_fine_detector
+    * chore: rename traffic_light_multi_camera_fusion to autoware_traffic_light_multi_camera_fusion
+    * chore: rename traffic_light_occlusion_predictor to autoware_traffic_light_occlusion_predictor
+    * chore: rename traffic_light_classifier to autoware_traffic_light_classifier
+    * chore: rename traffic_light_map_based_detector to autoware_traffic_light_map_based_detector
+    * chore: rename traffic_light_visualization to autoware_traffic_light_visualization
+    ---------
+  * Contributors: Taekjin LEE, Yutaka Kondo, kminoda, kobayu858
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-map-based-detector (0.26.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

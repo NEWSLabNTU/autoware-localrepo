@@ -1,0 +1,12 @@
+Source: ros-humble-agnocastlib
+Section: misc
+Priority: optional
+Maintainer: Takahiro Ishikawa-Aso <sykwer@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), liblttng-ust-dev, ros-humble-ament-cmake, ros-humble-ament-cmake-gmock <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tracetools
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-agnocastlib
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, liblttng-ust-dev, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tracetools
+Description: True Zero Copy Communication Middleware for Unsized ROS 2 Message Types.

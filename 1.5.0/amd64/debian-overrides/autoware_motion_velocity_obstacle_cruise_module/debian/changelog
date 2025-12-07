@@ -1,0 +1,118 @@
+ros-humble-autoware-motion-velocity-obstacle-cruise-module (0.48.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix: tf2 uses hpp headers in rolling (and is backported) (#11620 <https://github.com/autowarefoundation/autoware_universe/issues/11620>)
+  * chore(obstacle_*_module): add maintainer (#11506 <https://github.com/autowarefoundation/autoware_universe/issues/11506>)
+  * feat(obstacle_slow_down_module, obstacle_cruise_module): add safety_factor (#10990 <https://github.com/autowarefoundation/autoware_universe/issues/10990>)
+    add safety factor, add planning factor test
+  * Contributors: Ryohsuke Mitsudome, Tim Clephas, Yuki TAKAGI
+
+ -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-cruise-module (0.47.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-cruise-module (0.47.0-0jammy) jammy; urgency=high
+
+  * feat: change planning output topic name to /planning/trajectory (#11135 <https://github.com/autowarefoundation/autoware_universe/issues/11135>)
+    * change planning output topic name to /planning/trajectory
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * style(pre-commit): update to clang-format-20 (#11088 <https://github.com/autowarefoundation/autoware_universe/issues/11088>)
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * docs(obstacle_cruise): align the rss computation documentation with the codes (#11049 <https://github.com/autowarefoundation/autoware_universe/issues/11049>)
+    docs(obstacle_cruise): align the rss computation documentation with the codes.
+  * refactor(obstacle_slowdown_module, obstacle_cruise_module): follow function name change in autoware_core (#10840 <https://github.com/autowarefoundation/autoware_universe/issues/10840>)
+    change function name
+  * Contributors: Mete Fatih Cırıt, Yuki TAKAGI, Yukihiro Saito, Yuxuan Liu
+
+ -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-cruise-module (0.46.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
+  * feat(autoware_motion_velocity_planner): only wait for required subscriptions (#10732 <https://github.com/autowarefoundation/autoware_universe/issues/10732>)
+  * feat(obstacle_stop_module): maintain larger stop distance for opposing traffic (#10647 <https://github.com/autowarefoundation/autoware_universe/issues/10647>)
+    Changes for RT1-9226
+  * Contributors: Arjun Jagdish Ram, Ryohsuke Mitsudome, TaikiYamada4
+
+ -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-cruise-module (0.45.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-cruise-module (0.44.2-0jammy) jammy; urgency=high
+
+
+
+ -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-cruise-module (0.44.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-cruise-module (0.44.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * chore(motion_velocity_planner): move common and node packages to core (#10367 <https://github.com/autowarefoundation/autoware_universe/issues/10367>)
+  * fix(motion_velocity_obstacle_xxx_module): fix debug topic name (#10322 <https://github.com/autowarefoundation/autoware_universe/issues/10322>)
+  * fix(motion_velocity_planner): remove Metric messages (#10342 <https://github.com/autowarefoundation/autoware_universe/issues/10342>)
+  * Contributors: Maxime CLEMENT, Ryohsuke Mitsudome, Takayuki Murooka
+
+ -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-cruise-module (0.43.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
+  * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
+  * feat(path_optimizer): additional failure logging and failure mode handling (#10276 <https://github.com/autowarefoundation/autoware_universe/issues/10276>)
+    MRM when MPT fails
+  * feat!: replace VelocityLimit messages with autoware_internal_planning_msgs (#10273 <https://github.com/autowarefoundation/autoware_universe/issues/10273>)
+  * fix(obstacle_cruise_planner): fix obstacle filtering logic (#10232 <https://github.com/autowarefoundation/autoware_universe/issues/10232>)
+    * add absolute
+    * fix find_yield_cruise_obstacles() calling
+    ---------
+  * fix(obstacle_cruise_planner): ignore invalid stopping objects (#10227 <https://github.com/autowarefoundation/autoware_universe/issues/10227>)
+    * ignore not specified stopping objects
+    * change debug print level
+    * add ahead_stopped prameter
+    * rename ahead_stopped -> side_stopped
+    ---------
+  * feat(Autoware_planning_factor_interface): replace tier4_msgs with autoware_internal_msgs (#10204 <https://github.com/autowarefoundation/autoware_universe/issues/10204>)
+  * Contributors: Arjun Jagdish Ram, Hayato Mizushima, Kento Yabuuchi, Ryohsuke Mitsudome, Yutaka Kondo, 心刚
+
+ -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-cruise-module (0.42.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * feat(autoware_utils): replace autoware_universe_utils with autoware_utils  (#10191 <https://github.com/autowarefoundation/autoware_universe/issues/10191>)
+  * feat(autoware_objects_of_interest_marker_interface): replace autoware_universe_utils with autoware_utils (#10174 <https://github.com/autowarefoundation/autoware_universe/issues/10174>)
+  * feat: introduce motion_velocity_obstacle_<stop/slow_down/cruise>_module (#9807 <https://github.com/autowarefoundation/autoware_universe/issues/9807>)
+    * implement obstacle stop, slow_down, and cruise
+    * fix clang-tidy
+    * revert obstacle_cruise_planner
+    ---------
+  * Contributors: Fumiya Watanabe, Ryohsuke Mitsudome, Takayuki Murooka, 心刚
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * feat(autoware_utils): replace autoware_universe_utils with autoware_utils  (#10191 <https://github.com/autowarefoundation/autoware_universe/issues/10191>)
+  * feat(autoware_objects_of_interest_marker_interface): replace autoware_universe_utils with autoware_utils (#10174 <https://github.com/autowarefoundation/autoware_universe/issues/10174>)
+  * feat: introduce motion_velocity_obstacle_<stop/slow_down/cruise>_module (#9807 <https://github.com/autowarefoundation/autoware_universe/issues/9807>)
+    * implement obstacle stop, slow_down, and cruise
+    * fix clang-tidy
+    * revert obstacle_cruise_planner
+    ---------
+  * Contributors: Fumiya Watanabe, Ryohsuke Mitsudome, Takayuki Murooka, 心刚
+
+ -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
+
+

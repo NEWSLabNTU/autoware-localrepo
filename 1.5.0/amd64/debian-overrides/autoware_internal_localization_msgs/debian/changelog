@@ -1,0 +1,32 @@
+ros-humble-autoware-internal-localization-msgs (1.12.0-0jammy) jammy; urgency=high
+
+
+
+ -- Autoware <lucas.liu@autoware.org>  Thu, 24 Jul 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-localization-msgs (1.11.0-0jammy) jammy; urgency=high
+
+
+
+ -- Autoware <lucas.liu@autoware.org>  Tue, 22 Jul 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-localization-msgs (1.10.0-0jammy) jammy; urgency=high
+
+
+
+ -- Autoware <lucas.liu@autoware.org>  Mon, 02 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-internal-localization-msgs (1.9.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_internal_localization_msgs): add service from tier4_localization_msgs (#65 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/65>)
+    * feat(autoware_internal_localization_msgs): add service from tier4_localization_msgs, autoware_internal_localization_msgs, initial commit: v0.0
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * feat(autoware_internal_localization_msgs): add service from tier4_localization_msgs (#62 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/62>)
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * Contributors: 心刚
+
+ -- Autoware <lucas.liu@autoware.org>  Thu, 22 May 2025 16:00:00 -0000
+
+

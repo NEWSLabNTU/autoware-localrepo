@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-trajectory-ranker
+Section: misc
+Priority: optional
+Maintainer: Daniel Sanchez <daniel.sanchez@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-test-utils <!nocheck>, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-rclcpp, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-generate-parameter-library, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-magic-enum, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tf2, ros-humble-unique-identifier-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-trajectory-ranker
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-rclcpp, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-generate-parameter-library, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-magic-enum, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tf2, ros-humble-unique-identifier-msgs, ros-humble-visualization-msgs
+Description: The autoware_trajectory_ranker package

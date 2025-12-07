@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-duplicated-node-checker
+Section: misc
+Priority: optional
+Maintainer: Shumpei Wakabayashi <shumpei.wakabayashi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-cmake, ros-humble-diagnostic-updater, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-duplicated-node-checker
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-diagnostic-updater, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: A package to find out nodes with common names

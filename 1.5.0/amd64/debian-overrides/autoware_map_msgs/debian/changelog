@@ -1,0 +1,105 @@
+ros-humble-autoware-map-msgs (1.11.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Wed, 22 Oct 2025 16:00:00 -0000
+
+ros-humble-autoware-map-msgs (1.10.0-0jammy) jammy; urgency=high
+
+  * chore: update maintainer for autoware_msgs packages (#143 <https://github.com/autowarefoundation/autoware_msgs/issues/143>)
+  * Contributors: Ryohsuke Mitsudome
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Thu, 17 Jul 2025 16:00:00 -0000
+
+ros-humble-autoware-map-msgs (1.9.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Tue, 17 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-map-msgs (1.8.0-0jammy) jammy; urgency=high
+
+  * chore: fix email domain (#133 <https://github.com/autowarefoundation/autoware_msgs/issues/133>)
+  * chore: update maintainers (#132 <https://github.com/autowarefoundation/autoware_msgs/issues/132>)
+  * Contributors: Mete Fatih Cırıt
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Tue, 20 May 2025 16:00:00 -0000
+
+ros-humble-autoware-map-msgs (1.7.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Sun, 20 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-map-msgs (1.6.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Sun, 06 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-map-msgs (1.5.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_msg_msgs): add scale factor remove altitude (#121 <https://github.com/autowarefoundation/autoware_msgs/issues/121>)
+    * add_scale_factor_remove_altitude
+    * add newline
+    ---------
+  * Contributors: Yamato Ando
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Tue, 01 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-map-msgs (1.4.0-0jammy) jammy; urgency=high
+
+  * feat(MapProjectorInfo.msg): add LocalCartesian const (#118 <https://github.com/autowarefoundation/autoware_msgs/issues/118>)
+  * fix(autoware_msgs): fix links to issues in CHANGELOG.rst files (#108 <https://github.com/autowarefoundation/autoware_msgs/issues/108>)
+  * Contributors: Esteve Fernandez, Sebastian Zęderowski
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Mon, 24 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-map-msgs (1.3.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_map_msgs): add MapProjectorInfo message (#102 <https://github.com/autowarefoundation/autoware_msgs/issues/102>)
+  * Contributors: Ryohsuke Mitsudome
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-map-msgs (1.2.0-0jammy) jammy; urgency=high
+
+  * feat(autoware_map_msgs): add msg and srv files releated with dynamic lanelet loading (#81 <https://github.com/autowarefoundation/autoware_msgs/issues/81>)
+  * Contributors: Barış Zeren, Ryohsuke Mitsudome, Yamato Ando
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Mon, 30 Sep 2024 16:00:00 -0000
+
+ros-humble-autoware-map-msgs (1.1.0-0jammy) jammy; urgency=high
+
+  * chore: update package.xml and fix CMakeLists.txt (#91 <https://github.com/autowarefoundation/autoware_msgs/issues/91>)
+    update package.xml and fix cmakefiles
+  * feat(autoware_map_msgs): support cylindrical AreaInfo (#64 <https://github.com/autowarefoundation/autoware_msgs/issues/64>)
+    * feat(autoware_map_msgs): support cylindrical AreaInfo
+    * update attribute
+    ---------
+  * feat(autoware_map_msgs): add selected map loading (#57 <https://github.com/autowarefoundation/autoware_msgs/issues/57>)
+    * feat(map_loader): add support for sequential_map_loading
+    * feat(autoware_map_msgs): add PointCloudMetaData.msg
+    * docs(autoware_map_msgs): add description of selected_map_loading
+    * docs(autoware_map_msgs): remove gif for selected_map_loading
+    * docs(autoware_map_msgs): fix typo
+    * feat(autoware_map_msgs): make member of msg plural
+    * docs(autoware_map_msgs): clarify the client needs to receive msg beforehand
+    * docs(autoware_map_msgs): clarify IDs included in msgs are used as query for service
+    ---------
+  * feat(autoware_map_msgs): add grid coordinates in PointCloudMapCellWithID.msg (#52 <https://github.com/autowarefoundation/autoware_msgs/issues/52>)
+    * feat(autoware_map_msgs): add grid coordinates in PointCloudMapCellWithID.msg
+    * style(pre-commit): autofix
+    * debug
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * feat(map-messages): add LaneletMapBin.msg (#30 <https://github.com/autowarefoundation/autoware_msgs/issues/30>)
+  * feat: add autoware_map_msgs for dynamic map loading (#39 <https://github.com/autowarefoundation/autoware_msgs/issues/39>)
+    Co-authored-by: M. Fatih Cırıt <mailto:xmfcx@users.noreply.github.com>
+    Co-authored-by: Kenji Miyake <mailto:31987104+kenji-miyake@users.noreply.github.com>
+    Co-authored-by: Takagi, Isamu <mailto:43976882+isamu-takagi@users.noreply.github.com>
+  * Contributors: M. Fatih Cırıt, Shintaro Tomie, Yutaka Kondo, kminoda
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Thu, 09 May 2024 16:00:00 -0000
+
+

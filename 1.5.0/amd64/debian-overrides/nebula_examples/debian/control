@@ -1,0 +1,12 @@
+Source: ros-humble-nebula-examples
+Section: misc
+Priority: optional
+Maintainer: Perception Engine <contact@perceptionengine.jp>
+Build-Depends: debhelper (>= 9.0.0), libpcl-dev, libyaml-cpp-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-nebula-common, ros-humble-nebula-decoders, ros-humble-nebula-ros, ros-humble-ros-environment, ros-humble-rosbag2-cpp
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-nebula-examples
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, libyaml-cpp-dev, ros-humble-nebula-common, ros-humble-nebula-decoders, ros-humble-nebula-ros, ros-humble-rosbag2-cpp
+Description: Nebula Offline Processing Samples

@@ -1,0 +1,265 @@
+ros-humble-autoware-traffic-light-utils (0.48.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix: tf2 uses hpp headers in rolling (and is backported) (#11620 <https://github.com/autowarefoundation/autoware_universe/issues/11620>)
+  * Contributors: Ryohsuke Mitsudome, Tim Clephas
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.47.1-0jammy) jammy; urgency=high
+
+
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.47.0-0jammy) jammy; urgency=high
+
+  * fix(autoware_traffic_light_utils): remove default value setSignalUnknown (`#10635 <https://github.com/autowarefoundation/autoware_universe/issues/10635>)
+    * remove default value
+    * fix
+    ---------
+  * Contributors: Masato Saeki
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.46.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
+  * feat(autoware_behavior_velocity_traffic_light_module): add v2i (#10768 <https://github.com/autowarefoundation/autoware_universe/issues/10768>)
+    add v2i
+  * Contributors: TaikiYamada4, Yukinari Hisaki
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.45.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
+  * fix(traffic_light_utils): remove condition in setSignalUnknown (#10631 <https://github.com/autowarefoundation/autoware_universe/issues/10631>)
+    remove condition
+  * Contributors: Masato Saeki, TaikiYamada4
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.44.2-0jammy) jammy; urgency=high
+
+
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.44.1-0jammy) jammy; urgency=high
+
+
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.44.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * chore(perception): code owner revision (#10358 <https://github.com/autowarefoundation/autoware_universe/issues/10358>)
+    * feat: add Masato Saeki and Taekjin Lee as maintainer to multiple package.xml files
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * Contributors: Ryohsuke Mitsudome, Taekjin LEE
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.43.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
+  * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
+  * Contributors: Hayato Mizushima, Yutaka Kondo
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.42.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * chore: refine maintainer list (#10110 <https://github.com/autowarefoundation/autoware_universe/issues/10110>)
+    * chore: remove Miura from maintainer
+    * chore: add Taekjin-san to perception_utils package maintainer
+    ---------
+  * Contributors: Fumiya Watanabe, Shunsuke Miura
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.41.2-0jammy) jammy; urgency=high
+
+  * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
+  * Contributors: Ryohsuke Mitsudome
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.41.1-0jammy) jammy; urgency=high
+
+
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.41.0-0jammy) jammy; urgency=high
+
+
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.40.0-0jammy) jammy; urgency=high
+
+  * Merge branch 'main' into release-0.40.0
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix(cpplint): include what you use - common (#9564 <https://github.com/autowarefoundation/autoware_universe/issues/9564>)
+  * fix: fix package names in changelog files (#9500 <https://github.com/autowarefoundation/autoware_universe/issues/9500>)
+  * refactor(traffic_light_utils): prefix package and namespace with autoware (#9251 <https://github.com/autowarefoundation/autoware_universe/issues/9251>)
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, M. Fatih Cırıt, Ryohsuke Mitsudome
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.39.0-0jammy) jammy; urgency=high
+
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware_universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware_universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Yutaka Kondo
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * fix(traffic_light_utils): fix unusedFunction (#8605 <https://github.com/autowarefoundation/autoware_universe/issues/8605>)
+    * fix:unusedFunction
+    * fix:unusedFunction
+    ---------
+  * feat: add autoware_ prefix to lanelet2_extension (#7640 <https://github.com/autowarefoundation/autoware_universe/issues/7640>)
+  * feat!: replace autoware_auto_msgs with autoware_msgs for common modules (#7239 <https://github.com/autowarefoundation/autoware_universe/issues/7239>)
+    Co-authored-by: Cynthia Liu <mailto:cynthia.liu@autocore.ai>
+    Co-authored-by: NorahXiong <mailto:norah.xiong@autocore.ai>
+    Co-authored-by: beginningfan <mailto:beginning.fan@autocore.ai>
+  * Contributors: Ryohsuke Mitsudome, Yutaka Kondo, kobayu858
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-utils (0.26.0-0jammy) jammy; urgency=high
+
+  * chore(perception modules): remove maintainer... (#6499 <https://github.com/autowarefoundation/autoware_universe/issues/6499>)
+    * change maintainer
+    * add uetake san as maintainer
+    ---------
+  * refactor(tier4_perception_msgs): rename traffic_signal to traffic_light (#6375 <https://github.com/autowarefoundation/autoware_universe/issues/6375>)
+    * rename traffic_signal to traffic_light
+    * style(pre-commit): autofix
+    * fix(crosswalk_traffic_light_estimator): remove unused include, readme
+    * rename traffic_signal_array to traffic_light_array
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * fix(avoidance, lane_change): modules handle unknown traffic signal in the same way as red signal (#6013 <https://github.com/autowarefoundation/autoware_universe/issues/6013>)
+    * fix(avoidance, lane_change): modules handle unknown traffic signal in the same way as red signal
+    * feat(traffic_light_utils): add util functions
+    * refactor(bpp): use traffic light utils
+    * refactor(bvp): use traffic light utils
+    ---------
+  * feat(crosswalk_traffic_light): add detector and classifier for pedestrian traffic light  (#5871 <https://github.com/autowarefoundation/autoware_universe/issues/5871>)
+    * add: crosswalk traffic light recognition
+    * fix: set conf=0 when occluded
+    * fix: clean code
+    * fix: refactor
+    * fix: occlusion predictor
+    * fix: output not detected signals as unknown
+    * Revert "fix: output not detected signals as unknown"
+    This reverts commit 7a166596e760d7eb037570e28106dcd105860567.
+    * Revert "fix: occlusion predictor"
+    This reverts commit 47d8cdd7fee8b4432f7a440f87bc35b50a8bc897.
+    * fix: occlusion predictor
+    * fix: clean debug code
+    * style(pre-commit): autofix
+    * fix: launch file
+    * fix: set max angle range for different type
+    * fix: precommit
+    * fix: cancel the judge of flashing for estimated crosswalk traffic light
+    * delete: not necessary judgement on label
+    * Update perception/traffic_light_classifier/src/nodelet.cpp
+    Co-authored-by: Yusuke Muramatsu <mailto:yukke42@users.noreply.github.com>
+    * Update perception/crosswalk_traffic_light_estimator/include/crosswalk_traffic_light_estimator/node.hpp
+    Co-authored-by: Yusuke Muramatsu <mailto:yukke42@users.noreply.github.com>
+    * Update perception/crosswalk_traffic_light_estimator/src/node.cpp
+    Co-authored-by: Yusuke Muramatsu <mailto:yukke42@users.noreply.github.com>
+    * style(pre-commit): autofix
+    * fix: topic names and message attribute name
+    * style(pre-commit): autofix
+    * fix: model names
+    * style(pre-commit): autofix
+    * Update perception/crosswalk_traffic_light_estimator/src/node.cpp
+    Co-authored-by: Yusuke Muramatsu <mailto:yukke42@users.noreply.github.com>
+    * Update perception/crosswalk_traffic_light_estimator/src/node.cpp
+    Co-authored-by: Yusuke Muramatsu <mailto:yukke42@users.noreply.github.com>
+    * Update perception/crosswalk_traffic_light_estimator/src/node.cpp
+    Co-authored-by: Yusuke Muramatsu <mailto:yukke42@users.noreply.github.com>
+    * Update perception/traffic_light_occlusion_predictor/src/nodelet.cpp
+    Co-authored-by: Yusuke Muramatsu <mailto:yukke42@users.noreply.github.com>
+    * Update perception/traffic_light_occlusion_predictor/src/nodelet.cpp
+    Co-authored-by: Yusuke Muramatsu <mailto:yukke42@users.noreply.github.com>
+    * Update perception/traffic_light_occlusion_predictor/src/nodelet.cpp
+    Co-authored-by: Yusuke Muramatsu <mailto:yukke42@users.noreply.github.com>
+    * fix: argument position
+    * fix: set classifier type in launch file
+    * fix: function and parameter name
+    * fix: func name
+    * Update launch/tier4_perception_launch/launch/perception.launch.xml
+    Co-authored-by: Yusuke Muramatsu <mailto:yukke42@users.noreply.github.com>
+    * Update perception/traffic_light_map_based_detector/src/node.cpp
+    Co-authored-by: Yusuke Muramatsu <mailto:yukke42@users.noreply.github.com>
+    * style(pre-commit): autofix
+    * fix: move max angle range to config
+    * Update launch/tier4_perception_launch/launch/perception.launch.xml
+    * Update launch/tier4_perception_launch/launch/perception.launch.xml
+    * Update launch/tier4_perception_launch/launch/perception.launch.xml
+    * Update launch/tier4_perception_launch/launch/perception.launch.xml
+    * Update launch/tier4_perception_launch/launch/perception.launch.xml
+    * fix: model name
+    * fix: conflict
+    * fix: precommit
+    * fix: CI test
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: Yusuke Muramatsu <mailto:yukke42@users.noreply.github.com>
+  * test(traffic_light_utils): add test_traffic_light_utils (#4643 <https://github.com/autowarefoundation/autoware_universe/issues/4643>)
+    * test(traffic_light_utils): add test_traffic_light_utils
+    * style(pre-commit): autofix
+    * fix(traffic_light_utils): fix magic number
+    * style(pre-commit): autofix
+    * fix(traffic_light_utils): fix namespace cpplint
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * docs: add readme to perception related utils (#4265 <https://github.com/autowarefoundation/autoware_universe/issues/4265>)
+  * chore: separate traffic_light_utils from perception_utils (#4207 <https://github.com/autowarefoundation/autoware_universe/issues/4207>)
+    * separate traffic_light_utils from perception_utils
+    * style(pre-commit): autofix
+    * fix namespace bug
+    * remove unnecessary dependency
+    * rename rest of perception_utils to object_recognition_utils
+    * fix bug
+    * rename for added radar_object_clustering
+    * delete redundant namespace
+    * Update common/perception_utils/include/perception_utils/prime_synchronizer.hpp
+    Co-authored-by: Daisuke Nishimatsu <mailto:42202095+wep21@users.noreply.github.com>
+    * Correct the failure in the previous merge.
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: Daisuke Nishimatsu <mailto:42202095+wep21@users.noreply.github.com>
+  * Contributors: Kyoichi Sugahara, Satoshi OTA, Shunsuke Miura, Tao Zhong, beginningfan
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

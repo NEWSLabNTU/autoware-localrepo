@@ -1,0 +1,12 @@
+Source: ros-humble-nebula-decoders
+Section: misc
+Priority: optional
+Maintainer: MAP IV <contact@map4.jp>
+Build-Depends: debhelper (>= 9.0.0), libpcl-dev, libpng++-dev, libpng-dev, libyaml-cpp-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-angles, ros-humble-continental-msgs, ros-humble-diagnostic-msgs, ros-humble-nebula-common, ros-humble-nebula-msgs, ros-humble-pandar-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-robosense-msgs, ros-humble-ros-environment, ros-humble-sensor-msgs, ros-humble-velodyne-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-nebula-decoders
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, libpng++-dev, libpng-dev, libyaml-cpp-dev, ros-humble-angles, ros-humble-continental-msgs, ros-humble-diagnostic-msgs, ros-humble-nebula-common, ros-humble-nebula-msgs, ros-humble-pandar-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-robosense-msgs, ros-humble-sensor-msgs, ros-humble-velodyne-msgs
+Description: Nebula Decoders Library

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-cuda-dependency-meta
+Section: misc
+Priority: optional
+Maintainer: Esteve Fernandez <esteve.fernandez@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-cuda-dependency-meta
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, 
+Description: Virtual package that provides an empty cuda stub package

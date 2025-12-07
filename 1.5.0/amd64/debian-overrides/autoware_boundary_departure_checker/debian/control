@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-boundary-departure-checker
+Section: misc
+Priority: optional
+Maintainer: Alqudah Mohammad <alqudah.mohammad@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-all-dev, libeigen3-dev, librange-v3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-interpolation, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-test-utils <!nocheck>, ros-humble-autoware-trajectory, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-magic-enum, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tl-expected
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-boundary-departure-checker
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, libeigen3-dev, librange-v3-dev, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-interpolation, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-trajectory, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-magic-enum, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tl-expected
+Description: The autoware_boundary_departure_checker package

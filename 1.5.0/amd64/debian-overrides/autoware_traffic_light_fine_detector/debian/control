@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-traffic-light-fine-detector
+Section: misc
+Priority: optional
+Maintainer: Tao Zhong <tao.zhong@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest, ros-humble-autoware-cmake, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-tensorrt-yolox, ros-humble-cv-bridge, ros-humble-image-transport, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tier4-perception-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-traffic-light-fine-detector
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-tensorrt-yolox, ros-humble-cv-bridge, ros-humble-image-transport, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tier4-perception-msgs
+Description: The autoware_traffic_light_fine_detector package

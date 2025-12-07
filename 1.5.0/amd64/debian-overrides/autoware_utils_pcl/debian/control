@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-utils-pcl
+Section: misc
+Priority: optional
+Maintainer: Jian Kang <egon.kang@autocore.ai>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-utils-tf, ros-humble-pcl-conversions, ros-humble-pcl-ros
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-utils-pcl
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-utils-tf, ros-humble-pcl-conversions, ros-humble-pcl-ros
+Description: The autoware_utils_pcl package

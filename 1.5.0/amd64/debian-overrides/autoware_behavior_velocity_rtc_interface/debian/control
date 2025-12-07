@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-behavior-velocity-rtc-interface
+Section: misc
+Priority: optional
+Maintainer: Mamoru Sobue <mamoru.sobue@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-factor-interface, ros-humble-autoware-planning-msgs, ros-humble-autoware-rtc-interface, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-planning-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-behavior-velocity-rtc-interface
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-factor-interface, ros-humble-autoware-planning-msgs, ros-humble-autoware-rtc-interface, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-planning-msgs
+Description: The autoware_behavior_velocity_rtc_interface package

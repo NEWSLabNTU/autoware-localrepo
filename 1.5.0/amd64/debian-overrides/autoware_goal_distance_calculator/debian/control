@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-goal-distance-calculator
+Section: misc
+Priority: optional
+Maintainer: Taiki Tanaka <taiki.tanaka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-goal-distance-calculator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: The autoware_goal_distance_calculator package

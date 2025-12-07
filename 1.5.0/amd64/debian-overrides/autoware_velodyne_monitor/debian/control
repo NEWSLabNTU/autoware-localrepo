@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-velodyne-monitor
+Section: misc
+Priority: optional
+Maintainer: Fumihito Ito <fumihito.ito@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libcpprest-dev, libcrypto++-dev, libfmt-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-diagnostic-msgs, ros-humble-diagnostic-updater, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-velodyne-monitor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libcpprest-dev, libcrypto++-dev, libfmt-dev, ros-humble-diagnostic-msgs, ros-humble-diagnostic-updater, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs
+Description: The autoware_velodyne_monitor package

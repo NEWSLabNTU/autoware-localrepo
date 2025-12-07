@@ -1,0 +1,26 @@
+ros-humble-autoware-localization-rviz-plugin (0.3.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-localization-rviz-plugin (0.2.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-localization-rviz-plugin (0.1.0-0jammy) jammy; urgency=high
+
+  * feat: port tier4_localization_rviz_plugin from Autoware Universe (#5 <https://github.com/autowarefoundation/autoware_rviz_plugins/issues/5>)
+    * feat: port localization_rviz_plugin from Autoware Universe
+    * rename package to autoware_localization_rviz_plugin
+    * style(pre-commit): autofix
+    * remove CHANGELOG.rst
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * Contributors: Ryohsuke Mitsudome
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Fri, 27 Jun 2025 16:00:00 -0000
+
+

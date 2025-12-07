@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-command-mode-switcher
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-command-mode-types, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-vehicle-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-external-api-msgs, ros-humble-tier4-system-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-command-mode-switcher
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-command-mode-types, ros-humble-autoware-vehicle-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-external-api-msgs, ros-humble-tier4-system-msgs
+Description: The autoware_command_mode_switcher package

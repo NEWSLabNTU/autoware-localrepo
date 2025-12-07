@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-compare-map-segmentation
+Section: misc
+Priority: optional
+Maintainer: amc-nu <abrahammonrroy@yahoo.com>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-index-cpp, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-point-types, ros-humble-autoware-pointcloud-preprocessor, ros-humble-autoware-test-utils, ros-humble-autoware-utils, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-grid-map-pcl, ros-humble-grid-map-ros, ros-humble-lanelet2-core, ros-humble-lanelet2-projection, ros-humble-lanelet2-routing, ros-humble-nav-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-compare-map-segmentation
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ament-index-cpp, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-point-types, ros-humble-autoware-pointcloud-preprocessor, ros-humble-autoware-test-utils, ros-humble-autoware-utils, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-grid-map-pcl, ros-humble-grid-map-ros, ros-humble-lanelet2-core, ros-humble-lanelet2-projection, ros-humble-lanelet2-routing, ros-humble-nav-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-visualization-msgs
+Description: The ROS 2 autoware_compare_map_segmentation package

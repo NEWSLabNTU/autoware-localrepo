@@ -1,0 +1,12 @@
+Source: ros-humble-tier4-planning-factor-rviz-plugin
+Section: misc
+Priority: optional
+Maintainer: Satoshi Ota <satoshi.ota@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), qtbase5-dev, ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-rviz-common, ros-humble-rviz-default-plugins
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tier4-planning-factor-rviz-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5widgets5, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-rviz-common, ros-humble-rviz-default-plugins, ros-humble-rviz2
+Description: The tier4_planning_factor_rviz_plugin package

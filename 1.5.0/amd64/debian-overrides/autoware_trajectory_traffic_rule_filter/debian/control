@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-trajectory-traffic-rule-filter
+Section: misc
+Priority: optional
+Maintainer: Daniel Sanchez <daniel.sanchez@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-boundary-departure-checker, ros-humble-autoware-cmake, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-traffic-light-utils, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-rclcpp, ros-humble-autoware-vehicle-info-utils, ros-humble-generate-parameter-library, ros-humble-lanelet2-core, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-trajectory-traffic-rule-filter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-boundary-departure-checker, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-traffic-light-utils, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-rclcpp, ros-humble-autoware-vehicle-info-utils, ros-humble-generate-parameter-library, ros-humble-lanelet2-core, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: The autoware_trajectory_traffic_rule_filter package

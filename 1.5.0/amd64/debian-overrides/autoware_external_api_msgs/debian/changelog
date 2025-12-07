@@ -1,0 +1,55 @@
+ros-humble-autoware-external-api-msgs (0.46.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-external-api-msgs (0.43.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 11 May 2025 16:00:00 -0000
+
+ros-humble-autoware-external-api-msgs (0.42.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 02 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-external-api-msgs (0.41.0-0jammy) jammy; urgency=high
+
+  * chore: use autoware_cmake (#71 <https://github.com/tier4/tier4_ad_api_adaptor/issues/71>)
+  * feat: add external api adaptor for calibration status (#43 <https://github.com/tier4/tier4_ad_api_adaptor/issues/43>)
+    * (editting) save current work
+    * fix bug and run pre-commit
+    * pull the latest tier4/universe
+    * pull the latest tier4/univerese
+  * Contributors: Takagi, Isamu, TakumiKozaka-T4
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-external-api-msgs (0.40.0-0jammy) jammy; urgency=high
+
+  * chore: use autoware_cmake (#71 <https://github.com/tier4/tier4_ad_api_adaptor/issues/71>)
+  * feat: add external api adaptor for calibration status (#43 <https://github.com/tier4/tier4_ad_api_adaptor/issues/43>)
+    * (editting) save current work
+    * fix bug and run pre-commit
+    * pull the latest tier4/universe
+    * pull the latest tier4/univerese
+  * chore: sync files (#14 <https://github.com/tier4/tier4_ad_api_adaptor/issues/14>)
+    Co-authored-by: Takagi, Isamu <mailto:isamu.takagi@tier4.jp>
+  * Restore message type ResponseStatus (#8 <https://github.com/tier4/tier4_ad_api_adaptor/issues/8>)
+    * Restore message type ResponseStatus
+    * Add a comment as to why message type ResponseStatus was restored
+  * Move api pkgs (#7 <https://github.com/tier4/tier4_ad_api_adaptor/issues/7>)
+    * Move awapi package
+    * WIP
+    * Cancel external api adaptor
+    * Fix package name
+    * Fix package name
+    * Move external api msgs
+  * Contributors: Takagi, Isamu, TakumiKozaka-T4, Tatsuya Yamasaki, tier4-autoware-public-bot[bot]
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+
