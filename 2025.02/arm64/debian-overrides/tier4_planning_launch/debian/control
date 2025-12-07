@@ -1,0 +1,12 @@
+Source: ros-humble-tier4-planning-launch
+Section: misc
+Priority: optional
+Maintainer: Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tier4-planning-launch
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-behavior-path-planner, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-costmap-generator, ros-humble-autoware-external-cmd-selector, ros-humble-autoware-external-velocity-limit-selector, ros-humble-autoware-freespace-planner, ros-humble-autoware-glog-component, ros-humble-autoware-mission-planner, ros-humble-autoware-obstacle-cruise-planner, ros-humble-autoware-obstacle-stop-planner, ros-humble-autoware-path-optimizer, ros-humble-autoware-planning-evaluator, ros-humble-autoware-planning-topic-converter, ros-humble-autoware-planning-validator, ros-humble-autoware-remaining-distance-time-calculator, ros-humble-autoware-scenario-selector, ros-humble-autoware-surround-obstacle-checker, ros-humble-autoware-velocity-smoother
+Description: The tier4_planning_launch package

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-utils
+Section: misc
+Priority: optional
+Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-system-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-autoware-cmake, ros-humble-builtin-interfaces, ros-humble-rclcpp, ros-humble-unique-identifier-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-utils
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-system-dev, ros-humble-builtin-interfaces, ros-humble-rclcpp, ros-humble-unique-identifier-msgs
+Description: The autoware_utils package

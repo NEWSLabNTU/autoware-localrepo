@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-pointcloud-preprocessor
+Section: misc
+Priority: optional
+Maintainer: amc-nu <abrahammonrroy@yahoo.com>
+Build-Depends: debhelper (>= 9.0.0), libcgal-dev, libopencv-dev, libpcl-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-pcl-extensions, ros-humble-autoware-point-types, ros-humble-autoware-universe-utils, ros-humble-cv-bridge, ros-humble-diagnostic-updater, ros-humble-image-transport, ros-humble-message-filters, ros-humble-nav-msgs, ros-humble-pcl-conversions, ros-humble-pcl-msgs, ros-humble-pcl-ros, ros-humble-point-cloud-msg-wrapper, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-ros-testing <!nocheck>, ros-humble-sensor-msgs, ros-humble-sophus, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-pointcloud-preprocessor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libcgal-dev, libopencv-dev, libpcl-dev, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-pcl-extensions, ros-humble-autoware-point-types, ros-humble-autoware-universe-utils, ros-humble-cv-bridge, ros-humble-diagnostic-updater, ros-humble-image-transport, ros-humble-message-filters, ros-humble-nav-msgs, ros-humble-pcl-conversions, ros-humble-pcl-msgs, ros-humble-pcl-ros, ros-humble-point-cloud-msg-wrapper, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-sophus, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs
+Description: The ROS 2 autoware_pointcloud_preprocessor package

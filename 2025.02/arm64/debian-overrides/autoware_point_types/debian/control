@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-point-types
+Section: misc
+Priority: optional
+Maintainer: David Wong <david.wong@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-copyright, ros-humble-ament-cmake-core, ros-humble-ament-cmake-cppcheck, ros-humble-ament-cmake-export-dependencies, ros-humble-ament-cmake-lint-cmake, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-cmake-test, ros-humble-ament-cmake-xmllint, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-pcl-ros, ros-humble-point-cloud-msg-wrapper, ros-humble-point-cloud-msg-wrapper <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-point-types
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ament-cmake-copyright, ros-humble-ament-cmake-core, ros-humble-ament-cmake-cppcheck, ros-humble-ament-cmake-lint-cmake, ros-humble-ament-cmake-test, ros-humble-ament-cmake-xmllint, ros-humble-pcl-ros, ros-humble-point-cloud-msg-wrapper
+Description: The point types definition to use point_cloud_msg_wrapper

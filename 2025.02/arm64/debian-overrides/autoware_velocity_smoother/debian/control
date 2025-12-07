@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-velocity-smoother
+Section: misc
+Priority: optional
+Maintainer: Fumiya Watanabe <fumiya.watanabe@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-interpolation, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-osqp-interface, ros-humble-autoware-planning-msgs, ros-humble-autoware-planning-test-manager, ros-humble-autoware-qp-interface, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-eigen3-cmake-module, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs, ros-humble-tier4-planning-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-velocity-smoother
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-interpolation, ros-humble-autoware-motion-utils, ros-humble-autoware-osqp-interface, ros-humble-autoware-planning-msgs, ros-humble-autoware-planning-test-manager, ros-humble-autoware-qp-interface, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs, ros-humble-tier4-planning-msgs
+Description: The autoware_velocity_smoother package

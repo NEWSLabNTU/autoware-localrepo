@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-pose-initializer
+Section: misc
+Priority: optional
+Maintainer: Yamato Ando <yamato.ando@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-cmake-cppcheck <!nocheck>, ros-humble-ament-cmake-gmock <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-component-interface-specs, ros-humble-autoware-component-interface-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-localization-util, ros-humble-autoware-map-height-fitter, ros-humble-autoware-motion-utils, ros-humble-autoware-universe-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-srvs, ros-humble-tier4-localization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-pose-initializer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-component-interface-specs, ros-humble-autoware-component-interface-utils, ros-humble-autoware-localization-util, ros-humble-autoware-map-height-fitter, ros-humble-autoware-motion-utils, ros-humble-autoware-universe-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-srvs, ros-humble-tier4-localization-msgs
+Description: The autoware_pose_initializer package

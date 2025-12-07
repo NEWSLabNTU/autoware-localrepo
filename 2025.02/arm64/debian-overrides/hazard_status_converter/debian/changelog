@@ -1,0 +1,80 @@
+ros-humble-hazard-status-converter (0.40.0-0jammy) jammy; urgency=high
+
+  * Merge branch 'main' into release-0.40.0
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * fix(cpplint): include what you use - system (#9573 <https://github.com/autowarefoundation/autoware.universe/issues/9573>)
+  * 0.39.0
+  * update changelog
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * feat(hazard_status_converter): hazard status converter subscribe emergency holding (#9287 <https://github.com/autowarefoundation/autoware.universe/issues/9287>)
+    * feat: add subscriber for emergency_holding
+    * modify: fix value name
+    * style(pre-commit): autofix
+    * feat: add const to is_emergency_holding
+    Co-authored-by: Takagi, Isamu <mailto:43976882+isamu-takagi@users.noreply.github.com>
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: Takagi, Isamu <mailto:43976882+isamu-takagi@users.noreply.github.com>
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, M. Fatih Cırıt, Ryohsuke Mitsudome, TetsuKawa, Yutaka Kondo
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-hazard-status-converter (0.39.0-0jammy) jammy; urgency=high
+
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Yutaka Kondo
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-hazard-status-converter (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * feat!: replace autoware_auto_msgs with autoware_msgs for system modules (#7249 <https://github.com/autowarefoundation/autoware.universe/issues/7249>)
+    Co-authored-by: Cynthia Liu <mailto:cynthia.liu@autocore.ai>
+    Co-authored-by: NorahXiong <mailto:norah.xiong@autocore.ai>
+    Co-authored-by: beginningfan <mailto:beginning.fan@autocore.ai>
+  * feat: remake diagnostic graph packages (#6715 <https://github.com/autowarefoundation/autoware.universe/issues/6715>)
+  * fix(hazard_status_converter): check current operation mode (#6733 <https://github.com/autowarefoundation/autoware.universe/issues/6733>)
+    * fix: hazard status converter
+    * fix: topic name and modes
+    * fix check target mode
+    * fix message type
+    * Revert "fix check target mode"
+    This reverts commit 8b190b7b99490503a52b155cad9f593c1c97e553.
+    ---------
+  * Contributors: Ryohsuke Mitsudome, Takagi, Isamu, Yutaka Kondo
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-hazard-status-converter (0.26.0-0jammy) jammy; urgency=high
+
+  * feat(tier4_system_launch): add option to launch mrm handler (#6660 <https://github.com/autowarefoundation/autoware.universe/issues/6660>)
+  * feat(hazard_status_converter): add package (#6428 <https://github.com/autowarefoundation/autoware.universe/issues/6428>)
+  * Contributors: Takagi, Isamu
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

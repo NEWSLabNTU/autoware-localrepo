@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-radar-tracks-noise-filter
+Section: misc
+Priority: optional
+Maintainer: Sathshi Tanaka <satoshi.tanaka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-geometry-msgs, ros-humble-radar-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-radar-tracks-noise-filter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-geometry-msgs, ros-humble-radar-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: autoware_radar_tracks_noise_filter

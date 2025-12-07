@@ -1,0 +1,12 @@
+Source: ros-humble-openscenario-experimental-catalog
+Section: misc
+Priority: optional
+Maintainer: Tatsuya Yamasaki <tatsuya.yamasaki@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), 
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-openscenario-experimental-catalog
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, 
+Description: TIER IV experimental catalogs for OpenSCENARIO

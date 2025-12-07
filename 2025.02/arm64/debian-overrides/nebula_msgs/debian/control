@@ -1,0 +1,12 @@
+Source: ros-humble-nebula-msgs
+Section: misc
+Priority: optional
+Maintainer: Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-builtin-interfaces, ros-humble-rosidl-default-generators, ros-humble-std-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-nebula-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
+Description: Generic sensor raw data messages for Nebula

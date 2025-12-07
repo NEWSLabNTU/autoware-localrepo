@@ -1,0 +1,12 @@
+Source: ros-humble-eagleye-rt
+Section: misc
+Priority: optional
+Maintainer: Osamu Sekino <osamu.sekino@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-diagnostic-updater, ros-humble-eagleye-coordinate, ros-humble-eagleye-msgs, ros-humble-eagleye-navigation, ros-humble-geodesy, ros-humble-geographic-msgs, ros-humble-geometry-msgs, ros-humble-nmea-msgs, ros-humble-rclcpp, ros-humble-rtklib-msgs, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tf2-sensor-msgs, ros-humble-ublox-msgs, ros-humble-yaml-cpp-vendor
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-eagleye-rt
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-diagnostic-updater, ros-humble-eagleye-coordinate, ros-humble-eagleye-msgs, ros-humble-eagleye-navigation, ros-humble-geodesy, ros-humble-geographic-msgs, ros-humble-geometry-msgs, ros-humble-nmea-msgs, ros-humble-rclcpp, ros-humble-rtklib-msgs, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tf2-sensor-msgs, ros-humble-ublox-msgs, ros-humble-yaml-cpp-vendor
+Description: The eagleye_rt package

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-accel-brake-map-calibrator
+Section: misc
+Priority: optional
+Maintainer: Tomoya Kimura <tomoya.kimura@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-raw-vehicle-cmd-converter, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs, ros-humble-tier4-external-api-msgs, ros-humble-tier4-vehicle-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-accel-brake-map-calibrator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-matplotlib, python3-pandas, python3-scipy, ros-humble-autoware-motion-utils, ros-humble-autoware-raw-vehicle-cmd-converter, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs, ros-humble-tier4-external-api-msgs, ros-humble-tier4-vehicle-msgs, ros-humble-visualization-msgs
+Description: The accel_brake_map_calibrator

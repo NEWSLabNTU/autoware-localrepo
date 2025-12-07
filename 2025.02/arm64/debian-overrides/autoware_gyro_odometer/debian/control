@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-gyro-odometer
+Section: misc
+Priority: optional
+Maintainer: Yamato Ando <yamato.ando@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libfmt-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-localization-util, ros-humble-autoware-universe-utils, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-gyro-odometer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, ros-humble-autoware-localization-util, ros-humble-autoware-universe-utils, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs
+Description: The autoware_gyro_odometer package as a ROS 2 node

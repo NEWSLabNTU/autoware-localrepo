@@ -1,0 +1,12 @@
+Source: ros-humble-openscenario-visualization
+Section: misc
+Priority: optional
+Maintainer: Masaya Kataoka <masaya.kataoka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), nlohmann-json3-dev, pkg-config, qtbase5-dev, ros-humble-ament-cmake, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-clang-format <!nocheck>, ros-humble-ament-cmake-copyright <!nocheck>, ros-humble-ament-cmake-lint-cmake <!nocheck>, ros-humble-ament-cmake-pep257 <!nocheck>, ros-humble-ament-cmake-xmllint <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-class-loader, ros-humble-color-names, ros-humble-openscenario-interpreter-msgs, ros-humble-pluginlib (>= 1.11.2), ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rviz-common, ros-humble-rviz2, ros-humble-traffic-simulator, ros-humble-traffic-simulator-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-openscenario-visualization
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, nlohmann-json3-dev, qtbase5-dev, ros-humble-class-loader, ros-humble-color-names, ros-humble-openscenario-interpreter-msgs, ros-humble-pluginlib (>= 1.11.2), ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rviz-common, ros-humble-rviz2, ros-humble-traffic-simulator, ros-humble-traffic-simulator-msgs, ros-humble-visualization-msgs
+Description: Visualization tools for simulation results

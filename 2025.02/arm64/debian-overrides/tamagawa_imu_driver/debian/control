@@ -1,0 +1,12 @@
+Source: ros-humble-tamagawa-imu-driver
+Section: misc
+Priority: optional
+Maintainer: Yamato Ando <yamato.ando@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-can-msgs, ros-humble-rclcpp, ros-humble-sensor-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tamagawa-imu-driver
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, ros-humble-can-msgs, ros-humble-rclcpp, ros-humble-sensor-msgs
+Description: The ROS2 driver for TAMAGAWA SEIKI IMUs

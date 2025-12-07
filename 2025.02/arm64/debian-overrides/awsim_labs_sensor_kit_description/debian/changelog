@@ -1,0 +1,8 @@
+ros-humble-awsim-labs-sensor-kit-description (0.39.0-0jammy) jammy; urgency=high
+
+  * refactor: update for the awsim_labs (#2 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/2>)
+  * Contributors: M. Fatih Cırıt
+
+ -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 11 Dec 2024 16:00:00 -0000
+
+

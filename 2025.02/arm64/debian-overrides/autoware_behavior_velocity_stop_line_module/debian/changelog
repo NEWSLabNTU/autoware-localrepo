@@ -1,0 +1,96 @@
+ros-humble-autoware-behavior-velocity-stop-line-module (0.40.0-0jammy) jammy; urgency=high
+
+  * Merge branch 'main' into release-0.40.0
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * fix(autoware_behavior_velocity_stop_line_module): remove unused function (#9591 <https://github.com/autowarefoundation/autoware.universe/issues/9591>)
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * fix(cpplint): include what you use - planning (#9570 <https://github.com/autowarefoundation/autoware.universe/issues/9570>)
+  * feat(behavior_velocity_planner)!: remove stop_reason (#9452 <https://github.com/autowarefoundation/autoware.universe/issues/9452>)
+  * refactor(autoware_behavior_velocity_stop_line_module): refactor and test (#9424 <https://github.com/autowarefoundation/autoware.universe/issues/9424>)
+    * refactor(autoware_behavior_velocity_stop_line_module): refactor and test
+    * modify
+    * small changes
+    * update
+    * fix test error
+    * update
+    ---------
+  * 0.39.0
+  * update changelog
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(autoware_behavior_velocity_stop_line_module): add maintainer (#9427 <https://github.com/autowarefoundation/autoware.universe/issues/9427>)
+  * feat(behavior_velocity_stop_line): replace autoware_motion_utils to autoware_trajectory (#9299 <https://github.com/autowarefoundation/autoware.universe/issues/9299>)
+    * feat(behavior_velocity_stop_line): replace autoware_motion_utils to autoware_trajectory
+    * update
+    ---------
+  * feat(behavior_velocity_planner): replace first_stop_path_point_index (#9296 <https://github.com/autowarefoundation/autoware.universe/issues/9296>)
+    * feat(behavior_velocity_planner): replace first_stop_path_point_index
+    * add const
+    * Update planning/behavior_velocity_planner/autoware_behavior_velocity_traffic_light_module/src/scene.cpp
+    Co-authored-by: Kosuke Takeuchi <mailto:kosuke.tnp@gmail.com>
+    * Update planning/behavior_velocity_planner/autoware_behavior_velocity_planner/src/planner_manager.cpp
+    Co-authored-by: Kosuke Takeuchi <mailto:kosuke.tnp@gmail.com>
+    ---------
+    Co-authored-by: Kosuke Takeuchi <mailto:kosuke.tnp@gmail.com>
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, M. Fatih Cırıt, Mamoru Sobue, Ryohsuke Mitsudome, Ryuta Kambe, Yukinari Hisaki, Yutaka Kondo
+
+ -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-behavior-velocity-stop-line-module (0.39.0-0jammy) jammy; urgency=high
+
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Yutaka Kondo
+
+ -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-behavior-velocity-stop-line-module (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * fix(behavior_velocity_planner): fix cppcheck warnings of virtualCallInConstructor (#8376 <https://github.com/autowarefoundation/autoware.universe/issues/8376>)
+    Co-authored-by: Ryuta Kambe <mailto:ryuta.kambe@tier4.jp>
+  * fix(autoware_behavior_velocity_stop_line_module): fix uninitMemberVar (#8318 <https://github.com/autowarefoundation/autoware.universe/issues/8318>)
+    fix:uninitMemberVar
+  * feat(autoware_behavior_velocity_planner_common,autoware_behavior_velocity_stop_line_module): add time_keeper to bvp (#8070 <https://github.com/autowarefoundation/autoware.universe/issues/8070>)
+  * feat: add autoware_ prefix to lanelet2_extension (#7640 <https://github.com/autowarefoundation/autoware.universe/issues/7640>)
+  * fix(autoware_behavior_velocity_planner_common): remove lane_id check from arc_lane_util (#7710 <https://github.com/autowarefoundation/autoware.universe/issues/7710>)
+    * fix(arc_lane_util): remove lane_id check from arc_lane_util
+    * modify test_arc_lane_util.cpp
+    ---------
+  * refactor(universe_utils/motion_utils)!: add autoware namespace (#7594 <https://github.com/autowarefoundation/autoware.universe/issues/7594>)
+  * refactor(motion_utils)!: add autoware prefix and include dir (#7539 <https://github.com/autowarefoundation/autoware.universe/issues/7539>)
+    refactor(motion_utils): add autoware prefix and include dir
+  * feat(autoware_universe_utils)!: rename from tier4_autoware_utils (#7538 <https://github.com/autowarefoundation/autoware.universe/issues/7538>)
+    Co-authored-by: kosuke55 <mailto:kosuke.tnp@gmail.com>
+  * chore(behavior_velocity_planner): move packages (#7526 <https://github.com/autowarefoundation/autoware.universe/issues/7526>)
+  * Contributors: Fumiya Watanabe, Kosuke Takeuchi, Takayuki Murooka, Yukinari Hisaki, Yutaka Kondo, kobayu858, taisa1
+
+ -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-behavior-velocity-stop-line-module (0.26.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

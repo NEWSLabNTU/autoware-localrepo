@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-elevation-map-loader
+Section: misc
+Priority: optional
+Maintainer: Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libpcl-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-grid-map-utils, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-universe-utils, ros-humble-grid-map-cv, ros-humble-grid-map-pcl, ros-humble-grid-map-ros, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-storage-default-plugins, ros-humble-tier4-external-api-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-elevation-map-loader
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, ros-humble-autoware-grid-map-utils, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-universe-utils, ros-humble-grid-map-cv, ros-humble-grid-map-pcl, ros-humble-grid-map-ros, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-storage-default-plugins, ros-humble-tier4-external-api-msgs
+Description: The autoware_elevation_map_loader package

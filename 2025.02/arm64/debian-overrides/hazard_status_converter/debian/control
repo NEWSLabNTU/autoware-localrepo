@@ -1,0 +1,12 @@
+Source: ros-humble-hazard-status-converter
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-system-msgs, ros-humble-autoware-universe-utils, ros-humble-diagnostic-graph-utils, ros-humble-diagnostic-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-system-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-hazard-status-converter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-universe-utils, ros-humble-diagnostic-graph-utils, ros-humble-diagnostic-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-system-msgs
+Description: The hazard_status_converter package

@@ -1,0 +1,12 @@
+Source: ros-humble-random-test-runner
+Section: misc
+Priority: optional
+Maintainer: piotr-zyskowski-rai <piotr-zyskowski@robotec.ai>
+Build-Depends: debhelper (>= 9.0.0), libfmt-dev, libyaml-cpp-dev, ros-humble-ament-cmake, ros-humble-ament-cmake-clang-format <!nocheck>, ros-humble-ament-cmake-copyright <!nocheck>, ros-humble-ament-cmake-gmock <!nocheck>, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-cmake-lint-cmake <!nocheck>, ros-humble-ament-cmake-pep257 <!nocheck>, ros-humble-ament-cmake-xmllint <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-geometry-msgs, ros-humble-simple-junit, ros-humble-simple-sensor-simulator, ros-humble-traffic-simulator, ros-humble-traffic-simulator-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-random-test-runner
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, libyaml-cpp-dev, ros-humble-behavior-tree-plugin, ros-humble-geometry-msgs, ros-humble-openscenario-visualization, ros-humble-simple-junit, ros-humble-simple-sensor-simulator, ros-humble-traffic-simulator, ros-humble-traffic-simulator-msgs
+Description: Random behavior test runner

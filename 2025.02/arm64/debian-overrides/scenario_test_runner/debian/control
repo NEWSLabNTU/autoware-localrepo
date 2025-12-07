@@ -1,0 +1,12 @@
+Source: ros-humble-scenario-test-runner
+Section: misc
+Priority: optional
+Maintainer: Tatsuya Yamasaki <tatsuya.yamasaki@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), python3-pytest, ros-humble-ament-cmake, ros-humble-ament-cmake-python, ros-humble-ament-copyright, ros-humble-ament-pep257, ros-humble-openscenario-interpreter, ros-humble-openscenario-preprocessor, ros-humble-openscenario-preprocessor-msgs, ros-humble-openscenario-utility, ros-humble-openscenario-visualization, ros-humble-rclpy, ros-humble-simple-sensor-simulator
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-scenario-test-runner
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-pytest, ros-humble-ament-copyright, ros-humble-ament-pep257, ros-humble-openscenario-interpreter, ros-humble-openscenario-preprocessor, ros-humble-openscenario-preprocessor-msgs, ros-humble-openscenario-utility, ros-humble-openscenario-visualization, ros-humble-rclpy, ros-humble-simple-sensor-simulator
+Description: scenario test runner package

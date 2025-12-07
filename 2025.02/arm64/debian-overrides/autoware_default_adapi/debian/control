@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-default-adapi
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-specs, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-adapi-version-msgs, ros-humble-autoware-cmake, ros-humble-autoware-component-interface-specs, ros-humble-autoware-component-interface-utils, ros-humble-autoware-geography-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-graph-utils, ros-humble-geographic-msgs, ros-humble-launch-testing <!nocheck>, ros-humble-launch-testing-ament-cmake <!nocheck>, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-shape-msgs, ros-humble-std-srvs, ros-humble-tier4-api-msgs, ros-humble-tier4-control-msgs, ros-humble-tier4-system-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-default-adapi
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-flask, ros-humble-autoware-adapi-specs, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-adapi-version-msgs, ros-humble-autoware-component-interface-specs, ros-humble-autoware-component-interface-utils, ros-humble-autoware-geography-utils, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-graph-utils, ros-humble-geographic-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-shape-msgs, ros-humble-std-srvs, ros-humble-tier4-api-msgs, ros-humble-tier4-control-msgs, ros-humble-tier4-system-msgs
+Description: The autoware_default_adapi package

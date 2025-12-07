@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-internal-perception-msgs
+Section: misc
+Priority: optional
+Maintainer: M. Fatih Cırıt <mfc@leodrive.ai>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-builtin-interfaces, ros-humble-rosidl-default-generators, ros-humble-sensor-msgs, ros-humble-std-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-internal-perception-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-perception-msgs, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime, ros-humble-sensor-msgs, ros-humble-std-msgs
+Description: Autoware internal perception messages package.

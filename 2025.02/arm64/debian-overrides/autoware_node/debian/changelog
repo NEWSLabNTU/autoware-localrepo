@@ -1,0 +1,15 @@
+ros-humble-autoware-node (0.1.0-0jammy) jammy; urgency=high
+
+  * fix: change autoware_node from a static library to a shared library (#121 <https://github.com/autowarefoundation/autoware.core/issues/121>)
+  * feat: add autoware_node and autoware_test node (#113 <https://github.com/autowarefoundation/autoware.core/issues/113>)
+  * Contributors: M. Fatih Cırıt, SakodaShintaro
+
+ -- M. Fatih Cırıt <mfc@autoware.org>  Wed, 08 Jan 2025 16:00:00 -0000
+
+ros-humble-autoware-node (0.0.0-0jammy) jammy; urgency=high
+
+
+
+ -- M. Fatih Cırıt <mfc@autoware.org>  Sun, 01 Dec 2024 16:00:00 -0000
+
+

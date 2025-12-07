@@ -1,0 +1,12 @@
+Source: ros-humble-simulator-compatibility-test
+Section: misc
+Priority: optional
+Maintainer: shpark <shpark@morai.ai>
+Build-Depends: debhelper (>= 9.0.0), python3-pytest <!nocheck>, ros-humble-ament-copyright <!nocheck>, ros-humble-ament-flake8 <!nocheck>, ros-humble-ament-pep257 <!nocheck>, ros-humble-autoware-control-msgs, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-morai-msgs <!nocheck>, ros-humble-rclpy, python3-all, python3-setuptools, dh-python
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-simulator-compatibility-test
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, ros-humble-autoware-control-msgs, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-rclpy
+Description: TODO: Package description

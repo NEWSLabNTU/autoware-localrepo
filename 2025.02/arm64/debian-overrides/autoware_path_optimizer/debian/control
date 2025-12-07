@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-path-optimizer
+Section: misc
+Priority: optional
+Maintainer: Takayuki Murooka <takayuki.murooka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-index-python <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-fake-test-node <!nocheck>, ros-humble-autoware-interpolation, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-osqp-interface, ros-humble-autoware-planning-msgs, ros-humble-autoware-planning-test-manager, ros-humble-autoware-testing <!nocheck>, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs, ros-humble-tier4-planning-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-path-optimizer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-interpolation, ros-humble-autoware-motion-utils, ros-humble-autoware-osqp-interface, ros-humble-autoware-planning-msgs, ros-humble-autoware-planning-test-manager, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs, ros-humble-tier4-planning-msgs, ros-humble-visualization-msgs
+Description: The autoware_path_optimizer package

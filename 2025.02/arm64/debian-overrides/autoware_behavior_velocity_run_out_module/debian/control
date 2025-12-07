@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-behavior-velocity-run-out-module
+Section: misc
+Priority: optional
+Maintainer: Tomohito Ando <tomohito.ando@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-dev, libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-behavior-velocity-crosswalk-module, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-eigen3-cmake-module, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-pcl-conversions, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-ros, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-behavior-velocity-run-out-module
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, libeigen3-dev, ros-humble-autoware-behavior-velocity-crosswalk-module, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-motion-utils, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-pcl-conversions, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-ros, ros-humble-visualization-msgs
+Description: The autoware_behavior_velocity_run_out_module package

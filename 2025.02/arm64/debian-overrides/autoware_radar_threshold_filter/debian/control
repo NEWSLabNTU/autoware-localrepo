@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-radar-threshold-filter
+Section: misc
+Priority: optional
+Maintainer: Satoshi Tanaka <satoshi.tanaka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-clang-format <!nocheck>, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-cmake, ros-humble-radar-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-radar-threshold-filter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-radar-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: autoware_radar_threshold_filter

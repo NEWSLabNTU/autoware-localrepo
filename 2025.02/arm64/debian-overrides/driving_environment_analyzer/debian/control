@@ -1,0 +1,12 @@
+Source: ros-humble-driving-environment-analyzer
+Section: misc
+Priority: optional
+Maintainer: Satoshi Ota <satoshi.ota@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-dev, libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-ament-cmake-auto, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-behavior-path-planner-common, ros-humble-autoware-cmake, ros-humble-autoware-lane-departure-checker, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-signal-processing, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-cpp, ros-humble-rviz-common, ros-humble-rviz-default-plugins, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs, ros-humble-tier4-rtc-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-driving-environment-analyzer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-behavior-path-planner-common, ros-humble-autoware-lane-departure-checker, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-signal-processing, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-cpp, ros-humble-rviz-common, ros-humble-rviz-default-plugins, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs, ros-humble-tier4-rtc-msgs, ros-humble-visualization-msgs
+Description: The driving_environment_analyzer package

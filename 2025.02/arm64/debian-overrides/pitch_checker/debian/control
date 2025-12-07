@@ -1,0 +1,12 @@
+Source: ros-humble-pitch-checker
+Section: misc
+Priority: optional
+Maintainer: Tomoya Kimura <tomoya.kimura@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-universe-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-pitch-checker
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-matplotlib, python3-pandas, ros-humble-autoware-universe-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
+Description: The pitch_checker

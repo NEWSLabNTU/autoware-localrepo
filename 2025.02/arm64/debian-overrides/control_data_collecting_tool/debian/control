@@ -1,0 +1,12 @@
+Source: ros-humble-control-data-collecting-tool
+Section: misc
+Priority: optional
+Maintainer: Masayuki Aino <masayuki.aino@proxima-ai-tech.com>
+Build-Depends: debhelper (>= 9.0.0), python3-scipy, ros-humble-ament-cmake-auto, ros-humble-ament-index-python <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-control-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-planning-msgs, ros-humble-nav-msgs, ros-humble-rviz-common, ros-humble-rviz-default-plugins
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-control-data-collecting-tool
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-matplotlib, python3-scipy, python3-seaborn, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-control-msgs, ros-humble-autoware-planning-msgs, ros-humble-nav-msgs, ros-humble-rviz-common, ros-humble-rviz-default-plugins
+Description: The pure pursuit control data collection tool package

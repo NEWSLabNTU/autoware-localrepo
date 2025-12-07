@@ -1,0 +1,12 @@
+Source: ros-humble-dummy-infrastructure
+Section: misc
+Priority: optional
+Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-v2x-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-dummy-infrastructure
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-v2x-msgs
+Description: dummy_infrastructure

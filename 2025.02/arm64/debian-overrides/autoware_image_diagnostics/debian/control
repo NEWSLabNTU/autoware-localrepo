@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-image-diagnostics
+Section: misc
+Priority: optional
+Maintainer: Dai Nguyen <dai.nguyen@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-universe-utils, ros-humble-cv-bridge, ros-humble-diagnostic-updater, ros-humble-image-transport, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tier4-debug-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-image-diagnostics
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-universe-utils, ros-humble-cv-bridge, ros-humble-diagnostic-updater, ros-humble-image-transport, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tier4-debug-msgs
+Description: The autoware_image_diagnostics package

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-universe-utils
+Section: misc
+Priority: optional
+Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-builtin-interfaces, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-logging-demo, ros-humble-pcl-conversions, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tier4-debug-msgs, ros-humble-tier4-planning-msgs, ros-humble-unique-identifier-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-universe-utils
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-builtin-interfaces, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-logging-demo, ros-humble-pcl-conversions, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tier4-debug-msgs, ros-humble-tier4-planning-msgs, ros-humble-unique-identifier-msgs, ros-humble-visualization-msgs
+Description: The autoware_universe_utils package

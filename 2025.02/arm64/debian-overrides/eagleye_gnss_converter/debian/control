@@ -1,0 +1,12 @@
+Source: ros-humble-eagleye-gnss-converter
+Section: misc
+Priority: optional
+Maintainer: OsamuSekino <osamu.sekino@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-eagleye-coordinate, ros-humble-eagleye-navigation, ros-humble-nmea-msgs, ros-humble-rclcpp, ros-humble-rtklib-msgs, ros-humble-sensor-msgs, ros-humble-septentrio-gnss-driver, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-ublox-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-eagleye-gnss-converter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-eagleye-coordinate, ros-humble-eagleye-navigation, ros-humble-nmea-msgs, ros-humble-rclcpp, ros-humble-rtklib-msgs, ros-humble-sensor-msgs, ros-humble-septentrio-gnss-driver, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-ublox-msgs
+Description: gnss_converter package

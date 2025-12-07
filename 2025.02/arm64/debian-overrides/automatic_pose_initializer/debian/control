@@ -1,0 +1,12 @@
+Source: ros-humble-automatic-pose-initializer
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-specs, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-component-interface-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-automatic-pose-initializer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-specs, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-component-interface-utils, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: The automatic_pose_initializer package

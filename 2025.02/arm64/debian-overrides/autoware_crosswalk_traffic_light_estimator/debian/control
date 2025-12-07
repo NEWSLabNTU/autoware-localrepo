@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-crosswalk-traffic-light-estimator
+Section: misc
+Priority: optional
+Maintainer: Satoshi Ota <satoshi.ota@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-universe-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-perception-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-crosswalk-traffic-light-estimator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-universe-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-perception-msgs
+Description: The autoware_crosswalk_traffic_light_estimator package

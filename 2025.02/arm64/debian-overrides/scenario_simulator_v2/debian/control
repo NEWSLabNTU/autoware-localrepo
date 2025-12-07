@@ -1,0 +1,12 @@
+Source: ros-humble-scenario-simulator-v2
+Section: misc
+Priority: optional
+Maintainer: Masaya Kataoka <masaya.kataoka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-scenario-simulator-v2
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-behavior-tree-plugin, ros-humble-openscenario-interpreter, ros-humble-openscenario-utility, ros-humble-openscenario-visualization, ros-humble-random-test-runner, ros-humble-scenario-test-runner, ros-humble-simple-sensor-simulator, ros-humble-simulation-interface, ros-humble-traffic-simulator, ros-humble-traffic-simulator-msgs
+Description: scenario testing framework for Autoware

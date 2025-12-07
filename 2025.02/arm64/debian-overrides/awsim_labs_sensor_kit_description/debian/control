@@ -1,0 +1,12 @@
+Source: ros-humble-awsim-labs-sensor-kit-description
+Section: misc
+Priority: optional
+Maintainer: Piotr Jaroszek <piotr.jaroszek@robotec.ai>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-velodyne-description
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-awsim-labs-sensor-kit-description
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-velodyne-description
+Description: The awsim_labs_sensor_kit_description package

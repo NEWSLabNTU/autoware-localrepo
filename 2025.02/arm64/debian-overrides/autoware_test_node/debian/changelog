@@ -1,0 +1,14 @@
+ros-humble-autoware-test-node (0.1.0-0jammy) jammy; urgency=high
+
+  * feat: add autoware_node and autoware_test node (#113 <https://github.com/autowarefoundation/autoware.core/issues/113>)
+  * Contributors: M. Fatih Cırıt
+
+ -- M. Fatih Cırıt <mfc@autoware.org>  Wed, 08 Jan 2025 16:00:00 -0000
+
+ros-humble-autoware-test-node (0.0.0-0jammy) jammy; urgency=high
+
+
+
+ -- M. Fatih Cırıt <mfc@autoware.org>  Sun, 01 Dec 2024 16:00:00 -0000
+
+

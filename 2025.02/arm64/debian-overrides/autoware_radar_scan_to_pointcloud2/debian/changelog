@@ -1,0 +1,61 @@
+ros-humble-autoware-radar-scan-to-pointcloud2 (0.40.0-0jammy) jammy; urgency=high
+
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * 0.39.0
+  * update changelog
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, Ryohsuke Mitsudome, Yutaka Kondo
+
+ -- Satoshi Tanaka <satoshi.tanaka@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-radar-scan-to-pointcloud2 (0.39.0-0jammy) jammy; urgency=high
+
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Yutaka Kondo
+
+ -- Satoshi Tanaka <satoshi.tanaka@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-radar-scan-to-pointcloud2 (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * refactor(radar_scan_to_pointcloud2, radar_static_pointcloud_filter, radar_threshold_filter)!: add package name prefix of autoware_ (#8132 <https://github.com/autowarefoundation/autoware.universe/issues/8132>)
+    * refactor(radar_scan_to_pointcloud2): rename package and update references
+    fix: rename package folder
+    * refactor(radar_static_pointcloud_filter): rename package and update references
+    refactor: update launch file name for autoware_radar_static_pointcloud_filter
+    * refactor(radar_threshold_filter): rename package and update references
+    ---------
+  * Contributors: Taekjin LEE, Yutaka Kondo
+
+ -- Satoshi Tanaka <satoshi.tanaka@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-radar-scan-to-pointcloud2 (0.26.0-0jammy) jammy; urgency=high
+
+
+
+ -- Satoshi Tanaka <satoshi.tanaka@tier4.jp>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

@@ -1,0 +1,12 @@
+Source: ros-humble-tier4-logging-level-configure-rviz-plugin
+Section: misc
+Priority: optional
+Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libqt5core5a, libqt5gui5, libqt5widgets5, libyaml-cpp-dev, qtbase5-dev, ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-logging-demo, ros-humble-rclcpp, ros-humble-rviz-common, ros-humble-rviz-default-plugins, ros-humble-rviz-rendering
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tier4-logging-level-configure-rviz-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5core5a, libqt5gui5, libqt5widgets5, libyaml-cpp-dev, qtbase5-dev, ros-humble-logging-demo, ros-humble-rclcpp, ros-humble-rviz-common, ros-humble-rviz-default-plugins, ros-humble-rviz-rendering
+Description: The tier4_logging_level_configure_rviz_plugin package

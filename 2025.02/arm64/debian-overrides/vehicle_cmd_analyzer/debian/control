@@ -1,0 +1,12 @@
+Source: ros-humble-vehicle-cmd-analyzer
+Section: misc
+Priority: optional
+Maintainer: taichihirano <taichi.hirano@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-control-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-vehicle-info-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-debug-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-vehicle-cmd-analyzer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-control-msgs, ros-humble-autoware-vehicle-info-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-debug-msgs
+Description: TODO: Package description

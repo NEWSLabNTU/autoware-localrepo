@@ -1,0 +1,12 @@
+Source: ros-humble-yabloc-particle-filter
+Section: misc
+Priority: optional
+Maintainer: Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-cmake-ros, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-universe-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosidl-default-generators, ros-humble-sensor-msgs, ros-humble-sophus, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-visualization-msgs, ros-humble-yabloc-common
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-yabloc-particle-filter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-universe-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosidl-default-runtime, ros-humble-sensor-msgs, ros-humble-sophus, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-visualization-msgs, ros-humble-yabloc-common
+Description: YabLoc particle filter package

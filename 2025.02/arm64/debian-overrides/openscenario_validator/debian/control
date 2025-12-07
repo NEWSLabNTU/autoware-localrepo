@@ -1,0 +1,12 @@
+Source: ros-humble-openscenario-validator
+Section: misc
+Priority: optional
+Maintainer: Kotaro Yoshimoto <kotaro.yoshimoto@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libxerces-c-dev, ros-humble-ament-index-cpp
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-openscenario-validator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libxerces-c-dev, ros-humble-ament-index-cpp
+Description: Validator for OpenSCENARIO 1.3

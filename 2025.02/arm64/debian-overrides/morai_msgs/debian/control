@@ -1,0 +1,12 @@
+Source: ros-humble-morai-msgs
+Section: misc
+Priority: optional
+Maintainer: Soohyeok Park <shpark@morai.ai>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-builtin-interfaces, ros-humble-geometry-msgs, ros-humble-rosidl-default-generators, ros-humble-std-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-morai-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-builtin-interfaces, ros-humble-geometry-msgs, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
+Description: The morai_msgs package for ROS2 (foxy, galactic)

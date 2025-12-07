@@ -1,0 +1,12 @@
+Source: ros-humble-tier4-screen-capture-rviz-plugin
+Section: misc
+Priority: optional
+Maintainer: Taiki, Tanaka <taiki.tanaka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libopencv-dev, libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rclcpp, ros-humble-rosidl-default-generators, ros-humble-rviz-common, ros-humble-rviz-rendering, ros-humble-std-srvs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tier4-screen-capture-rviz-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libopencv-dev, libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-rclcpp, ros-humble-rosidl-default-runtime, ros-humble-rviz-common, ros-humble-rviz-rendering, ros-humble-std-srvs
+Description: The screen capture package

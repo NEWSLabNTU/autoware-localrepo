@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-static-centerline-generator
+Section: misc
+Priority: optional
+Maintainer: Takayuki Murooka <takayuki.murooka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gmock <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-behavior-path-planner <!nocheck>, ros-humble-autoware-behavior-path-planner-common, ros-humble-autoware-behavior-velocity-planner <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-geography-utils, ros-humble-autoware-global-parameter-loader, ros-humble-autoware-interpolation, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lanelet2-map-visualizer, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-loader, ros-humble-autoware-map-msgs, ros-humble-autoware-map-projection-loader, ros-humble-autoware-map-tf-generator, ros-humble-autoware-mission-planner, ros-humble-autoware-motion-utils, ros-humble-autoware-osqp-interface, ros-humble-autoware-path-optimizer, ros-humble-autoware-path-smoother, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-ros-testing <!nocheck>, ros-humble-rosidl-default-generators
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-static-centerline-generator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-flask-cors, ros-humble-autoware-behavior-path-planner-common, ros-humble-autoware-geography-utils, ros-humble-autoware-global-parameter-loader, ros-humble-autoware-interpolation, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lanelet2-map-visualizer, ros-humble-autoware-map-loader, ros-humble-autoware-map-msgs, ros-humble-autoware-map-projection-loader, ros-humble-autoware-map-tf-generator, ros-humble-autoware-mission-planner, ros-humble-autoware-motion-utils, ros-humble-autoware-osqp-interface, ros-humble-autoware-path-optimizer, ros-humble-autoware-path-smoother, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosidl-default-runtime
+Description: The autoware_static_centerline_generator package

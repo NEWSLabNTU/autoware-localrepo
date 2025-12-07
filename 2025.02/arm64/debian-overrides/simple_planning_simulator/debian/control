@@ -1,0 +1,12 @@
+Source: ros-humble-simple-planning-simulator
+Section: misc
+Priority: optional
+Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-control-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-learning-based-vehicle-model, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-api-utils, ros-humble-tier4-external-api-msgs, ros-humble-tier4-vehicle-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-simple-planning-simulator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-control-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-launch-ros, ros-humble-learning-based-vehicle-model, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-api-utils, ros-humble-tier4-external-api-msgs, ros-humble-tier4-vehicle-msgs
+Description: simple_planning_simulator as a ROS 2 node

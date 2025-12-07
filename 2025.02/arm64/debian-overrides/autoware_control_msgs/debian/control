@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-control-msgs
+Section: misc
+Priority: optional
+Maintainer: M. Fatih Cırıt <mfc@leodrive.ai>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-builtin-interfaces, ros-humble-rosidl-default-generators
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-control-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime
+Description: Autoware control messages package.

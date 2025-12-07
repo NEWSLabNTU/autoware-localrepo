@@ -1,0 +1,38 @@
+ros-humble-autoware-geography-utils (0.1.0-0jammy) jammy; urgency=high
+
+  * refactor(autoware_geography_utils): apply modern C++17 style (#109 <https://github.com/autowarefoundation/autoware.core/issues/109>)
+    * use using
+    * refactor height
+    * refactor projection
+    * refactor lanelet2_projector
+    * set class name
+    * revert string
+    ---------
+  * test(autoware_geography_utils): add lanelet2_projector test (#128 <https://github.com/autowarefoundation/autoware.core/issues/128>)
+    * add test
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * chore: sync files (#115 <https://github.com/autowarefoundation/autoware.core/issues/115>)
+    * chore: sync files
+    * style(pre-commit): autofix
+    * include what you use
+    ---------
+    Co-authored-by: github-actions <mailto:github-actions@github.com>
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: M. Fatih Cırıt <mailto:mfc@autoware.org>
+  * docs(autoware_geography_utils): update README.md (#111 <https://github.com/autowarefoundation/autoware.core/issues/111>)
+    update readme
+  * feat: port autoware_geography_utils from autoware.universe (#100 <https://github.com/autowarefoundation/autoware.core/issues/100>)
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * Contributors: Ryohsuke Mitsudome, Yutaka Kondo, awf-autoware-bot[bot]
+
+ -- Yamato Ando <yamato.ando@tier4.jp>  Wed, 08 Jan 2025 16:00:00 -0000
+
+ros-humble-autoware-geography-utils (0.0.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yamato Ando <yamato.ando@tier4.jp>  Sun, 01 Dec 2024 16:00:00 -0000
+
+

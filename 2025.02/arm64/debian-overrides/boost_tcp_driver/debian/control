@@ -1,0 +1,12 @@
+Source: ros-humble-boost-tcp-driver
+Section: misc
+Priority: optional
+Maintainer: Joshua Whitley <whitleysoftwareservices@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), libboost-all-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-lifecycle-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rclcpp-lifecycle
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-boost-tcp-driver
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, ros-humble-lifecycle-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rclcpp-lifecycle
+Description: A library to write Synchronous and Asynchronous networking applications, ROS and ROS2 nodes

@@ -1,0 +1,64 @@
+ros-humble-autoware-detected-object-feature-remover (0.40.0-0jammy) jammy; urgency=high
+
+  * Merge branch 'main' into release-0.40.0
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * fix(cpplint): include what you use - perception (#9569 <https://github.com/autowarefoundation/autoware.universe/issues/9569>)
+  * 0.39.0
+  * update changelog
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, M. Fatih Cırıt, Ryohsuke Mitsudome, Yutaka Kondo
+
+ -- Tomoya Kimura <tomoya.kimura@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-detected-object-feature-remover (0.39.0-0jammy) jammy; urgency=high
+
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Yutaka Kondo
+
+ -- Tomoya Kimura <tomoya.kimura@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-detected-object-feature-remover (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * test(autoware_detected_object_feature_remover): add unit testing for the node (#8735 <https://github.com/autowarefoundation/autoware.universe/issues/8735>)
+    * test: add unit testing for the node
+    * test: update to run node testings with ROS_DOMAIN_ID isolation
+    ---------
+  * chore(autoware_deteted_object_feature_remover): add code owners (#8962 <https://github.com/autowarefoundation/autoware.universe/issues/8962>)
+    Add yoshiri and kotaro as code owners of feature remover
+  * refactor(detected_object_feature_remover)!: add package name prefix of autoware_ (#8127 <https://github.com/autowarefoundation/autoware.universe/issues/8127>)
+    refactor(detected_object_feature_remover): add package name prefix of autoware_
+  * Contributors: Kotaro Uetake, Yoshi Ri, Yutaka Kondo, badai nguyen
+
+ -- Tomoya Kimura <tomoya.kimura@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-detected-object-feature-remover (0.26.0-0jammy) jammy; urgency=high
+
+
+
+ -- Tomoya Kimura <tomoya.kimura@tier4.jp>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

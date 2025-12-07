@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-lanelet2-map-utils
+Section: misc
+Priority: optional
+Maintainer: Yamato Ando <yamato.ando@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libpcl-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rclcpp
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-lanelet2-map-utils
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, ros-humble-autoware-lanelet2-extension, ros-humble-rclcpp
+Description: The autoware_lanelet2_map_utils package

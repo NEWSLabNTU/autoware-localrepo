@@ -1,0 +1,12 @@
+Source: ros-humble-tier4-debug-msgs
+Section: misc
+Priority: optional
+Maintainer: Takamasa Horibe <horibe.takamasa@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-builtin-interfaces, ros-humble-rosidl-default-generators
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tier4-debug-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime
+Description: The tier4_debug_msgs package

@@ -1,0 +1,12 @@
+Source: ros-humble-traffic-simulator
+Section: misc
+Priority: optional
+Maintainer: masaya kataoka <masaya.kataoka@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libboost-dev, libomp-dev, libpugixml-dev, nlohmann-json3-dev, ros-humble-ament-cmake, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-clang-format <!nocheck>, ros-humble-ament-cmake-copyright <!nocheck>, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-cmake-lint-cmake <!nocheck>, ros-humble-ament-cmake-pep257 <!nocheck>, ros-humble-ament-cmake-xmllint <!nocheck>, ros-humble-ament-index-cpp, ros-humble-ament-lint-auto <!nocheck>, ros-humble-arithmetic, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-color-names, ros-humble-concealer, ros-humble-geographic-msgs, ros-humble-geometry, ros-humble-geometry-msgs, ros-humble-kashiwanoha-map <!nocheck>, ros-humble-lanelet2-core, ros-humble-lanelet2-io, ros-humble-lanelet2-matching, ros-humble-lanelet2-projection, ros-humble-lanelet2-routing, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosgraph-msgs, ros-humble-rviz2, ros-humble-simulation-interface, ros-humble-std-msgs, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs, ros-humble-tinyxml2-vendor, ros-humble-traffic-simulator-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-traffic-simulator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, libomp-dev, libpugixml-dev, nlohmann-json3-dev, ros-humble-ament-index-cpp, ros-humble-arithmetic, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-color-names, ros-humble-concealer, ros-humble-geographic-msgs, ros-humble-geometry, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-lanelet2-io, ros-humble-lanelet2-matching, ros-humble-lanelet2-projection, ros-humble-lanelet2-routing, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosgraph-msgs, ros-humble-rviz2, ros-humble-simulation-interface, ros-humble-std-msgs, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs, ros-humble-tinyxml2-vendor, ros-humble-traffic-simulator-msgs, ros-humble-visualization-msgs
+Description: control traffic flow

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-rtc-replayer
+Section: misc
+Priority: optional
+Maintainer: Fumiya Watanabe <fumiya.watanabe@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-rtc-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-rtc-replayer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-rtc-msgs
+Description: The autoware_rtc_replayer package

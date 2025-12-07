@@ -1,0 +1,12 @@
+Source: ros-humble-rtklib-bridge
+Section: misc
+Priority: optional
+Maintainer: megken <megken@todo.todo>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-common-interfaces, ros-humble-rclcpp, ros-humble-rtklib-msgs, ros-humble-sensor-msgs, ros-humble-std-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-rtklib-bridge
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-common-interfaces, ros-humble-rclcpp, ros-humble-rtklib-msgs, ros-humble-sensor-msgs, ros-humble-std-msgs
+Description: The rtklib_bridge package

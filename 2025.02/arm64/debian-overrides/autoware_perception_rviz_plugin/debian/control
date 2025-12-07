@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-perception-rviz-plugin
+Section: misc
+Priority: optional
+Maintainer: Apex.AI, Inc. <opensource@apex.ai>
+Build-Depends: debhelper (>= 9.0.0), libboost-dev, qtbase5-dev, ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-rviz-common, ros-humble-rviz-default-plugins
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-perception-rviz-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5widgets5, ros-humble-autoware-perception-msgs, ros-humble-rviz-common, ros-humble-rviz-default-plugins, ros-humble-rviz2
+Description: Contains plugins to visualize object detection outputs

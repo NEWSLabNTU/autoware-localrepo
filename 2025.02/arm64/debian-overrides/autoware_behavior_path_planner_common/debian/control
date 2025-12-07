@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-behavior-path-planner-common
+Section: misc
+Priority: optional
+Maintainer: Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-freespace-planning-algorithms, ros-humble-autoware-interpolation, ros-humble-autoware-lane-departure-checker, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-objects-of-interest-marker-interface, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-rtc-interface, ros-humble-autoware-test-utils <!nocheck>, ros-humble-autoware-traffic-light-utils, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-magic-enum, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tier4-planning-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-behavior-path-planner-common
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-freespace-planning-algorithms, ros-humble-autoware-interpolation, ros-humble-autoware-lane-departure-checker, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-objects-of-interest-marker-interface, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-rtc-interface, ros-humble-autoware-traffic-light-utils, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-magic-enum, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tier4-planning-msgs, ros-humble-visualization-msgs
+Description: The autoware_behavior_path_planner_common package

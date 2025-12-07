@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-ekf-localizer
+Section: misc
+Priority: optional
+Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, libfmt-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-kalman-filter, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-localization-util, ros-humble-autoware-universe-utils, ros-humble-diagnostic-msgs, ros-humble-eigen3-cmake-module, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-ros-testing <!nocheck>, ros-humble-std-srvs, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-ekf-localizer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, ros-humble-autoware-kalman-filter, ros-humble-autoware-localization-util, ros-humble-autoware-universe-utils, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-srvs, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-tier4-debug-msgs
+Description: The autoware_ekf_localizer package

@@ -1,0 +1,22 @@
+ros-humble-autoware-localization-msgs (1.3.0-0jammy) jammy; urgency=high
+
+
+
+ -- M. Fatih Cırıt <mfc@leodrive.ai>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-localization-msgs (1.2.0-0jammy) jammy; urgency=high
+
+
+
+ -- M. Fatih Cırıt <mfc@leodrive.ai>  Mon, 30 Sep 2024 16:00:00 -0000
+
+ros-humble-autoware-localization-msgs (1.1.0-0jammy) jammy; urgency=high
+
+  * chore: update package.xml and fix CMakeLists.txt (#91 <https://github.com/youtalk/autoware_msgs/issues/91>)
+    update package.xml and fix cmakefiles
+  * feat(localization-messages): add autoware_localization_msgs (#16 <https://github.com/youtalk/autoware_msgs/issues/16>)
+  * Contributors: M. Fatih Cırıt, Yutaka Kondo
+
+ -- M. Fatih Cırıt <mfc@leodrive.ai>  Thu, 09 May 2024 16:00:00 -0000
+
+

@@ -1,0 +1,93 @@
+ros-humble-autoware-motion-velocity-obstacle-velocity-limiter-module (0.40.0-0jammy) jammy; urgency=high
+
+  * Merge branch 'main' into release-0.40.0
+  * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)"
+    This reverts commit c9f0f2688c57b0f657f5c1f28f036a970682e7f5.
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware.universe/issues/9587>)
+    * chore(package.xml): bump version to 0.39.0
+    * fix: fix ticket links in CHANGELOG.rst
+    * fix: remove unnecessary diff
+    ---------
+    Co-authored-by: Yutaka Kondo <mailto:yutaka.kondo@youtalk.jp>
+  * fix: fix ticket links in CHANGELOG.rst (#9588 <https://github.com/autowarefoundation/autoware.universe/issues/9588>)
+  * fix(cpplint): include what you use - planning (#9570 <https://github.com/autowarefoundation/autoware.universe/issues/9570>)
+  * 0.39.0
+  * update changelog
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Fumiya Watanabe, M. Fatih Cırıt, Ryohsuke Mitsudome, Yutaka Kondo
+
+ -- Maxime CLEMENT <maxime.clement@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-velocity-limiter-module (0.39.0-0jammy) jammy; urgency=high
+
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware.universe (#9304 <https://github.com/autowarefoundation/autoware.universe/issues/9304>)
+  * chore(package.xml): bump version to 0.38.0 (#9266 <https://github.com/autowarefoundation/autoware.universe/issues/9266>) (#9284 <https://github.com/autowarefoundation/autoware.universe/issues/9284>)
+    * unify package.xml version to 0.37.0
+    * remove system_monitor/CHANGELOG.rst
+    * add changelog
+    * 0.38.0
+    ---------
+  * Contributors: Esteve Fernandez, Yutaka Kondo
+
+ -- Maxime CLEMENT <maxime.clement@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-velocity-limiter-module (0.38.0-0jammy) jammy; urgency=high
+
+  * unify package.xml version to 0.37.0
+  * refactor(autoware_grid_map_utils): prefix folder structure with autoware/ (#9170 <https://github.com/autowarefoundation/autoware.universe/issues/9170>)
+  * fix(obstacle_velocity_limiter): more stable virtual wall (#8499 <https://github.com/autowarefoundation/autoware.universe/issues/8499>)
+  * feat(out_of_lane): redesign to improve accuracy and performance (#8453 <https://github.com/autowarefoundation/autoware.universe/issues/8453>)
+  * chore(obstacle_velocity_limiter): add Alqudah Mohammad as codeowner (#8516 <https://github.com/autowarefoundation/autoware.universe/issues/8516>)
+  * fix(autoware_motion_velocity_obstacle_velocity_limiter_module): fix functionStatic (#8483 <https://github.com/autowarefoundation/autoware.universe/issues/8483>)
+    fix:functionStatic
+  * fix(autoware_motion_velocity_obstacle_velocity_limiter_module): fix unreadVariable (#8366 <https://github.com/autowarefoundation/autoware.universe/issues/8366>)
+    * fix:unreadVariable
+    * fix:unreadVariable
+    ---------
+  * fix(autoware_motion_velocity_obstacle_velocity_limiter_module): fix uninitMemberVar (#8314 <https://github.com/autowarefoundation/autoware.universe/issues/8314>)
+    fix:funinitMemberVar
+  * fix(autoware_motion_velocity_obstacle_velocity_limiter_module): fix funcArgNamesDifferent (#8025 <https://github.com/autowarefoundation/autoware.universe/issues/8025>)
+    fix:funcArgNamesDifferent
+  * fix(autoware_motion_velocity_obstacle_velocity_limiter_module): fix shadowVariable (#7977 <https://github.com/autowarefoundation/autoware.universe/issues/7977>)
+    * fix:shadowVariable
+    * fix:shadowVariable
+    ---------
+  * perf(motion_velocity_planner): resample trajectory after vel smoothing (#7732 <https://github.com/autowarefoundation/autoware.universe/issues/7732>)
+    * perf(dynamic_obstacle_stop): create rtree with packing algorithm
+    * Revert "perf(out_of_lane): downsample the trajectory to improve performance (#7691 <https://github.com/autowarefoundation/autoware.universe/issues/7691>)"
+    This reverts commit 8444a9eb29b32f500be3724dd5662013b9b81060.
+    * perf(motion_velocity_planner): resample trajectory after vel smoothing
+    ---------
+  * feat: add autoware_ prefix to lanelet2_extension (#7640 <https://github.com/autowarefoundation/autoware.universe/issues/7640>)
+  * perf(out_of_lane): downsample the trajectory to improve performance (#7691 <https://github.com/autowarefoundation/autoware.universe/issues/7691>)
+  * feat(motion_velocity_planner, lane_departure_checker): add processing time Float64 publishers (#7683 <https://github.com/autowarefoundation/autoware.universe/issues/7683>)
+  * feat(motion_velocity_planner): publish processing times (#7633 <https://github.com/autowarefoundation/autoware.universe/issues/7633>)
+  * fix(autoware_motion_velocity_obstacle_velocity_limiter_module): fix unreadVariable warning (#7625 <https://github.com/autowarefoundation/autoware.universe/issues/7625>)
+  * refactor(universe_utils/motion_utils)!: add autoware namespace (#7594 <https://github.com/autowarefoundation/autoware.universe/issues/7594>)
+  * refactor(motion_utils)!: add autoware prefix and include dir (#7539 <https://github.com/autowarefoundation/autoware.universe/issues/7539>)
+    refactor(motion_utils): add autoware prefix and include dir
+  * feat(autoware_universe_utils)!: rename from tier4_autoware_utils (#7538 <https://github.com/autowarefoundation/autoware.universe/issues/7538>)
+    Co-authored-by: kosuke55 <mailto:kosuke.tnp@gmail.com>
+  * feat(motion_velocity_planner): rename include directories (#7523 <https://github.com/autowarefoundation/autoware.universe/issues/7523>)
+  * refactor(grid_map_utils): add autoware prefix and namespace (#7487 <https://github.com/autowarefoundation/autoware.universe/issues/7487>)
+  * feat(obstacle_velocity_limiter): move to motion_velocity_planner (#7439 <https://github.com/autowarefoundation/autoware.universe/issues/7439>)
+  * Contributors: Esteve Fernandez, Kosuke Takeuchi, Maxime CLEMENT, Ryuta Kambe, Takayuki Murooka, Yutaka Kondo, kobayu858
+
+ -- Maxime CLEMENT <maxime.clement@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-velocity-limiter-module (0.26.0-0jammy) jammy; urgency=high
+
+
+
+ -- Maxime CLEMENT <maxime.clement@tier4.jp>  Tue, 02 Apr 2024 16:00:00 -0000
+
+

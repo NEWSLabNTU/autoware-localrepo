@@ -1,0 +1,12 @@
+Source: ros-humble-tier4-localization-msgs
+Section: misc
+Priority: optional
+Maintainer: Yamato Ando <yamato.ando@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-common-msgs, ros-humble-geometry-msgs, ros-humble-rosidl-default-generators
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tier4-localization-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-common-msgs, ros-humble-geometry-msgs, ros-humble-rosidl-default-runtime
+Description: The tier4_localization_msgs package

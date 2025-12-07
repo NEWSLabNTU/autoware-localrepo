@@ -1,0 +1,12 @@
+Source: ros-humble-yabloc-pose-initializer
+Section: misc
+Priority: optional
+Maintainer: Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>
+Build-Depends: debhelper (>= 9.0.0), libopencv-dev, ros-humble-ament-cmake-ros, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosidl-default-generators, ros-humble-sensor-msgs, ros-humble-tier4-localization-msgs, ros-humble-visualization-msgs, ros-humble-yabloc-common
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-yabloc-pose-initializer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libopencv-dev, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosidl-default-runtime, ros-humble-sensor-msgs, ros-humble-tier4-localization-msgs, ros-humble-visualization-msgs, ros-humble-yabloc-common
+Description: The pose initializer
