@@ -142,6 +142,16 @@ Always use `$(CURDIR)/debian/<package-name>/` for install destinations, not `$(D
 install -d $(CURDIR)/debian/autoware-config/opt/autoware/config
 ```
 
+## Development Practices
+
+### Temporary Files
+
+Always create temporary files in the project's `tmp/` directory instead of system `/tmp`:
+```bash
+mkdir -p tmp/
+# Use tmp/ for intermediate build artifacts, logs, etc.
+```
+
 ## Related Projects
 
 - **colcon2deb** (`~/repos/colcon2deb`): Builds ROS packages into .deb files in Docker containers. Used by `*/amd64/` and `*/arm64/` directories.
