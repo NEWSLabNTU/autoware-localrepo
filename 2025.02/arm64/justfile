@@ -1,4 +1,4 @@
-# Autoware 2025.02 AMD64 Debian Package Builder
+# Autoware 2025.02 ARM64 Debian Package Builder
 
 # Default recipe: list all available recipes
 default:
@@ -47,7 +47,7 @@ clean:
 # Rebuild Docker image
 rebuild-image:
     @echo "Rebuilding Docker image..."
-    docker build -t autoware-2025.02-builder .
+    docker build -t autoware-2025.02-arm64-builder .
     @echo "✓ Docker image rebuilt"
 
 # Clean and rebuild everything
