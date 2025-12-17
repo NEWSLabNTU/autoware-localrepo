@@ -153,6 +153,8 @@ ros-humble-plotjuggler-ros
 ros-humble-proxsuite
 ros-humble-rosbag2-storage-mcap
 ros-humble-rosbridge-server
+ros-humble-cudnn-cmake-module
+ros-humble-pacmod3-msgs
 ros-humble-sensor-msgs-py
 ros-humble-tensorrt-cmake-module
 ros-humble-zmqpp-vendor
