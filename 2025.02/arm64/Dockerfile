@@ -15,6 +15,9 @@ RUN ln -snf /usr/share/zoneinfo/Asia/Taipei /etc/localtime && echo Asia/Taipei >
 RUN apt install -y software-properties-common apt-transport-https && \
     add-apt-repository universe
 
+# Configure AutonomouStuff APT repository for pacmod packages
+RUN echo "deb [trusted=yes] https://s3.amazonaws.com/autonomoustuff-repo/ jammy main" | tee /etc/apt/sources.list.d/autonomoustuff-public.list > /dev/null
+
 # Install APT packages for build environment
 RUN apt install -y \
     python3-venv \
