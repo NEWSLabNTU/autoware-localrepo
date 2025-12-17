@@ -76,4 +76,22 @@ RUN pip3 install xmlschema yamale
 # Set up ROS environment
 RUN echo "source /opt/ros/humble/setup.bash" >> /etc/bash.bashrc
 
+# Add NVIDIA L4T APT sources for Jetpack-specific packages
+RUN apt-key adv --fetch-key http://repo.download.nvidia.com/jetson/jetson-ota-public.asc && \
+    echo "deb https://repo.download.nvidia.com/jetson/common r36.3 main" > /etc/apt/sources.list.d/nvidia-l4t-apt-source.list && \
+    echo "deb https://repo.download.nvidia.com/jetson/t234 r36.3 main" >> /etc/apt/sources.list.d/nvidia-l4t-apt-source.list && \
+    echo "deb https://repo.download.nvidia.com/jetson/ffmpeg r36.3 main" >> /etc/apt/sources.list.d/nvidia-l4t-apt-source.list && \
+    mkdir -p /opt/nvidia/l4t-packages && \
+    touch /opt/nvidia/l4t-packages/.nv-l4t-disable-boot-fw-update-in-preinstall && \
+    apt-get update -y
+
+# Install NVIDIA L4T packages (required for Jetpack builds)
+# - nvidia-l4t-core: Core libraries including CUDA driver stubs
+# - nvidia-l4t-cuda: CUDA runtime libraries with DLA support
+# - nvidia-l4t-dla-compiler: DLA compiler
+RUN apt-get install -o DPkg::Options::="--force-confold" -y \
+    nvidia-l4t-core \
+    nvidia-l4t-cuda \
+    nvidia-l4t-dla-compiler
+
 CMD ["/bin/bash"]
