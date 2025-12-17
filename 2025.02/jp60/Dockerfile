@@ -29,6 +29,9 @@ RUN apt install -y \
     curl \
     wget
 
+# Allow passwordless sudo for the sudo group (required for colcon2deb)
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
 # Install required dependencies to build Debian packages
 RUN apt install -y parallel fakeroot debhelper dh-python rsync
 
