@@ -11,6 +11,6 @@
 	url = https://github.com/NEWSLabNTU/autoware.git
 	branch = 2025.02-ws
 [submodule "1.5.0/arm64/source"]
-	path = 1.5.0/arm64/source
+	path = 1.5.0/jp62/source
 	url = https://github.com/NEWSLabNTU/autoware.git
 	branch = 1.5.0-ws
