@@ -31,8 +31,10 @@ RUN apt install -y parallel fakeroot debhelper dh-python rsync
 
 # ============================================================================
 # Install CMake 3.28+ from Kitware APT repository
-# L4T base image has CMake 3.14.4 which is too old for Autoware packages
+# L4T base image has CMake 3.14.4 in /usr/local/bin which is too old for Autoware
+# We must remove it first, then install newer CMake from Kitware
 # ============================================================================
+RUN rm -f /usr/local/bin/cmake /usr/local/bin/ctest /usr/local/bin/cpack /usr/local/bin/ccmake
 RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null
 RUN echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ jammy main' | tee /etc/apt/sources.list.d/kitware.list >/dev/null
 RUN apt update && apt install -y cmake
