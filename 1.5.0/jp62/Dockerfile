@@ -1,84 +1,102 @@
-# Use date-pinned tag for reproducible builds
-# Format: cuda-YYYYMMDD (based on Autoware 2025.02 release date: 2025-02-05)
-FROM ghcr.io/autowarefoundation/autoware-base:cuda-20250205
+# JetPack 6.2 base image with TensorRT 10.3, CUDA 12.6, cuDNN 9.3
+# L4T version: r36.4.x
+FROM nvcr.io/nvidia/l4t-tensorrt:r10.3.0-devel AS base
 
-# Remove the ROS2 repo with expired GPG key
-RUN rm -f /etc/apt/sources.list.d/ros2.list /etc/apt/sources.list.d/ros2-latest.list || true
+# Update system packages
+RUN apt update -y && apt upgrade -y
 
-# Install curl to download new ROS GPG key
-RUN apt update -y && \
-    apt install -y curl && \
-    rm -rf /var/lib/apt/lists/*
-
-# Fix ROS2 GPG key
-RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg && \
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null
-
-# Configure AutonomouStuff APT repository for pacmod packages
-RUN apt update -y && \
-    apt install -y apt-transport-https && \
-    rm -rf /var/lib/apt/lists/*
-RUN echo "deb [trusted=yes] https://s3.amazonaws.com/autonomoustuff-repo/ $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | tee /etc/apt/sources.list.d/autonomoustuff-public.list > /dev/null
-
-# Configure the locale and timezone (if not already set)
-RUN apt update -y && \
-    apt install -y locales && \
+# Configure the locale and timezone
+RUN apt install -y locales && \
     echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && \
     locale-gen && \
     update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 ENV LANG=en_US.UTF-8
-RUN ln -snf /usr/share/zoneinfo/Asia/Taipei /etc/localtime && \
-    echo Asia/Taipei > /etc/timezone
+RUN ln -snf /usr/share/zoneinfo/Asia/Taipei /etc/localtime && echo Asia/Taipei > /etc/timezone
+
+# Enable 'universe' repository and install basic tools
+RUN apt install -y software-properties-common apt-transport-https && \
+    add-apt-repository universe
+
+# Configure AutonomouStuff APT repository for pacmod packages
+RUN echo "deb [trusted=yes] https://s3.amazonaws.com/autonomoustuff-repo/ jammy main" | tee /etc/apt/sources.list.d/autonomoustuff-public.list > /dev/null
+
+# Install APT packages for build environment
+RUN apt install -y \
+    python3-venv \
+    python3-pip \
+    sudo \
+    openssh-client \
+    openssh-server \
+    git \
+    curl \
+    wget
+
+# Allow passwordless sudo for the sudo group (required for colcon2deb)
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # Install required dependencies to build Debian packages
-RUN apt update -y && \
-    apt install -y \
-    parallel \
-    fakeroot \
-    debhelper \
-    dh-python \
-    rsync \
-    sudo \
-    python3-bloom \
-    libgoogle-glog-dev \
-    libgflags-dev \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt install -y parallel fakeroot debhelper dh-python rsync
 
-# Fix libdrm and Mesa version conflicts by downgrading to Ubuntu 22.04 versions
-# The base image includes newer packages from kisak PPA for CUDA support,
-# but standard Ubuntu packages require exact version matches
-RUN apt update -y && \
-    apt install -y --allow-downgrades \
-        libdrm2=2.4.113-2~ubuntu0.22.04.1 \
-        libdrm-intel1=2.4.113-2~ubuntu0.22.04.1 \
-        libdrm-radeon1=2.4.113-2~ubuntu0.22.04.1 \
-        libdrm-amdgpu1=2.4.113-2~ubuntu0.22.04.1 \
-        libdrm-nouveau2=2.4.113-2~ubuntu0.22.04.1 \
-        libdrm-common=2.4.113-2~ubuntu0.22.04.1 \
-        libglapi-mesa=23.2.1-1ubuntu3.1~22.04.3 \
-        libgl1-mesa-dri=23.2.1-1ubuntu3.1~22.04.3 \
-        libglx-mesa0=23.2.1-1ubuntu3.1~22.04.3 \
-        libegl-mesa0=23.2.1-1ubuntu3.1~22.04.3 \
-        libgbm1=23.2.1-1ubuntu3.1~22.04.3 \
-        mesa-vulkan-drivers=23.2.1-1ubuntu3.1~22.04.3 \
-    && rm -rf /var/lib/apt/lists/*
+# ============================================================================
+# Install CMake 3.28+ from Kitware APT repository
+# L4T base image has CMake 3.14.4 in /usr/local/bin which is too old for Autoware
+# We must remove it first, then install newer CMake from Kitware
+# ============================================================================
+RUN rm -f /usr/local/bin/cmake /usr/local/bin/ctest /usr/local/bin/cpack /usr/local/bin/ccmake
+RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null
+RUN echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ jammy main' | tee /etc/apt/sources.list.d/kitware.list >/dev/null
+RUN apt update && apt install -y cmake
 
-# Install cudnn_cmake_module for TensorRT support
-RUN apt update -y && \
-    apt install -y ros-humble-cudnn-cmake-module \
-    && rm -rf /var/lib/apt/lists/*
+# ============================================================================
+# Install ROS 2 Humble following official docs
+# https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html
+# ============================================================================
 
-# Install message_filters - required by nebula_ros but sometimes not detected by rosdep
-RUN apt update -y && \
-    apt install -y ros-humble-message-filters \
-    && rm -rf /var/lib/apt/lists/*
+# Add ROS 2 GPG key
+RUN apt install -y curl gnupg lsb-release
+RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 
+# Add ROS 2 repository
+RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+# Update and install ROS 2 Humble
+RUN apt update && apt install -y ros-humble-desktop ros-dev-tools
+
+# Initialize rosdep
+RUN rosdep init || true
+RUN rosdep update
+
+# ============================================================================
 # Pre-install rosdep dependencies to speed up builds
-# These packages were extracted from build/log/rosdep_simulate.log
+# These packages were extracted from rosdep install --simulate
+# ============================================================================
 COPY rosdep-packages.txt /tmp/rosdep-packages.txt
-RUN apt update -y && \
+RUN apt update && \
     grep -v '^#' /tmp/rosdep-packages.txt | grep -v '^$' | xargs apt-get install -y --no-install-recommends || true && \
     rm -rf /var/lib/apt/lists/* /tmp/rosdep-packages.txt
 
-# Set default process to bash
+# Install pip packages
+RUN pip3 install xmlschema yamale
+
+# Set up ROS environment
+RUN echo "source /opt/ros/humble/setup.bash" >> /etc/bash.bashrc
+
+# Add NVIDIA L4T APT sources for Jetpack-specific packages (r36.4 for JetPack 6.2)
+RUN apt-key adv --fetch-key http://repo.download.nvidia.com/jetson/jetson-ota-public.asc && \
+    echo "deb https://repo.download.nvidia.com/jetson/common r36.4 main" > /etc/apt/sources.list.d/nvidia-l4t-apt-source.list && \
+    echo "deb https://repo.download.nvidia.com/jetson/t234 r36.4 main" >> /etc/apt/sources.list.d/nvidia-l4t-apt-source.list && \
+    echo "deb https://repo.download.nvidia.com/jetson/ffmpeg r36.4 main" >> /etc/apt/sources.list.d/nvidia-l4t-apt-source.list && \
+    mkdir -p /opt/nvidia/l4t-packages && \
+    touch /opt/nvidia/l4t-packages/.nv-l4t-disable-boot-fw-update-in-preinstall && \
+    apt-get update -y
+
+# Install NVIDIA L4T packages (required for Jetpack builds)
+# - nvidia-l4t-core: Core libraries including CUDA driver stubs
+# - nvidia-l4t-cuda: CUDA runtime libraries with DLA support
+# - nvidia-l4t-dla-compiler: DLA compiler
+RUN apt-get install -o DPkg::Options::="--force-confold" -y \
+    nvidia-l4t-core \
+    nvidia-l4t-cuda \
+    nvidia-l4t-dla-compiler
+
 CMD ["/bin/bash"]

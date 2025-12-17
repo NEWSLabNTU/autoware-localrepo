@@ -1,7 +1,14 @@
-# Rosdep packages extracted from build/log/rosdep_simulate.log
-# Install with: xargs apt-get install -y < rosdep-packages.txt
+# Rosdep packages for Autoware 1.5.0 (JetPack 6.2)
+# Generated from: rosdep install --simulate --from-paths . --ignore-src -y --skip-keys='pacmod3_msgs'
+# Date: 2025-12-18
+
+# System utilities
 bluez
 chrony
+sysstat
+wget
+
+# Boost libraries
 libboost-all-dev
 libboost-dev
 libboost-filesystem-dev
@@ -10,6 +17,8 @@ libboost-regex-dev
 libboost-serialization-dev
 libboost-system-dev
 libboost-thread-dev
+
+# Development libraries
 libcgal-dev
 libcpprest-dev
 libcrypto++-dev
@@ -23,6 +32,14 @@ libnl-3-dev
 libnl-genl-3-dev
 libnl-route-3-dev
 libopencv-dev
+libpng++-dev
+libpng-dev
+libpugixml-dev
+librange-v3-dev
+libyaml-cpp-dev
+nlohmann-json3-dev
+
+# PCL libraries
 libpcl-apps1.12
 libpcl-common1.12
 libpcl-dev
@@ -44,15 +61,14 @@ libpcl-stereo1.12
 libpcl-surface1.12
 libpcl-tracking1.12
 libpcl-visualization1.12
-libpng++-dev
-libpng-dev
-libpugixml-dev
+
+# Qt libraries
 libqt5core5a
 libqt5gui5
 libqt5widgets5
-librange-v3-dev
-libyaml-cpp-dev
-nlohmann-json3-dev
+qtbase5-dev
+
+# Python packages
 python3-bson
 python3-dev
 python3-flask
@@ -60,31 +76,53 @@ python3-matplotlib
 python3-pandas
 python3-pytest
 python3-scipy
-python3-torch
+# python3-torch  # Not available via apt on arm64/Jetson - use pip or NVIDIA Jetson wheels
 python3-tornado
-qtbase5-dev
+
+# ROS 2 Humble - Build tools
 ros-humble-ament-clang-format
+
+# ROS 2 Humble - Core packages
 ros-humble-angles
-ros-humble-aruco
-ros-humble-behaviortree-cpp-v3
-ros-humble-can-msgs
 ros-humble-cv-bridge
 ros-humble-diagnostic-aggregator
 ros-humble-diagnostic-updater
 ros-humble-generate-parameter-library
-ros-humble-geodesy
-ros-humble-geographic-info
-ros-humble-geographic-msgs
-ros-humble-grid-map-core
-ros-humble-grid-map-costmap-2d
-ros-humble-grid-map-cv
-ros-humble-grid-map-msgs
-ros-humble-grid-map-pcl
-ros-humble-grid-map-ros
-ros-humble-grid-map-rviz-plugin
 ros-humble-image-geometry
 ros-humble-image-transport
 ros-humble-joy
+ros-humble-laser-geometry
+ros-humble-logging-demo
+ros-humble-magic-enum
+ros-humble-map-msgs
+ros-humble-ros-testing
+ros-humble-sensor-msgs-py
+ros-humble-sophus
+ros-humble-tf-transformations
+ros-humble-tl-expected
+ros-humble-topic-tools
+ros-humble-xacro
+
+# ROS 2 Humble - Messages
+ros-humble-can-msgs
+ros-humble-geographic-msgs
+ros-humble-grid-map-msgs
+ros-humble-nmea-msgs
+ros-humble-pcl-msgs
+ros-humble-radar-msgs
+ros-humble-udp-msgs
+ros-humble-ublox-msgs
+ros-humble-velodyne-msgs
+
+# ROS 2 Humble - Navigation and mapping
+ros-humble-geodesy
+ros-humble-geographic-info
+ros-humble-grid-map-core
+ros-humble-grid-map-costmap-2d
+ros-humble-grid-map-cv
+ros-humble-grid-map-pcl
+ros-humble-grid-map-ros
+ros-humble-grid-map-rviz-plugin
 ros-humble-lanelet2-core
 ros-humble-lanelet2-io
 ros-humble-lanelet2-maps
@@ -93,45 +131,44 @@ ros-humble-lanelet2-python
 ros-humble-lanelet2-routing
 ros-humble-lanelet2-traffic-rules
 ros-humble-lanelet2-validation
-ros-humble-laser-geometry
-ros-humble-logging-demo
-ros-humble-magic-enum
-ros-humble-map-msgs
 ros-humble-nav2-costmap-2d
-ros-humble-nmea-msgs
-ros-humble-osqp-vendor
+
+# ROS 2 Humble - PCL
 ros-humble-pcl-conversions
-ros-humble-pcl-msgs
 ros-humble-pcl-ros
 ros-humble-point-cloud-msg-wrapper
-ros-humble-proxsuite
-ros-humble-radar-msgs
-ros-humble-rclpy-message-converter
-ros-humble-rosbag2-storage-mcap
-ros-humble-rosbridge-server
-ros-humble-ros-testing
-ros-humble-rqt-reconfigure
-ros-humble-rqt-robot-monitor
-ros-humble-rqt-runtime-monitor
+
+# ROS 2 Humble - Visualization
+ros-humble-aruco
 ros-humble-rviz2
 ros-humble-rviz-common
 ros-humble-rviz-default-plugins
 ros-humble-rviz-ogre-vendor
 ros-humble-rviz-rendering
-ros-humble-sensor-msgs-py
+ros-humble-rqt-reconfigure
+ros-humble-rqt-robot-monitor
+ros-humble-rqt-runtime-monitor
+
+# ROS 2 Humble - Communication
+ros-humble-rclpy-message-converter
+ros-humble-rosbag2-storage-mcap
+ros-humble-rosbridge-server
+
+# ROS 2 Humble - Sensors and drivers
 ros-humble-septentrio-gnss-driver
-ros-humble-sophus
-ros-humble-tensorrt-cmake-module
-ros-humble-tf-transformations
-ros-humble-tl-expected
-ros-humble-topic-tools
 ros-humble-ublox-gps
-ros-humble-ublox-msgs
-ros-humble-udp-msgs
 ros-humble-usb-cam
 ros-humble-velodyne-driver
-ros-humble-velodyne-msgs
 ros-humble-velodyne-pointcloud
-ros-humble-xacro
-sysstat
-wget
+
+# ROS 2 Humble - Behavior and planning
+ros-humble-behaviortree-cpp-v3
+ros-humble-osqp-vendor
+ros-humble-proxsuite
+
+# ROS 2 Humble - CUDA/TensorRT support
+ros-humble-cudnn-cmake-module
+ros-humble-tensorrt-cmake-module
+
+# AutonomouStuff packages (from autonomoustuff-repo)
+ros-humble-pacmod3-msgs
