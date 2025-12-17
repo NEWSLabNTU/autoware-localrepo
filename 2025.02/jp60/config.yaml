@@ -6,7 +6,7 @@ docker:
   dockerfile: Dockerfile
 
   # Optional: Custom image name for caching
-  image_name: autoware-2025.02-arm64-builder
+  image_name: autoware-2025.02-jp60-builder
 
 # Output configuration with descriptive name
 output:

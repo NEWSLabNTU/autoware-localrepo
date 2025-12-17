@@ -1,4 +1,4 @@
-# Autoware 1.5.0 AMD64 Debian Package Builder
+# Autoware 1.5.0 JetPack 6.2 Debian Package Builder
 
 # Default recipe: list all available recipes
 default:
@@ -30,7 +30,7 @@ clean:
 # Rebuild Docker image
 rebuild-image:
     @echo "Rebuilding Docker image..."
-    docker build -t autoware-1.5.0-builder .
+    docker build --platform linux/arm64 -t autoware-1.5.0-jp62-builder .
     @echo "✓ Docker image rebuilt"
 
 # Clean and rebuild everything

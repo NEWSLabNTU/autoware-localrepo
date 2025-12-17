@@ -30,7 +30,7 @@ clean:
 # Rebuild Docker image
 rebuild-image:
     @echo "Rebuilding Docker image..."
-    docker build -t autoware-1.5.0-builder .
+    docker build -t autoware-1.5.0-amd64-builder .
     @echo "✓ Docker image rebuilt"
 
 # Clean and rebuild everything

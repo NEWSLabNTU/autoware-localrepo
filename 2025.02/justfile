@@ -4,9 +4,13 @@
 build-amd64:
     cd amd64 && just build
 
-# Build ROS packages for arm64 (if available)
+# Build ROS packages for generic arm64
 build-arm64:
     cd arm64 && just build
+
+# Build ROS packages for JetPack 6.0 (Jetson Orin)
+build-jp60:
+    cd jp60 && just build
 
 # Build all debhelper packages
 build-packages:
@@ -21,9 +25,13 @@ build-packages:
 
 # Consolidate all .deb files to output directory
 consolidate:
-    mkdir -p output/amd64 output/arm64 output/all
+    mkdir -p output/amd64 output/arm64 output/jp60 output/all
     @echo "Copying ROS packages from amd64 build..."
     -cp amd64/build/packages/*.deb output/amd64/ 2>/dev/null
+    @echo "Copying ROS packages from arm64 build..."
+    -cp arm64/build/packages/*.deb output/arm64/ 2>/dev/null
+    @echo "Copying ROS packages from jp60 build..."
+    -cp jp60/build/packages/*.deb output/jp60/ 2>/dev/null
     @echo "Copying meta-packages..."
     -mv packages/*/*.deb output/all/ 2>/dev/null
     @echo "Done. Check output/ directory."
@@ -33,6 +41,11 @@ clean:
     rm -rf output/
     rm -f packages/*/*.deb packages/*/*.buildinfo packages/*/*.changes
     cd amd64 && just clean 2>/dev/null || true
+    cd arm64 && just clean 2>/dev/null || true
+    cd jp60 && just clean 2>/dev/null || true
 
 # Build everything for amd64
 all: build-amd64 build-packages consolidate
+
+# Build everything for JetPack 6.0
+all-jp60: build-jp60 build-packages consolidate
