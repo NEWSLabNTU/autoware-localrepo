@@ -136,4 +136,11 @@ RUN wget -q https://github.com/autowarefoundation/spconv_cpp/releases/download/s
     apt-get install -y ./cumm_0.5.3_arm64-jetson.deb ./spconv_2.3.8_arm64-jetson.deb && \
     rm -f cumm_0.5.3_arm64-jetson.deb spconv_2.3.8_arm64-jetson.deb
 
+# ============================================================================
+# Patch FindCUDA.cmake to also create CUDA::cudart target
+# Some Autoware packages use find_package(CUDA) but link to CUDA::cudart,
+# which only exists with find_package(CUDAToolkit). This patch loads both.
+# ============================================================================
+COPY FindCUDA.cmake /usr/share/cmake-3.22/Modules/FindCUDA.cmake
+
 CMD ["/bin/bash"]
