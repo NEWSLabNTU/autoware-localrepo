@@ -126,4 +126,14 @@ ENV CMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc
 ENV PATH=/usr/local/cuda/bin:${PATH}
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 
+# ============================================================================
+# Install spconv and cumm libraries for sparse convolution operations
+# Required by autoware_tensorrt_plugins for BEVFusion and other perception models
+# Pre-built packages from: https://github.com/autowarefoundation/spconv_cpp
+# ============================================================================
+RUN wget -q https://github.com/autowarefoundation/spconv_cpp/releases/download/spconv_v2.3.8%2Bcumm_v0.5.3%2Bcu128/cumm_0.5.3_arm64-jetson.deb && \
+    wget -q https://github.com/autowarefoundation/spconv_cpp/releases/download/spconv_v2.3.8%2Bcumm_v0.5.3%2Bcu128/spconv_2.3.8_arm64-jetson.deb && \
+    apt-get install -y ./cumm_0.5.3_arm64-jetson.deb ./spconv_2.3.8_arm64-jetson.deb && \
+    rm -f cumm_0.5.3_arm64-jetson.deb spconv_2.3.8_arm64-jetson.deb
+
 CMD ["/bin/bash"]
