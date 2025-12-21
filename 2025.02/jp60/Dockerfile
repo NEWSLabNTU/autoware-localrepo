@@ -18,6 +18,22 @@ RUN apt install -y software-properties-common apt-transport-https && \
 # Configure AutonomouStuff APT repository for pacmod packages
 RUN echo "deb [trusted=yes] https://s3.amazonaws.com/autonomoustuff-repo/ jammy main" | tee /etc/apt/sources.list.d/autonomoustuff-public.list > /dev/null
 
+# ============================================================================
+# Replace L4T OpenCV 4.8.0 with Ubuntu OpenCV 4.5.4
+# The L4T base image includes OpenCV 4.8.0 (not from APT), but ROS packages
+# and cv_bridge expect the Ubuntu version (4.5.4). We must:
+# 1. Remove ALL L4T OpenCV files from all possible locations
+# 2. Set APT preferences to ensure Ubuntu's OpenCV is always installed
+# 3. Install libopencv-dev from Ubuntu repository
+# ============================================================================
+RUN rm -rf /usr/lib/libopencv* /usr/lib/cmake/opencv4 /usr/include/opencv4 \
+           /usr/local/lib/libopencv* /usr/local/lib/cmake/opencv4 /usr/local/include/opencv4 \
+           /usr/share/OpenCV /usr/share/opencv4 \
+           /opt/opencv*
+COPY opencv-preferences /etc/apt/preferences.d/opencv-preferences
+RUN apt update && apt install -y libopencv-dev && \
+    echo "Installed OpenCV version:" && dpkg -l | grep libopencv
+
 # Install APT packages for build environment
 RUN apt install -y \
     python3-venv \
@@ -36,13 +52,13 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN apt install -y parallel fakeroot debhelper dh-python rsync
 
 # ============================================================================
-# Install CMake 3.28+ from Kitware APT repository
+# Install CMake from Ubuntu repository
 # L4T base image has CMake 3.14.4 in /usr/local/bin which is too old for Autoware
-# We must remove it first, then install newer CMake from Kitware
+# We remove it first, then install Ubuntu's CMake 3.22.1 which:
+# - Meets Autoware's minimum CMake requirement (3.16+)
+# - Has working FindCUDA module (deprecated in 3.27+, removed in 3.28+)
 # ============================================================================
 RUN rm -f /usr/local/bin/cmake /usr/local/bin/ctest /usr/local/bin/cpack /usr/local/bin/ccmake
-RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null
-RUN echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ jammy main' | tee /etc/apt/sources.list.d/kitware.list >/dev/null
 RUN apt update && apt install -y cmake
 
 # ============================================================================
@@ -67,13 +83,15 @@ RUN rosdep update
 # ============================================================================
 # Pre-install rosdep dependencies to speed up builds
 # These packages were extracted from rosdep install --simulate
+# NOTE: Some packages (python3-torch) are not available via apt on arm64/Jetson
+#       We filter those out and install separately via pip if needed
 # ============================================================================
 COPY rosdep-packages.txt /tmp/rosdep-packages.txt
 RUN apt update && \
-    grep -v '^#' /tmp/rosdep-packages.txt | grep -v '^$' | xargs apt-get install -y --no-install-recommends || true && \
+    grep -v '^#' /tmp/rosdep-packages.txt | grep -v '^$' | xargs apt-get install -y --no-install-recommends && \
     rm -rf /var/lib/apt/lists/* /tmp/rosdep-packages.txt
 
-# Install pip packages
+# Install pip packages needed for build
 RUN pip3 install xmlschema yamale
 
 # Set up ROS environment
@@ -96,5 +114,14 @@ RUN apt-get install -o DPkg::Options::="--force-confold" -y \
     nvidia-l4t-core \
     nvidia-l4t-cuda \
     nvidia-l4t-dla-compiler
+
+# ============================================================================
+# Set up CUDA environment for CMake
+# The L4T base image has CUDA but CMake needs help finding it
+# ============================================================================
+ENV CUDA_HOME=/usr/local/cuda
+ENV CMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc
+ENV PATH=/usr/local/cuda/bin:${PATH}
+ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 
 CMD ["/bin/bash"]
