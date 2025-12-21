@@ -8,6 +8,9 @@ docker:
   # Optional: Custom image name for caching
   image_name: autoware-2025.02-jp60-builder
 
+  # Cross-compilation target platform (required for building arm64 on amd64 host)
+  platform: linux/arm64
+
 # Output configuration with descriptive name
 output:
   directory: ./build
