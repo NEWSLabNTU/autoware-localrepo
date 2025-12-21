@@ -14,8 +14,8 @@ This project builds Debian packages for multiple Autoware versions and creates a
 autoware-localrepo/
 ├── common/autoware-localrepo/    # APT repo configuration package
 ├── 1.5.0/                        # Autoware 1.5.0 version
-│   ├── amd64/                    # colcon2deb build (source/, build/)
-│   ├── arm64/                    # colcon2deb build for arm64
+│   ├── amd64/                    # colcon2deb build for x86_64
+│   ├── jp62/                     # colcon2deb build for JetPack 6.2 (arm64)
 │   ├── packages/                 # Debhelper packages
 │   │   ├── autoware-config/      # CycloneDDS config, env setup
 │   │   ├── autoware-theme/       # RViz theme/icons (uses genpkg.py)
@@ -24,10 +24,19 @@ autoware-localrepo/
 │   │   └── autoware-full/        # Complete install meta-package
 │   ├── output/                   # Consolidated .deb files
 │   └── justfile
-├── 2025.02/                      # Autoware 2025.02 (same structure)
+├── 2025.02/                      # Autoware 2025.02 version
+│   ├── amd64/                    # colcon2deb build for x86_64
+│   ├── jp60/                     # colcon2deb build for JetPack 6.0 (arm64)
+│   └── ...
 ├── repo/                         # Final APT repository
 └── justfile                      # Top-level build automation
 ```
+
+### JetPack Directory Naming
+
+Jetson builds use JetPack version suffixes instead of architecture:
+- `jp60/` - JetPack 6.0 (L4T R36.3, CUDA 12.2)
+- `jp62/` - JetPack 6.2 (L4T R36.4, CUDA 12.6)
 
 ## Key Commands
 
@@ -44,8 +53,16 @@ cd packages/autoware-config && dpkg-buildpackage -us -uc -b
 ### Build ROS Packages (requires Docker + colcon2deb)
 
 ```bash
+# x86_64 build
 cd 1.5.0/amd64
 just build
+
+# ARM64/Jetson build (requires QEMU on x86 host - very slow)
+cd 1.5.0/jp62
+just build
+
+# Monitor build progress (arm64 builds take several hours)
+tail -f build/log/latest/*colcon_build.log
 ```
 
 ### Generate Package Files (autoware-data, autoware-theme)
@@ -142,6 +159,155 @@ Always use `$(CURDIR)/debian/<package-name>/` for install destinations, not `$(D
 install -d $(CURDIR)/debian/autoware-config/opt/autoware/config
 ```
 
+## Jetson/ARM64 Build Issues
+
+### Cross-Compilation Platform Flag
+
+When building arm64 Docker images on amd64 host, `--platform linux/arm64` is required. The `config.yaml` must include:
+```yaml
+docker:
+  platform: linux/arm64
+```
+
+### OpenCV Version Conflict (L4T vs Ubuntu)
+
+NVIDIA L4T base images have OpenCV 4.8.0 pre-installed (NOT via APT). Ubuntu provides 4.5.4. This causes CMake conflicts:
+```
+The imported target "opencv_core" references the file "/usr/lib/libopencv_core.so.4.8.0" but this file does not exist.
+```
+
+**Solution in Dockerfile**: Remove L4T OpenCV files and use APT preferences to force Ubuntu's version:
+```dockerfile
+RUN rm -rf /usr/lib/libopencv* /usr/lib/cmake/opencv4 /usr/include/opencv4 \
+           /usr/local/lib/libopencv* /usr/local/lib/cmake/opencv4 /usr/local/include/opencv4 \
+           /usr/share/OpenCV /usr/share/opencv4 /opt/opencv*
+COPY opencv-preferences /etc/apt/preferences.d/opencv-preferences
+RUN apt update && apt install -y libopencv-dev
+```
+
+The `opencv-preferences` file contains APT pinning rules to prefer Ubuntu's OpenCV packages.
+
+### L4T Base Image Has Old CMake
+
+L4T base images ship with CMake 3.14.4 in `/usr/local/bin`, which is too old for Autoware (requires 3.16+).
+
+**Solution**: Remove the old CMake and install from Ubuntu repos:
+```dockerfile
+RUN rm -f /usr/local/bin/cmake /usr/local/bin/ctest /usr/local/bin/cpack /usr/local/bin/ccmake
+RUN apt update && apt install -y cmake
+```
+
+Ubuntu 22.04 provides CMake 3.22.1, which:
+- Meets Autoware's minimum requirement (3.16+)
+- Has working FindCUDA module (deprecated in 3.27+, causes issues in 3.28+)
+- Avoids CMake 4.x compatibility issues with older ROS packages
+
+### python3-torch Not Available via APT
+
+`python3-torch` is not in Ubuntu repos for arm64. Comment it out in `rosdep-packages.txt`:
+```
+# python3-torch  # Not available via apt on arm64/Jetson
+```
+
+PyTorch must be installed separately on target using NVIDIA Jetson wheels.
+
+### Docker Volumes and sudo (nosuid)
+
+Docker volume mounts use `nosuid` by default. The colcon2deb helper scripts use `run_privileged()` to handle this - running commands directly when uid=0 instead of using sudo.
+
+### CMake Can't Find CUDA
+
+CMake needs help finding CUDA on L4T images. Add CUDA environment variables to the Dockerfile:
+```dockerfile
+ENV CUDA_HOME=/usr/local/cuda
+ENV CMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc
+ENV PATH=/usr/local/cuda/bin:${PATH}
+ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
+```
+
+### CUDA::cudart Target Not Found
+
+Some Autoware packages use `find_package(CUDA)` (legacy API) but link to `CUDA::cudart` (modern target):
+```
+Target "autoware_tensorrt_plugins" links to: CUDA::cudart but the target was not found.
+```
+
+The legacy `find_package(CUDA)` only sets `CUDA_LIBRARIES` variables, while `CUDA::cudart` targets are only created by `find_package(CUDAToolkit)`.
+
+**Solution**: Use a custom `FindCUDA.cmake` wrapper that calls CUDAToolkit internally and creates both legacy variables and modern targets. The wrapper also provides `cuda_add_library()` macro for packages using the old CUDA API.
+
+```dockerfile
+COPY FindCUDA.cmake /usr/share/cmake-3.22/Modules/FindCUDA.cmake
+```
+
+### CUDA Architecture Detection Fails in QEMU
+
+When building arm64 Docker images under QEMU emulation, CUDA architecture detection fails:
+```
+nvcc fatal : Unsupported gpu architecture 'compute_native'
+```
+
+This happens because `CUDA_ARCHITECTURES native` tries to detect the GPU but QEMU doesn't expose one.
+
+**Solution**: The `FindCUDA.cmake` wrapper uses explicit architectures instead of `native`:
+- 75 (Turing)
+- 86 (Ampere)
+- 87 (Orin - primary for JetPack 6.x)
+- 89 (Ada Lovelace)
+
+### C++ Flags Passed to nvcc
+
+The autoware_package() macro adds compile options like `-Wall -Wextra -Wpedantic -Werror` which are valid for GCC/Clang but not for nvcc:
+```
+nvcc fatal : Value '-std=c++14' is not defined for option 'Werror'
+```
+
+**Solution**: The `FindCUDA.cmake` wrapper's `cuda_add_library()` and `cuda_add_executable()` macros filter directory-level compile options and re-add them only for C++ files using generator expressions:
+```cmake
+get_directory_property(_dir_compile_opts COMPILE_OPTIONS)
+set_property(TARGET ${target_name} PROPERTY COMPILE_OPTIONS "")
+foreach(_opt ${_dir_compile_opts})
+  target_compile_options(${target_name} PUBLIC $<$<COMPILE_LANGUAGE:CXX>:${_opt}>)
+endforeach()
+```
+
+### target_link_libraries Keyword Signature Conflict
+
+CMake requires consistency in `target_link_libraries` - either all keyword (PRIVATE/PUBLIC/INTERFACE) or all plain signature. The `FindCUDA.cmake` wrapper avoids using keywords to maintain compatibility with packages that use plain signature.
+
+### spconv/cumm Required for Perception Packages
+
+`autoware_tensorrt_plugins` requires spconv (sparse convolution) and cumm libraries for BEVFusion and other perception models:
+```
+Target "autoware_tensorrt_plugins" links to: spconv::spconv but the target was not found.
+```
+
+**Solution**: Install pre-built packages from autowarefoundation/spconv_cpp:
+```dockerfile
+RUN wget -q https://github.com/autowarefoundation/spconv_cpp/releases/download/spconv_v2.3.8%2Bcumm_v0.5.3%2Bcu128/cumm_0.5.3_arm64-jetson.deb && \
+    wget -q https://github.com/autowarefoundation/spconv_cpp/releases/download/spconv_v2.3.8%2Bcumm_v0.5.3%2Bcu128/spconv_2.3.8_arm64-jetson.deb && \
+    apt-get install -y ./cumm_0.5.3_arm64-jetson.deb ./spconv_2.3.8_arm64-jetson.deb && \
+    rm -f cumm_0.5.3_arm64-jetson.deb spconv_2.3.8_arm64-jetson.deb
+```
+
+### Build Directory Permission Issues
+
+If you see `Permission denied` errors when trying to `rm -rf build/`:
+```
+rm: cannot remove 'build/sources/src': Permission denied
+```
+
+This indicates that Docker created files owned by root in the mounted build directory.
+
+**Workaround**: Use `sudo rm -rf build/` to clean up, then restart the build.
+
+**Better approach**: Run rm commands inside the container to avoid permission issues:
+```bash
+docker run --rm --platform linux/arm64 -v "$(pwd)/build:/output" IMAGE_NAME rm -rf /output/sources/build/PACKAGE_NAME
+```
+
+**Root cause**: The build runs as root inside the container. The colcon2deb `entry.sh` script uses a `trap` handler to run `chown -R` on exit (success, failure, or interrupt), but in rare cases files may still be left owned by root.
+
 ## Development Practices
 
 ### Temporary Files
@@ -154,4 +320,4 @@ mkdir -p tmp/
 
 ## Related Projects
 
-- **colcon2deb** (`~/repos/colcon2deb`): Builds ROS packages into .deb files in Docker containers. Used by `*/amd64/` and `*/arm64/` directories.
+- **colcon2deb** (`~/repos/colcon2deb`): Builds ROS packages into .deb files in Docker containers. Used by `*/amd64/` and `*/jp*/` directories. Modified to support `platform` config for cross-compilation. After modifying colcon2deb, reinstall: `cd ~/repos/colcon2deb && just build && pip install --user --force-reinstall dist/*.whl`
