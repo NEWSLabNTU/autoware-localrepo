@@ -191,7 +191,30 @@ ros-humble-autoware-occupancy-grid-map-outlier-filter (0.38.0-0jammy) jammy; urg
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-occupancy-grid-map-outlier-filter (0.26.0-0jammy) jammy; urgency=high
+ros-humble-autoware-occupancy-grid-map-outlier-filter (0.26.0-0jammy) Package 'autoware-overlay-rviz-plugin' has dependencies:[0m
+[35mRun Dependencies:[0m[0m
+  [22m[4mrosdep key           => jammy key[0m[0m
+  [36mament_index_cpp      [35m=> [36m['ros-humble-ament-index-cpp'][0m[0m
+  [36mautoware_internal_planning_msgs [35m=> [36m['ros-humble-autoware-internal-planning-msgs'][0m[0m
+  [36mautoware_perception_msgs [35m=> [36m['ros-humble-autoware-perception-msgs'][0m[0m
+  [36mautoware_vehicle_msgs [35m=> [36m['ros-humble-autoware-vehicle-msgs'][0m[0m
+  [36mboost                [35m=> [36m['libboost-all-dev'][0m[0m
+  [36mrviz_common          [35m=> [36m['ros-humble-rviz-common'][0m[0m
+  [36mrviz_ogre_vendor     [35m=> [36m['ros-humble-rviz-ogre-vendor'][0m[0m
+  [36mrviz_rendering       [35m=> [36m['ros-humble-rviz-rendering'][0m[0m
+[35mBuild and Build Tool Dependencies:[0m[0m
+  [22m[4mrosdep key           => jammy key[0m[0m
+  [36mament_index_cpp      [35m=> [36m['ros-humble-ament-index-cpp'][0m[0m
+  [36mautoware_internal_planning_msgs [35m=> [36m['ros-humble-autoware-internal-planning-msgs'][0m[0m
+  [36mautoware_perception_msgs [35m=> [36m['ros-humble-autoware-perception-msgs'][0m[0m
+  [36mautoware_vehicle_msgs [35m=> [36m['ros-humble-autoware-vehicle-msgs'][0m[0m
+  [36mboost                [35m=> [36m['libboost-all-dev'][0m[0m
+  [36mrviz_common          [35m=> [36m['ros-humble-rviz-common'][0m[0m
+  [36mrviz_ogre_vendor     [35m=> [36m['ros-humble-rviz-ogre-vendor'][0m[0m
+  [36mrviz_rendering       [35m=> [36m['ros-humble-rviz-rendering'][0m[0m
+  [36mament_cmake_auto     [35m=> [36m['ros-humble-ament-cmake-auto'][0m[0m
+[1m[34m==>[0m Placing templates files in the 'debian' folder.[0m[0m
+jammy; urgency=high
 
 
 

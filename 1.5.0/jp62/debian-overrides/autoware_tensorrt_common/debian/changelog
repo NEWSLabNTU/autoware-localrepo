@@ -188,7 +188,8 @@ ros-humble-autoware-tensorrt-common (0.40.0-0jammy) jammy; urgency=high
 
  -- Dan Umeda <dan.umeda@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-tensorrt-common (0.39.0-0jammy) jammy; urgency=high
+ros-humble-autoware-tensorrt-common (0.39.0-0jammy) Expanding 'src/core/autoware_core/testing/autoware_test_node/debian/rules.em' -> 'src/core/autoware_core/testing/autoware_test_node/debian/rules'[0m
+jammy; urgency=high
 
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)

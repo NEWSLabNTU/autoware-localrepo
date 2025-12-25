@@ -2,7 +2,7 @@ Source: ros-humble-autoware-cuda-pointcloud-preprocessor
 Section: misc
 Priority: optional
 Maintainer: Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>
-Build-Depends: debhelper (>= 9.0.0), ros-humble-agnocastlib, ros-humble-ament-clang-format <!nocheck>, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-agnocast-wrapper, ros-humble-autoware-cmake, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-autoware-point-types, ros-humble-autoware-pointcloud-preprocessor, ros-humble-autoware-sensing-msgs, ros-humble-autoware-utils, ros-humble-cuda-blackboard, ros-humble-diagnostic-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-msgs, ros-humble-tier4-debug-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-agnocastlib, ros-humble-ament-clang-format <!nocheck>, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-agnocast-wrapper, ros-humble-autoware-cmake, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-autoware-point-types, ros-humble-autoware-pointcloud-preprocessor, ros-humble-autoware-sensing-msgs, ros-humble-autoware-utils, ros-humble-cuda-blackboard, ros-humble-diagnostic-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-msgs, ros-humble-tier4-debug-msgs
 Homepage: 
 Standards-Version: 3.9.2
 

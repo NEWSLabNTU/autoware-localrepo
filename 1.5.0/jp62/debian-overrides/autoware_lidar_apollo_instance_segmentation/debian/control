@@ -2,7 +2,7 @@ Source: ros-humble-autoware-lidar-apollo-instance-segmentation
 Section: misc
 Priority: optional
 Maintainer: Yoshi Ri <yoshi.ri@tier4.jp>
-Build-Depends: debhelper (>= 9.0.0), libpcl-dev, ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-tensorrt-common, ros-humble-autoware-utils, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-eigen, ros-humble-tier4-perception-msgs
+Build-Depends: debhelper (>= 12.0.0), libpcl-dev, ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-tensorrt-common, ros-humble-autoware-utils, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-eigen, ros-humble-tier4-perception-msgs
 Homepage: 
 Standards-Version: 3.9.2
 

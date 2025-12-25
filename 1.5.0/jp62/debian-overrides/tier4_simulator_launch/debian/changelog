@@ -67,7 +67,8 @@ ros-humble-tier4-simulator-launch (0.44.2-0jammy) jammy; urgency=high
   * feat(tier4_simulator_launch): add use_pointcloud_container argument (#10770 <https://github.com/autowarefoundation/autoware_universe/issues/10770>)
   * Contributors: Ryohsuke Mitsudome
 
- -- Keisuke Shima <keisuke.shima@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
+ -- Keisuke Shima <Expanding 'src/universe/autoware_universe/launch/tier4_system_launch/debian/source/options.em' -> 'src/universe/autoware_universe/launch/tier4_system_launch/debian/source/options'[0m
+keisuke.shima@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
 ros-humble-tier4-simulator-launch (0.44.1-0jammy) jammy; urgency=high
 

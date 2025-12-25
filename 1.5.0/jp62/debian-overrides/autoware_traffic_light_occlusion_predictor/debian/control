@@ -2,7 +2,7 @@ Source: ros-humble-autoware-traffic-light-occlusion-predictor
 Section: misc
 Priority: optional
 Maintainer: Tao Zhong <tao.zhong@tier4.jp>
-Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-traffic-light-utils, ros-humble-autoware-utils, ros-humble-geometry-msgs, ros-humble-image-geometry, ros-humble-pcl-msgs, ros-humble-perception-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-ros, ros-humble-tier4-perception-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-traffic-light-utils, ros-humble-autoware-utils, ros-humble-geometry-msgs, ros-humble-image-geometry, ros-humble-pcl-msgs, ros-humble-perception-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-ros, ros-humble-tier4-perception-msgs
 Homepage: 
 Standards-Version: 3.9.2
 

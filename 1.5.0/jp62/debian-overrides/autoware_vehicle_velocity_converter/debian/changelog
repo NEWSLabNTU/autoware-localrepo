@@ -54,6 +54,7 @@ ros-humble-autoware-vehicle-velocity-converter (1.0.0-0jammy) jammy; urgency=hig
     ---------
   * Contributors: Ryohsuke Mitsudome
 
- -- Masahiro Sakamoto <masahiro.sakamoto@tier4.jp>  Sun, 30 Mar 2025 16:00:00 -0000
+ -- Masahiro Sakamoto <masahiro.sakamoto@tier4.jp>  [1m[34m==>[0m In place processing templates in 'debian' folder.[0m[0m
+Sun, 30 Mar 2025 16:00:00 -0000
 
 

@@ -14,7 +14,8 @@ ros-humble-awsim-labs-vehicle-launch (0.46.0-0jammy) jammy; urgency=high
 
 
 
- -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
+ -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Expanding 'src/launcher/autoware_launch/sensor_kit/awsim_sensor_kit_launch/awsim_sensor_kit_launch/debian/rules.em' -> 'src/launcher/autoware_launch/sensor_kit/awsim_sensor_kit_launch/awsim_sensor_kit_launch/debian/rules'[0m
+Thu, 19 Jun 2025 16:00:00 -0000
 
 ros-humble-awsim-labs-vehicle-launch (0.45.3-0jammy) jammy; urgency=high
 

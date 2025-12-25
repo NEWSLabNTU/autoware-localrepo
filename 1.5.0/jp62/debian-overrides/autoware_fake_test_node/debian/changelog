@@ -26,7 +26,8 @@ ros-humble-autoware-fake-test-node (0.45.0-0jammy) jammy; urgency=high
 
 
 
- -- Apex.AI, Inc. <opensource@apex.ai>  Wed, 21 May 2025 16:00:00 -0000
+ -- Apex.AI, Inc. <[33mNo historical releaser history, using current maintainer name and email for each versioned changelog entry.[0m
+opensource@apex.ai>  Wed, 21 May 2025 16:00:00 -0000
 
 ros-humble-autoware-fake-test-node (0.44.2-0jammy) jammy; urgency=high
 
@@ -126,7 +127,8 @@ ros-humble-autoware-fake-test-node (0.38.0-0jammy) jammy; urgency=high
 
  -- Apex.AI, Inc. <opensource@apex.ai>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-fake-test-node (0.26.0-0jammy) jammy; urgency=high
+ros-humble-autoware-fake-test-node (0.26.0Expanding 'src/universe/autoware_universe/simulator/autoware_fault_injection/debian/control.em' -> 'src/universe/autoware_universe/simulator/autoware_fault_injection/debian/control'[0m
+-0jammy) jammy; urgency=high
 
   * fix(autoware_auto_common): move headers to a separate directory (#5919 <https://github.com/autowarefoundation/autoware_universe/issues/5919>)
     * fix(autoware_auto_common): move headers to a separate directory

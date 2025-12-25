@@ -2,7 +2,7 @@ Source: ros-humble-autoware-component-interface-tools
 Section: misc
 Priority: optional
 Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
-Build-Depends: debhelper (>= 9.0.0), libfmt-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-cmake-test, ros-humble-ament-index-python <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-diagnostic-updater, ros-humble-diagnostic-updater <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp <!nocheck>, ros-humble-rclcpp-components, ros-humble-tier4-system-msgs, ros-humble-tier4-system-msgs <!nocheck>, ros-humble-yaml-cpp-vendor, ros-humble-yaml-cpp-vendor <!nocheck>
+Build-Depends: debhelper (>= 12.0.0), libfmt-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-cmake-test, ros-humble-ament-index-python <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-diagnostic-updater, ros-humble-diagnostic-updater <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp <!nocheck>, ros-humble-rclcpp-components, ros-humble-tier4-system-msgs, ros-humble-tier4-system-msgs <!nocheck>, ros-humble-yaml-cpp-vendor, ros-humble-yaml-cpp-vendor <!nocheck>
 Homepage: 
 Standards-Version: 3.9.2
 

@@ -134,6 +134,7 @@ ros-humble-autoware-utils (1.1.0-0jammy) jammy; urgency=high
 
  -- Jian Kang <egon.kang@autocore.ai>  Sun, 26 Jan 2025 16:00:00 -0000
 
+Expanding 'src/core/autoware_utils/autoware_utils_debug/debian/control.em' -> 'src/core/autoware_utils/autoware_utils_debug/debian/control'[0m
 ros-humble-autoware-utils (1.0.0-0jammy) jammy; urgency=high
 
   * Merge pull request #2 <https://github.com/autowarefoundation/autoware_utils/issues/2> from youtalk/import-from-autoware-common

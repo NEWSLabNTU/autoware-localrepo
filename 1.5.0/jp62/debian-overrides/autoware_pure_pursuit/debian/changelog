@@ -43,7 +43,8 @@ ros-humble-autoware-pure-pursuit (0.44.2-0jammy) jammy; urgency=high
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-pure-pursuit (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-pure-pursuit (0.44.1Expanding 'src/core/autoware_core/common/autoware_qos_utils/debian/source/options.em' -> 'src/core/autoware_core/common/autoware_qos_utils/debian/source/options'[0m
+-0jammy) jammy; urgency=high
 
 
 

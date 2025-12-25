@@ -120,7 +120,8 @@ ros-humble-autoware-traffic-light-utils (0.40.0-0jammy) jammy; urgency=high
 
  -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-traffic-light-utils (0.39.0-0jammy) jammy; urgency=high
+ros-humble-autoware-traffic-light-utils (0.39.0-0jammy) Expanding 'src/universe/autoware_universe/planning/autoware_trajectory_adapter/debian/compat.em' -> 'src/universe/autoware_universe/planning/autoware_trajectory_adapter/debian/compat'[0m
+jammy; urgency=high
 
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)

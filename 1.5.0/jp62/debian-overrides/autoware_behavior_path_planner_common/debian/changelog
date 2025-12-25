@@ -318,7 +318,8 @@ ros-humble-autoware-behavior-path-planner-common (0.45.0-0jammy) jammy; urgency=
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-path-planner-common (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-path-planner-common (0.44.2-0jammy) Expanding 'src/universe/autoware_universe/planning/behavior_path_planner/autoware_behavior_path_lane_change_module/debian/source/options.em' -> 'src/universe/autoware_universe/planning/behavior_path_planner/autoware_behavior_path_lane_change_module/debian/source/options'[0m
+jammy; urgency=high
 
 
 

@@ -105,6 +105,7 @@ ros-humble-tier4-datetime-rviz-plugin (0.39.0-0jammy) jammy; urgency=high
 
 ros-humble-tier4-datetime-rviz-plugin (0.38.0-0jammy) jammy; urgency=high
 
+
   * unify package.xml version to 0.37.0
   * Contributors: Yutaka Kondo
 

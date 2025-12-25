@@ -47,7 +47,8 @@ ros-humble-autoware-traffic-light-visualization (0.44.2-0jammy) jammy; urgency=h
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-traffic-light-visualization (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-traffic-light-visualization (0.44.1[33mNo homepage set, defaulting to ''[0m
+-0jammy) jammy; urgency=high
 
 
 

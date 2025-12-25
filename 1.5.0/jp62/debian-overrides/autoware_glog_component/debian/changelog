@@ -28,7 +28,8 @@ ros-humble-autoware-glog-component (0.45.0-0jammy) jammy; urgency=high
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-glog-component (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-glog-component (0.44.2-0jammy) Expanding 'src/core/autoware_core/perception/autoware_ground_filter/debian/rules.em' -> 'src/core/autoware_core/perception/autoware_ground_filter/debian/rules'[0m
+jammy; urgency=high
 
 
 

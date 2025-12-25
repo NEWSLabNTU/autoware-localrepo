@@ -28,7 +28,61 @@ ros-humble-autoware-polar-grid (0.45.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-polar-grid (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-polar-grid (Package 'autoware-predicted-path-checker' has dependencies:[0m
+[35mRun Dependencies:[0m[0m
+  [22m[4mrosdep key           => jammy key[0m[0m
+  [36mautoware_component_interface_specs_universe [35m=> [36m['ros-humble-autoware-component-interface-specs-universe'][0m[0m
+  [36mautoware_component_interface_utils [35m=> [36m['ros-humble-autoware-component-interface-utils'][0m[0m
+  [36mautoware_motion_utils [35m=> [36m['ros-humble-autoware-motion-utils'][0m[0m
+  [36mautoware_perception_msgs [35m=> [36m['ros-humble-autoware-perception-msgs'][0m[0m
+  [36mautoware_planning_msgs [35m=> [36m['ros-humble-autoware-planning-msgs'][0m[0m
+  [36mautoware_utils       [35m=> [36m['ros-humble-autoware-utils'][0m[0m
+  [36mautoware_vehicle_info_utils [35m=> [36m['ros-humble-autoware-vehicle-info-utils'][0m[0m
+  [36mboost                [35m=> [36m['libboost-all-dev'][0m[0m
+  [36mdiagnostic_updater   [35m=> [36m['ros-humble-diagnostic-updater'][0m[0m
+  [36meigen                [35m=> [36m['libeigen3-dev'][0m[0m
+  [36mgeometry_msgs        [35m=> [36m['ros-humble-geometry-msgs'][0m[0m
+  [36mnav_msgs             [35m=> [36m['ros-humble-nav-msgs'][0m[0m
+  [36mrclcpp               [35m=> [36m['ros-humble-rclcpp'][0m[0m
+  [36mrclcpp_components    [35m=> [36m['ros-humble-rclcpp-components'][0m[0m
+  [36msensor_msgs          [35m=> [36m['ros-humble-sensor-msgs'][0m[0m
+  [36mstd_msgs             [35m=> [36m['ros-humble-std-msgs'][0m[0m
+  [36mtf2                  [35m=> [36m['ros-humble-tf2'][0m[0m
+  [36mtf2_eigen            [35m=> [36m['ros-humble-tf2-eigen'][0m[0m
+  [36mtf2_geometry_msgs    [35m=> [36m['ros-humble-tf2-geometry-msgs'][0m[0m
+  [36mtf2_ros              [35m=> [36m['ros-humble-tf2-ros'][0m[0m
+  [36mtier4_control_msgs   [35m=> [36m['ros-humble-tier4-control-msgs'][0m[0m
+  [36mtier4_external_api_msgs [35m=> [36m['ros-humble-tier4-external-api-msgs'][0m[0m
+  [36mtier4_planning_msgs  [35m=> [36m['ros-humble-tier4-planning-msgs'][0m[0m
+[35mBuild and Build Tool Dependencies:[0m[0m
+  [22m[4mrosdep key           => jammy key[0m[0m
+  [36mautoware_component_interface_specs_universe [35m=> [36m['ros-humble-autoware-component-interface-specs-universe'][0m[0m
+  [36mautoware_component_interface_utils [35m=> [36m['ros-humble-autoware-component-interface-utils'][0m[0m
+  [36mautoware_motion_utils [35m=> [36m['ros-humble-autoware-motion-utils'][0m[0m
+  [36mautoware_perception_msgs [35m=> [36m['ros-humble-autoware-perception-msgs'][0m[0m
+  [36mautoware_planning_msgs [35m=> [36m['ros-humble-autoware-planning-msgs'][0m[0m
+  [36mautoware_utils       [35m=> [36m['ros-humble-autoware-utils'][0m[0m
+  [36mautoware_vehicle_info_utils [35m=> [36m['ros-humble-autoware-vehicle-info-utils'][0m[0m
+  [36mboost                [35m=> [36m['libboost-all-dev'][0m[0m
+  [36mdiagnostic_updater   [35m=> [36m['ros-humble-diagnostic-updater'][0m[0m
+  [36meigen                [35m=> [36m['libeigen3-dev'][0m[0m
+  [36mgeometry_msgs        [35m=> [36m['ros-humble-geometry-msgs'][0m[0m
+  [36mnav_msgs             [35m=> [36m['ros-humble-nav-msgs'][0m[0m
+  [36mrclcpp               [35m=> [36m['ros-humble-rclcpp'][0m[0m
+  [36mrclcpp_components    [35m=> [36m['ros-humble-rclcpp-components'][0m[0m
+  [36msensor_msgs          [35m=> [36m['ros-humble-sensor-msgs'][0m[0m
+  [36mstd_msgs             [35m=> [36m['ros-humble-std-msgs'][0m[0m
+  [36mtf2                  [35m=> [36m['ros-humble-tf2'][0m[0m
+  [36mtf2_eigen            [35m=> [36m['ros-humble-tf2-eigen'][0m[0m
+  [36mtf2_geometry_msgs    [35m=> [36m['ros-humble-tf2-geometry-msgs'][0m[0m
+  [36mtf2_ros              [35m=> [36m['ros-humble-tf2-ros'][0m[0m
+  [36mtier4_control_msgs   [35m=> [36m['ros-humble-tier4-control-msgs'][0m[0m
+  [36mtier4_external_api_msgs [35m=> [36m['ros-humble-tier4-external-api-msgs'][0m[0m
+  [36mtier4_planning_msgs  [35m=> [36m['ros-humble-tier4-planning-msgs'][0m[0m
+  [36mament_cmake          [35m=> [36m['ros-humble-ament-cmake'][0m[0m
+  [36mautoware_cmake       [35m=> [36m['ros-humble-autoware-cmake'][0m[0m
+[1m[34m==>[0m Placing templates files in the 'debian' folder.[0m[0m
+0.44.2-0jammy) jammy; urgency=high
 
 
 

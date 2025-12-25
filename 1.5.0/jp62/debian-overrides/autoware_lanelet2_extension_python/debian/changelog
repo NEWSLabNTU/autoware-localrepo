@@ -90,6 +90,7 @@ ros-humble-autoware-lanelet2-extension-python (0.3.0-0jammy) jammy; urgency=high
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Thu, 30 May 2024 16:00:00 -0000
 
+Expanding 'src/core/autoware_lanelet2_extension/autoware_lanelet2_extension/debian/source/options.em' -> 'src/core/autoware_lanelet2_extension/autoware_lanelet2_extension/debian/source/options'[0m
 ros-humble-autoware-lanelet2-extension-python (0.2.0-0jammy) jammy; urgency=high
 
   * refactor: add autoware_ prefix to package names and namespaces (#3 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/3>)

@@ -132,7 +132,8 @@ ros-humble-autoware-trajectory-follower-base (0.39.0-0jammy) jammy; urgency=high
     ---------
   * Contributors: Esteve Fernandez, Yutaka Kondo
 
- -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
+ -- Takamasa Horibe <[33mNo historical releaser history, using current maintainer name and email for each versioned changelog entry.[0m
+takamasa.horibe@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
 
 ros-humble-autoware-trajectory-follower-base (0.38.0-0jammy) jammy; urgency=high
 

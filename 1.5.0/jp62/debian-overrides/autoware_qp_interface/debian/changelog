@@ -56,6 +56,7 @@ ros-humble-autoware-qp-interface (0.3.0-0jammy) jammy; urgency=high
 
 ros-humble-autoware-qp-interface (0.2.0-0jammy) jammy; urgency=high
 
+Expanding 'src/universe/autoware_universe/sensing/autoware_radar_scan_to_pointcloud2/debian/copyright.em' -> 'src/universe/autoware_universe/sensing/autoware_radar_scan_to_pointcloud2/debian/copyright'[0m
   * unify version to 0.1.0
   * update changelog
   * fix(autoware_qp_interface): incorrect parameter passing in delegating constructor (#147 <https://github.com/autowarefoundation/autoware_core/issues/147>)

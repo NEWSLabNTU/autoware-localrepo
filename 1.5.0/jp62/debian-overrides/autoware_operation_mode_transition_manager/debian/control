@@ -2,7 +2,7 @@ Source: ros-humble-autoware-operation-mode-transition-manager
 Section: misc
 Priority: optional
 Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
-Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-component-interface-specs-universe, ros-humble-autoware-component-interface-utils, ros-humble-autoware-control-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-system-msgs, ros-humble-autoware-utils, ros-humble-autoware-utils-rclcpp, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosidl-default-generators, ros-humble-std-srvs, ros-humble-tier4-control-msgs, ros-humble-tier4-vehicle-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-component-interface-specs-universe, ros-humble-autoware-component-interface-utils, ros-humble-autoware-control-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-system-msgs, ros-humble-autoware-utils, ros-humble-autoware-utils-rclcpp, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosidl-default-generators, ros-humble-std-srvs, ros-humble-tier4-control-msgs, ros-humble-tier4-vehicle-msgs
 Homepage: 
 Standards-Version: 3.9.2
 

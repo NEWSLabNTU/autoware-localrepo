@@ -29,7 +29,8 @@ ros-humble-tier4-map-launch (0.46.0-0jammy) jammy; urgency=high
 
 
 
- -- Yamato Ando <yamato.ando@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
+ -- Yamato Ando <yamato.ando@tier4.jp>  Expanding 'src/universe/external/tier4_autoware_msgs/tier4_metric_msgs/debian/source/format.em' -> 'src/universe/external/tier4_autoware_msgs/tier4_metric_msgs/debian/source/format'[0m
+Thu, 19 Jun 2025 16:00:00 -0000
 
 ros-humble-tier4-map-launch (0.45.0-0jammy) jammy; urgency=high
 

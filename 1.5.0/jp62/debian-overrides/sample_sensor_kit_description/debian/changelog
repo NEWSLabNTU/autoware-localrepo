@@ -36,6 +36,7 @@ ros-humble-sample-sensor-kit-description (0.45.2-0jammy) jammy; urgency=high
 
 ros-humble-sample-sensor-kit-description (0.45.1-0jammy) jammy; urgency=high
 
+[1m[34m==>[0m In place processing templates in 'debian' folder.[0m[0m
 
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Thu, 26 Jun 2025 16:00:00 -0000

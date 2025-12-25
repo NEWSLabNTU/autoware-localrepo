@@ -39,7 +39,8 @@ ros-humble-autoware-radar-fusion-to-detected-object (0.44.2-0jammy) jammy; urgen
 
 
 
- -- Yoshi Ri <yoshi.ri@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
+ -- Yoshi Ri <yoshi.ri@tier4.jp>  info: run bloom_gen for autoware_radar_tracks_noise_filter
+Mon, 09 Jun 2025 16:00:00 -0000
 
 ros-humble-autoware-radar-fusion-to-detected-object (0.44.1-0jammy) jammy; urgency=high
 

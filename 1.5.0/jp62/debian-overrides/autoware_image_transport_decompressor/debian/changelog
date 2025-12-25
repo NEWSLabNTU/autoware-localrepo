@@ -32,7 +32,11 @@ ros-humble-autoware-image-transport-decompressor (0.44.2-0jammy) jammy; urgency=
 
 
 
- -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
+ -- Expanding 'src/universe/autoware_universe/sensing/autoware_imu_corrector/debian/source/format.em' -> 'src/universe/autoware_universe/sensing/autoware_imu_corrector/debian/source/format'[0m
+Expanding 'src/universe/external/tier4_ad_api_adaptor/autoware_iv_external_api_adaptor/debian/compat.em' -> 'src/universe/external/tier4_ad_api_adaptor/autoware_iv_external_api_adaptor/debian/compat'[0m
+info: run bloom_gen for autoware_landmark_manager
+info: run bloom_gen for autoware_kinematic_evaluator
+Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
 ros-humble-autoware-image-transport-decompressor (0.44.1-0jammy) jammy; urgency=high
 

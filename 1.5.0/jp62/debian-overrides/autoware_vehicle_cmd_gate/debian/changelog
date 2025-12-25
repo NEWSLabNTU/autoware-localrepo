@@ -136,7 +136,8 @@ ros-humble-autoware-vehicle-cmd-gate (0.41.0-0jammy) jammy; urgency=high
 
  -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-autoware-vehicle-cmd-gate (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-vehicle-cmd-gate (0.40.0-0jammy) info: run bloom_gen for autoware_velodyne_monitor
+jammy; urgency=high
 
   * Merge branch 'main' into release-0.40.0
   * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"

@@ -32,7 +32,14 @@ ros-humble-autoware-test-node (1.1.0-0jammy) jammy; urgency=high
 
  -- Mete Fatih Cırıt <mfc@autoware.org>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-test-node (1.0.0-0jammy) jammy; urgency=high
+ros-humble-autoware-test-node (1.0.0Package 'autoware-time-utils' has dependencies:[0m
+[35mBuild and Build Tool Dependencies:[0m[0m
+  [22m[4mrosdep key           => jammy key[0m[0m
+  [36mbuiltin_interfaces   [35m=> [36m['ros-humble-builtin-interfaces'][0m[0m
+  [36mament_cmake_auto     [35m=> [36m['ros-humble-ament-cmake-auto'][0m[0m
+  [36mautoware_cmake       [35m=> [36m['ros-humble-autoware-cmake'][0m[0m
+[1m[34m==>[0m Placing templates files in the 'debian' folder.[0m[0m
+-0jammy) jammy; urgency=high
 
   * refactor(autoware_test_node): move to testing directory (#297 <https://github.com/autowarefoundation/autoware_core/issues/297>)
     * move to testing

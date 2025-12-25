@@ -31,7 +31,8 @@ ros-humble-autoware-pose2twist (0.46.0-0jammy) jammy; urgency=high
 
  -- Yamato Ando <yamato.ando@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-pose2twist (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pose2twist (Expanding 'src/universe/autoware_universe/localization/autoware_pose_estimator_arbiter/debian/control.em' -> 'src/universe/autoware_universe/localization/autoware_pose_estimator_arbiter/debian/control'[0m
+0.45.0-0jammy) jammy; urgency=high
 
 
 
@@ -130,7 +131,31 @@ ros-humble-autoware-pose2twist (0.39.0-0jammy) jammy; urgency=high
 
  -- Yamato Ando <yamato.ando@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-pose2twist (0.38.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pose2twist (0.38.0-0jammy) Package 'autoware-pose-instability-detector' has dependencies:[0m
+[35mRun Dependencies:[0m[0m
+  [22m[4mrosdep key           => jammy key[0m[0m
+  [36mautoware_utils_geometry [35m=> [36m['ros-humble-autoware-utils-geometry'][0m[0m
+  [36mdiagnostic_msgs      [35m=> [36m['ros-humble-diagnostic-msgs'][0m[0m
+  [36mgeometry_msgs        [35m=> [36m['ros-humble-geometry-msgs'][0m[0m
+  [36mnav_msgs             [35m=> [36m['ros-humble-nav-msgs'][0m[0m
+  [36mrclcpp               [35m=> [36m['ros-humble-rclcpp'][0m[0m
+  [36mrclcpp_components    [35m=> [36m['ros-humble-rclcpp-components'][0m[0m
+  [36mtf2                  [35m=> [36m['ros-humble-tf2'][0m[0m
+  [36mtf2_geometry_msgs    [35m=> [36m['ros-humble-tf2-geometry-msgs'][0m[0m
+[35mBuild and Build Tool Dependencies:[0m[0m
+  [22m[4mrosdep key           => jammy key[0m[0m
+  [36mautoware_utils_geometry [35m=> [36m['ros-humble-autoware-utils-geometry'][0m[0m
+  [36mdiagnostic_msgs      [35m=> [36m['ros-humble-diagnostic-msgs'][0m[0m
+  [36mgeometry_msgs        [35m=> [36m['ros-humble-geometry-msgs'][0m[0m
+  [36mnav_msgs             [35m=> [36m['ros-humble-nav-msgs'][0m[0m
+  [36mrclcpp               [35m=> [36m['ros-humble-rclcpp'][0m[0m
+  [36mrclcpp_components    [35m=> [36m['ros-humble-rclcpp-components'][0m[0m
+  [36mtf2                  [35m=> [36m['ros-humble-tf2'][0m[0m
+  [36mtf2_geometry_msgs    [35m=> [36m['ros-humble-tf2-geometry-msgs'][0m[0m
+  [36mament_cmake_auto     [35m=> [36m['ros-humble-ament-cmake-auto'][0m[0m
+  [36mautoware_cmake       [35m=> [36m['ros-humble-autoware-cmake'][0m[0m
+[1m[34m==>[0m Placing templates files in the 'debian' folder.[0m[0m
+jammy; urgency=high
 
   * unify package.xml version to 0.37.0
   * refactor(pose2twist)!: prefix package and namespace with autoware (#8347 <https://github.com/autowarefoundation/autoware_universe/issues/8347>)

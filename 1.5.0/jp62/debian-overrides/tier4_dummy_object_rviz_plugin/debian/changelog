@@ -392,7 +392,8 @@ ros-humble-tier4-dummy-object-rviz-plugin (0.38.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-tier4-dummy-object-rviz-plugin (0.26.0-0jammy) jammy; urgency=high
+ros-humble-tier4-dummy-object-rviz-plugin (0.26.0-0[1m[34m==>[0m In place processing templates in 'debian' folder.[0m[0m
+jammy) jammy; urgency=high
 
 
 

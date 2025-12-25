@@ -45,7 +45,8 @@ ros-humble-autoware-topic-state-monitor (0.44.2-0jammy) jammy; urgency=high
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-topic-state-monitor (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-topic-state-monitor (0.44.1-0Expanding 'src/universe/autoware_universe/perception/autoware_tracking_object_merger/debian/control.em' -> 'src/universe/autoware_universe/perception/autoware_tracking_object_merger/debian/control'[0m
+jammy) jammy; urgency=high
 
 
 

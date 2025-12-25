@@ -2,7 +2,7 @@ Source: ros-humble-autoware-test-node
 Section: misc
 Priority: optional
 Maintainer: Mete Fatih Cırıt <mfc@autoware.org>
-Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-autoware-cmake, ros-humble-autoware-node, ros-humble-rclcpp, ros-humble-rclcpp-components
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-autoware-cmake, ros-humble-autoware-node, ros-humble-rclcpp, ros-humble-rclcpp-components
 Homepage: 
 Standards-Version: 3.9.2
 

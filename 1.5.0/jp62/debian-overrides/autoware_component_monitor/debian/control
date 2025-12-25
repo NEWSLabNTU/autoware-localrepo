@@ -2,7 +2,7 @@ Source: ros-humble-autoware-component-monitor
 Section: misc
 Priority: optional
 Maintainer: Mehmet Emin Başoğlu <memin@leodrive.ai>
-Build-Depends: debhelper (>= 9.0.0), libboost-filesystem-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp-components
+Build-Depends: debhelper (>= 12.0.0), libboost-filesystem-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp-components
 Homepage: 
 Standards-Version: 3.9.2
 

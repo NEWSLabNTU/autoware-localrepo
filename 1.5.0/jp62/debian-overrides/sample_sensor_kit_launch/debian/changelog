@@ -112,6 +112,11 @@ ros-humble-sample-sensor-kit-launch (0.40.0-0jammy) jammy; urgency=high
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Thu, 16 Jan 2025 16:00:00 -0000
 
+  [36mtier4_planning_msgs  [35m=> [36m['ros-humble-tier4-planning-msgs'][0m[0m
+  [36mtier4_system_msgs    [35m=> [36m['ros-humble-tier4-system-msgs'][0m[0m
+  [36mtier4_vehicle_msgs   [35m=> [36m['ros-humble-tier4-vehicle-msgs'][0m[0m
+  [36mament_cmake_auto     [35m=> [36m['ros-humble-ament-cmake-auto'][0m[0m
+[1m[34m==>[0m Placing templates files in the 'debian' folder.[0m[0m
 ros-humble-sample-sensor-kit-launch (0.39.0-0jammy) jammy; urgency=high
 
   * chore(gnss_launch): added autoware_ prefix to gnss_poser (#100 <https://github.com/autowarefoundation/sample_sensor_kit_launch/issues/100>)

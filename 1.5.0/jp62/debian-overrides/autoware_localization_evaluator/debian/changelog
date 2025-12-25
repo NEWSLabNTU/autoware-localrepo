@@ -52,7 +52,8 @@ ros-humble-autoware-localization-evaluator (0.44.1-0jammy) jammy; urgency=high
 
 
 
- -- Dominik Jargot <dominik.jargot@robotec.ai>  Wed, 30 Apr 2025 16:00:00 -0000
+ -- Dominik Jargot <dominik.jargot@robotec.ai>  Expanding 'src/launcher/autoware_launch/autoware_launch/debian/source/options.em' -> 'src/launcher/autoware_launch/autoware_launch/debian/source/options'[0m
+Wed, 30 Apr 2025 16:00:00 -0000
 
 ros-humble-autoware-localization-evaluator (0.44.0-0jammy) jammy; urgency=high
 
