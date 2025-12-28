@@ -96,7 +96,9 @@ RUN apt update && \
 # Install pip packages needed for build
 RUN pip3 install xmlschema yamale
 
-# Set up ROS environment
+# Set up ROS environment for colcon2deb (sources this script before building)
+RUN echo 'source /opt/ros/humble/setup.bash' > /colcon2deb-setup.sh
+# Also source for interactive shells
 RUN echo "source /opt/ros/humble/setup.bash" >> /etc/bash.bashrc
 
 # Add NVIDIA L4T APT sources for Jetpack-specific packages (r36.4 for JetPack 6.2)
