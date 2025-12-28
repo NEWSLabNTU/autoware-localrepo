@@ -8,5 +8,5 @@ Standards-Version: 3.9.2
 
 Package: ros-humble-tier4-map-launch
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-map-loader, ros-humble-autoware-map-projection-loader, ros-humble-autoware-map-tf-generator
+Depends: ${shlibs:Depends}, ${misc:Depends}, autoware-map-tf-generator, ros-humble-autoware-map-loader, ros-humble-autoware-map-projection-loader
 Description: The tier4_map_launch package

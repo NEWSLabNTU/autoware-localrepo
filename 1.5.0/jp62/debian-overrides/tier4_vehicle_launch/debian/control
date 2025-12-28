@@ -8,5 +8,5 @@ Standards-Version: 3.9.2
 
 Package: ros-humble-tier4-vehicle-launch
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-raw-vehicle-cmd-converter, ros-humble-robot-state-publisher, ros-humble-xacro
+Depends: ${shlibs:Depends}, ${misc:Depends}, autoware-raw-vehicle-cmd-converter, ros-humble-robot-state-publisher, ros-humble-xacro
 Description: The tier4_vehicle_launch package

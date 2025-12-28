@@ -40,8 +40,6 @@ ros-humble-autoware-autonomous-emergency-braking (0.44.2-0jammy) jammy; urgency=
 
 ros-humble-autoware-autonomous-emergency-braking (0.44.1-0jammy) jammy; urgency=high
 
-Expanding 'src/core/autoware_adapi_msgs/autoware_adapi_version_msgs/debian/changelog.em' -> 'src/core/autoware_adapi_msgs/autoware_adapi_version_msgs/debian/changelog'[0m
-Expanding 'src/universe/autoware_universe/common/autoware_agnocast_wrapper/debian/changelog.em' -> 'src/universe/autoware_universe/common/autoware_agnocast_wrapper/debian/changelog'[0m
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000

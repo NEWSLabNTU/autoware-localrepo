@@ -39,8 +39,7 @@ ros-humble-autoware-control-performance-analysis (0.44.2-0jammy) jammy; urgency=
 
 
 
- -- Berkay Karaman <berkay@leodrive.ai>  Expanding 'src/core/autoware_core/localization/autoware_core_localization/debian/changelog.em' -> 'src/core/autoware_core/localization/autoware_core_localization/debian/changelog'[0m
-Mon, 09 Jun 2025 16:00:00 -0000
+ -- Berkay Karaman <berkay@leodrive.ai>  Mon, 09 Jun 2025 16:00:00 -0000
 
 ros-humble-autoware-control-performance-analysis (0.44.1-0jammy) jammy; urgency=high
 

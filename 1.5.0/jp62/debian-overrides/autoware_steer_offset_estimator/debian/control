@@ -8,5 +8,5 @@ Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-steer-offset-estimator
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-global-parameter-loader, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-pose2twist, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, autoware-pose2twist, ros-humble-autoware-global-parameter-loader, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs
 Description: The steer_offset_estimator

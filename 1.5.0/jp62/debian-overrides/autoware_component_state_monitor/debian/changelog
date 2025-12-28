@@ -46,8 +46,6 @@ ros-humble-autoware-component-state-monitor (0.44.2-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-Expanding 'src/universe/autoware_universe/control/autoware_control_command_gate/debian/source/format.em' -> 'src/universe/autoware_universe/control/autoware_control_command_gate/debian/source/format'[0m
-Expanding 'src/core/autoware_core/localization/autoware_core_localization/debian/compat.em' -> 'src/core/autoware_core/localization/autoware_core_localization/debian/compat'[0m
 ros-humble-autoware-component-state-monitor (0.44.1-0jammy) jammy; urgency=high
 
 

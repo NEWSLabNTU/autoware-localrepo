@@ -146,8 +146,7 @@ ros-humble-autoware-tracking-object-merger (0.40.0-0jammy) jammy; urgency=high
     ---------
   * Contributors: Esteve Fernandez, Fumiya Watanabe, M. Fatih Cırıt, Ryohsuke Mitsudome, Yutaka Kondo, kobayu858
 
- -- Yukihiro Saito <Expanding 'src/universe/autoware_universe/perception/autoware_traffic_light_arbiter/debian/control.em' -> 'src/universe/autoware_universe/perception/autoware_traffic_light_arbiter/debian/control'[0m
-yukihiro.saito@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
 
 ros-humble-autoware-tracking-object-merger (0.39.0-0jammy) jammy; urgency=high
 

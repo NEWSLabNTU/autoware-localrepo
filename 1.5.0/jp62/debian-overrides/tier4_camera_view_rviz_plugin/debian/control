@@ -2,11 +2,11 @@ Source: ros-humble-tier4-camera-view-rviz-plugin
 Section: misc
 Priority: optional
 Maintainer: Yuxuan Liu <uken.ryu@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libqt5core5a, libqt5gui5, libqt5widgets5, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-specs, ros-humble-autoware-cmake, ros-humble-autoware-component-interface-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rviz-common, ros-humble-rviz-default-plugins
+Build-Depends: debhelper (>= 12.0.0), autoware-component-interface-utils, libqt5core5a, libqt5gui5, libqt5widgets5, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-specs, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rviz-common, ros-humble-rviz-default-plugins
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-tier4-camera-view-rviz-plugin
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5core5a, libqt5gui5, libqt5widgets5, ros-humble-autoware-adapi-specs, ros-humble-autoware-component-interface-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rviz-common, ros-humble-rviz-default-plugins
+Depends: ${shlibs:Depends}, ${misc:Depends}, autoware-component-interface-utils, libqt5core5a, libqt5gui5, libqt5widgets5, ros-humble-autoware-adapi-specs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rviz-common, ros-humble-rviz-default-plugins
 Description: The autoware camera view rviz plugin package

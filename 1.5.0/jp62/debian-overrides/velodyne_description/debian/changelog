@@ -33,8 +33,7 @@ ros-humble-velodyne-description (1.0.11-0jammy) jammy; urgency=high
   * Add organize_cloud parameter to match velodyne_pointcloud
   * Contributors: Kevin Hallenbeck
 
- -- Expanding 'src/sensor_component/external/sensor_component_description/vls_description/debian/changelog.em' -> 'src/sensor_component/external/sensor_component_description/vls_description/debian/changelog'[0m
-Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Mon, 22 Feb 2021 16:00:00 -0000
+ -- Kevin Hallenbeck <khallenbeck@dataspeedinc.com>  Mon, 22 Feb 2021 16:00:00 -0000
 
 ros-humble-velodyne-description (1.0.10-0jammy) jammy; urgency=high
 

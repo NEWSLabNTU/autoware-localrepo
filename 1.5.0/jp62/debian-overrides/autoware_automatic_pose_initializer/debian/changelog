@@ -38,8 +38,7 @@ ros-humble-autoware-automatic-pose-initializer (0.44.1-0jammy) jammy; urgency=hi
 
 
 
- -- Takagi, Isamu <isamu.takagi@tier4.jp>  Expanding 'src/middleware/external/agnocast/src/agnocast_sample_application/debian/changelog.em' -> 'src/middleware/external/agnocast/src/agnocast_sample_application/debian/changelog'[0m
-Wed, 30 Apr 2025 16:00:00 -0000
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
 ros-humble-autoware-automatic-pose-initializer (0.44.0-0jammy) jammy; urgency=high
 

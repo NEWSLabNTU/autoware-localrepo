@@ -2,11 +2,11 @@ Source: ros-humble-trt-batched-nms
 Section: misc
 Priority: optional
 Maintainer: Barış Zeren <baris@leodrive.ai>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-cuda-utils, ros-humble-autoware-tensorrt-common, ros-humble-cudnn-cmake-module, ros-humble-tensorrt-cmake-module
+Build-Depends: debhelper (>= 12.0.0), autoware-cuda-utils, autoware-tensorrt-common, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-cmake, ros-humble-cudnn-cmake-module, ros-humble-tensorrt-cmake-module
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-trt-batched-nms
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-cuda-utils, ros-humble-autoware-tensorrt-common, ros-humble-cudnn-cmake-module, ros-humble-tensorrt-cmake-module
+Depends: ${shlibs:Depends}, ${misc:Depends}, autoware-cuda-utils, autoware-tensorrt-common, ros-humble-cudnn-cmake-module, ros-humble-tensorrt-cmake-module
 Description: ROS 2 package for TensorRT batched NMS plugin

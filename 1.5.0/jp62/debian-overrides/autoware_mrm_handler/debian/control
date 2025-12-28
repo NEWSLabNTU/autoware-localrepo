@@ -2,11 +2,11 @@ Source: ros-humble-autoware-mrm-handler
 Section: misc
 Priority: optional
 Maintainer: Makoto Kurihara <makoto.kurihara@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-utils, ros-humble-autoware-vehicle-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-system-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-utils, ros-humble-autoware-vehicle-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, tier4-system-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-mrm-handler
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-system-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, tier4-system-msgs
 Description: The mrm_handler ROS 2 package

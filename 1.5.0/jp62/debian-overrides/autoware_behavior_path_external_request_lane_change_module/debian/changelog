@@ -215,8 +215,7 @@ ros-humble-autoware-behavior-path-external-request-lane-change-module (0.38.0-0j
     ---------
   * Contributors: Kosuke Takeuchi, Satoshi OTA, Takayuki Murooka, Yutaka Kondo, mkquda
 
- -- Fumiya Watanabe <Expanding 'src/universe/autoware_universe/planning/behavior_path_planner/autoware_behavior_path_bidirectional_traffic_module/debian/changelog.em' -> 'src/universe/autoware_universe/planning/behavior_path_planner/autoware_behavior_path_bidirectional_traffic_module/debian/changelog'[0m
-fumiya.watanabe@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
+ -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
 
 ros-humble-autoware-behavior-path-external-request-lane-change-module (0.26.0-0jammy) jammy; urgency=high
 

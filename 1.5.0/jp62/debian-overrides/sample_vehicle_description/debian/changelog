@@ -28,8 +28,7 @@ ros-humble-sample-vehicle-description (0.45.2-0jammy) jammy; urgency=high
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Fri, 27 Jun 2025 16:00:00 -0000
 
-ros-humble-sample-vehicle-description (0.45.1-0jammy) info: run bloom_gen for tier4_auto_msgs_converter
-jammy; urgency=high
+ros-humble-sample-vehicle-description (0.45.1-0jammy) jammy; urgency=high
 
 
 
@@ -107,8 +106,7 @@ ros-humble-sample-vehicle-description (0.39.0-0jammy) jammy; urgency=high
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Mon, 25 Nov 2024 16:00:00 -0000
 
-ros-humble-sample-vehicle-description (0.38.0-0jammy) Expanding 'src/launcher/autoware_launch/sensor_kit/single_lidar_sensor_kit_launch/single_lidar_common_launch/debian/copyright.em' -> 'src/launcher/autoware_launch/sensor_kit/single_lidar_sensor_kit_launch/single_lidar_common_launch/debian/copyright'[0m
-jammy; urgency=high
+ros-humble-sample-vehicle-description (0.38.0-0jammy) jammy; urgency=high
 
 
 

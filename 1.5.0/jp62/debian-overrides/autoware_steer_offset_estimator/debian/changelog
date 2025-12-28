@@ -134,7 +134,6 @@ ros-humble-autoware-steer-offset-estimator (0.39.0-0jammy) jammy; urgency=high
 
 ros-humble-autoware-steer-offset-estimator (0.38.0-0jammy) jammy; urgency=high
 
-Expanding 'src/universe/autoware_universe/control/autoware_stop_mode_operator/debian/control.em' -> 'src/universe/autoware_universe/control/autoware_stop_mode_operator/debian/control'[0m
   * unify package.xml version to 0.37.0
   * refactor(pose2twist)!: prefix package and namespace with autoware (#8347 <https://github.com/autowarefoundation/autoware_universe/issues/8347>)
     * add autoware_ prefix
