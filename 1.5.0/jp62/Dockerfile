@@ -112,10 +112,12 @@ RUN apt-key adv --fetch-key http://repo.download.nvidia.com/jetson/jetson-ota-pu
 # - nvidia-l4t-core: Core libraries including CUDA driver stubs
 # - nvidia-l4t-cuda: CUDA runtime libraries with DLA support
 # - nvidia-l4t-dla-compiler: DLA compiler
+# - libcudnn9-dev-cuda-12: cuDNN development headers for building CUDA packages
 RUN apt-get install -o DPkg::Options::="--force-confold" -y \
     nvidia-l4t-core \
     nvidia-l4t-cuda \
-    nvidia-l4t-dla-compiler
+    nvidia-l4t-dla-compiler \
+    libcudnn9-dev-cuda-12
 
 # ============================================================================
 # Set up CUDA environment for CMake

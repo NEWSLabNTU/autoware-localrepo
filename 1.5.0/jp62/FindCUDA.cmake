@@ -10,6 +10,11 @@ if(NOT CUDAToolkit_FOUND)
 endif()
 
 if(CUDAToolkit_FOUND)
+  # Set default CUDA standard to C++17 for packages using native CMake CUDA support
+  # This is needed because Autoware uses C++17 features like std::optional, if constexpr
+  set(CMAKE_CUDA_STANDARD 17 CACHE STRING "CUDA C++ standard")
+  set(CMAKE_CUDA_STANDARD_REQUIRED ON CACHE BOOL "Require CUDA C++ standard")
+
   # Set legacy variables for packages using old FindCUDA API
   set(CUDA_FOUND TRUE)
   set(CUDA_VERSION "${CUDAToolkit_VERSION}")
@@ -61,10 +66,16 @@ macro(cuda_find_library_local_first_with_path_ext _var _names _doc _path_ext)
     DOC ${_doc}
     NO_DEFAULT_PATH
   )
-  if(NOT CMAKE_CROSSCOMPILING)
+  # Search in additional system paths (needed for cuDNN on aarch64)
+  if(NOT ${_var})
     find_library(${_var}
       NAMES ${_names}
-      PATHS "/usr/lib/nvidia-current"
+      PATHS
+        "/usr/lib/aarch64-linux-gnu"
+        "/usr/lib/x86_64-linux-gnu"
+        "/usr/lib"
+        "/usr/local/lib"
+        "/usr/lib/nvidia-current"
       DOC ${_doc}
     )
   endif()
@@ -118,10 +129,19 @@ macro(cuda_add_library target_name)
   # (native detection fails in QEMU without GPU)
   # 75=Turing, 86=Ampere, 87=Orin, 89=Ada Lovelace
   set_target_properties(${target_name} PROPERTIES
-    CUDA_STANDARD 14
+    CUDA_STANDARD 17
     CUDA_STANDARD_REQUIRED ON
     CUDA_ARCHITECTURES "75;86;87;89"
   )
+
+  # Enable separable compilation if CUDA_SEPARABLE_COMPILATION is set
+  # This is needed when __device__ functions are defined in one .cu file
+  # and called from another .cu file
+  if(CUDA_SEPARABLE_COMPILATION)
+    set_target_properties(${target_name} PROPERTIES
+      CUDA_SEPARABLE_COMPILATION ON
+    )
+  endif()
 
   # Apply CUDA_NVCC_FLAGS if set (for compatibility with old FindCUDA usage)
   if(CUDA_NVCC_FLAGS)
@@ -154,7 +174,7 @@ macro(cuda_add_executable target_name)
 
   # Set CUDA properties - use explicit architectures for cross-compilation
   set_target_properties(${target_name} PROPERTIES
-    CUDA_STANDARD 14
+    CUDA_STANDARD 17
     CUDA_STANDARD_REQUIRED ON
     CUDA_ARCHITECTURES "75;86;87;89"
     CUDA_SEPARABLE_COMPILATION ON
