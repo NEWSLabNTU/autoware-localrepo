@@ -123,12 +123,20 @@ RUN apt-get install -o DPkg::Options::="--force-confold" -y \
 
 # ============================================================================
 # Set up CUDA environment for CMake
-# The L4T base image has CUDA but CMake needs help finding it
+# - CUDAARCHS: Explicit architecture avoids "native" detection (fails in QEMU)
+#   87 = Orin (JetPack 6.x). Also works for native builds.
+# - cuda_init.cmake: Ensures find_package(CUDA) runs early so CUDA_FOUND and
+#   find_cuda_helper_libs macro are available for cudnn_cmake_module
 # ============================================================================
 ENV CUDA_HOME=/usr/local/cuda
 ENV CMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc
 ENV PATH=/usr/local/cuda/bin:${PATH}
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
+ENV CUDAARCHS=87
+
+# Copy cuda_init.cmake and configure colcon2deb to use it
+COPY cuda_init.cmake /cuda_init.cmake
+RUN echo 'export COLCON2DEB_CMAKE_ARGS="-DCMAKE_PROJECT_INCLUDE=/cuda_init.cmake"' >> /colcon2deb-setup.sh
 
 # ============================================================================
 # Install spconv and cumm libraries for sparse convolution operations
@@ -139,12 +147,5 @@ RUN wget -q https://github.com/autowarefoundation/spconv_cpp/releases/download/s
     wget -q https://github.com/autowarefoundation/spconv_cpp/releases/download/spconv_v2.3.8%2Bcumm_v0.5.3%2Bcu128/spconv_2.3.8_arm64-jetson.deb && \
     apt-get install -y ./cumm_0.5.3_arm64-jetson.deb ./spconv_2.3.8_arm64-jetson.deb && \
     rm -f cumm_0.5.3_arm64-jetson.deb spconv_2.3.8_arm64-jetson.deb
-
-# ============================================================================
-# Patch FindCUDA.cmake to also create CUDA::cudart target
-# Some Autoware packages use find_package(CUDA) but link to CUDA::cudart,
-# which only exists with find_package(CUDAToolkit). This patch loads both.
-# ============================================================================
-COPY FindCUDA.cmake /usr/share/cmake-3.22/Modules/FindCUDA.cmake
 
 CMD ["/bin/bash"]
