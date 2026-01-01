@@ -4,20 +4,12 @@
 default:
     @just --list
 
-# =============================================================================
-# Complete Build
-# =============================================================================
-
-# Build everything and create APT repository
-all: colcon meta repo
+# Build everything: ROS packages + meta-packages + APT repository
+all: ros meta repo
     @echo "✓ Local repository ready in repo/"
 
-# =============================================================================
-# ROS Packages (via colcon2deb)
-# =============================================================================
-
-# Build ROS packages via colcon2deb
-colcon:
+# Build ROS packages from Autoware repo (via colcon2deb)
+ros:
     #!/usr/bin/env bash
     set -e
     if ! command -v colcon2deb &> /dev/null; then
@@ -27,38 +19,7 @@ colcon:
     fi
     colcon2deb --workspace source --config config.yaml
 
-# Build ROS packages with verbose output
-colcon-verbose:
-    #!/usr/bin/env bash
-    set -e
-    if ! command -v colcon2deb &> /dev/null; then
-        echo "Error: colcon2deb is not available."
-        echo "Please install it: pip install colcon2deb"
-        exit 1
-    fi
-    colcon2deb --workspace source --config config.yaml --verbose
-
-# Rebuild only Debian packages (skip rosdep, copy, colcon build)
-colcon-debian-only:
-    #!/usr/bin/env bash
-    set -e
-    if ! command -v colcon2deb &> /dev/null; then
-        echo "Error: colcon2deb is not available."
-        echo "Please install it: pip install colcon2deb"
-        exit 1
-    fi
-    echo "Rebuilding Debian packages only..."
-    colcon2deb --workspace source --config config.yaml \
-        --skip-copy-src \
-        --skip-rosdep-install \
-        --skip-colcon-build \
-        --skip-gen-rosdep-list
-
-# =============================================================================
-# Meta-Packages
-# =============================================================================
-
-# Build all meta-packages
+# Build meta-packages
 meta:
     @echo "Building meta-packages..."
     cd packages/autoware-localrepo && dpkg-buildpackage -us -uc -b
@@ -68,25 +29,17 @@ meta:
     cd packages/autoware-full && dpkg-buildpackage -us -uc -b
     @echo "✓ Meta-packages built"
 
-# =============================================================================
-# APT Repository
-# =============================================================================
-
-# Create APT repository from built packages
+# Create APT repository
 repo:
     mkdir -p repo/pool/main
     @echo "Collecting .deb packages..."
     -cp build/dist/*.deb repo/pool/main/ 2>/dev/null
-    -cp packages/*/*.deb repo/pool/main/ 2>/dev/null
+    -cp packages/*.deb repo/pool/main/ 2>/dev/null
     @echo "Generating Packages index..."
     cd repo && dpkg-scanpackages pool/main /dev/null > Packages
     cd repo && gzip -k -f Packages
     @echo "✓ APT repository created in repo/"
     @ls -1 repo/pool/main/*.deb 2>/dev/null | wc -l | xargs -I{} echo "  Total: {} packages"
-
-# =============================================================================
-# Maintenance
-# =============================================================================
 
 # Clean all build artifacts
 clean:
@@ -95,12 +48,3 @@ clean:
     rm -rf repo/
     rm -f packages/*/*.deb packages/*/*.buildinfo packages/*/*.changes
     @echo "✓ Clean complete"
-
-# Rebuild Docker image
-rebuild-image:
-    @echo "Rebuilding Docker image..."
-    docker build -t autoware-1.5.0-amd64-builder .
-    @echo "✓ Docker image rebuilt"
-
-# Clean and rebuild everything
-rebuild: clean rebuild-image all
