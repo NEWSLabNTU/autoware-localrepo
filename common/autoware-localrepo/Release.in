@@ -1,8 +1,0 @@
-Architectures: ${target_arch}
-Components: ${component}
-Date: ${release_date}
-Label: Autoware
-Origin: NEWSLab
-Suite: ${suite}
-Codename: ${target_dist}
-Description: Debian Repository for Autoware Packages

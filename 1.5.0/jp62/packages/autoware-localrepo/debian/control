@@ -1,0 +1,16 @@
+Source: autoware-localrepo
+Section: misc
+Priority: optional
+Maintainer: Jerry Lin <jerry73204@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: autoware-localrepo
+Architecture: all
+Depends: ${misc:Depends}
+Description: Autoware local APT repository configuration
+ This package configures the local APT repository for Autoware
+ packages. After installation, Autoware packages can be installed
+ using standard apt commands.
+ .
+ The repository is expected at /opt/autoware/localrepo

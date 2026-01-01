@@ -1,0 +1,5 @@
+autoware-localrepo (1.5.0-1) jammy; urgency=medium
+
+  * Autoware 1.5.0 AMD64 local repository configuration
+
+ -- Jerry Lin <jerry73204@gmail.com>  Wed, 01 Jan 2025 00:00:00 +0800

@@ -1,0 +1,14 @@
+Source: autoware-config
+Section: misc
+Priority: optional
+Maintainer: Jerry Lin <jerry73204@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: autoware-config
+Architecture: all
+Depends: ${misc:Depends}
+Description: Autoware system configuration files
+ This package provides system configuration files for Autoware,
+ including CycloneDDS settings, environment variables, and
+ network configuration for ROS 2 communication.

@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	install -d $(CURDIR)/debian/autoware-localrepo/etc/apt/sources.list.d
+	install -d $(CURDIR)/debian/autoware-localrepo/etc/apt/preferences.d
+	install -m 644 src/autoware-localrepo.list $(CURDIR)/debian/autoware-localrepo/etc/apt/sources.list.d/
+	install -m 644 src/autoware-localrepo.pref $(CURDIR)/debian/autoware-localrepo/etc/apt/preferences.d/

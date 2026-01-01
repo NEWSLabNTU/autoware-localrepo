@@ -1,30 +1,99 @@
-# Autoware 1.5.0 AMD64 Debian Package Builder
+# Autoware 1.5.0 AMD64 Local Repository Builder
 
 # Default recipe: list all available recipes
 default:
     @just --list
 
-# Build Debian packages for Autoware 1.5.0
-build:
+# =============================================================================
+# Complete Build
+# =============================================================================
+
+# Build everything and create APT repository
+all: colcon meta repo
+    @echo "✓ Local repository ready in repo/"
+
+# =============================================================================
+# ROS Packages (via colcon2deb)
+# =============================================================================
+
+# Build ROS packages via colcon2deb
+colcon:
     #!/usr/bin/env bash
     set -e
-
-    # Check if colcon2deb is available
     if ! command -v colcon2deb &> /dev/null; then
         echo "Error: colcon2deb is not available."
-        echo "Please install it first:"
-        echo "  cd <project_root>"
-        echo "  just build && just install"
+        echo "Please install it: pip install colcon2deb"
         exit 1
     fi
-
-    # Run colcon2deb
     colcon2deb --workspace source --config config.yaml
 
-# Clean build artifacts
+# Build ROS packages with verbose output
+colcon-verbose:
+    #!/usr/bin/env bash
+    set -e
+    if ! command -v colcon2deb &> /dev/null; then
+        echo "Error: colcon2deb is not available."
+        echo "Please install it: pip install colcon2deb"
+        exit 1
+    fi
+    colcon2deb --workspace source --config config.yaml --verbose
+
+# Rebuild only Debian packages (skip rosdep, copy, colcon build)
+colcon-debian-only:
+    #!/usr/bin/env bash
+    set -e
+    if ! command -v colcon2deb &> /dev/null; then
+        echo "Error: colcon2deb is not available."
+        echo "Please install it: pip install colcon2deb"
+        exit 1
+    fi
+    echo "Rebuilding Debian packages only..."
+    colcon2deb --workspace source --config config.yaml \
+        --skip-copy-src \
+        --skip-rosdep-install \
+        --skip-colcon-build \
+        --skip-gen-rosdep-list
+
+# =============================================================================
+# Meta-Packages
+# =============================================================================
+
+# Build all meta-packages
+meta:
+    @echo "Building meta-packages..."
+    cd packages/autoware-localrepo && dpkg-buildpackage -us -uc -b
+    cd packages/autoware-config && dpkg-buildpackage -us -uc -b
+    cd packages/autoware-theme && dpkg-buildpackage -us -uc -b
+    cd packages/autoware-runtime && dpkg-buildpackage -us -uc -b
+    cd packages/autoware-full && dpkg-buildpackage -us -uc -b
+    @echo "✓ Meta-packages built"
+
+# =============================================================================
+# APT Repository
+# =============================================================================
+
+# Create APT repository from built packages
+repo:
+    mkdir -p repo/pool/main
+    @echo "Collecting .deb packages..."
+    -cp build/dist/*.deb repo/pool/main/ 2>/dev/null
+    -cp packages/*/*.deb repo/pool/main/ 2>/dev/null
+    @echo "Generating Packages index..."
+    cd repo && dpkg-scanpackages pool/main /dev/null > Packages
+    cd repo && gzip -k -f Packages
+    @echo "✓ APT repository created in repo/"
+    @ls -1 repo/pool/main/*.deb 2>/dev/null | wc -l | xargs -I{} echo "  Total: {} packages"
+
+# =============================================================================
+# Maintenance
+# =============================================================================
+
+# Clean all build artifacts
 clean:
-    @echo "Cleaning build directory..."
+    @echo "Cleaning..."
     rm -rf build/
+    rm -rf repo/
+    rm -f packages/*/*.deb packages/*/*.buildinfo packages/*/*.changes
     @echo "✓ Clean complete"
 
 # Rebuild Docker image
@@ -34,25 +103,4 @@ rebuild-image:
     @echo "✓ Docker image rebuilt"
 
 # Clean and rebuild everything
-rebuild: clean rebuild-image build
-
-# Rebuild only Debian packages (skip earlier steps like rosdep, copy, colcon build)
-rebuild-debian:
-    #!/usr/bin/env bash
-    set -e
-
-    # Check if colcon2deb is available
-    if ! command -v colcon2deb &> /dev/null; then
-        echo "Error: colcon2deb is not available."
-        echo "Please install it first:"
-        echo "  cd <project_root>"
-        echo "  just build && just install"
-        exit 1
-    fi
-
-    echo "Rebuilding Debian packages only (skipping earlier phases)..."
-    colcon2deb --workspace source --config config.yaml \
-        --skip-copy-src \
-        --skip-rosdep-install \
-        --skip-colcon-build \
-        --skip-gen-rosdep-list
+rebuild: clean rebuild-image all

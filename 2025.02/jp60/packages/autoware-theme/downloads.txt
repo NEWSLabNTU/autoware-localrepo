@@ -1,0 +1,195 @@
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware.qss
+  out=autoware.qss
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/qt5ct.conf
+  out=qt5ct.conf
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/active/downarrow.svg
+  out=autoware-rviz-icons/active/downarrow.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/active/uparrow.svg
+  out=autoware-rviz-icons/active/uparrow.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/branch-end.svg
+  out=autoware-rviz-icons/disabled/branch-end.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/branch-more.svg
+  out=autoware-rviz-icons/disabled/branch-more.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/downarrow.svg
+  out=autoware-rviz-icons/disabled/downarrow.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/leftarrow.svg
+  out=autoware-rviz-icons/disabled/leftarrow.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/radiobutton_checked.svg
+  out=autoware-rviz-icons/disabled/radiobutton_checked.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/radiobutton_unchecked.svg
+  out=autoware-rviz-icons/disabled/radiobutton_unchecked.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/rightarrow.svg
+  out=autoware-rviz-icons/disabled/rightarrow.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/uparrow.svg
+  out=autoware-rviz-icons/disabled/uparrow.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/disabled/vline.svg
+  out=autoware-rviz-icons/disabled/vline.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/add.svg
+  out=autoware-rviz-icons/primary/add.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/branch-closed.svg
+  out=autoware-rviz-icons/primary/branch-closed.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/branch-end.svg
+  out=autoware-rviz-icons/primary/branch-end.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/branch-more.svg
+  out=autoware-rviz-icons/primary/branch-more.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/branch-open.svg
+  out=autoware-rviz-icons/primary/branch-open.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_checked_disabled.svg
+  out=autoware-rviz-icons/primary/checkbox_checked_disabled.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_checked_enabled.svg
+  out=autoware-rviz-icons/primary/checkbox_checked_enabled.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_checked_hovered.svg
+  out=autoware-rviz-icons/primary/checkbox_checked_hovered.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_checked_pressed.svg
+  out=autoware-rviz-icons/primary/checkbox_checked_pressed.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_indeterminate_disabled.svg
+  out=autoware-rviz-icons/primary/checkbox_indeterminate_disabled.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_indeterminate_enabled.svg
+  out=autoware-rviz-icons/primary/checkbox_indeterminate_enabled.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_indeterminate_hovered.svg
+  out=autoware-rviz-icons/primary/checkbox_indeterminate_hovered.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_indeterminate_pressed.svg
+  out=autoware-rviz-icons/primary/checkbox_indeterminate_pressed.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_unchecked_disabled.svg
+  out=autoware-rviz-icons/primary/checkbox_unchecked_disabled.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_unchecked_enabled.svg
+  out=autoware-rviz-icons/primary/checkbox_unchecked_enabled.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_unchecked_hovered.svg
+  out=autoware-rviz-icons/primary/checkbox_unchecked_hovered.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/checkbox_unchecked_pressed.svg
+  out=autoware-rviz-icons/primary/checkbox_unchecked_pressed.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/close.svg
+  out=autoware-rviz-icons/primary/close.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/downarrow.svg
+  out=autoware-rviz-icons/primary/downarrow.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/float.svg
+  out=autoware-rviz-icons/primary/float.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/leftarrow.svg
+  out=autoware-rviz-icons/primary/leftarrow.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/minus.svg
+  out=autoware-rviz-icons/primary/minus.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/more.svg
+  out=autoware-rviz-icons/primary/more.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/radiobutton_checked.svg
+  out=autoware-rviz-icons/primary/radiobutton_checked.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/radiobutton_checked_invert.svg
+  out=autoware-rviz-icons/primary/radiobutton_checked_invert.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/radiobutton_unchecked.svg
+  out=autoware-rviz-icons/primary/radiobutton_unchecked.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/radiobutton_unchecked_invert.svg
+  out=autoware-rviz-icons/primary/radiobutton_unchecked_invert.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/rightarrow.svg
+  out=autoware-rviz-icons/primary/rightarrow.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/sizegrip.svg
+  out=autoware-rviz-icons/primary/sizegrip.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/slider.svg
+  out=autoware-rviz-icons/primary/slider.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/splitter-horizontal.svg
+  out=autoware-rviz-icons/primary/splitter-horizontal.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/splitter-vertical.svg
+  out=autoware-rviz-icons/primary/splitter-vertical.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/tab_close.svg
+  out=autoware-rviz-icons/primary/tab_close.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/toolbar-handle-horizontal.svg
+  out=autoware-rviz-icons/primary/toolbar-handle-horizontal.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/toolbar-handle-vertical.svg
+  out=autoware-rviz-icons/primary/toolbar-handle-vertical.svg
+  dir=downloads
+
+https://raw.githubusercontent.com/autowarefoundation/autoware/refs/tags/2025.02/ansible/roles/qt5ct_setup/files/autoware-rviz-icons/primary/uparrow.svg
+  out=autoware-rviz-icons/primary/uparrow.svg
+  dir=downloads

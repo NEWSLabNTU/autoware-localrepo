@@ -1,0 +1,16 @@
+Source: autoware-theme
+Section: misc
+Priority: optional
+Maintainer: Jerry Lin <jerry73204@gmail.com>
+Build-Depends: debhelper-compat (= 13), aria2, ca-certificates
+Standards-Version: 4.6.2
+
+Package: autoware-theme
+Architecture: all
+Depends: ${misc:Depends}, qt5ct
+Description: Autoware Qt5 theme and RViz icons
+ This package contains Qt5 styling and RViz icon customizations
+ for Autoware visualization tools including:
+  - Custom Qt5 stylesheet (autoware.qss)
+  - Qt5ct configuration
+  - RViz icon set with active, disabled, and primary states

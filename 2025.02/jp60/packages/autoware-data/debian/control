@@ -1,0 +1,17 @@
+Source: autoware-data
+Section: misc
+Priority: optional
+Maintainer: Jerry Lin <jerry73204@gmail.com>
+Build-Depends: debhelper-compat (= 13), aria2, ca-certificates
+Standards-Version: 4.6.2
+
+Package: autoware-data
+Architecture: all
+Depends: ${misc:Depends}
+Description: Autoware ML model data files
+ This package contains pre-trained ML models and configuration files
+ required by Autoware perception components including:
+  - LiDAR-based 3D object detection models (CenterPoint, Transfusion)
+  - Camera-based 2D object detection models (YOLOX)
+  - Traffic light classification models
+  - Semantic segmentation models
