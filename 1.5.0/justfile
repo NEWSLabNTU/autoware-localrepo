@@ -1,5 +1,9 @@
 # Autoware 1.5.0 Build Automation
 
+# Default recipe: list all available recipes
+default:
+    @just --list
+
 # Build ROS packages for amd64
 build-amd64:
     cd amd64 && just build

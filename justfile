@@ -1,5 +1,9 @@
 # Autoware Local Repository Build Automation
 
+# Default recipe: list all available recipes
+default:
+    @just --list
+
 # Build a specific version (e.g., just build 1.5.0)
 build version:
     cd {{version}} && just all
