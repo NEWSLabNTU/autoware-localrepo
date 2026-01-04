@@ -36,10 +36,6 @@ RUN apt update -y && \
 # Set up ROS2 Python path (needed for ament_package module used by CMake)
 ENV PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:${PYTHONPATH}
 
-# Set CMAKE_MODULE_PATH for FindTENSORRT.cmake and FindCUDNN.cmake modules
-# These modules are provided by ros-humble-tensorrt-cmake-module and ros-humble-cudnn-cmake-module
-ENV CMAKE_MODULE_PATH=/opt/ros/humble/share/tensorrt_cmake_module/cmake/Modules:/opt/ros/humble/share/cudnn_cmake_module/cmake/Modules
-
 # Create colcon2deb setup script to source ROS environment before build
 RUN echo 'source /opt/ros/humble/setup.bash' > /colcon2deb-setup.sh
 

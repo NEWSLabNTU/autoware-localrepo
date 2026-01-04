@@ -76,7 +76,6 @@ override_dh_auto_configure:
 		-DCMAKE_BUILD_TYPE=None \
 		-DCMAKE_VERBOSE_MAKEFILE=ON \
 		-DCMAKE_INSTALL_LIBDIR=lib/$(DEB_HOST_GNU_TYPE) \
-		-DCMAKE_MODULE_PATH="/opt/ros/humble/share/tensorrt_cmake_module/cmake/Modules;/opt/ros/humble/share/cudnn_cmake_module/cmake/Modules" \
 		$(BUILD_TESTING_ARG)
 
 override_dh_auto_build:
