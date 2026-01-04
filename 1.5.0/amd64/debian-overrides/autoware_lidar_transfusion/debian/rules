@@ -1,4 +1,7 @@
 #!/usr/bin/make -f
+# Disable LTO - causes conflicts with CUDA fatbin symbols
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all reproducible=+fixfilepath optimize=-lto
+
 # -*- makefile -*-
 # Sample debian/rules that uses debhelper.
 # This file was originally written by Joey Hess and Craig Small.
