@@ -2,7 +2,7 @@ Source: ros-humble-autoware-manual-lane-change-handler
 Section: misc
 Priority: optional
 Maintainer: Arjun Jagdish Ram <arjun.ram@tier4.jp>
-Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake-auto, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-mission-planner-universe, ros-humble-autoware-planning-msgs, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-external-api-msgs, ros-humble-tier4-planning-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-mission-planner-universe, ros-humble-autoware-planning-msgs, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-external-api-msgs, ros-humble-tier4-planning-msgs
 Homepage: 
 Standards-Version: 3.9.2
 

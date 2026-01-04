@@ -2,7 +2,7 @@ Source: ros-humble-autoware-localization-evaluator
 Section: misc
 Priority: optional
 Maintainer: Dominik Jargot <dominik.jargot@robotec.ai>
-Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-index-cpp <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-ros
+Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-index-cpp <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-ros
 Homepage: 
 Standards-Version: 3.9.2
 

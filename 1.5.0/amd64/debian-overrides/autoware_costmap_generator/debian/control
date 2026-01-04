@@ -2,7 +2,7 @@ Source: ros-humble-autoware-costmap-generator
 Section: misc
 Priority: optional
 Maintainer: Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>
-Build-Depends: debhelper (>= 9.0.0), libpcl-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-grid-map-utils, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-test-utils, ros-humble-autoware-utils, ros-humble-generate-parameter-library, ros-humble-grid-map-ros, ros-humble-pcl-conversions, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs
+Build-Depends: debhelper (>= 12.0.0), libpcl-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-grid-map-utils, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-test-utils, ros-humble-autoware-utils, ros-humble-generate-parameter-library, ros-humble-grid-map-ros, ros-humble-pcl-conversions, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs
 Homepage: 
 Standards-Version: 3.9.2
 

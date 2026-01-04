@@ -2,7 +2,7 @@ Source: ros-humble-negotiated
 Section: misc
 Priority: optional
 Maintainer: Chris Lalancette <clalancette@openrobotics.org>
-Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-negotiated-interfaces, ros-humble-rclcpp, ros-humble-std-msgs <!nocheck>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-negotiated-interfaces, ros-humble-rclcpp, ros-humble-std-msgs <!nocheck>
 Homepage: 
 Standards-Version: 3.9.2
 

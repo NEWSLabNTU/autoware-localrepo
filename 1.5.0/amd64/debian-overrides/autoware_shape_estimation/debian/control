@@ -2,7 +2,7 @@ Source: ros-humble-autoware-shape-estimation
 Section: misc
 Priority: optional
 Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
-Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, libopencv-dev, libpcl-dev, ros-humble-ament-cmake, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-autoware-tensorrt-common, ros-humble-autoware-test-utils <!nocheck>, ros-humble-autoware-utils, ros-humble-cudnn-cmake-module, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tensorrt-cmake-module, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tier4-perception-msgs
+Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, libopencv-dev, libpcl-dev, ros-humble-ament-cmake, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-autoware-tensorrt-common, ros-humble-autoware-test-utils <!nocheck>, ros-humble-autoware-utils, ros-humble-cudnn-cmake-module, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tensorrt-cmake-module, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tier4-perception-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
