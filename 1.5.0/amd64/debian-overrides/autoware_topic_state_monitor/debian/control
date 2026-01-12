@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-topic-state-monitor
+Source: ros-humble-autoware-topic-state-monitor-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-topic-state-monitor
+Package: ros-humble-autoware-topic-state-monitor-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ament-index-cpp, ros-humble-diagnostic-updater, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-msgs
 Description: The autoware_topic_state_monitor package

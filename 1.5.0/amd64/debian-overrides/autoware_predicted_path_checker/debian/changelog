@@ -1,16 +1,16 @@
-ros-humble-autoware-predicted-path-checker (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat: change planning output topic name to /planning/trajectory (#11135 <https://github.com/autowarefoundation/autoware_universe/issues/11135>)
     * change planning output topic name to /planning/trajectory
@@ -23,31 +23,31 @@ ros-humble-autoware-predicted-path-checker (0.47.0-0jammy) jammy; urgency=high
 
  -- Berkay Karaman <berkay@leodrive.ai>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix(pred_path_checker,dyn_obstacle_stop): use output of removeOverlaps (#10375 <https://github.com/autowarefoundation/autoware_universe/issues/10375>)
@@ -55,7 +55,7 @@ ros-humble-autoware-predicted-path-checker (0.44.0-0jammy) jammy; urgency=high
 
  -- Berkay Karaman <berkay@leodrive.ai>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
@@ -63,7 +63,7 @@ ros-humble-autoware-predicted-path-checker (0.43.0-0jammy) jammy; urgency=high
 
  -- Berkay Karaman <berkay@leodrive.ai>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_utils): replace autoware_universe_utils with autoware_utils  (#10191 <https://github.com/autowarefoundation/autoware_universe/issues/10191>)
@@ -72,20 +72,20 @@ ros-humble-autoware-predicted-path-checker (0.42.0-0jammy) jammy; urgency=high
 
  -- Berkay Karaman <berkay@leodrive.ai>  Sun, 02 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.41.2-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.41.2-0jammy) jammy; urgency=high
 
   * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Berkay Karaman <berkay@leodrive.ai>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.41.1-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.41.1-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.41.0-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat: apply autoware_ prefix for predicted_path_checker (#9985 <https://github.com/autowarefoundation/autoware_universe/issues/9985>)
@@ -112,7 +112,7 @@ ros-humble-autoware-predicted-path-checker (0.41.0-0jammy) jammy; urgency=high
 
  -- Berkay Karaman <berkay@leodrive.ai>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * Merge branch 'main' into release-0.40.0
   * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
@@ -142,7 +142,7 @@ ros-humble-autoware-predicted-path-checker (0.40.0-0jammy) jammy; urgency=high
 
  -- Berkay Karaman <berkay@leodrive.ai>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.39.0-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * Merge commit '6a1ddbd08bd' into release-0.39.0
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
@@ -158,7 +158,7 @@ ros-humble-autoware-predicted-path-checker (0.39.0-0jammy) jammy; urgency=high
 
  -- Berkay Karaman <berkay@leodrive.ai>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.38.0-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.38.0-0jammy) jammy; urgency=high
 
   * unify package.xml version to 0.37.0
   * refactor(component_interface_specs): prefix package and namespace with autoware (#9094 <https://github.com/autowarefoundation/autoware_universe/issues/9094>)
@@ -214,7 +214,7 @@ ros-humble-autoware-predicted-path-checker (0.38.0-0jammy) jammy; urgency=high
 
  -- Berkay Karaman <berkay@leodrive.ai>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-predicted-path-checker (0.26.0-0jammy) jammy; urgency=high
+ros-humble-autoware-predicted-path-checker-1-5-0 (0.26.0-0jammy) jammy; urgency=high
 
   * fix(predicted_path_checker): check if trajectory size (#6730 <https://github.com/autowarefoundation/autoware_universe/issues/6730>)
     check trajectory size

@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-path-smoother
+Source: ros-humble-autoware-path-smoother-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takayuki Murooka <takayuki.murooka@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-path-smoother
+Package: ros-humble-autoware-path-smoother-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-interpolation, ros-humble-autoware-motion-utils, ros-humble-autoware-osqp-interface, ros-humble-autoware-planning-msgs, ros-humble-autoware-planning-test-manager, ros-humble-autoware-utils, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tf2-ros
 Description: The autoware_path_smoother package

@@ -1,4 +1,4 @@
-ros-humble-autoware-simple-planning-simulator (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(autoware_lanelet2_utils): replace ported functions from autoware_lanelet2_extension (#11593 <https://github.com/autowarefoundation/autoware_universe/issues/11593>)
@@ -8,13 +8,13 @@ ros-humble-autoware-simple-planning-simulator (0.48.0-0jammy) jammy; urgency=hig
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat: change planning output topic name to /planning/trajectory (#11135 <https://github.com/autowarefoundation/autoware_universe/issues/11135>)
     * change planning output topic name to /planning/trajectory
@@ -25,7 +25,7 @@ ros-humble-autoware-simple-planning-simulator (0.47.0-0jammy) jammy; urgency=hig
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * fix(autoware_simple_planning_simulator ): fix deprecated autoware_utils header (#10520 <https://github.com/autowarefoundation/autoware_universe/issues/10520>)
@@ -33,25 +33,25 @@ ros-humble-autoware-simple-planning-simulator (0.46.0-0jammy) jammy; urgency=hig
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix(simple_planning_simulator): fix a small turn_signal bug (#10386 <https://github.com/autowarefoundation/autoware_universe/issues/10386>)
@@ -62,7 +62,7 @@ ros-humble-autoware-simple-planning-simulator (0.44.0-0jammy) jammy; urgency=hig
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
@@ -70,7 +70,7 @@ ros-humble-autoware-simple-planning-simulator (0.43.0-0jammy) jammy; urgency=hig
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_utils): replace autoware_universe_utils with autoware_utils  (#10191 <https://github.com/autowarefoundation/autoware_universe/issues/10191>)
@@ -78,20 +78,20 @@ ros-humble-autoware-simple-planning-simulator (0.42.0-0jammy) jammy; urgency=hig
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.41.2-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.41.2-0jammy) jammy; urgency=high
 
   * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.41.1-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.41.1-0jammy) jammy; urgency=high
 
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.41.0-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat: apply autoware_ prefix for learning_based_vehicle_model (#9991 <https://github.com/autowarefoundation/autoware_universe/issues/9991>)
@@ -122,7 +122,7 @@ ros-humble-autoware-simple-planning-simulator (0.41.0-0jammy) jammy; urgency=hig
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * Merge branch 'main' into release-0.40.0
   * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
@@ -157,7 +157,7 @@ ros-humble-autoware-simple-planning-simulator (0.40.0-0jammy) jammy; urgency=hig
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.39.0-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
@@ -171,7 +171,7 @@ ros-humble-autoware-simple-planning-simulator (0.39.0-0jammy) jammy; urgency=hig
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.38.0-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.38.0-0jammy) jammy; urgency=high
 
   * unify package.xml version to 0.37.0
   * fix(simple_planning_simulator): change orger of IDX in SimModelDelayS… (#9128 <https://github.com/autowarefoundation/autoware_universe/issues/9128>)
@@ -279,7 +279,7 @@ ros-humble-autoware-simple-planning-simulator (0.38.0-0jammy) jammy; urgency=hig
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-simple-planning-simulator (0.26.0-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-planning-simulator-1-5-0 (0.26.0-0jammy) jammy; urgency=high
 
   * feat(simple_planning_simulator): add enable_road_slope_simulation param (#5933 <https://github.com/autowarefoundation/autoware_universe/issues/5933>)
   * fix(log-messages): reduce excessive log messages (#5971 <https://github.com/autowarefoundation/autoware_universe/issues/5971>)

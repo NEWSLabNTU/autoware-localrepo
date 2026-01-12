@@ -1,4 +1,4 @@
-Source: ros-humble-robosense-msgs
+Source: ros-humble-robosense-msgs-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Mehmet Emin BASOGLU <memin@leodrive.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-bu
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-robosense-msgs
+Package: ros-humble-robosense-msgs-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
 Description: Robosense message types for Nebula

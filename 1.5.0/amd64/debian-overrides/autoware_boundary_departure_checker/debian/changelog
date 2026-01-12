@@ -1,4 +1,4 @@
-ros-humble-autoware-boundary-departure-checker (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-boundary-departure-checker-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix: tf2 uses hpp headers in rolling (and is backported) (#11620 <https://github.com/autowarefoundation/autoware_universe/issues/11620>)
@@ -34,14 +34,14 @@ ros-humble-autoware-boundary-departure-checker (0.48.0-0jammy) jammy; urgency=hi
 
  -- Alqudah Mohammad <alqudah.mohammad@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-boundary-departure-checker (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-boundary-departure-checker-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
   * fix(autoware_boundary_departure_checker): add missing dependency to magic_enum (#11201 <https://github.com/autowarefoundation/autoware_universe/issues/11201>)
   * Contributors: Mete Fatih Cırıt
 
  -- Alqudah Mohammad <alqudah.mohammad@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-boundary-departure-checker (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-boundary-departure-checker-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat(boundary_departure): configurable departure points and type based on time (#11073 <https://github.com/autowarefoundation/autoware_universe/issues/11073>)
     * feat(boundary_departure): configurable departure points and type based on time
@@ -76,7 +76,7 @@ ros-humble-autoware-boundary-departure-checker (0.47.0-0jammy) jammy; urgency=hi
 
  -- Alqudah Mohammad <alqudah.mohammad@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-boundary-departure-checker (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-boundary-departure-checker-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * feat(motion_velocity_planner): boundary departure prevention module (#10817 <https://github.com/autowarefoundation/autoware_universe/issues/10817>)
@@ -119,7 +119,7 @@ ros-humble-autoware-boundary-departure-checker (0.46.0-0jammy) jammy; urgency=hi
 
  -- Alqudah Mohammad <alqudah.mohammad@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-boundary-departure-checker (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-boundary-departure-checker-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * refactor(departure_checker): move lane departure checker class to departure_checker  (#10337 <https://github.com/autowarefoundation/autoware_universe/issues/10337>)

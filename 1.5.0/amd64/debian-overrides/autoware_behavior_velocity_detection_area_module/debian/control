@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-behavior-velocity-detection-area-module
+Source: ros-humble-autoware-behavior-velocity-detection-area-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Kyoichi Sugahara <kyoichi.sugahara@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, libeigen3-dev, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-behavior-velocity-detection-area-module
+Package: ros-humble-autoware-behavior-velocity-detection-area-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, libeigen3-dev, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-behavior-velocity-rtc-interface, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-utils, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-visualization-msgs
 Description: The autoware_behavior_velocity_detection_area_module package

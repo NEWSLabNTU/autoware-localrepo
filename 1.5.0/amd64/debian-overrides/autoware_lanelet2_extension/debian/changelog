@@ -1,4 +1,4 @@
-ros-humble-autoware-lanelet2-extension (0.10.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.10.0-0jammy) jammy; urgency=high
 
   * chore: add build option -Wno-error=maybe-uninitialized (#79 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/79>)
     build::jazzy-porting::add build option -Wno-error=maybe-uninitialized to surpress compile error caused by boost-geometry library, v0.0
@@ -12,7 +12,7 @@ ros-humble-autoware-lanelet2-extension (0.10.0-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Tue, 04 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.9.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.9.0-0jammy) jammy; urgency=high
 
   * feat: add roundabout regulatory element (#75 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/75>)
     * feat: add roundabout regulatory element implementation
@@ -31,7 +31,7 @@ ros-humble-autoware-lanelet2-extension (0.9.0-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Sun, 03 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.8.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.8.0-0jammy) jammy; urgency=high
 
   * feat: add linestring with type getter (#73 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/73>)
   * fix: skip duplicate marker (#69 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/69>)
@@ -43,7 +43,7 @@ ros-humble-autoware-lanelet2-extension (0.8.0-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Mon, 21 Jul 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.7.2-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.7.2-0jammy) jammy; urgency=high
 
   * fix(autoware_lanelet2_extension): point on the edge of a triangle was  not treated as inside the triangle (#66 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/66>)
     fix(autoware_lanelet2_extension): point on the edge of a triangle was not treated as inside the triangle
@@ -52,7 +52,7 @@ ros-humble-autoware-lanelet2-extension (0.7.2-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Tue, 13 May 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.7.1-0jammy) jammy; urgency=high
 
   * ci(pre-commit): autoupdate (#55 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/55>)
     * ci(pre-commit): autoupdate
@@ -70,7 +70,7 @@ ros-humble-autoware-lanelet2-extension (0.7.1-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Thu, 24 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.7.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.7.0-0jammy) jammy; urgency=high
 
   * feat(lanelet2_extension)!: remove dependency on autoware_utils (#47 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/47>)
     * chore(lanelet2_extension)!: remove dependency on autoware_utils
@@ -86,7 +86,7 @@ ros-humble-autoware-lanelet2-extension (0.7.0-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Sun, 06 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.6.4-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.6.4-0jammy) jammy; urgency=high
 
   * feat(projection): add_scale_factor (#54 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/54>)
     * add_scale_factor
@@ -102,7 +102,7 @@ ros-humble-autoware-lanelet2-extension (0.6.4-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Thu, 03 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.6.3-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.6.3-0jammy) jammy; urgency=high
 
   * docs(localization_landmarks): add localization reflector subtype (#44 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/44>)
     doc: add localization reflector subtype
@@ -121,7 +121,7 @@ ros-humble-autoware-lanelet2-extension (0.6.3-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Sun, 16 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.6.2-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.6.2-0jammy) jammy; urgency=high
 
   * fix: update the github link of map_loader (#31 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/31>)
     add autoware prefix to map_loader
@@ -129,7 +129,7 @@ ros-humble-autoware-lanelet2-extension (0.6.2-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Wed, 20 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.6.1-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.6.1-0jammy) jammy; urgency=high
 
   * feat(lanelet2_extension): add util/visualization of BusStopArea (#28 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/28>)
   * feat(lanelet2_extension): add query for bicycle_lane (#29 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/29>)
@@ -138,7 +138,7 @@ ros-humble-autoware-lanelet2-extension (0.6.1-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Thu, 05 Sep 2024 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.6.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.6.0-0jammy) jammy; urgency=high
 
   * feat(lanelet2_extension)!: release format_v2 (#26 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/26>)
   * docs(autoware_lanelet2_extension): refactor document (#25 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/25>)
@@ -154,7 +154,7 @@ ros-humble-autoware-lanelet2-extension (0.6.0-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Tue, 27 Aug 2024 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.5.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.5.0-0jammy) jammy; urgency=high
 
   * feat(lanelet2_extension)!: introduce API versioning along with format_version (#18 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/18>)
   * build: remove redundant move for build on noble (#12 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/12>)
@@ -171,7 +171,7 @@ ros-humble-autoware-lanelet2-extension (0.5.0-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Tue, 09 Jul 2024 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.4.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.4.0-0jammy) jammy; urgency=high
 
   * Merge pull request #11 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/11> from youtalk/import-update
     feat: import updates from autoware_common
@@ -198,7 +198,7 @@ ros-humble-autoware-lanelet2-extension (0.4.0-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Sun, 23 Jun 2024 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.3.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into rolling
   * Merge pull request #6 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/6> from youtalk/autoware-msgs-migration
@@ -213,7 +213,7 @@ ros-humble-autoware-lanelet2-extension (0.3.0-0jammy) jammy; urgency=high
 
  -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Thu, 30 May 2024 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension (0.2.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-1-5-0 (0.2.0-0jammy) jammy; urgency=high
 
   * refactor: add autoware_ prefix to package names and namespaces (#3 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/3>)
     * fix readme

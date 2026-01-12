@@ -1,4 +1,4 @@
-ros-humble-autoware-cuda-pointcloud-preprocessor (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-pointcloud-preprocessor-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix: tf2 uses hpp headers in rolling (and is backported) (#11620 <https://github.com/autowarefoundation/autoware_universe/issues/11620>)
@@ -107,13 +107,13 @@ ros-humble-autoware-cuda-pointcloud-preprocessor (0.48.0-0jammy) jammy; urgency=
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-pointcloud-preprocessor (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-pointcloud-preprocessor-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-pointcloud-preprocessor (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-pointcloud-preprocessor-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * style(pre-commit): update to clang-format-20 (#11088 <https://github.com/autowarefoundation/autoware_universe/issues/11088>)
     Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
@@ -169,7 +169,7 @@ ros-humble-autoware-cuda-pointcloud-preprocessor (0.47.0-0jammy) jammy; urgency=
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-pointcloud-preprocessor (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-pointcloud-preprocessor-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * feat(autoware_cuda_pointcloud_preprocessor): agnocast support (#10812 <https://github.com/autowarefoundation/autoware_universe/issues/10812>)
@@ -260,7 +260,7 @@ ros-humble-autoware-cuda-pointcloud-preprocessor (0.46.0-0jammy) jammy; urgency=
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-pointcloud-preprocessor (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-pointcloud-preprocessor-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * feat(autoware_cuda_pointcloud_preprocessor): added target architectures for the cuda pointcloud preprocessor (#10612 <https://github.com/autowarefoundation/autoware_universe/issues/10612>)
@@ -303,25 +303,25 @@ ros-humble-autoware-cuda-pointcloud-preprocessor (0.45.0-0jammy) jammy; urgency=
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-pointcloud-preprocessor (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-pointcloud-preprocessor-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-pointcloud-preprocessor (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-pointcloud-preprocessor-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-pointcloud-preprocessor (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-pointcloud-preprocessor-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-pointcloud-preprocessor (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-pointcloud-preprocessor-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * fix: update tool version
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43

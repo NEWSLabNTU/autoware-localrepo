@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-simpl-prediction
+Source: ros-humble-autoware-simpl-prediction-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Kotaro Uetake <kotaro.uetake@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-simpl-prediction
+Package: ros-humble-autoware-simpl-prediction-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-cuda-utils, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-tensorrt-common, ros-humble-autoware-utils, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-geometry, ros-humble-autoware-utils-system, ros-humble-cudnn-cmake-module, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tensorrt-cmake-module
 Description: The ROS 2 package for SIMPL.

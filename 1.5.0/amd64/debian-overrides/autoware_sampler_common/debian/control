@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-sampler-common
+Source: ros-humble-autoware-sampler-common-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Maxime CLEMENT <maxime.clement@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-sampler-common
+Package: ros-humble-autoware-sampler-common-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-interpolation, ros-humble-autoware-utils
 Description: Common classes and functions for sampling based planners

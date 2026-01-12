@@ -1,52 +1,52 @@
-ros-humble-autoware-cuda-dependency-meta (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-dependency-meta-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
 
 
  -- Esteve Fernandez <esteve.fernandez@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-dependency-meta (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-dependency-meta-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Esteve Fernandez <esteve.fernandez@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-dependency-meta (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-dependency-meta-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
 
 
  -- Esteve Fernandez <esteve.fernandez@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-dependency-meta (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-dependency-meta-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
 
 
  -- Esteve Fernandez <esteve.fernandez@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-dependency-meta (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-dependency-meta-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
 
 
  -- Esteve Fernandez <esteve.fernandez@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-dependency-meta (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-dependency-meta-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Esteve Fernandez <esteve.fernandez@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-dependency-meta (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-dependency-meta-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Esteve Fernandez <esteve.fernandez@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-dependency-meta (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-dependency-meta-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
 
 
  -- Esteve Fernandez <esteve.fernandez@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-cuda-dependency-meta (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-cuda-dependency-meta-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * fix: tool version
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43

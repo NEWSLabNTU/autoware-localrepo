@@ -1,4 +1,4 @@
-ros-humble-autoware-iv-external-api-adaptor (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-iv-external-api-adaptor-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * fix: api version v0.4.1 (#162 <https://github.com/tier4/tier4_ad_api_adaptor/issues/162> )
   * feat: release v0.5.0 (#160 <https://github.com/tier4/tier4_ad_api_adaptor/issues/160>)
@@ -7,7 +7,7 @@ ros-humble-autoware-iv-external-api-adaptor (0.46.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-iv-external-api-adaptor (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-iv-external-api-adaptor-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * feat(tier4_deprecated_api_adapter): create adapter for manual control (#138 <https://github.com/tier4/tier4_ad_api_adaptor/issues/138>)
     * feat(tier4_deprecated_api_adapter): create manual control adapter
@@ -27,13 +27,13 @@ ros-humble-autoware-iv-external-api-adaptor (0.43.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 11 May 2025 16:00:00 -0000
 
-ros-humble-autoware-iv-external-api-adaptor (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-iv-external-api-adaptor-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 02 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-iv-external-api-adaptor (0.41.0-0jammy) jammy; urgency=high
+ros-humble-autoware-iv-external-api-adaptor-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * feat: rename autoware_component_interface_specs to autoware_component_interface_specs_universe (#130 <https://github.com/tier4/tier4_ad_api_adaptor/issues/130>)
   * fix(external): fix old package name (#128 <https://github.com/tier4/tier4_ad_api_adaptor/issues/128>)
@@ -144,7 +144,7 @@ ros-humble-autoware-iv-external-api-adaptor (0.41.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-iv-external-api-adaptor (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-iv-external-api-adaptor-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * fix(external): fix old package name (#128 <https://github.com/tier4/tier4_ad_api_adaptor/issues/128>)
     * fix(external): fix old package name

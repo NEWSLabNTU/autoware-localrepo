@@ -1,4 +1,4 @@
-Source: ros-humble-single-lidar-sensor-kit-launch
+Source: ros-humble-single-lidar-sensor-kit-launch-1-5-0
 Section: misc
 Priority: optional
 Maintainer: beginning.fan <beginning.fan@autocore.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-single-lidar-sensor-kit-launch
+Package: ros-humble-single-lidar-sensor-kit-launch-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-gnss-poser, ros-humble-autoware-vehicle-velocity-converter, ros-humble-single-lidar-common-launch, ros-humble-topic-tools, ros-humble-ublox-gps, ros-humble-usb-cam
 Description: The single_lidar_sensor_kit_launch package

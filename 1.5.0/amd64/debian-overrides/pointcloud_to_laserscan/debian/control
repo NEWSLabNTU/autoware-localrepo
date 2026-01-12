@@ -1,4 +1,4 @@
-Source: ros-humble-pointcloud-to-laserscan
+Source: ros-humble-pointcloud-to-laserscan-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Paul Bovbel <paul@bovbel.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libpcl-dev, ros-humble-ament-cmake-auto, r
 Homepage: http://ros.org/wiki/perception_pcl
 Standards-Version: 3.9.2
 
-Package: ros-humble-pointcloud-to-laserscan
+Package: ros-humble-pointcloud-to-laserscan-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, ros-humble-laser-geometry, ros-humble-launch, ros-humble-launch-ros, ros-humble-message-filters, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-tf2-sensor-msgs, ros-humble-visualization-msgs
 Description: Converts a 3D Point Cloud into a 2D laser scan.

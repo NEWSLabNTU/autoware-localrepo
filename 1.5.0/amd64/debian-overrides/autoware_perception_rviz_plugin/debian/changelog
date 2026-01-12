@@ -1,4 +1,4 @@
-ros-humble-autoware-perception-rviz-plugin (0.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-rviz-plugin-1-5-0 (0.3.0-0jammy) jammy; urgency=high
 
   * fix(autoware_perception_rviz_plugin): fix calc_path_line_list (#25 <https://github.com/autowarefoundation/autoware_rviz_plugins/issues/25>)
     * Fixed calc_path_line_list
@@ -10,7 +10,7 @@ ros-humble-autoware-perception-rviz-plugin (0.3.0-0jammy) jammy; urgency=high
 
  -- Apex.AI, Inc. <opensource@apex.ai>  Sat, 15 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-perception-rviz-plugin (0.2.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-rviz-plugin-1-5-0 (0.2.0-0jammy) jammy; urgency=high
 
   * fix(autoware_perception_rviz_plugin): improve traffic light visualization transform handling (#17 <https://github.com/autowarefoundation/autoware_rviz_plugins/issues/17>)
   * feat(autoware_perception_rviz_plugin): add traffic light display (#15 <https://github.com/autowarefoundation/autoware_rviz_plugins/issues/15>)
@@ -23,7 +23,7 @@ ros-humble-autoware-perception-rviz-plugin (0.2.0-0jammy) jammy; urgency=high
 
  -- Apex.AI, Inc. <opensource@apex.ai>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-perception-rviz-plugin (0.1.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-rviz-plugin-1-5-0 (0.1.0-0jammy) jammy; urgency=high
 
   * feat: port autoware_perception_rviz_plugin from Autoware Universe (#6 <https://github.com/autowarefoundation/autoware_rviz_plugins/issues/6>)
     Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>

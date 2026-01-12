@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-radar-scan-to-pointcloud2
+Source: ros-humble-autoware-radar-scan-to-pointcloud2-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yoshi Ri <yoshi.ri@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libpcl-common1.12, ros-humble-ament-clang-
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-radar-scan-to-pointcloud2
+Package: ros-humble-autoware-radar-scan-to-pointcloud2-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-common1.12, ros-humble-pcl-conversions, ros-humble-radar-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs
 Description: autoware_radar_scan_to_pointcloud2

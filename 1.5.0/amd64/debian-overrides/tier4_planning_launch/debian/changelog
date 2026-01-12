@@ -1,4 +1,4 @@
-ros-humble-tier4-planning-launch (0.48.0-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(mission_planner): manual lane selection (#11169 <https://github.com/autowarefoundation/autoware_universe/issues/11169>)
@@ -86,13 +86,13 @@ ros-humble-tier4-planning-launch (0.48.0-0jammy) jammy; urgency=high
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.47.1-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.47.0-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat: change planning output topic name to /planning/trajectory (#11135 <https://github.com/autowarefoundation/autoware_universe/issues/11135>)
     * change planning output topic name to /planning/trajectory
@@ -140,7 +140,7 @@ ros-humble-tier4-planning-launch (0.47.0-0jammy) jammy; urgency=high
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.46.0-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * feat(motion_velocity_planner): boundary departure prevention module (#10817 <https://github.com/autowarefoundation/autoware_universe/issues/10817>)
@@ -317,7 +317,7 @@ ros-humble-tier4-planning-launch (0.46.0-0jammy) jammy; urgency=high
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.45.0-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * feat(motion_planning): add direct path to trajectory conversion pipeline when both motion_path_smoother and motion_path_planner are disabled (#10661 <https://github.com/autowarefoundation/autoware_universe/issues/10661>)
@@ -327,19 +327,19 @@ ros-humble-tier4-planning-launch (0.45.0-0jammy) jammy; urgency=high
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.44.2-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.44.1-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.44.0-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * chore(motion_velocity_planner): move common and node packages to core (#10367 <https://github.com/autowarefoundation/autoware_universe/issues/10367>)
@@ -347,7 +347,7 @@ ros-humble-tier4-planning-launch (0.44.0-0jammy) jammy; urgency=high
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.43.0-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
@@ -358,7 +358,7 @@ ros-humble-tier4-planning-launch (0.43.0-0jammy) jammy; urgency=high
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.42.0-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(motion_velocity_planner): common implementation for motion_velocity_obstacle_<stop/slow_down/cruise>_module (#10035 <https://github.com/autowarefoundation/autoware_universe/issues/10035>)
@@ -369,20 +369,20 @@ ros-humble-tier4-planning-launch (0.42.0-0jammy) jammy; urgency=high
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.41.2-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.41.2-0jammy) jammy; urgency=high
 
   * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.41.1-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.41.1-0jammy) jammy; urgency=high
 
 
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.41.0-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_mission_planner)!: feat(autoware_mission_planner_universe)!: add _universe suffix to package name (#9941 <https://github.com/autowarefoundation/autoware_universe/issues/9941>)
@@ -391,7 +391,7 @@ ros-humble-tier4-planning-launch (0.41.0-0jammy) jammy; urgency=high
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.40.0-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * Merge branch 'main' into release-0.40.0
   * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
@@ -429,7 +429,7 @@ ros-humble-tier4-planning-launch (0.40.0-0jammy) jammy; urgency=high
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.39.0-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
@@ -443,7 +443,7 @@ ros-humble-tier4-planning-launch (0.39.0-0jammy) jammy; urgency=high
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.38.0-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.38.0-0jammy) jammy; urgency=high
 
   * unify package.xml version to 0.37.0
   * fix(autoware_obstacle_stop_planner): register obstacle stop planner node with autoware scoping (#8512 <https://github.com/autowarefoundation/autoware_universe/issues/8512>)
@@ -696,7 +696,7 @@ ros-humble-tier4-planning-launch (0.38.0-0jammy) jammy; urgency=high
 
  -- Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-tier4-planning-launch (0.26.0-0jammy) jammy; urgency=high
+ros-humble-tier4-planning-launch-1-5-0 (0.26.0-0jammy) jammy; urgency=high
 
   * chore(tier4_planning_launch): set log output both (#6685 <https://github.com/autowarefoundation/autoware_universe/issues/6685>)
   * feat(traffic_light): depend on is_simulation for scenario simulator (#6498 <https://github.com/autowarefoundation/autoware_universe/issues/6498>)

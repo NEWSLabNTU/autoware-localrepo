@@ -1,4 +1,4 @@
-ros-humble-autoware-behavior-path-bidirectional-traffic-module (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-path-bidirectional-traffic-module-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix(bidirectional_traffic): suppress warning (#11221 <https://github.com/autowarefoundation/autoware_universe/issues/11221>)
@@ -7,13 +7,13 @@ ros-humble-autoware-behavior-path-bidirectional-traffic-module (0.48.0-0jammy) j
 
  -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-path-bidirectional-traffic-module (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-path-bidirectional-traffic-module-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-path-bidirectional-traffic-module (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-path-bidirectional-traffic-module-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * style(pre-commit): update to clang-format-20 (#11088 <https://github.com/autowarefoundation/autoware_universe/issues/11088>)
     Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
@@ -23,7 +23,7 @@ ros-humble-autoware-behavior-path-bidirectional-traffic-module (0.47.0-0jammy) j
 
  -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-path-bidirectional-traffic-module (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-path-bidirectional-traffic-module-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * feat(autoware_behavior_path_bidirectional_traffic_module): add a functionality for bidirectional traffic (#10394 <https://github.com/autowarefoundation/autoware_universe/issues/10394>)

@@ -1,4 +1,4 @@
-ros-humble-autoware-iv-internal-api-adaptor (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-iv-internal-api-adaptor-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * feat!: replace tier4_system_msgs with autoware_system_msgs (#159 <https://github.com/tier4/tier4_ad_api_adaptor/issues/159>)
     Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
@@ -6,7 +6,7 @@ ros-humble-autoware-iv-internal-api-adaptor (0.46.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-iv-internal-api-adaptor (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-iv-internal-api-adaptor-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * feat(tier4_deprecated_api_adapter): create adapter for manual control (#138 <https://github.com/tier4/tier4_ad_api_adaptor/issues/138>)
     * feat(tier4_deprecated_api_adapter): create manual control adapter
@@ -26,14 +26,14 @@ ros-humble-autoware-iv-internal-api-adaptor (0.43.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 11 May 2025 16:00:00 -0000
 
-ros-humble-autoware-iv-internal-api-adaptor (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-iv-internal-api-adaptor-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * feat!: replace tier4_planning_msgs/VelocityLimit to autoware_internal_planning_msgs/VelocityLimit (#136 <https://github.com/tier4/tier4_ad_api_adaptor/issues/136>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 02 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-iv-internal-api-adaptor (0.41.0-0jammy) jammy; urgency=high
+ros-humble-autoware-iv-internal-api-adaptor-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * feat: remove autoware_auto messages (#124 <https://github.com/tier4/tier4_ad_api_adaptor/issues/124>)
   * fix(autoware_iv_internal_api_adaptor): iv msg types (#121 <https://github.com/tier4/tier4_ad_api_adaptor/issues/121>)
@@ -108,7 +108,7 @@ ros-humble-autoware-iv-internal-api-adaptor (0.41.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-iv-internal-api-adaptor (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-iv-internal-api-adaptor-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * feat: remove autoware_auto messages (#124 <https://github.com/tier4/tier4_ad_api_adaptor/issues/124>)
   * fix(autoware_iv_internal_api_adaptor): iv msg types (#121 <https://github.com/tier4/tier4_ad_api_adaptor/issues/121>)

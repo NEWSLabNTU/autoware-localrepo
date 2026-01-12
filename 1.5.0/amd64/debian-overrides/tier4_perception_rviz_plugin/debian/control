@@ -1,4 +1,4 @@
-Source: ros-humble-tier4-perception-rviz-plugin
+Source: ros-humble-tier4-perception-rviz-plugin-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yoshi Ri <yoshi.ri@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, qtbase5-dev, ros-humble-amen
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-tier4-perception-rviz-plugin
+Package: ros-humble-tier4-perception-rviz-plugin-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5widgets5, ros-humble-pcl-conversions, ros-humble-rviz-common, ros-humble-rviz-default-plugins, ros-humble-rviz2, ros-humble-tier4-perception-msgs
 Description: Contains plugins to visualize object detection outputs

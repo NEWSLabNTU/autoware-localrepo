@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-object-merger
+Source: ros-humble-autoware-object-merger-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-object-merger
+Package: ros-humble-autoware-object-merger-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-utils, ros-humble-mussp, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-ros
 Description: The autoware_object_merger package

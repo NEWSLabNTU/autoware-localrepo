@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-system-monitor
+Source: ros-humble-autoware-system-monitor-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Fumihito Ito <fumihito.ito@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-filesystem-dev, libboost-regex-de
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-system-monitor
+Package: ros-humble-autoware-system-monitor-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, chrony, libboost-filesystem-dev, libboost-regex-dev, libboost-serialization-dev, libboost-thread-dev, libfmt-dev, libnl-3-dev, libnl-genl-3-dev, libnl-route-3-dev, ros-humble-autoware-utils, ros-humble-diagnostic-msgs, ros-humble-diagnostic-updater, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tier4-external-api-msgs, sysstat
 Description: The system_monitor package

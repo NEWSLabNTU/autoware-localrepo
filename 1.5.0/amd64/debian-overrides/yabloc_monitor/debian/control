@@ -1,4 +1,4 @@
-Source: ros-humble-yabloc-monitor
+Source: ros-humble-yabloc-monitor-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-gtest <!nocheck>, r
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-yabloc-monitor
+Package: ros-humble-yabloc-monitor-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: YabLoc monitor package

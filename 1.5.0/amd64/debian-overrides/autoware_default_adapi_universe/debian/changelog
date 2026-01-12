@@ -1,4 +1,4 @@
-ros-humble-autoware-default-adapi-universe (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * chore(default_adapi_universe): add a maintainer (#11619 <https://github.com/autowarefoundation/autoware_universe/issues/11619>)
@@ -9,13 +9,13 @@ ros-humble-autoware-default-adapi-universe (0.48.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * style(pre-commit): update to clang-format-20 (#11088 <https://github.com/autowarefoundation/autoware_universe/issues/11088>)
     Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
@@ -32,7 +32,7 @@ ros-humble-autoware-default-adapi-universe (0.47.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * feat(default_adapi_universe): add mrm description api (#10838 <https://github.com/autowarefoundation/autoware_universe/issues/10838>)
@@ -86,7 +86,7 @@ ros-humble-autoware-default-adapi-universe (0.46.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * feat(localization): replace tier4_localization_msgs used by ndt_align_srv with autoware_internal_localization_msgs (#10567 <https://github.com/autowarefoundation/autoware_universe/issues/10567>)
@@ -101,19 +101,19 @@ ros-humble-autoware-default-adapi-universe (0.45.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix: add missing exec_depend (#10404 <https://github.com/autowarefoundation/autoware_universe/issues/10404>)
@@ -148,7 +148,7 @@ ros-humble-autoware-default-adapi-universe (0.44.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
@@ -161,7 +161,7 @@ ros-humble-autoware-default-adapi-universe (0.43.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_default_adapi): allow route clear while vehicle is stopped (#10158 <https://github.com/autowarefoundation/autoware_universe/issues/10158>)
@@ -172,20 +172,20 @@ ros-humble-autoware-default-adapi-universe (0.42.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.41.2-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.41.2-0jammy) jammy; urgency=high
 
   * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.41.1-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.41.1-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.41.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat: apply autoware prefix for component_state_monitor and its dependencies (#9961 <https://github.com/autowarefoundation/autoware_universe/issues/9961>)
@@ -215,7 +215,7 @@ ros-humble-autoware-default-adapi-universe (0.41.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * Merge branch 'main' into release-0.40.0
   * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
@@ -265,7 +265,7 @@ ros-humble-autoware-default-adapi-universe (0.40.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.39.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * Merge commit '6a1ddbd08bd' into release-0.39.0
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
@@ -293,7 +293,7 @@ ros-humble-autoware-default-adapi-universe (0.39.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.38.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.38.0-0jammy) jammy; urgency=high
 
   * unify package.xml version to 0.37.0
   * refactor(component_interface_specs): prefix package and namespace with autoware (#9094 <https://github.com/autowarefoundation/autoware_universe/issues/9094>)
@@ -309,7 +309,7 @@ ros-humble-autoware-default-adapi-universe (0.38.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-default-adapi-universe (0.26.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-universe-1-5-0 (0.26.0-0jammy) jammy; urgency=high
 
 
 

@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-localization-evaluator
+Source: ros-humble-autoware-localization-evaluator-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Dominik Jargot <dominik.jargot@robotec.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-localization-evaluator
+Package: ros-humble-autoware-localization-evaluator-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-ros
 Description: localization evaluator ROS 2 node

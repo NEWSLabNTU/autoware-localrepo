@@ -1,4 +1,4 @@
-Source: ros-humble-nebula-tests
+Source: ros-humble-nebula-tests-1-5-0
 Section: misc
 Priority: optional
 Maintainer: MAP IV <contact@map4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-nebula-tests
+Package: ros-humble-nebula-tests-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-diagnostic-updater, ros-humble-nebula-common, ros-humble-nebula-decoders, ros-humble-nebula-hw-interfaces, ros-humble-nebula-ros, ros-humble-rosbag2-cpp
 Description: Nebula Lidar Drivers

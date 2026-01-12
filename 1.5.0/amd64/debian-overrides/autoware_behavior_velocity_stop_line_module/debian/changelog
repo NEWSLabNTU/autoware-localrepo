@@ -1,4 +1,4 @@
-ros-humble-autoware-behavior-velocity-stop-line-module (1.5.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-stop-line-module-1-5-0 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)
@@ -13,14 +13,14 @@ ros-humble-autoware-behavior-velocity-stop-line-module (1.5.0-0jammy) jammy; urg
 
  -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-stop-line-module (1.4.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-stop-line-module-1-5-0 (1.4.0-0jammy) jammy; urgency=high
 
   * chore: bump version to 1.3.0 (#554 <https://github.com/autowarefoundation/autoware_core/issues/554>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-stop-line-module (1.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-stop-line-module-1-5-0 (1.3.0-0jammy) jammy; urgency=high
 
   * fix: to be consistent version in all package.xml(s)
   * feat(behavior_velocity_planner_common, stop_line_module): print module/regulatory_element/lane/line ID and improve stop line module log (#504 <https://github.com/autowarefoundation/autoware_core/issues/504>)
@@ -59,7 +59,7 @@ ros-humble-autoware-behavior-velocity-stop-line-module (1.3.0-0jammy) jammy; urg
 
  -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Sun, 22 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-stop-line-module (1.1.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-stop-line-module-1-5-0 (1.1.0-0jammy) jammy; urgency=high
 
   * refactor(autoware_trajectory)!: move everything to namespace experimetal (#371 <https://github.com/autowarefoundation/autoware_core/issues/371>)
     refactor(autoware_trajectory)!: move everything to namespace experimental
@@ -67,7 +67,7 @@ ros-humble-autoware-behavior-velocity-stop-line-module (1.1.0-0jammy) jammy; urg
 
  -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-stop-line-module (1.0.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-stop-line-module-1-5-0 (1.0.0-0jammy) jammy; urgency=high
 
   * chore: update version in package.xml
   * feat:  port  autoware_behavior_velocity_planner from autoware.universe to autoware.core (#230 <https://github.com/autowarefoundation/autoware_core/issues/230>)

@@ -1,4 +1,4 @@
-Source: ros-humble-eagleye-navigation
+Source: ros-humble-eagleye-navigation-1-5-0
 Section: misc
 Priority: optional
 Maintainer: osamu.sekino <osamu.sekino@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-eagleye-navigation
+Package: ros-humble-eagleye-navigation-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-eagleye-coordinate, ros-humble-eagleye-msgs, ros-humble-geodesy, ros-humble-rclcpp, ros-humble-rtklib-msgs, ros-humble-sensor-msgs, ros-humble-yaml-cpp-vendor
 Description: The navigation package

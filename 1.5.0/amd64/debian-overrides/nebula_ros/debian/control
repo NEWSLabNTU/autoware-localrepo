@@ -1,4 +1,4 @@
-Source: ros-humble-nebula-ros
+Source: ros-humble-nebula-ros-1-5-0
 Section: misc
 Priority: optional
 Maintainer: MAP IV <contact@map4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libpcl-dev, libyaml-cpp-dev, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-nebula-ros
+Package: ros-humble-nebula-ros-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, libyaml-cpp-dev, ros-humble-autoware-sensing-msgs, ros-humble-continental-msgs, ros-humble-continental-srvs, ros-humble-diagnostic-msgs, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-nebula-common, ros-humble-nebula-decoders, ros-humble-nebula-hw-interfaces, ros-humble-nebula-msgs, ros-humble-pandar-msgs, ros-humble-radar-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-robosense-msgs, ros-humble-tf2-ros, ros-humble-velodyne-msgs, ros-humble-visualization-msgs
 Description: Nebula Lidar Drivers

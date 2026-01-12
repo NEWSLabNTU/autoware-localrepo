@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-sensing-msgs
+Source: ros-humble-autoware-sensing-msgs-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Mete Fatih Cırıt <mfc@autoware.org>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-sensing-msgs
+Package: ros-humble-autoware-sensing-msgs-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-geometry-msgs, ros-humble-rosidl-default-runtime, ros-humble-sensor-msgs, ros-humble-std-msgs
 Description: Autoware sensing messages package.

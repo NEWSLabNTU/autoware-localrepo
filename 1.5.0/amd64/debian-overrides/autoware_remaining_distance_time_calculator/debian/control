@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-remaining-distance-time-calculator
+Source: ros-humble-autoware-remaining-distance-time-calculator-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Ahmed Ebrahim <ahmed.ebrahim@leodrive.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-remaining-distance-time-calculator
+Package: ros-humble-autoware-remaining-distance-time-calculator-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-test-utils, ros-humble-autoware-utils, ros-humble-autoware-utils-debug, ros-humble-generate-parameter-library, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs
 Description: Calculates and publishes remaining distance and time of the mission.

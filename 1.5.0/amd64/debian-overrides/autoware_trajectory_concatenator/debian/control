@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-trajectory-concatenator
+Source: ros-humble-autoware-trajectory-concatenator-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake, ros-humble-ament-l
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-trajectory-concatenator
+Package: ros-humble-autoware-trajectory-concatenator-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-universe-utils, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-uuid, ros-humble-generate-parameter-library, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: The autoware_trajectory_concatenator package

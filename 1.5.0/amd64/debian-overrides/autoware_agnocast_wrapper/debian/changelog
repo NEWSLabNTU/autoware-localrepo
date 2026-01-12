@@ -1,4 +1,4 @@
-ros-humble-autoware-agnocast-wrapper (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-agnocast-wrapper-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix(agnocast_wrapper): fix const rvalue reference binding error in AgnocastPollingSubscriber (#11425 <https://github.com/autowarefoundation/autoware_universe/issues/11425>)
@@ -32,25 +32,25 @@ ros-humble-autoware-agnocast-wrapper (0.48.0-0jammy) jammy; urgency=high
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-agnocast-wrapper (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-agnocast-wrapper-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-agnocast-wrapper (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-agnocast-wrapper-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
 
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-agnocast-wrapper (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-agnocast-wrapper-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
 
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-agnocast-wrapper (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-agnocast-wrapper-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * chore: re-introduce agnocast and fix version to v2.1.0 (#10526 <https://github.com/autowarefoundation/autoware_universe/issues/10526>)

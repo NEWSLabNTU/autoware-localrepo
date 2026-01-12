@@ -1,4 +1,4 @@
-Source: ros-humble-rtklib-msgs
+Source: ros-humble-rtklib-msgs-1-5-0
 Section: misc
 Priority: optional
 Maintainer: megken <megken@todo.todo>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-rtklib-msgs
+Package: ros-humble-rtklib-msgs-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-builtin-interfaces, ros-humble-geometry-msgs, ros-humble-rosidl-default-runtime, ros-humble-sensor-msgs, ros-humble-std-msgs
 Description: The rtklib_msgs package

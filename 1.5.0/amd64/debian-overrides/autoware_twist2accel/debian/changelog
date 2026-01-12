@@ -1,4 +1,4 @@
-ros-humble-autoware-twist2accel (1.5.0-0jammy) jammy; urgency=high
+ros-humble-autoware-twist2accel-1-5-0 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)
@@ -21,14 +21,14 @@ ros-humble-autoware-twist2accel (1.5.0-0jammy) jammy; urgency=high
 
  -- Yamato Ando <yamato.ando@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-twist2accel (1.4.0-0jammy) jammy; urgency=high
+ros-humble-autoware-twist2accel-1-5-0 (1.4.0-0jammy) jammy; urgency=high
 
   * chore: bump version to 1.3.0 (#554 <https://github.com/autowarefoundation/autoware_core/issues/554>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Yamato Ando <yamato.ando@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-twist2accel (1.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-twist2accel-1-5-0 (1.3.0-0jammy) jammy; urgency=high
 
   * fix: to be consistent version in all package.xml(s)
   * fix: tf2 uses hpp headers in rolling (and is backported) (#483 <https://github.com/autowarefoundation/autoware_core/issues/483>)
@@ -40,13 +40,13 @@ ros-humble-autoware-twist2accel (1.3.0-0jammy) jammy; urgency=high
 
  -- Yamato Ando <yamato.ando@tier4.jp>  Sun, 22 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-twist2accel (1.1.0-0jammy) jammy; urgency=high
+ros-humble-autoware-twist2accel-1-5-0 (1.1.0-0jammy) jammy; urgency=high
 
 
 
  -- Yamato Ando <yamato.ando@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-twist2accel (1.0.0-0jammy) jammy; urgency=high
+ros-humble-autoware-twist2accel-1-5-0 (1.0.0-0jammy) jammy; urgency=high
 
   * chore: update version in package.xml
   * feat(autoware_twist2accel): port autoware_twist2accel from Autoware Universe (#302 <https://github.com/autowarefoundation/autoware_core/issues/302>)

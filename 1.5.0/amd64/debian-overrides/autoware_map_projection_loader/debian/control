@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-map-projection-loader
+Source: ros-humble-autoware-map-projection-loader-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yamato Ando <yamato.ando@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libyaml-cpp-dev, ros-humble-ament-cmake-au
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-map-projection-loader
+Package: ros-humble-autoware-map-projection-loader-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libyaml-cpp-dev, ros-humble-autoware-component-interface-specs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: autoware_map_projection_loader package as a ROS 2 node

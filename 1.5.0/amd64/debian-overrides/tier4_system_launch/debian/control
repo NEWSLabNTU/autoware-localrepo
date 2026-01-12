@@ -1,4 +1,4 @@
-Source: ros-humble-tier4-system-launch
+Source: ros-humble-tier4-system-launch-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Fumihito Ito <fumihito.ito@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-tier4-system-launch
+Package: ros-humble-tier4-system-launch-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-command-mode-decider, ros-humble-autoware-command-mode-switcher, ros-humble-autoware-component-interface-tools, ros-humble-autoware-component-state-monitor, ros-humble-autoware-diagnostic-graph-aggregator, ros-humble-autoware-dummy-diag-publisher, ros-humble-autoware-duplicated-node-checker, ros-humble-autoware-hazard-status-converter, ros-humble-autoware-mrm-comfortable-stop-operator, ros-humble-autoware-mrm-emergency-stop-operator, ros-humble-autoware-mrm-handler, ros-humble-autoware-pipeline-latency-monitor, ros-humble-autoware-processing-time-checker, ros-humble-autoware-system-monitor
 Description: The tier4_system_launch package

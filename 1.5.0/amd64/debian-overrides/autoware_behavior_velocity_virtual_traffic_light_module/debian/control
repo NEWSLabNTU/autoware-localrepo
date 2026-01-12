@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-behavior-velocity-virtual-traffic-light-module
+Source: ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), nlohmann-json3-dev, ros-humble-ament-cmake
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-behavior-velocity-virtual-traffic-light-module
+Package: ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, nlohmann-json3-dev, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-tier4-planning-msgs, ros-humble-tier4-v2x-msgs, ros-humble-visualization-msgs
 Description: The autoware_behavior_velocity_virtual_traffic_light_module package

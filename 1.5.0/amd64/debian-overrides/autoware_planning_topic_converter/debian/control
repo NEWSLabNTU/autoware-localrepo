@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-planning-topic-converter
+Source: ros-humble-autoware-planning-topic-converter-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Satoshi OTA <satoshi.ota@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-planning-topic-converter
+Package: ros-humble-autoware-planning-topic-converter-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils-geometry, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: The autoware_planning_topic_converter package

@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-behavior-path-external-request-lane-change-module
+Source: ros-humble-autoware-behavior-path-external-request-lane-change-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Fumiya Watanabe <fumiya.watanabe@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-behavior-path-external-request-lane-change-module
+Package: ros-humble-autoware-behavior-path-external-request-lane-change-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-behavior-path-lane-change-module, ros-humble-autoware-behavior-path-planner, ros-humble-autoware-behavior-path-planner-common, ros-humble-autoware-motion-utils, ros-humble-autoware-rtc-interface, ros-humble-autoware-utils, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-visualization-msgs
 Description: The autoware_behavior_path_external_request_lane_change_module package

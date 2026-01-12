@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-motion-velocity-road-user-stop-module
+Source: ros-humble-autoware-motion-velocity-road-user-stop-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takumi Odashima <takumi.odashima@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, ros-humble-ament-cmake, ros-
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-motion-velocity-road-user-stop-module
+Package: ros-humble-autoware-motion-velocity-road-user-stop-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-motion-velocity-planner-common, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-universe-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-generate-parameter-library, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-visualization-msgs
 Description: road_user_stop module to stop ego vehicle when road users (pedestrians, cyclists) are on the road

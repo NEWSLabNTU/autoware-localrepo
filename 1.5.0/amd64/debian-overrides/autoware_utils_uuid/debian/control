@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-utils-uuid
+Source: ros-humble-autoware-utils-uuid-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Jian Kang <egon.kang@autocore.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-system-dev, ros-humble-ament-cmak
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-utils-uuid
+Package: ros-humble-autoware-utils-uuid-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-system-dev, ros-humble-unique-identifier-msgs
 Description: The autoware_utils_uuid package

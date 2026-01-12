@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-carla-interface
+Source: ros-humble-autoware-carla-interface-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Muhammad Raditya GIOVANNI <mradityagio@gmail.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake, ros-humble-ament-l
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-carla-interface
+Package: ros-humble-autoware-carla-interface-1-5-0
 Architecture: any
 Depends: ${python3:Depends}, ${misc:Depends}, ros-humble-autoware-perception-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-rclpy, ros-humble-sensor-msgs, ros-humble-sensor-msgs-py, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-tier4-vehicle-msgs
 Description: The carla autoware bridge package

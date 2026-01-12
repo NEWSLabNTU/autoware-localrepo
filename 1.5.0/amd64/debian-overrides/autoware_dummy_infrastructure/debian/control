@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-dummy-infrastructure
+Source: ros-humble-autoware-dummy-infrastructure-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, ros-humble-ament-cmake-auto,
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-dummy-infrastructure
+Package: ros-humble-autoware-dummy-infrastructure-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-v2x-msgs
 Description: autoware_dummy_infrastructure

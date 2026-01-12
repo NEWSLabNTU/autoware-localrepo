@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-mission-details-overlay-rviz-plugin
+Source: ros-humble-autoware-mission-details-overlay-rviz-plugin-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Ahmed Ebrahim <ahmed.ebrahim@leodrive.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-all-dev, ros-humble-ament-cmake-a
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-mission-details-overlay-rviz-plugin
+Package: ros-humble-autoware-mission-details-overlay-rviz-plugin-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, ros-humble-autoware-internal-msgs, ros-humble-rviz-common, ros-humble-rviz-ogre-vendor, ros-humble-rviz-rendering
 Description: RViz2 plugin for 2D overlays for mission details in the 3D view.

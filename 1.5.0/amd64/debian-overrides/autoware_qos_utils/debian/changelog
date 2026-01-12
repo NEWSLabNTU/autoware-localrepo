@@ -1,4 +1,4 @@
-ros-humble-autoware-qos-utils (1.5.0-0jammy) jammy; urgency=high
+ros-humble-autoware-qos-utils-1-5-0 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)

@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-auto-common
+Source: ros-humble-autoware-auto-common-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Apex.AI, Inc. <opensource@apex.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-auto-common
+Package: ros-humble-autoware-auto-common-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-builtin-interfaces
 Description: Miscellaneous helper functions

@@ -1,4 +1,4 @@
-Source: ros-humble-tier4-control-msgs
+Source: ros-humble-tier4-control-msgs-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takamasa Horibe <horibe.takamasa@gmail.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-tier4-control-msgs
+Package: ros-humble-tier4-control-msgs-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-common-msgs, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
 Description: The tier4_control_msgs package

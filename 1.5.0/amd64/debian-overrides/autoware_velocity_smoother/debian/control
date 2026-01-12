@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-velocity-smoother
+Source: ros-humble-autoware-velocity-smoother-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Fumiya Watanabe <fumiya.watanabe@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-velocity-smoother
+Package: ros-humble-autoware-velocity-smoother-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-interpolation, ros-humble-autoware-motion-utils, ros-humble-autoware-osqp-interface, ros-humble-autoware-planning-msgs, ros-humble-autoware-planning-test-manager, ros-humble-autoware-qp-interface, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-diagnostics, ros-humble-autoware-utils-geometry, ros-humble-autoware-utils-logging, ros-humble-autoware-utils-math, ros-humble-autoware-utils-rclcpp, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tf2-ros
 Description: The autoware_velocity_smoother package

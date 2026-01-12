@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-utils-geometry
+Source: ros-humble-autoware-utils-geometry-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Jian Kang <egon.kang@autocore.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-system-dev, ros-humble-ament-cmak
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-utils-geometry
+Package: ros-humble-autoware-utils-geometry-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-system-dev, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-utils-math, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs
 Description: The autoware_utils_geometry package

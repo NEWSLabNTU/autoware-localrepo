@@ -1,4 +1,4 @@
-Source: ros-humble-agnocast-ioctl-wrapper
+Source: ros-humble-agnocast-ioctl-wrapper-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takahiro Ishikawa-Aso <sykwer@gmail.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake, ros-humble-rclcpp
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-agnocast-ioctl-wrapper
+Package: ros-humble-agnocast-ioctl-wrapper-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-rclcpp
 Description: The wrapper of ioctl for command line tool extension for Agnocast.

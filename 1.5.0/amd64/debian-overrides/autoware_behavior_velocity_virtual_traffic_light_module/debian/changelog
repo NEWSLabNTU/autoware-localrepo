@@ -1,4 +1,4 @@
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(behavior_velocity_rtc_interface, behavior_velocity_*_module): replace PathWithLaneId with Trajectory<> class (#11555 <https://github.com/autowarefoundation/autoware_universe/issues/11555>)
@@ -6,13 +6,13 @@ ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.48.0-0jamm
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * style(pre-commit): update to clang-format-20 (#11088 <https://github.com/autowarefoundation/autoware_universe/issues/11088>)
     Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
@@ -20,7 +20,7 @@ ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.47.0-0jamm
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * feat(virtual_traffic_light): improve log message (#10814 <https://github.com/autowarefoundation/autoware_universe/issues/10814>)
@@ -39,7 +39,7 @@ ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.46.0-0jamm
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * fix(detection_area_module,virtual_traffic_light,no_stopping_area): support overlap lane (#10623 <https://github.com/autowarefoundation/autoware_universe/issues/10623>)
@@ -51,25 +51,25 @@ ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.45.0-0jamm
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
 
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
@@ -91,7 +91,7 @@ ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.43.0-0jamm
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_utils): replace autoware_universe_utils with autoware_utils  (#10191 <https://github.com/autowarefoundation/autoware_universe/issues/10191>)
@@ -136,20 +136,20 @@ ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.42.0-0jamm
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.41.2-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.41.2-0jammy) jammy; urgency=high
 
   * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.41.1-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.41.1-0jammy) jammy; urgency=high
 
 
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.41.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_planning_test_manager): remove dependency of VirtualTrafficLightState and ExpandStopRange (#9953 <https://github.com/autowarefoundation/autoware_universe/issues/9953>)
@@ -219,7 +219,7 @@ ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.41.0-0jamm
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * Merge branch 'main' into release-0.40.0
   * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
@@ -248,7 +248,7 @@ ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.40.0-0jamm
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.39.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
@@ -262,7 +262,7 @@ ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.39.0-0jamm
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.38.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.38.0-0jammy) jammy; urgency=high
 
   * unify package.xml version to 0.37.0
   * test(virtual_traffic_light): add unit tests for utils (#9107 <https://github.com/autowarefoundation/autoware_universe/issues/9107>)
@@ -290,7 +290,7 @@ ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.38.0-0jamm
 
  -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-behavior-velocity-virtual-traffic-light-module (0.26.0-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-virtual-traffic-light-module-1-5-0 (0.26.0-0jammy) jammy; urgency=high
 
 
 

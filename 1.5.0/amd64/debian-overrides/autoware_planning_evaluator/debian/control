@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-planning-evaluator
+Source: ros-humble-autoware-planning-evaluator-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Maxime CLEMENT <maxime.clement@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, nlohmann-json3-dev, ros-hum
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-planning-evaluator
+Package: ros-humble-autoware-planning-evaluator-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, nlohmann-json3-dev, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-factor-interface, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-tier4-metric-msgs
 Description: ROS 2 node for evaluating planners

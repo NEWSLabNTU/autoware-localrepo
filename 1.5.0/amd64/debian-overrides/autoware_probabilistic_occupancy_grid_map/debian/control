@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-probabilistic-occupancy-grid-map
+Source: ros-humble-autoware-probabilistic-occupancy-grid-map-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-probabilistic-occupancy-grid-map
+Package: ros-humble-autoware-probabilistic-occupancy-grid-map-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-autoware-pointcloud-preprocessor, ros-humble-autoware-utils, ros-humble-grid-map-costmap-2d, ros-humble-grid-map-msgs, ros-humble-grid-map-ros, ros-humble-laser-geometry, ros-humble-message-filters, ros-humble-nav-msgs, ros-humble-nav2-costmap-2d, ros-humble-pcl-ros, ros-humble-pointcloud-to-laserscan, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2-eigen, ros-humble-tf2-ros, ros-humble-tf2-sensor-msgs
 Description: generate probabilistic occupancy grid map

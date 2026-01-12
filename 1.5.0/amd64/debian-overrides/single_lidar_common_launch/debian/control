@@ -1,4 +1,4 @@
-Source: ros-humble-single-lidar-common-launch
+Source: ros-humble-single-lidar-common-launch-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-single-lidar-common-launch
+Package: ros-humble-single-lidar-common-launch-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-velodyne-monitor, ros-humble-nebula-sensor-driver
 Description: The single_lidar_common_launch package

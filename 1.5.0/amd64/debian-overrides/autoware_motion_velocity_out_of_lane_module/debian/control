@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-motion-velocity-out-of-lane-module
+Source: ros-humble-autoware-motion-velocity-out-of-lane-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Maxime Clement <maxime.clement@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, ros-humble-ament-cmake-ros <
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-motion-velocity-out-of-lane-module
+Package: ros-humble-autoware-motion-velocity-out-of-lane-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, ros-humble-autoware-motion-utils, ros-humble-autoware-motion-velocity-planner-common, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-traffic-light-utils, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-tf2, ros-humble-visualization-msgs
 Description: The motion_velocity_out_of_lane_module package

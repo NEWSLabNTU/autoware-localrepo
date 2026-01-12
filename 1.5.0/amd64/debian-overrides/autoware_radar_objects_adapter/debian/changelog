@@ -1,4 +1,4 @@
-ros-humble-autoware-radar-objects-adapter (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-radar-objects-adapter-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(radar_objects_adapter): enable to class remap and relocate bike labels into car (#11570 <https://github.com/autowarefoundation/autoware_universe/issues/11570>)
@@ -27,25 +27,25 @@ ros-humble-autoware-radar-objects-adapter (0.48.0-0jammy) jammy; urgency=high
 
  -- Taekjin Lee <taekjin.lee@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-radar-objects-adapter (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-radar-objects-adapter-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Taekjin Lee <taekjin.lee@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-radar-objects-adapter (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-radar-objects-adapter-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
 
 
  -- Taekjin Lee <taekjin.lee@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-radar-objects-adapter (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-radar-objects-adapter-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
 
 
  -- Taekjin Lee <taekjin.lee@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-radar-objects-adapter (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-radar-objects-adapter-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * fix(autoware_radar_objects_adapter): update schema path in readme (#10607 <https://github.com/autowarefoundation/autoware_universe/issues/10607>)

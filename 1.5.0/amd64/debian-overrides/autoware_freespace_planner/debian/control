@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-freespace-planner
+Source: ros-humble-autoware-freespace-planner-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-freespace-planner
+Package: ros-humble-autoware-freespace-planner-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-freespace-planning-algorithms, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-planning-test-manager, ros-humble-autoware-route-handler, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs, ros-humble-visualization-msgs
 Description: The autoware_freespace_planner package

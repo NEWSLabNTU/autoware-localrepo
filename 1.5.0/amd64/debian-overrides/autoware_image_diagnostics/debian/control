@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-image-diagnostics
+Source: ros-humble-autoware-image-diagnostics-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Dai Nguyen <dai.nguyen@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-image-diagnostics
+Package: ros-humble-autoware-image-diagnostics-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-utils, ros-humble-cv-bridge, ros-humble-image-transport, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs
 Description: The autoware_image_diagnostics package

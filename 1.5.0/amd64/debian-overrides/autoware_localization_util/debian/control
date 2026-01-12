@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-localization-util
+Source: ros-humble-autoware-localization-util-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Xingang Liu <lxg19892021@gmail.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-localization-util
+Package: ros-humble-autoware-localization-util-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-visualization-msgs
 Description: The autoware_localization_util package

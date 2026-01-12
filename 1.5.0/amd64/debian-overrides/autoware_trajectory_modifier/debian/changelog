@@ -1,4 +1,4 @@
-ros-humble-autoware-trajectory-modifier (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-trajectory-modifier-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(trajectory modifier): add trajectory modifier (#11277 <https://github.com/autowarefoundation/autoware_universe/issues/11277>)

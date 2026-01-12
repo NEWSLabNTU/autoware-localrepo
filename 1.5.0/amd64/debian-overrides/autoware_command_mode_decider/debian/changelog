@@ -1,4 +1,4 @@
-ros-humble-autoware-command-mode-decider (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-command-mode-decider-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix(command_mode_decider): fix driving mode change condition (#11659 <https://github.com/autowarefoundation/autoware_universe/issues/11659>)
@@ -14,13 +14,13 @@ ros-humble-autoware-command-mode-decider (0.48.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-command-mode-decider (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-command-mode-decider-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-command-mode-decider (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-command-mode-decider-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat(autoware_command_mode_decider): add initialize (#10935 <https://github.com/autowarefoundation/autoware_universe/issues/10935>)
     * feat: add initialize
@@ -35,7 +35,7 @@ ros-humble-autoware-command-mode-decider (0.47.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-command-mode-decider (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-command-mode-decider-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * feat(command_mode_decider): create package (#10171 <https://github.com/autowarefoundation/autoware_universe/issues/10171>)

@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-component-monitor
+Source: ros-humble-autoware-component-monitor-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Mehmet Emin Başoğlu <memin@leodrive.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-filesystem-dev, ros-humble-ament-
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-component-monitor
+Package: ros-humble-autoware-component-monitor-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-filesystem-dev, ros-humble-autoware-internal-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: A ROS 2 package to monitor system usage of component containers.

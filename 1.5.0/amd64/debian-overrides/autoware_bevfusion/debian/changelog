@@ -1,16 +1,16 @@
-ros-humble-autoware-bevfusion (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-bevfusion-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-bevfusion (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-bevfusion-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-bevfusion (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-bevfusion-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * style(pre-commit): update to clang-format-20 (#11088 <https://github.com/autowarefoundation/autoware_universe/issues/11088>)
     Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
@@ -18,7 +18,7 @@ ros-humble-autoware-bevfusion (0.47.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-bevfusion (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-bevfusion-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * fix(autoware_bevfusion): fix clang-tidy errors by removing unused fields (#10850 <https://github.com/autowarefoundation/autoware_universe/issues/10850>)
@@ -32,7 +32,7 @@ ros-humble-autoware-bevfusion (0.46.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-bevfusion (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-bevfusion-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * fix(autoware_bevfusion): fix clang-tidy errors by removing unused fields (#10850 <https://github.com/autowarefoundation/autoware_universe/issues/10850>)
     * fix clang-tidy errors by removing unused fields
@@ -62,19 +62,19 @@ ros-humble-autoware-bevfusion (0.45.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-bevfusion (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-bevfusion-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-bevfusion (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-bevfusion-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-bevfusion (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-bevfusion-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * chore: match all package versions
   * Merge remote-tracking branch 'origin/main' into humble

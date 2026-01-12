@@ -1,4 +1,4 @@
-ros-humble-carla-sensor-kit-launch (0.48.0-0jammy) jammy; urgency=high
+ros-humble-carla-sensor-kit-launch-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * fix(carla_sensor_kit_description): align package version
   * Merge remote-tracking branch 'origin/main' into release-humble-0.48.0

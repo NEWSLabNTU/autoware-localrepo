@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-utils-math
+Source: ros-humble-autoware-utils-math-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Jian Kang <egon.kang@autocore.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-utils-math
+Package: ros-humble-autoware-utils-math-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, 
 Description: The autoware_utils_math package

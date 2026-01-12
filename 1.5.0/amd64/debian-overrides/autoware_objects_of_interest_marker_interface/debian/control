@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-objects-of-interest-marker-interface
+Source: ros-humble-autoware-objects-of-interest-marker-interface-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Xingang Liu <lxg19892021@gmail.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-objects-of-interest-marker-interface
+Package: ros-humble-autoware-objects-of-interest-marker-interface-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-perception-msgs, ros-humble-autoware-utils-geometry, ros-humble-autoware-utils-math, ros-humble-autoware-utils-visualization, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-std-msgs, ros-humble-visualization-msgs
 Description: The autoware_objects_of_interest_marker_interface package

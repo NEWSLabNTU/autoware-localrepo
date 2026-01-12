@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-testing
+Source: ros-humble-autoware-testing-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Adam Dabrowski <adam.dabrowski@robotec.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-testing
+Package: ros-humble-autoware-testing-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ros-testing
 Description: Tools for handling standard tests based on ros_testing

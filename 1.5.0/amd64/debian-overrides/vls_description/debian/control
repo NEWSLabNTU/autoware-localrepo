@@ -1,4 +1,4 @@
-Source: ros-humble-vls-description
+Source: ros-humble-vls-description-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Daisuke Nishimatsu <daisuke.nishimatsu@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-vls-description
+Package: ros-humble-vls-description-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, 
 Description: The vls_description package

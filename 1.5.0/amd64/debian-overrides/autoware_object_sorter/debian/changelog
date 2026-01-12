@@ -1,4 +1,4 @@
-ros-humble-autoware-object-sorter (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-sorter-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(object_sorter): add per-axis min-max range filter for each class label (#11563 <https://github.com/autowarefoundation/autoware_universe/issues/11563>)
@@ -16,13 +16,13 @@ ros-humble-autoware-object-sorter (0.48.0-0jammy) jammy; urgency=high
 
  -- Yoshi Ri <yoshi.ri@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-object-sorter (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-object-sorter-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Yoshi Ri <yoshi.ri@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-object-sorter (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-sorter-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat(autoware_object_sorter): add object_sorter package (#10925 <https://github.com/autowarefoundation/autoware_universe/issues/10925>)
     * add object_sorter

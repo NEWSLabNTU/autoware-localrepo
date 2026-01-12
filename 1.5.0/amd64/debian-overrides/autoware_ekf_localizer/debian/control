@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-ekf-localizer
+Source: ros-humble-autoware-ekf-localizer-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, libfmt-dev, ros-humble-amen
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-ekf-localizer
+Package: ros-humble-autoware-ekf-localizer-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-kalman-filter, ros-humble-autoware-localization-util, ros-humble-autoware-utils-geometry, ros-humble-autoware-utils-logging, ros-humble-autoware-utils-system, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-srvs, ros-humble-tf2, ros-humble-tf2-ros
 Description: The autoware_ekf_localizer package

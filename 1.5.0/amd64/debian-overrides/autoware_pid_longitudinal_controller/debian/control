@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-pid-longitudinal-controller
+Source: ros-humble-autoware-pid-longitudinal-controller-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, libeigen3-dev <!nocheck>, r
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-pid-longitudinal-controller
+Package: ros-humble-autoware-pid-longitudinal-controller-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-control-msgs, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-interpolation, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-trajectory-follower-base, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-msgs, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-ros
 Description: PID-based longitudinal controller

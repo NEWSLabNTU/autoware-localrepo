@@ -1,4 +1,4 @@
-ros-humble-autoware-route-handler (1.5.0-0jammy) jammy; urgency=high
+ros-humble-autoware-route-handler-1-5-0 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(autoware_lanelet2_utils): replace ported functions from autoware_lanelet2_extension (#695 <https://github.com/autowarefoundation/autoware_core/issues/695>)
@@ -22,7 +22,7 @@ ros-humble-autoware-route-handler (1.5.0-0jammy) jammy; urgency=high
 
  -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-route-handler (1.4.0-0jammy) jammy; urgency=high
+ros-humble-autoware-route-handler-1-5-0 (1.4.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(route_handler): add bicycle lane getter (#589 <https://github.com/autowarefoundation/autoware_core/issues/589>)
@@ -31,7 +31,7 @@ ros-humble-autoware-route-handler (1.4.0-0jammy) jammy; urgency=high
 
  -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-route-handler (1.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-route-handler-1-5-0 (1.3.0-0jammy) jammy; urgency=high
 
   * fix: to be consistent version in all package.xml(s)
   * perf(route_handler): improve functions to get nearest route lanelet (#532 <https://github.com/autowarefoundation/autoware_core/issues/532>)
@@ -64,7 +64,7 @@ ros-humble-autoware-route-handler (1.3.0-0jammy) jammy; urgency=high
 
  -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Sun, 22 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-route-handler (1.1.0-0jammy) jammy; urgency=high
+ros-humble-autoware-route-handler-1-5-0 (1.1.0-0jammy) jammy; urgency=high
 
   * feat(route_handler): use a cost metric to select start lane (#357 <https://github.com/autowarefoundation/autoware_core/issues/357>)
     * feat(route_handler): use a cost metric to select start lane
@@ -75,13 +75,13 @@ ros-humble-autoware-route-handler (1.1.0-0jammy) jammy; urgency=high
 
  -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-route-handler (1.0.0-0jammy) jammy; urgency=high
+ros-humble-autoware-route-handler-1-5-0 (1.0.0-0jammy) jammy; urgency=high
 
 
 
  -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Sun, 30 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-route-handler (0.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-route-handler-1-5-0 (0.3.0-0jammy) jammy; urgency=high
 
   * chore: fix versions in package.xml
   * feat: port autoware_route_handler from Autoware Universe (#201 <https://github.com/autowarefoundation/autoware.core/issues/201>)

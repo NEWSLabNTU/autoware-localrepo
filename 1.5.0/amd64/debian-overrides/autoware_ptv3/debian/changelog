@@ -1,4 +1,4 @@
-ros-humble-autoware-ptv3 (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ptv3-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(autoware_ptv3): implemented an inference node for ptv3 using tensorrt (#10600 <https://github.com/autowarefoundation/autoware_universe/issues/10600>)

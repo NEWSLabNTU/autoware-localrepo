@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-twist2accel
+Source: ros-humble-autoware-twist2accel-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yamato Ando <yamato.ando@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-twist2accel
+Package: ros-humble-autoware-twist2accel-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-signal-processing, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2
 Description: The acceleration estimation package

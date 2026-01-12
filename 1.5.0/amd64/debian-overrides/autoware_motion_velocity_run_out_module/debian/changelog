@@ -1,4 +1,4 @@
-ros-humble-autoware-motion-velocity-run-out-module (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-run-out-module-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix: tf2 uses hpp headers in rolling (and is backported) (#11620 <https://github.com/autowarefoundation/autoware_universe/issues/11620>)
@@ -21,13 +21,13 @@ ros-humble-autoware-motion-velocity-run-out-module (0.48.0-0jammy) jammy; urgenc
 
  -- Maxime Clement <maxime.clement@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-run-out-module (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-run-out-module-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Maxime Clement <maxime.clement@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-run-out-module (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-run-out-module-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * fix(run_out): add missing ament_auto_package in CMakeList (#11096 <https://github.com/autowarefoundation/autoware_universe/issues/11096>)
   * style(pre-commit): update to clang-format-20 (#11088 <https://github.com/autowarefoundation/autoware_universe/issues/11088>)
@@ -40,7 +40,7 @@ ros-humble-autoware-motion-velocity-run-out-module (0.47.0-0jammy) jammy; urgenc
 
  -- Maxime Clement <maxime.clement@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-run-out-module (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-run-out-module-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * fix(run_out): fix  numerical stability in run_out interpolation (#10808 <https://github.com/autowarefoundation/autoware_universe/issues/10808>)
@@ -55,7 +55,7 @@ ros-humble-autoware-motion-velocity-run-out-module (0.46.0-0jammy) jammy; urgenc
 
  -- Maxime Clement <maxime.clement@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-run-out-module (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-run-out-module-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * fix(motion_velocity_planner): add missing header (#10560 <https://github.com/autowarefoundation/autoware_universe/issues/10560>)

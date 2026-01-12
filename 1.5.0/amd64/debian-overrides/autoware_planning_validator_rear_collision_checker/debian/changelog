@@ -1,4 +1,4 @@
-ros-humble-autoware-planning-validator-rear-collision-checker (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-planning-validator-rear-collision-checker-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(autoware_lanelet2_utils): replace ported functions from autoware_lanelet2_extension (#11593 <https://github.com/autowarefoundation/autoware_universe/issues/11593>)
@@ -20,13 +20,13 @@ ros-humble-autoware-planning-validator-rear-collision-checker (0.48.0-0jammy) ja
 
  -- Satoshi Ota <satoshi.ota@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-planning-validator-rear-collision-checker (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-planning-validator-rear-collision-checker-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Satoshi Ota <satoshi.ota@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-planning-validator-rear-collision-checker (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-planning-validator-rear-collision-checker-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat(rear_collision_checker): support selecting safety metric from TTC or RSS (#11072 <https://github.com/autowarefoundation/autoware_universe/issues/11072>)
     * fix: return distance to predicted collision point
@@ -101,7 +101,7 @@ ros-humble-autoware-planning-validator-rear-collision-checker (0.47.0-0jammy) ja
 
  -- Satoshi Ota <satoshi.ota@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-planning-validator-rear-collision-checker (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-planning-validator-rear-collision-checker-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * feat(planning_validator): implement a collision detection feature for rearward objects of the vehicle (#10800 <https://github.com/autowarefoundation/autoware_universe/issues/10800>)

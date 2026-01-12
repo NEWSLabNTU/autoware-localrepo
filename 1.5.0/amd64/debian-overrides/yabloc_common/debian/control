@@ -1,4 +1,4 @@
-Source: ros-humble-yabloc-common
+Source: ros-humble-yabloc-common-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-ros, ros-humble-ame
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-yabloc-common
+Package: ros-humble-yabloc-common-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-signal-processing, ros-humble-autoware-utils-visualization, ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosidl-default-runtime, ros-humble-sensor-msgs, ros-humble-sophus, ros-humble-std-msgs, ros-humble-tf2-ros, ros-humble-visualization-msgs
 Description: YabLoc common library

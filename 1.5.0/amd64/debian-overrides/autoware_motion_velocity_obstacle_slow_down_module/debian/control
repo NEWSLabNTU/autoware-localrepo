@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-motion-velocity-obstacle-slow-down-module
+Source: ros-humble-autoware-motion-velocity-obstacle-slow-down-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takayuki Murooka <takayuki.murooka@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, ros-humble-ament-cmake-auto,
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-motion-velocity-obstacle-slow-down-module
+Package: ros-humble-autoware-motion-velocity-obstacle-slow-down-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-motion-utils, ros-humble-autoware-motion-velocity-planner-common, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-signal-processing, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-tf2, ros-humble-visualization-msgs
 Description: obstacle slow down feature in motion_velocity_planner

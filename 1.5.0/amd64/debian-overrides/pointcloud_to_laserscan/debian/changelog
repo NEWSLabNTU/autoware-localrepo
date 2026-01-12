@@ -1,4 +1,4 @@
-ros-humble-pointcloud-to-laserscan (2.0.0-0jammy) jammy; urgency=high
+ros-humble-pointcloud-to-laserscan-1-5-0 (2.0.0-0jammy) jammy; urgency=high
 
   * ROS 2 Migration (#33 <https://github.com/ros-perception/pointcloud_to_laserscan/issues/33>)
     * ROS 2 Migration
@@ -7,7 +7,7 @@ ros-humble-pointcloud-to-laserscan (2.0.0-0jammy) jammy; urgency=high
 
  -- Paul Bovbel <paul@bovbel.com>  Sun, 09 Feb 2020 16:00:00 -0000
 
-ros-humble-pointcloud-to-laserscan (1.4.1-0jammy) jammy; urgency=high
+ros-humble-pointcloud-to-laserscan-1-5-0 (1.4.1-0jammy) jammy; urgency=high
 
   * LaserScan to PointCloud node + nodelet (#28 <https://github.com/ros-perception/pointcloud_to_laserscan/issues/28>)
   * fix roslint (#29 <https://github.com/ros-perception/pointcloud_to_laserscan/issues/29>)
@@ -18,7 +18,7 @@ ros-humble-pointcloud-to-laserscan (1.4.1-0jammy) jammy; urgency=high
 
  -- Paul Bovbel <paul@bovbel.com>  Thu, 29 Aug 2019 16:00:00 -0000
 
-ros-humble-pointcloud-to-laserscan (1.4.0-0jammy) jammy; urgency=high
+ros-humble-pointcloud-to-laserscan-1-5-0 (1.4.0-0jammy) jammy; urgency=high
 
   * Added inf_epsilon parameter that determines the value added to max range when use_infs parameter is set to false
   * Merge pull request #11 <https://github.com/ros-perception/pointcloud_to_laserscan/issues/11> from ros-perception/mikaelarguedas-patch-1
@@ -30,7 +30,7 @@ ros-humble-pointcloud-to-laserscan (1.4.0-0jammy) jammy; urgency=high
 
  -- Paul Bovbel <paul@bovbel.com>  Mon, 13 Nov 2017 16:00:00 -0000
 
-ros-humble-pointcloud-to-laserscan (1.3.1-0jammy) jammy; urgency=high
+ros-humble-pointcloud-to-laserscan-1-5-0 (1.3.1-0jammy) jammy; urgency=high
 
   * Merge pull request #4 <https://github.com/ros-perception/pointcloud_to_laserscan/issues/4> from yoshimalucky/fix-miscalculation-in-angle-increment
     Fixed miscalculation in angle_increment in the launch files.
@@ -39,7 +39,7 @@ ros-humble-pointcloud-to-laserscan (1.3.1-0jammy) jammy; urgency=high
 
  -- Paul Bovbel <paul@bovbel.com>  Tue, 25 Apr 2017 16:00:00 -0000
 
-ros-humble-pointcloud-to-laserscan (1.3.0-0jammy) jammy; urgency=high
+ros-humble-pointcloud-to-laserscan-1-5-0 (1.3.0-0jammy) jammy; urgency=high
 
   * Fix pointcloud to laserscan transform tolerance issues
   * Move pointcloud_to_laserscan to new repository
@@ -47,14 +47,14 @@ ros-humble-pointcloud-to-laserscan (1.3.0-0jammy) jammy; urgency=high
 
  -- Paul Bovbel <paul@bovbel.com>  Mon, 08 Jun 2015 16:00:00 -0000
 
-ros-humble-pointcloud-to-laserscan (1.2.7-0jammy) jammy; urgency=high
+ros-humble-pointcloud-to-laserscan-1-5-0 (1.2.7-0jammy) jammy; urgency=high
 
   * Cleanup pointcloud_to_laserscan launch files
   * Contributors: Paul Bovbel
 
  -- Paul Bovbel <paul@bovbel.com>  Sun, 07 Jun 2015 16:00:00 -0000
 
-ros-humble-pointcloud-to-laserscan (1.2.6-0jammy) jammy; urgency=high
+ros-humble-pointcloud-to-laserscan-1-5-0 (1.2.6-0jammy) jammy; urgency=high
 
   * Fix default value for concurrency
   * Fix multithreaded lazy pub sub
@@ -62,7 +62,7 @@ ros-humble-pointcloud-to-laserscan (1.2.6-0jammy) jammy; urgency=high
 
  -- Paul Bovbel <paul@bovbel.com>  Tue, 03 Feb 2015 16:00:00 -0000
 
-ros-humble-pointcloud-to-laserscan (1.2.5-0jammy) jammy; urgency=high
+ros-humble-pointcloud-to-laserscan-1-5-0 (1.2.5-0jammy) jammy; urgency=high
 
   * Switch to tf_sensor_msgs for transform
   * Set parameters in sample launch files to default
@@ -71,7 +71,7 @@ ros-humble-pointcloud-to-laserscan (1.2.5-0jammy) jammy; urgency=high
 
  -- Paul Bovbel <paul@bovbel.com>  Mon, 19 Jan 2015 16:00:00 -0000
 
-ros-humble-pointcloud-to-laserscan (1.2.4-0jammy) jammy; urgency=high
+ros-humble-pointcloud-to-laserscan-1-5-0 (1.2.4-0jammy) jammy; urgency=high
 
   * Remove stray dependencies
   * Refactor with tf2 and message filters
@@ -82,7 +82,7 @@ ros-humble-pointcloud-to-laserscan (1.2.4-0jammy) jammy; urgency=high
 
  -- Paul Bovbel <paul@bovbel.com>  Wed, 14 Jan 2015 16:00:00 -0000
 
-ros-humble-pointcloud-to-laserscan (1.2.3-0jammy) jammy; urgency=high
+ros-humble-pointcloud-to-laserscan-1-5-0 (1.2.3-0jammy) jammy; urgency=high
 
   * add launch tests
   * refactor naming and fix nodelet export
@@ -92,7 +92,7 @@ ros-humble-pointcloud-to-laserscan (1.2.3-0jammy) jammy; urgency=high
 
  -- Paul Bovbel <paul@bovbel.com>  Fri, 09 Jan 2015 16:00:00 -0000
 
-ros-humble-pointcloud-to-laserscan (1.2.2-0jammy) jammy; urgency=high
+ros-humble-pointcloud-to-laserscan-1-5-0 (1.2.2-0jammy) jammy; urgency=high
 
   * clean up package.xml
   * Fix header reference

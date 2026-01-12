@@ -1,4 +1,4 @@
-Source: ros-humble-boost-io-context
+Source: ros-humble-boost-io-context-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Joshua Whitley <whitleysoftwareservices@gmail.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, ros-humble-ament-cmake-auto,
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-boost-io-context
+Package: ros-humble-boost-io-context-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-rclcpp, ros-humble-std-msgs, ros-humble-udp-msgs
 Description: A library to write Synchronous and Asynchronous networking applications

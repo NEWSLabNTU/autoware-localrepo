@@ -1,4 +1,4 @@
-ros-humble-autoware-ekf-localizer (1.5.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ekf-localizer-1-5-0 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)
@@ -21,14 +21,14 @@ ros-humble-autoware-ekf-localizer (1.5.0-0jammy) jammy; urgency=high
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-ekf-localizer (1.4.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ekf-localizer-1-5-0 (1.4.0-0jammy) jammy; urgency=high
 
   * chore: bump version to 1.3.0 (#554 <https://github.com/autowarefoundation/autoware_core/issues/554>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-ekf-localizer (1.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ekf-localizer-1-5-0 (1.3.0-0jammy) jammy; urgency=high
 
   * fix: to be consistent version in all package.xml(s)
   * feat: support ROS 2 Jazzy (#487 <https://github.com/autowarefoundation/autoware_core/issues/487>)
@@ -98,19 +98,19 @@ ros-humble-autoware-ekf-localizer (1.3.0-0jammy) jammy; urgency=high
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Sun, 22 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-ekf-localizer (1.1.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ekf-localizer-1-5-0 (1.1.0-0jammy) jammy; urgency=high
 
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-ekf-localizer (1.0.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ekf-localizer-1-5-0 (1.0.0-0jammy) jammy; urgency=high
 
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Sun, 30 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-ekf-localizer (0.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ekf-localizer-1-5-0 (0.3.0-0jammy) jammy; urgency=high
 
   * chore: fix versions in package.xml
   * chore(ekf_localizer): increase z_filter_proc_dev for large gradient road (#211 <https://github.com/autowarefoundation/autoware.core/issues/211>)

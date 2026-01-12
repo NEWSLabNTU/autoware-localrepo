@@ -1,4 +1,4 @@
-Source: ros-humble-reaction-analyzer
+Source: ros-humble-reaction-analyzer-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Berkay Karaman <berkay@leodrive.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, libpcl-dev, ros-humble-amen
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-reaction-analyzer
+Package: ros-humble-reaction-analyzer-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, libpcl-dev, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-control-msgs, ros-humble-autoware-internal-msgs, ros-humble-autoware-launch, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-msgs, ros-humble-message-filters, ros-humble-pcl-conversions, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-cpp, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-perception-launch
 Description: Analyzer that measures reaction times of the nodes

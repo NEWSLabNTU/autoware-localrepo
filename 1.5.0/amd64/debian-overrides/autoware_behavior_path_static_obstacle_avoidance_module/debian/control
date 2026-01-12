@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-behavior-path-static-obstacle-avoidance-module
+Source: ros-humble-autoware-behavior-path-static-obstacle-avoidance-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-behavior-path-static-obstacle-avoidance-module
+Package: ros-humble-autoware-behavior-path-static-obstacle-avoidance-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-behavior-path-planner, ros-humble-autoware-behavior-path-planner-common, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-objects-of-interest-marker-interface, ros-humble-autoware-perception-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-rtc-interface, ros-humble-autoware-signal-processing, ros-humble-autoware-test-utils, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-magic-enum, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-visualization-msgs
 Description: The autoware_behavior_path_static_obstacle_avoidance_module package

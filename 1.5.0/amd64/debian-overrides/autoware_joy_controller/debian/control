@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-joy-controller
+Source: ros-humble-autoware-joy-controller-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Taiki Tanaka <taiki.tanaka@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-joy-controller
+Package: ros-humble-autoware-joy-controller-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-control-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-msgs, ros-humble-geometry-msgs, ros-humble-joy, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-srvs, ros-humble-tier4-api-utils, ros-humble-tier4-control-msgs, ros-humble-tier4-external-api-msgs
 Description: The autoware_joy_controller package

@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-utils-tf
+Source: ros-humble-autoware-utils-tf-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Jian Kang <egon.kang@autocore.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-utils-tf
+Package: ros-humble-autoware-utils-tf-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-utils-geometry, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-tf2-ros
 Description: The autoware_utils_tf package

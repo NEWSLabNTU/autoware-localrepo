@@ -1,4 +1,4 @@
-ros-humble-autoware-launch (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into release-humble-0.48.0
   * feat(image_object_locator): add near range camera VRU detector to perception pipeline (#1697 <https://github.com/autowarefoundation/autoware_launch/issues/1697>)
@@ -166,7 +166,7 @@ ros-humble-autoware-launch (0.48.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat: change planning output topic name to /planning/trajectory (#1594 <https://github.com/autowarefoundation/autoware_launch/issues/1594>)
     * change planning output topic name to /planning/trajectory
@@ -383,7 +383,7 @@ ros-humble-autoware-launch (0.47.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat: boundary departure prevention module (#1489 <https://github.com/autowarefoundation/autoware_launch/issues/1489>)
@@ -524,7 +524,7 @@ ros-humble-autoware-launch (0.46.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.45.3-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.45.3-0jammy) jammy; urgency=high
 
   * chore: back port 1527, 1528, 1529 to humble (#1559 <https://github.com/autowarefoundation/autoware_launch/issues/1559>)
   * feat: add launch_pointcloud_container to tier4_localization_component.launch.xml (#1529 <https://github.com/autowarefoundation/autoware_launch/issues/1529>)
@@ -535,7 +535,7 @@ ros-humble-autoware-launch (0.45.3-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 16 Jul 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.45.2-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.45.2-0jammy) jammy; urgency=high
 
   * fix:  pointcloud_contaner is launched on autoware.launch.xml by default (#1523 <https://github.com/autowarefoundation/autoware_launch/issues/1523>) (#1524 <https://github.com/autowarefoundation/autoware_launch/issues/1524>)
   * fix:  pointcloud_contaner is launched on autoware.launch.xml by default (#1523 <https://github.com/autowarefoundation/autoware_launch/issues/1523>)
@@ -543,7 +543,7 @@ ros-humble-autoware-launch (0.45.2-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Fri, 27 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.45.1-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.45.1-0jammy) jammy; urgency=high
 
   * feat(launch/components): launch autoware_global_parameter_loader in a component-wise manner (#1512 <https://github.com/autowarefoundation/autoware_launch/issues/1512>)
     add global parameters
@@ -551,7 +551,7 @@ ros-humble-autoware-launch (0.45.1-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 26 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * chore(traffic_light_recognition): add comment in config of autoware_traffic_light_map_based_detector (#1448 <https://github.com/autowarefoundation/autoware_launch/issues/1448>)
@@ -607,7 +607,7 @@ ros-humble-autoware-launch (0.45.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.44.3-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.44.3-0jammy) jammy; urgency=high
 
   * feat: add pointcloud container arg for simulator component (#1479 <https://github.com/autowarefoundation/autoware_launch/issues/1479>) (#1487 <https://github.com/autowarefoundation/autoware_launch/issues/1487>)
   * feat: add pointcloud container arg for simulator component (#1479 <https://github.com/autowarefoundation/autoware_launch/issues/1479>)
@@ -616,7 +616,7 @@ ros-humble-autoware-launch (0.44.3-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
   * feat(launch/components): launch in a component-wise manner (#1469 <https://github.com/autowarefoundation/autoware_launch/issues/1469>)
   * insert args to autoware.launch.xml
@@ -627,14 +627,14 @@ ros-humble-autoware-launch (0.44.2-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 29 May 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
   * feat(duplicated_node_checker): ignore duplicate get parameter (#1413 <https://github.com/autowarefoundation/autoware_launch/issues/1413>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 11 May 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * Merge commit 'bdbc8e8' into bump-up-version-to-0.44.0
   * chore: bump version to 0.44.0 (#1411 <https://github.com/autowarefoundation/autoware_launch/issues/1411>)
@@ -727,13 +727,13 @@ ros-humble-autoware-launch (0.44.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.43.1-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.43.1-0jammy) jammy; urgency=high
 
 
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 31 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_launch): rename to max_lat_margin_against_predicted_object_unknown (#1360 <https://github.com/autowarefoundation/autoware_launch/issues/1360>)
@@ -793,7 +793,7 @@ ros-humble-autoware-launch (0.43.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * chore(ekf_localizer): increase z_filter_proc_dev for large gradient road (#1337 <https://github.com/autowarefoundation/autoware_launch/issues/1337>)
@@ -851,7 +851,7 @@ ros-humble-autoware-launch (0.42.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.41.0-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(goal_planner): introduce bezier based pullover for bus stop area (#1308 <https://github.com/autowarefoundation/autoware_launch/issues/1308>)
@@ -970,7 +970,7 @@ ros-humble-autoware-launch (0.41.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-autoware-launch (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into release-0.40.0
   * refactor(obstacle_cruise_planner)!: refactor rviz and terminal info (#1264 <https://github.com/autowarefoundation/autoware_launch/issues/1264>)
@@ -1074,7 +1074,7 @@ ros-humble-autoware-launch (0.40.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-launch (0.39.0-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * autowarefoundation username
   * Merge commit '9d0e7055a' into release-0.39.0
@@ -1119,7 +1119,7 @@ ros-humble-autoware-launch (0.39.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-launch (0.38.0-0jammy) jammy; urgency=high
+ros-humble-autoware-launch-1-5-0 (0.38.0-0jammy) jammy; urgency=high
 
   * feat(start/goal_planner): increse max dry steering angle (#1200 <https://github.com/autowarefoundation/autoware_launch/issues/1200>)
   * fix(start_planner): set  ignore_distance_from_lane_end param to 0.0 since it is not needed (#1198 <https://github.com/autowarefoundation/autoware_launch/issues/1198>)

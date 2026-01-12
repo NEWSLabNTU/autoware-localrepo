@@ -1,22 +1,22 @@
-ros-humble-autoware-hazard-status-converter (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * feat(diagnostic_graph_aggregator): support latch and dependent error (#10829 <https://github.com/autowarefoundation/autoware_universe/issues/10829>)
@@ -37,31 +37,31 @@ ros-humble-autoware-hazard-status-converter (0.46.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
@@ -69,7 +69,7 @@ ros-humble-autoware-hazard-status-converter (0.43.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_utils): replace autoware_universe_utils with autoware_utils  (#10191 <https://github.com/autowarefoundation/autoware_universe/issues/10191>)
@@ -77,20 +77,20 @@ ros-humble-autoware-hazard-status-converter (0.42.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.41.2-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.41.2-0jammy) jammy; urgency=high
 
   * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.41.1-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.41.1-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.41.0-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat: apply autoware_ prefix for diagnostic_graph_utils (#9968 <https://github.com/autowarefoundation/autoware_universe/issues/9968>)
@@ -99,7 +99,7 @@ ros-humble-autoware-hazard-status-converter (0.41.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * Merge branch 'main' into release-0.40.0
   * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
@@ -136,7 +136,7 @@ ros-humble-autoware-hazard-status-converter (0.40.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.39.0-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
@@ -150,7 +150,7 @@ ros-humble-autoware-hazard-status-converter (0.39.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.38.0-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.38.0-0jammy) jammy; urgency=high
 
   * unify package.xml version to 0.37.0
   * feat!: replace autoware_auto_msgs with autoware_msgs for system modules (#7249 <https://github.com/autowarefoundation/autoware_universe/issues/7249>)
@@ -170,7 +170,7 @@ ros-humble-autoware-hazard-status-converter (0.38.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-hazard-status-converter (0.26.0-0jammy) jammy; urgency=high
+ros-humble-autoware-hazard-status-converter-1-5-0 (0.26.0-0jammy) jammy; urgency=high
 
   * feat(tier4_system_launch): add option to launch mrm handler (#6660 <https://github.com/autowarefoundation/autoware_universe/issues/6660>)
   * feat(hazard_status_converter): add package (#6428 <https://github.com/autowarefoundation/autoware_universe/issues/6428>)

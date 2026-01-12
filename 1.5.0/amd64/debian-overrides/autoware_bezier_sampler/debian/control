@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-bezier-sampler
+Source: ros-humble-autoware-bezier-sampler-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Maxime CLEMENT <maxime.clement@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-bezier-sampler
+Package: ros-humble-autoware-bezier-sampler-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-sampler-common
 Description: Package to sample trajectories using Bézier curves

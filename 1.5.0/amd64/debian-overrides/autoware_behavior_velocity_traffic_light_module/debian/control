@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-behavior-velocity-traffic-light-module
+Source: ros-humble-autoware-behavior-velocity-traffic-light-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Satoshi Ota <satoshi.ota@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-behavior-velocity-traffic-light-module
+Package: ros-humble-autoware-behavior-velocity-traffic-light-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-behavior-velocity-rtc-interface, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-traffic-light-utils, ros-humble-autoware-utils, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tier4-planning-msgs, ros-humble-visualization-msgs
 Description: The autoware_behavior_velocity_traffic_light_module package

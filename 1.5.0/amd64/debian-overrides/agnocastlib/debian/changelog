@@ -1,4 +1,4 @@
-ros-humble-agnocastlib (2.1.2-0jammy) jammy; urgency=high
+ros-humble-agnocastlib-1-5-0 (2.1.2-0jammy) jammy; urgency=high
 
   * fix: remove unnecessary TRACETOOLS_LTTNG_ENABLED (#678 <https://github.com/tier4/agnocast/issues/678>)
   * test(integration): Add integration test investigate malloc region differences after fork (#675 <https://github.com/tier4/agnocast/issues/675>)
@@ -20,7 +20,7 @@ ros-humble-agnocastlib (2.1.2-0jammy) jammy; urgency=high
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 17 Aug 2025 16:00:00 -0000
 
-ros-humble-agnocastlib (2.1.1-0jammy) jammy; urgency=high
+ros-humble-agnocastlib-1-5-0 (2.1.1-0jammy) jammy; urgency=high
 
   * fix(agnocastlib): forbit the reader processes from resizing shmem (#632 <https://github.com/tier4/agnocast/issues/632>)
   * fix: add validation for add_node() (#638 <https://github.com/tier4/agnocast/issues/638>)
@@ -30,7 +30,7 @@ ros-humble-agnocastlib (2.1.1-0jammy) jammy; urgency=high
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 12 May 2025 16:00:00 -0000
 
-ros-humble-agnocastlib (2.1.0-0jammy) jammy; urgency=high
+ros-humble-agnocastlib-1-5-0 (2.1.0-0jammy) jammy; urgency=high
 
   * fix(agnocastlib): add O_EXCL for shm_open flag (#595 <https://github.com/tier4/agnocast/issues/595>)
   * refactor(kmod): reorder ioctl command (#615 <https://github.com/tier4/agnocast/issues/615>)
@@ -43,13 +43,13 @@ ros-humble-agnocastlib (2.1.0-0jammy) jammy; urgency=high
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 14 Apr 2025 16:00:00 -0000
 
-ros-humble-agnocastlib (2.0.1-0jammy) jammy; urgency=high
+ros-humble-agnocastlib-1-5-0 (2.0.1-0jammy) jammy; urgency=high
 
 
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 02 Apr 2025 16:00:00 -0000
 
-ros-humble-agnocastlib (2.0.0-0jammy) jammy; urgency=high
+ros-humble-agnocastlib-1-5-0 (2.0.0-0jammy) jammy; urgency=high
 
   * refactor(test): not to use gmock-global (#592 <https://github.com/tier4/agnocast/issues/592>)
   * feat(kmod): allow local pid namespace (#540 <https://github.com/tier4/agnocast/issues/540>)
@@ -75,7 +75,7 @@ ros-humble-agnocastlib (2.0.0-0jammy) jammy; urgency=high
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Tue, 01 Apr 2025 16:00:00 -0000
 
-ros-humble-agnocastlib (1.0.2-0jammy) jammy; urgency=high
+ros-humble-agnocastlib-1-5-0 (1.0.2-0jammy) jammy; urgency=high
 
   * improve(MultiThreadedAgnocastExecutor): remove unnecessary check (#530 <https://github.com/tier4/agnocast/issues/530>)
   * fix(MultiThreadedAgnocastExecutor): restore starvation tests (#529 <https://github.com/tier4/agnocast/issues/529>)
@@ -86,14 +86,14 @@ ros-humble-agnocastlib (1.0.2-0jammy) jammy; urgency=high
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Thu, 13 Mar 2025 16:00:00 -0000
 
-ros-humble-agnocastlib (1.0.1-0jammy) jammy; urgency=high
+ros-humble-agnocastlib-1-5-0 (1.0.1-0jammy) jammy; urgency=high
 
   * chore: comment out multi-threaded executor tests (#472 <https://github.com/tier4/agnocast/issues/472>)
   * test(MultiThreadedAgnocastExecutor): no starvation tests considering cbg (#460 <https://github.com/tier4/agnocast/issues/460>)
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 09 Mar 2025 16:00:00 -0000
 
-ros-humble-agnocastlib (1.0.0-0jammy) jammy; urgency=high
+ros-humble-agnocastlib-1-5-0 (1.0.0-0jammy) jammy; urgency=high
 
   * First release.
 

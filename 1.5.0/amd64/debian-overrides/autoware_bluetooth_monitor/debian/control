@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-bluetooth-monitor
+Source: ros-humble-autoware-bluetooth-monitor-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Fumihito Ito <fumihito.ito@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, libboost-serialization-dev, 
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-bluetooth-monitor
+Package: ros-humble-autoware-bluetooth-monitor-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, bluez, libboost-dev, libfmt-dev, ros-humble-diagnostic-msgs, ros-humble-diagnostic-updater, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: Bluetooth alive monitoring

@@ -1,4 +1,4 @@
-ros-humble-tier4-control-launch (0.48.0-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(launch): update input topic parameters to allow dynamic configuration (#11389 <https://github.com/autowarefoundation/autoware_universe/issues/11389>)
@@ -11,13 +11,13 @@ ros-humble-tier4-control-launch (0.48.0-0jammy) jammy; urgency=high
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.47.1-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.47.0-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat: change planning output topic name to /planning/trajectory (#11135 <https://github.com/autowarefoundation/autoware_universe/issues/11135>)
     * change planning output topic name to /planning/trajectory
@@ -49,7 +49,7 @@ ros-humble-tier4-control-launch (0.47.0-0jammy) jammy; urgency=high
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.46.0-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * feat(launch): add option for control command gate (#10173 <https://github.com/autowarefoundation/autoware_universe/issues/10173>)
@@ -65,25 +65,25 @@ ros-humble-tier4-control-launch (0.46.0-0jammy) jammy; urgency=high
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.45.0-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.44.2-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.44.1-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.44.0-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(control_validator)!: add acceleration check (#10326 <https://github.com/autowarefoundation/autoware_universe/issues/10326>)
@@ -91,7 +91,7 @@ ros-humble-tier4-control-launch (0.44.0-0jammy) jammy; urgency=high
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.43.0-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
@@ -103,26 +103,26 @@ ros-humble-tier4-control-launch (0.43.0-0jammy) jammy; urgency=high
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.42.0-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.41.2-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.41.2-0jammy) jammy; urgency=high
 
   * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.41.1-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.41.1-0jammy) jammy; urgency=high
 
 
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.41.0-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat: apply autoware_ prefix for predicted_path_checker (#9985 <https://github.com/autowarefoundation/autoware_universe/issues/9985>)
@@ -149,7 +149,7 @@ ros-humble-tier4-control-launch (0.41.0-0jammy) jammy; urgency=high
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.40.0-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * Merge branch 'main' into release-0.40.0
   * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
@@ -222,7 +222,7 @@ ros-humble-tier4-control-launch (0.40.0-0jammy) jammy; urgency=high
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.39.0-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * Merge commit '6a1ddbd08bd' into release-0.39.0
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
@@ -251,7 +251,7 @@ ros-humble-tier4-control-launch (0.39.0-0jammy) jammy; urgency=high
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.38.0-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.38.0-0jammy) jammy; urgency=high
 
   * unify package.xml version to 0.37.0
   * refactor(obstacle_collision_checker): move to autoware namespace (#9047 <https://github.com/autowarefoundation/autoware_universe/issues/9047>)
@@ -429,7 +429,7 @@ ros-humble-tier4-control-launch (0.38.0-0jammy) jammy; urgency=high
 
  -- Takamasa Horibe <takamasa.horibe@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-tier4-control-launch (0.26.0-0jammy) jammy; urgency=high
+ros-humble-tier4-control-launch-1-5-0 (0.26.0-0jammy) jammy; urgency=high
 
   * feat: enable multithreading for the control container (#6666 <https://github.com/autowarefoundation/autoware_universe/issues/6666>)
   * feat(pid_longitudinal_controller): add maker for stop reason (#6579 <https://github.com/autowarefoundation/autoware_universe/issues/6579>)

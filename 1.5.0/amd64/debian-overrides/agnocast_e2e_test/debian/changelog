@@ -1,36 +1,36 @@
-ros-humble-agnocast-e2e-test (2.1.2-0jammy) jammy; urgency=high
+ros-humble-agnocast-e2e-test-1-5-0 (2.1.2-0jammy) jammy; urgency=high
 
 
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 17 Aug 2025 16:00:00 -0000
 
-ros-humble-agnocast-e2e-test (2.1.1-0jammy) jammy; urgency=high
+ros-humble-agnocast-e2e-test-1-5-0 (2.1.1-0jammy) jammy; urgency=high
 
   * fix(e2e_test): extend ready_delay waiting time (#630 <https://github.com/tier4/agnocast/issues/630>)
   * fix(e2e test): extend waiting time for receiving transient local messages (#628 <https://github.com/tier4/agnocast/issues/628>)
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 12 May 2025 16:00:00 -0000
 
-ros-humble-agnocast-e2e-test (2.1.0-0jammy) jammy; urgency=high
+ros-humble-agnocast-e2e-test-1-5-0 (2.1.0-0jammy) jammy; urgency=high
 
 
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 14 Apr 2025 16:00:00 -0000
 
-ros-humble-agnocast-e2e-test (2.0.1-0jammy) jammy; urgency=high
+ros-humble-agnocast-e2e-test-1-5-0 (2.0.1-0jammy) jammy; urgency=high
 
 
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 02 Apr 2025 16:00:00 -0000
 
-ros-humble-agnocast-e2e-test (2.0.0-0jammy) jammy; urgency=high
+ros-humble-agnocast-e2e-test-1-5-0 (2.0.0-0jammy) jammy; urgency=high
 
   * fix: use AGNOCAST prefix for MEMPOOL_SIZE (#580 <https://github.com/tier4/agnocast/issues/580>)
   * fix: e2e test in restricted environments in terms of the number of cores (#539 <https://github.com/tier4/agnocast/issues/539>)
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Tue, 01 Apr 2025 16:00:00 -0000
 
-ros-humble-agnocast-e2e-test (1.0.2-0jammy) jammy; urgency=high
+ros-humble-agnocast-e2e-test-1-5-0 (1.0.2-0jammy) jammy; urgency=high
 
   * feat: add validation if agnocast cb and ros2 cb belong to same MutuallyExclusive cbg in MultiThreadedAgnocastExecutor (#515 <https://github.com/tier4/agnocast/issues/515>)
   * fix: stress test (#526 <https://github.com/tier4/agnocast/issues/526>)
@@ -39,13 +39,13 @@ ros-humble-agnocast-e2e-test (1.0.2-0jammy) jammy; urgency=high
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Thu, 13 Mar 2025 16:00:00 -0000
 
-ros-humble-agnocast-e2e-test (1.0.1-0jammy) jammy; urgency=high
+ros-humble-agnocast-e2e-test-1-5-0 (1.0.1-0jammy) jammy; urgency=high
 
   * fix: not to check display order in e2e tests (#475 <https://github.com/tier4/agnocast/issues/475>)
 
  -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 09 Mar 2025 16:00:00 -0000
 
-ros-humble-agnocast-e2e-test (1.0.0-0jammy) jammy; urgency=high
+ros-humble-agnocast-e2e-test-1-5-0 (1.0.0-0jammy) jammy; urgency=high
 
   * First release.
 

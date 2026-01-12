@@ -1,4 +1,4 @@
-ros-humble-autoware-trajectory (1.5.0-0jammy) jammy; urgency=high
+ros-humble-autoware-trajectory-1-5-0 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(lanelet2_utils): organize maps by vm-map-spec id (#716 <https://github.com/autowarefoundation/autoware_core/issues/716>)
@@ -24,7 +24,7 @@ ros-humble-autoware-trajectory (1.5.0-0jammy) jammy; urgency=high
 
  -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-trajectory (1.4.0-0jammy) jammy; urgency=high
+ros-humble-autoware-trajectory-1-5-0 (1.4.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * chore: bump version to 1.3.0 (#554 <https://github.com/autowarefoundation/autoware_core/issues/554>)
@@ -43,7 +43,7 @@ ros-humble-autoware-trajectory (1.4.0-0jammy) jammy; urgency=high
 
  -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-trajectory (1.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-trajectory-1-5-0 (1.3.0-0jammy) jammy; urgency=high
 
   * fix: to be consistent version in all package.xml(s)
   * feat(autoware_trajectory): add specialized LaneIdsInterpolator for lane ID handling (#528 <https://github.com/autowarefoundation/autoware_core/issues/528>)
@@ -185,7 +185,7 @@ ros-humble-autoware-trajectory (1.3.0-0jammy) jammy; urgency=high
 
  -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Sun, 22 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-trajectory (1.1.0-0jammy) jammy; urgency=high
+ros-humble-autoware-trajectory-1-5-0 (1.1.0-0jammy) jammy; urgency=high
 
   * fix(autoware_trajectory): avoid nan in align_orientation_with_trajectory_direction (#398 <https://github.com/autowarefoundation/autoware_core/issues/398>)
     * fix(autoware_trajectory): avoid nan in align_orientation_with_trajectory_direction
@@ -235,7 +235,7 @@ ros-humble-autoware-trajectory (1.1.0-0jammy) jammy; urgency=high
 
  -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-trajectory (1.0.0-0jammy) jammy; urgency=high
+ros-humble-autoware-trajectory-1-5-0 (1.0.0-0jammy) jammy; urgency=high
 
   * feat(trajectory): remove default ctor and collect default setting in Builder (#287 <https://github.com/autowarefoundation/autoware_core/issues/287>)
   * fix(autoware_trajectory): fix linking issue with pybind11, and use non-deprecated tf2 headers (#316 <https://github.com/autowarefoundation/autoware_core/issues/316>)
@@ -251,7 +251,7 @@ ros-humble-autoware-trajectory (1.0.0-0jammy) jammy; urgency=high
 
  -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Sun, 30 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-trajectory (0.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-trajectory-1-5-0 (0.3.0-0jammy) jammy; urgency=high
 
   * chore: fix versions in package.xml
   * feat(trajectory): improve comment, use autoware_pyplot for examples (#282 <https://github.com/autowarefoundation/autoware.core/issues/282>)

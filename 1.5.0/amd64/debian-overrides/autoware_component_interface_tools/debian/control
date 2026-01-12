@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-component-interface-tools
+Source: ros-humble-autoware-component-interface-tools-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libfmt-dev, ros-humble-ament-cmake-auto, r
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-component-interface-tools
+Package: ros-humble-autoware-component-interface-tools-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, ros-humble-diagnostic-updater, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-system-msgs, ros-humble-yaml-cpp-vendor
 Description: The autoware_component_interface_tools package
