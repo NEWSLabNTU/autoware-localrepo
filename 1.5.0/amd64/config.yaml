@@ -23,3 +23,5 @@ build:
   skip_tests: true
   # Custom installation prefix for Autoware 1.5.0
   install_prefix: /opt/autoware/1.5.0
+  # Package name suffix - appended to package names (e.g., ros-humble-pkg-1-5-0)
+  package_suffix: "1-5-0"
