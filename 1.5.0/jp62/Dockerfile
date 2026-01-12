@@ -87,6 +87,7 @@ RUN rosdep update
 # These packages were extracted from rosdep install --simulate
 # NOTE: Some packages (python3-torch) are not available via apt on arm64/Jetson
 #       We filter those out and install separately via pip if needed
+# NOTE: libvtk9-dev and libvtk9-qt-dev are included for PCL visualization
 # ============================================================================
 COPY rosdep-packages.txt /tmp/rosdep-packages.txt
 RUN apt update && \
@@ -134,9 +135,9 @@ ENV PATH=/usr/local/cuda/bin:${PATH}
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 ENV CUDAARCHS=87
 
-# Copy cuda_init.cmake and configure colcon2deb to use it
-COPY cuda_init.cmake /cuda_init.cmake
-RUN echo 'export COLCON2DEB_CMAKE_ARGS="-DCMAKE_PROJECT_INCLUDE=/cuda_init.cmake"' >> /colcon2deb-setup.sh
+# NOTE: cuda_init.cmake disabled - using builtin FindCUDA instead
+# The custom cuda_init.cmake was causing issues under QEMU emulation.
+# CUDA packages that need CUDNN will find it via standard CMake mechanisms.
 
 # ============================================================================
 # Install spconv and cumm libraries for sparse convolution operations

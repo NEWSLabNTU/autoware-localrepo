@@ -22,7 +22,11 @@ packages:
 # Build options
 build:
   ros_distro: humble
-  parallel_jobs: 8
+  # Use low parallel jobs for QEMU emulation to avoid OOM/segfaults during linking
+  # Native ARM64 builds can use higher values (e.g., 8)
+  parallel_jobs: 2
   skip_tests: true
   # Custom installation prefix for Autoware 1.5.0
   install_prefix: /opt/autoware/1.5.0
+  # Package name suffix - appended to package names (e.g., ros-humble-pkg-1-5-0)
+  package_suffix: "1-5-0"

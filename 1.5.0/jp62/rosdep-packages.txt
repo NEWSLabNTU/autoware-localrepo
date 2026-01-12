@@ -62,6 +62,10 @@ libpcl-surface1.12
 libpcl-tracking1.12
 libpcl-visualization1.12
 
+# VTK libraries (required by PCL visualization)
+libvtk9-dev
+libvtk9-qt-dev
+
 # Qt libraries
 libqt5core5a
 libqt5gui5
