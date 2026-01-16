@@ -182,6 +182,33 @@ install -d $(CURDIR)/debian/autoware-config/opt/autoware/config
 
 ## Jetson/ARM64 Build Issues
 
+### Multi-Arch Setup (QEMU on x86 Host)
+
+Building ARM64 Docker images on an x86_64 host requires QEMU user-mode emulation. This is a one-time setup.
+
+**Install QEMU:**
+```bash
+sudo apt install qemu-user-static
+```
+
+**Register QEMU with Docker (with credential support for setuid binaries):**
+```bash
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes --credential yes
+```
+
+The `--credential yes` flag is critical - it sets binfmt flags to `OCF` which allows setuid binaries like `sudo` to work properly inside emulated containers. Without it, you'll see:
+```
+sudo: effective uid is not 0, is /usr/bin/sudo on a file system with the 'nosuid' option set...
+```
+
+**Verify registration:**
+```bash
+cat /proc/sys/fs/binfmt_misc/qemu-aarch64
+# Should show: flags: OCF
+```
+
+**Note:** The registration persists across reboots on most systems, but may need to be re-run after kernel updates or Docker daemon restarts.
+
 ### Cross-Compilation Platform Flag
 
 When building arm64 Docker images on amd64 host, `--platform linux/arm64` is required. The `config.yaml` must include:
@@ -257,10 +284,35 @@ Could NOT find CUDNN (missing: CUDNN_LIBRARY CUDNN_INCLUDE_DIR)
 **Solution**: Use `CMAKE_PROJECT_INCLUDE` to inject CUDA initialization early:
 
 ```cmake
-# cuda_init.cmake
+# cuda_init.cmake - validates nvcc before calling find_package(CUDA)
 if(NOT CUDA_FOUND)
-  find_package(CUDA QUIET)
+  find_program(_CUDA_NVCC_EXECUTABLE nvcc
+    HINTS ENV CUDA_PATH ENV CUDA_HOME
+    PATH_SUFFIXES bin
+    PATHS /usr/local/cuda/bin
+  )
+
+  if(_CUDA_NVCC_EXECUTABLE)
+    execute_process(
+      COMMAND "${_CUDA_NVCC_EXECUTABLE}" --version
+      OUTPUT_VARIABLE _nvcc_version_output
+      ERROR_QUIET
+      RESULT_VARIABLE _nvcc_result
+    )
+
+    # Only call find_package(CUDA) if nvcc output matches expected format
+    # FindCUDA.cmake expects "release X.Y" in the version output
+    if(_nvcc_result EQUAL 0 AND _nvcc_version_output MATCHES "release [0-9]+\\.[0-9]+")
+      find_package(CUDA QUIET)
+    endif()
+  endif()
 endif()
+```
+
+**Important**: The nvcc output validation is critical under QEMU emulation. Without it, CMake's `FindCUDA.cmake` may fail with:
+```
+CMake Error at /usr/share/cmake-3.22/Modules/FindCUDA.cmake:929 (string):
+  string sub-command REGEX, mode REPLACE needs at least 6 arguments
 ```
 
 Configure via `/colcon2deb-setup.sh`:
@@ -282,6 +334,32 @@ This happens because `CUDA_ARCHITECTURES native` tries to detect the GPU but QEM
 ```dockerfile
 ENV CUDAARCHS=87  # Orin for JetPack 6.x
 ```
+
+### ASLR Causes Segfaults in QEMU (Kernel ≥6.8.0-50)
+
+On Linux kernels ≥6.8.0-50, QEMU user-mode emulation has a known incompatibility with ASLR (Address Space Layout Randomization) that causes random segmentation faults during C++ compilation:
+
+```
+c++: internal compiler error: Segmentation fault signal terminated program cc1plus
+```
+
+**Solution**: Temporarily disable ASLR on the host during the build:
+```bash
+# Disable ASLR before build
+sudo sysctl kernel.randomize_va_space=0
+
+# Run the build
+just ros
+
+# Re-enable ASLR after build completes
+sudo sysctl kernel.randomize_va_space=2
+```
+
+**Security note:** Disabling ASLR reduces system security. Only disable it temporarily during builds and re-enable immediately after. For security-critical environments, consider building on native ARM64 hardware instead.
+
+**References:**
+- https://github.com/docker/buildx/issues/3170
+- https://gitlab.com/qemu-project/qemu/-/issues/1325
 
 ### LTO Conflicts with CUDA (fatbinData Symbol)
 
