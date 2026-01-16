@@ -12,6 +12,34 @@ creates a local APT repository for easy installation on Debian/Ubuntu systems.
 - **debhelper** package (`sudo apt install debhelper devscripts aria2`)
 - **just** command runner (`cargo install just` or from package manager)
 
+### Multi-Arch Setup (for ARM64/Jetson builds)
+
+Building ARM64 Docker images on an x86_64 host requires QEMU user-mode emulation. This is a one-time setup required for all Jetson builds (jp60, jp62, etc.).
+
+```bash
+# Install QEMU user-mode emulation
+sudo apt install qemu-user-static
+
+# Register QEMU binary formats with credential support
+# The --credential flag is critical for setuid binaries (like sudo) to work
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes --credential yes
+```
+
+**Verify registration:**
+```bash
+cat /proc/sys/fs/binfmt_misc/qemu-aarch64
+# Should show: flags: OCF
+```
+
+**Note:** The registration persists across reboots but may need to be re-run after kernel updates or Docker daemon restarts. If ARM64 builds fail with sudo errors, re-run the registration command.
+
+**ASLR Workaround (Kernel ≥6.8.0-50):** On newer kernels, QEMU has a known incompatibility with ASLR that causes random compiler segfaults. Temporarily disable ASLR during builds:
+```bash
+sudo sysctl kernel.randomize_va_space=0   # Disable before build
+just ros                                    # Run build
+sudo sysctl kernel.randomize_va_space=2   # Re-enable after build
+```
+
 ## Repository Structure
 
 ```
