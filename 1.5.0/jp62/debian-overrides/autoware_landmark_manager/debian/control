@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-landmark-manager
+Source: ros-humble-autoware-landmark-manager-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Masahiro Sakamoto <masahiro.sakamoto@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake, ros
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-landmark-manager
+Package: ros-humble-autoware-landmark-manager-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-localization-util, ros-humble-autoware-map-msgs, ros-humble-autoware-utils-geometry, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-tf2-eigen
 Description: The autoware_landmark_manager package

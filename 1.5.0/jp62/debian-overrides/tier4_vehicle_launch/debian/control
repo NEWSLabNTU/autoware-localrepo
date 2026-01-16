@@ -1,4 +1,4 @@
-Source: ros-humble-tier4-vehicle-launch
+Source: ros-humble-tier4-vehicle-launch-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-tier4-vehicle-launch
+Package: ros-humble-tier4-vehicle-launch-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, autoware-raw-vehicle-cmd-converter, ros-humble-robot-state-publisher, ros-humble-xacro
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-raw-vehicle-cmd-converter, ros-humble-robot-state-publisher, ros-humble-xacro
 Description: The tier4_vehicle_launch package

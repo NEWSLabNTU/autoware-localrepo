@@ -1,4 +1,4 @@
-Source: ros-humble-eagleye-coordinate
+Source: ros-humble-eagleye-coordinate-1-5-0
 Section: misc
 Priority: optional
 Maintainer: osamu.sekino <osamu.sekino@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, libgeographic-dev, ros-humb
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-eagleye-coordinate
+Package: ros-humble-eagleye-coordinate-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, libgeographic-dev, ros-humble-geodesy, ros-humble-geographic-info, ros-humble-geographic-msgs, ros-humble-rclcpp
 Description: The coordinate package

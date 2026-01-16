@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-gnss-poser
+Source: ros-humble-autoware-gnss-poser-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Xingang Liu <lxg19892021@gmail.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, libgeographic-dev, ros-humbl
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-gnss-poser
+Package: ros-humble-autoware-gnss-poser-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libgeographic-dev, ros-humble-autoware-geography-utils, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-map-msgs, ros-humble-autoware-sensing-msgs, ros-humble-geographic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
 Description: The ROS 2 autoware_gnss_poser package

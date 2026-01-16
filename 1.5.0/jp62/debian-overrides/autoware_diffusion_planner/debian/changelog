@@ -1,4 +1,4 @@
-ros-humble-autoware-diffusion-planner (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-diffusion-planner-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix(diffusion_planner): fix poses in postprocess (#11618 <https://github.com/autowarefoundation/autoware_universe/issues/11618>)
@@ -224,13 +224,13 @@ ros-humble-autoware-diffusion-planner (0.48.0-0jammy) jammy; urgency=high
 
  -- Daniel Sanchez <daniel.sanchez@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-diffusion-planner (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-diffusion-planner-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Daniel Sanchez <daniel.sanchez@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-diffusion-planner (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-diffusion-planner-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * refactor(diffusion_planner): remove unused code (#11137 <https://github.com/autowarefoundation/autoware_universe/issues/11137>)
     Removed unused code

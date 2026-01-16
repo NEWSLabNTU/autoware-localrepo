@@ -1,4 +1,4 @@
-ros-humble-cuda-blackboard (0.1.0-0jammy) jammy; urgency=high
+ros-humble-cuda-blackboard-1-5-0 (0.1.0-0jammy) jammy; urgency=high
 
   * Initial release
   * Contributors: Kenzo Lobos-Tsunekawa

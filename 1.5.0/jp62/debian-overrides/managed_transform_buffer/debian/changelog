@@ -1,4 +1,4 @@
-ros-humble-managed-transform-buffer (0.1.0-0jammy) jammy; urgency=high
+ros-humble-managed-transform-buffer-1-5-0 (0.1.0-0jammy) jammy; urgency=high
 
   * fix: simplified get transform handling  (#18 <https://github.com/autowarefoundation/ManagedTransformBuffer/issues/18>)
     * fix: sync for get_transfrom function redefinition

@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-msgs
+Source: ros-humble-autoware-msgs-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Mete Fatih Cırıt <mfc@autoware.org>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-msgs
+Package: ros-humble-autoware-msgs-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-common-msgs, ros-humble-autoware-control-msgs, ros-humble-autoware-localization-msgs, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-sensing-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-v2x-msgs, ros-humble-autoware-vehicle-msgs
 Description: Meta package for the autoware_msgs packages

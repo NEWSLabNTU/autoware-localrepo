@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-core-localization
+Source: ros-humble-autoware-core-localization-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-core-localization
+Package: ros-humble-autoware-core-localization-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-downsample-filters, ros-humble-autoware-ekf-localizer, ros-humble-autoware-ndt-scan-matcher, ros-humble-autoware-pose-initializer, ros-humble-autoware-stop-filter, ros-humble-autoware-twist2accel
 Description: The autoware_core_localization package

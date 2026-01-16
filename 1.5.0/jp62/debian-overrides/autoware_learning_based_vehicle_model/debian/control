@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-learning-based-vehicle-model
+Source: ros-humble-autoware-learning-based-vehicle-model-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Maxime Clement <maxime.clement@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), python3-dev, ros-humble-ament-cmake-auto, 
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-learning-based-vehicle-model
+Package: ros-humble-autoware-learning-based-vehicle-model-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, python3-dev, ros-humble-pybind11-vendor
 Description: autoware_learning_based_vehicle_model for simple_planning_simulator

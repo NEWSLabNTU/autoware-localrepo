@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-pose-instability-detector
+Source: ros-humble-autoware-pose-instability-detector-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yamato Ando <yamato.ando@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-pose-instability-detector
+Package: ros-humble-autoware-pose-instability-detector-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-utils-geometry, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-geometry-msgs
 Description: The autoware_pose_instability_detector package

@@ -1,4 +1,4 @@
-ros-humble-sample-sensor-kit-description (0.48.0-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into release-humble-0.48.0
   * fix: add missing exec_depends for sensor description (#1699 <https://github.com/autowarefoundation/autoware_launch/issues/1699>)
@@ -10,62 +10,61 @@ ros-humble-sample-sensor-kit-description (0.48.0-0jammy) jammy; urgency=high
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.47.0-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
 
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.46.0-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
 
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.45.3-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.45.3-0jammy) jammy; urgency=high
 
 
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Wed, 16 Jul 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.45.2-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.45.2-0jammy) jammy; urgency=high
 
 
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Fri, 27 Jun 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.45.1-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.45.1-0jammy) jammy; urgency=high
 
-[1m[34m==>[0m In place processing templates in 'debian' folder.[0m[0m
 
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Thu, 26 Jun 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.45.0-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
 
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.44.3-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.44.3-0jammy) jammy; urgency=high
 
 
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.44.2-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Thu, 29 May 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.44.1-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Sun, 11 May 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.44.0-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * Merge commit 'bdbc8e8' into bump-up-version-to-0.44.0
   * chore: bump version to 0.44.0 (#1411 <https://github.com/autowarefoundation/autoware_launch/issues/1411>)
@@ -73,7 +72,7 @@ ros-humble-sample-sensor-kit-description (0.44.0-0jammy) jammy; urgency=high
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.43.1-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.43.1-0jammy) jammy; urgency=high
 
   * chore: set all versions to 0.43.0 (#1384 <https://github.com/autowarefoundation/autoware_launch/issues/1384>)
   * feat(*_launch): move here (#1369 <https://github.com/autowarefoundation/autoware_launch/issues/1369>)
@@ -81,25 +80,25 @@ ros-humble-sample-sensor-kit-description (0.43.1-0jammy) jammy; urgency=high
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Mon, 31 Mar 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.43.0-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
 
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Tue, 11 Feb 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.41.0-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
 
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Tue, 11 Feb 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.40.0-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
 
 
  -- Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>  Thu, 16 Jan 2025 16:00:00 -0000
 
-ros-humble-sample-sensor-kit-description (0.39.0-0jammy) jammy; urgency=high
+ros-humble-sample-sensor-kit-description-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * chore: update maintainer (#60 <https://github.com/autowarefoundation/sample_sensor_kit_launch/issues/60>)
   * fix: suppress xacro warning (#51 <https://github.com/autowarefoundation/sample_sensor_kit_launch/issues/51>)

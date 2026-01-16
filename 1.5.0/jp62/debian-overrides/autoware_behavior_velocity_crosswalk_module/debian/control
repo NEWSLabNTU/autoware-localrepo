@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-behavior-velocity-crosswalk-module
+Source: ros-humble-autoware-behavior-velocity-crosswalk-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Satoshi Ota <satoshi.ota@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, libeigen3-dev, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-behavior-velocity-crosswalk-module
+Package: ros-humble-autoware-behavior-velocity-crosswalk-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, libeigen3-dev, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-behavior-velocity-rtc-interface, ros-humble-autoware-grid-map-utils, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-interpolation, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-signal-processing, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-grid-map-core, ros-humble-grid-map-ros, ros-humble-nav-msgs, ros-humble-pcl-conversions, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-sensor-msgs, ros-humble-visualization-msgs
 Description: The autoware_behavior_velocity_crosswalk_module package

@@ -1,16 +1,16 @@
-ros-humble-autoware-mission-details-overlay-rviz-plugin (0.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-mission-details-overlay-rviz-plugin-1-5-0 (0.3.0-0jammy) jammy; urgency=high
 
 
 
  -- Ahmed Ebrahim <ahmed.ebrahim@leodrive.ai>  Sat, 15 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-mission-details-overlay-rviz-plugin (0.2.0-0jammy) jammy; urgency=high
+ros-humble-autoware-mission-details-overlay-rviz-plugin-1-5-0 (0.2.0-0jammy) jammy; urgency=high
 
 
 
  -- Ahmed Ebrahim <ahmed.ebrahim@leodrive.ai>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-mission-details-overlay-rviz-plugin (0.1.0-0jammy) jammy; urgency=high
+ros-humble-autoware-mission-details-overlay-rviz-plugin-1-5-0 (0.1.0-0jammy) jammy; urgency=high
 
   * feat: port autoware_overlay_rviz_plugin from Autoware Universe (#7 <https://github.com/autowarefoundation/autoware_rviz_plugins/issues/7>)
     Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>

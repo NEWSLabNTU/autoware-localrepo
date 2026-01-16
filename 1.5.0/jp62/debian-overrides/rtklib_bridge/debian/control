@@ -1,4 +1,4 @@
-Source: ros-humble-rtklib-bridge
+Source: ros-humble-rtklib-bridge-1-5-0
 Section: misc
 Priority: optional
 Maintainer: megken <megken@todo.todo>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-rtklib-bridge
+Package: ros-humble-rtklib-bridge-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-common-interfaces, ros-humble-rclcpp, ros-humble-rtklib-msgs, ros-humble-sensor-msgs, ros-humble-std-msgs
 Description: The rtklib_bridge package

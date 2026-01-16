@@ -1,4 +1,4 @@
-ros-humble-autoware-pipeline-latency-monitor (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pipeline-latency-monitor-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix(pipeline_latency_monitor): change diagnostic status from WARN to ERROR for latency threshold exceedance (#11562 <https://github.com/autowarefoundation/autoware_universe/issues/11562>)
@@ -7,13 +7,13 @@ ros-humble-autoware-pipeline-latency-monitor (0.48.0-0jammy) jammy; urgency=high
 
  -- Kyoichi Sugahara <kyoichi.sugahara@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-pipeline-latency-monitor (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-pipeline-latency-monitor-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Kyoichi Sugahara <kyoichi.sugahara@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-pipeline-latency-monitor (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pipeline-latency-monitor-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat(autoware_pipeline_latency_monitor): add autoware_pipeline_latency_monitor package (#10798 <https://github.com/autowarefoundation/autoware_universe/issues/10798>)
     * feat(sensor_to_control_latency_checker): add node to monitor sensor data latency and publish diagnostics

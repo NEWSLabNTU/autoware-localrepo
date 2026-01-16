@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-fault-injection
+Source: ros-humble-autoware-fault-injection-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Keisuke Shima <keisuke.shima@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-fault-injection
+Package: ros-humble-autoware-fault-injection-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-diagnostic-aggregator, ros-humble-diagnostic-msgs, ros-humble-diagnostic-updater, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-simulation-msgs
 Description: The fault_injection package

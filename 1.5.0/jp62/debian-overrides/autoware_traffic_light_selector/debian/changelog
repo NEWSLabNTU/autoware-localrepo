@@ -1,28 +1,28 @@
-ros-humble-autoware-traffic-light-selector (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-traffic-light-selector-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
 
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-traffic-light-selector (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-traffic-light-selector-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-traffic-light-selector (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-traffic-light-selector-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
 
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-traffic-light-selector (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-traffic-light-selector-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
 
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-traffic-light-selector (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-traffic-light-selector-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * chore: update traffic light packages code owner (#10644 <https://github.com/autowarefoundation/autoware_universe/issues/10644>)
@@ -56,25 +56,25 @@ ros-humble-autoware-traffic-light-selector (0.45.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-traffic-light-selector (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-traffic-light-selector-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-traffic-light-selector (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-traffic-light-selector-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-traffic-light-selector (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-traffic-light-selector-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
 
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-traffic-light-selector (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-traffic-light-selector-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
@@ -82,7 +82,7 @@ ros-humble-autoware-traffic-light-selector (0.43.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-traffic-light-selector (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-traffic-light-selector-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * fix: fix version
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base

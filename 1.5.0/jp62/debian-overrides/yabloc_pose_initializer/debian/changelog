@@ -1,4 +1,4 @@
-ros-humble-yabloc-pose-initializer (0.48.0-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(autoware_lanelet2_extension): remove redundant autoware_lanelet2_extension depend from packages (#11492 <https://github.com/autowarefoundation/autoware_universe/issues/11492>)
@@ -16,25 +16,25 @@ ros-humble-yabloc-pose-initializer (0.48.0-0jammy) jammy; urgency=high
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.47.1-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.47.0-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
 
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.46.0-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
 
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.45.0-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * feat(localization): replace tier4_localization_msgs used by ndt_align_srv with autoware_internal_localization_msgs (#10567 <https://github.com/autowarefoundation/autoware_universe/issues/10567>)
@@ -43,25 +43,25 @@ ros-humble-yabloc-pose-initializer (0.45.0-0jammy) jammy; urgency=high
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.44.2-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.44.1-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.44.0-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
 
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.43.0-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
@@ -69,32 +69,32 @@ ros-humble-yabloc-pose-initializer (0.43.0-0jammy) jammy; urgency=high
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.42.0-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
 
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.41.2-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.41.2-0jammy) jammy; urgency=high
 
   * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.41.1-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.41.1-0jammy) jammy; urgency=high
 
 
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.41.0-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
 
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.40.0-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * Merge branch 'main' into release-0.40.0
   * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
@@ -123,7 +123,7 @@ ros-humble-yabloc-pose-initializer (0.40.0-0jammy) jammy; urgency=high
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.39.0-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
@@ -137,7 +137,7 @@ ros-humble-yabloc-pose-initializer (0.39.0-0jammy) jammy; urgency=high
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.38.0-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.38.0-0jammy) jammy; urgency=high
 
   * unify package.xml version to 0.37.0
   * feat(pose_initializer, ndt_scan_matcher): check initial pose result and publish diag (#8275 <https://github.com/autowarefoundation/autoware_universe/issues/8275>)
@@ -181,7 +181,7 @@ ros-humble-yabloc-pose-initializer (0.38.0-0jammy) jammy; urgency=high
 
  -- Kento Yabuuchi <kento.yabuuchi.2@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-yabloc-pose-initializer (0.26.0-0jammy) jammy; urgency=high
+ros-humble-yabloc-pose-initializer-1-5-0 (0.26.0-0jammy) jammy; urgency=high
 
   * build(yabloc_pose_initializer): fix dependencies (#6190 <https://github.com/autowarefoundation/autoware_universe/issues/6190>)
   * chore(yabloc): rework parameters (#6170 <https://github.com/autowarefoundation/autoware_universe/issues/6170>)

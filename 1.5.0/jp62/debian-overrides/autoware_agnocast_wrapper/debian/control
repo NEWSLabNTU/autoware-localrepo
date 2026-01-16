@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-agnocast-wrapper
+Source: ros-humble-autoware-agnocast-wrapper-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takahiro Ishikawa-Aso <sykwer@gmail.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-agnocastlib, ros-humble-ament-c
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-agnocast-wrapper
+Package: ros-humble-autoware-agnocast-wrapper-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, 
 Description: Wrapper macros for Agnocast (true zero-copy communication library)

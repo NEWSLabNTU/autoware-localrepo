@@ -1,4 +1,4 @@
-Source: ros-humble-tier4-map-launch
+Source: ros-humble-tier4-map-launch-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yamato Ando <yamato.ando@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-tier4-map-launch
+Package: ros-humble-tier4-map-launch-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, autoware-map-tf-generator, ros-humble-autoware-map-loader, ros-humble-autoware-map-projection-loader
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-map-loader, ros-humble-autoware-map-projection-loader, ros-humble-autoware-map-tf-generator
 Description: The tier4_map_launch package

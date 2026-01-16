@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-core-map
+Source: ros-humble-autoware-core-map-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-core-map
+Package: ros-humble-autoware-core-map-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-lanelet2-map-visualizer, ros-humble-autoware-map-loader, ros-humble-autoware-map-projection-loader
 Description: The autoware_core_map package

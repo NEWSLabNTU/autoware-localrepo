@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-signal-processing
+Source: ros-humble-autoware-signal-processing-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takayuki Murooka <takayuki.murooka@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, ros-humble-ament-cmake-auto,
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-signal-processing
+Package: ros-humble-autoware-signal-processing-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, ros-humble-geometry-msgs, ros-humble-rclcpp
 Description: The signal processing package

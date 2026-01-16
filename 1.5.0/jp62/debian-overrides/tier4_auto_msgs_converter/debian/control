@@ -1,4 +1,4 @@
-Source: ros-humble-tier4-auto-msgs-converter
+Source: ros-humble-tier4-auto-msgs-converter-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-tier4-auto-msgs-converter
+Package: ros-humble-tier4-auto-msgs-converter-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-system-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-tier4-perception-msgs, ros-humble-tier4-planning-msgs, ros-humble-tier4-system-msgs, ros-humble-tier4-vehicle-msgs
 Description: The tier4_auto_msgs_converter package

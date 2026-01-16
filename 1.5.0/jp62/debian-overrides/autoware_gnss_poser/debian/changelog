@@ -1,4 +1,4 @@
-ros-humble-autoware-gnss-poser (1.5.0-0jammy) jammy; urgency=high
+ros-humble-autoware-gnss-poser-1-5-0 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)
@@ -21,14 +21,14 @@ ros-humble-autoware-gnss-poser (1.5.0-0jammy) jammy; urgency=high
 
  -- Xingang Liu <lxg19892021@gmail.com>  Sat, 15 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-gnss-poser (1.4.0-0jammy) jammy; urgency=high
+ros-humble-autoware-gnss-poser-1-5-0 (1.4.0-0jammy) jammy; urgency=high
 
   * chore: bump version to 1.3.0 (#554 <https://github.com/autowarefoundation/autoware_core/issues/554>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Xingang Liu <lxg19892021@gmail.com>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-gnss-poser (1.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-gnss-poser-1-5-0 (1.3.0-0jammy) jammy; urgency=high
 
   * fix: to be consistent version in all package.xml(s)
   * chore: no longer support ROS 2 Galactic (#492 <https://github.com/autowarefoundation/autoware_core/issues/492>)
@@ -46,13 +46,13 @@ ros-humble-autoware-gnss-poser (1.3.0-0jammy) jammy; urgency=high
 
  -- Xingang Liu <lxg19892021@gmail.com>  Sun, 22 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-gnss-poser (1.1.0-0jammy) jammy; urgency=high
+ros-humble-autoware-gnss-poser-1-5-0 (1.1.0-0jammy) jammy; urgency=high
 
 
 
  -- Xingang Liu <lxg19892021@gmail.com>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-gnss-poser (1.0.0-0jammy) jammy; urgency=high
+ros-humble-autoware-gnss-poser-1-5-0 (1.0.0-0jammy) jammy; urgency=high
 
   * fix(autoware_gnss_poser): depend on geographiclib through its Find module (#313 <https://github.com/autowarefoundation/autoware_core/issues/313>)
     fix: depend on geographiclib through it's provided Find module
@@ -60,7 +60,7 @@ ros-humble-autoware-gnss-poser (1.0.0-0jammy) jammy; urgency=high
 
  -- Xingang Liu <lxg19892021@gmail.com>  Sun, 30 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-gnss-poser (0.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-gnss-poser-1-5-0 (0.3.0-0jammy) jammy; urgency=high
 
   * chore: fix versions in package.xml
   * feat(autoware_gnss_poser): porting from universe to core (#166 <https://github.com/autowarefoundation/autoware.core/issues/166>)

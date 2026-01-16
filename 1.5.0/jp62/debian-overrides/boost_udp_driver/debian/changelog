@@ -1,11 +1,11 @@
-ros-humble-boost-udp-driver (1.2.0-0jammy) jammy; urgency=high
+ros-humble-boost-udp-driver-1-5-0 (1.2.0-0jammy) jammy; urgency=high
 
   * Fix linter errors.
   * Contributors: WhitleySoftwareServices
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Sat, 19 Mar 2022 16:00:00 -0000
 
-ros-humble-boost-udp-driver (1.1.0-0jammy) jammy; urgency=high
+ros-humble-boost-udp-driver-1-5-0 (1.1.0-0jammy) jammy; urgency=high
 
   * Add missing header.
   * Add new constructors and members to bind host endpoint (#65 <https://github.com/ros-drivers/transport_drivers/issues/65>)
@@ -22,7 +22,7 @@ ros-humble-boost-udp-driver (1.1.0-0jammy) jammy; urgency=high
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Sat, 19 Mar 2022 16:00:00 -0000
 
-ros-humble-boost-udp-driver (1.0.1-0jammy) jammy; urgency=high
+ros-humble-boost-udp-driver-1-5-0 (1.0.1-0jammy) jammy; urgency=high
 
   * Remove deprecated api from galactic (#57 <https://github.com/ros-drivers/transport_drivers/issues/57>)
   * update READMEs for each package (#54 <https://github.com/ros-drivers/transport_drivers/issues/54>)
@@ -158,7 +158,7 @@ ros-humble-boost-udp-driver (1.0.1-0jammy) jammy; urgency=high
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Sun, 29 Aug 2021 16:00:00 -0000
 
-ros-humble-boost-udp-driver (0.0.6-0jammy) jammy; urgency=high
+ros-humble-boost-udp-driver-1-5-0 (0.0.6-0jammy) jammy; urgency=high
 
   * Uncrustify fixes.
   * Remove lifecycle references (#19 <https://github.com/ros-drivers/transport_drivers/issues/19>)
@@ -167,7 +167,7 @@ ros-humble-boost-udp-driver (0.0.6-0jammy) jammy; urgency=high
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Wed, 26 Aug 2020 16:00:00 -0000
 
-ros-humble-boost-udp-driver (0.0.5-0jammy) jammy; urgency=high
+ros-humble-boost-udp-driver-1-5-0 (0.0.5-0jammy) jammy; urgency=high
 
   * Be specific about which parts of Boost are necessary (#10 <https://github.com/ros-drivers/transport_drivers/issues/10>)
     * serial: be specific about Boost dependency.
@@ -177,7 +177,7 @@ ros-humble-boost-udp-driver (0.0.5-0jammy) jammy; urgency=high
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Wed, 15 Jul 2020 16:00:00 -0000
 
-ros-humble-boost-udp-driver (0.0.4-0jammy) jammy; urgency=high
+ros-humble-boost-udp-driver-1-5-0 (0.0.4-0jammy) jammy; urgency=high
 
   * Added UdpConfig class to encapsulate configuration options
   * Removed workaround for ROS 2 Dashing PR2
@@ -185,7 +185,7 @@ ros-humble-boost-udp-driver (0.0.4-0jammy) jammy; urgency=high
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Wed, 11 Dec 2019 16:00:00 -0000
 
-ros-humble-boost-udp-driver (0.0.3-0jammy) jammy; urgency=high
+ros-humble-boost-udp-driver-1-5-0 (0.0.3-0jammy) jammy; urgency=high
 
   * Merge pull request #2 <https://github.com/ros-drivers/transport_drivers/issues/2> from esteve/fix-dependencies
     Added ament_lint_auto dependency
@@ -194,7 +194,7 @@ ros-humble-boost-udp-driver (0.0.3-0jammy) jammy; urgency=high
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Tue, 20 Aug 2019 16:00:00 -0000
 
-ros-humble-boost-udp-driver (0.0.2-0jammy) jammy; urgency=high
+ros-humble-boost-udp-driver-1-5-0 (0.0.2-0jammy) jammy; urgency=high
 
   * Bump version
   * Initial checkin

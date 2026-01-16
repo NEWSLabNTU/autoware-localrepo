@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-motion-velocity-boundary-departure-prevention-module
+Source: ros-humble-autoware-motion-velocity-boundary-departure-prevention-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libfmt-dev, librange-v3-dev, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-motion-velocity-boundary-departure-prevention-module
+Package: ros-humble-autoware-motion-velocity-boundary-departure-prevention-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, librange-v3-dev, ros-humble-autoware-boundary-departure-checker, ros-humble-autoware-motion-utils, ros-humble-autoware-motion-velocity-planner-common, ros-humble-autoware-trajectory, ros-humble-autoware-utils, ros-humble-autoware-utils-rclcpp, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-visualization-msgs
 Description: boundary departure prevention feature in motion_velocity_planner

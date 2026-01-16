@@ -1,4 +1,4 @@
-ros-humble-autoware-pointcloud-preprocessor (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix: tf2 uses hpp headers in rolling (and is backported) (#11620 <https://github.com/autowarefoundation/autoware_universe/issues/11620>)
@@ -90,13 +90,13 @@ ros-humble-autoware-pointcloud-preprocessor (0.48.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * refactor(pointcloud_preprocessor): extract downsample logic from pickup_based_voxel_downsample_filter (#11098 <https://github.com/autowarefoundation/autoware_universe/issues/11098>)
     * feat(pointcloud_preprocessor): add voxel size struct and downsampling function to pickup based filter
@@ -167,7 +167,7 @@ ros-humble-autoware-pointcloud-preprocessor (0.47.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * refactor(blockage_diag): split up filter function, add doc comments (#10708 <https://github.com/autowarefoundation/autoware_universe/issues/10708>)
@@ -242,7 +242,7 @@ ros-humble-autoware-pointcloud-preprocessor (0.46.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * fix(autoware_pointcloud_preprocessor): combine_cloud_handler always set XYZIRC (#10617 <https://github.com/autowarefoundation/autoware_universe/issues/10617>)
@@ -275,19 +275,19 @@ ros-humble-autoware-pointcloud-preprocessor (0.45.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * perf(autoware_pointcloud_preprocessor): introduce managed transform buffer with implicitly defined listener type (#9197 <https://github.com/autowarefoundation/autoware_universe/issues/9197>)
@@ -319,7 +319,7 @@ ros-humble-autoware-pointcloud-preprocessor (0.44.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * feat(autoware_pointcloud_preprocessor): add missing vehicle msg depency (#10313 <https://github.com/autowarefoundation/autoware_universe/issues/10313>)
@@ -332,7 +332,7 @@ ros-humble-autoware-pointcloud-preprocessor (0.43.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * fix(autoware_pointcloud_preprocessor): fix potential double unlock in concatenate node (#10082 <https://github.com/autowarefoundation/autoware_universe/issues/10082>)
@@ -393,20 +393,20 @@ ros-humble-autoware-pointcloud-preprocessor (0.42.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Sun, 02 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.41.2-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.41.2-0jammy) jammy; urgency=high
 
   * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
   * Contributors: Ryohsuke Mitsudome
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.41.1-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.41.1-0jammy) jammy; urgency=high
 
 
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.41.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_pointcloud_preprocessor): redesign concatenate and time sync node (#8300 <https://github.com/autowarefoundation/autoware_universe/issues/8300>)
@@ -557,7 +557,7 @@ ros-humble-autoware-pointcloud-preprocessor (0.41.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * Merge branch 'main' into release-0.40.0
   * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
@@ -603,7 +603,7 @@ ros-humble-autoware-pointcloud-preprocessor (0.40.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.39.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * Merge commit '6a1ddbd08bd' into release-0.39.0
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
@@ -626,7 +626,7 @@ ros-humble-autoware-pointcloud-preprocessor (0.39.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.38.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.38.0-0jammy) jammy; urgency=high
 
   * unify package.xml version to 0.37.0
   * refactor(autoware_point_types): prefix namespace with autoware::point_types (#9169 <https://github.com/autowarefoundation/autoware_universe/issues/9169>)
@@ -931,7 +931,7 @@ ros-humble-autoware-pointcloud-preprocessor (0.38.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-pointcloud-preprocessor (0.26.0-0jammy) jammy; urgency=high
+ros-humble-autoware-pointcloud-preprocessor-1-5-0 (0.26.0-0jammy) jammy; urgency=high
 
 
 

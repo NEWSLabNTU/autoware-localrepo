@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-osqp-interface
+Source: ros-humble-autoware-osqp-interface-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Maxime CLEMENT <maxime.clement@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, libeigen3-dev <!nocheck>, r
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-osqp-interface
+Package: ros-humble-autoware-osqp-interface-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-osqp-vendor, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: Interface for the OSQP solver

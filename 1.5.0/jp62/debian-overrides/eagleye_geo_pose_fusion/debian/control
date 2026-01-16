@@ -1,4 +1,4 @@
-Source: ros-humble-eagleye-geo-pose-fusion
+Source: ros-humble-eagleye-geo-pose-fusion-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Ryohei Sasaki <ryohei.sasaki@map4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-eagleye-geo-pose-fusion
+Package: ros-humble-eagleye-geo-pose-fusion-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-eagleye-msgs, ros-humble-geographic-msgs, ros-humble-rclcpp, ros-humble-tf2-geometry-msgs
 Description: geo_pose_fusion package

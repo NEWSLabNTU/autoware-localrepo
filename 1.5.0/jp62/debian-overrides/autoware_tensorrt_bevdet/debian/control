@@ -1,12 +1,12 @@
-Source: ros-humble-autoware-tensorrt-bevdet
+Source: ros-humble-autoware-tensorrt-bevdet-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Cynthia <cynthia.liu@autocore.ai>
-Build-Depends: debhelper (>= 12.0.0), bevdet-vendor, libopencv-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2-geometry-msgs, ros-humble-visualization-msgs
+Build-Depends: debhelper (>= 12.0.0), libopencv-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-bevdet-vendor, ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2-geometry-msgs, ros-humble-visualization-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-tensorrt-bevdet
+Package: ros-humble-autoware-tensorrt-bevdet-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, bevdet-vendor, libopencv-dev, ros-humble-autoware-perception-msgs, ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2-geometry-msgs, ros-humble-visualization-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, libopencv-dev, ros-humble-autoware-perception-msgs, ros-humble-bevdet-vendor, ros-humble-cv-bridge, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2-geometry-msgs, ros-humble-visualization-msgs
 Description: This package is ported version toward Autoware from bevdet_vendor

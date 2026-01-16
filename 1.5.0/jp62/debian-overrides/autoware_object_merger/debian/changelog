@@ -1,4 +1,4 @@
-ros-humble-autoware-object-merger (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix: tf2 uses hpp headers in rolling (and is backported) (#11620 <https://github.com/autowarefoundation/autoware_universe/issues/11620>)
@@ -11,13 +11,13 @@ ros-humble-autoware-object-merger (0.48.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * fix(autoware_object_merger): add merger priority_mode (#11042 <https://github.com/autowarefoundation/autoware_universe/issues/11042>)
     * fix: add merger priority_mode
@@ -33,13 +33,13 @@ ros-humble-autoware-object-merger (0.47.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
 
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * chore: perception code owner update (#10645 <https://github.com/autowarefoundation/autoware_universe/issues/10645>)
@@ -53,19 +53,19 @@ ros-humble-autoware-object-merger (0.45.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(object_merger): add diagnostics warning for timeout when merging (#10283 <https://github.com/autowarefoundation/autoware_universe/issues/10283>)
@@ -94,7 +94,7 @@ ros-humble-autoware-object-merger (0.44.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
@@ -102,7 +102,7 @@ ros-humble-autoware-object-merger (0.43.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_utils): replace autoware_universe_utils with autoware_utils  (#10191 <https://github.com/autowarefoundation/autoware_universe/issues/10191>)
@@ -110,20 +110,20 @@ ros-humble-autoware-object-merger (0.42.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.41.2-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.41.2-0jammy) jammy; urgency=high
 
   * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.41.1-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.41.1-0jammy) jammy; urgency=high
 
 
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.41.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_object_merger): tier4_debug_msgs changed to autoware_internal_debug_msgs in fil… (#9893 <https://github.com/autowarefoundation/autoware_universe/issues/9893>)
@@ -151,7 +151,7 @@ ros-humble-autoware-object-merger (0.41.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * Merge branch 'main' into release-0.40.0
   * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
@@ -179,7 +179,7 @@ ros-humble-autoware-object-merger (0.40.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.39.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
@@ -193,7 +193,7 @@ ros-humble-autoware-object-merger (0.39.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.38.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.38.0-0jammy) jammy; urgency=high
 
   * unify package.xml version to 0.37.0
   * refactor(object_recognition_utils): add autoware prefix to object_recognition_utils (#8946 <https://github.com/autowarefoundation/autoware_universe/issues/8946>)
@@ -215,7 +215,7 @@ ros-humble-autoware-object-merger (0.38.0-0jammy) jammy; urgency=high
 
  -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-object-merger (0.26.0-0jammy) jammy; urgency=high
+ros-humble-autoware-object-merger-1-5-0 (0.26.0-0jammy) jammy; urgency=high
 
 
 

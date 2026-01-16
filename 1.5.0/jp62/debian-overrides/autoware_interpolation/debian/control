@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-interpolation
+Source: ros-humble-autoware-interpolation-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Fumiya Watanabe <fumiya.watanabe@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-interpolation
+Package: ros-humble-autoware-interpolation-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-utils-geometry, ros-humble-geometry-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs
 Description: The spline interpolation package

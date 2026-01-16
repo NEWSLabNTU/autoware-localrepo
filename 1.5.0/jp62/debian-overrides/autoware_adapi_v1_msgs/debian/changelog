@@ -1,4 +1,4 @@
-ros-humble-autoware-adapi-v1-msgs (1.9.1-0jammy) jammy; urgency=high
+ros-humble-autoware-adapi-v1-msgs-1-5-0 (1.9.1-0jammy) jammy; urgency=high
 
   * feat(autoware_adapi_v1_msgs): add ROUNDABOUT support (#102 <https://github.com/autowarefoundation/autoware_adapi_msgs/issues/102>)
     feat(autoware_adapi_v1_msgs): add ROUNDABOUT constant to PlanningBehavior message
@@ -6,7 +6,7 @@ ros-humble-autoware-adapi-v1-msgs (1.9.1-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 13 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-adapi-v1-msgs (1.9.0-0jammy) jammy; urgency=high
+ros-humble-autoware-adapi-v1-msgs-1-5-0 (1.9.0-0jammy) jammy; urgency=high
 
   * feat(autoware_adapi_v1_msgs): add parent field to diag leaf message (#97 <https://github.com/autowarefoundation/autoware_adapi_msgs/issues/97>)
   * fix(autoware_adapi_v1_msgs): fix description response (#96 <https://github.com/autowarefoundation/autoware_adapi_msgs/issues/96>)
@@ -23,7 +23,7 @@ ros-humble-autoware-adapi-v1-msgs (1.9.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 18 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-adapi-v1-msgs (1.7.0-0jammy) jammy; urgency=high
+ros-humble-autoware-adapi-v1-msgs-1-5-0 (1.7.0-0jammy) jammy; urgency=high
 
   * feat: drop route following check option (#71 <https://github.com/autowarefoundation/autoware_adapi_msgs/issues/71>)
   * fix(autoware_adapi_msgs): fix links to issues in CHANGELOG.rst files (#72 <https://github.com/autowarefoundation/autoware_adapi_msgs/issues/72>)
@@ -35,7 +35,7 @@ ros-humble-autoware-adapi-v1-msgs (1.7.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 17 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-adapi-v1-msgs (1.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-adapi-v1-msgs-1-5-0 (1.3.0-0jammy) jammy; urgency=high
 
   * feat(autoware_adapi_v1_msgs): remove energy status (#58 <https://github.com/youtalk/autoware_adapi_msgs/issues/58>)
   * feat(autoware_adapi_v1_msgs): add diagnostics (#54 <https://github.com/youtalk/autoware_adapi_msgs/issues/54>)
@@ -43,7 +43,7 @@ ros-humble-autoware-adapi-v1-msgs (1.3.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Tue, 02 Jul 2024 16:00:00 -0000
 
-ros-humble-autoware-adapi-v1-msgs (1.2.1-0jammy) jammy; urgency=high
+ros-humble-autoware-adapi-v1-msgs-1-5-0 (1.2.1-0jammy) jammy; urgency=high
 
   * build: set package versions to the package.xml files (#55 <https://github.com/autowarefoundation/autoware_adapi_msgs/issues/55>)
     * version 1.1.0

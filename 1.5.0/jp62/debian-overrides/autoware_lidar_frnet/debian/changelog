@@ -1,4 +1,4 @@
-ros-humble-autoware-lidar-frnet (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-frnet-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(autoware_lidar_frnet): add FRNet for LiDAR semantic segmentation (#10503 <https://github.com/autowarefoundation/autoware_universe/issues/10503>)

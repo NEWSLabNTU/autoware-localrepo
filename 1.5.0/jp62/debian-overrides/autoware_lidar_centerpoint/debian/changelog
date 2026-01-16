@@ -1,16 +1,16 @@
-ros-humble-autoware-lidar-centerpoint (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat(autoware_lidar_centerpoint): add class-wise confidence thresholds to CenterPoint (#10881 <https://github.com/autowarefoundation/autoware_universe/issues/10881>)
     * Add PreprocessCuda to CenterPoint
@@ -88,7 +88,7 @@ ros-humble-autoware-lidar-centerpoint (0.47.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * chore(perception): delete maintainer name (#10816 <https://github.com/autowarefoundation/autoware_universe/issues/10816>)
@@ -121,7 +121,7 @@ ros-humble-autoware-lidar-centerpoint (0.46.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * chore: perception code owner update (#10645 <https://github.com/autowarefoundation/autoware_universe/issues/10645>)
@@ -143,19 +143,19 @@ ros-humble-autoware-lidar-centerpoint (0.45.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(lidar_centerpoint): add diagnostics for processing time (#10284 <https://github.com/autowarefoundation/autoware_universe/issues/10284>)
@@ -217,7 +217,7 @@ ros-humble-autoware-lidar-centerpoint (0.44.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
@@ -226,7 +226,7 @@ ros-humble-autoware-lidar-centerpoint (0.43.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_utils): replace autoware_universe_utils with autoware_utils  (#10191 <https://github.com/autowarefoundation/autoware_universe/issues/10191>)
@@ -235,20 +235,20 @@ ros-humble-autoware-lidar-centerpoint (0.42.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Sun, 02 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.41.2-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.41.2-0jammy) jammy; urgency=high
 
   * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.41.1-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.41.1-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.41.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * refactor(autoware_tensorrt_common): multi-TensorRT compatibility & tensorrt_common as unified lib for all perception components (#9762 <https://github.com/autowarefoundation/autoware_universe/issues/9762>)
@@ -291,7 +291,7 @@ ros-humble-autoware-lidar-centerpoint (0.41.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * Merge branch 'main' into release-0.40.0
   * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
@@ -339,7 +339,7 @@ ros-humble-autoware-lidar-centerpoint (0.40.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.39.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
@@ -353,7 +353,7 @@ ros-humble-autoware-lidar-centerpoint (0.39.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.38.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.38.0-0jammy) jammy; urgency=high
 
   * unify package.xml version to 0.37.0
   * refactor(tensorrt_common)!: fix namespace, directory structure & move to perception namespace (#9099 <https://github.com/autowarefoundation/autoware_universe/issues/9099>)
@@ -425,7 +425,7 @@ ros-humble-autoware-lidar-centerpoint (0.38.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-lidar-centerpoint (0.26.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lidar-centerpoint-1-5-0 (0.26.0-0jammy) jammy; urgency=high
 
 
 

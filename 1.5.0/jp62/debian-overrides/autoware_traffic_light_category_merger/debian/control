@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-traffic-light-category-merger
+Source: ros-humble-autoware-traffic-light-category-merger-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yoshi Ri <yoshi.ri@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-au
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-traffic-light-category-merger
+Package: ros-humble-autoware-traffic-light-category-merger-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-test-utils, ros-humble-autoware-utils, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-perception-msgs
 Description: The ROS 2 autoware_traffic_light_category_merger package

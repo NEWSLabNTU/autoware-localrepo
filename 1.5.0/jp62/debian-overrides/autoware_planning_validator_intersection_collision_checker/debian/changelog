@@ -1,4 +1,4 @@
-ros-humble-autoware-planning-validator-intersection-collision-checker (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-planning-validator-intersection-collision-checker-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(autoware_lanelet2_utils): replace ported functions from autoware_lanelet2_extension (#11593 <https://github.com/autowarefoundation/autoware_universe/issues/11593>)
@@ -22,13 +22,13 @@ ros-humble-autoware-planning-validator-intersection-collision-checker (0.48.0-0j
 
  -- Satoshi Ota <satoshi.ota@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-planning-validator-intersection-collision-checker (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-planning-validator-intersection-collision-checker-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Satoshi Ota <satoshi.ota@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-planning-validator-intersection-collision-checker (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-planning-validator-intersection-collision-checker-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * refactor(planning_validator): refactor planning validator configuration and error handling (#11081 <https://github.com/autowarefoundation/autoware_universe/issues/11081>)
     * refactor trajectory check error handling
@@ -107,7 +107,7 @@ ros-humble-autoware-planning-validator-intersection-collision-checker (0.47.0-0j
 
  -- Satoshi Ota <satoshi.ota@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-planning-validator-intersection-collision-checker (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-planning-validator-intersection-collision-checker-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * feat(planning_validator): implement redundant collision prevention feature when ego makes a turn at intersection (#10750 <https://github.com/autowarefoundation/autoware_universe/issues/10750>)

@@ -1,22 +1,22 @@
-ros-humble-autoware-external-api-msgs (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-external-api-msgs-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-external-api-msgs (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-external-api-msgs-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 11 May 2025 16:00:00 -0000
 
-ros-humble-autoware-external-api-msgs (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-external-api-msgs-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 02 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-external-api-msgs (0.41.0-0jammy) jammy; urgency=high
+ros-humble-autoware-external-api-msgs-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * chore: use autoware_cmake (#71 <https://github.com/tier4/tier4_ad_api_adaptor/issues/71>)
   * feat: add external api adaptor for calibration status (#43 <https://github.com/tier4/tier4_ad_api_adaptor/issues/43>)
@@ -28,7 +28,7 @@ ros-humble-autoware-external-api-msgs (0.41.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-external-api-msgs (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-external-api-msgs-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * chore: use autoware_cmake (#71 <https://github.com/tier4/tier4_ad_api_adaptor/issues/71>)
   * feat: add external api adaptor for calibration status (#43 <https://github.com/tier4/tier4_ad_api_adaptor/issues/43>)

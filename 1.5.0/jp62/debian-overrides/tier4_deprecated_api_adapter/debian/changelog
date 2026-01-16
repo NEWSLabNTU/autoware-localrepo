@@ -1,10 +1,10 @@
-ros-humble-tier4-deprecated-api-adapter (0.46.0-0jammy) jammy; urgency=high
+ros-humble-tier4-deprecated-api-adapter-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-tier4-deprecated-api-adapter (0.43.0-0jammy) jammy; urgency=high
+ros-humble-tier4-deprecated-api-adapter-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * feat(tier4_deprecated_api_adapter): create adapter for manual control (#138 <https://github.com/tier4/tier4_ad_api_adaptor/issues/138>)
     * feat(tier4_deprecated_api_adapter): create manual control adapter

@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-tensorrt-plugins
+Source: ros-humble-autoware-tensorrt-plugins-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-tensorrt-plugins
+Package: ros-humble-autoware-tensorrt-plugins-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-tensorrt-cmake-module
 Description: The autoware_tensorrt_plugins package

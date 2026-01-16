@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-detected-object-feature-remover
+Source: ros-humble-autoware-detected-object-feature-remover-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Tomoya Kimura <tomoya.kimura@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake, ros-humble-ament-c
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-detected-object-feature-remover
+Package: ros-humble-autoware-detected-object-feature-remover-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-perception-msgs, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-perception-msgs
 Description: The autoware_detected_object_feature_remover package

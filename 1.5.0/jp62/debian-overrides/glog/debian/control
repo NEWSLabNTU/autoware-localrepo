@@ -1,4 +1,4 @@
-Source: ros-humble-glog
+Source: ros-humble-glog-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-glog
+Package: ros-humble-glog-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, 
 Description: The TIERIV glog ros vendor package

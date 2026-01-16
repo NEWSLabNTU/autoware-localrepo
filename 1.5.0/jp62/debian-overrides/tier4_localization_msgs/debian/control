@@ -1,4 +1,4 @@
-Source: ros-humble-tier4-localization-msgs
+Source: ros-humble-tier4-localization-msgs-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yamato Ando <yamato.ando@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-tier4-localization-msgs
+Package: ros-humble-tier4-localization-msgs-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-common-msgs, ros-humble-geometry-msgs, ros-humble-rosidl-default-runtime
 Description: The tier4_localization_msgs package

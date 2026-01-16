@@ -1,47 +1,47 @@
-ros-humble-autoware-lanelet2-extension-python (0.10.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.10.0-0jammy) jammy; urgency=high
 
   * feat(lanelet2_extension_python): add bindings for fromBinMsg (#80 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/80>)
   * Contributors: Maxime CLEMENT
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Tue, 04 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.9.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.9.0-0jammy) jammy; urgency=high
 
 
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Sun, 03 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.8.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.8.0-0jammy) jammy; urgency=high
 
 
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Mon, 21 Jul 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.7.2-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.7.2-0jammy) jammy; urgency=high
 
 
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Tue, 13 May 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.7.1-0jammy) jammy; urgency=high
 
 
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Thu, 24 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.7.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.7.0-0jammy) jammy; urgency=high
 
 
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Sun, 06 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.6.4-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.6.4-0jammy) jammy; urgency=high
 
 
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Thu, 03 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.6.3-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.6.3-0jammy) jammy; urgency=high
 
   * chore: sync files (#42 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/42>)
     Co-authored-by: M. Fatih Cırıt <mailto:mfc@autoware.org>
@@ -50,26 +50,26 @@ ros-humble-autoware-lanelet2-extension-python (0.6.3-0jammy) jammy; urgency=high
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Sun, 16 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.6.2-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.6.2-0jammy) jammy; urgency=high
 
   * fix(Python bindings): add missing dependency to lanelet2 (#32 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/32>)
   * Contributors: Kenji Miyake
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Wed, 20 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.6.1-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.6.1-0jammy) jammy; urgency=high
 
 
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Thu, 05 Sep 2024 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.6.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.6.0-0jammy) jammy; urgency=high
 
 
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Tue, 27 Aug 2024 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.5.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.5.0-0jammy) jammy; urgency=high
 
   * chore(ci): fix cpplint errors from pre-commit ci (#15 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/15>)
   * chore: apply pre-commit (#14 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/14>)
@@ -78,19 +78,19 @@ ros-humble-autoware-lanelet2-extension-python (0.5.0-0jammy) jammy; urgency=high
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Tue, 09 Jul 2024 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.4.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.4.0-0jammy) jammy; urgency=high
 
 
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Sun, 23 Jun 2024 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.3.0-0jammy) jammy; urgency=high
 
 
 
  -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Thu, 30 May 2024 16:00:00 -0000
 
-ros-humble-autoware-lanelet2-extension-python (0.2.0-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-extension-python-1-5-0 (0.2.0-0jammy) jammy; urgency=high
 
   * refactor: add autoware_ prefix to package names and namespaces (#3 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/3>)
     * fix readme

@@ -1,4 +1,4 @@
-ros-humble-autoware-ground-segmentation (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix: tf2 uses hpp headers in rolling (and is backported) (#11620 <https://github.com/autowarefoundation/autoware_universe/issues/11620>)
@@ -6,20 +6,20 @@ ros-humble-autoware-ground-segmentation (0.48.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat(autoware_ground_segmentation): change point follow logic (#294 <https://github.com/autowarefoundation/autoware_universe/issues/294>) (#10879 <https://github.com/autowarefoundation/autoware_universe/issues/10879>)
   * Contributors: Kaan Çolak
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * feat(autoware_pointcloud_preprocessor): add diagnostic message (#10579 <https://github.com/autowarefoundation/autoware_universe/issues/10579>)
@@ -62,7 +62,7 @@ ros-humble-autoware-ground-segmentation (0.46.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * fix(autoware_ground_segmentation): correct slope threshold global to local (#10666 <https://github.com/autowarefoundation/autoware_universe/issues/10666>)
@@ -85,19 +85,19 @@ ros-humble-autoware-ground-segmentation (0.45.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * refactor(ground_segmentation): rework parameter (#8988 <https://github.com/autowarefoundation/autoware_universe/issues/8988>)
@@ -112,7 +112,7 @@ ros-humble-autoware-ground-segmentation (0.44.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
@@ -120,7 +120,7 @@ ros-humble-autoware-ground-segmentation (0.43.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_utils): replace autoware_universe_utils with autoware_utils  (#10191 <https://github.com/autowarefoundation/autoware_universe/issues/10191>)
@@ -132,20 +132,20 @@ ros-humble-autoware-ground-segmentation (0.42.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Sun, 02 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.41.2-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.41.2-0jammy) jammy; urgency=high
 
   * chore: bump version to 0.41.1 (#10088 <https://github.com/autowarefoundation/autoware_universe/issues/10088>)
   * Contributors: Ryohsuke Mitsudome
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.41.1-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.41.1-0jammy) jammy; urgency=high
 
 
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Sun, 09 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.41.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_ground_segmentation): tier4_debug_msgs changed to autoware_internal_debug_msgs in fil… (#9878 <https://github.com/autowarefoundation/autoware_universe/issues/9878>)
@@ -156,7 +156,7 @@ ros-humble-autoware-ground-segmentation (0.41.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Tue, 28 Jan 2025 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.40.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.40.0-0jammy) jammy; urgency=high
 
   * Merge branch 'main' into release-0.40.0
   * Revert "chore(package.xml): bump version to 0.39.0 (#9587 <https://github.com/autowarefoundation/autoware_universe/issues/9587>)"
@@ -275,7 +275,7 @@ ros-humble-autoware-ground-segmentation (0.40.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Wed, 11 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.39.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
   * fix: fix ticket links to point to https://github.com/autowarefoundation/autoware_universe (#9304 <https://github.com/autowarefoundation/autoware_universe/issues/9304>)
@@ -289,7 +289,7 @@ ros-humble-autoware-ground-segmentation (0.39.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.38.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.38.0-0jammy) jammy; urgency=high
 
   * unify package.xml version to 0.37.0
   * feat(autoware_ground_segmentation): implementing linear least square fitting for local gradient calculation (#9116 <https://github.com/autowarefoundation/autoware_universe/issues/9116>)
@@ -382,7 +382,7 @@ ros-humble-autoware-ground-segmentation (0.38.0-0jammy) jammy; urgency=high
 
  -- amc-nu <abrahammonrroy@yahoo.com>  Thu, 07 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-ground-segmentation (0.26.0-0jammy) jammy; urgency=high
+ros-humble-autoware-ground-segmentation-1-5-0 (0.26.0-0jammy) jammy; urgency=high
 
 
 

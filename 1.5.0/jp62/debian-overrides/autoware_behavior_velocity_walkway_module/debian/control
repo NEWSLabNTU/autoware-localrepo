@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-behavior-velocity-walkway-module
+Source: ros-humble-autoware-behavior-velocity-walkway-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Satoshi Ota <satoshi.ota@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, ros-humble-ament-cmake-auto,
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-behavior-velocity-walkway-module
+Package: ros-humble-autoware-behavior-velocity-walkway-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, ros-humble-autoware-behavior-velocity-crosswalk-module, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-visualization-msgs
 Description: The autoware_behavior_velocity_walkway_module package

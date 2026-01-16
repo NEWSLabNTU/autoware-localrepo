@@ -1,22 +1,22 @@
-ros-humble-autoware-msgs (1.11.0-0jammy) jammy; urgency=high
+ros-humble-autoware-msgs-1-5-0 (1.11.0-0jammy) jammy; urgency=high
 
 
 
  -- Mete Fatih Cırıt <mfc@autoware.org>  Wed, 22 Oct 2025 16:00:00 -0000
 
-ros-humble-autoware-msgs (1.10.0-0jammy) jammy; urgency=high
+ros-humble-autoware-msgs-1-5-0 (1.10.0-0jammy) jammy; urgency=high
 
 
 
  -- Mete Fatih Cırıt <mfc@autoware.org>  Thu, 17 Jul 2025 16:00:00 -0000
 
-ros-humble-autoware-msgs (1.9.0-0jammy) jammy; urgency=high
+ros-humble-autoware-msgs-1-5-0 (1.9.0-0jammy) jammy; urgency=high
 
 
 
  -- Mete Fatih Cırıt <mfc@autoware.org>  Tue, 17 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-msgs (1.8.0-0jammy) jammy; urgency=high
+ros-humble-autoware-msgs-1-5-0 (1.8.0-0jammy) jammy; urgency=high
 
   * chore: fix email domain (#133 <https://github.com/autowarefoundation/autoware_msgs/issues/133>)
   * chore: update maintainers (#132 <https://github.com/autowarefoundation/autoware_msgs/issues/132>)
@@ -24,13 +24,13 @@ ros-humble-autoware-msgs (1.8.0-0jammy) jammy; urgency=high
 
  -- Mete Fatih Cırıt <mfc@autoware.org>  Tue, 20 May 2025 16:00:00 -0000
 
-ros-humble-autoware-msgs (1.7.0-0jammy) jammy; urgency=high
+ros-humble-autoware-msgs-1-5-0 (1.7.0-0jammy) jammy; urgency=high
 
 
 
  -- Mete Fatih Cırıt <mfc@autoware.org>  Sun, 20 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-msgs (1.6.0-0jammy) jammy; urgency=high
+ros-humble-autoware-msgs-1-5-0 (1.6.0-0jammy) jammy; urgency=high
 
   * feat(autoware msgs): create metapackage (#123 <https://github.com/autowarefoundation/autoware_msgs/issues/123>)
     * create autoware_msgs

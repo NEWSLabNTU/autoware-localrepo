@@ -1,4 +1,4 @@
-Source: ros-humble-tier4-control-mode-rviz-plugin
+Source: ros-humble-tier4-control-mode-rviz-plugin-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Kyoichi Sugahara <kyoichi.sugahara@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libqt5core5a, libqt5gui5, libqt5widgets5, 
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-tier4-control-mode-rviz-plugin
+Package: ros-humble-tier4-control-mode-rviz-plugin-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-autoware-vehicle-msgs, ros-humble-rclcpp, ros-humble-rviz-common
 Description: RViz plugin for displaying control mode

@@ -1,4 +1,4 @@
-ros-humble-autoware-trajectory-ranker (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-trajectory-ranker-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix: tf2 uses hpp headers in rolling (and is backported) (#11620 <https://github.com/autowarefoundation/autoware_universe/issues/11620>)

@@ -1,65 +1,65 @@
-ros-humble-autoware-internal-msgs (1.12.0-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.12.0-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Thu, 24 Jul 2025 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs (1.11.0-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.11.0-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Tue, 22 Jul 2025 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs (1.10.0-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.10.0-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Mon, 02 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs (1.9.0-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.9.0-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Thu, 22 May 2025 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs (1.8.1-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.8.1-0jammy) jammy; urgency=high
 
   * feat(autoware_internal_msgs): make autoware_internal_msgs metapackage (#57 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/57>)
   * Contributors: Yutaka Kondo
 
  -- Berkay Karaman <berkay@leodrive.ai>  Sun, 06 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs (1.8.0-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.8.0-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Wed, 26 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs (1.7.0-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.7.0-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Wed, 05 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs (1.6.0-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.6.0-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs (1.5.0-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.5.0-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Wed, 22 Jan 2025 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs (1.4.0-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.4.0-0jammy) jammy; urgency=high
 
 
 
  -- Berkay Karaman <berkay@leodrive.ai>  Tue, 14 Jan 2025 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs (1.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.3.0-0jammy) jammy; urgency=high
 
   * chore: sync files (#25 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/25>)
     * chore: sync files
@@ -71,14 +71,14 @@ ros-humble-autoware-internal-msgs (1.3.0-0jammy) jammy; urgency=high
 
  -- Berkay Karaman <berkay@leodrive.ai>  Wed, 25 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs (1.2.0-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.2.0-0jammy) jammy; urgency=high
 
   * feat: move the package to its own folder (#28 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/28>)
   * Contributors: M. Fatih Cırıt
 
  -- Berkay Karaman <berkay@leodrive.ai>  Wed, 18 Dec 2024 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs (1.1.0-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.1.0-0jammy) jammy; urgency=high
 
   * feat(ResourceUsageReport): update fields (#18 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/18>)
   * feat(system): create system usage message (#12 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/12>)
@@ -129,7 +129,7 @@ ros-humble-autoware-internal-msgs (1.1.0-0jammy) jammy; urgency=high
 
  -- Berkay Karaman <berkay@leodrive.ai>  Sun, 30 Jun 2024 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs (1.0.1-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-5-0 (1.0.1-0jammy) jammy; urgency=high
 
   * add maintainer (#11 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/11>)
   * feat(remaining_dist_eta): add msg definition for mission remaining distance and time (#10 <https://github.com/autowarefoundation/autoware_internal_msgs/issues/10>)

@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-external-cmd-converter
+Source: ros-humble-autoware-external-cmd-converter-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-external-cmd-converter
+Package: ros-humble-autoware-external-cmd-converter-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-control-msgs, ros-humble-autoware-raw-vehicle-cmd-converter, ros-humble-autoware-test-utils, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tier4-control-msgs, ros-humble-tier4-system-msgs
 Description: The autoware_external_cmd_converter package

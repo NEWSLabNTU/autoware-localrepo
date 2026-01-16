@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-behavior-velocity-intersection-module
+Source: ros-humble-autoware-behavior-velocity-intersection-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Mamoru Sobue <mamoru.sobue@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libfmt-dev, libopencv-dev, ros-humble-amen
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-behavior-velocity-intersection-module
+Package: ros-humble-autoware-behavior-velocity-intersection-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, libopencv-dev, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-behavior-velocity-rtc-interface, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-interpolation, ros-humble-autoware-lanelet2-utils, ros-humble-autoware-motion-utils, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-route-handler, ros-humble-autoware-rtc-interface, ros-humble-autoware-test-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-magic-enum, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-tf2-geometry-msgs, ros-humble-tier4-planning-msgs, ros-humble-visualization-msgs
 Description: The autoware_behavior_velocity_intersection_module package

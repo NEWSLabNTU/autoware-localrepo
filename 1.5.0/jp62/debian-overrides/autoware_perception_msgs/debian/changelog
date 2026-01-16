@@ -1,23 +1,23 @@
-ros-humble-autoware-perception-msgs (1.11.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-msgs-1-5-0 (1.11.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Wed, 22 Oct 2025 16:00:00 -0000
 
-ros-humble-autoware-perception-msgs (1.10.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-msgs-1-5-0 (1.10.0-0jammy) jammy; urgency=high
 
   * chore: update maintainer for autoware_msgs packages (#143 <https://github.com/autowarefoundation/autoware_msgs/issues/143>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 17 Jul 2025 16:00:00 -0000
 
-ros-humble-autoware-perception-msgs (1.9.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-msgs-1-5-0 (1.9.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Tue, 17 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-perception-msgs (1.8.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-msgs-1-5-0 (1.8.0-0jammy) jammy; urgency=high
 
   * feat(autoware_perception_msgs): update traffic light messages to include future states (#134 <https://github.com/autowarefoundation/autoware_msgs/issues/134>)
     * feat: add autoware_perception_msgs/FutureTrafficLightState message
@@ -33,7 +33,7 @@ ros-humble-autoware-perception-msgs (1.8.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Tue, 20 May 2025 16:00:00 -0000
 
-ros-humble-autoware-perception-msgs (1.7.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-msgs-1-5-0 (1.7.0-0jammy) jammy; urgency=high
 
   * feat(autoware_sensing_msgs): implement the proposed universal radar messages (#120 <https://github.com/autowarefoundation/autoware_msgs/issues/120>)
     Co-authored-by: Taekjin LEE <mailto:technolojin@gmail.com>
@@ -42,38 +42,38 @@ ros-humble-autoware-perception-msgs (1.7.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 20 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-perception-msgs (1.6.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-msgs-1-5-0 (1.6.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 06 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-perception-msgs (1.5.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-msgs-1-5-0 (1.5.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Tue, 01 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-perception-msgs (1.4.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-msgs-1-5-0 (1.4.0-0jammy) jammy; urgency=high
 
   * fix(autoware_msgs): fix links to issues in CHANGELOG.rst files (#108 <https://github.com/autowarefoundation/autoware_msgs/issues/108>)
   * Contributors: Esteve Fernandez
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 24 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-perception-msgs (1.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-msgs-1-5-0 (1.3.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 24 Nov 2024 16:00:00 -0000
 
-ros-humble-autoware-perception-msgs (1.2.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-msgs-1-5-0 (1.2.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 30 Sep 2024 16:00:00 -0000
 
-ros-humble-autoware-perception-msgs (1.1.0-0jammy) jammy; urgency=high
+ros-humble-autoware-perception-msgs-1-5-0 (1.1.0-0jammy) jammy; urgency=high
 
   * chore: update package.xml and fix CMakeLists.txt (#91 <https://github.com/autowarefoundation/autoware_msgs/issues/91>)
     update package.xml and fix cmakefiles

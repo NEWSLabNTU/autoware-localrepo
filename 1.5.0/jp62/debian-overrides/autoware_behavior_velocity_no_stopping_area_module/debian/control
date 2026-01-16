@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-behavior-velocity-no-stopping-area-module
+Source: ros-humble-autoware-behavior-velocity-no-stopping-area-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, ros-humble-ament-cmake-auto,
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-behavior-velocity-no-stopping-area-module
+Package: ros-humble-autoware-behavior-velocity-no-stopping-area-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-behavior-velocity-planner-common, ros-humble-autoware-behavior-velocity-rtc-interface, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-interpolation, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-tier4-planning-msgs, ros-humble-visualization-msgs
 Description: The autoware_behavior_velocity_no_stopping_area_module package

@@ -1,4 +1,4 @@
-ros-humble-autoware-tensorrt-plugins (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-tensorrt-plugins-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix(autoware_tensorrt_plugins): install cuda_ops to be available when autoware_tensorrt_plugins installs (#11354 <https://github.com/autowarefoundation/autoware_universe/issues/11354>)
@@ -11,13 +11,13 @@ ros-humble-autoware-tensorrt-plugins (0.48.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-tensorrt-plugins (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-tensorrt-plugins-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-tensorrt-plugins (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-tensorrt-plugins-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat(autoware_tensorrt_plugins): add vad trt plugins suppport (#11092 <https://github.com/autowarefoundation/autoware_universe/issues/11092>)
     * feat(tensorrt_plugins): add multi_scale_deformable_attention, rotate, and
@@ -53,7 +53,7 @@ ros-humble-autoware-tensorrt-plugins (0.47.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-tensorrt-plugins (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-tensorrt-plugins-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * fix(cmake): update spconv availability messages to use STATUS and WAR… (#10690 <https://github.com/autowarefoundation/autoware_universe/issues/10690>)
@@ -62,7 +62,7 @@ ros-humble-autoware-tensorrt-plugins (0.46.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-tensorrt-plugins (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-tensorrt-plugins-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * chore: perception code owner update (#10645 <https://github.com/autowarefoundation/autoware_universe/issues/10645>)
@@ -80,19 +80,19 @@ ros-humble-autoware-tensorrt-plugins (0.45.0-0jammy) jammy; urgency=high
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-tensorrt-plugins (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-tensorrt-plugins-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-tensorrt-plugins (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-tensorrt-plugins-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-tensorrt-plugins (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-tensorrt-plugins-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * chore: match all package versions
   * Merge remote-tracking branch 'origin/main' into humble

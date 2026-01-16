@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-internal-msgs
+Source: ros-humble-autoware-internal-msgs-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Berkay Karaman <berkay@leodrive.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-internal-msgs
+Package: ros-humble-autoware-internal-msgs-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-internal-metric-msgs, ros-humble-autoware-internal-perception-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
 Description: Autoware internal messages package.

@@ -1,4 +1,4 @@
-Source: ros-humble-ros2-socketcan-msgs
+Source: ros-humble-ros2-socketcan-msgs-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Josh Whitley <josh@electrifiedautonomy.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-ros2-socketcan-msgs
+Package: ros-humble-ros2-socketcan-msgs-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
 Description: Messages for SocketCAN

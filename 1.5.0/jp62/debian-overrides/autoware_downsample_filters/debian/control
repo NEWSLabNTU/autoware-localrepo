@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-downsample-filters
+Source: ros-humble-autoware-downsample-filters-1-5-0
 Section: misc
 Priority: optional
 Maintainer: amc-nu <abrahammonrroy@yahoo.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-downsample-filters
+Package: ros-humble-autoware-downsample-filters-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-point-types, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-system, ros-humble-autoware-utils-tf, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-sensor-msgs
 Description: The ROS 2 autoware_downsample_filters package

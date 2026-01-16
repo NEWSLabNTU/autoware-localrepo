@@ -1,4 +1,4 @@
-ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-obstacle-slow-down-module-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix(obstacle_slow_down): fix left/right judgment, update of deceleration constraint calculation (#11590 <https://github.com/autowarefoundation/autoware_universe/issues/11590>)
@@ -18,13 +18,13 @@ ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.48.0-0jammy) ja
 
  -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-obstacle-slow-down-module-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-obstacle-slow-down-module-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * style(pre-commit): update to clang-format-20 (#11088 <https://github.com/autowarefoundation/autoware_universe/issues/11088>)
     Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
@@ -35,7 +35,7 @@ ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.47.0-0jammy) ja
 
  -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.46.0-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-obstacle-slow-down-module-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'upstream/main' into tmp/TaikiYamada/bump_version_base
   * feat(autoware_motion_velocity_planner): only wait for required subscriptions (#10732 <https://github.com/autowarefoundation/autoware_universe/issues/10732>)
@@ -48,7 +48,7 @@ ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.46.0-0jammy) ja
 
  -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.45.0-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-obstacle-slow-down-module-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/notbot/bump_version_base
   * fix(autoware_motion_velocity_obstacle_slow_down_module): fix for mishandling lateral-distance (#10559 <https://github.com/autowarefoundation/autoware_universe/issues/10559>)
@@ -66,19 +66,19 @@ ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.45.0-0jammy) ja
 
  -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.44.2-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-obstacle-slow-down-module-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.44.1-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-obstacle-slow-down-module-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.44.0-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-obstacle-slow-down-module-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * chore(motion_velocity_planner): move common and node packages to core (#10367 <https://github.com/autowarefoundation/autoware_universe/issues/10367>)
@@ -88,7 +88,7 @@ ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.44.0-0jammy) ja
 
  -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Thu, 17 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.43.0-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-obstacle-slow-down-module-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into chore/bump-version-0.43
   * chore: rename from autoware.universe to autoware_universe (#10306 <https://github.com/autowarefoundation/autoware_universe/issues/10306>)
@@ -102,7 +102,7 @@ ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.43.0-0jammy) ja
 
  -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-obstacle-slow-down-module (0.42.0-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-obstacle-slow-down-module-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
   * feat(autoware_utils): replace autoware_universe_utils with autoware_utils  (#10191 <https://github.com/autowarefoundation/autoware_universe/issues/10191>)

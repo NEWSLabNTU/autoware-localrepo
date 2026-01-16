@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-global-parameter-loader
+Source: ros-humble-autoware-global-parameter-loader-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-global-parameter-loader
+Package: ros-humble-autoware-global-parameter-loader-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-vehicle-info-utils
 Description: The autoware_global_parameter_loader package

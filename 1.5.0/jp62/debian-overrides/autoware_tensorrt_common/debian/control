@@ -1,12 +1,12 @@
-Source: ros-humble-autoware-tensorrt-common
+Source: ros-humble-autoware-tensorrt-common-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Dan Umeda <dan.umeda@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), autoware-cuda-dependency-meta, ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-cudnn-cmake-module, ros-humble-rclcpp, ros-humble-tensorrt-cmake-module
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-cuda-dependency-meta, ros-humble-cudnn-cmake-module, ros-humble-rclcpp, ros-humble-tensorrt-cmake-module
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-tensorrt-common
+Package: ros-humble-autoware-tensorrt-common-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, autoware-cuda-dependency-meta, ros-humble-rclcpp
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-cuda-dependency-meta, ros-humble-rclcpp
 Description: tensorrt utility wrapper

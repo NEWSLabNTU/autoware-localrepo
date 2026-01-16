@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-localization-rviz-plugin
+Source: ros-humble-autoware-localization-rviz-plugin-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libqt5core5a, libqt5gui5, libqt5widgets5, 
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-localization-rviz-plugin
+Package: ros-humble-autoware-localization-rviz-plugin-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-vehicle-info-utils, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rviz-common, ros-humble-rviz-default-plugins, ros-humble-tf2-ros
 Description: The autoware_localization_rviz_plugin package

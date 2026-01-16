@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-processing-time-checker
+Source: ros-humble-autoware-processing-time-checker-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takayuki Murooka <takayuki.murooka@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), nlohmann-json3-dev, ros-humble-ament-cmake
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-processing-time-checker
+Package: ros-humble-autoware-processing-time-checker-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, nlohmann-json3-dev, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-metric-msgs
 Description: A package to find out nodes with common names

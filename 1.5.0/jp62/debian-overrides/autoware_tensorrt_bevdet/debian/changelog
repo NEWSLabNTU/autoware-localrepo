@@ -1,4 +1,4 @@
-ros-humble-autoware-tensorrt-bevdet (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-tensorrt-bevdet-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix: tf2 uses hpp headers in rolling (and is backported) (#11620 <https://github.com/autowarefoundation/autoware_universe/issues/11620>)
@@ -11,13 +11,13 @@ ros-humble-autoware-tensorrt-bevdet (0.48.0-0jammy) jammy; urgency=high
 
  -- Cynthia <cynthia.liu@autocore.ai>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-tensorrt-bevdet (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-tensorrt-bevdet-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Cynthia <cynthia.liu@autocore.ai>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-tensorrt-bevdet (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-tensorrt-bevdet-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * feat(autoware_bevdet): implementation of bevdet using tensorrt (#10441 <https://github.com/autowarefoundation/autoware_universe/issues/10441>)
   * Contributors: rahulsundar-mcw

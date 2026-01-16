@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-traffic-light-multi-camera-fusion
+Source: ros-humble-autoware-traffic-light-multi-camera-fusion-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Tao Zhong <tao.zhong@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-traffic-light-multi-camera-fusion
+Package: ros-humble-autoware-traffic-light-multi-camera-fusion-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-perception-msgs, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tier4-perception-msgs
 Description: The autoware_traffic_light_multi_camera_fusion package

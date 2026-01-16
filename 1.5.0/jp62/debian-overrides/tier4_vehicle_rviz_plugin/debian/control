@@ -1,4 +1,4 @@
-Source: ros-humble-tier4-vehicle-rviz-plugin
+Source: ros-humble-tier4-vehicle-rviz-plugin-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libqt5core5a, libqt5gui5, libqt5widgets5, 
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-tier4-vehicle-rviz-plugin
+Package: ros-humble-tier4-vehicle-rviz-plugin-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-ament-index-cpp, ros-humble-autoware-utils, ros-humble-autoware-vehicle-msgs, ros-humble-rviz-common, ros-humble-rviz-default-plugins, ros-humble-rviz-ogre-vendor
 Description: The tier4_vehicle_rviz_plugin package

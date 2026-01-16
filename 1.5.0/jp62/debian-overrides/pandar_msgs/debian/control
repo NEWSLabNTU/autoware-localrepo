@@ -1,4 +1,4 @@
-Source: ros-humble-pandar-msgs
+Source: ros-humble-pandar-msgs-1-5-0
 Section: misc
 Priority: optional
 Maintainer: hirakawa <shinnosuke.hirakawa@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-bu
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-pandar-msgs
+Package: ros-humble-pandar-msgs-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
 Description: ROS message definition for the Hesai PandarQT/Pandar64/Pandar40P/Pandar20A/Pandar20B/Pandar40M LiDAR sensor.

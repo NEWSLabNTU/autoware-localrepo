@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-pcl-extensions
+Source: ros-humble-autoware-pcl-extensions-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Amadeusz Szymko <amadeusz.szymko.2@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, libpcl-dev, librange-v3-dev
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-pcl-extensions
+Package: ros-humble-autoware-pcl-extensions-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, libpcl-dev, ros-humble-eigen3-cmake-module
 Description: The autoware_pcl_extensions package

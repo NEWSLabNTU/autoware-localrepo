@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-detected-object-validation
+Source: ros-humble-autoware-detected-object-validation-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libopencv-dev, ros-humble-ament-cmake-auto
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-detected-object-validation
+Package: ros-humble-autoware-detected-object-validation-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-lanelet2-utils, ros-humble-autoware-map-msgs, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-probabilistic-occupancy-grid-map, ros-humble-autoware-test-utils, ros-humble-autoware-utils, ros-humble-message-filters, ros-humble-nav-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
 Description: The ROS 2 detected_object_validation package

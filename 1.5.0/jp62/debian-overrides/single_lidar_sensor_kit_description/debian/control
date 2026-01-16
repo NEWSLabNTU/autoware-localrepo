@@ -1,4 +1,4 @@
-Source: ros-humble-single-lidar-sensor-kit-description
+Source: ros-humble-single-lidar-sensor-kit-description-1-5-0
 Section: misc
 Priority: optional
 Maintainer: beginning.fan <beginning.fan@autocore.ai>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ve
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-single-lidar-sensor-kit-description
+Package: ros-humble-single-lidar-sensor-kit-description-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-velodyne-description
 Description: The single_lidar_sensor_kit_description package

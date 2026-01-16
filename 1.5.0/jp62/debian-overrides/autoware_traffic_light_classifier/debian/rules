@@ -11,8 +11,6 @@ SHELL := /bin/bash
 
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
-# Disable LTO (Link Time Optimization) - causes conflicts with CUDA fatbin symbols
-export DEB_BUILD_MAINT_OPTIONS = hardening=+all reproducible=+fixfilepath optimize=-lto
 # TODO: remove the LDFLAGS override.  It's here to avoid esoteric problems
 # of this sort:
 #  https://code.ros.org/trac/ros/ticket/2977
@@ -24,6 +22,14 @@ export PKG_CONFIG_PATH=/opt/autoware/1.5.0/lib/pkgconfig
 export DEB_CXXFLAGS_MAINT_APPEND=-DNDEBUG
 ifneq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
 	BUILD_TESTING_ARG=-DBUILD_TESTING=OFF
+endif
+
+# Extract parallel job count from DEB_BUILD_OPTIONS (e.g., "parallel=4")
+# Default to 1 if not specified
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	PARALLEL_JOBS := $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+else
+	PARALLEL_JOBS := 1
 endif
 
 DEB_HOST_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
@@ -58,9 +64,9 @@ export AMENT_PREFIX_PATH := $(PATH_COLCON):$(PATH_INSTALL):$(PATH_ROS)
 	dh $@ -v --buildsystem=cmake --builddirectory=.obj-$(DEB_HOST_GNU_TYPE)
 
 override_dh_auto_configure:
-	# Source the colcon workspace local_setup.bash first to get any additional env vars
-	# We PREPEND (not replace) additional paths to preserve the package-level paths from local_setup.bash
-	# (colcon uses isolated installs with per-package directories)
+	# Source the colcon workspace local_setup.bash first to set up CMAKE_PREFIX_PATH
+	# with all individual package directories (colcon uses isolated installs).
+	# We then PREPEND (not replace) additional paths to preserve the package-level paths.
 	source "$(SETUP_SCRIPT)" 2>/dev/null || true && \
 	export CMAKE_PREFIX_PATH="$(PATH_INSTALL):$(PATH_ROS):$$CMAKE_PREFIX_PATH" && \
 	export AMENT_PREFIX_PATH="$(PATH_INSTALL):$(PATH_ROS):$$AMENT_PREFIX_PATH" && \
@@ -74,14 +80,14 @@ override_dh_auto_configure:
 		$(BUILD_TESTING_ARG)
 
 override_dh_auto_build:
-	# Source setup script for build environment
+	# Source setup script for build environment (preserves package-level paths from local_setup.bash)
 	source "$(SETUP_SCRIPT)" 2>/dev/null || true && \
 	export CMAKE_PREFIX_PATH="$(PATH_INSTALL):$(PATH_ROS):$$CMAKE_PREFIX_PATH" && \
 	export AMENT_PREFIX_PATH="$(PATH_INSTALL):$(PATH_ROS):$$AMENT_PREFIX_PATH" && \
-	$(MAKE) -C .obj-$(DEB_HOST_GNU_TYPE)
+	$(MAKE) -j$(PARALLEL_JOBS) -C .obj-$(DEB_HOST_GNU_TYPE)
 
 override_dh_auto_test:
-	# Source setup script for test environment
+	# Source setup script for test environment (preserves package-level paths from local_setup.bash)
 	echo "-- Running tests. Even if one of them fails the build is not canceled."
 	source "$(SETUP_SCRIPT)" 2>/dev/null || true && \
 	export CMAKE_PREFIX_PATH="$(PATH_INSTALL):$(PATH_ROS):$$CMAKE_PREFIX_PATH" && \
@@ -92,11 +98,11 @@ override_dh_shlibdeps:
 	# Source setup script for shared library dependency resolution
 	# Use --ignore-missing-info to handle libraries not installed via APT (e.g., CUDA from NVIDIA base images)
 	source "$(SETUP_SCRIPT)" 2>/dev/null || true; \
-	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info $(EXTRA_LIB_PATHS) -l$(CURDIR)/debian/ros-humble-autoware-traffic-light-classifier//opt/autoware/1.5.0/lib/:$(CURDIR)/debian/ros-humble-autoware-traffic-light-classifier//opt/autoware/1.5.0/opt/autoware_traffic_light_classifier/lib/
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info $(EXTRA_LIB_PATHS) -l$(CURDIR)/debian/ros-humble-autoware-traffic-light-classifier-1-5-0//opt/autoware/1.5.0/lib/:$(CURDIR)/debian/ros-humble-autoware-traffic-light-classifier-1-5-0//opt/autoware/1.5.0/opt/autoware_traffic_light_classifier/lib/
 
 override_dh_auto_install:
-	# Source setup script for install environment
+	# Source setup script for install environment (preserves package-level paths from local_setup.bash)
 	source "$(SETUP_SCRIPT)" 2>/dev/null || true && \
 	export CMAKE_PREFIX_PATH="$(PATH_INSTALL):$(PATH_ROS):$$CMAKE_PREFIX_PATH" && \
 	export AMENT_PREFIX_PATH="$(PATH_INSTALL):$(PATH_ROS):$$AMENT_PREFIX_PATH" && \
-	DESTDIR=$(CURDIR)/debian/ros-humble-autoware-traffic-light-classifier $(MAKE) -C .obj-$(DEB_HOST_GNU_TYPE) install
+	DESTDIR=$(CURDIR)/debian/ros-humble-autoware-traffic-light-classifier-1-5-0 $(MAKE) -C .obj-$(DEB_HOST_GNU_TYPE) install

@@ -1,4 +1,4 @@
-ros-humble-boost-serial-driver (1.2.0-0jammy) jammy; urgency=high
+ros-humble-boost-serial-driver-1-5-0 (1.2.0-0jammy) jammy; urgency=high
 
   * Disable broken test.
   * Fix linter errors.
@@ -6,7 +6,7 @@ ros-humble-boost-serial-driver (1.2.0-0jammy) jammy; urgency=high
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Sat, 19 Mar 2022 16:00:00 -0000
 
-ros-humble-boost-serial-driver (1.1.0-0jammy) jammy; urgency=high
+ros-humble-boost-serial-driver-1-5-0 (1.1.0-0jammy) jammy; urgency=high
 
   * Support serial_break (#76 <https://github.com/ros-drivers/transport_drivers/issues/76>)
     * Support serial_break
@@ -22,7 +22,7 @@ ros-humble-boost-serial-driver (1.1.0-0jammy) jammy; urgency=high
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Sat, 19 Mar 2022 16:00:00 -0000
 
-ros-humble-boost-serial-driver (1.0.1-0jammy) jammy; urgency=high
+ros-humble-boost-serial-driver-1-5-0 (1.0.1-0jammy) jammy; urgency=high
 
   * Remove deprecated api from galactic (#57 <https://github.com/ros-drivers/transport_drivers/issues/57>)
   * Serial driver debugs (#56 <https://github.com/ros-drivers/transport_drivers/issues/56>)
@@ -78,7 +78,7 @@ ros-humble-boost-serial-driver (1.0.1-0jammy) jammy; urgency=high
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Sun, 29 Aug 2021 16:00:00 -0000
 
-ros-humble-boost-serial-driver (0.0.6-0jammy) jammy; urgency=high
+ros-humble-boost-serial-driver-1-5-0 (0.0.6-0jammy) jammy; urgency=high
 
   * Uncrustify fixes.
   * Remove lifecycle references (#19 <https://github.com/ros-drivers/transport_drivers/issues/19>)
@@ -87,7 +87,7 @@ ros-humble-boost-serial-driver (0.0.6-0jammy) jammy; urgency=high
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Wed, 26 Aug 2020 16:00:00 -0000
 
-ros-humble-boost-serial-driver (0.0.5-0jammy) jammy; urgency=high
+ros-humble-boost-serial-driver-1-5-0 (0.0.5-0jammy) jammy; urgency=high
 
   * Remove Autoware.AUTO Dependencies (#15 <https://github.com/ros-drivers/transport_drivers/issues/15>)
     * Removing autoware dependencies.
@@ -100,7 +100,7 @@ ros-humble-boost-serial-driver (0.0.5-0jammy) jammy; urgency=high
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Wed, 15 Jul 2020 16:00:00 -0000
 
-ros-humble-boost-serial-driver (0.0.4-0jammy) jammy; urgency=high
+ros-humble-boost-serial-driver-1-5-0 (0.0.4-0jammy) jammy; urgency=high
 
   * Making serial_driver version number consistent with repo.
   * Initial commit of serial_driver.
@@ -108,13 +108,13 @@ ros-humble-boost-serial-driver (0.0.4-0jammy) jammy; urgency=high
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Wed, 11 Dec 2019 16:00:00 -0000
 
-ros-humble-boost-serial-driver (0.0.3-0jammy) jammy; urgency=high
+ros-humble-boost-serial-driver-1-5-0 (0.0.3-0jammy) jammy; urgency=high
 
 
 
  -- Joshua Whitley <whitleysoftwareservices@gmail.com>  Tue, 20 Aug 2019 16:00:00 -0000
 
-ros-humble-boost-serial-driver (0.0.2-0jammy) jammy; urgency=high
+ros-humble-boost-serial-driver-1-5-0 (0.0.2-0jammy) jammy; urgency=high
 
 
 

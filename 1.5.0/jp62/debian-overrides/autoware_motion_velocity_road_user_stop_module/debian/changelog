@@ -1,4 +1,4 @@
-ros-humble-autoware-motion-velocity-road-user-stop-module (0.48.0-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-road-user-stop-module-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * fix(road_user_stop): delete path_length_buffer (#11653 <https://github.com/autowarefoundation/autoware_universe/issues/11653>)
@@ -18,13 +18,13 @@ ros-humble-autoware-motion-velocity-road-user-stop-module (0.48.0-0jammy) jammy;
 
  -- Takumi Odashima <takumi.odashima@tier4.jp>  Mon, 17 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-road-user-stop-module (0.47.1-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-road-user-stop-module-1-5-0 (0.47.1-0jammy) jammy; urgency=high
 
 
 
  -- Takumi Odashima <takumi.odashima@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-motion-velocity-road-user-stop-module (0.47.0-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-road-user-stop-module-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
   * fix(road_user_stop): remove generate_parameter_library's default_value parameters (#11117 <https://github.com/autowarefoundation/autoware_universe/issues/11117>)
     * delete generate_parameter_library's_default_value parameter

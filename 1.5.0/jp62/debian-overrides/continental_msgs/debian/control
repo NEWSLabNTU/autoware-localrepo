@@ -1,4 +1,4 @@
-Source: ros-humble-continental-msgs
+Source: ros-humble-continental-msgs-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-bu
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-continental-msgs
+Package: ros-humble-continental-msgs-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-builtin-interfaces, ros-humble-geometry-msgs, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
 Description: Messages for Continental sensors

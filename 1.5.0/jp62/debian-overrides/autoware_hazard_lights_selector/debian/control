@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-hazard-lights-selector
+Source: ros-humble-autoware-hazard-lights-selector-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Makoto Kurihara <makoto.kurihara@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-hazard-lights-selector
+Package: ros-humble-autoware-hazard-lights-selector-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-vehicle-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: The autoware_hazard_lights_selector package

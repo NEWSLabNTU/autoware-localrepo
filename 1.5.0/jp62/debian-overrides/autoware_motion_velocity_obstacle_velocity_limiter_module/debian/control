@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-motion-velocity-obstacle-velocity-limiter-module
+Source: ros-humble-autoware-motion-velocity-obstacle-velocity-limiter-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Maxime CLEMENT <maxime.clement@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), libboost-dev, libeigen3-dev, ros-humble-am
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-motion-velocity-obstacle-velocity-limiter-module
+Package: ros-humble-autoware-motion-velocity-obstacle-velocity-limiter-module-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, libeigen3-dev, ros-humble-autoware-grid-map-utils, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-motion-utils, ros-humble-autoware-motion-velocity-planner-common, ros-humble-autoware-perception-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-planning-test-manager, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-grid-map-msgs, ros-humble-grid-map-ros, ros-humble-lanelet2-core, ros-humble-nav-msgs, ros-humble-pcl-ros, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-sensor-msgs, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-visualization-msgs
 Description: Package to adjust velocities of a trajectory in order for the ride to feel safe

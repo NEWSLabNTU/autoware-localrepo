@@ -1,4 +1,4 @@
-ros-humble-awsim-labs-sensor-kit-description (0.48.0-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into release-humble-0.48.0
   * fix: add missing exec_depends for sensor description (#1699 <https://github.com/autowarefoundation/autoware_launch/issues/1699>)
@@ -10,61 +10,61 @@ ros-humble-awsim-labs-sensor-kit-description (0.48.0-0jammy) jammy; urgency=high
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Sat, 15 Nov 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.47.0-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.47.0-0jammy) jammy; urgency=high
 
 
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.46.0-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.46.0-0jammy) jammy; urgency=high
 
 
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 19 Jun 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.45.3-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.45.3-0jammy) jammy; urgency=high
 
 
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 16 Jul 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.45.2-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.45.2-0jammy) jammy; urgency=high
 
 
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Fri, 27 Jun 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.45.1-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.45.1-0jammy) jammy; urgency=high
 
 
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 26 Jun 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.45.0-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.45.0-0jammy) jammy; urgency=high
 
 
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 21 May 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.44.3-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.44.3-0jammy) jammy; urgency=high
 
 
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Mon, 09 Jun 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.44.2-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.44.2-0jammy) jammy; urgency=high
 
 
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 29 May 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.44.1-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.44.1-0jammy) jammy; urgency=high
 
 
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Sun, 11 May 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.44.0-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.44.0-0jammy) jammy; urgency=high
 
   * Merge commit 'bdbc8e8' into bump-up-version-to-0.44.0
   * chore: bump version to 0.44.0 (#1411 <https://github.com/autowarefoundation/autoware_launch/issues/1411>)
@@ -75,7 +75,7 @@ ros-humble-awsim-labs-sensor-kit-description (0.44.0-0jammy) jammy; urgency=high
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 30 Apr 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.43.1-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.43.1-0jammy) jammy; urgency=high
 
   * chore: set all versions to 0.43.0 (#1384 <https://github.com/autowarefoundation/autoware_launch/issues/1384>)
   * feat(*_launch): move here (#1369 <https://github.com/autowarefoundation/autoware_launch/issues/1369>)
@@ -83,31 +83,31 @@ ros-humble-awsim-labs-sensor-kit-description (0.43.1-0jammy) jammy; urgency=high
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Mon, 31 Mar 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.43.0-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.43.0-0jammy) jammy; urgency=high
 
 
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 27 Mar 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.42.0-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.42.0-0jammy) jammy; urgency=high
 
 
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Thu, 27 Mar 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.41.1-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.41.1-0jammy) jammy; urgency=high
 
 
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Wed, 12 Feb 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.41.0-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.41.0-0jammy) jammy; urgency=high
 
 
 
  -- Piotr Jaroszek <piotr.jaroszek@robotec.ai>  Tue, 11 Feb 2025 16:00:00 -0000
 
-ros-humble-awsim-labs-sensor-kit-description (0.39.0-0jammy) jammy; urgency=high
+ros-humble-awsim-labs-sensor-kit-description-1-5-0 (0.39.0-0jammy) jammy; urgency=high
 
   * refactor: update for the awsim_labs (#2 <https://github.com/autowarefoundation/awsim_labs_sensor_kit_launch/issues/2>)
   * Contributors: M. Fatih Cırıt

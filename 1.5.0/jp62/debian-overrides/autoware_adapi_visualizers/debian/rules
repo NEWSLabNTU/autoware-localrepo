@@ -56,7 +56,7 @@ override_dh_shlibdeps:
 	# CMAKE_PREFIX_PATH, PKG_CONFIG_PATH, and PYTHONPATH.
 	# Use --ignore-missing-info to handle libraries not installed via APT (e.g., CUDA from NVIDIA base images)
 	if [ -f "/opt/autoware/1.5.0/setup.sh" ]; then . "/opt/autoware/1.5.0/setup.sh"; fi && \
-	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info -l$(CURDIR)/debian/ros-humble-autoware-adapi-visualizers//opt/autoware/1.5.0/lib/
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info -l$(CURDIR)/debian/ros-humble-autoware-adapi-visualizers-1-5-0//opt/autoware/1.5.0/lib/
 
 override_dh_auto_install:
 	# In case we're installing to a non-standard location, look for a setup.sh
@@ -69,7 +69,7 @@ override_dh_auto_install:
 	# Get the Python version (e.g., python3.10)
 	PYTHON_INTERP=$$(python3 -c "import sys; print(f'python{sys.version_info.major}.{sys.version_info.minor}')") && \
 	PYTHON_SITEPKG_REL="lib/$$PYTHON_INTERP/site-packages" && \
-	SHARE_DIR=$(CURDIR)/debian/ros-humble-autoware-adapi-visualizers/opt/autoware/1.5.0/share/autoware_adapi_visualizers && \
+	SHARE_DIR=$(CURDIR)/debian/ros-humble-autoware-adapi-visualizers-1-5-0/opt/autoware/1.5.0/share/autoware_adapi_visualizers && \
 	HOOK_DIR=$$SHARE_DIR/hook && \
 	mkdir -p $$HOOK_DIR && \
 	echo "prepend-non-duplicate;PYTHONPATH;$$PYTHON_SITEPKG_REL" > $$HOOK_DIR/pythonpath.dsv && \

@@ -1,4 +1,4 @@
-ros-humble-autoware-default-adapi (1.5.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-1-5-0 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * chore: update AD API version to v1.9.1 (#717 <https://github.com/autowarefoundation/autoware_core/issues/717>)
@@ -15,14 +15,14 @@ ros-humble-autoware-default-adapi (1.5.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi (1.4.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-1-5-0 (1.4.0-0jammy) jammy; urgency=high
 
   * chore: bump version to 1.3.0 (#554 <https://github.com/autowarefoundation/autoware_core/issues/554>)
   * Contributors: Ryohsuke Mitsudome
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi (1.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-1-5-0 (1.3.0-0jammy) jammy; urgency=high
 
   * fix: to be consistent version in all package.xml(s)
   * feat: release adapi v1.9.0 (#550 <https://github.com/autowarefoundation/autoware_core/issues/550>)
@@ -35,25 +35,25 @@ ros-humble-autoware-default-adapi (1.3.0-0jammy) jammy; urgency=high
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 22 Jun 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi (1.0.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-1-5-0 (1.0.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Sun, 30 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi (0.3.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-1-5-0 (0.3.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Fri, 21 Mar 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi (0.2.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-1-5-0 (0.2.0-0jammy) jammy; urgency=high
 
 
 
  -- Takagi, Isamu <isamu.takagi@tier4.jp>  Thu, 06 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-default-adapi (0.0.0-0jammy) jammy; urgency=high
+ros-humble-autoware-default-adapi-1-5-0 (0.0.0-0jammy) jammy; urgency=high
 
 
 

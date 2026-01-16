@@ -1,4 +1,4 @@
-Source: ros-humble-autoware-lanelet2-utils
+Source: ros-humble-autoware-lanelet2-utils-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Mamoru Sobue <mamoru.sobue@tier4.jp>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 12.0.0), librange-v3-dev, libyaml-cpp-dev <!nocheck
 Homepage: 
 Standards-Version: 3.9.2
 
-Package: ros-humble-autoware-lanelet2-utils
+Package: ros-humble-autoware-lanelet2-utils-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, librange-v3-dev, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-map-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils-geometry, ros-humble-autoware-utils-math, ros-humble-rclcpp
 Description: The autoware_lanelet2_utils package
