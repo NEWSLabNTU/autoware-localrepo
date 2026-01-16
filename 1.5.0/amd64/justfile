@@ -4,9 +4,10 @@
 default:
     @just --list
 
-# Build everything: ROS packages + meta-packages + APT repository
-all: ros meta repo
-    @echo "✓ Local repository ready in repo/"
+# Build everything: ROS packages + meta-packages + bundled localrepo
+all: ros meta localrepo
+    @echo "✓ Build complete!"
+    @echo "  Final package: packages/autoware-localrepo_*.deb"
 
 # Build ROS packages from Autoware repo (via colcon2deb)
 ros:
@@ -19,32 +20,60 @@ ros:
     fi
     colcon2deb --workspace source --config config.yaml
 
-# Build meta-packages
+# Build meta-packages (except autoware-localrepo which needs the repo first)
 meta:
     @echo "Building meta-packages..."
-    cd packages/autoware-localrepo && dpkg-buildpackage -us -uc -b
     cd packages/autoware-config && dpkg-buildpackage -us -uc -b
     cd packages/autoware-theme && dpkg-buildpackage -us -uc -b
+    cd packages/autoware-data && dpkg-buildpackage -us -uc -b
     cd packages/autoware-runtime && dpkg-buildpackage -us -uc -b
     cd packages/autoware-full && dpkg-buildpackage -us -uc -b
     @echo "✓ Meta-packages built"
 
-# Create APT repository
-repo:
-    mkdir -p repo/pool/main
-    @echo "Collecting .deb packages..."
-    -cp build/dist/*.deb repo/pool/main/ 2>/dev/null
-    -cp packages/*.deb repo/pool/main/ 2>/dev/null
-    @echo "Generating Packages index..."
-    cd repo && dpkg-scanpackages pool/main /dev/null > Packages
-    cd repo && gzip -k -f Packages
-    @echo "✓ APT repository created in repo/"
-    @ls -1 repo/pool/main/*.deb 2>/dev/null | wc -l | xargs -I{} echo "  Total: {} packages"
+# Create repo and build autoware-localrepo with bundled packages
+localrepo:
+    #!/usr/bin/env bash
+    set -e
+
+    # Get absolute path to working directory (just runs from justfile's directory)
+    BASEDIR="$(pwd)"
+    REPODIR="$BASEDIR/packages/autoware-localrepo/repo"
+
+    echo "Creating repository structure..."
+
+    # Clean and create repo directory inside autoware-localrepo package
+    rm -rf "$REPODIR"
+    mkdir -p "$REPODIR/pool/main"
+
+    # Copy ROS packages
+    echo "Copying ROS packages..."
+    cp "$BASEDIR/build/debs/"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
+
+    # Copy meta-packages (except autoware-localrepo itself)
+    echo "Copying meta-packages..."
+    for pkg in autoware-config autoware-theme autoware-data autoware-runtime autoware-full; do
+        cp "$BASEDIR/packages/${pkg}_"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
+    done
+
+    # Generate Packages index
+    echo "Generating Packages index..."
+    (cd "$REPODIR" && dpkg-scanpackages pool/main /dev/null > Packages)
+    (cd "$REPODIR" && gzip -k -f Packages)
+
+    # Count packages
+    count=$(ls -1 "$REPODIR/pool/main/"*.deb 2>/dev/null | wc -l)
+    echo "  Bundling $count packages into autoware-localrepo..."
+
+    # Build autoware-localrepo
+    echo "Building autoware-localrepo..."
+    (cd "$BASEDIR/packages/autoware-localrepo" && dpkg-buildpackage -us -uc -b)
+
+    echo "✓ autoware-localrepo built with $count bundled packages"
 
 # Clean all build artifacts
 clean:
     @echo "Cleaning..."
     rm -rf build/
-    rm -rf repo/
+    rm -rf packages/autoware-localrepo/repo/
     rm -f packages/*/*.deb packages/*/*.buildinfo packages/*/*.changes
     @echo "✓ Clean complete"
