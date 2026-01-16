@@ -4,7 +4,18 @@
 	dh $@
 
 override_dh_auto_install:
+	# Install APT source configuration
 	install -d $(CURDIR)/debian/autoware-localrepo/etc/apt/sources.list.d
 	install -d $(CURDIR)/debian/autoware-localrepo/etc/apt/preferences.d
 	install -m 644 src/autoware-localrepo.list $(CURDIR)/debian/autoware-localrepo/etc/apt/sources.list.d/
 	install -m 644 src/autoware-localrepo.pref $(CURDIR)/debian/autoware-localrepo/etc/apt/preferences.d/
+
+	# Install bundled repository (prepared by justfile before building)
+	install -d $(CURDIR)/debian/autoware-localrepo/opt/autoware/1.5.0/repo
+	cp -r repo/* $(CURDIR)/debian/autoware-localrepo/opt/autoware/1.5.0/repo/
+
+override_dh_strip:
+	# Skip stripping - contains .deb files, not executables
+
+override_dh_shlibdeps:
+	# Skip shared library dependency detection

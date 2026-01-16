@@ -2,3 +2,6 @@
 *.deb
 *.buildinfo
 *.changes
+
+# Bundled repo for autoware-localrepo
+autoware-localrepo/repo/

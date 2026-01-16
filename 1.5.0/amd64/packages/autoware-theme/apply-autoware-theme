@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Source file
-SOURCE_FILE="/opt/autoware/theme/qt5ct.conf"
+SOURCE_FILE="/opt/autoware/1.5.0/theme/qt5ct.conf"
 # Destination directory and file
 DEST_DIR="$HOME/.config/qt5ct"
 DEST_FILE="$DEST_DIR/qt5ct.conf"

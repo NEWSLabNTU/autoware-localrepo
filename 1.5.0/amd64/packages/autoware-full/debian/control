@@ -10,8 +10,9 @@ Architecture: any
 Depends: ${misc:Depends},
          autoware-config,
          autoware-theme,
+         autoware-data,
          autoware-runtime
 Description: Autoware complete installation meta-package
  This meta-package installs all Autoware components including
- configuration files, visual theme, and runtime packages.
+ configuration files, visual theme, ML model data, and runtime packages.
  Install this package for a complete Autoware setup.

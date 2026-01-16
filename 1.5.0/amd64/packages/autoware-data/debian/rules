@@ -29,137 +29,137 @@ override_dh_auto_build:
 	@echo "Downloads complete."
 
 override_dh_auto_install:
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/yabloc_pose_initializer
-	tar -xf downloads/yabloc_pose_initializer/resources.tar.gz -C $(CURDIR)/debian/autoware-data/opt/autoware/data/yabloc_pose_initializer
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/bevfusion
-	install -m 644 downloads/bevfusion/bevfusion_lidar.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/bevfusion/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/bevfusion
-	install -m 644 downloads/bevfusion/bevfusion_camera_lidar.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/bevfusion/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/bevfusion
-	install -m 644 downloads/bevfusion/ml_package_bevfusion_lidar.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/bevfusion/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/bevfusion
-	install -m 644 downloads/bevfusion/ml_package_bevfusion_camera_lidar.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/bevfusion/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/bevfusion
-	install -m 644 downloads/bevfusion/detection_class_remapper.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/bevfusion/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_bevdet
-	tar -xf downloads/tensorrt_bevdet/tensorrt_bevdet.tar.gz -C $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_bevdet
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/image_projection_based_fusion
-	install -m 644 downloads/image_projection_based_fusion/pts_voxel_encoder_pointpainting.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/image_projection_based_fusion/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/image_projection_based_fusion
-	install -m 644 downloads/image_projection_based_fusion/pts_backbone_neck_head_pointpainting.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/image_projection_based_fusion/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/image_projection_based_fusion
-	install -m 644 downloads/image_projection_based_fusion/detection_class_remapper.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/image_projection_based_fusion/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/image_projection_based_fusion
-	install -m 644 downloads/image_projection_based_fusion/pointpainting_ml_package.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/image_projection_based_fusion/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_apollo_instance_segmentation
-	install -m 644 downloads/lidar_apollo_instance_segmentation/vlp-16.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_apollo_instance_segmentation/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_apollo_instance_segmentation
-	install -m 644 downloads/lidar_apollo_instance_segmentation/hdl-64.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_apollo_instance_segmentation/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_apollo_instance_segmentation
-	install -m 644 downloads/lidar_apollo_instance_segmentation/vls-128.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_apollo_instance_segmentation/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint
-	install -m 644 downloads/lidar_centerpoint/pts_voxel_encoder_centerpoint.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint
-	install -m 644 downloads/lidar_centerpoint/pts_backbone_neck_head_centerpoint.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint
-	install -m 644 downloads/lidar_centerpoint/pts_voxel_encoder_centerpoint_tiny.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint
-	install -m 644 downloads/lidar_centerpoint/pts_backbone_neck_head_centerpoint_tiny.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint
-	install -m 644 downloads/lidar_centerpoint/centerpoint_ml_package.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint
-	install -m 644 downloads/lidar_centerpoint/centerpoint_tiny_ml_package.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint
-	install -m 644 downloads/lidar_centerpoint/centerpoint_sigma_ml_package.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint
-	install -m 644 downloads/lidar_centerpoint/detection_class_remapper.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint
-	install -m 644 downloads/lidar_centerpoint/deploy_metadata.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_centerpoint/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_transfusion
-	install -m 644 downloads/lidar_transfusion/transfusion.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_transfusion/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_transfusion
-	install -m 644 downloads/lidar_transfusion/transfusion_ml_package.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_transfusion/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_transfusion
-	install -m 644 downloads/lidar_transfusion/detection_class_remapper.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_transfusion/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox
-	install -m 644 downloads/tensorrt_yolox/yolox-tiny.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox
-	install -m 644 downloads/tensorrt_yolox/yolox-sPlus-opt.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox
-	install -m 644 downloads/tensorrt_yolox/yolox-sPlus-opt.EntropyV2-calibration.table $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox
-	install -m 644 downloads/tensorrt_yolox/yolox-sPlus-T4-960x960-pseudo-finetune.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox
-	install -m 644 downloads/tensorrt_yolox/yolox-sPlus-T4-960x960-pseudo-finetune.EntropyV2-calibration.table $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox
-	install -m 644 downloads/tensorrt_yolox/label.txt $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox
-	install -m 644 downloads/tensorrt_yolox/yolox-sPlus-opt-pseudoV2-T4-960x960-T4-seg16cls.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox
-	install -m 644 downloads/tensorrt_yolox/yolox-sPlus-opt-pseudoV2-T4-960x960-T4-seg16cls.EntropyV2-calibration.table $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox
-	install -m 644 downloads/tensorrt_yolox/semseg_color_map.csv $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_rtmdet
-	tar -xf downloads/tensorrt_rtmdet/tensorrt_rtmdet_onnx_models.tar.gz -C $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_rtmdet
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox
-	install -m 644 downloads/tensorrt_yolox/yolox_s_car_ped_tl_detector_960_960_batch_1.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox
-	install -m 644 downloads/tensorrt_yolox/yolox_s_car_ped_tl_detector_960_960_batch_1.EntropyV2-calibration.table $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox
-	install -m 644 downloads/tensorrt_yolox/car_ped_tl_detector_labels.txt $(CURDIR)/debian/autoware-data/opt/autoware/data/tensorrt_yolox/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier
-	install -m 644 downloads/traffic_light_classifier/traffic_light_classifier_mobilenetv2_batch_1.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier
-	install -m 644 downloads/traffic_light_classifier/traffic_light_classifier_mobilenetv2_batch_4.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier
-	install -m 644 downloads/traffic_light_classifier/traffic_light_classifier_mobilenetv2_batch_6.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier
-	install -m 644 downloads/traffic_light_classifier/traffic_light_classifier_efficientNet_b1_batch_1.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier
-	install -m 644 downloads/traffic_light_classifier/traffic_light_classifier_efficientNet_b1_batch_4.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier
-	install -m 644 downloads/traffic_light_classifier/traffic_light_classifier_efficientNet_b1_batch_6.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier
-	install -m 644 downloads/traffic_light_classifier/ped_traffic_light_classifier_mobilenetv2_batch_1.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier
-	install -m 644 downloads/traffic_light_classifier/ped_traffic_light_classifier_mobilenetv2_batch_4.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier
-	install -m 644 downloads/traffic_light_classifier/ped_traffic_light_classifier_mobilenetv2_batch_6.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier
-	install -m 644 downloads/traffic_light_classifier/lamp_labels.txt $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier
-	install -m 644 downloads/traffic_light_classifier/lamp_labels_ped.txt $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_classifier/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/diffusion_planner/v0.1
-	install -m 644 downloads/diffusion_planner/v0.1/diffusion_planner.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/diffusion_planner/v0.1/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/diffusion_planner/v0.1
-	install -m 644 downloads/diffusion_planner/v0.1/diffusion_planner.param.json $(CURDIR)/debian/autoware-data/opt/autoware/data/diffusion_planner/v0.1/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/diffusion_planner/v1.0
-	install -m 644 downloads/diffusion_planner/v1.0/diffusion_planner.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/diffusion_planner/v1.0/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/diffusion_planner/v1.0
-	install -m 644 downloads/diffusion_planner/v1.0/diffusion_planner.param.json $(CURDIR)/debian/autoware-data/opt/autoware/data/diffusion_planner/v1.0/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_fine_detector
-	install -m 644 downloads/traffic_light_fine_detector/tlr_car_ped_yolox_s_batch_1.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_fine_detector/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_fine_detector
-	install -m 644 downloads/traffic_light_fine_detector/tlr_car_ped_yolox_s_batch_4.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_fine_detector/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_fine_detector
-	install -m 644 downloads/traffic_light_fine_detector/tlr_car_ped_yolox_s_batch_6.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_fine_detector/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_fine_detector
-	install -m 644 downloads/traffic_light_fine_detector/tlr_labels.txt $(CURDIR)/debian/autoware-data/opt/autoware/data/traffic_light_fine_detector/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/simpl_prediction
-	install -m 644 downloads/simpl_prediction/simpl.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/simpl_prediction/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/ptv3
-	install -m 644 downloads/ptv3/ptv3.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/ptv3/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/ptv3
-	install -m 644 downloads/ptv3/ml_package_ptv3.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/ptv3/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_frnet
-	install -m 644 downloads/lidar_frnet/frnet.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_frnet/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_frnet
-	install -m 644 downloads/lidar_frnet/ml_package_frnet.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/lidar_frnet/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/calibration_status_classifier
-	install -m 644 downloads/calibration_status_classifier/calibration_status_classifier.onnx $(CURDIR)/debian/autoware-data/opt/autoware/data/calibration_status_classifier/
-	install -d $(CURDIR)/debian/autoware-data/opt/autoware/data/calibration_status_classifier
-	install -m 644 downloads/calibration_status_classifier/ml_package_calibration_status_classifier.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/data/calibration_status_classifier/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/yabloc_pose_initializer
+	tar -xf downloads/yabloc_pose_initializer/resources.tar.gz -C $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/yabloc_pose_initializer
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/bevfusion
+	install -m 644 downloads/bevfusion/bevfusion_lidar.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/bevfusion/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/bevfusion
+	install -m 644 downloads/bevfusion/bevfusion_camera_lidar.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/bevfusion/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/bevfusion
+	install -m 644 downloads/bevfusion/ml_package_bevfusion_lidar.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/bevfusion/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/bevfusion
+	install -m 644 downloads/bevfusion/ml_package_bevfusion_camera_lidar.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/bevfusion/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/bevfusion
+	install -m 644 downloads/bevfusion/detection_class_remapper.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/bevfusion/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_bevdet
+	tar -xf downloads/tensorrt_bevdet/tensorrt_bevdet.tar.gz -C $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_bevdet
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/image_projection_based_fusion
+	install -m 644 downloads/image_projection_based_fusion/pts_voxel_encoder_pointpainting.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/image_projection_based_fusion/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/image_projection_based_fusion
+	install -m 644 downloads/image_projection_based_fusion/pts_backbone_neck_head_pointpainting.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/image_projection_based_fusion/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/image_projection_based_fusion
+	install -m 644 downloads/image_projection_based_fusion/detection_class_remapper.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/image_projection_based_fusion/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/image_projection_based_fusion
+	install -m 644 downloads/image_projection_based_fusion/pointpainting_ml_package.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/image_projection_based_fusion/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_apollo_instance_segmentation
+	install -m 644 downloads/lidar_apollo_instance_segmentation/vlp-16.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_apollo_instance_segmentation/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_apollo_instance_segmentation
+	install -m 644 downloads/lidar_apollo_instance_segmentation/hdl-64.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_apollo_instance_segmentation/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_apollo_instance_segmentation
+	install -m 644 downloads/lidar_apollo_instance_segmentation/vls-128.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_apollo_instance_segmentation/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/pts_voxel_encoder_centerpoint.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/pts_backbone_neck_head_centerpoint.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/pts_voxel_encoder_centerpoint_tiny.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/pts_backbone_neck_head_centerpoint_tiny.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/centerpoint_ml_package.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/centerpoint_tiny_ml_package.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/centerpoint_sigma_ml_package.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/detection_class_remapper.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/deploy_metadata.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_transfusion
+	install -m 644 downloads/lidar_transfusion/transfusion.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_transfusion/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_transfusion
+	install -m 644 downloads/lidar_transfusion/transfusion_ml_package.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_transfusion/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_transfusion
+	install -m 644 downloads/lidar_transfusion/detection_class_remapper.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_transfusion/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox
+	install -m 644 downloads/tensorrt_yolox/yolox-tiny.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox
+	install -m 644 downloads/tensorrt_yolox/yolox-sPlus-opt.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox
+	install -m 644 downloads/tensorrt_yolox/yolox-sPlus-opt.EntropyV2-calibration.table $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox
+	install -m 644 downloads/tensorrt_yolox/yolox-sPlus-T4-960x960-pseudo-finetune.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox
+	install -m 644 downloads/tensorrt_yolox/yolox-sPlus-T4-960x960-pseudo-finetune.EntropyV2-calibration.table $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox
+	install -m 644 downloads/tensorrt_yolox/label.txt $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox
+	install -m 644 downloads/tensorrt_yolox/yolox-sPlus-opt-pseudoV2-T4-960x960-T4-seg16cls.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox
+	install -m 644 downloads/tensorrt_yolox/yolox-sPlus-opt-pseudoV2-T4-960x960-T4-seg16cls.EntropyV2-calibration.table $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox
+	install -m 644 downloads/tensorrt_yolox/semseg_color_map.csv $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_rtmdet
+	tar -xf downloads/tensorrt_rtmdet/tensorrt_rtmdet_onnx_models.tar.gz -C $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_rtmdet
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox
+	install -m 644 downloads/tensorrt_yolox/yolox_s_car_ped_tl_detector_960_960_batch_1.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox
+	install -m 644 downloads/tensorrt_yolox/yolox_s_car_ped_tl_detector_960_960_batch_1.EntropyV2-calibration.table $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox
+	install -m 644 downloads/tensorrt_yolox/car_ped_tl_detector_labels.txt $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/tensorrt_yolox/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier
+	install -m 644 downloads/traffic_light_classifier/traffic_light_classifier_mobilenetv2_batch_1.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier
+	install -m 644 downloads/traffic_light_classifier/traffic_light_classifier_mobilenetv2_batch_4.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier
+	install -m 644 downloads/traffic_light_classifier/traffic_light_classifier_mobilenetv2_batch_6.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier
+	install -m 644 downloads/traffic_light_classifier/traffic_light_classifier_efficientNet_b1_batch_1.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier
+	install -m 644 downloads/traffic_light_classifier/traffic_light_classifier_efficientNet_b1_batch_4.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier
+	install -m 644 downloads/traffic_light_classifier/traffic_light_classifier_efficientNet_b1_batch_6.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier
+	install -m 644 downloads/traffic_light_classifier/ped_traffic_light_classifier_mobilenetv2_batch_1.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier
+	install -m 644 downloads/traffic_light_classifier/ped_traffic_light_classifier_mobilenetv2_batch_4.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier
+	install -m 644 downloads/traffic_light_classifier/ped_traffic_light_classifier_mobilenetv2_batch_6.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier
+	install -m 644 downloads/traffic_light_classifier/lamp_labels.txt $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier
+	install -m 644 downloads/traffic_light_classifier/lamp_labels_ped.txt $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_classifier/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/diffusion_planner/v0.1
+	install -m 644 downloads/diffusion_planner/v0.1/diffusion_planner.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/diffusion_planner/v0.1/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/diffusion_planner/v0.1
+	install -m 644 downloads/diffusion_planner/v0.1/diffusion_planner.param.json $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/diffusion_planner/v0.1/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/diffusion_planner/v1.0
+	install -m 644 downloads/diffusion_planner/v1.0/diffusion_planner.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/diffusion_planner/v1.0/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/diffusion_planner/v1.0
+	install -m 644 downloads/diffusion_planner/v1.0/diffusion_planner.param.json $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/diffusion_planner/v1.0/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_fine_detector
+	install -m 644 downloads/traffic_light_fine_detector/tlr_car_ped_yolox_s_batch_1.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_fine_detector/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_fine_detector
+	install -m 644 downloads/traffic_light_fine_detector/tlr_car_ped_yolox_s_batch_4.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_fine_detector/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_fine_detector
+	install -m 644 downloads/traffic_light_fine_detector/tlr_car_ped_yolox_s_batch_6.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_fine_detector/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_fine_detector
+	install -m 644 downloads/traffic_light_fine_detector/tlr_labels.txt $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/traffic_light_fine_detector/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/simpl_prediction
+	install -m 644 downloads/simpl_prediction/simpl.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/simpl_prediction/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/ptv3
+	install -m 644 downloads/ptv3/ptv3.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/ptv3/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/ptv3
+	install -m 644 downloads/ptv3/ml_package_ptv3.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/ptv3/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_frnet
+	install -m 644 downloads/lidar_frnet/frnet.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_frnet/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_frnet
+	install -m 644 downloads/lidar_frnet/ml_package_frnet.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/lidar_frnet/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/calibration_status_classifier
+	install -m 644 downloads/calibration_status_classifier/calibration_status_classifier.onnx $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/calibration_status_classifier/
+	install -d $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/calibration_status_classifier
+	install -m 644 downloads/calibration_status_classifier/ml_package_calibration_status_classifier.param.yaml $(CURDIR)/debian/autoware-data/opt/autoware/1.5.0/data/calibration_status_classifier/
 
 override_dh_auto_clean:
 	rm -rf downloads/
