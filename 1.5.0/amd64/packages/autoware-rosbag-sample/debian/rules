@@ -13,3 +13,7 @@ override_dh_auto_install:
 	# Install rosbag
 	install -d $(CURDIR)/debian/autoware-rosbag-sample/opt/autoware/1.5.0/share/autoware_rosbags
 	cp -r src/sample-rosbag $(CURDIR)/debian/autoware-rosbag-sample/opt/autoware/1.5.0/share/autoware_rosbags/
+
+override_dh_builddeb:
+	# Use gzip instead of xz for faster compression
+	dh_builddeb -- -Zgzip
