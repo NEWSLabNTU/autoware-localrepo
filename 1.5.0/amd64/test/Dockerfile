@@ -1,17 +1,20 @@
 # Test Dockerfile: Simulates clean user installation
-# 1. Install autoware-localrepo (sets up APT repo + provides setup script)
-# 2. Run setup-prerequisites.sh to install prerequisites
+# 1. Run setup-prerequisites.sh first (cached layer when prerequisites unchanged)
+# 2. Install autoware-localrepo (sets up APT repo + provides helper scripts)
 # 3. Install autoware-full
 FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Step 1: Install autoware-localrepo (works on fresh system, no dependencies)
+# Step 1: Install prerequisites FIRST (separate layer for better caching)
+# This is a hack - copy the script separately so it doesn't depend on autoware-localrepo.deb
+COPY setup-prerequisites.sh /tmp/
+RUN chmod +x /tmp/setup-prerequisites.sh && /tmp/setup-prerequisites.sh && rm /tmp/setup-prerequisites.sh
+
+# Step 2: Install autoware-localrepo (sets up local APT repo)
 COPY autoware-localrepo.deb /tmp/
 RUN dpkg -i /tmp/autoware-localrepo.deb && rm /tmp/autoware-localrepo.deb
 
-# Step 2: Run prerequisites setup script (installs ROS2, CUDA libs, etc.)
-RUN /usr/share/autoware/setup-prerequisites.sh
 
 # Step 3: Install autoware-full (pulls all Autoware packages from local repo)
 RUN apt-get update && apt-get install -y autoware-full
