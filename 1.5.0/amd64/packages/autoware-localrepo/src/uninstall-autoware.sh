@@ -28,7 +28,7 @@ echo ""
 # Find all Autoware packages (with -1-5-0 suffix)
 log_info "Finding installed Autoware packages..."
 AUTOWARE_PKGS=$(dpkg -l | grep -E 'ros-humble-.*-1-5-0' | awk '{print $2}' || true)
-META_PKGS=$(dpkg -l | grep -E '^ii\s+(autoware-config|autoware-theme|autoware-data|autoware-runtime|autoware-full)\s' | awk '{print $2}' || true)
+META_PKGS=$(dpkg -l | grep -E '^ii\s+(autoware-config|autoware-theme|autoware-data|autoware-ros-packages|autoware-full)\s' | awk '{print $2}' || true)
 
 # Combine and count packages
 ALL_PKGS=$(echo -e "${AUTOWARE_PKGS}\n${META_PKGS}" | grep -v '^$' | sort -u)

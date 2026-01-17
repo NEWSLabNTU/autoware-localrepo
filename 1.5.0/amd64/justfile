@@ -24,12 +24,17 @@ ros:
 meta:
     #!/usr/bin/env bash
     set -e
-    echo "Building meta-packages (parallel)..."
+    echo "Building meta-packages..."
+
+    # Generate autoware-ros-packages control file from build/debs
+    echo "Generating autoware-ros-packages dependencies..."
+    packages/autoware-ros-packages/genpkg.sh
 
     # Build independent packages in parallel
+    echo "Building packages (parallel)..."
     parallel --halt now,fail=1 \
         'cd packages/{} && dpkg-buildpackage -us -uc -b' \
-        ::: autoware-config autoware-theme autoware-data autoware-runtime
+        ::: autoware-config autoware-theme autoware-data autoware-ros-packages
 
     # Build autoware-full last (depends on the others)
     cd packages/autoware-full && dpkg-buildpackage -us -uc -b
@@ -57,7 +62,7 @@ localrepo:
 
     # Copy meta-packages (except autoware-localrepo itself)
     echo "Copying meta-packages..."
-    for pkg in autoware-config autoware-theme autoware-data autoware-runtime autoware-full; do
+    for pkg in autoware-config autoware-theme autoware-data autoware-ros-packages autoware-full; do
         cp "$BASEDIR/packages/${pkg}_"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
     done
 
