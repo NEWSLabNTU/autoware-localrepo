@@ -70,6 +70,10 @@ localrepo:
 
     echo "✓ autoware-localrepo built with $count bundled packages"
 
+# Test localrepo installation in a clean Docker container
+test:
+    ./test/run.sh
+
 # Clean all build artifacts
 clean:
     @echo "Cleaning..."
