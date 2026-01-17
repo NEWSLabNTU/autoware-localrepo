@@ -6,31 +6,39 @@ This file provides guidance to Claude Code when working with this repository.
 
 This project builds Debian packages for multiple Autoware versions and creates a local APT repository. It combines:
 - **ROS packages** built via colcon2deb (in Docker)
-- **Meta-packages** built with debhelper (autoware-config, autoware-theme, autoware-data, autoware-runtime, autoware-full)
+- **Meta-packages** built with debhelper (autoware-config, autoware-theme, autoware-data, autoware-ros-packages, autoware-maps, autoware-rosbag-sample, autoware-full)
 
 ## Directory Structure
 
 ```
 autoware-localrepo/
-├── common/autoware-localrepo/    # APT repo configuration package
 ├── 1.5.0/                        # Autoware 1.5.0 version
 │   ├── amd64/                    # colcon2deb build for x86_64
-│   ├── jp62/                     # colcon2deb build for JetPack 6.2 (arm64)
-│   ├── packages/                 # Debhelper packages
-│   │   ├── autoware-config/      # CycloneDDS config, env setup
-│   │   ├── autoware-theme/       # RViz theme/icons (uses genpkg.py)
-│   │   ├── autoware-data/        # ML models (uses genpkg.py)
-│   │   ├── autoware-runtime/     # Meta-package for ROS debs
-│   │   └── autoware-full/        # Complete install meta-package
-│   ├── output/                   # Consolidated .deb files
-│   └── justfile
+│   │   ├── packages/             # Debhelper meta-packages
+│   │   │   ├── autoware-config/      # CycloneDDS config, setup scripts
+│   │   │   ├── autoware-theme/       # RViz theme/icons (bundled)
+│   │   │   ├── autoware-data/        # ML models (bundled, split files)
+│   │   │   ├── autoware-ros-packages/# Meta-package for ALL ROS debs
+│   │   │   ├── autoware-maps/        # Sample maps for planning sim
+│   │   │   ├── autoware-rosbag-sample/# Sample rosbag for replay demo
+│   │   │   ├── autoware-localrepo/   # Bundled APT repo package
+│   │   │   └── autoware-full/        # Complete install meta-package
+│   │   ├── test/                 # Test infrastructure
+│   │   │   ├── sim/              # Planning simulation scripts
+│   │   │   ├── run.sh            # Docker test launcher
+│   │   │   └── Dockerfile        # Test container
+│   │   ├── build/                # colcon2deb output (ROS .debs)
+│   │   └── justfile
+│   └── jp62/                     # colcon2deb build for JetPack 6.2 (arm64)
+│       └── ...                   # Same structure as amd64/
 ├── 2025.02/                      # Autoware 2025.02 version
 │   ├── amd64/                    # colcon2deb build for x86_64
 │   ├── jp60/                     # colcon2deb build for JetPack 6.0 (arm64)
 │   └── ...
-├── repo/                         # Final APT repository
 └── justfile                      # Top-level build automation
 ```
+
+Each version/arch directory is self-contained with its own packages/, build/, and justfile.
 
 ### JetPack Directory Naming
 
@@ -40,14 +48,11 @@ Jetson builds use JetPack version suffixes instead of architecture:
 
 ## Key Commands
 
-### Build Meta-Packages (autoware-config, autoware-theme, etc.)
+### Build Everything (ROS + Meta-packages + Localrepo)
 
 ```bash
-# From version directory (e.g., 2025.02/)
-just build-packages
-
-# Or individually
-cd packages/autoware-config && dpkg-buildpackage -us -uc -b
+# From version/arch directory (e.g., 1.5.0/amd64/)
+just all        # Runs: ros → meta → localrepo
 ```
 
 ### Build ROS Packages (requires Docker + colcon2deb)
@@ -55,57 +60,91 @@ cd packages/autoware-config && dpkg-buildpackage -us -uc -b
 ```bash
 # x86_64 build
 cd 1.5.0/amd64
-just build
+just ros
 
 # ARM64/Jetson build (requires QEMU on x86 host - very slow)
 cd 1.5.0/jp62
-just build
+just ros
 
 # Monitor build progress (arm64 builds take several hours)
 tail -f build/log/latest/*colcon_build.log
 ```
 
-### Generate Package Files (autoware-data, autoware-theme)
-
-These packages use `genpkg.py` scripts to generate debian/ files and download lists:
+### Build Meta-Packages
 
 ```bash
-# Regenerate autoware-data debian files
-cd packages/autoware-data
-python3 genpkg.py --version 2025.02
+# Build all meta-packages (auto-generates autoware-ros-packages deps)
+just meta
 
-# Regenerate autoware-theme debian files
-cd packages/autoware-theme
-python3 genpkg.py --version 2025.02
+# Or individually
+cd packages/autoware-config && dpkg-buildpackage -us -uc -b
 ```
 
-### Create APT Repository
+The `just meta` recipe:
+1. Runs `packages/autoware-ros-packages/genpkg.sh` to auto-generate dependencies from `build/debs/`
+2. Builds packages in parallel: autoware-config, autoware-theme, autoware-data, autoware-ros-packages, autoware-maps, autoware-rosbag-sample
+3. Builds autoware-full last (depends on others)
+
+### Build Bundled Localrepo Package
 
 ```bash
-# From repo root
-just create-repo
+# Creates autoware-localrepo with all packages bundled inside
+just localrepo
+```
+
+This copies all .debs into `packages/autoware-localrepo/repo/`, generates Packages index, and builds the final autoware-localrepo package.
+
+### Clean Commands
+
+```bash
+# Clean meta-package artifacts only (preserves build/ with ROS packages)
+just clean
+
+# Clean ROS build (WARNING: takes hours to rebuild!)
+just clean-ros   # Prompts for confirmation
+```
+
+### Run Planning Simulation Test
+
+```bash
+# From version/arch directory
+./test/sim/run.sh [map_path]
 ```
 
 ## Package Types
 
-| Package            | Arch | Description                              |
-|--------------------|------|------------------------------------------|
-| autoware-config    | all  | CycloneDDS config, environment setup     |
-| autoware-theme     | all  | RViz icons and Qt theme (from GitHub)    |
-| autoware-data      | all  | ML model files (ONNX, etc. from GitHub)  |
-| autoware-runtime   | any  | Meta-package depending on ROS packages   |
-| autoware-full      | any  | Complete Autoware installation           |
-| autoware-localrepo | all  | APT repository configuration             |
+| Package              | Arch | Size   | Description                              |
+|----------------------|------|--------|------------------------------------------|
+| autoware-config      | all  | 4 KB   | CycloneDDS config, setup scripts         |
+| autoware-theme       | all  | 11 KB  | RViz icons and Qt theme (bundled)        |
+| autoware-data        | all  | 1.7 GB | ML model files (bundled ONNX files)      |
+| autoware-ros-packages| any  | 4 KB   | Meta-package depending on ALL ROS debs   |
+| autoware-maps        | all  | 17 MB  | Sample maps for planning simulator       |
+| autoware-rosbag-sample| all | 185 MB | Sample rosbag for replay demo            |
+| autoware-full        | any  | 1 KB   | Complete Autoware installation           |
+| autoware-localrepo   | all  | ~1.9 GB| Bundled APT repo with all packages       |
 
 ## Important Files
 
-### Generated Files (track in git)
+### Bundled Source Files (track in git)
 
-These files are generated by genpkg.py but should be committed:
-- `packages/autoware-data/downloads.txt` - aria2c download list for ML models
-- `packages/autoware-data/tasks.yaml` - Downloaded from Autoware repo
-- `packages/autoware-theme/downloads.txt` - aria2c download list for theme files
-- `*/amd64/rosdep-packages.txt` - List of rosdep-resolved packages
+Source files are bundled in the package directories instead of downloading during build:
+
+**autoware-data/downloads/** - ML model files (ONNX, tar.gz):
+- Large files (>100MB) are split for GitHub: `*.part-aa`, `*.part-ab`, etc.
+- Reassembled during build via `cat *.part-* > original_file`
+- Split files to track: ptv3.onnx, bevfusion_camera_lidar.onnx, transfusion.onnx, tensorrt_bevdet.tar.gz, tensorrt_rtmdet_onnx_models.tar.gz
+
+**autoware-theme/downloads/** - Theme files (qss, icons)
+
+**autoware-maps/src/** - Sample map zip files
+
+**autoware-rosbag-sample/src/** - Sample rosbag (split into 50MB parts)
+
+### Generated Files
+
+- `packages/autoware-ros-packages/debian/control` - Auto-generated by `genpkg.sh` from `build/debs/`
+- `*/rosdep-packages.txt` - List of rosdep-resolved packages
 
 ### Jetson Build Files
 
@@ -122,13 +161,20 @@ Each package in `packages/` contains standard debian/ directory:
 - `debian/changelog` - Version history
 - `debian/compat` or `debian/debhelper-compat` - Debhelper version
 
-### genpkg.py Scripts
+### genpkg.sh Script (autoware-ros-packages)
+
+`packages/autoware-ros-packages/genpkg.sh`:
+- Auto-generates `debian/control` with dependencies on ALL ROS packages
+- Scans `build/debs/` directory for .deb files
+- Extracts package names and adds them to Depends field
+- Run automatically by `just meta`
+
+### Legacy genpkg.py Scripts
 
 `autoware-data/genpkg.py` and `autoware-theme/genpkg.py`:
-- Download metadata from Autoware GitHub repository
-- Generate `debian/rules` with aria2c parallel download commands
-- Generate `downloads.txt` for aria2c input
-- Use `$(CURDIR)/debian/<package>/` for install paths (not `$(DESTDIR)`)
+- Originally used to generate aria2c download lists
+- Now obsolete for 1.5.0 builds (files are bundled)
+- May still be useful for generating initial download lists for new versions
 
 ## Common Development Tasks
 
@@ -141,7 +187,9 @@ Each package in `packages/` contains standard debian/ directory:
 
 ### Modifying Package Dependencies
 
-Edit `debian/control` in the respective package directory. For autoware-runtime and autoware-full, update the `Depends:` field.
+Edit `debian/control` in the respective package directory.
+
+**Note:** `autoware-ros-packages/debian/control` is auto-generated by `genpkg.sh` - do not edit manually. For autoware-full, update the `Depends:` field directly.
 
 ### Debugging Build Failures
 
@@ -175,9 +223,46 @@ Don't use heredoc (`<< 'EOF'`) in debian/rules - it causes "missing separator" e
 
 ### Install Path in debian/rules
 
-Always use `$(CURDIR)/debian/<package-name>/` for install destinations, not `$(DESTDIR)/`. Example:
+Always use `$(CURDIR)/debian/<package-name>/` for install destinations, not `$(DESTDIR)/`. Use version-specific paths under `/opt/autoware/<version>/`. Example:
 ```makefile
-install -d $(CURDIR)/debian/autoware-config/opt/autoware/config
+install -d $(CURDIR)/debian/autoware-config/opt/autoware/1.5.0/config
+```
+
+### Build Performance with Gzip Compression
+
+For large packages (autoware-data, autoware-localrepo, autoware-maps, autoware-rosbag-sample), use gzip instead of xz compression for faster builds:
+```makefile
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip
+```
+
+### Splitting Large Files for GitHub (100MB limit)
+
+Files larger than 100MB must be split for GitHub. Use `split` command:
+```bash
+# Split into 50MB chunks
+split -b 50M large-file.onnx large-file.onnx.part-
+
+# Results in: large-file.onnx.part-aa, large-file.onnx.part-ab, etc.
+```
+
+In `debian/rules`, reassemble before use:
+```makefile
+override_dh_auto_build:
+	cat downloads/large-file.onnx.part-* > downloads/large-file.onnx
+```
+
+Add reassembled files to `.gitignore` (track only split parts):
+```gitignore
+downloads/large-file.onnx
+```
+
+### Unzip Non-Interactive Mode
+
+When extracting zip files during rebuild, use `-o` flag to prevent prompts:
+```makefile
+override_dh_auto_build:
+	unzip -qo src/sample-map.zip -d src/
 ```
 
 ## Jetson/ARM64 Build Issues
