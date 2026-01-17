@@ -20,7 +20,7 @@ echo ""
 TMPDIR=$(mktemp -d)
 trap "rm -rf $TMPDIR" EXIT
 
-# Copy the deb file and Dockerfile
+# Copy the deb file and Dockerfile (setup script is included in the deb)
 cp "$DEB_FILE" "$TMPDIR/autoware-localrepo.deb"
 cp "$SCRIPT_DIR/Dockerfile" "$TMPDIR/Dockerfile"
 
