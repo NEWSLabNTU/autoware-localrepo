@@ -2,7 +2,7 @@ Source: ros-humble-autoware-bag-time-manager-rviz-plugin-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Taiki Tanaka <taiki.tanaka@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rclcpp, ros-humble-rosbag2-interfaces, ros-humble-rviz-common
+Build-Depends: debhelper (>= 12.0.0), libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-rclcpp, ros-humble-rosbag2-interfaces, ros-humble-rviz-common
 Homepage: 
 Standards-Version: 3.9.2
 

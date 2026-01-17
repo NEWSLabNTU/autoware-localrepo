@@ -2,11 +2,11 @@ Source: ros-humble-autoware-external-api-msgs-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-lint-common <!nocheck>, ros-humble-builtin-interfaces, ros-humble-rosidl-default-generators, ros-humble-tier4-external-api-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-builtin-interfaces, ros-humble-rosidl-default-generators, ros-humble-tier4-external-api-msgs-1-5-0
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-external-api-msgs-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime, ros-humble-tier4-external-api-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime, ros-humble-tier4-external-api-msgs-1-5-0
 Description: The autoware_external_api_msgs package

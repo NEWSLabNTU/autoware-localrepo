@@ -2,11 +2,11 @@ Source: ros-humble-autoware-radar-fusion-to-detected-object-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yoshi Ri <yoshi.ri@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-autoware-utils, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components
+Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-radar-fusion-to-detected-object-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-perception-msgs, ros-humble-autoware-utils, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-geometry-msgs, ros-humble-message-filters, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: autoware_radar_fusion_to_detected_object

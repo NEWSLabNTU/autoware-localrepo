@@ -2,7 +2,7 @@ Source: ros-humble-autoware-radar-scan-to-pointcloud2-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yoshi Ri <yoshi.ri@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libpcl-common1.12, ros-humble-ament-clang-format <!nocheck>, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-cmake, ros-humble-pcl-conversions, ros-humble-radar-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs
+Build-Depends: debhelper (>= 12.0.0), libpcl-common1.12, ros-humble-ament-clang-format <!nocheck>, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-pcl-conversions, ros-humble-radar-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs
 Homepage: 
 Standards-Version: 3.9.2
 

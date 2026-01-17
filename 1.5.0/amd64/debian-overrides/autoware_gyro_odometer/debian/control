@@ -2,11 +2,11 @@ Source: ros-humble-autoware-gyro-odometer-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yamato Ando <yamato.ando@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libfmt-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-localization-util, ros-humble-autoware-utils-diagnostics, ros-humble-autoware-utils-geometry, ros-humble-autoware-utils-logging, ros-humble-autoware-utils-tf, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs
+Build-Depends: debhelper (>= 12.0.0), libfmt-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-localization-util-1-5-0, ros-humble-autoware-utils-diagnostics-1-5-0, ros-humble-autoware-utils-geometry-1-5-0, ros-humble-autoware-utils-logging-1-5-0, ros-humble-autoware-utils-tf-1-5-0, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-gyro-odometer-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, ros-humble-autoware-localization-util, ros-humble-autoware-utils-diagnostics, ros-humble-autoware-utils-geometry, ros-humble-autoware-utils-logging, ros-humble-autoware-utils-tf, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, ros-humble-autoware-localization-util-1-5-0, ros-humble-autoware-utils-diagnostics-1-5-0, ros-humble-autoware-utils-geometry-1-5-0, ros-humble-autoware-utils-logging-1-5-0, ros-humble-autoware-utils-tf-1-5-0, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs
 Description: The autoware_gyro_odometer package as a ROS 2 node

@@ -2,11 +2,11 @@ Source: ros-humble-autoware-frenet-planner-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Maxime CLEMENT <maxime.clement@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-auto-common, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-sampler-common
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-auto-common-1-5-0, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-sampler-common-1-5-0
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-frenet-planner-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-auto-common, ros-humble-autoware-sampler-common
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-auto-common-1-5-0, ros-humble-autoware-sampler-common-1-5-0
 Description: The autoware_frenet_planner package for trajectory generation in Frenet frame

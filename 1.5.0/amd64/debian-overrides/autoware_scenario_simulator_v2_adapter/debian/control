@@ -2,11 +2,11 @@ Source: ros-humble-autoware-scenario-simulator-v2-adapter-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Kyoichi Sugahara <kyoichi.sugahara@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-diagnostic-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-metric-msgs, ros-humble-tier4-simulation-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-diagnostic-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-metric-msgs-1-5-0, ros-humble-tier4-simulation-msgs-1-5-0
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-scenario-simulator-v2-adapter-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-diagnostic-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-metric-msgs, ros-humble-tier4-simulation-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-diagnostic-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-metric-msgs-1-5-0, ros-humble-tier4-simulation-msgs-1-5-0
 Description: Node for converting autoware's messages into UserDefinedValue messages

@@ -2,11 +2,11 @@ Source: ros-humble-eagleye-gnss-converter-1-5-0
 Section: misc
 Priority: optional
 Maintainer: OsamuSekino <osamu.sekino@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-eagleye-coordinate, ros-humble-eagleye-navigation, ros-humble-nmea-msgs, ros-humble-rclcpp, ros-humble-rtklib-msgs, ros-humble-sensor-msgs, ros-humble-septentrio-gnss-driver, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-ublox-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-eagleye-coordinate-1-5-0, ros-humble-eagleye-navigation-1-5-0, ros-humble-nmea-msgs, ros-humble-rclcpp, ros-humble-rtklib-msgs-1-5-0, ros-humble-sensor-msgs, ros-humble-septentrio-gnss-driver, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-ublox-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-eagleye-gnss-converter-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-eagleye-coordinate, ros-humble-eagleye-navigation, ros-humble-nmea-msgs, ros-humble-rclcpp, ros-humble-rtklib-msgs, ros-humble-sensor-msgs, ros-humble-septentrio-gnss-driver, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-ublox-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-eagleye-coordinate-1-5-0, ros-humble-eagleye-navigation-1-5-0, ros-humble-nmea-msgs, ros-humble-rclcpp, ros-humble-rtklib-msgs-1-5-0, ros-humble-sensor-msgs, ros-humble-septentrio-gnss-driver, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-ublox-msgs
 Description: gnss_converter package

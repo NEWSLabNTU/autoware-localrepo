@@ -2,11 +2,11 @@ Source: ros-humble-autoware-detection-by-tracker-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-euclidean-cluster, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-shape-estimation, ros-humble-autoware-utils, ros-humble-eigen3-cmake-module, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-perception-msgs
+Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-euclidean-cluster-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-object-recognition-utils-1-5-0, ros-humble-autoware-shape-estimation-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-eigen3-cmake-module, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-perception-msgs-1-5-0
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-detection-by-tracker-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-euclidean-cluster, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-shape-estimation, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-perception-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-euclidean-cluster-1-5-0, ros-humble-autoware-object-recognition-utils-1-5-0, ros-humble-autoware-shape-estimation-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-perception-msgs-1-5-0
 Description: The ROS 2 autoware_detection_by_tracker package

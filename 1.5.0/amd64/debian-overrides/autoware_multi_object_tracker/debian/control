@@ -2,11 +2,11 @@ Source: ros-humble-autoware-multi-object-tracker-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-geometry, ros-humble-autoware-utils-math, ros-humble-diagnostic-updater, ros-humble-eigen3-cmake-module, ros-humble-glog, ros-humble-mussp, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-cpp, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-unique-identifier-msgs, ros-humble-visualization-msgs
+Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-object-recognition-utils-1-5-0, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-utils-debug-1-5-0, ros-humble-autoware-utils-geometry-1-5-0, ros-humble-autoware-utils-math-1-5-0, ros-humble-diagnostic-updater, ros-humble-eigen3-cmake-module, ros-humble-glog-1-5-0, ros-humble-mussp-1-5-0, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-cpp, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-unique-identifier-msgs, ros-humble-visualization-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-multi-object-tracker-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-utils-debug, ros-humble-autoware-utils-geometry, ros-humble-autoware-utils-math, ros-humble-diagnostic-updater, ros-humble-glog, ros-humble-mussp, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-cpp, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-unique-identifier-msgs, ros-humble-visualization-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-object-recognition-utils-1-5-0, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-utils-debug-1-5-0, ros-humble-autoware-utils-geometry-1-5-0, ros-humble-autoware-utils-math-1-5-0, ros-humble-diagnostic-updater, ros-humble-glog-1-5-0, ros-humble-mussp-1-5-0, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosbag2-cpp, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-unique-identifier-msgs, ros-humble-visualization-msgs
 Description: The ROS 2 autoware_multi_object_tracker package

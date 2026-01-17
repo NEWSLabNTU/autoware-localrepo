@@ -2,11 +2,11 @@ Source: ros-humble-autoware-obstacle-collision-checker-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Taiki Tanaka <taiki.tanaka@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libboost-all-dev, libeigen3-dev, ros-humble-ament-cmake, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
+Build-Depends: debhelper (>= 12.0.0), libboost-all-dev, libeigen3-dev, ros-humble-ament-cmake-1-5-0, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-planning-msgs-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-autoware-vehicle-info-utils-1-5-0, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-obstacle-collision-checker-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, libeigen3-dev, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, libeigen3-dev, ros-humble-autoware-planning-msgs-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-autoware-vehicle-info-utils-1-5-0, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
 Description: The obstacle_collision_checker package

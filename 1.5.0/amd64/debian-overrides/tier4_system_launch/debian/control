@@ -2,11 +2,11 @@ Source: ros-humble-tier4-system-launch-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Fumihito Ito <fumihito.ito@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-tier4-system-launch-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-command-mode-decider, ros-humble-autoware-command-mode-switcher, ros-humble-autoware-component-interface-tools, ros-humble-autoware-component-state-monitor, ros-humble-autoware-diagnostic-graph-aggregator, ros-humble-autoware-dummy-diag-publisher, ros-humble-autoware-duplicated-node-checker, ros-humble-autoware-hazard-status-converter, ros-humble-autoware-mrm-comfortable-stop-operator, ros-humble-autoware-mrm-emergency-stop-operator, ros-humble-autoware-mrm-handler, ros-humble-autoware-pipeline-latency-monitor, ros-humble-autoware-processing-time-checker, ros-humble-autoware-system-monitor
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-command-mode-decider-1-5-0, ros-humble-autoware-command-mode-switcher-1-5-0, ros-humble-autoware-component-interface-tools-1-5-0, ros-humble-autoware-component-state-monitor-1-5-0, ros-humble-autoware-diagnostic-graph-aggregator-1-5-0, ros-humble-autoware-dummy-diag-publisher-1-5-0, ros-humble-autoware-duplicated-node-checker-1-5-0, ros-humble-autoware-hazard-status-converter-1-5-0, ros-humble-autoware-mrm-comfortable-stop-operator-1-5-0, ros-humble-autoware-mrm-emergency-stop-operator-1-5-0, ros-humble-autoware-mrm-handler-1-5-0, ros-humble-autoware-pipeline-latency-monitor-1-5-0, ros-humble-autoware-processing-time-checker-1-5-0, ros-humble-autoware-system-monitor-1-5-0
 Description: The tier4_system_launch package

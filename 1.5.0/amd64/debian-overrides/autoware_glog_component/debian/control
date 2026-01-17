@@ -2,11 +2,11 @@ Source: ros-humble-autoware-glog-component-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake, ros-humble-ament-cmake-auto, ros-humble-autoware-cmake, ros-humble-glog, ros-humble-rclcpp, ros-humble-rclcpp-components
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-1-5-0, ros-humble-ament-cmake-auto, ros-humble-autoware-cmake-1-5-0, ros-humble-glog-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-glog-component-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-glog, ros-humble-rclcpp, ros-humble-rclcpp-components
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-glog-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: The autoware_glog_component package

@@ -6,9 +6,6 @@
 # dh-make output file, you may use that output file without restriction.
 # This special exception was added by Craig Small in version 0.37 of dh-make.
 
-# Disable LTO - causes conflicts with CUDA fatbin symbols
-export DEB_BUILD_MAINT_OPTIONS = hardening=+all reproducible=+fixfilepath optimize=-lto
-
 # Use bash for all shell commands (required for sourcing colcon setup.bash)
 SHELL := /bin/bash
 

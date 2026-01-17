@@ -2,11 +2,11 @@ Source: ros-humble-autoware-dummy-infrastructure-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libboost-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-v2x-msgs
+Build-Depends: debhelper (>= 12.0.0), libboost-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-internal-planning-msgs-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-utils-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-v2x-msgs-1-5-0
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-dummy-infrastructure-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-v2x-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-planning-msgs-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-v2x-msgs-1-5-0
 Description: autoware_dummy_infrastructure

@@ -2,11 +2,11 @@ Source: ros-humble-autoware-utils-geometry-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Jian Kang <egon.kang@autocore.ai>
-Build-Depends: debhelper (>= 12.0.0), libboost-system-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-utils-math, ros-humble-autoware-utils-system <!nocheck>, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs
+Build-Depends: debhelper (>= 12.0.0), libboost-system-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-internal-planning-msgs-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-utils-math-1-5-0, ros-humble-autoware-utils-system-1-5-0 <!nocheck>, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-utils-geometry-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-system-dev, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-utils-math, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-system-dev, ros-humble-autoware-internal-planning-msgs-1-5-0, ros-humble-autoware-utils-math-1-5-0, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs
 Description: The autoware_utils_geometry package

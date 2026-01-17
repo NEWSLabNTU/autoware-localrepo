@@ -2,11 +2,11 @@ Source: ros-humble-autoware-external-cmd-selector-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Taiki Tanaka <taiki.tanaka@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tier4-control-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs-1-5-0, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-vehicle-msgs-1-5-0, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tier4-control-msgs-1-5-0
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-external-cmd-selector-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tier4-control-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs-1-5-0, ros-humble-autoware-vehicle-msgs-1-5-0, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tier4-control-msgs-1-5-0
 Description: The autoware_external_cmd_selector package

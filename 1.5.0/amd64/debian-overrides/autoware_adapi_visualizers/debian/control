@@ -8,5 +8,5 @@ Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-adapi-visualizers-1-5-0
 Architecture: any
-Depends: ${python3:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-geometry-msgs, ros-humble-rclpy, ros-humble-tf-transformations, ros-humble-visualization-msgs
+Depends: ${python3:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs-1-5-0, ros-humble-geometry-msgs, ros-humble-rclpy, ros-humble-tf-transformations, ros-humble-visualization-msgs
 Description: The adapi_visualizers package

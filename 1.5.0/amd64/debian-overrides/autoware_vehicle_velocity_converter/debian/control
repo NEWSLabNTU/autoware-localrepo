@@ -2,11 +2,11 @@ Source: ros-humble-autoware-vehicle-velocity-converter-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Masahiro Sakamoto <masahiro.sakamoto@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-vehicle-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-vehicle-msgs-1-5-0, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-vehicle-velocity-converter-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-vehicle-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-vehicle-msgs-1-5-0, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: The autoware_vehicle_velocity_converter package

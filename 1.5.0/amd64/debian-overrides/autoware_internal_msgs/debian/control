@@ -8,5 +8,5 @@ Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-internal-msgs-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-internal-metric-msgs, ros-humble-autoware-internal-perception-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-debug-msgs-1-5-0, ros-humble-autoware-internal-metric-msgs-1-5-0, ros-humble-autoware-internal-perception-msgs-1-5-0, ros-humble-autoware-internal-planning-msgs-1-5-0, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
 Description: Autoware internal messages package.

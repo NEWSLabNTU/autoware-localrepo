@@ -2,11 +2,11 @@ Source: ros-humble-autoware-radar-objects-adapter-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Taekjin Lee <taekjin.lee@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-autoware-sensing-msgs, ros-humble-autoware-universe-utils, ros-humble-rclcpp, ros-humble-rclcpp-components
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-sensing-msgs-1-5-0, ros-humble-autoware-universe-utils-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-radar-objects-adapter-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-perception-msgs, ros-humble-autoware-sensing-msgs, ros-humble-autoware-universe-utils, ros-humble-rclcpp, ros-humble-rclcpp-components
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-sensing-msgs-1-5-0, ros-humble-autoware-universe-utils-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: The autoware_radar_objects_adapter package

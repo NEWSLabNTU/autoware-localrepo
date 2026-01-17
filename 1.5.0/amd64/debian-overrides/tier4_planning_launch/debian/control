@@ -2,11 +2,11 @@ Source: ros-humble-tier4-planning-launch-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Zulfaqar Azmi <zulfaqar.azmi@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-tier4-planning-launch-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-behavior-path-planner, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-costmap-generator, ros-humble-autoware-external-cmd-selector, ros-humble-autoware-external-velocity-limit-selector, ros-humble-autoware-freespace-planner, ros-humble-autoware-glog-component, ros-humble-autoware-hazard-lights-selector, ros-humble-autoware-manual-lane-change-handler, ros-humble-autoware-mission-planner-universe, ros-humble-autoware-path-optimizer, ros-humble-autoware-planning-evaluator, ros-humble-autoware-planning-topic-converter, ros-humble-autoware-planning-validator, ros-humble-autoware-remaining-distance-time-calculator, ros-humble-autoware-scenario-selector, ros-humble-autoware-surround-obstacle-checker, ros-humble-autoware-velocity-smoother
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-behavior-path-planner-1-5-0, ros-humble-autoware-behavior-velocity-planner-1-5-0, ros-humble-autoware-costmap-generator-1-5-0, ros-humble-autoware-external-cmd-selector-1-5-0, ros-humble-autoware-external-velocity-limit-selector-1-5-0, ros-humble-autoware-freespace-planner-1-5-0, ros-humble-autoware-glog-component-1-5-0, ros-humble-autoware-hazard-lights-selector-1-5-0, ros-humble-autoware-manual-lane-change-handler-1-5-0, ros-humble-autoware-mission-planner-universe-1-5-0, ros-humble-autoware-path-optimizer-1-5-0, ros-humble-autoware-planning-evaluator-1-5-0, ros-humble-autoware-planning-topic-converter-1-5-0, ros-humble-autoware-planning-validator-1-5-0, ros-humble-autoware-remaining-distance-time-calculator-1-5-0, ros-humble-autoware-scenario-selector-1-5-0, ros-humble-autoware-surround-obstacle-checker-1-5-0, ros-humble-autoware-velocity-smoother-1-5-0
 Description: The tier4_planning_launch package

@@ -2,11 +2,11 @@ Source: ros-humble-autoware-trajectory-adapter-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Daniel Sanchez <daniel.sanchez@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils-debug, ros-humble-rclcpp, ros-humble-rclcpp-components
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-1-5-0, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-internal-planning-msgs-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-planning-msgs-1-5-0, ros-humble-autoware-utils-debug-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-trajectory-adapter-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-planning-msgs, ros-humble-autoware-utils-debug, ros-humble-rclcpp, ros-humble-rclcpp-components
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-planning-msgs-1-5-0, ros-humble-autoware-planning-msgs-1-5-0, ros-humble-autoware-utils-debug-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: The autoware_trajectory_adapter package

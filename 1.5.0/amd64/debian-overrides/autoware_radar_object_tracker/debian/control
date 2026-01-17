@@ -2,11 +2,11 @@ Source: ros-humble-autoware-radar-object-tracker-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yoshi Ri <yoshi.ri@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, libgtest-dev <!nocheck>, libyaml-cpp-dev, nlohmann-json3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-kalman-filter, ros-humble-autoware-lanelet2-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-utils-geometry, ros-humble-diagnostic-updater, ros-humble-eigen3-cmake-module, ros-humble-glog, ros-humble-mussp, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-unique-identifier-msgs
+Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, libgtest-dev <!nocheck>, libyaml-cpp-dev, nlohmann-json3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-kalman-filter-1-5-0, ros-humble-autoware-lanelet2-utils-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-object-recognition-utils-1-5-0, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-utils-geometry-1-5-0, ros-humble-diagnostic-updater, ros-humble-eigen3-cmake-module, ros-humble-glog-1-5-0, ros-humble-mussp-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-unique-identifier-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-radar-object-tracker-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, libyaml-cpp-dev, nlohmann-json3-dev, ros-humble-autoware-kalman-filter, ros-humble-autoware-lanelet2-utils, ros-humble-autoware-object-recognition-utils, ros-humble-autoware-perception-msgs, ros-humble-autoware-utils-geometry, ros-humble-diagnostic-updater, ros-humble-glog, ros-humble-mussp, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-unique-identifier-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, libyaml-cpp-dev, nlohmann-json3-dev, ros-humble-autoware-kalman-filter-1-5-0, ros-humble-autoware-lanelet2-utils-1-5-0, ros-humble-autoware-object-recognition-utils-1-5-0, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-utils-geometry-1-5-0, ros-humble-diagnostic-updater, ros-humble-glog-1-5-0, ros-humble-mussp-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2, ros-humble-tf2-ros, ros-humble-unique-identifier-msgs
 Description: Do tracking radar object

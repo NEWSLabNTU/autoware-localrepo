@@ -2,11 +2,11 @@ Source: ros-humble-autoware-behavior-path-external-request-lane-change-module-1-
 Section: misc
 Priority: optional
 Maintainer: Fumiya Watanabe <fumiya.watanabe@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-behavior-path-lane-change-module, ros-humble-autoware-behavior-path-planner, ros-humble-autoware-behavior-path-planner-common, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-rtc-interface, ros-humble-autoware-utils, ros-humble-eigen3-cmake-module, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-visualization-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-behavior-path-lane-change-module-1-5-0, ros-humble-autoware-behavior-path-planner-1-5-0, ros-humble-autoware-behavior-path-planner-common-1-5-0, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-motion-utils-1-5-0, ros-humble-autoware-rtc-interface-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-eigen3-cmake-module, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-visualization-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-behavior-path-external-request-lane-change-module-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-behavior-path-lane-change-module, ros-humble-autoware-behavior-path-planner, ros-humble-autoware-behavior-path-planner-common, ros-humble-autoware-motion-utils, ros-humble-autoware-rtc-interface, ros-humble-autoware-utils, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-visualization-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-behavior-path-lane-change-module-1-5-0, ros-humble-autoware-behavior-path-planner-1-5-0, ros-humble-autoware-behavior-path-planner-common-1-5-0, ros-humble-autoware-motion-utils-1-5-0, ros-humble-autoware-rtc-interface-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-visualization-msgs
 Description: The autoware_behavior_path_external_request_lane_change_module package

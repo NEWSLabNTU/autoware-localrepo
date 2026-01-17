@@ -2,12 +2,12 @@ Source: ros-humble-autoware-overlay-rviz-plugin-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Khalil Selyan <khalil@leodrive.ai>
-Build-Depends: debhelper (>= 12.0.0), libboost-all-dev, ros-humble-ament-cmake-auto, ros-humble-ament-index-cpp, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-rviz-common, ros-humble-rviz-ogre-vendor, ros-humble-rviz-rendering
+Build-Depends: debhelper (>= 12.0.0), libboost-all-dev, ros-humble-ament-cmake-auto, ros-humble-ament-index-cpp, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-internal-planning-msgs-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-vehicle-msgs-1-5-0, ros-humble-rviz-common, ros-humble-rviz-ogre-vendor, ros-humble-rviz-rendering
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-overlay-rviz-plugin-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, ros-humble-ament-index-cpp, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-rviz-common, ros-humble-rviz-ogre-vendor, ros-humble-rviz-rendering
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, ros-humble-ament-index-cpp, ros-humble-autoware-internal-planning-msgs-1-5-0, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-vehicle-msgs-1-5-0, ros-humble-rviz-common, ros-humble-rviz-ogre-vendor, ros-humble-rviz-rendering
 Description: RViz2 plugin for 2D overlays in the 3D view.
  Mainly a port of the JSK overlay plugin (https://github.com/jsk-ros-pkg/jsk_visualization).

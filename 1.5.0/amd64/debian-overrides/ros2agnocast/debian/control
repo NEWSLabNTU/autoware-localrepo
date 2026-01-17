@@ -8,5 +8,5 @@ Standards-Version: 3.9.2
 
 Package: ros-humble-ros2agnocast-1-5-0
 Architecture: any
-Depends: ${python3:Depends}, ${misc:Depends}, ros-humble-agnocast-ioctl-wrapper
+Depends: ${python3:Depends}, ${misc:Depends}, ros-humble-agnocast-ioctl-wrapper-1-5-0
 Description: The ROS 2 command line tool extension for Agnocast.

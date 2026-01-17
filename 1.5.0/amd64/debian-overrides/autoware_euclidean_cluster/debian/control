@@ -2,11 +2,11 @@ Source: ros-humble-autoware-euclidean-cluster-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libpcl-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-autoware-point-types, ros-humble-autoware-utils, ros-humble-geometry-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tier4-perception-msgs
+Build-Depends: debhelper (>= 12.0.0), libpcl-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-point-types-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-geometry-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tier4-perception-msgs-1-5-0
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-euclidean-cluster-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, ros-humble-autoware-perception-msgs, ros-humble-autoware-point-types, ros-humble-autoware-utils, ros-humble-geometry-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tier4-perception-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-point-types-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-geometry-msgs, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tier4-perception-msgs-1-5-0
 Description: The autoware_euclidean_cluster package

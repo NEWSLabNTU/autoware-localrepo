@@ -2,11 +2,11 @@ Source: ros-humble-nebula-hw-interfaces-1-5-0
 Section: misc
 Priority: optional
 Maintainer: MAP IV <contact@map4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-boost-tcp-driver, ros-humble-boost-udp-driver, ros-humble-nebula-common, ros-humble-nebula-msgs, ros-humble-pandar-msgs, ros-humble-robosense-msgs, ros-humble-ros2-socketcan, ros-humble-velodyne-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-boost-tcp-driver-1-5-0, ros-humble-boost-udp-driver-1-5-0, ros-humble-nebula-common-1-5-0, ros-humble-nebula-msgs-1-5-0, ros-humble-pandar-msgs-1-5-0, ros-humble-robosense-msgs-1-5-0, ros-humble-ros2-socketcan-1-5-0, ros-humble-velodyne-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-nebula-hw-interfaces-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-boost-tcp-driver, ros-humble-boost-udp-driver, ros-humble-nebula-common, ros-humble-nebula-msgs, ros-humble-pandar-msgs, ros-humble-robosense-msgs, ros-humble-ros2-socketcan, ros-humble-velodyne-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-boost-tcp-driver-1-5-0, ros-humble-boost-udp-driver-1-5-0, ros-humble-nebula-common-1-5-0, ros-humble-nebula-msgs-1-5-0, ros-humble-pandar-msgs-1-5-0, ros-humble-robosense-msgs-1-5-0, ros-humble-ros2-socketcan-1-5-0, ros-humble-velodyne-msgs
 Description: Nebula HW Interfaces

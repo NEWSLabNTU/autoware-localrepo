@@ -2,11 +2,11 @@ Source: ros-humble-autoware-behavior-path-start-planner-module-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-behavior-path-planner, ros-humble-autoware-behavior-path-planner-common, ros-humble-autoware-cmake, ros-humble-autoware-freespace-planning-algorithms, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-motion-utils, ros-humble-autoware-pyplot <!nocheck>, ros-humble-autoware-rtc-interface, ros-humble-autoware-test-utils <!nocheck>, ros-humble-autoware-universe-utils, ros-humble-autoware-utils, ros-humble-eigen3-cmake-module, ros-humble-pluginlib, ros-humble-pybind11-vendor <!nocheck>, ros-humble-rclcpp, ros-humble-visualization-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-behavior-path-planner-1-5-0, ros-humble-autoware-behavior-path-planner-common-1-5-0, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-freespace-planning-algorithms-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-motion-utils-1-5-0, ros-humble-autoware-pyplot-1-5-0 <!nocheck>, ros-humble-autoware-rtc-interface-1-5-0, ros-humble-autoware-test-utils-1-5-0 <!nocheck>, ros-humble-autoware-universe-utils-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-eigen3-cmake-module, ros-humble-pluginlib, ros-humble-pybind11-vendor <!nocheck>, ros-humble-rclcpp, ros-humble-visualization-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-behavior-path-start-planner-module-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-behavior-path-planner, ros-humble-autoware-behavior-path-planner-common, ros-humble-autoware-freespace-planning-algorithms, ros-humble-autoware-motion-utils, ros-humble-autoware-rtc-interface, ros-humble-autoware-universe-utils, ros-humble-autoware-utils, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-visualization-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-behavior-path-planner-1-5-0, ros-humble-autoware-behavior-path-planner-common-1-5-0, ros-humble-autoware-freespace-planning-algorithms-1-5-0, ros-humble-autoware-motion-utils-1-5-0, ros-humble-autoware-rtc-interface-1-5-0, ros-humble-autoware-universe-utils-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-visualization-msgs
 Description: The autoware_behavior_path_start_planner_module package

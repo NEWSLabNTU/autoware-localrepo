@@ -2,11 +2,11 @@ Source: ros-humble-autoware-pose-initializer-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yamato Ando <yamato.ando@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake, ros-humble-ament-cmake-cppcheck <!nocheck>, ros-humble-ament-cmake-gmock <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-component-interface-specs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-height-fitter, ros-humble-autoware-motion-utils, ros-humble-autoware-qos-utils, ros-humble-autoware-utils-diagnostics, ros-humble-autoware-utils-logging, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-srvs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-1-5-0, ros-humble-ament-cmake-cppcheck <!nocheck>, ros-humble-ament-cmake-gmock <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs-1-5-0, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-component-interface-specs-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-map-height-fitter-1-5-0, ros-humble-autoware-motion-utils-1-5-0, ros-humble-autoware-qos-utils-1-5-0, ros-humble-autoware-utils-diagnostics-1-5-0, ros-humble-autoware-utils-logging-1-5-0, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-srvs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-pose-initializer-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-component-interface-specs, ros-humble-autoware-map-height-fitter, ros-humble-autoware-motion-utils, ros-humble-autoware-qos-utils, ros-humble-autoware-utils-diagnostics, ros-humble-autoware-utils-logging, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-srvs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs-1-5-0, ros-humble-autoware-component-interface-specs-1-5-0, ros-humble-autoware-map-height-fitter-1-5-0, ros-humble-autoware-motion-utils-1-5-0, ros-humble-autoware-qos-utils-1-5-0, ros-humble-autoware-utils-diagnostics-1-5-0, ros-humble-autoware-utils-logging-1-5-0, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-srvs
 Description: The autoware_pose_initializer package

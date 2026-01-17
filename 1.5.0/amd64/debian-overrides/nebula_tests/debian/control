@@ -2,11 +2,11 @@ Source: ros-humble-nebula-tests-1-5-0
 Section: misc
 Priority: optional
 Maintainer: MAP IV <contact@map4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-diagnostic-updater, ros-humble-nebula-common, ros-humble-nebula-decoders, ros-humble-nebula-hw-interfaces, ros-humble-nebula-ros, ros-humble-ros-environment, ros-humble-rosbag2-cpp
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-diagnostic-updater, ros-humble-nebula-common-1-5-0, ros-humble-nebula-decoders-1-5-0, ros-humble-nebula-hw-interfaces-1-5-0, ros-humble-nebula-ros-1-5-0, ros-humble-ros-environment, ros-humble-rosbag2-cpp
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-nebula-tests-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-diagnostic-updater, ros-humble-nebula-common, ros-humble-nebula-decoders, ros-humble-nebula-hw-interfaces, ros-humble-nebula-ros, ros-humble-rosbag2-cpp
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-diagnostic-updater, ros-humble-nebula-common-1-5-0, ros-humble-nebula-decoders-1-5-0, ros-humble-nebula-hw-interfaces-1-5-0, ros-humble-nebula-ros-1-5-0, ros-humble-rosbag2-cpp
 Description: Nebula Lidar Drivers

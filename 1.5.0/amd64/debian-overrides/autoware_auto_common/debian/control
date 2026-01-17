@@ -2,7 +2,7 @@ Source: ros-humble-autoware-auto-common-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Apex.AI, Inc. <opensource@apex.ai>
-Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-builtin-interfaces, ros-humble-geometry-msgs <!nocheck>
+Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-builtin-interfaces, ros-humble-geometry-msgs <!nocheck>
 Homepage: 
 Standards-Version: 3.9.2
 

@@ -2,7 +2,7 @@ Source: ros-humble-autoware-bluetooth-monitor-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Fumihito Ito <fumihito.ito@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libboost-dev, libboost-serialization-dev, libfmt-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-diagnostic-msgs, ros-humble-diagnostic-updater, ros-humble-rclcpp, ros-humble-rclcpp-components
+Build-Depends: debhelper (>= 12.0.0), libboost-dev, libboost-serialization-dev, libfmt-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-diagnostic-msgs, ros-humble-diagnostic-updater, ros-humble-rclcpp, ros-humble-rclcpp-components
 Homepage: 
 Standards-Version: 3.9.2
 

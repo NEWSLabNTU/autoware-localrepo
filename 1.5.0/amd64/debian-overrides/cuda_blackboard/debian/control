@@ -2,11 +2,11 @@ Source: ros-humble-cuda-blackboard-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-cv-bridge, ros-humble-negotiated, ros-humble-negotiated-interfaces, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-ros-environment, ros-humble-sensor-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-cv-bridge, ros-humble-negotiated-1-5-0, ros-humble-negotiated-interfaces-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-ros-environment, ros-humble-sensor-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-cuda-blackboard-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-cv-bridge, ros-humble-negotiated, ros-humble-negotiated-interfaces, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-cv-bridge, ros-humble-negotiated-1-5-0, ros-humble-negotiated-interfaces-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs
 Description: The cuda_blackboard package

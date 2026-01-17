@@ -2,11 +2,11 @@ Source: ros-humble-autoware-mrm-comfortable-stop-operator-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Makoto Kurihara <makoto.kurihara@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-tier4-system-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs-1-5-0, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-internal-planning-msgs-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-utils-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-tier4-system-msgs-1-5-0
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-mrm-comfortable-stop-operator-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-utils, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-tier4-system-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs-1-5-0, ros-humble-autoware-internal-planning-msgs-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-tier4-system-msgs-1-5-0
 Description: The MRM comfortable stop operator package
