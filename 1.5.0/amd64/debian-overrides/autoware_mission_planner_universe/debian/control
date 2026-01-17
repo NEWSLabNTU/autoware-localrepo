@@ -2,11 +2,12 @@ Source: ros-humble-autoware-mission-planner-universe-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs-1-5-0, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lanelet2-utils-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-map-msgs-1-5-0, ros-humble-autoware-motion-utils-1-5-0, ros-humble-autoware-planning-msgs-1-5-0, ros-humble-autoware-route-handler-1-5-0, ros-humble-autoware-test-utils-1-5-0 <!nocheck>, ros-humble-autoware-utils-1-5-0, ros-humble-autoware-vehicle-info-utils-1-5-0, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs-1-5-0
-Homepage: 
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-adapi-v1-msgs-1-5-0, ros-humble-autoware-lanelet2-utils-1-5-0, ros-humble-autoware-map-msgs-1-5-0, ros-humble-autoware-motion-utils-1-5-0, ros-humble-autoware-planning-msgs-1-5-0, ros-humble-autoware-route-handler-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-autoware-vehicle-info-utils-1-5-0, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs-1-5-0
+Homepage:
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-mission-planner-universe-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs-1-5-0, ros-humble-autoware-lanelet2-utils-1-5-0, ros-humble-autoware-map-msgs-1-5-0, ros-humble-autoware-motion-utils-1-5-0, ros-humble-autoware-planning-msgs-1-5-0, ros-humble-autoware-route-handler-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-autoware-vehicle-info-utils-1-5-0, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs-1-5-0
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-lanelet2-core, ros-humble-autoware-adapi-v1-msgs-1-5-0, ros-humble-autoware-lanelet2-utils-1-5-0, ros-humble-autoware-map-msgs-1-5-0, ros-humble-autoware-motion-utils-1-5-0, ros-humble-autoware-planning-msgs-1-5-0, ros-humble-autoware-route-handler-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-autoware-vehicle-info-utils-1-5-0, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs-1-5-0
+Replaces: ros-humble-autoware-mission-planner-1-5-0
 Description: The autoware_mission_planner_universe package
