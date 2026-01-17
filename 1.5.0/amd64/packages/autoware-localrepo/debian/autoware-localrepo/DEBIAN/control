@@ -2,7 +2,7 @@ Package: autoware-localrepo
 Version: 1.5.0-1
 Architecture: all
 Maintainer: Jerry Lin <jerry73204@gmail.com>
-Installed-Size: 1942658
+Installed-Size: 1942672
 Section: misc
 Priority: optional
 Description: Autoware local APT repository configuration

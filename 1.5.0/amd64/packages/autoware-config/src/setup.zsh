@@ -13,10 +13,13 @@ else
     return 1
 fi
 
-# Source Autoware workspace overlay
-if [ -f "$AUTOWARE_HOME/local_setup.zsh" ]; then
-    source "$AUTOWARE_HOME/local_setup.zsh"
-fi
+# Set up Autoware workspace paths
+export AMENT_PREFIX_PATH="$AUTOWARE_HOME:$AMENT_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="$AUTOWARE_HOME:$CMAKE_PREFIX_PATH"
+export COLCON_PREFIX_PATH="$AUTOWARE_HOME:$COLCON_PREFIX_PATH"
+export PATH="$AUTOWARE_HOME/bin:$PATH"
+export LD_LIBRARY_PATH="$AUTOWARE_HOME/lib:$LD_LIBRARY_PATH"
+export PYTHONPATH="$AUTOWARE_HOME/lib/python3.10/site-packages:$PYTHONPATH"
 
 # Configure RMW implementation
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
