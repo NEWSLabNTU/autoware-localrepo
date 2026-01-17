@@ -15,8 +15,10 @@ RUN chmod +x /tmp/setup-prerequisites.sh && /tmp/setup-prerequisites.sh && rm /t
 COPY autoware-localrepo.deb /tmp/
 RUN dpkg -i /tmp/autoware-localrepo.deb && rm /tmp/autoware-localrepo.deb
 
+# Step 3: Activate DDS configuration (sysctl + multicast)
+RUN /usr/share/autoware/activate-dds-config.sh
 
-# Step 3: Install autoware-full (pulls all Autoware packages from local repo)
+# Step 4: Install autoware-full (pulls all Autoware packages from local repo)
 RUN apt-get update && apt-get install -y autoware-full
 
 # Verify setup.bash works and ros2 can see packages
