@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	# Reassemble split archive and extract
+	cat src/sample-rosbag.zip.part-* > src/sample-rosbag.zip
+	unzip -q src/sample-rosbag.zip -d src/
+	rm src/sample-rosbag.zip
+
+override_dh_auto_install:
+	# Install rosbag
+	install -d $(CURDIR)/debian/autoware-rosbag-sample/opt/autoware/1.5.0/share/autoware_rosbags
+	cp -r src/sample-rosbag $(CURDIR)/debian/autoware-rosbag-sample/opt/autoware/1.5.0/share/autoware_rosbags/

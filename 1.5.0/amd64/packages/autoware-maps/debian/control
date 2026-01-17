@@ -1,0 +1,17 @@
+Source: autoware-maps
+Section: misc
+Priority: optional
+Maintainer: Jerry Lin <jerry73204@gmail.com>
+Build-Depends: debhelper-compat (= 13), unzip
+Standards-Version: 4.6.2
+
+Package: autoware-maps
+Architecture: all
+Depends: ${misc:Depends}
+Description: Autoware sample maps for demos and tutorials
+ This package contains sample map data for Autoware demos:
+ .
+  - sample-map-planning: Map for planning simulator demo
+  - sample-map-rosbag: Map for rosbag replay simulation demo
+ .
+ Maps are installed to /opt/autoware/1.5.0/share/autoware_maps/

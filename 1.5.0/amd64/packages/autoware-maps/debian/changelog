@@ -1,0 +1,6 @@
+autoware-maps (1.5.0-1) jammy; urgency=medium
+
+  * Initial release for Autoware 1.5.0
+  * Includes sample-map-planning and sample-map-rosbag
+
+ -- Jerry Lin <jerry73204@gmail.com>  Fri, 17 Jan 2025 00:00:00 +0800

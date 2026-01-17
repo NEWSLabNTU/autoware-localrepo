@@ -34,7 +34,7 @@ meta:
     echo "Building packages (parallel)..."
     parallel --halt now,fail=1 \
         'cd packages/{} && dpkg-buildpackage -us -uc -b' \
-        ::: autoware-config autoware-theme autoware-data autoware-ros-packages
+        ::: autoware-config autoware-theme autoware-data autoware-ros-packages autoware-maps autoware-rosbag-sample
 
     # Build autoware-full last (depends on the others)
     cd packages/autoware-full && dpkg-buildpackage -us -uc -b
@@ -62,7 +62,7 @@ localrepo:
 
     # Copy meta-packages (except autoware-localrepo itself)
     echo "Copying meta-packages..."
-    for pkg in autoware-config autoware-theme autoware-data autoware-ros-packages autoware-full; do
+    for pkg in autoware-config autoware-theme autoware-data autoware-ros-packages autoware-maps autoware-rosbag-sample autoware-full; do
         cp "$BASEDIR/packages/${pkg}_"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
     done
 

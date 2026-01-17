@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	# Extract map archives
+	unzip -q src/sample-map-planning.zip -d src/
+	unzip -q src/sample-map-rosbag.zip -d src/
+
+override_dh_auto_install:
+	# Install maps
+	install -d $(CURDIR)/debian/autoware-maps/opt/autoware/1.5.0/share/autoware_maps
+	cp -r src/sample-map-planning $(CURDIR)/debian/autoware-maps/opt/autoware/1.5.0/share/autoware_maps/
+	cp -r src/sample-map-rosbag $(CURDIR)/debian/autoware-maps/opt/autoware/1.5.0/share/autoware_maps/

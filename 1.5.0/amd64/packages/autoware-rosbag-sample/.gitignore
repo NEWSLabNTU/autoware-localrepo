@@ -1,0 +1,13 @@
+# Build artifacts
+*.deb
+
+# Debhelper build artifacts
+debian/.debhelper/
+debian/*.substvars
+debian/autoware-rosbag-sample/
+debian/debhelper-build-stamp
+debian/files
+
+# Extracted files (built from split zip parts)
+src/sample-rosbag.zip
+src/sample-rosbag/
