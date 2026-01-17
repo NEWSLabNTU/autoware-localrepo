@@ -14,6 +14,11 @@ override_dh_auto_install:
 	install -d $(CURDIR)/debian/autoware-localrepo/opt/autoware/1.5.0/repo
 	cp -r repo/* $(CURDIR)/debian/autoware-localrepo/opt/autoware/1.5.0/repo/
 
+	# Install helper scripts
+	install -d $(CURDIR)/debian/autoware-localrepo/usr/share/autoware
+	install -m 755 src/setup-prerequisites.sh $(CURDIR)/debian/autoware-localrepo/usr/share/autoware/
+	install -m 755 src/uninstall-autoware.sh $(CURDIR)/debian/autoware-localrepo/usr/share/autoware/
+
 override_dh_strip:
 	# Skip stripping - contains .deb files, not executables
 
