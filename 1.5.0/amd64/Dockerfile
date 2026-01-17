@@ -1,6 +1,7 @@
-# Use Autoware base CUDA image with TensorRT 10.8.0, CUDA 12.4, cuDNN 8.9.7
-# This image is maintained by Autoware Foundation and matches amd64.env requirements
-FROM ghcr.io/autowarefoundation/autoware-base:cuda-latest
+# Use Autoware base CUDA image matching Autoware 1.5.0 release (November 20, 2025)
+# Tag cuda-20251120 matches the exact release date
+# Includes: CUDA 12.4, cuDNN 8.9.7, TensorRT 10.8.0 (per amd64.env)
+FROM ghcr.io/autowarefoundation/autoware-base:cuda-20251120
 
 # Set up CUDA environment variables
 ENV CUDA_HOME=/usr/local/cuda
