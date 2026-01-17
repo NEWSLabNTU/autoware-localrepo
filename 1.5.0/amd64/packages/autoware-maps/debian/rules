@@ -4,9 +4,9 @@
 	dh $@
 
 override_dh_auto_build:
-	# Extract map archives
-	unzip -q src/sample-map-planning.zip -d src/
-	unzip -q src/sample-map-rosbag.zip -d src/
+	# Extract map archives (-o to overwrite without prompting)
+	unzip -qo src/sample-map-planning.zip -d src/
+	unzip -qo src/sample-map-rosbag.zip -d src/
 
 override_dh_auto_install:
 	# Install maps

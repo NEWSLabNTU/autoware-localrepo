@@ -6,7 +6,7 @@
 override_dh_auto_build:
 	# Reassemble split archive and extract
 	cat src/sample-rosbag.zip.part-* > src/sample-rosbag.zip
-	unzip -q src/sample-rosbag.zip -d src/
+	unzip -qo src/sample-rosbag.zip -d src/
 	rm src/sample-rosbag.zip
 
 override_dh_auto_install:
