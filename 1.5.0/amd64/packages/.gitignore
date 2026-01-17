@@ -1,7 +1,9 @@
-# Build artifacts
+# Debian build artifacts
 *.deb
 *.buildinfo
 *.changes
+*.ddeb
 
-# Bundled repo for autoware-localrepo
-autoware-localrepo/repo/
+# Package build directories (staging areas)
+*/debian/*/
+!*/debian/source/

@@ -1,4 +1,9 @@
-# Build artifacts
+# Debian build artifacts
 *.deb
 *.buildinfo
 *.changes
+*.ddeb
+
+# Package build directories (staging areas)
+*/debian/*/
+!*/debian/source/
