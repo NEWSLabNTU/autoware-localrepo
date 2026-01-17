@@ -6,13 +6,7 @@ export DH_VERBOSE = 1
 	dh $@
 
 override_dh_auto_build:
-	@echo "Creating download directories..."
-	mkdir -p downloads/autoware-rviz-icons/active
-	mkdir -p downloads/autoware-rviz-icons/disabled
-	mkdir -p downloads/autoware-rviz-icons/primary
-	@echo "Downloading theme files with aria2c..."
-	aria2c -i downloads.txt -j 8 --continue=true --auto-file-renaming=false --allow-overwrite=true
-	@echo "Downloads complete."
+	# Theme files are included in source, no download needed
 
 override_dh_auto_install:
 	install -d $(CURDIR)/debian/autoware-theme/opt/autoware/1.5.0/theme
@@ -21,6 +15,3 @@ override_dh_auto_install:
 	cp -r downloads/autoware-rviz-icons $(CURDIR)/debian/autoware-theme/opt/autoware/1.5.0/theme/
 	install -d $(CURDIR)/debian/autoware-theme/usr/bin
 	install -m 755 apply-autoware-theme $(CURDIR)/debian/autoware-theme/usr/bin/
-
-override_dh_auto_clean:
-	rm -rf downloads/
