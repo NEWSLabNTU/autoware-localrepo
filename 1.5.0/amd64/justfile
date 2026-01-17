@@ -85,10 +85,16 @@ localrepo:
 test:
     ./test/run.sh
 
-# Clean all build artifacts
+# Clean meta-package build artifacts (keeps ROS packages in build/)
 clean:
-    @echo "Cleaning..."
-    rm -rf build/
+    @echo "Cleaning meta-package artifacts..."
     rm -rf packages/autoware-localrepo/repo/
-    rm -f packages/*/*.deb packages/*/*.buildinfo packages/*/*.changes
-    @echo "✓ Clean complete"
+    rm -f packages/*/*.deb packages/*/*.buildinfo packages/*/*.changes packages/*/*.ddeb
+    @echo "✓ Clean complete (build/ preserved)"
+
+# Clean ROS package build (WARNING: takes hours to rebuild!)
+clean-ros:
+    @echo "WARNING: This will delete build/ which takes hours to rebuild!"
+    @read -p "Are you sure? [y/N] " confirm && [ "$$confirm" = "y" ] || exit 1
+    rm -rf build/
+    @echo "✓ ROS build cleaned"
