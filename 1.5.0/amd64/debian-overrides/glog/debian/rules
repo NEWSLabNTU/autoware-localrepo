@@ -76,7 +76,7 @@ override_dh_auto_configure:
 		-DCMAKE_INSTALL_PREFIX=/opt/autoware/1.5.0 \
 		-DCMAKE_BUILD_TYPE=None \
 		-DCMAKE_VERBOSE_MAKEFILE=ON \
-		-DCMAKE_INSTALL_LIBDIR=lib/$(DEB_HOST_GNU_TYPE) \
+		-DCMAKE_INSTALL_LIBDIR=lib \
 		$(BUILD_TESTING_ARG)
 
 override_dh_auto_build:
@@ -98,7 +98,7 @@ override_dh_shlibdeps:
 	# Source setup script for shared library dependency resolution
 	# Use --ignore-missing-info to handle libraries not installed via APT (e.g., CUDA from NVIDIA base images)
 	source "$(SETUP_SCRIPT)" 2>/dev/null || true; \
-	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info $(EXTRA_LIB_PATHS) -l$(CURDIR)/debian/ros-humble-glog-1-5-0//opt/autoware/1.5.0/lib/:$(CURDIR)/debian/ros-humble-glog-1-5-0//opt/autoware/1.5.0/opt/glog/lib/
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info $(EXTRA_LIB_PATHS) -l$(CURDIR)/debian/ros-humble-glog-1-5-0/opt/autoware/1.5.0/lib/
 
 override_dh_auto_install:
 	# Source setup script for install environment (preserves package-level paths from local_setup.bash)
