@@ -1,1 +1,1 @@
-deb [trusted=yes] file:/opt/autoware/localrepo ./
+deb [trusted=yes] file:/opt/autoware/1.5.0/repo ./
