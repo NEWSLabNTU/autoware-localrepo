@@ -17,6 +17,7 @@ override_dh_auto_install:
 	# Install helper scripts
 	install -d $(CURDIR)/debian/autoware-localrepo/usr/share/autoware
 	install -m 755 src/setup-prerequisites.sh $(CURDIR)/debian/autoware-localrepo/usr/share/autoware/
+	install -m 755 src/activate-dds-config.sh $(CURDIR)/debian/autoware-localrepo/usr/share/autoware/
 	install -m 755 src/uninstall-autoware.sh $(CURDIR)/debian/autoware-localrepo/usr/share/autoware/
 
 override_dh_strip:

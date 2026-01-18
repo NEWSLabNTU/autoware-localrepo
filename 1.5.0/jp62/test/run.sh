@@ -20,9 +20,11 @@ echo ""
 TMPDIR=$(mktemp -d)
 trap "rm -rf $TMPDIR" EXIT
 
-# Copy the deb file and Dockerfile (setup script is included in the deb)
+# Copy the deb file, Dockerfile, and prerequisites script
+# (prerequisites script copied separately for better Docker layer caching)
 cp "$DEB_FILE" "$TMPDIR/autoware-localrepo.deb"
 cp "$SCRIPT_DIR/Dockerfile" "$TMPDIR/Dockerfile"
+cp "$BASEDIR/packages/autoware-localrepo/src/setup-prerequisites.sh" "$TMPDIR/"
 
 # Build the test container
 echo "Building test container..."

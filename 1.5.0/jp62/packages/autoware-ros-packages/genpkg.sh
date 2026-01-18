@@ -37,8 +37,17 @@ Architecture: any
 Depends: ${misc:Depends},
 HEADER
 
-# Add package dependencies (exclude dbgsym, remove trailing comma from last)
-ls -1 "$DEBS_DIR"/*.deb | grep -v dbgsym | xargs -I{} basename {} .deb | sed 's/_.*$//' | sort -u | sed 's/^/         /' | sed '$ ! s/$/,/' >> "$SCRIPT_DIR/debian/control"
+# Packages to exclude (unused/superseded packages)
+EXCLUDE_PACKAGES=(
+    "ros-humble-autoware-mission-planner-1-5-0"  # Superseded by autoware_mission_planner_universe
+)
+
+# Build grep exclude pattern
+EXCLUDE_PATTERN=$(printf "|%s" "${EXCLUDE_PACKAGES[@]}")
+EXCLUDE_PATTERN="${EXCLUDE_PATTERN:1}"  # Remove leading |
+
+# Add package dependencies (exclude dbgsym and excluded packages, remove trailing comma from last)
+ls -1 "$DEBS_DIR"/*.deb | grep -v dbgsym | xargs -I{} basename {} .deb | sed 's/_.*$//' | grep -Ev "^($EXCLUDE_PATTERN)$" | sort -u | sed 's/^/         /' | sed '$ ! s/$/,/' >> "$SCRIPT_DIR/debian/control"
 
 # Add description
 cat >> "$SCRIPT_DIR/debian/control" << 'FOOTER'
