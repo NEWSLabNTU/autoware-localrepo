@@ -2,14 +2,19 @@
 # 1. Run setup-prerequisites.sh first (cached layer when prerequisites unchanged)
 # 2. Install autoware-localrepo (sets up APT repo + provides helper scripts)
 # 3. Install autoware-full
-FROM ubuntu:22.04
+#
+# Uses NVIDIA CUDA base image for libcudart.so (CUDA runtime)
+# Additional libraries (cuDNN, TensorRT) are installed by setup-prerequisites.sh
+FROM nvidia/cuda:12.4.0-runtime-ubuntu22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Step 1: Install prerequisites FIRST (separate layer for better caching)
+# Installs: ROS 2 Humble, cuDNN, TensorRT, SpConv/Cumm
+# Use --install-cuda to skip interactive prompt
 # This is a hack - copy the script separately so it doesn't depend on autoware-localrepo.deb
 COPY setup-prerequisites.sh /tmp/
-RUN chmod +x /tmp/setup-prerequisites.sh && /tmp/setup-prerequisites.sh && rm /tmp/setup-prerequisites.sh
+RUN chmod +x /tmp/setup-prerequisites.sh && /tmp/setup-prerequisites.sh --install-cuda && rm /tmp/setup-prerequisites.sh
 
 # Step 2: Install autoware-localrepo (sets up local APT repo)
 COPY autoware-localrepo.deb /tmp/
