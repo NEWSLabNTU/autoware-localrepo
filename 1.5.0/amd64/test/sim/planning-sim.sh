@@ -37,6 +37,12 @@ if [ ! -d "$MAP_PATH" ]; then
     exit 1
 fi
 
+# Install play_launch if not available
+if ! command -v play_launch &> /dev/null; then
+    log_info "Installing play_launch..."
+    pip3 install -q play_launch==0.4.0
+fi
+
 # Source Autoware environment
 log_info "Sourcing Autoware environment..."
 source /opt/autoware/1.5.0/setup.bash
@@ -51,9 +57,14 @@ echo "  1. Press 'P' to set initial pose (drag to set orientation)"
 echo "  2. Press 'G' to set goal pose"
 echo "  3. Click 'Auto' button to start autonomous driving"
 echo ""
+log_info "play_launch web UI available at http://localhost:8888"
+echo ""
 
 # Launch planning simulator
-ros2 launch autoware_launch planning_simulator.launch.xml \
+play_launch launch \
+    --web-ui-addr 0.0.0.0 \
+    --web-ui-port 8888 \
+    autoware_launch planning_simulator.launch.xml \
     map_path:="$MAP_PATH" \
     vehicle_model:="$VEHICLE_MODEL" \
     sensor_model:="$SENSOR_MODEL"

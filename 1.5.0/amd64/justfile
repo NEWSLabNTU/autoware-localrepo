@@ -85,6 +85,10 @@ localrepo:
 test:
     ./test/run.sh
 
+# Run planning simulation in test container (requires X11 display and NVIDIA GPU)
+sim map_path="$HOME/autoware_map/sample-map-planning":
+    ./test/sim/run.sh "{{map_path}}"
+
 # Clean meta-package build artifacts (keeps ROS packages in build/)
 clean:
     @echo "Cleaning meta-package artifacts..."
