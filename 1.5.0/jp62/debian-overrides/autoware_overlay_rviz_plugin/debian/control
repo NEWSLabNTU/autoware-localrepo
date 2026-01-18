@@ -9,5 +9,6 @@ Standards-Version: 3.9.2
 Package: ros-humble-autoware-overlay-rviz-plugin-1-5-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, ros-humble-ament-index-cpp, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-perception-msgs, ros-humble-autoware-vehicle-msgs, ros-humble-rviz-common, ros-humble-rviz-ogre-vendor, ros-humble-rviz-rendering
+Replaces: ros-humble-autoware-mission-details-overlay-rviz-plugin-1-5-0
 Description: RViz2 plugin for 2D overlays in the 3D view.
  Mainly a port of the JSK overlay plugin (https://github.com/jsk-ros-pkg/jsk_visualization).
