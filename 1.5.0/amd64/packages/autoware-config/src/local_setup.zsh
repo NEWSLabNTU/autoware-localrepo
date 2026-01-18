@@ -1,15 +1,24 @@
 #!/usr/bin/env zsh
-# Autoware 1.5.0 local setup script (does not source ROS base)
-# Usage: source /opt/autoware/1.5.0/local_setup.zsh
+# Autoware 1.5.0 local setup script for zsh (does not source ROS base)
+# Copied from ament_package/template/prefix_level/local_setup.zsh
 
-_AUTOWARE_HOME="/opt/autoware/1.5.0"
+AMENT_SHELL=zsh
 
-# Set up Autoware workspace paths
-export AMENT_PREFIX_PATH="$_AUTOWARE_HOME${AMENT_PREFIX_PATH:+:$AMENT_PREFIX_PATH}"
-export CMAKE_PREFIX_PATH="$_AUTOWARE_HOME${CMAKE_PREFIX_PATH:+:$CMAKE_PREFIX_PATH}"
-export COLCON_PREFIX_PATH="$_AUTOWARE_HOME${COLCON_PREFIX_PATH:+:$COLCON_PREFIX_PATH}"
-export PATH="$_AUTOWARE_HOME/bin${PATH:+:$PATH}"
-export LD_LIBRARY_PATH="$_AUTOWARE_HOME/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
-export PYTHONPATH="$_AUTOWARE_HOME/lib/python3.10/site-packages${PYTHONPATH:+:$PYTHONPATH}"
+# source local_setup.sh from same directory as this file
+AMENT_CURRENT_PREFIX=$(builtin cd -q "`dirname "${(%):-%N}"`" > /dev/null && pwd)
 
-unset _AUTOWARE_HOME
+# function to convert array-like strings into arrays
+# to workaround SH_WORD_SPLIT not being set
+ament_zsh_to_array() {
+  local _listname=$1
+  local _dollar="$"
+  local _split="{="
+  local _to_array="(\"$_dollar$_split$_listname}\")"
+  eval $_listname=$_to_array
+}
+
+# trace output
+if [ -n "$AMENT_TRACE_SETUP_FILES" ]; then
+  echo "# . \"$AMENT_CURRENT_PREFIX/local_setup.sh\""
+fi
+. "$AMENT_CURRENT_PREFIX/local_setup.sh"

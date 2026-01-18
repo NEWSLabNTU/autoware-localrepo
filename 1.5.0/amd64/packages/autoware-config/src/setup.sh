@@ -14,14 +14,14 @@ else
     return 1
 fi
 
-# Set up Autoware workspace paths
-AMENT_PREFIX_PATH="$AUTOWARE_HOME:$AMENT_PREFIX_PATH"
-CMAKE_PREFIX_PATH="$AUTOWARE_HOME:$CMAKE_PREFIX_PATH"
-COLCON_PREFIX_PATH="$AUTOWARE_HOME:$COLCON_PREFIX_PATH"
-PATH="$AUTOWARE_HOME/bin:$PATH"
-LD_LIBRARY_PATH="$AUTOWARE_HOME/lib:$LD_LIBRARY_PATH"
-PYTHONPATH="$AUTOWARE_HOME/lib/python3.10/site-packages:$PYTHONPATH"
-export AMENT_PREFIX_PATH CMAKE_PREFIX_PATH COLCON_PREFIX_PATH PATH LD_LIBRARY_PATH PYTHONPATH
+# Source Autoware local setup using ament approach
+# This properly sets up all package-level environment variables via DSV files
+if [ -f "$AUTOWARE_HOME/local_setup.sh" ]; then
+    . "$AUTOWARE_HOME/local_setup.sh"
+else
+    echo "Error: Autoware local_setup.sh not found" >&2
+    return 1
+fi
 
 # Configure RMW implementation
 RMW_IMPLEMENTATION=rmw_cyclonedds_cpp

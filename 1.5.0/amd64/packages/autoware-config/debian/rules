@@ -12,6 +12,7 @@ override_dh_auto_install:
 	install -m 644 src/local_setup.bash $(CURDIR)/debian/autoware-config/opt/autoware/1.5.0/
 	install -m 644 src/local_setup.zsh $(CURDIR)/debian/autoware-config/opt/autoware/1.5.0/
 	install -m 644 src/local_setup.sh $(CURDIR)/debian/autoware-config/opt/autoware/1.5.0/
+	install -m 644 src/_local_setup_util.py $(CURDIR)/debian/autoware-config/opt/autoware/1.5.0/
 
 	# Install config files to /opt/autoware/1.5.0/config/
 	install -d $(CURDIR)/debian/autoware-config/opt/autoware/1.5.0/config
