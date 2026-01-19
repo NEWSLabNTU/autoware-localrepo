@@ -16,6 +16,8 @@ export DH_VERBOSE=1
 #  https://code.ros.org/trac/ros/ticket/2977
 #  https://code.ros.org/trac/ros/ticket/3842
 export LDFLAGS=
+# Disable LTO - causes conflicts with CUDA fatbin symbols
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all reproducible=+fixfilepath optimize=-lto
 export PKG_CONFIG_PATH=/opt/autoware/1.5.0/lib/pkgconfig
 # Explicitly enable -DNDEBUG, see:
 # 	https://github.com/ros-infrastructure/bloom/issues/327
