@@ -2,11 +2,11 @@ Source: ros-humble-autoware-traffic-light-rviz-plugin-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-ament-cmake-auto, ros-humble-ament-index-cpp, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-perception-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rviz-common, ros-humble-tf2-ros
+Build-Depends: debhelper (>= 12.0.0), libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-ament-cmake-auto, ros-humble-ament-index-cpp, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lanelet2-extension-1-5-0, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rviz-common, ros-humble-tf2-ros
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-traffic-light-rviz-plugin-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-ament-index-cpp, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-perception-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rviz-common, ros-humble-tf2-ros
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5core5a, libqt5gui5, libqt5widgets5, qtbase5-dev, ros-humble-ament-index-cpp, ros-humble-autoware-lanelet2-extension-1-5-0, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rviz-common, ros-humble-tf2-ros
 Description: RViz2 overlay plugin to visualize traffic light groups.

@@ -2,12 +2,12 @@ Source: ros-humble-autoware-string-stamped-rviz-plugin-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takayuki Murooka <takayuki.murooka@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-index-cpp, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rviz-common, ros-humble-rviz-ogre-vendor, ros-humble-rviz-rendering
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-index-cpp, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-internal-debug-msgs-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-rviz-common, ros-humble-rviz-ogre-vendor, ros-humble-rviz-rendering
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-string-stamped-rviz-plugin-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ament-index-cpp, ros-humble-autoware-internal-debug-msgs, ros-humble-rviz-common, ros-humble-rviz-ogre-vendor, ros-humble-rviz-rendering
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ament-index-cpp, ros-humble-autoware-internal-debug-msgs-1-5-0, ros-humble-rviz-common, ros-humble-rviz-ogre-vendor, ros-humble-rviz-rendering
 Description: RViz2 plugin for 2D overlays in the 3D view.
  Mainly a port of the JSK overlay plugin (https://github.com/jsk-ros-pkg/jsk_visualization).

@@ -2,11 +2,11 @@ Source: ros-humble-autoware-bytetrack-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Manato HIRABAYASHI <manato.hirabayashi@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libboost-system-dev, libeigen3-dev, libopencv-dev, libyaml-cpp-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-autoware-kalman-filter, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-autoware-tensorrt-common, ros-humble-cudnn-cmake-module, ros-humble-cv-bridge, ros-humble-image-transport, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tier4-perception-msgs
+Build-Depends: debhelper (>= 12.0.0), libboost-system-dev, libeigen3-dev, libopencv-dev, libyaml-cpp-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-cuda-dependency-meta-1-5-0, ros-humble-autoware-cuda-utils-1-5-0, ros-humble-autoware-kalman-filter-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-tensorrt-common-1-5-0, ros-humble-cudnn-cmake-module, ros-humble-cv-bridge, ros-humble-image-transport, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tier4-perception-msgs-1-5-0
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-bytetrack-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-system-dev, libeigen3-dev, libopencv-dev, libyaml-cpp-dev, ros-humble-autoware-cuda-dependency-meta, ros-humble-autoware-cuda-utils, ros-humble-autoware-kalman-filter, ros-humble-autoware-perception-msgs, ros-humble-autoware-tensorrt-common, ros-humble-cudnn-cmake-module, ros-humble-cv-bridge, ros-humble-image-transport, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tensorrt-cmake-module, ros-humble-tier4-perception-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-system-dev, libeigen3-dev, libopencv-dev, libyaml-cpp-dev, ros-humble-autoware-cuda-dependency-meta-1-5-0, ros-humble-autoware-cuda-utils-1-5-0, ros-humble-autoware-kalman-filter-1-5-0, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-autoware-tensorrt-common-1-5-0, ros-humble-cudnn-cmake-module, ros-humble-cv-bridge, ros-humble-image-transport, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tensorrt-cmake-module, ros-humble-tier4-perception-msgs-1-5-0
 Description: ByteTrack implementation ported toward Autoware

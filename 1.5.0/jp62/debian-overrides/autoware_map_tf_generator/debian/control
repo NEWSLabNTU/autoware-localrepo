@@ -2,11 +2,11 @@ Source: ros-humble-autoware-map-tf-generator-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yamato Ando <yamato.ando@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libpcl-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gmock <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lanelet2-extension, ros-humble-autoware-lint-common <!nocheck>, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-ros
+Build-Depends: debhelper (>= 12.0.0), libpcl-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-gmock <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lanelet2-extension-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-ros
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-map-tf-generator-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, ros-humble-autoware-lanelet2-extension, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-ros
+Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, ros-humble-autoware-lanelet2-extension-1-5-0, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-ros
 Description: map_tf_generator package as a ROS 2 node

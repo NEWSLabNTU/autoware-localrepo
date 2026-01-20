@@ -2,11 +2,11 @@ Source: ros-humble-autoware-core-planning-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-core-planning-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-behavior-velocity-planner, ros-humble-autoware-behavior-velocity-stop-line-module, ros-humble-autoware-mission-planner, ros-humble-autoware-motion-velocity-obstacle-stop-module, ros-humble-autoware-motion-velocity-planner, ros-humble-autoware-path-generator, ros-humble-autoware-planning-topic-converter, ros-humble-autoware-velocity-smoother
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-behavior-velocity-planner-1-5-0, ros-humble-autoware-behavior-velocity-stop-line-module-1-5-0, ros-humble-autoware-mission-planner-1-5-0, ros-humble-autoware-motion-velocity-obstacle-stop-module-1-5-0, ros-humble-autoware-motion-velocity-planner-1-5-0, ros-humble-autoware-path-generator-1-5-0, ros-humble-autoware-planning-topic-converter-1-5-0, ros-humble-autoware-velocity-smoother-1-5-0
 Description: The autoware_core_planning package

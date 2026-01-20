@@ -2,7 +2,7 @@ Source: ros-humble-autoware-qos-utils-1-5-0
 Section: misc
 Priority: optional
 Maintainer: xingang liu <lxg19892021@gmail.com>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-autoware-cmake, ros-humble-rclcpp
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-autoware-cmake-1-5-0, ros-humble-rclcpp
 Homepage: 
 Standards-Version: 3.9.2
 

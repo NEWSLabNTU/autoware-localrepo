@@ -2,11 +2,11 @@ Source: ros-humble-autoware-ground-segmentation-1-5-0
 Section: misc
 Priority: optional
 Maintainer: amc-nu <abrahammonrroy@yahoo.com>
-Build-Depends: debhelper (>= 12.0.0), libopencv-dev, libyaml-cpp-dev, ros-humble-ament-cmake-auto, ros-humble-ament-index-cpp, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-pointcloud-preprocessor, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-managed-transform-buffer, ros-humble-pcl-conversions, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-ros, ros-humble-tf2-sensor-msgs
+Build-Depends: debhelper (>= 12.0.0), libopencv-dev, libyaml-cpp-dev, ros-humble-ament-cmake-auto, ros-humble-ament-index-cpp, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-pointcloud-preprocessor-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-autoware-vehicle-info-utils-1-5-0, ros-humble-managed-transform-buffer-1-5-0, ros-humble-pcl-conversions, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-ros, ros-humble-tf2-sensor-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-ground-segmentation-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libopencv-dev, libyaml-cpp-dev, ros-humble-ament-index-cpp, ros-humble-autoware-pointcloud-preprocessor, ros-humble-autoware-utils, ros-humble-autoware-vehicle-info-utils, ros-humble-managed-transform-buffer, ros-humble-pcl-conversions, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-ros, ros-humble-tf2-sensor-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, libopencv-dev, libyaml-cpp-dev, ros-humble-ament-index-cpp, ros-humble-autoware-pointcloud-preprocessor-1-5-0, ros-humble-autoware-utils-1-5-0, ros-humble-autoware-vehicle-info-utils-1-5-0, ros-humble-managed-transform-buffer-1-5-0, ros-humble-pcl-conversions, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-tf2, ros-humble-tf2-eigen, ros-humble-tf2-ros, ros-humble-tf2-sensor-msgs
 Description: The ROS 2 autoware_ground_segmentation package

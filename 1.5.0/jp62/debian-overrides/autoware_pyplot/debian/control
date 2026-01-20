@@ -2,7 +2,7 @@ Source: ros-humble-autoware-pyplot-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Mamoru Sobue <mamoru.sobue@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), python3-dev, python3-matplotlib, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-pybind11-vendor, ros-humble-python-cmake-module
+Build-Depends: debhelper (>= 12.0.0), python3-dev, python3-matplotlib, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-pybind11-vendor, ros-humble-python-cmake-module
 Homepage: 
 Standards-Version: 3.9.2
 

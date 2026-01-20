@@ -2,11 +2,11 @@ Source: ros-humble-agnocast-e2e-test-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takahiro Ishikawa-Aso <sykwer@gmail.com>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-agnocastlib, ros-humble-ament-cmake, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-agnocastlib-1-5-0, ros-humble-ament-cmake-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-agnocast-e2e-test-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-agnocastlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-agnocastlib-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs
 Description: E2E test for Agnocast.

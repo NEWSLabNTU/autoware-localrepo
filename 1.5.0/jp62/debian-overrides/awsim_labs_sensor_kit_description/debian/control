@@ -8,5 +8,5 @@ Standards-Version: 3.9.2
 
 Package: ros-humble-awsim-labs-sensor-kit-description-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-camera-description, ros-humble-imu-description, ros-humble-velodyne-description, ros-humble-vls-description, ros-humble-xacro
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-camera-description-1-5-0, ros-humble-imu-description-1-5-0, ros-humble-velodyne-description-1-5-0, ros-humble-vls-description-1-5-0, ros-humble-xacro
 Description: The awsim_labs_sensor_kit_description package

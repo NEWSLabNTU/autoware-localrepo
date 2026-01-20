@@ -2,11 +2,11 @@ Source: ros-humble-autoware-automatic-pose-initializer-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-specs, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-cmake, ros-humble-autoware-component-interface-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp-components
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-specs-1-5-0, ros-humble-autoware-adapi-v1-msgs-1-5-0, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-component-interface-utils-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp-components
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-automatic-pose-initializer-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-specs, ros-humble-autoware-adapi-v1-msgs, ros-humble-autoware-component-interface-utils, ros-humble-rclcpp, ros-humble-rclcpp-components
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-specs-1-5-0, ros-humble-autoware-adapi-v1-msgs-1-5-0, ros-humble-autoware-component-interface-utils-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components
 Description: The automatic_pose_initializer package

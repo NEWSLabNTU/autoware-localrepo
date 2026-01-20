@@ -2,11 +2,11 @@ Source: ros-humble-autoware-vehicle-msgs-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Mete Fatih Cırıt <mfc@autoware.org>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-planning-msgs, ros-humble-builtin-interfaces, ros-humble-rosidl-default-generators, ros-humble-std-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-autoware-planning-msgs-1-5-0, ros-humble-builtin-interfaces, ros-humble-rosidl-default-generators, ros-humble-std-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-vehicle-msgs-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-planning-msgs, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-planning-msgs-1-5-0, ros-humble-builtin-interfaces, ros-humble-rosidl-default-runtime, ros-humble-std-msgs
 Description: Interfaces between core Autoware vehicle components

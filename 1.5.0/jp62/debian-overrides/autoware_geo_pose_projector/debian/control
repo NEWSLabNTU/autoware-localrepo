@@ -2,11 +2,11 @@ Source: ros-humble-autoware-geo-pose-projector-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yamato Ando <yamato.ando@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-component-interface-specs-universe, ros-humble-autoware-component-interface-utils, ros-humble-autoware-geography-utils, ros-humble-autoware-lint-common <!nocheck>, ros-humble-geographic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-component-interface-specs-universe-1-5-0, ros-humble-autoware-component-interface-utils-1-5-0, ros-humble-autoware-geography-utils-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-geographic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-geo-pose-projector-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-component-interface-specs-universe, ros-humble-autoware-component-interface-utils, ros-humble-autoware-geography-utils, ros-humble-geographic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-component-interface-specs-universe-1-5-0, ros-humble-autoware-component-interface-utils-1-5-0, ros-humble-autoware-geography-utils-1-5-0, ros-humble-geographic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
 Description: The autoware_geo_pose_projector package

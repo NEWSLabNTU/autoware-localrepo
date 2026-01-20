@@ -2,11 +2,11 @@ Source: ros-humble-tier4-localization-launch-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Yamato Ando <yamato.ando@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-tier4-localization-launch-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-ar-tag-based-localizer, ros-humble-autoware-automatic-pose-initializer, ros-humble-autoware-ekf-localizer, ros-humble-autoware-geo-pose-projector, ros-humble-autoware-gyro-odometer, ros-humble-autoware-lidar-marker-localizer, ros-humble-autoware-localization-error-monitor, ros-humble-autoware-ndt-scan-matcher, ros-humble-autoware-pointcloud-preprocessor, ros-humble-autoware-pose-covariance-modifier, ros-humble-autoware-pose-estimator-arbiter, ros-humble-autoware-pose-initializer, ros-humble-autoware-pose-instability-detector, ros-humble-autoware-stop-filter, ros-humble-autoware-twist2accel, ros-humble-eagleye-geo-pose-fusion, ros-humble-eagleye-gnss-converter, ros-humble-eagleye-rt, ros-humble-topic-tools, ros-humble-yabloc-common, ros-humble-yabloc-image-processing, ros-humble-yabloc-monitor, ros-humble-yabloc-particle-filter, ros-humble-yabloc-pose-initializer
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-ar-tag-based-localizer-1-5-0, ros-humble-autoware-automatic-pose-initializer-1-5-0, ros-humble-autoware-ekf-localizer-1-5-0, ros-humble-autoware-geo-pose-projector-1-5-0, ros-humble-autoware-gyro-odometer-1-5-0, ros-humble-autoware-lidar-marker-localizer-1-5-0, ros-humble-autoware-localization-error-monitor-1-5-0, ros-humble-autoware-ndt-scan-matcher-1-5-0, ros-humble-autoware-pointcloud-preprocessor-1-5-0, ros-humble-autoware-pose-covariance-modifier-1-5-0, ros-humble-autoware-pose-estimator-arbiter-1-5-0, ros-humble-autoware-pose-initializer-1-5-0, ros-humble-autoware-pose-instability-detector-1-5-0, ros-humble-autoware-stop-filter-1-5-0, ros-humble-autoware-twist2accel-1-5-0, ros-humble-eagleye-geo-pose-fusion-1-5-0, ros-humble-eagleye-gnss-converter-1-5-0, ros-humble-eagleye-rt-1-5-0, ros-humble-topic-tools, ros-humble-yabloc-common-1-5-0, ros-humble-yabloc-image-processing-1-5-0, ros-humble-yabloc-monitor-1-5-0, ros-humble-yabloc-particle-filter-1-5-0, ros-humble-yabloc-pose-initializer-1-5-0
 Description: The tier4_localization_launch package

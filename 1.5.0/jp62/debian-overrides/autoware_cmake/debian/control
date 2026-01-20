@@ -2,7 +2,7 @@ Source: ros-humble-autoware-cmake-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-lint-common <!nocheck>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-lint-common-1-5-0 <!nocheck>
 Homepage: 
 Standards-Version: 3.9.2
 

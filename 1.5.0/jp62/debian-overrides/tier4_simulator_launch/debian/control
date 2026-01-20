@@ -2,11 +2,11 @@ Source: ros-humble-tier4-simulator-launch-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Keisuke Shima <keisuke.shima@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-tier4-simulator-launch-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-dummy-perception-publisher, ros-humble-autoware-elevation-map-loader, ros-humble-autoware-fault-injection, ros-humble-autoware-multi-object-tracker, ros-humble-autoware-perception-online-evaluator, ros-humble-autoware-pose-initializer, ros-humble-autoware-simple-planning-simulator, ros-humble-autoware-vehicle-door-simulator, ros-humble-autoware-vehicle-velocity-converter, ros-humble-tier4-localization-launch, ros-humble-tier4-perception-launch
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-dummy-perception-publisher-1-5-0, ros-humble-autoware-elevation-map-loader-1-5-0, ros-humble-autoware-fault-injection-1-5-0, ros-humble-autoware-multi-object-tracker-1-5-0, ros-humble-autoware-perception-online-evaluator-1-5-0, ros-humble-autoware-pose-initializer-1-5-0, ros-humble-autoware-simple-planning-simulator-1-5-0, ros-humble-autoware-vehicle-door-simulator-1-5-0, ros-humble-autoware-vehicle-velocity-converter-1-5-0, ros-humble-tier4-localization-launch-1-5-0, ros-humble-tier4-perception-launch-1-5-0
 Description: The tier4_simulator_launch package

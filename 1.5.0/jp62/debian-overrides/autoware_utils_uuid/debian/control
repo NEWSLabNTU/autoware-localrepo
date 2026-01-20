@@ -2,7 +2,7 @@ Source: ros-humble-autoware-utils-uuid-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Jian Kang <egon.kang@autocore.ai>
-Build-Depends: debhelper (>= 12.0.0), libboost-system-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-unique-identifier-msgs
+Build-Depends: debhelper (>= 12.0.0), libboost-system-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-unique-identifier-msgs
 Homepage: 
 Standards-Version: 3.9.2
 

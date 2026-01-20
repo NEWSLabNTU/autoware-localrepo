@@ -2,11 +2,11 @@ Source: ros-humble-awsim-sensor-kit-launch-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Piotr Jaroszek <piotr.jaroszek@robotec.ai>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-lint-common <!nocheck>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-lint-common-1-5-0 <!nocheck>
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-awsim-sensor-kit-launch-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-gnss-poser, ros-humble-autoware-pointcloud-preprocessor, ros-humble-autoware-vehicle-velocity-converter, ros-humble-common-sensor-launch, ros-humble-topic-tools, ros-humble-ublox-gps, ros-humble-usb-cam
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-gnss-poser-1-5-0, ros-humble-autoware-pointcloud-preprocessor-1-5-0, ros-humble-autoware-vehicle-velocity-converter-1-5-0, ros-humble-common-sensor-launch-1-5-0, ros-humble-topic-tools, ros-humble-ublox-gps, ros-humble-usb-cam
 Description: The awsim_sensor_kit_launch package

@@ -2,11 +2,11 @@ Source: ros-humble-autoware-core-sensing-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-core-sensing-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-vehicle-velocity-converter
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-vehicle-velocity-converter-1-5-0
 Description: The autoware_core_sensing package

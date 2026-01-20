@@ -2,11 +2,11 @@ Source: ros-humble-autoware-interpolation-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Fumiya Watanabe <fumiya.watanabe@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-utils-geometry, ros-humble-geometry-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs
+Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-utils-geometry-1-5-0, ros-humble-geometry-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-interpolation-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-utils-geometry, ros-humble-geometry-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-humble-autoware-utils-geometry-1-5-0, ros-humble-geometry-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs
 Description: The spline interpolation package

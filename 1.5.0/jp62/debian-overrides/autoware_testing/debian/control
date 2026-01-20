@@ -2,7 +2,7 @@ Source: ros-humble-autoware-testing-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Adam Dabrowski <adam.dabrowski@robotec.ai>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-core <!nocheck>, ros-humble-ament-cmake-lint-cmake, ros-humble-ament-copyright <!nocheck>, ros-humble-ament-flake8 <!nocheck>, ros-humble-ament-pep257 <!nocheck>, ros-humble-autoware-cmake, ros-humble-ros-testing <!nocheck>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-core <!nocheck>, ros-humble-ament-cmake-lint-cmake, ros-humble-ament-copyright <!nocheck>, ros-humble-ament-flake8 <!nocheck>, ros-humble-ament-pep257 <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-ros-testing <!nocheck>
 Homepage: 
 Standards-Version: 3.9.2
 

@@ -2,11 +2,11 @@ Source: ros-humble-tier4-autoware-api-extension-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-perception-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-external-api-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-internal-debug-msgs-1-5-0, ros-humble-autoware-internal-planning-msgs-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-external-api-msgs-1-5-0
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-tier4-autoware-api-extension-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-internal-planning-msgs, ros-humble-autoware-path-distance-calculator, ros-humble-autoware-perception-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-external-api-msgs, ros-humble-tier4-v2x-msgs, ros-humble-topic-tools
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-debug-msgs-1-5-0, ros-humble-autoware-internal-planning-msgs-1-5-0, ros-humble-autoware-path-distance-calculator-1-5-0, ros-humble-autoware-perception-msgs-1-5-0, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tier4-external-api-msgs-1-5-0, ros-humble-tier4-v2x-msgs-1-5-0, ros-humble-topic-tools
 Description: The tier4_autoware_api_extension package

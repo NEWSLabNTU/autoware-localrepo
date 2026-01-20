@@ -2,7 +2,7 @@ Source: ros-humble-agnocast-sample-interfaces-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Takahiro Ishikawa-Aso <sykwer@gmail.com>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-rosidl-default-generators
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-1-5-0, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-rosidl-default-generators
 Homepage: 
 Standards-Version: 3.9.2
 

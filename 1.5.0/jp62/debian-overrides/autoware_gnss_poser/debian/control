@@ -2,11 +2,11 @@ Source: ros-humble-autoware-gnss-poser-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Xingang Liu <lxg19892021@gmail.com>
-Build-Depends: debhelper (>= 12.0.0), libboost-dev, libgeographic-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake, ros-humble-autoware-geography-utils, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-lint-common <!nocheck>, ros-humble-autoware-map-msgs, ros-humble-autoware-sensing-msgs, ros-humble-geographic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
+Build-Depends: debhelper (>= 12.0.0), libboost-dev, libgeographic-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-5-0, ros-humble-autoware-geography-utils-1-5-0, ros-humble-autoware-internal-debug-msgs-1-5-0, ros-humble-autoware-lint-common-1-5-0 <!nocheck>, ros-humble-autoware-map-msgs-1-5-0, ros-humble-autoware-sensing-msgs-1-5-0, ros-humble-geographic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-gnss-poser-1-5-0
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libgeographic-dev, ros-humble-autoware-geography-utils, ros-humble-autoware-internal-debug-msgs, ros-humble-autoware-map-msgs, ros-humble-autoware-sensing-msgs, ros-humble-geographic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgeographic-dev, ros-humble-autoware-geography-utils-1-5-0, ros-humble-autoware-internal-debug-msgs-1-5-0, ros-humble-autoware-map-msgs-1-5-0, ros-humble-autoware-sensing-msgs-1-5-0, ros-humble-geographic-msgs, ros-humble-geometry-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-tf2, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros
 Description: The ROS 2 autoware_gnss_poser package
