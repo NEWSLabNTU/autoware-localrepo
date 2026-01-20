@@ -24,7 +24,7 @@ build:
   ros_distro: humble
   # Use low parallel jobs for QEMU emulation to avoid OOM/segfaults during linking
   # Native ARM64 builds can use higher values (e.g., 8)
-  parallel_jobs: 2
+  parallel_jobs: 0
   skip_tests: true
   # Custom installation prefix for Autoware 1.5.0
   install_prefix: /opt/autoware/1.5.0
