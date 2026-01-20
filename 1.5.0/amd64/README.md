@@ -21,6 +21,17 @@ Packages install to `/opt/autoware/1.5.0` instead of the default `/opt/ros/humbl
 
 ## Patches
 
+### Replaces for Conflicting Files
+
+Some packages have been renamed or merged but still install files to the same paths. This causes dpkg conflicts during installation. The fix is to add `Replaces:` to the new package's `debian/control`.
+
+**Fix**: Add `Replaces:` field after the `Depends:` line in `debian/control`:
+
+| Package | Replaces | Reason |
+|---------|----------|--------|
+| `autoware_mission_planner_universe` | `ros-humble-autoware-mission-planner-1-5-0` | Supersedes autoware_mission_planner |
+| `autoware_overlay_rviz_plugin` | `ros-humble-autoware-mission-details-overlay-rviz-plugin-1-5-0` | Absorbed mission_details_overlay functionality |
+
 ### LTO Disable for CUDA Packages
 
 Ubuntu 22.04 enables LTO (Link Time Optimization) by default via `dpkg-buildflags`. This conflicts with CUDA's fatbin symbols during linking:
@@ -67,9 +78,9 @@ rm -rf debian-overrides/*
 # Regenerate with colcon2deb
 colcon2deb --workspace source --config config.yaml --generate-debian-only
 
-# Re-apply CUDA LTO fixes (see list above)
-# Add to each package's debian/rules after the dh-make comment block:
-# export DEB_BUILD_MAINT_OPTIONS = hardening=+all reproducible=+fixfilepath optimize=-lto
+# Re-apply patches:
+# 1. CUDA LTO fixes - add to debian/rules (see LTO section above)
+# 2. Replaces fixes - add to debian/control (see Replaces section above)
 ```
 
 ## Building
