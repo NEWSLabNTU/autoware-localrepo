@@ -26,7 +26,7 @@ log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MAP_PATH="${1:-$HOME/autoware_map/sample-map-planning}"
-DOCKER_IMAGE="${DOCKER_IMAGE:-autoware-localrepo-test:1.5.0}"
+DOCKER_IMAGE="${DOCKER_IMAGE:-autoware-localrepo-test:1.5.0-jp62}"
 
 # Check if map exists on host
 if [ ! -d "$MAP_PATH" ]; then
@@ -60,10 +60,19 @@ if [ -t 0 ]; then
     DOCKER_TTY="-t"
 fi
 
+# Detect if running under QEMU emulation (x86_64 host running arm64 container)
+QEMU_EMULATION=""
+if [ "$(uname -m)" = "x86_64" ]; then
+    QEMU_EMULATION="1"
+    log_info "QEMU emulation detected (x86_64 host)"
+fi
+
 docker run -i $DOCKER_TTY --rm \
+    --platform linux/arm64 \
     -e DISPLAY="$DISPLAY" \
     -e VEHICLE_MODEL="${VEHICLE_MODEL:-sample_vehicle}" \
     -e SENSOR_MODEL="${SENSOR_MODEL:-sample_sensor_kit}" \
+    -e QEMU_EMULATION="$QEMU_EMULATION" \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v "$MAP_PATH:/autoware_map/sample-map-planning:ro" \
     -v "$SCRIPT_DIR/planning-sim.sh:/planning-sim.sh:ro" \
