@@ -37,6 +37,16 @@ if [ ! -d "$MAP_PATH" ]; then
     exit 1
 fi
 
+# Detect QEMU emulation and apply workaround for multicast issues
+# QEMU can't emulate setsockopt for IP_MULTICAST_IF
+# Detection: QEMU_EMULATION env var from run.sh, or arm64 binary on non-arm64 kernel
+ARCH=$(uname -m)
+KERNEL_ARCH=$(cat /proc/sys/kernel/arch 2>/dev/null || uname -m)
+if [ -n "$QEMU_EMULATION" ] || { [ "$ARCH" = "aarch64" ] && [ "$KERNEL_ARCH" = "x86_64" ]; }; then
+    log_info "QEMU emulation detected, disabling CycloneDDS multicast..."
+    export CYCLONEDDS_URI='<CycloneDDS><Domain><General><Interfaces><NetworkInterface autodetermine="true" multicast="false"/></Interfaces><AllowMulticast>false</AllowMulticast></General><Discovery><Peers><Peer Address="127.0.0.1"/></Peers></Discovery></Domain></CycloneDDS>'
+fi
+
 # Source Autoware environment
 log_info "Sourcing Autoware environment..."
 source /opt/autoware/1.5.0/setup.bash

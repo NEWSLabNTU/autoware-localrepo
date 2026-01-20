@@ -69,6 +69,7 @@ fi
 
 docker run -i $DOCKER_TTY --rm \
     --platform linux/arm64 \
+    --net=host \
     -e DISPLAY="$DISPLAY" \
     -e VEHICLE_MODEL="${VEHICLE_MODEL:-sample_vehicle}" \
     -e SENSOR_MODEL="${SENSOR_MODEL:-sample_sensor_kit}" \
