@@ -7,7 +7,9 @@ Standards-Version: 4.6.2
 
 Package: autoware-config
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${misc:Depends},
+         ros-humble-rmw-cyclonedds-cpp
+Suggests: ros-humble-rmw-zenoh-cpp
 Description: Autoware system configuration files
  This package provides system configuration files for Autoware,
  including CycloneDDS settings, environment variables, and
