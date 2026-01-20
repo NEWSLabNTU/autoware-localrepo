@@ -33,7 +33,7 @@ Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.6.2
 
 Package: autoware-ros-packages
-Architecture: any
+Architecture: all
 Depends: ${misc:Depends},
 HEADER
 

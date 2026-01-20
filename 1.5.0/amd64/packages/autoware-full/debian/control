@@ -6,7 +6,7 @@ Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.6.2
 
 Package: autoware-full
-Architecture: any
+Architecture: all
 Depends: ${misc:Depends},
          autoware-config,
          autoware-theme,
