@@ -8,6 +8,51 @@ This project builds Debian packages for multiple Autoware versions and creates a
 - **ROS packages** built via colcon2deb (in Docker)
 - **Meta-packages** built with debhelper (autoware-config, autoware-theme, autoware-data, autoware-ros-packages, autoware-maps, autoware-rosbag-sample, autoware-full)
 
+## Autoware 1.5.0 Usage
+
+### Installation
+
+```bash
+# 1. Install the localrepo package
+sudo dpkg -i autoware-localrepo_1.5.0-1_<platform>.deb
+
+# 2. Install prerequisites (ROS 2 Humble, optionally CUDA/TensorRT/SpConv)
+sudo /usr/share/autoware/setup-prerequisites.sh
+
+# 3. Install Autoware
+sudo apt update
+sudo apt install autoware-full
+
+# 4. Source the environment
+source /opt/autoware/1.5.0/setup.bash
+```
+
+Platform options: `amd64` (Ubuntu 22.04 x86_64), `jp62` (JetPack 6.2 arm64)
+
+### Network Configuration
+
+Apply DDS settings for optimal performance (required for point clouds):
+```bash
+sudo /usr/share/autoware/activate-dds-config.sh
+```
+
+### Testing
+
+Run planning simulation with the bundled sample map:
+```bash
+ros2 launch autoware_launch planning_simulator.launch.xml \
+  map_path:=/opt/autoware/1.5.0/share/autoware_maps/sample-map-planning \
+  vehicle_model:=sample_vehicle \
+  sensor_model:=sample_sensor_kit
+```
+
+### Uninstallation
+
+```bash
+sudo /usr/share/autoware/uninstall-autoware.sh
+sudo dpkg -r autoware-localrepo
+```
+
 ## Directory Structure
 
 ```
@@ -104,6 +149,19 @@ just clean
 just clean-ros   # Prompts for confirmation
 ```
 
+### Run Installation Test
+
+```bash
+# Test autoware-localrepo installation in clean Docker container
+just test
+```
+
+The test verifies:
+1. Prerequisites install correctly (ROS2, CUDA libs, TensorRT, SpConv)
+2. autoware-full installs without package conflicts
+3. setup.bash sources without errors
+4. ROS2 can see all Autoware packages
+
 ### Run Planning Simulation Test
 
 ```bash
@@ -123,6 +181,21 @@ just clean-ros   # Prompts for confirmation
 | autoware-rosbag-sample| all | 185 MB | Sample rosbag for replay demo            |
 | autoware-full        | any  | 1 KB   | Complete Autoware installation           |
 | autoware-localrepo   | all  | ~1.9 GB| Bundled APT repo with all packages       |
+
+### Helper Scripts (in autoware-localrepo)
+
+Scripts installed to `/usr/share/autoware/`:
+
+| Script                  | Purpose                                              |
+|-------------------------|------------------------------------------------------|
+| setup-prerequisites.sh  | Installs ROS2, CUDA libs, TensorRT, SpConv           |
+| activate-dds-config.sh  | Applies sysctl settings and enables multicast        |
+| uninstall-autoware.sh   | Removes all Autoware packages and config             |
+
+**activate-dds-config.sh** activates the DDS/network configuration installed by autoware-config:
+- Applies sysctl settings from `/etc/sysctl.d/10-cyclone-max.conf`
+- Enables multicast on loopback via systemd or direct `ip link` (for Docker)
+- Required for optimal CycloneDDS performance with large messages (point clouds, images)
 
 ## Important Files
 
@@ -516,6 +589,29 @@ If deb package builds fail with `.obj-aarch64-linux-gnu: No such file or directo
 find build/build -name "debhelper-build-stamp" -delete
 find build/build -path "*/debian/.debhelper" -type d -exec rm -rf {} +
 ```
+
+## Test Infrastructure
+
+The `test/` directory contains Docker-based installation testing:
+
+```
+test/
+├── Dockerfile      # Test container definition
+├── run.sh          # Test launcher script
+└── sim/            # Planning simulation test scripts
+```
+
+### Docker Layer Caching Optimization
+
+The test Dockerfile is structured for optimal layer caching:
+1. **Step 1**: Copy and run `setup-prerequisites.sh` (cached when unchanged)
+2. **Step 2**: Install `autoware-localrepo.deb`
+3. **Step 3**: Run `activate-dds-config.sh`
+4. **Step 4**: Install `autoware-full`
+
+This design allows Docker to reuse the prerequisites layer when only `autoware-localrepo.deb` changes, avoiding expensive re-downloads of ROS2, CUDA, and TensorRT packages.
+
+`run.sh` copies `setup-prerequisites.sh` separately to the Docker context for this optimization.
 
 ## Development Practices
 
