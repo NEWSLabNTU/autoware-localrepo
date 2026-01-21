@@ -11,10 +11,10 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Step 1: Install prerequisites FIRST (separate layer for better caching)
 # Installs: ROS 2 Humble, cuDNN, TensorRT, SpConv/Cumm
-# Use --install-cuda to skip interactive prompt
+# Use -y to skip interactive prompts and install everything
 # This is a hack - copy the script separately so it doesn't depend on autoware-localrepo.deb
 COPY setup-prerequisites.sh /tmp/
-RUN chmod +x /tmp/setup-prerequisites.sh && /tmp/setup-prerequisites.sh --install-cuda && rm /tmp/setup-prerequisites.sh
+RUN chmod +x /tmp/setup-prerequisites.sh && /tmp/setup-prerequisites.sh -y && rm /tmp/setup-prerequisites.sh
 
 # Step 2: Install autoware-localrepo (sets up local APT repo)
 COPY autoware-localrepo.deb /tmp/

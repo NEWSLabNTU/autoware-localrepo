@@ -136,6 +136,7 @@ INSTALL_CUDNN=""
 INSTALL_TENSORRT=""
 INSTALL_SPCONV=""
 NVIDIA_PROMPTED=""  # Track if user was prompted for NVIDIA
+AUTO_YES=""         # Track if -y flag was used (skip all prompts)
 
 show_help() {
     head -24 "$0" | tail -22
@@ -191,6 +192,7 @@ while [[ $# -gt 0 ]]; do
             INSTALL_TENSORRT="y"
             INSTALL_SPCONV="y"
             NVIDIA_PROMPTED="y"
+            AUTO_YES="y"
             shift
             ;;
         -h|--help)
@@ -291,31 +293,41 @@ nvidia_summary() {
     fi
 }
 
-while true; do
+# Skip confirmation if -y flag was used
+if [ "$AUTO_YES" != "y" ]; then
+    while true; do
+        echo "Installation plan:"
+        echo "  - ROS 2 Humble:     $([ "$INSTALL_ROS" = "y" ] && echo "Yes" || echo "No")"
+        echo "  - NVIDIA libraries: $(nvidia_summary)"
+        echo ""
+
+        read -p "Proceed with installation? [Y/n/r(retry)/q]: " -n 1 -r
+        echo ""
+        case "$REPLY" in
+            [Yy]|"") break ;;  # Continue with installation
+            [Rr])
+                # Reset and restart prompts
+                INSTALL_ROS=""
+                NVIDIA_PROMPTED=""
+                exec "$0" "$@"
+                ;;
+            [Nn]|[Qq])
+                log_warn "Installation cancelled by user."
+                exit 0
+                ;;
+            *)
+                echo "Please answer y (yes), n (no), r (retry), or q (quit)."
+                ;;
+        esac
+    done
+else
+    # Auto-yes mode: show plan and proceed
     echo "Installation plan:"
     echo "  - ROS 2 Humble:     $([ "$INSTALL_ROS" = "y" ] && echo "Yes" || echo "No")"
     echo "  - NVIDIA libraries: $(nvidia_summary)"
     echo ""
-
-    read -p "Proceed with installation? [Y/n/r(retry)/q]: " -n 1 -r
-    echo ""
-    case "$REPLY" in
-        [Yy]|"") break ;;  # Continue with installation
-        [Rr])
-            # Reset and restart prompts
-            INSTALL_ROS=""
-            NVIDIA_PROMPTED=""
-            exec "$0" "$@"
-            ;;
-        [Nn]|[Qq])
-            log_warn "Installation cancelled by user."
-            exit 0
-            ;;
-        *)
-            echo "Please answer y (yes), n (no), r (retry), or q (quit)."
-            ;;
-    esac
-done
+    echo "Proceeding with installation (auto-yes mode)..."
+fi
 
 echo ""
 

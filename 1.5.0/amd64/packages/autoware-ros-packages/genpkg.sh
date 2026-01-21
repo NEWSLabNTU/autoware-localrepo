@@ -25,14 +25,14 @@ echo "Generating debian/control from $PKG_COUNT packages in $DEBS_DIR"
 
 # Generate control file
 cat > "$SCRIPT_DIR/debian/control" << 'HEADER'
-Source: autoware-ros-packages
+Source: autoware-ros-packages-1-5-0
 Section: misc
 Priority: optional
 Maintainer: Jerry Lin <jerry73204@gmail.com>
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.6.2
 
-Package: autoware-ros-packages
+Package: autoware-ros-packages-1-5-0
 Architecture: all
 Depends: ${misc:Depends},
 HEADER
