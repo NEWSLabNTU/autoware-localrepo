@@ -1,47 +1,47 @@
 # Autoware Local Repository
 
-Pre-built Debian packages for [Autoware](https://autowarefoundation.github.io/autoware-documentation/main/), the open-source autonomous driving software stack.
+Debian packages for Autoware 1.5.0, bundled as a local APT repository.
 
-## Autoware 1.5.0
+## Download
 
-### Supported Platforms
+| File | Platform |
+|------|----------|
+| [autoware-localrepo-1-5-0_1.5.0-1ubuntu2204_all.deb](https://github.com/NEWSLabNTU/autoware-localrepo/releases/download/1.5.0-1/autoware-localrepo-1-5-0_1.5.0-1ubuntu2204_all.deb) | Ubuntu 22.04 x86_64 |
+| [autoware-localrepo-1-5-0_1.5.0-1jetpack62_all.deb](https://github.com/NEWSLabNTU/autoware-localrepo/releases/download/1.5.0-1/autoware-localrepo-1-5-0_1.5.0-1jetpack62_all.deb) | JetPack 6.2 (Jetson Orin) |
 
-| Platform | Architecture | Base OS |
-|----------|--------------|---------|
-| AMD64 | x86_64 | Ubuntu 22.04 |
-| JetPack 6.2 | arm64 | L4T r36.4 (Jetson Orin) |
+## Contents
 
-### Download
+- 450+ ROS 2 Humble packages for Autoware
+- ML models (ONNX) for perception
+- CycloneDDS configuration
+- Sample maps for planning simulation
+- RViz theme and icons
 
-Download from [Releases](https://github.com/NEWSLabNTU/autoware-localrepo/releases):
-- `autoware-localrepo_1.5.0-1_amd64.deb` - For Ubuntu 22.04 x86_64
-- `autoware-localrepo_1.5.0-1_jp62.deb` - For JetPack 6.2 (Jetson Orin)
-
-### Installation
+## Installation
 
 ```bash
 # 1. Install the localrepo package
-sudo dpkg -i autoware-localrepo_1.5.0-1_<platform>.deb
+sudo dpkg -i autoware-localrepo-1-5-0_1.5.0-1ubuntu2204_all.deb  # or 1jetpack62 for Jetson
 
 # 2. Install prerequisites (ROS 2 Humble, optionally CUDA/TensorRT/SpConv)
 sudo /usr/share/autoware/setup-prerequisites.sh
 
 # 3. Install Autoware
 sudo apt update
-sudo apt install autoware-full
+sudo apt install autoware-full-1-5-0
 
 # 4. Source the environment
 source /opt/autoware/1.5.0/setup.bash
 ```
 
-### Network Configuration
+## Network Configuration
 
-Apply DDS settings for optimal performance (required for point clouds):
+Apply DDS settings for optimal performance:
 ```bash
 sudo /usr/share/autoware/activate-dds-config.sh
 ```
 
-### Testing
+## Testing
 
 Run planning simulation with the bundled sample map:
 ```bash
@@ -53,56 +53,9 @@ ros2 launch autoware_launch planning_simulator.launch.xml \
 
 See [Planning Simulation Demo](https://autowarefoundation.github.io/autoware-documentation/main/demos/planning-sim/lane-driving/) for usage instructions.
 
-### Uninstallation
+## Uninstallation
 
 ```bash
 sudo /usr/share/autoware/uninstall-autoware.sh
-sudo dpkg -r autoware-localrepo
+sudo dpkg -r autoware-localrepo-1-5-0
 ```
-
-## Package Contents
-
-The localrepo bundles approximately 460 packages:
-
-| Package | Description |
-|---------|-------------|
-| `autoware-full` | Meta-package for complete installation |
-| `autoware-ros-packages` | 450+ ROS 2 Humble packages for Autoware |
-| `autoware-config` | CycloneDDS configuration, setup scripts |
-| `autoware-data` | ML models (ONNX) for perception |
-| `autoware-theme` | RViz icons and Qt theme |
-| `autoware-maps` | Sample maps for planning simulation |
-| `autoware-rosbag-sample` | Sample rosbag for replay demo |
-
-### Helper Scripts
-
-Installed to `/usr/share/autoware/`:
-
-| Script | Purpose |
-|--------|---------|
-| `setup-prerequisites.sh` | Installs ROS 2 Humble, CUDA, TensorRT, SpConv |
-| `activate-dds-config.sh` | Applies sysctl settings and enables multicast |
-| `uninstall-autoware.sh` | Removes all Autoware packages |
-
-## Project Structure
-
-```
-autoware-localrepo/
-├── 1.5.0/
-│   ├── amd64/                # Build for Ubuntu 22.04 x86_64
-│   │   ├── packages/         # Meta-packages (autoware-config, etc.)
-│   │   ├── debian-overrides/ # Patches for ROS packages
-│   │   ├── build/            # colcon2deb output
-│   │   └── justfile
-│   └── jp62/                 # Build for JetPack 6.2 arm64
-│       └── ...
-└── justfile
-```
-
-## Building from Source
-
-See [BUILDING.md](BUILDING.md) for instructions on building the localrepo packages manually.
-
-## License
-
-Apache License 2.0

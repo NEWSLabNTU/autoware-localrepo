@@ -113,15 +113,15 @@ just sim
 
 ## Build Commands Reference
 
-| Command | Description |
-|---------|-------------|
-| `just all` | Build everything (ros + meta + localrepo) |
-| `just ros` | Build ROS packages via colcon2deb |
-| `just meta` | Build meta-packages |
-| `just localrepo` | Bundle packages into localrepo |
-| `just test` | Test installation in Docker |
-| `just sim` | Run planning simulation |
-| `just clean` | Clean meta-package artifacts |
+| Command          | Description                                 |
+|------------------|---------------------------------------------|
+| `just all`       | Build everything (ros + meta + localrepo)   |
+| `just ros`       | Build ROS packages via colcon2deb           |
+| `just meta`      | Build meta-packages                         |
+| `just localrepo` | Bundle packages into localrepo              |
+| `just test`      | Test installation in Docker                 |
+| `just sim`       | Run planning simulation                     |
+| `just clean`     | Clean meta-package artifacts                |
 | `just clean-ros` | Clean ROS build (WARNING: hours to rebuild) |
 
 ## Troubleshooting
