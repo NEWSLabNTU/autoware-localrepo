@@ -6,28 +6,36 @@ This file provides guidance to Claude Code when working with this repository.
 
 This project builds Debian packages for multiple Autoware versions and creates a local APT repository. It combines:
 - **ROS packages** built via colcon2deb (in Docker)
-- **Meta-packages** built with debhelper (autoware-config, autoware-theme, autoware-data, autoware-ros-packages, autoware-maps, autoware-rosbag-sample, autoware-full)
+- **Meta-packages** built with debhelper (all with version suffix `-1-5-0` for Autoware 1.5.0):
+  - autoware-config-1-5-0, autoware-theme-1-5-0, autoware-data-1-5-0
+  - autoware-ros-packages-1-5-0, autoware-maps-1-5-0
+  - autoware-full-1-5-0, autoware-localrepo-1-5-0
 
 ## Autoware 1.5.0 Usage
+
+### Download
+
+Pre-built packages are available on GitHub Releases:
+- **Release page**: https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.5.0-1
+- `autoware-localrepo-1-5-0_1.5.0-1ubuntu2204_all.deb` - Ubuntu 22.04 x86_64
+- `autoware-localrepo-1-5-0_1.5.0-1jetpack62_all.deb` - JetPack 6.2 (Jetson Orin)
 
 ### Installation
 
 ```bash
 # 1. Install the localrepo package
-sudo dpkg -i autoware-localrepo_1.5.0-1_<platform>.deb
+sudo dpkg -i autoware-localrepo-1-5-0_1.5.0-1ubuntu2204_all.deb  # or 1jetpack62 for Jetson
 
 # 2. Install prerequisites (ROS 2 Humble, optionally CUDA/TensorRT/SpConv)
 sudo /usr/share/autoware/setup-prerequisites.sh
 
 # 3. Install Autoware
 sudo apt update
-sudo apt install autoware-full
+sudo apt install autoware-full-1-5-0
 
 # 4. Source the environment
 source /opt/autoware/1.5.0/setup.bash
 ```
-
-Platform options: `amd64` (Ubuntu 22.04 x86_64), `jp62` (JetPack 6.2 arm64)
 
 ### Network Configuration
 
@@ -50,7 +58,7 @@ ros2 launch autoware_launch planning_simulator.launch.xml \
 
 ```bash
 sudo /usr/share/autoware/uninstall-autoware.sh
-sudo dpkg -r autoware-localrepo
+sudo dpkg -r autoware-localrepo-1-5-0
 ```
 
 ## Directory Structure
@@ -59,13 +67,12 @@ sudo dpkg -r autoware-localrepo
 autoware-localrepo/
 ├── 1.5.0/                        # Autoware 1.5.0 version
 │   ├── amd64/                    # colcon2deb build for x86_64
-│   │   ├── packages/             # Debhelper meta-packages
+│   │   ├── packages/             # Debhelper meta-packages (all have -1-5-0 suffix)
 │   │   │   ├── autoware-config/      # CycloneDDS config, setup scripts
 │   │   │   ├── autoware-theme/       # RViz theme/icons (bundled)
 │   │   │   ├── autoware-data/        # ML models (bundled, split files)
 │   │   │   ├── autoware-ros-packages/# Meta-package for ALL ROS debs
 │   │   │   ├── autoware-maps/        # Sample maps for planning sim
-│   │   │   ├── autoware-rosbag-sample/# Sample rosbag for replay demo
 │   │   │   ├── autoware-localrepo/   # Bundled APT repo package
 │   │   │   └── autoware-full/        # Complete install meta-package
 │   │   ├── test/                 # Test infrastructure
@@ -127,8 +134,10 @@ cd packages/autoware-config && dpkg-buildpackage -us -uc -b
 
 The `just meta` recipe:
 1. Runs `packages/autoware-ros-packages/genpkg.sh` to auto-generate dependencies from `build/debs/`
-2. Builds packages in parallel: autoware-config, autoware-theme, autoware-data, autoware-ros-packages, autoware-maps, autoware-rosbag-sample
+2. Builds packages in parallel: autoware-config, autoware-theme, autoware-data, autoware-ros-packages, autoware-maps
 3. Builds autoware-full last (depends on others)
+
+**Note:** Package names have version suffix (e.g., `autoware-full-1-5-0`) to allow multiple Autoware versions to coexist.
 
 ### Build Bundled Localrepo Package
 
@@ -171,16 +180,17 @@ The test verifies:
 
 ## Package Types
 
-| Package              | Arch | Size   | Description                              |
-|----------------------|------|--------|------------------------------------------|
-| autoware-config      | all  | 4 KB   | CycloneDDS config, setup scripts         |
-| autoware-theme       | all  | 11 KB  | RViz icons and Qt theme (bundled)        |
-| autoware-data        | all  | 1.7 GB | ML model files (bundled ONNX files)      |
-| autoware-ros-packages| any  | 4 KB   | Meta-package depending on ALL ROS debs   |
-| autoware-maps        | all  | 17 MB  | Sample maps for planning simulator       |
-| autoware-rosbag-sample| all | 185 MB | Sample rosbag for replay demo            |
-| autoware-full        | any  | 1 KB   | Complete Autoware installation           |
-| autoware-localrepo   | all  | ~1.9 GB| Bundled APT repo with all packages       |
+All meta-packages for version 1.5.0 have the `-1-5-0` suffix (e.g., `autoware-full-1-5-0`).
+
+| Package                    | Arch | Size   | Description                              |
+|----------------------------|------|--------|------------------------------------------|
+| autoware-config-1-5-0      | all  | 4 KB   | CycloneDDS config, setup scripts         |
+| autoware-theme-1-5-0       | all  | 11 KB  | RViz icons and Qt theme (bundled)        |
+| autoware-data-1-5-0        | all  | 1.7 GB | ML model files (bundled ONNX files)      |
+| autoware-ros-packages-1-5-0| any  | 4 KB   | Meta-package depending on ALL ROS debs   |
+| autoware-maps-1-5-0        | all  | 17 MB  | Sample maps for planning simulator       |
+| autoware-full-1-5-0        | any  | 1 KB   | Complete Autoware installation           |
+| autoware-localrepo-1-5-0   | all  | ~1.9 GB| Bundled APT repo with all packages       |
 
 ### Helper Scripts (in autoware-localrepo)
 
@@ -188,14 +198,45 @@ Scripts installed to `/usr/share/autoware/`:
 
 | Script                  | Purpose                                              |
 |-------------------------|------------------------------------------------------|
-| setup-prerequisites.sh  | Installs ROS2, CUDA libs, TensorRT, SpConv           |
+| setup-prerequisites.sh  | Interactive installer for prerequisites (platform-specific) |
 | activate-dds-config.sh  | Applies sysctl settings and enables multicast        |
-| uninstall-autoware.sh   | Removes all Autoware packages and config             |
+| uninstall-autoware.sh   | Removes all Autoware 1.5.0 packages                  |
+
+**setup-prerequisites.sh** features (common):
+- Interactive prompts with y/n/q options (q or Ctrl-C to cancel)
+- ROS 2 Humble: Default **Yes** `[Y/n/q]`
+- Confirmation step with retry option before installation
+- `-y/--yes` flag for non-interactive mode (installs everything)
+- Uses `mktemp` for temporary files (prevents conflicts between concurrent runs)
+
+**Platform-specific differences:**
+
+| Feature | amd64 | jp62 (JetPack 6.2) |
+|---------|-------|---------------------|
+| ROS 2 Humble | Optional (default: Yes) | Optional (default: Yes) |
+| CUDA runtime | Optional via NVIDIA repo | Pre-installed (not offered) |
+| cuDNN | Optional via NVIDIA repo | Pre-installed (not offered) |
+| TensorRT | Optional via NVIDIA repo | Pre-installed (not offered) |
+| SpConv/Cumm | Optional (default: No) | Optional (default: No) |
+| NVIDIA multi-select menu | Yes (4 components) | No (only SpConv) |
+
+**amd64 command-line options:**
+`--install-ros`, `--no-ros`, `--cuda`, `--cudnn`, `--tensorrt`, `--spconv`, `--all-nvidia`, `--no-nvidia`, `-y/--yes`
+
+**jp62 command-line options:**
+`--install-ros`, `--no-ros`, `--spconv`, `--no-spconv`, `-y/--yes`
+
+Note: JetPack 6.2 includes CUDA 12.6, cuDNN 9.3, and TensorRT 10.3 out of the box, so these don't need to be installed separately.
 
 **activate-dds-config.sh** activates the DDS/network configuration installed by autoware-config:
 - Applies sysctl settings from `/etc/sysctl.d/10-cyclone-max.conf`
 - Enables multicast on loopback via systemd or direct `ip link` (for Docker)
 - Required for optimal CycloneDDS performance with large messages (point clouds, images)
+
+**uninstall-autoware.sh** removes all Autoware 1.5.0 packages:
+- Detects all installed packages with `-1-5-0` suffix
+- Shows package list and confirms before removal
+- Does not remove autoware-localrepo or prerequisites (ROS2, CUDA libs)
 
 ## Important Files
 
@@ -211,8 +252,6 @@ Source files are bundled in the package directories instead of downloading durin
 **autoware-theme/downloads/** - Theme files (qss, icons)
 
 **autoware-maps/src/** - Sample map zip files
-
-**autoware-rosbag-sample/src/** - Sample rosbag (split into 50MB parts)
 
 ### Generated Files
 
@@ -233,6 +272,7 @@ Each package in `packages/` contains standard debian/ directory:
 - `debian/rules` - Build instructions (uses dh)
 - `debian/changelog` - Version history
 - `debian/compat` or `debian/debhelper-compat` - Debhelper version
+- `debian/postrm` - Post-removal script (for autoware-localrepo: cleans up APT sources)
 
 ### genpkg.sh Script (autoware-ros-packages)
 
@@ -601,13 +641,27 @@ test/
 └── sim/            # Planning simulation test scripts
 ```
 
+### Running Tests
+
+```bash
+# From version/arch directory (e.g., 1.5.0/amd64/)
+just test
+```
+
+The test builds a Docker container that:
+1. Runs `setup-prerequisites.sh -y` (non-interactive, installs everything)
+2. Installs `autoware-localrepo-1-5-0.deb`
+3. Runs `activate-dds-config.sh`
+4. Installs `autoware-full-1-5-0`
+5. Verifies `setup.bash` sources correctly and ROS2 sees all packages
+
 ### Docker Layer Caching Optimization
 
 The test Dockerfile is structured for optimal layer caching:
-1. **Step 1**: Copy and run `setup-prerequisites.sh` (cached when unchanged)
+1. **Step 1**: Copy and run `setup-prerequisites.sh -y` (cached when unchanged)
 2. **Step 2**: Install `autoware-localrepo.deb`
 3. **Step 3**: Run `activate-dds-config.sh`
-4. **Step 4**: Install `autoware-full`
+4. **Step 4**: Install `autoware-full-1-5-0`
 
 This design allows Docker to reuse the prerequisites layer when only `autoware-localrepo.deb` changes, avoiding expensive re-downloads of ROS2, CUDA, and TensorRT packages.
 
