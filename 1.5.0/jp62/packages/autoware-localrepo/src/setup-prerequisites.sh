@@ -1,5 +1,5 @@
 #!/bin/bash
-# Autoware 1.5.0 Prerequisites Setup Script
+# Autoware 1.5.0 Prerequisites Setup Script (JetPack 6.2)
 # This script installs all prerequisites needed before installing autoware-localrepo
 #
 # Usage: sudo ./setup-prerequisites.sh [OPTIONS]
@@ -7,21 +7,17 @@
 # Options:
 #   --install-ros     Install ROS 2 Humble (skip prompt)
 #   --no-ros          Skip ROS 2 installation (skip prompt)
-#   --cuda            Install CUDA runtime libraries
-#   --cudnn           Install cuDNN (requires CUDA)
-#   --tensorrt        Install TensorRT (requires CUDA)
-#   --spconv          Install SpConv/Cumm (requires CUDA)
-#   --all-nvidia      Install all NVIDIA libraries
-#   --no-nvidia       Skip all NVIDIA libraries
-#   -y, --yes         Answer yes to all prompts (ROS + all NVIDIA)
+#   --spconv          Install SpConv/Cumm libraries
+#   --no-spconv       Skip SpConv/Cumm installation
+#   -y, --yes         Answer yes to all prompts (ROS + SpConv)
 #   -h, --help        Show this help message
 #
 # Prerequisites installed:
 #   - ROS 2 Humble (ros-humble-ros-base + rmw-cyclonedds-cpp)
-#   - (Optional) NVIDIA CUDA runtime libraries (L4T)
-#   - (Optional) cuDNN libraries
-#   - (Optional) TensorRT runtime libraries
-#   - (Optional) SpConv/Cumm libraries
+#   - (Optional) SpConv/Cumm libraries for perception models
+#
+# Note: JetPack 6.2 includes CUDA 12.6, cuDNN 9.3, and TensorRT 10.3 out of the box.
+#       These do not need to be installed separately.
 
 set -e
 
@@ -86,60 +82,15 @@ prompt_yNq() {
     done
 }
 
-# Multi-select prompt for NVIDIA libraries
-# Sets INSTALL_CUDA, INSTALL_CUDNN, INSTALL_TENSORRT, INSTALL_SPCONV
-prompt_nvidia_select() {
-    local response
-
-    # Default selections
-    [[ -z "$INSTALL_CUDA" ]] && INSTALL_CUDA="y"
-    [[ -z "$INSTALL_CUDNN" ]] && INSTALL_CUDNN="y"
-    [[ -z "$INSTALL_TENSORRT" ]] && INSTALL_TENSORRT="y"
-    [[ -z "$INSTALL_SPCONV" ]] && INSTALL_SPCONV="y"
-
-    while true; do
-        # Clear screen and print menu
-        clear
-        echo ""
-        echo "Select NVIDIA libraries to install (toggle with number, Enter when done):"
-        echo ""
-        echo "  [1] CUDA runtime    $([ "$INSTALL_CUDA" = "y" ] && echo "[*]" || echo "[ ]")"
-        echo "  [2] cuDNN           $([ "$INSTALL_CUDNN" = "y" ] && echo "[*]" || echo "[ ]")"
-        echo "  [3] TensorRT        $([ "$INSTALL_TENSORRT" = "y" ] && echo "[*]" || echo "[ ]")"
-        echo "  [4] SpConv/Cumm     $([ "$INSTALL_SPCONV" = "y" ] && echo "[*]" || echo "[ ]")"
-        echo ""
-        echo "  [a] Select all  [n] Select none  [Enter] Continue  [q] Quit"
-        echo ""
-        read -p "Toggle [1-4/a/n/Enter/q]: " -n 1 -r response
-        echo ""
-
-        case "$response" in
-            1) [[ "$INSTALL_CUDA" = "y" ]] && INSTALL_CUDA="n" || INSTALL_CUDA="y" ;;
-            2) [[ "$INSTALL_CUDNN" = "y" ]] && INSTALL_CUDNN="n" || INSTALL_CUDNN="y" ;;
-            3) [[ "$INSTALL_TENSORRT" = "y" ]] && INSTALL_TENSORRT="n" || INSTALL_TENSORRT="y" ;;
-            4) [[ "$INSTALL_SPCONV" = "y" ]] && INSTALL_SPCONV="n" || INSTALL_SPCONV="y" ;;
-            [Aa]) INSTALL_CUDA="y"; INSTALL_CUDNN="y"; INSTALL_TENSORRT="y"; INSTALL_SPCONV="y" ;;
-            [Nn]) INSTALL_CUDA="n"; INSTALL_CUDNN="n"; INSTALL_TENSORRT="n"; INSTALL_SPCONV="n" ;;
-            "") clear; return 0 ;;
-            [Qq]) clear; log_warn "Installation cancelled by user."; exit 1 ;;
-            *) ;; # Invalid input - just redraw on next loop
-        esac
-    done
-}
-
 # =============================================================================
 # Parse command line arguments
 # =============================================================================
 INSTALL_ROS=""
-INSTALL_CUDA=""
-INSTALL_CUDNN=""
-INSTALL_TENSORRT=""
 INSTALL_SPCONV=""
-NVIDIA_PROMPTED=""  # Track if user was prompted for NVIDIA
-AUTO_YES=""         # Track if -y flag was used (skip all prompts)
+AUTO_YES=""  # Track if -y flag was used (skip all prompts)
 
 show_help() {
-    head -24 "$0" | tail -22
+    head -18 "$0" | tail -16
     exit 0
 }
 
@@ -153,47 +104,17 @@ while [[ $# -gt 0 ]]; do
             INSTALL_ROS="n"
             shift
             ;;
-        --cuda)
-            INSTALL_CUDA="y"
-            shift
-            ;;
-        --cudnn)
-            INSTALL_CUDNN="y"
-            shift
-            ;;
-        --tensorrt)
-            INSTALL_TENSORRT="y"
-            shift
-            ;;
         --spconv)
             INSTALL_SPCONV="y"
             shift
             ;;
-        --all-nvidia)
-            INSTALL_CUDA="y"
-            INSTALL_CUDNN="y"
-            INSTALL_TENSORRT="y"
-            INSTALL_SPCONV="y"
-            NVIDIA_PROMPTED="y"
-            AUTO_YES="y"
-            shift
-            ;;
-        --no-nvidia)
-            INSTALL_CUDA="n"
-            INSTALL_CUDNN="n"
-            INSTALL_TENSORRT="n"
+        --no-spconv)
             INSTALL_SPCONV="n"
-            NVIDIA_PROMPTED="y"
-            AUTO_YES="y"
             shift
             ;;
         -y|--yes)
             INSTALL_ROS="y"
-            INSTALL_CUDA="y"
-            INSTALL_CUDNN="y"
-            INSTALL_TENSORRT="y"
             INSTALL_SPCONV="y"
-            NVIDIA_PROMPTED="y"
             AUTO_YES="y"
             shift
             ;;
@@ -232,11 +153,11 @@ fi
 # Detect architecture
 ARCH=$(dpkg --print-architecture)
 if [ "$ARCH" != "arm64" ]; then
-    log_error "This script is for arm64 architecture (detected: $ARCH)"
+    log_error "This script is for arm64/JetPack 6.2 (detected: $ARCH)"
     exit 1
 fi
 
-log_info "Setting up Autoware 1.5.0 prerequisites on Ubuntu 22.04 (arm64/JetPack 6.2)"
+log_info "Setting up Autoware 1.5.0 prerequisites on JetPack 6.2 (arm64)"
 
 # =============================================================================
 # Interactive prompts (if not specified via command line)
@@ -244,10 +165,14 @@ log_info "Setting up Autoware 1.5.0 prerequisites on Ubuntu 22.04 (arm64/JetPack
 echo ""
 echo "=============================================="
 echo "  Autoware 1.5.0 Prerequisites Setup"
+echo "        (JetPack 6.2 / arm64)"
 echo "=============================================="
 echo ""
 echo "This script will install prerequisites for Autoware."
 echo "Press 'q' at any prompt or Ctrl-C to cancel."
+echo ""
+echo "Note: JetPack 6.2 includes CUDA, cuDNN, and TensorRT."
+echo "      Only ROS 2 and SpConv need to be installed."
 echo ""
 
 # Prompt for ROS installation
@@ -261,46 +186,25 @@ if [ -z "$INSTALL_ROS" ]; then
     echo ""
 fi
 
-# Prompt for NVIDIA libraries installation
-if [ -z "$NVIDIA_PROMPTED" ]; then
-    log_warn "Some Autoware components depend on NVIDIA CUDA, cuDNN, and TensorRT libraries."
-    echo ""
-    echo "  License agreements:"
-    echo "  - CUDA EULA:     https://docs.nvidia.com/cuda/eula/index.html"
-    echo "  - cuDNN SLLA:    https://docs.nvidia.com/deeplearning/cudnn/sla/index.html"
-    echo "  - TensorRT SLLA: https://docs.nvidia.com/deeplearning/tensorrt/sla/index.html"
-    echo ""
-    if prompt_yNq "Install NVIDIA libraries?"; then
-        prompt_nvidia_select
+# Prompt for SpConv installation
+if [ -z "$INSTALL_SPCONV" ]; then
+    echo "SpConv/Cumm libraries are required for some perception models"
+    echo "(BEVFusion, etc.)."
+    if prompt_yNq "Install SpConv/Cumm?"; then
+        INSTALL_SPCONV="y"
     else
-        INSTALL_CUDA="n"
-        INSTALL_CUDNN="n"
-        INSTALL_TENSORRT="n"
         INSTALL_SPCONV="n"
     fi
     echo ""
 fi
 
 # Summary and confirmation
-nvidia_summary() {
-    local parts=()
-    [[ "$INSTALL_CUDA" = "y" ]] && parts+=("CUDA")
-    [[ "$INSTALL_CUDNN" = "y" ]] && parts+=("cuDNN")
-    [[ "$INSTALL_TENSORRT" = "y" ]] && parts+=("TensorRT")
-    [[ "$INSTALL_SPCONV" = "y" ]] && parts+=("SpConv")
-    if [[ ${#parts[@]} -eq 0 ]]; then
-        echo "No"
-    else
-        IFS=', '; echo "${parts[*]}"
-    fi
-}
-
 # Skip confirmation if -y flag was used
 if [ "$AUTO_YES" != "y" ]; then
     while true; do
         echo "Installation plan:"
-        echo "  - ROS 2 Humble:     $([ "$INSTALL_ROS" = "y" ] && echo "Yes" || echo "No")"
-        echo "  - NVIDIA libraries: $(nvidia_summary)"
+        echo "  - ROS 2 Humble: $([ "$INSTALL_ROS" = "y" ] && echo "Yes" || echo "No")"
+        echo "  - SpConv/Cumm:  $([ "$INSTALL_SPCONV" = "y" ] && echo "Yes" || echo "No")"
         echo ""
 
         read -p "Proceed with installation? [Y/n/r(retry)/q]: " -n 1 -r
@@ -310,7 +214,7 @@ if [ "$AUTO_YES" != "y" ]; then
             [Rr])
                 # Reset and restart prompts
                 INSTALL_ROS=""
-                NVIDIA_PROMPTED=""
+                INSTALL_SPCONV=""
                 exec "$0" "$@"
                 ;;
             [Nn]|[Qq])
@@ -325,8 +229,8 @@ if [ "$AUTO_YES" != "y" ]; then
 else
     # Auto-yes mode: show plan and proceed
     echo "Installation plan:"
-    echo "  - ROS 2 Humble:     $([ "$INSTALL_ROS" = "y" ] && echo "Yes" || echo "No")"
-    echo "  - NVIDIA libraries: $(nvidia_summary)"
+    echo "  - ROS 2 Humble: $([ "$INSTALL_ROS" = "y" ] && echo "Yes" || echo "No")"
+    echo "  - SpConv/Cumm:  $([ "$INSTALL_SPCONV" = "y" ] && echo "Yes" || echo "No")"
     echo ""
     echo "Proceeding with installation (auto-yes mode)..."
 fi
@@ -366,79 +270,36 @@ else
 fi
 
 # =============================================================================
-# Step 2: NVIDIA Libraries (optional)
+# Step 2: SpConv/Cumm (optional)
 # =============================================================================
-NVIDIA_ANY="n"
-[[ "$INSTALL_CUDA" = "y" || "$INSTALL_CUDNN" = "y" || "$INSTALL_TENSORRT" = "y" || "$INSTALL_SPCONV" = "y" ]] && NVIDIA_ANY="y"
+if [ "$INSTALL_SPCONV" = "y" ]; then
+    log_info "Step 2/2: Installing SpConv and Cumm..."
+    SPCONV_URL="https://github.com/autowarefoundation/spconv_cpp/releases/download/spconv_v2.3.8%2Bcumm_v0.5.3%2Bcu128"
 
-if [ "$NVIDIA_ANY" = "y" ]; then
-    log_info "Step 2/2: Installing NVIDIA libraries..."
+    # Create unique temporary files
+    CUMM_DEB=$(mktemp /tmp/cumm.XXXXXX.deb)
+    SPCONV_DEB=$(mktemp /tmp/spconv.XXXXXX.deb)
 
-    # Set up NVIDIA L4T APT sources (r36.4 for JetPack 6.2)
-    if [ ! -f /etc/apt/sources.list.d/nvidia-l4t-apt-source.list ]; then
-        apt-key adv --fetch-key http://repo.download.nvidia.com/jetson/jetson-ota-public.asc
-        echo "deb https://repo.download.nvidia.com/jetson/common r36.4 main" > /etc/apt/sources.list.d/nvidia-l4t-apt-source.list
-        echo "deb https://repo.download.nvidia.com/jetson/t234 r36.4 main" >> /etc/apt/sources.list.d/nvidia-l4t-apt-source.list
-        mkdir -p /opt/nvidia/l4t-packages
-        touch /opt/nvidia/l4t-packages/.nv-l4t-disable-boot-fw-update-in-preinstall
-    fi
-
-    apt-get update
-
-    # Install CUDA runtime libraries (L4T)
-    if [ "$INSTALL_CUDA" = "y" ]; then
-        log_info "Installing CUDA runtime libraries..."
-        apt-get install -o DPkg::Options::="--force-confold" -y \
-            nvidia-l4t-core \
-            nvidia-l4t-cuda
-    fi
-
-    # Install cuDNN
-    if [ "$INSTALL_CUDNN" = "y" ]; then
-        log_info "Installing cuDNN..."
-        apt-get install -o DPkg::Options::="--force-confold" -y \
-            libcudnn9-cuda-12
-    fi
-
-    # Install TensorRT (included in L4T base image for JetPack 6.2)
-    if [ "$INSTALL_TENSORRT" = "y" ]; then
-        log_info "Installing TensorRT..."
-        apt-get install -o DPkg::Options::="--force-confold" -y \
-            libnvinfer10 \
-            libnvinfer-plugin10 \
-            libnvonnxparsers10
-    fi
-
-    # Install SpConv and Cumm (for BEVFusion and other perception models)
-    if [ "$INSTALL_SPCONV" = "y" ]; then
-        log_info "Installing SpConv and Cumm..."
-        SPCONV_URL="https://github.com/autowarefoundation/spconv_cpp/releases/download/spconv_v2.3.8%2Bcumm_v0.5.3%2Bcu128"
-
-        # Create unique temporary files
-        CUMM_DEB=$(mktemp /tmp/cumm.XXXXXX.deb)
-        SPCONV_DEB=$(mktemp /tmp/spconv.XXXXXX.deb)
-
-        # Download packages
-        wget -q "${SPCONV_URL}/cumm_0.5.3_arm64-jetson.deb" -O "$CUMM_DEB" || {
-            log_error "Failed to download cumm package"
-            rm -f "$CUMM_DEB" "$SPCONV_DEB"
-            exit 1
-        }
-        wget -q "${SPCONV_URL}/spconv_2.3.8_arm64-jetson.deb" -O "$SPCONV_DEB" || {
-            log_error "Failed to download spconv package"
-            rm -f "$CUMM_DEB" "$SPCONV_DEB"
-            exit 1
-        }
-
-        # Install packages
-        dpkg -i "$CUMM_DEB" "$SPCONV_DEB"
+    # Download packages
+    wget -q "${SPCONV_URL}/cumm_0.5.3_arm64-jetson.deb" -O "$CUMM_DEB" || {
+        log_error "Failed to download cumm package"
         rm -f "$CUMM_DEB" "$SPCONV_DEB"
-    fi
+        exit 1
+    }
+    wget -q "${SPCONV_URL}/spconv_2.3.8_arm64-jetson.deb" -O "$SPCONV_DEB" || {
+        log_error "Failed to download spconv package"
+        rm -f "$CUMM_DEB" "$SPCONV_DEB"
+        exit 1
+    }
 
-    log_info "NVIDIA libraries installed"
+    # Install packages
+    dpkg -i "$CUMM_DEB" "$SPCONV_DEB"
+    rm -f "$CUMM_DEB" "$SPCONV_DEB"
+
+    log_info "SpConv and Cumm installed"
 else
-    log_info "Step 2/2: Skipping NVIDIA libraries (not requested)"
-    log_warn "Some Autoware perception components will not work without NVIDIA libraries."
+    log_info "Step 2/2: Skipping SpConv/Cumm (not requested)"
+    log_warn "Some perception models (BEVFusion, etc.) require SpConv."
 fi
 
 # =============================================================================
