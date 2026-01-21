@@ -60,9 +60,9 @@ localrepo:
     echo "Copying ROS packages..."
     cp "$BASEDIR/build/debs/"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
 
-    # Copy meta-packages (except autoware-localrepo itself)
+    # Copy meta-packages (except autoware-localrepo itself and autoware-rosbag-sample)
     echo "Copying meta-packages..."
-    for pkg in autoware-config autoware-theme autoware-data autoware-ros-packages autoware-maps autoware-rosbag-sample autoware-full; do
+    for pkg in autoware-config autoware-theme autoware-data autoware-ros-packages autoware-maps autoware-full; do
         cp "$BASEDIR/packages/${pkg}_"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
     done
 
@@ -93,7 +93,13 @@ sim map_path="$HOME/autoware_map/sample-map-planning":
 clean:
     @echo "Cleaning meta-package artifacts..."
     rm -rf packages/autoware-localrepo/repo/
-    rm -f packages/*/*.deb packages/*/*.buildinfo packages/*/*.changes packages/*/*.ddeb
+    # Clean generated deb files (dpkg-buildpackage outputs to parent dir)
+    rm -f packages/*.deb packages/*.buildinfo packages/*.changes packages/*.ddeb
+    # Clean debhelper build state
+    rm -rf packages/*/debian/.debhelper/
+    rm -f packages/*/debian/debhelper-build-stamp packages/*/debian/files
+    # Clean built package directories
+    rm -rf packages/*/debian/autoware-*/
     @echo "✓ Clean complete (build/ preserved)"
 
 # Clean ROS package build (WARNING: takes hours to rebuild!)
