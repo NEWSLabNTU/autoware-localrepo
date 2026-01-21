@@ -1,7 +1,7 @@
 # Test Dockerfile: Simulates clean user installation
 # 1. Run setup-prerequisites.sh first (cached layer when prerequisites unchanged)
 # 2. Install autoware-localrepo (sets up APT repo + provides helper scripts)
-# 3. Install autoware-full
+# 3. Install autoware-full-1-5-0
 #
 # Uses NVIDIA CUDA base image for libcudart.so (CUDA runtime)
 # Additional libraries (cuDNN, TensorRT) are installed by setup-prerequisites.sh
@@ -23,8 +23,8 @@ RUN dpkg -i /tmp/autoware-localrepo.deb && rm /tmp/autoware-localrepo.deb
 # Step 3: Activate DDS configuration (sysctl + multicast)
 RUN /usr/share/autoware/activate-dds-config.sh
 
-# Step 4: Install autoware-full (pulls all Autoware packages from local repo)
-RUN apt-get update && apt-get install -y autoware-full
+# Step 4: Install autoware-full-1-5-0 (pulls all Autoware packages from local repo)
+RUN apt-get update && apt-get install -y autoware-full-1-5-0
 
 # Verify setup.bash works and ros2 can see packages
 RUN bash -c 'source /opt/autoware/1.5.0/setup.bash && \

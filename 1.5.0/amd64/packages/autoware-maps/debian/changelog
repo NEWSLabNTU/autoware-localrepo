@@ -1,4 +1,4 @@
-autoware-maps (1.5.0-1) jammy; urgency=medium
+autoware-maps-1-5-0 (1.5.0-1) jammy; urgency=medium
 
   * Initial release for Autoware 1.5.0
   * Includes sample-map-planning and sample-map-rosbag

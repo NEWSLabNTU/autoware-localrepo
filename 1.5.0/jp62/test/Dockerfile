@@ -2,7 +2,7 @@
 # 1. Start from L4T base image (JetPack 6.2 / L4T r36.4)
 # 2. Install ROS 2 Humble and prerequisites
 # 3. Install autoware-localrepo (sets up APT repo + provides helper scripts)
-# 4. Install autoware-full
+# 4. Install autoware-full-1-5-0
 #
 # JetPack 6.2 environment:
 #   - L4T r36.4.x
@@ -86,8 +86,8 @@ RUN dpkg -i /tmp/autoware-localrepo.deb && rm /tmp/autoware-localrepo.deb
 # Activate DDS configuration (sysctl + multicast)
 RUN /usr/share/autoware/activate-dds-config.sh
 
-# Install autoware-full (pulls all Autoware packages from local repo)
-RUN apt-get update && apt-get install -y autoware-full
+# Install autoware-full-1-5-0 (pulls all Autoware packages from local repo)
+RUN apt-get update && apt-get install -y autoware-full-1-5-0
 
 # =============================================================================
 # Verify installation

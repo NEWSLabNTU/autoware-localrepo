@@ -5,13 +5,13 @@ Maintainer: Jerry Lin <jerry73204@gmail.com>
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.6.2
 
-Package: autoware-full
+Package: autoware-full-1-5-0
 Architecture: all
 Depends: ${misc:Depends},
-         autoware-config,
-         autoware-theme,
-         autoware-data,
-         autoware-ros-packages
+         autoware-config-1-5-0,
+         autoware-theme-1-5-0,
+         autoware-data-1-5-0,
+         autoware-ros-packages-1-5-0
 Description: Autoware complete installation meta-package
  This meta-package installs all Autoware components including
  configuration files, visual theme, ML model data, and runtime packages.

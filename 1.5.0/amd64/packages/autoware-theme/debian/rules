@@ -9,9 +9,9 @@ override_dh_auto_build:
 	# Theme files are included in source, no download needed
 
 override_dh_auto_install:
-	install -d $(CURDIR)/debian/autoware-theme/opt/autoware/1.5.0/theme
-	install -m 644 downloads/autoware.qss $(CURDIR)/debian/autoware-theme/opt/autoware/1.5.0/theme/
-	install -m 644 downloads/qt5ct.conf $(CURDIR)/debian/autoware-theme/opt/autoware/1.5.0/theme/
-	cp -r downloads/autoware-rviz-icons $(CURDIR)/debian/autoware-theme/opt/autoware/1.5.0/theme/
-	install -d $(CURDIR)/debian/autoware-theme/usr/bin
-	install -m 755 apply-autoware-theme $(CURDIR)/debian/autoware-theme/usr/bin/
+	install -d $(CURDIR)/debian/autoware-theme-1-5-0/opt/autoware/1.5.0/theme
+	install -m 644 downloads/autoware.qss $(CURDIR)/debian/autoware-theme-1-5-0/opt/autoware/1.5.0/theme/
+	install -m 644 downloads/qt5ct.conf $(CURDIR)/debian/autoware-theme-1-5-0/opt/autoware/1.5.0/theme/
+	cp -r downloads/autoware-rviz-icons $(CURDIR)/debian/autoware-theme-1-5-0/opt/autoware/1.5.0/theme/
+	install -d $(CURDIR)/debian/autoware-theme-1-5-0/usr/bin
+	install -m 755 apply-autoware-theme $(CURDIR)/debian/autoware-theme-1-5-0/usr/bin/

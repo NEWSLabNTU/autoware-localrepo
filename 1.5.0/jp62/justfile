@@ -62,7 +62,7 @@ localrepo:
 
     # Copy meta-packages (except autoware-localrepo itself)
     echo "Copying meta-packages..."
-    for pkg in autoware-config autoware-theme autoware-data autoware-ros-packages autoware-maps autoware-full; do
+    for pkg in autoware-config-1-5-0 autoware-theme-1-5-0 autoware-data-1-5-0 autoware-ros-packages-1-5-0 autoware-maps-1-5-0 autoware-full-1-5-0; do
         cp "$BASEDIR/packages/${pkg}_"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
     done
 

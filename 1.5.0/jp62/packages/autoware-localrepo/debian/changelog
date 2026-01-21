@@ -1,4 +1,4 @@
-autoware-localrepo (1.5.0-1jetpack62) jammy; urgency=medium
+autoware-localrepo-1-5-0 (1.5.0-1jetpack62) jammy; urgency=medium
 
   * Autoware 1.5.0 JetPack 6.2 local repository configuration
 
