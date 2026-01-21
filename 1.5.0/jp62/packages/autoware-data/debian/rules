@@ -115,5 +115,5 @@ override_dh_shlibdeps:
 	# Skip shared library dependency detection
 
 override_dh_builddeb:
-	# Use gzip instead of xz for faster compression (data is already compressed)
-	dh_builddeb -- -Zgzip
+	# Use xz for better compression
+	dh_builddeb -- -Zxz

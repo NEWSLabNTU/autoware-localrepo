@@ -15,5 +15,5 @@ override_dh_auto_install:
 	cp -r src/sample-map-rosbag $(CURDIR)/debian/autoware-maps/opt/autoware/1.5.0/share/autoware_maps/
 
 override_dh_builddeb:
-	# Use gzip instead of xz for faster compression
-	dh_builddeb -- -Zgzip
+	# Use xz for better compression
+	dh_builddeb -- -Zxz
