@@ -43,13 +43,13 @@ COPY opencv-preferences /etc/apt/preferences.d/opencv-preferences
 RUN apt-get update && apt-get install -y libopencv-dev
 
 # =============================================================================
-# Install ROS 2 Humble
+# Install ROS 2 Humble (using ros2-apt-source package)
 # =============================================================================
-RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
-    -o /usr/share/keyrings/ros-archive-keyring.gpg
-
-RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] \
-    http://packages.ros.org/ros2/ubuntu jammy main" > /etc/apt/sources.list.d/ros2.list
+RUN ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}') && \
+    curl -L -o /tmp/ros2-apt-source.deb \
+        "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.jammy_all.deb" && \
+    dpkg -i /tmp/ros2-apt-source.deb && \
+    rm /tmp/ros2-apt-source.deb
 
 RUN apt-get update && apt-get install -y ros-humble-ros-base ros-humble-rmw-cyclonedds-cpp
 
