@@ -14,6 +14,12 @@ else
     return 1
 fi
 
+# Clear AMENT_CURRENT_PREFIX leaked by ROS setup.sh (it sets this in its
+# local_setup loop for AMENT_SHELL=sh but never unsets it afterward).
+# Without this, Autoware's local_setup.sh picks up the stale /opt/ros/humble
+# prefix and runs the wrong _local_setup_util.py.
+unset AMENT_CURRENT_PREFIX
+
 # Source Autoware local setup using ament approach
 # This properly sets up all package-level environment variables via DSV files
 if [ -f "$AUTOWARE_HOME/local_setup.sh" ]; then
