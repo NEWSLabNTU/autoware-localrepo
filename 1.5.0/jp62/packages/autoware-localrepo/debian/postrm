@@ -4,8 +4,8 @@ set -e
 case "$1" in
     remove|purge)
         # Remove APT sources configuration
-        rm -f /etc/apt/sources.list.d/autoware-localrepo.list
-        rm -f /etc/apt/preferences.d/autoware-localrepo.pref
+        rm -f /etc/apt/sources.list.d/autoware-localrepo-1-5-0.list
+        rm -f /etc/apt/preferences.d/autoware-localrepo-1-5-0.pref
         ;;
 
     upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)

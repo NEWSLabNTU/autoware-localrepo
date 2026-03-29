@@ -2,7 +2,7 @@
 # Autoware 1.5.0 Uninstall Script
 # Removes all Autoware packages installed from the local repository
 #
-# Usage: sudo /usr/share/autoware/uninstall-autoware.sh
+# Usage: sudo /usr/share/autoware/1.5.0/uninstall-autoware.sh
 
 set -e
 

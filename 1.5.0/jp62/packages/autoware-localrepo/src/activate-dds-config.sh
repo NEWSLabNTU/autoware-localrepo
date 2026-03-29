@@ -4,7 +4,7 @@
 # This script applies the sysctl and systemd configurations installed by autoware-config.
 # Run this script after installing autoware-config to enable optimal DDS performance.
 #
-# Usage: sudo /usr/share/autoware/activate-dds-config.sh
+# Usage: sudo /usr/share/autoware/1.5.0/activate-dds-config.sh
 #
 # What this script does:
 #   1. Reloads sysctl settings (enables high network buffer sizes)
@@ -36,14 +36,14 @@ fi
 # =============================================================================
 log_info "Applying sysctl settings..."
 
-if [ -f /etc/sysctl.d/10-cyclone-max.conf ]; then
+if [ -f /etc/sysctl.d/10-cyclone-max-1-5-0.conf ]; then
     sysctl --system > /dev/null 2>&1
     log_info "Sysctl settings applied:"
     echo "  net.core.rmem_max=$(sysctl -n net.core.rmem_max)"
     echo "  net.ipv4.ipfrag_time=$(sysctl -n net.ipv4.ipfrag_time)"
     echo "  net.ipv4.ipfrag_high_thresh=$(sysctl -n net.ipv4.ipfrag_high_thresh)"
 else
-    log_warn "Sysctl config not found. Is autoware-config installed?"
+    log_warn "Sysctl config not found. Is autoware-config-1-5-0 installed?"
 fi
 
 # =============================================================================
@@ -51,20 +51,20 @@ fi
 # =============================================================================
 log_info "Enabling multicast on loopback..."
 
-if [ -f /etc/systemd/system/multicast-lo.service ]; then
+if [ -f /etc/systemd/system/multicast-lo-1-5-0.service ]; then
     # Check if systemd is available (not in Docker containers usually)
     if command -v systemctl &> /dev/null && [ -d /run/systemd/system ]; then
         systemctl daemon-reload
-        systemctl enable multicast-lo.service 2>/dev/null || true
-        systemctl start multicast-lo.service 2>/dev/null || true
-        log_info "multicast-lo.service enabled and started"
+        systemctl enable multicast-lo-1-5-0.service 2>/dev/null || true
+        systemctl start multicast-lo-1-5-0.service 2>/dev/null || true
+        log_info "multicast-lo-1-5-0.service enabled and started"
     else
         # Direct approach for containers or systems without systemd
         log_warn "systemd not available, applying multicast directly..."
         ip link set lo multicast on 2>/dev/null || true
     fi
 else
-    log_warn "multicast-lo.service not found. Is autoware-config installed?"
+    log_warn "multicast-lo-1-5-0.service not found. Is autoware-config-1-5-0 installed?"
 fi
 
 # Verify multicast is enabled

@@ -21,7 +21,7 @@ COPY autoware-localrepo.deb /tmp/
 RUN dpkg -i /tmp/autoware-localrepo.deb && rm /tmp/autoware-localrepo.deb
 
 # Step 3: Activate DDS configuration (sysctl + multicast)
-RUN /usr/share/autoware/activate-dds-config.sh
+RUN /usr/share/autoware/1.5.0/activate-dds-config.sh
 
 # Step 4: Install autoware-full-1-5-0 (pulls all Autoware packages from local repo)
 RUN apt-get update && apt-get install -y autoware-full-1-5-0
