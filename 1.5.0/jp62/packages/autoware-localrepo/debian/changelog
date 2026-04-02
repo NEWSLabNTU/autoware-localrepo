@@ -1,3 +1,10 @@
+autoware-localrepo-1-5-0 (1.5.0-2jetpack62) jammy; urgency=medium
+
+  * Version helper script paths (/usr/share/autoware/1.5.0/)
+  * Version APT source files (autoware-localrepo-1-5-0.list/.pref)
+
+ -- Jerry Lin <jerry73204@gmail.com>  Tue, 01 Apr 2025 00:00:00 +0800
+
 autoware-localrepo-1-5-0 (1.5.0-1jetpack62) jammy; urgency=medium
 
   * Autoware 1.5.0 JetPack 6.2 local repository configuration
