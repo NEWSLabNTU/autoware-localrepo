@@ -103,8 +103,7 @@ clean:
     @echo "✓ Clean complete (build/ preserved)"
 
 # Clean ROS package build (WARNING: takes hours to rebuild!)
+[confirm("WARNING: This will delete build/ which takes hours to rebuild! Continue?")]
 clean-ros:
-    @echo "WARNING: This will delete build/ which takes hours to rebuild!"
-    @read -p "Are you sure? [y/N] " confirm && [ "$$confirm" = "y" ] || exit 1
     rm -rf build/
     @echo "✓ ROS build cleaned"
