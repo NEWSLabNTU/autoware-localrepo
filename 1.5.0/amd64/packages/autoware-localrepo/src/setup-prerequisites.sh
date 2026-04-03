@@ -5,16 +5,28 @@
 # Usage: sudo ./setup-prerequisites.sh [OPTIONS]
 #
 # Options:
-#   --install-ros     Install ROS 2 Humble (skip prompt)
-#   --no-ros          Skip ROS 2 installation (skip prompt)
+#   --ros             Install ROS 2 Humble
+#   --no-ros          Skip ROS 2 installation
 #   --cuda            Install CUDA runtime libraries
+#   --no-cuda         Skip CUDA runtime libraries
 #   --cudnn           Install cuDNN (requires CUDA)
+#   --no-cudnn        Skip cuDNN
 #   --tensorrt        Install TensorRT (requires CUDA)
+#   --no-tensorrt     Skip TensorRT
 #   --spconv          Install SpConv/Cumm (requires CUDA)
+#   --no-spconv       Skip SpConv/Cumm
 #   --all-nvidia      Install all NVIDIA libraries
 #   --no-nvidia       Skip all NVIDIA libraries
-#   -y, --yes         Answer yes to all prompts (ROS + all NVIDIA)
+#   --non-interactive Skip all prompts (unspecified components are skipped)
+#   -y, --yes         Install everything non-interactively
 #   -h, --help        Show this help message
+#
+# Examples:
+#   sudo ./setup-prerequisites.sh                        # Fully interactive
+#   sudo ./setup-prerequisites.sh --ros                  # Install ROS, prompt for NVIDIA
+#   sudo ./setup-prerequisites.sh --non-interactive --ros          # Install ROS only
+#   sudo ./setup-prerequisites.sh --non-interactive --ros --spconv # Install ROS + SpConv
+#   sudo ./setup-prerequisites.sh -y                     # Install everything
 #
 # Prerequisites installed:
 #   - ROS 2 Humble (ros-humble-ros-base + rmw-cyclonedds-cpp)
@@ -135,17 +147,16 @@ INSTALL_CUDA=""
 INSTALL_CUDNN=""
 INSTALL_TENSORRT=""
 INSTALL_SPCONV=""
-NVIDIA_PROMPTED=""  # Track if user was prompted for NVIDIA
-AUTO_YES=""         # Track if -y flag was used (skip all prompts)
+NON_INTERACTIVE=""
 
 show_help() {
-    head -24 "$0" | tail -22
+    head -35 "$0" | tail -33
     exit 0
 }
 
 while [[ $# -gt 0 ]]; do
     case $1 in
-        --install-ros)
+        --ros|--install-ros)
             INSTALL_ROS="y"
             shift
             ;;
@@ -157,16 +168,32 @@ while [[ $# -gt 0 ]]; do
             INSTALL_CUDA="y"
             shift
             ;;
+        --no-cuda)
+            INSTALL_CUDA="n"
+            shift
+            ;;
         --cudnn)
             INSTALL_CUDNN="y"
+            shift
+            ;;
+        --no-cudnn)
+            INSTALL_CUDNN="n"
             shift
             ;;
         --tensorrt)
             INSTALL_TENSORRT="y"
             shift
             ;;
+        --no-tensorrt)
+            INSTALL_TENSORRT="n"
+            shift
+            ;;
         --spconv)
             INSTALL_SPCONV="y"
+            shift
+            ;;
+        --no-spconv)
+            INSTALL_SPCONV="n"
             shift
             ;;
         --all-nvidia)
@@ -174,7 +201,6 @@ while [[ $# -gt 0 ]]; do
             INSTALL_CUDNN="y"
             INSTALL_TENSORRT="y"
             INSTALL_SPCONV="y"
-            NVIDIA_PROMPTED="y"
             shift
             ;;
         --no-nvidia)
@@ -182,7 +208,10 @@ while [[ $# -gt 0 ]]; do
             INSTALL_CUDNN="n"
             INSTALL_TENSORRT="n"
             INSTALL_SPCONV="n"
-            NVIDIA_PROMPTED="y"
+            shift
+            ;;
+        --non-interactive)
+            NON_INTERACTIVE="y"
             shift
             ;;
         -y|--yes)
@@ -191,8 +220,7 @@ while [[ $# -gt 0 ]]; do
             INSTALL_CUDNN="y"
             INSTALL_TENSORRT="y"
             INSTALL_SPCONV="y"
-            NVIDIA_PROMPTED="y"
-            AUTO_YES="y"
+            NON_INTERACTIVE="y"
             shift
             ;;
         -h|--help)
@@ -204,6 +232,15 @@ while [[ $# -gt 0 ]]; do
             ;;
     esac
 done
+
+# In non-interactive mode, default unspecified components to "n"
+if [ "$NON_INTERACTIVE" = "y" ]; then
+    [[ -z "$INSTALL_ROS" ]] && INSTALL_ROS="n"
+    [[ -z "$INSTALL_CUDA" ]] && INSTALL_CUDA="n"
+    [[ -z "$INSTALL_CUDNN" ]] && INSTALL_CUDNN="n"
+    [[ -z "$INSTALL_TENSORRT" ]] && INSTALL_TENSORRT="n"
+    [[ -z "$INSTALL_SPCONV" ]] && INSTALL_SPCONV="n"
+fi
 
 # =============================================================================
 # System checks
@@ -239,14 +276,16 @@ log_info "Setting up Autoware 1.5.0 prerequisites on Ubuntu 22.04 (amd64)"
 # =============================================================================
 # Interactive prompts (if not specified via command line)
 # =============================================================================
-echo ""
-echo "=============================================="
-echo "  Autoware 1.5.0 Prerequisites Setup"
-echo "=============================================="
-echo ""
-echo "This script will install prerequisites for Autoware."
-echo "Press 'q' at any prompt or Ctrl-C to cancel."
-echo ""
+if [ "$NON_INTERACTIVE" != "y" ]; then
+    echo ""
+    echo "=============================================="
+    echo "  Autoware 1.5.0 Prerequisites Setup"
+    echo "=============================================="
+    echo ""
+    echo "This script will install prerequisites for Autoware."
+    echo "Press 'q' at any prompt or Ctrl-C to cancel."
+    echo ""
+fi
 
 # Prompt for ROS installation
 if [ -z "$INSTALL_ROS" ]; then
@@ -260,7 +299,10 @@ if [ -z "$INSTALL_ROS" ]; then
 fi
 
 # Prompt for NVIDIA libraries installation
-if [ -z "$NVIDIA_PROMPTED" ]; then
+NVIDIA_ALL_SET=""
+[[ -n "$INSTALL_CUDA" && -n "$INSTALL_CUDNN" && -n "$INSTALL_TENSORRT" && -n "$INSTALL_SPCONV" ]] && NVIDIA_ALL_SET="y"
+
+if [ "$NVIDIA_ALL_SET" != "y" ]; then
     log_warn "Some Autoware components depend on NVIDIA CUDA, cuDNN, and TensorRT libraries."
     echo ""
     echo "  License agreements:"
@@ -268,13 +310,13 @@ if [ -z "$NVIDIA_PROMPTED" ]; then
     echo "  - cuDNN SLLA:    https://docs.nvidia.com/deeplearning/cudnn/sla/index.html"
     echo "  - TensorRT SLLA: https://docs.nvidia.com/deeplearning/tensorrt/sla/index.html"
     echo ""
-    if prompt_yNq "Install NVIDIA libraries?"; then
+    if prompt_ynq "Install NVIDIA libraries?"; then
         prompt_nvidia_select
     else
-        INSTALL_CUDA="n"
-        INSTALL_CUDNN="n"
-        INSTALL_TENSORRT="n"
-        INSTALL_SPCONV="n"
+        [[ -z "$INSTALL_CUDA" ]] && INSTALL_CUDA="n"
+        [[ -z "$INSTALL_CUDNN" ]] && INSTALL_CUDNN="n"
+        [[ -z "$INSTALL_TENSORRT" ]] && INSTALL_TENSORRT="n"
+        [[ -z "$INSTALL_SPCONV" ]] && INSTALL_SPCONV="n"
     fi
     echo ""
 fi
@@ -293,14 +335,13 @@ nvidia_summary() {
     fi
 }
 
-# Skip confirmation if -y flag was used
-if [ "$AUTO_YES" != "y" ]; then
-    while true; do
-        echo "Installation plan:"
-        echo "  - ROS 2 Humble:     $([ "$INSTALL_ROS" = "y" ] && echo "Yes" || echo "No")"
-        echo "  - NVIDIA libraries: $(nvidia_summary)"
-        echo ""
+echo "Installation plan:"
+echo "  - ROS 2 Humble:     $([ "$INSTALL_ROS" = "y" ] && echo "Yes" || echo "No")"
+echo "  - NVIDIA libraries: $(nvidia_summary)"
+echo ""
 
+if [ "$NON_INTERACTIVE" != "y" ]; then
+    while true; do
         read -p "Proceed with installation? [Y/n/r(retry)/q]: " -n 1 -r
         echo ""
         case "$REPLY" in
@@ -308,7 +349,10 @@ if [ "$AUTO_YES" != "y" ]; then
             [Rr])
                 # Reset and restart prompts
                 INSTALL_ROS=""
-                NVIDIA_PROMPTED=""
+                INSTALL_CUDA=""
+                INSTALL_CUDNN=""
+                INSTALL_TENSORRT=""
+                INSTALL_SPCONV=""
                 exec "$0" "$@"
                 ;;
             [Nn]|[Qq])
@@ -320,13 +364,6 @@ if [ "$AUTO_YES" != "y" ]; then
                 ;;
         esac
     done
-else
-    # Auto-yes mode: show plan and proceed
-    echo "Installation plan:"
-    echo "  - ROS 2 Humble:     $([ "$INSTALL_ROS" = "y" ] && echo "Yes" || echo "No")"
-    echo "  - NVIDIA libraries: $(nvidia_summary)"
-    echo ""
-    echo "Proceeding with installation (auto-yes mode)..."
 fi
 
 echo ""
@@ -360,7 +397,6 @@ if [ "$INSTALL_ROS" = "y" ]; then
     log_info "ROS 2 Humble installed"
 else
     log_info "Step 1/2: Skipping ROS 2 Humble (not requested)"
-    log_warn "Autoware requires ROS 2 Humble. Install it manually if needed."
 fi
 
 # =============================================================================
@@ -440,7 +476,6 @@ if [ "$NVIDIA_ANY" = "y" ]; then
     log_info "NVIDIA libraries installed"
 else
     log_info "Step 2/2: Skipping NVIDIA libraries (not requested)"
-    log_warn "Some Autoware perception components will not work without NVIDIA libraries."
 fi
 
 # =============================================================================

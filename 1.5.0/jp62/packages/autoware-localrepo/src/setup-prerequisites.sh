@@ -5,12 +5,20 @@
 # Usage: sudo ./setup-prerequisites.sh [OPTIONS]
 #
 # Options:
-#   --install-ros     Install ROS 2 Humble (skip prompt)
-#   --no-ros          Skip ROS 2 installation (skip prompt)
+#   --ros             Install ROS 2 Humble
+#   --no-ros          Skip ROS 2 installation
 #   --spconv          Install SpConv/Cumm libraries
 #   --no-spconv       Skip SpConv/Cumm installation
-#   -y, --yes         Answer yes to all prompts (ROS + SpConv)
+#   --non-interactive Skip all prompts (unspecified components are skipped)
+#   -y, --yes         Install everything non-interactively
 #   -h, --help        Show this help message
+#
+# Examples:
+#   sudo ./setup-prerequisites.sh                        # Fully interactive
+#   sudo ./setup-prerequisites.sh --ros                  # Install ROS, prompt for SpConv
+#   sudo ./setup-prerequisites.sh --non-interactive --ros          # Install ROS only
+#   sudo ./setup-prerequisites.sh --non-interactive --ros --spconv # Install ROS + SpConv
+#   sudo ./setup-prerequisites.sh -y                     # Install everything
 #
 # Prerequisites installed:
 #   - ROS 2 Humble (ros-humble-ros-base + rmw-cyclonedds-cpp)
@@ -87,16 +95,16 @@ prompt_yNq() {
 # =============================================================================
 INSTALL_ROS=""
 INSTALL_SPCONV=""
-AUTO_YES=""  # Track if -y flag was used (skip all prompts)
+NON_INTERACTIVE=""
 
 show_help() {
-    head -18 "$0" | tail -16
+    head -28 "$0" | tail -26
     exit 0
 }
 
 while [[ $# -gt 0 ]]; do
     case $1 in
-        --install-ros)
+        --ros|--install-ros)
             INSTALL_ROS="y"
             shift
             ;;
@@ -112,10 +120,14 @@ while [[ $# -gt 0 ]]; do
             INSTALL_SPCONV="n"
             shift
             ;;
+        --non-interactive)
+            NON_INTERACTIVE="y"
+            shift
+            ;;
         -y|--yes)
             INSTALL_ROS="y"
             INSTALL_SPCONV="y"
-            AUTO_YES="y"
+            NON_INTERACTIVE="y"
             shift
             ;;
         -h|--help)
@@ -127,6 +139,12 @@ while [[ $# -gt 0 ]]; do
             ;;
     esac
 done
+
+# In non-interactive mode, default unspecified components to "n"
+if [ "$NON_INTERACTIVE" = "y" ]; then
+    [[ -z "$INSTALL_ROS" ]] && INSTALL_ROS="n"
+    [[ -z "$INSTALL_SPCONV" ]] && INSTALL_SPCONV="n"
+fi
 
 # =============================================================================
 # System checks
@@ -162,18 +180,20 @@ log_info "Setting up Autoware 1.5.0 prerequisites on JetPack 6.2 (arm64)"
 # =============================================================================
 # Interactive prompts (if not specified via command line)
 # =============================================================================
-echo ""
-echo "=============================================="
-echo "  Autoware 1.5.0 Prerequisites Setup"
-echo "        (JetPack 6.2 / arm64)"
-echo "=============================================="
-echo ""
-echo "This script will install prerequisites for Autoware."
-echo "Press 'q' at any prompt or Ctrl-C to cancel."
-echo ""
-echo "Note: JetPack 6.2 includes CUDA, cuDNN, and TensorRT."
-echo "      Only ROS 2 and SpConv need to be installed."
-echo ""
+if [ "$NON_INTERACTIVE" != "y" ]; then
+    echo ""
+    echo "=============================================="
+    echo "  Autoware 1.5.0 Prerequisites Setup"
+    echo "        (JetPack 6.2 / arm64)"
+    echo "=============================================="
+    echo ""
+    echo "This script will install prerequisites for Autoware."
+    echo "Press 'q' at any prompt or Ctrl-C to cancel."
+    echo ""
+    echo "Note: JetPack 6.2 includes CUDA, cuDNN, and TensorRT."
+    echo "      Only ROS 2 and SpConv need to be installed."
+    echo ""
+fi
 
 # Prompt for ROS installation
 if [ -z "$INSTALL_ROS" ]; then
@@ -199,14 +219,13 @@ if [ -z "$INSTALL_SPCONV" ]; then
 fi
 
 # Summary and confirmation
-# Skip confirmation if -y flag was used
-if [ "$AUTO_YES" != "y" ]; then
-    while true; do
-        echo "Installation plan:"
-        echo "  - ROS 2 Humble: $([ "$INSTALL_ROS" = "y" ] && echo "Yes" || echo "No")"
-        echo "  - SpConv/Cumm:  $([ "$INSTALL_SPCONV" = "y" ] && echo "Yes" || echo "No")"
-        echo ""
+echo "Installation plan:"
+echo "  - ROS 2 Humble: $([ "$INSTALL_ROS" = "y" ] && echo "Yes" || echo "No")"
+echo "  - SpConv/Cumm:  $([ "$INSTALL_SPCONV" = "y" ] && echo "Yes" || echo "No")"
+echo ""
 
+if [ "$NON_INTERACTIVE" != "y" ]; then
+    while true; do
         read -p "Proceed with installation? [Y/n/r(retry)/q]: " -n 1 -r
         echo ""
         case "$REPLY" in
@@ -226,13 +245,6 @@ if [ "$AUTO_YES" != "y" ]; then
                 ;;
         esac
     done
-else
-    # Auto-yes mode: show plan and proceed
-    echo "Installation plan:"
-    echo "  - ROS 2 Humble: $([ "$INSTALL_ROS" = "y" ] && echo "Yes" || echo "No")"
-    echo "  - SpConv/Cumm:  $([ "$INSTALL_SPCONV" = "y" ] && echo "Yes" || echo "No")"
-    echo ""
-    echo "Proceeding with installation (auto-yes mode)..."
 fi
 
 echo ""
@@ -266,7 +278,6 @@ if [ "$INSTALL_ROS" = "y" ]; then
     log_info "ROS 2 Humble installed"
 else
     log_info "Step 1/2: Skipping ROS 2 Humble (not requested)"
-    log_warn "Autoware requires ROS 2 Humble. Install it manually if needed."
 fi
 
 # =============================================================================
@@ -299,7 +310,6 @@ if [ "$INSTALL_SPCONV" = "y" ]; then
     log_info "SpConv and Cumm installed"
 else
     log_info "Step 2/2: Skipping SpConv/Cumm (not requested)"
-    log_warn "Some perception models (BEVFusion, etc.) require SpConv."
 fi
 
 # =============================================================================

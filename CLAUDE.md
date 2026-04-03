@@ -221,6 +221,7 @@ Scripts installed to `/usr/share/autoware/1.5.0/`:
 - ROS 2 Humble: Default **Yes** `[Y/n/q]`
 - Confirmation step with retry option before installation
 - `-y/--yes` flag for non-interactive mode (installs everything)
+- `--non-interactive` flag skips all prompts (unspecified components are skipped)
 - Uses `mktemp` for temporary files (prevents conflicts between concurrent runs)
 
 **Platform-specific differences:**
@@ -235,10 +236,10 @@ Scripts installed to `/usr/share/autoware/1.5.0/`:
 | NVIDIA multi-select menu | Yes (4 components) | No (only SpConv) |
 
 **amd64 command-line options:**
-`--install-ros`, `--no-ros`, `--cuda`, `--cudnn`, `--tensorrt`, `--spconv`, `--all-nvidia`, `--no-nvidia`, `-y/--yes`
+`--ros`, `--no-ros`, `--cuda`, `--no-cuda`, `--cudnn`, `--no-cudnn`, `--tensorrt`, `--no-tensorrt`, `--spconv`, `--no-spconv`, `--all-nvidia`, `--no-nvidia`, `--non-interactive`, `-y/--yes`
 
 **jp62 command-line options:**
-`--install-ros`, `--no-ros`, `--spconv`, `--no-spconv`, `-y/--yes`
+`--ros`, `--no-ros`, `--spconv`, `--no-spconv`, `--non-interactive`, `-y/--yes`
 
 Note: JetPack 6.2 includes CUDA 12.6, cuDNN 9.3, and TensorRT 10.3 out of the box, so these don't need to be installed separately.
 
