@@ -14,7 +14,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Use -y to skip interactive prompts and install everything
 # This is a hack - copy the script separately so it doesn't depend on autoware-localrepo.deb
 COPY setup-prerequisites.sh /tmp/
-RUN chmod +x /tmp/setup-prerequisites.sh && /tmp/setup-prerequisites.sh -y && rm /tmp/setup-prerequisites.sh
+RUN chmod +x /tmp/setup-prerequisites.sh && /tmp/setup-prerequisites.sh -y && rm -f /tmp/setup-prerequisites.sh
 
 # Step 2: Install autoware-localrepo (sets up local APT repo)
 COPY autoware-localrepo.deb /tmp/
