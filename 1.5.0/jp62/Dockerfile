@@ -98,7 +98,12 @@ RUN apt update && \
 RUN pip3 install xmlschema yamale
 
 # Set up ROS environment for colcon2deb (sources this script before building)
-RUN echo 'source /opt/ros/humble/setup.bash' > /colcon2deb-setup.sh
+# Set up colcon2deb environment
+# - Source ROS for package discovery
+# - Set CMAKE_THREAD_LIBS_INIT: CMake's FindThreads does a compile-and-run test
+#   that fails under QEMU emulation. Setting this tells CMake pthreads exist.
+RUN echo 'source /opt/ros/humble/setup.bash' > /colcon2deb-setup.sh && \
+    echo 'export COLCON2DEB_CMAKE_ARGS="-DCMAKE_THREAD_LIBS_INIT=-lpthread -DTHREADS_HAVE_PTHREAD_ARG=ON"' >> /colcon2deb-setup.sh
 # Also source for interactive shells
 RUN echo "source /opt/ros/humble/setup.bash" >> /etc/bash.bashrc
 
