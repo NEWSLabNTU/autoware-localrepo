@@ -1,0 +1,13 @@
+# Build artifacts
+*.deb
+
+# Debhelper build artifacts
+debian/.debhelper/
+debian/*.substvars
+debian/autoware-maps/
+debian/debhelper-build-stamp
+debian/files
+
+# Extracted files (built from zip)
+src/sample-map-planning/
+src/sample-map-rosbag/

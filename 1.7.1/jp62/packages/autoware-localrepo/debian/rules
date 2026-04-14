@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	# Install APT source configuration
+	install -d $(CURDIR)/debian/autoware-localrepo-1-7-1/etc/apt/sources.list.d
+	install -d $(CURDIR)/debian/autoware-localrepo-1-7-1/etc/apt/preferences.d
+	install -m 644 src/autoware-localrepo.list $(CURDIR)/debian/autoware-localrepo-1-7-1/etc/apt/sources.list.d/autoware-localrepo-1-7-1.list
+	install -m 644 src/autoware-localrepo.pref $(CURDIR)/debian/autoware-localrepo-1-7-1/etc/apt/preferences.d/autoware-localrepo-1-7-1.pref
+
+	# Install bundled repository (prepared by justfile before building)
+	install -d $(CURDIR)/debian/autoware-localrepo-1-7-1/opt/autoware/1.7.1/repo
+	cp -r repo/* $(CURDIR)/debian/autoware-localrepo-1-7-1/opt/autoware/1.7.1/repo/
+
+	# Install helper scripts
+	install -d $(CURDIR)/debian/autoware-localrepo-1-7-1/usr/share/autoware/1.7.1
+	install -m 755 src/setup-prerequisites.sh $(CURDIR)/debian/autoware-localrepo-1-7-1/usr/share/autoware/1.7.1/
+	install -m 755 src/activate-dds-config.sh $(CURDIR)/debian/autoware-localrepo-1-7-1/usr/share/autoware/1.7.1/
+	install -m 755 src/uninstall-autoware.sh $(CURDIR)/debian/autoware-localrepo-1-7-1/usr/share/autoware/1.7.1/
+
+override_dh_strip:
+	# Skip stripping - contains .deb files, not executables
+
+override_dh_shlibdeps:
+	# Skip shared library dependency detection
+
+override_dh_builddeb:
+	# Use xz for better compression
+	dh_builddeb -- -Zxz

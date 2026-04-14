@@ -1,0 +1,17 @@
+# Build artifacts
+*.deb
+
+# Debhelper build artifacts
+debian/.debhelper/
+debian/*.substvars
+debian/autoware-data/
+debian/debhelper-build-stamp
+debian/files
+
+# Reassembled files (built from split parts during package build)
+# These are large files that were split for GitHub's 100MB limit
+downloads/ptv3/ptv3.onnx
+downloads/bevfusion/bevfusion_camera_lidar.onnx
+downloads/lidar_transfusion/transfusion.onnx
+downloads/tensorrt_bevdet/tensorrt_bevdet.tar.gz
+downloads/tensorrt_rtmdet/tensorrt_rtmdet_onnx_models.tar.gz

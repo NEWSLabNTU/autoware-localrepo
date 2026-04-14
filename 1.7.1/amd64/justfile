@@ -1,0 +1,109 @@
+# Autoware 1.7.1 AMD64 Local Repository Builder
+
+# Default recipe: list all available recipes
+default:
+    @just --list
+
+# Build everything: ROS packages + meta-packages + bundled localrepo
+all: ros meta localrepo
+    @echo "✓ Build complete!"
+    @echo "  Final package: packages/autoware-localrepo_*.deb"
+
+# Build ROS packages from Autoware repo (via colcon2deb)
+ros:
+    #!/usr/bin/env bash
+    set -e
+    if ! command -v colcon2deb &> /dev/null; then
+        echo "Error: colcon2deb is not available."
+        echo "Please install it: pip install colcon2deb"
+        exit 1
+    fi
+    colcon2deb --workspace source --config config.yaml
+
+# Build meta-packages (except autoware-localrepo which needs the repo first)
+meta:
+    #!/usr/bin/env bash
+    set -e
+    echo "Building meta-packages..."
+
+    # Generate autoware-ros-packages control file from build/debs
+    echo "Generating autoware-ros-packages dependencies..."
+    packages/autoware-ros-packages/genpkg.sh
+
+    # Build independent packages in parallel
+    echo "Building packages (parallel)..."
+    parallel --halt now,fail=1 \
+        'cd packages/{} && dpkg-buildpackage -us -uc -b' \
+        ::: autoware-config autoware-theme autoware-data autoware-ros-packages autoware-maps
+
+    # Build autoware-full last (depends on the others)
+    cd packages/autoware-full && dpkg-buildpackage -us -uc -b
+
+    echo "✓ Meta-packages built"
+
+# Create repo and build autoware-localrepo with bundled packages
+localrepo:
+    #!/usr/bin/env bash
+    set -e
+
+    # Get absolute path to working directory (just runs from justfile's directory)
+    BASEDIR="$(pwd)"
+    REPODIR="$BASEDIR/packages/autoware-localrepo/repo"
+
+    echo "Creating repository structure..."
+
+    # Clean and create repo directory inside autoware-localrepo package
+    rm -rf "$REPODIR"
+    mkdir -p "$REPODIR/pool/main"
+
+    # Copy ROS packages
+    echo "Copying ROS packages..."
+    cp "$BASEDIR/build/debs/"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
+
+    # Copy meta-packages (except autoware-localrepo itself)
+    echo "Copying meta-packages..."
+    for pkg in autoware-config-1-7-1 autoware-theme-1-7-1 autoware-data-1-7-1 autoware-ros-packages-1-7-1 autoware-maps-1-7-1 autoware-full-1-7-1; do
+        cp "$BASEDIR/packages/${pkg}_"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
+    done
+
+    # Generate Packages index
+    echo "Generating Packages index..."
+    (cd "$REPODIR" && dpkg-scanpackages pool/main /dev/null > Packages)
+    (cd "$REPODIR" && gzip -k -f Packages)
+
+    # Count packages
+    count=$(ls -1 "$REPODIR/pool/main/"*.deb 2>/dev/null | wc -l)
+    echo "  Bundling $count packages into autoware-localrepo..."
+
+    # Build autoware-localrepo
+    echo "Building autoware-localrepo..."
+    (cd "$BASEDIR/packages/autoware-localrepo" && dpkg-buildpackage -us -uc -b)
+
+    echo "✓ autoware-localrepo built with $count bundled packages"
+
+# Test localrepo installation in a clean Docker container
+test:
+    ./test/run.sh
+
+# Run planning simulation in test container (requires X11 display and NVIDIA GPU)
+sim map_path="$HOME/autoware_map/sample-map-planning":
+    ./test/sim/run.sh "{{map_path}}"
+
+# Clean meta-package build artifacts (keeps ROS packages in build/)
+clean:
+    @echo "Cleaning meta-package artifacts..."
+    rm -rf packages/autoware-localrepo/repo/
+    # Clean generated deb files (dpkg-buildpackage outputs to parent dir)
+    rm -f packages/*.deb packages/*.buildinfo packages/*.changes packages/*.ddeb
+    # Clean debhelper build state
+    rm -rf packages/*/debian/.debhelper/
+    rm -f packages/*/debian/debhelper-build-stamp packages/*/debian/files
+    # Clean built package directories
+    rm -rf packages/*/debian/autoware-*/
+    @echo "✓ Clean complete (build/ preserved)"
+
+# Clean ROS package build (WARNING: takes hours to rebuild!)
+[confirm("WARNING: This will delete build/ which takes hours to rebuild! Continue?")]
+clean-ros:
+    rm -rf build/
+    @echo "✓ ROS build cleaned"

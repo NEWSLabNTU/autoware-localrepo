@@ -1,0 +1,1 @@
+deb [trusted=yes] file:/opt/autoware/1.7.1/repo ./

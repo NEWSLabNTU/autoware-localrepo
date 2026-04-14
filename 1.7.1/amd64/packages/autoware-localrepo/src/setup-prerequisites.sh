@@ -1,0 +1,494 @@
+#!/bin/bash
+# Autoware 1.7.1 Prerequisites Setup Script
+# This script installs all prerequisites needed before installing autoware-localrepo
+#
+# Usage: sudo ./setup-prerequisites.sh [OPTIONS]
+#
+# Options:
+#   --ros             Install ROS 2 Humble
+#   --no-ros          Skip ROS 2 installation
+#   --cuda            Install CUDA runtime libraries
+#   --no-cuda         Skip CUDA runtime libraries
+#   --cudnn           Install cuDNN (requires CUDA)
+#   --no-cudnn        Skip cuDNN
+#   --tensorrt        Install TensorRT (requires CUDA)
+#   --no-tensorrt     Skip TensorRT
+#   --spconv          Install SpConv/Cumm (requires CUDA)
+#   --no-spconv       Skip SpConv/Cumm
+#   --all-nvidia      Install all NVIDIA libraries
+#   --no-nvidia       Skip all NVIDIA libraries
+#   --non-interactive Skip all prompts (unspecified components are skipped)
+#   -y, --yes         Install everything non-interactively
+#   -h, --help        Show this help message
+#
+# Examples:
+#   sudo ./setup-prerequisites.sh                        # Fully interactive
+#   sudo ./setup-prerequisites.sh --ros                  # Install ROS, prompt for NVIDIA
+#   sudo ./setup-prerequisites.sh --non-interactive --ros          # Install ROS only
+#   sudo ./setup-prerequisites.sh --non-interactive --ros --spconv # Install ROS + SpConv
+#   sudo ./setup-prerequisites.sh -y                     # Install everything
+#
+# Prerequisites installed:
+#   - ROS 2 Humble (ros-humble-ros-base + rmw-cyclonedds-cpp)
+#   - (Optional) NVIDIA CUDA runtime libraries
+#   - (Optional) cuDNN libraries
+#   - (Optional) TensorRT runtime libraries
+#   - (Optional) SpConv/Cumm libraries
+
+set -e
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+log_info() { echo -e "${GREEN}[INFO]${NC} $1"; }
+log_warn() { echo -e "${YELLOW}[WARN]${NC} $1"; }
+log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
+
+# Handle Ctrl-C gracefully
+trap 'echo ""; log_warn "Installation cancelled by user."; exit 1' INT
+
+# Prompt for yes/no/quit - returns 0 for yes, 1 for no, exits on quit
+prompt_ynq() {
+    local prompt="$1"
+    local response
+    while true; do
+        read -p "$prompt [y/n/q]: " -n 1 -r response
+        echo ""
+        case "$response" in
+            [Yy]) return 0 ;;
+            [Nn]) return 1 ;;
+            [Qq]) log_warn "Installation cancelled by user."; exit 1 ;;
+            *) echo "Please answer y (yes), n (no), or q (quit)." ;;
+        esac
+    done
+}
+
+# Prompt with yes as default (Enter = yes)
+prompt_Ynq() {
+    local prompt="$1"
+    local response
+    while true; do
+        read -p "$prompt [Y/n/q]: " -n 1 -r response
+        echo ""
+        case "$response" in
+            [Yy]|"") return 0 ;;
+            [Nn]) return 1 ;;
+            [Qq]) log_warn "Installation cancelled by user."; exit 1 ;;
+            *) echo "Please answer y (yes), n (no), or q (quit). Press Enter for yes." ;;
+        esac
+    done
+}
+
+# Prompt with no as default (Enter = no)
+prompt_yNq() {
+    local prompt="$1"
+    local response
+    while true; do
+        read -p "$prompt [y/N/q]: " -n 1 -r response
+        echo ""
+        case "$response" in
+            [Yy]) return 0 ;;
+            [Nn]|"") return 1 ;;
+            [Qq]) log_warn "Installation cancelled by user."; exit 1 ;;
+            *) echo "Please answer y (yes), n (no), or q (quit). Press Enter for no." ;;
+        esac
+    done
+}
+
+# Multi-select prompt for NVIDIA libraries
+# Sets INSTALL_CUDA, INSTALL_CUDNN, INSTALL_TENSORRT, INSTALL_SPCONV
+prompt_nvidia_select() {
+    local response
+
+    # Default selections
+    [[ -z "$INSTALL_CUDA" ]] && INSTALL_CUDA="y"
+    [[ -z "$INSTALL_CUDNN" ]] && INSTALL_CUDNN="y"
+    [[ -z "$INSTALL_TENSORRT" ]] && INSTALL_TENSORRT="y"
+    [[ -z "$INSTALL_SPCONV" ]] && INSTALL_SPCONV="y"
+
+    while true; do
+        # Clear screen and print menu
+        clear
+        echo ""
+        echo "Select NVIDIA libraries to install (toggle with number, Enter when done):"
+        echo ""
+        echo "  [1] CUDA runtime    $([ "$INSTALL_CUDA" = "y" ] && echo "[*]" || echo "[ ]")"
+        echo "  [2] cuDNN           $([ "$INSTALL_CUDNN" = "y" ] && echo "[*]" || echo "[ ]")"
+        echo "  [3] TensorRT        $([ "$INSTALL_TENSORRT" = "y" ] && echo "[*]" || echo "[ ]")"
+        echo "  [4] SpConv/Cumm     $([ "$INSTALL_SPCONV" = "y" ] && echo "[*]" || echo "[ ]")"
+        echo ""
+        echo "  [a] Select all  [n] Select none  [Enter] Continue  [q] Quit"
+        echo ""
+        read -p "Toggle [1-4/a/n/Enter/q]: " -n 1 -r response
+        echo ""
+
+        case "$response" in
+            1) [[ "$INSTALL_CUDA" = "y" ]] && INSTALL_CUDA="n" || INSTALL_CUDA="y" ;;
+            2) [[ "$INSTALL_CUDNN" = "y" ]] && INSTALL_CUDNN="n" || INSTALL_CUDNN="y" ;;
+            3) [[ "$INSTALL_TENSORRT" = "y" ]] && INSTALL_TENSORRT="n" || INSTALL_TENSORRT="y" ;;
+            4) [[ "$INSTALL_SPCONV" = "y" ]] && INSTALL_SPCONV="n" || INSTALL_SPCONV="y" ;;
+            [Aa]) INSTALL_CUDA="y"; INSTALL_CUDNN="y"; INSTALL_TENSORRT="y"; INSTALL_SPCONV="y" ;;
+            [Nn]) INSTALL_CUDA="n"; INSTALL_CUDNN="n"; INSTALL_TENSORRT="n"; INSTALL_SPCONV="n" ;;
+            "") clear; return 0 ;;
+            [Qq]) clear; log_warn "Installation cancelled by user."; exit 1 ;;
+            *) ;; # Invalid input - just redraw on next loop
+        esac
+    done
+}
+
+# =============================================================================
+# Parse command line arguments
+# =============================================================================
+INSTALL_ROS=""
+INSTALL_CUDA=""
+INSTALL_CUDNN=""
+INSTALL_TENSORRT=""
+INSTALL_SPCONV=""
+NON_INTERACTIVE=""
+
+show_help() {
+    head -35 "$0" | tail -33
+    exit 0
+}
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --ros|--install-ros)
+            INSTALL_ROS="y"
+            shift
+            ;;
+        --no-ros)
+            INSTALL_ROS="n"
+            shift
+            ;;
+        --cuda)
+            INSTALL_CUDA="y"
+            shift
+            ;;
+        --no-cuda)
+            INSTALL_CUDA="n"
+            shift
+            ;;
+        --cudnn)
+            INSTALL_CUDNN="y"
+            shift
+            ;;
+        --no-cudnn)
+            INSTALL_CUDNN="n"
+            shift
+            ;;
+        --tensorrt)
+            INSTALL_TENSORRT="y"
+            shift
+            ;;
+        --no-tensorrt)
+            INSTALL_TENSORRT="n"
+            shift
+            ;;
+        --spconv)
+            INSTALL_SPCONV="y"
+            shift
+            ;;
+        --no-spconv)
+            INSTALL_SPCONV="n"
+            shift
+            ;;
+        --all-nvidia)
+            INSTALL_CUDA="y"
+            INSTALL_CUDNN="y"
+            INSTALL_TENSORRT="y"
+            INSTALL_SPCONV="y"
+            shift
+            ;;
+        --no-nvidia)
+            INSTALL_CUDA="n"
+            INSTALL_CUDNN="n"
+            INSTALL_TENSORRT="n"
+            INSTALL_SPCONV="n"
+            shift
+            ;;
+        --non-interactive)
+            NON_INTERACTIVE="y"
+            shift
+            ;;
+        -y|--yes)
+            INSTALL_ROS="y"
+            INSTALL_CUDA="y"
+            INSTALL_CUDNN="y"
+            INSTALL_TENSORRT="y"
+            INSTALL_SPCONV="y"
+            NON_INTERACTIVE="y"
+            shift
+            ;;
+        -h|--help)
+            show_help
+            ;;
+        *)
+            log_error "Unknown option: $1"
+            show_help
+            ;;
+    esac
+done
+
+# In non-interactive mode, default unspecified components to "n"
+if [ "$NON_INTERACTIVE" = "y" ]; then
+    [[ -z "$INSTALL_ROS" ]] && INSTALL_ROS="n"
+    [[ -z "$INSTALL_CUDA" ]] && INSTALL_CUDA="n"
+    [[ -z "$INSTALL_CUDNN" ]] && INSTALL_CUDNN="n"
+    [[ -z "$INSTALL_TENSORRT" ]] && INSTALL_TENSORRT="n"
+    [[ -z "$INSTALL_SPCONV" ]] && INSTALL_SPCONV="n"
+fi
+
+# =============================================================================
+# System checks
+# =============================================================================
+
+# Check if running as root
+if [ "$EUID" -ne 0 ]; then
+    log_error "This script must be run as root (use sudo)"
+    exit 1
+fi
+
+# Check Ubuntu version
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [ "$ID" != "ubuntu" ] || [ "$VERSION_ID" != "22.04" ]; then
+        log_error "This script requires Ubuntu 22.04 (detected: $ID $VERSION_ID)"
+        exit 1
+    fi
+else
+    log_error "Cannot detect OS version"
+    exit 1
+fi
+
+# Detect architecture
+ARCH=$(dpkg --print-architecture)
+if [ "$ARCH" != "amd64" ]; then
+    log_error "This script is for amd64 architecture (detected: $ARCH)"
+    exit 1
+fi
+
+log_info "Setting up Autoware 1.7.1 prerequisites on Ubuntu 22.04 (amd64)"
+
+# =============================================================================
+# Interactive prompts (if not specified via command line)
+# =============================================================================
+if [ "$NON_INTERACTIVE" != "y" ]; then
+    echo ""
+    echo "=============================================="
+    echo "  Autoware 1.7.1 Prerequisites Setup"
+    echo "=============================================="
+    echo ""
+    echo "This script will install prerequisites for Autoware."
+    echo "Press 'q' at any prompt or Ctrl-C to cancel."
+    echo ""
+fi
+
+# Prompt for ROS installation
+if [ -z "$INSTALL_ROS" ]; then
+    echo "ROS 2 Humble is required for Autoware."
+    if prompt_Ynq "Install ROS 2 Humble?"; then
+        INSTALL_ROS="y"
+    else
+        INSTALL_ROS="n"
+    fi
+    echo ""
+fi
+
+# Prompt for NVIDIA libraries installation
+NVIDIA_ALL_SET=""
+[[ -n "$INSTALL_CUDA" && -n "$INSTALL_CUDNN" && -n "$INSTALL_TENSORRT" && -n "$INSTALL_SPCONV" ]] && NVIDIA_ALL_SET="y"
+
+if [ "$NVIDIA_ALL_SET" != "y" ]; then
+    log_warn "Some Autoware components depend on NVIDIA CUDA, cuDNN, and TensorRT libraries."
+    echo ""
+    echo "  License agreements:"
+    echo "  - CUDA EULA:     https://docs.nvidia.com/cuda/eula/index.html"
+    echo "  - cuDNN SLLA:    https://docs.nvidia.com/deeplearning/cudnn/sla/index.html"
+    echo "  - TensorRT SLLA: https://docs.nvidia.com/deeplearning/tensorrt/sla/index.html"
+    echo ""
+    if prompt_ynq "Install NVIDIA libraries?"; then
+        prompt_nvidia_select
+    else
+        [[ -z "$INSTALL_CUDA" ]] && INSTALL_CUDA="n"
+        [[ -z "$INSTALL_CUDNN" ]] && INSTALL_CUDNN="n"
+        [[ -z "$INSTALL_TENSORRT" ]] && INSTALL_TENSORRT="n"
+        [[ -z "$INSTALL_SPCONV" ]] && INSTALL_SPCONV="n"
+    fi
+    echo ""
+fi
+
+# Summary and confirmation
+nvidia_summary() {
+    local parts=()
+    [[ "$INSTALL_CUDA" = "y" ]] && parts+=("CUDA")
+    [[ "$INSTALL_CUDNN" = "y" ]] && parts+=("cuDNN")
+    [[ "$INSTALL_TENSORRT" = "y" ]] && parts+=("TensorRT")
+    [[ "$INSTALL_SPCONV" = "y" ]] && parts+=("SpConv")
+    if [[ ${#parts[@]} -eq 0 ]]; then
+        echo "No"
+    else
+        IFS=', '; echo "${parts[*]}"
+    fi
+}
+
+echo "Installation plan:"
+echo "  - ROS 2 Humble:     $([ "$INSTALL_ROS" = "y" ] && echo "Yes" || echo "No")"
+echo "  - NVIDIA libraries: $(nvidia_summary)"
+echo ""
+
+if [ "$NON_INTERACTIVE" != "y" ]; then
+    while true; do
+        read -p "Proceed with installation? [Y/n/r(retry)/q]: " -n 1 -r
+        echo ""
+        case "$REPLY" in
+            [Yy]|"") break ;;  # Continue with installation
+            [Rr])
+                # Reset and restart prompts
+                INSTALL_ROS=""
+                INSTALL_CUDA=""
+                INSTALL_CUDNN=""
+                INSTALL_TENSORRT=""
+                INSTALL_SPCONV=""
+                exec "$0" "$@"
+                ;;
+            [Nn]|[Qq])
+                log_warn "Installation cancelled by user."
+                exit 0
+                ;;
+            *)
+                echo "Please answer y (yes), n (no), r (retry), or q (quit)."
+                ;;
+        esac
+    done
+fi
+
+echo ""
+
+# =============================================================================
+# Step 0: Install required tools
+# =============================================================================
+log_info "Installing required tools..."
+apt-get update
+apt-get install -y curl wget gnupg lsb-release ca-certificates
+
+# =============================================================================
+# Step 1: ROS 2 Humble (optional)
+# =============================================================================
+if [ "$INSTALL_ROS" = "y" ]; then
+    log_info "Step 1/2: Installing ROS 2 Humble..."
+
+    # Use ros2-apt-source package (recommended method)
+    # See: https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html
+    if [ ! -f /etc/apt/sources.list.d/ros2.sources ]; then
+        ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')
+        curl -L -o /tmp/ros2-apt-source.deb \
+            "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.jammy_all.deb"
+        dpkg -i /tmp/ros2-apt-source.deb
+        rm /tmp/ros2-apt-source.deb
+    fi
+
+    apt-get update
+    apt-get install -y ros-humble-ros-base ros-humble-rmw-cyclonedds-cpp
+
+    log_info "ROS 2 Humble installed"
+else
+    log_info "Step 1/2: Skipping ROS 2 Humble (not requested)"
+fi
+
+# =============================================================================
+# Step 2: NVIDIA Libraries (optional)
+# =============================================================================
+NVIDIA_ANY="n"
+[[ "$INSTALL_CUDA" = "y" || "$INSTALL_CUDNN" = "y" || "$INSTALL_TENSORRT" = "y" || "$INSTALL_SPCONV" = "y" ]] && NVIDIA_ANY="y"
+
+if [ "$NVIDIA_ANY" = "y" ]; then
+    log_info "Step 2/2: Installing NVIDIA libraries..."
+
+    # Set up NVIDIA CUDA repository
+    if [ ! -f /usr/share/keyrings/cuda-archive-keyring.gpg ]; then
+        wget -q https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb \
+            -O /tmp/cuda-keyring.deb
+        dpkg -i /tmp/cuda-keyring.deb
+        rm /tmp/cuda-keyring.deb
+    fi
+
+    apt-get update
+
+    # Install CUDA runtime libraries
+    if [ "$INSTALL_CUDA" = "y" ]; then
+        log_info "Installing CUDA runtime libraries..."
+        apt-get install -y --allow-change-held-packages \
+            libcublas-12-4 \
+            libcurand-12-4 \
+            libcusparse-12-4 \
+            libcusolver-12-4 \
+            libcufft-12-4
+    fi
+
+    # Install cuDNN
+    if [ "$INSTALL_CUDNN" = "y" ]; then
+        log_info "Installing cuDNN..."
+        apt-get install -y --allow-change-held-packages \
+            libcudnn8=8.9.7.29-1+cuda12.2
+        apt-mark hold libcudnn8
+    fi
+
+    # Install TensorRT
+    if [ "$INSTALL_TENSORRT" = "y" ]; then
+        log_info "Installing TensorRT..."
+        apt-get install -y --allow-change-held-packages \
+            libnvinfer10=10.8.0.43-1+cuda12.8 \
+            libnvinfer-plugin10=10.8.0.43-1+cuda12.8 \
+            libnvonnxparsers10=10.8.0.43-1+cuda12.8
+        apt-mark hold libnvinfer10 libnvinfer-plugin10 libnvonnxparsers10
+    fi
+
+    # Install SpConv and Cumm (for BEVFusion and other perception models)
+    if [ "$INSTALL_SPCONV" = "y" ]; then
+        log_info "Installing SpConv and Cumm..."
+        SPCONV_URL="https://github.com/autowarefoundation/spconv_cpp/releases/download/spconv_v2.3.8%2Bcumm_v0.5.3%2Bcu128"
+
+        # Create unique temporary files
+        CUMM_DEB=$(mktemp /tmp/cumm.XXXXXX.deb)
+        SPCONV_DEB=$(mktemp /tmp/spconv.XXXXXX.deb)
+
+        # Download packages
+        wget -q "${SPCONV_URL}/cumm_0.5.3_amd64.deb" -O "$CUMM_DEB" || {
+            log_error "Failed to download cumm package"
+            rm -f "$CUMM_DEB" "$SPCONV_DEB"
+            exit 1
+        }
+        wget -q "${SPCONV_URL}/spconv_2.3.8_amd64.deb" -O "$SPCONV_DEB" || {
+            log_error "Failed to download spconv package"
+            rm -f "$CUMM_DEB" "$SPCONV_DEB"
+            exit 1
+        }
+
+        # Install packages
+        dpkg -i "$CUMM_DEB" "$SPCONV_DEB"
+        rm -f "$CUMM_DEB" "$SPCONV_DEB"
+    fi
+
+    log_info "NVIDIA libraries installed"
+else
+    log_info "Step 2/2: Skipping NVIDIA libraries (not requested)"
+fi
+
+# =============================================================================
+# Done
+# =============================================================================
+echo ""
+log_info "Prerequisites installation complete!"
+echo ""
+echo "Next steps:"
+echo "  1. Install Autoware:"
+echo "     sudo apt-get update"
+echo "     sudo apt-get install autoware-full-1-7-1"
+echo ""
+echo "  2. Source the environment:"
+echo "     source /opt/autoware/1.7.1/setup.bash"
+echo ""

@@ -1,0 +1,32 @@
+version: 1
+
+# Docker configuration
+docker:
+  # Always prefer remote URLs to avoid maintaining Dockerfiles locally
+  dockerfile: Dockerfile
+
+  # Optional: Custom image name for caching
+  image_name: autoware-1.7.1-jp62-builder
+
+  # Cross-compilation target platform (required for building arm64 on amd64 host)
+  platform: linux/arm64
+
+# Output configuration with descriptive name
+output:
+  directory: ./build
+
+# Package configurations with descriptive name
+packages:
+  directory: ./debian-overrides
+
+# Build options
+build:
+  ros_distro: humble
+  # Use low parallel jobs for QEMU emulation to avoid OOM/segfaults during linking
+  # 0 = use all cores, native ARM64 builds can use higher values
+  parallel_jobs: 0
+  skip_tests: true
+  # Custom installation prefix for Autoware 1.7.1
+  install_prefix: /opt/autoware/1.7.1
+  # Package name suffix - appended to package names (e.g., ros-humble-pkg-1-7-1)
+  package_suffix: "1-7-1"

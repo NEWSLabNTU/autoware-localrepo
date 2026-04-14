@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	# Install setup scripts to /opt/autoware/1.7.1/
+	install -d $(CURDIR)/debian/autoware-config-1-7-1/opt/autoware/1.7.1
+	install -m 644 src/setup.bash $(CURDIR)/debian/autoware-config-1-7-1/opt/autoware/1.7.1/
+	install -m 644 src/setup.zsh $(CURDIR)/debian/autoware-config-1-7-1/opt/autoware/1.7.1/
+	install -m 644 src/setup.sh $(CURDIR)/debian/autoware-config-1-7-1/opt/autoware/1.7.1/
+	install -m 644 src/autoware-env.bash $(CURDIR)/debian/autoware-config-1-7-1/opt/autoware/1.7.1/
+	install -m 644 src/autoware-env.zsh $(CURDIR)/debian/autoware-config-1-7-1/opt/autoware/1.7.1/
+	install -m 644 src/autoware-env.sh $(CURDIR)/debian/autoware-config-1-7-1/opt/autoware/1.7.1/
+	install -m 644 src/local_setup.bash $(CURDIR)/debian/autoware-config-1-7-1/opt/autoware/1.7.1/
+	install -m 644 src/local_setup.zsh $(CURDIR)/debian/autoware-config-1-7-1/opt/autoware/1.7.1/
+	install -m 644 src/local_setup.sh $(CURDIR)/debian/autoware-config-1-7-1/opt/autoware/1.7.1/
+	install -m 644 src/_local_setup_util.py $(CURDIR)/debian/autoware-config-1-7-1/opt/autoware/1.7.1/
+
+	# Install config files to /opt/autoware/1.7.1/config/
+	install -d $(CURDIR)/debian/autoware-config-1-7-1/opt/autoware/1.7.1/config
+	install -m 644 src/cyclonedds.xml $(CURDIR)/debian/autoware-config-1-7-1/opt/autoware/1.7.1/config/
+
+	# Install sysctl configuration
+	install -d $(CURDIR)/debian/autoware-config-1-7-1/etc/sysctl.d
+	install -m 644 src/10-cyclone-max.conf $(CURDIR)/debian/autoware-config-1-7-1/etc/sysctl.d/10-cyclone-max-1-7-1.conf
+
+	# Install systemd service for multicast on loopback
+	install -d $(CURDIR)/debian/autoware-config-1-7-1/etc/systemd/system
+	install -m 644 src/multicast-lo.service $(CURDIR)/debian/autoware-config-1-7-1/etc/systemd/system/multicast-lo-1-7-1.service
