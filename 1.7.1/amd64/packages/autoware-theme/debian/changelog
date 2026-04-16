@@ -1,5 +1,6 @@
-autoware-theme-1-7-1 (1.7.1-1) jammy; urgency=medium
+autoware-theme (1.7.1-1) jammy; urgency=medium
 
-  * Initial release for Autoware 1.7.1
+  * Initial release
+  * Qt5 theme and RViz icons for Autoware
 
- -- Jerry Lin <jerry73204@gmail.com>  Sat, 12 Apr 2025 00:00:00 +0800
+ -- Jerry Lin <jerry73204@gmail.com>  Tue, 14 Apr 2026 16:02:58 +0000

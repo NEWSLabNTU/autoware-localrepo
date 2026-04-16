@@ -1,5 +1,6 @@
-autoware-data-1-7-1 (1.7.1-1) jammy; urgency=medium
+autoware-data (1.7.1-1) jammy; urgency=medium
 
-  * Initial release for Autoware 1.7.1
+  * Initial release
+  * Package ML models for Autoware perception
 
- -- Jerry Lin <jerry73204@gmail.com>  Sat, 12 Apr 2025 00:00:00 +0800
+ -- Jerry Lin <jerry73204@gmail.com>  Wed, 15 Apr 2026 00:03:04 +0000
