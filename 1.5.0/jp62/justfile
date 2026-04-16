@@ -99,7 +99,7 @@ download-data:
     cd packages/autoware-data
     python3 genpkg.py --download "{{version}}" --version "{{version}}"
     echo "Downloading model files..."
-    aria2c -i downloads.txt -j 8 --continue=true --auto-file-renaming=false --allow-overwrite=false
+    aria2c -i downloads.txt -j 8 --continue=true --auto-file-renaming=false --allow-overwrite=true
     echo "✓ ML model files downloaded"
 
 # Download RViz theme files from upstream Autoware
