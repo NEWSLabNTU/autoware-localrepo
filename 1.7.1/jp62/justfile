@@ -1,5 +1,8 @@
 # Autoware 1.7.1 JetPack 6.2 Local Repository Builder
 
+# Autoware upstream tag for fetching assets
+version := "1.7.1"
+
 # Default recipe: list all available recipes
 default:
     @just --list
@@ -88,6 +91,56 @@ test:
 # Run planning simulation in test container (requires X11 display and NVIDIA GPU)
 sim map_path="$HOME/autoware_map/sample-map-planning":
     ./test/sim/run.sh "{{map_path}}"
+
+# Download ML model files from upstream Autoware
+download-data:
+    #!/usr/bin/env bash
+    set -e
+    cd packages/autoware-data
+    python3 genpkg.py --download "{{version}}" --version "{{version}}"
+    echo "Downloading model files..."
+    aria2c -i downloads.txt -j 8 --continue=true --auto-file-renaming=false --allow-overwrite=false
+    echo "✓ ML model files downloaded"
+
+# Download RViz theme files from upstream Autoware
+download-theme:
+    #!/usr/bin/env bash
+    set -e
+    cd packages/autoware-theme
+    python3 genpkg.py -v "{{version}}"
+    echo "Downloading theme files..."
+    aria2c -i downloads.txt -j 8 --auto-file-renaming=false --allow-overwrite=true
+    echo "✓ Theme files downloaded"
+
+# Download sample maps from Autoware (Google Drive)
+download-maps:
+    #!/usr/bin/env bash
+    set -e
+    mkdir -p packages/autoware-maps/src
+    echo "Downloading sample-map-planning.zip..."
+    gdown -O packages/autoware-maps/src/sample-map-planning.zip \
+        'https://docs.google.com/uc?export=download&id=1499_nsbUbIeturZaDj7jhUownh5fvXHd'
+    echo "Downloading sample-map-rosbag.zip..."
+    gdown -O packages/autoware-maps/src/sample-map-rosbag.zip \
+        'https://docs.google.com/uc?export=download&id=1A-8BvYRX3DhSzkAnOcGWFw5T30xTlwZI'
+    echo "✓ Maps downloaded"
+
+# Download sample rosbag from Autoware (Google Drive)
+download-rosbag:
+    #!/usr/bin/env bash
+    set -e
+    mkdir -p packages/autoware-rosbag-sample/src
+    echo "Downloading sample-rosbag.zip..."
+    gdown -O packages/autoware-rosbag-sample/src/sample-rosbag.zip \
+        'https://docs.google.com/uc?export=download&id=1sU5wbxlXAfHIksuHjP3PyI2UVED8lZkP'
+    echo "Splitting for GitHub (50MB chunks)..."
+    split -b 50M packages/autoware-rosbag-sample/src/sample-rosbag.zip \
+        packages/autoware-rosbag-sample/src/sample-rosbag.zip.part-
+    rm packages/autoware-rosbag-sample/src/sample-rosbag.zip
+    echo "✓ Rosbag downloaded and split"
+
+# Download all assets (data + theme + maps + rosbag) from upstream
+download-assets: download-data download-theme download-maps download-rosbag
 
 # Clean meta-package build artifacts (keeps ROS packages in build/)
 clean:
