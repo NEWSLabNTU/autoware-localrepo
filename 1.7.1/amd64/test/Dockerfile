@@ -5,7 +5,7 @@
 #
 # Uses NVIDIA CUDA base image for libcudart.so (CUDA runtime)
 # Additional libraries (cuDNN, TensorRT) are installed by setup-prerequisites.sh
-FROM nvidia/cuda:12.4.0-runtime-ubuntu22.04
+FROM nvidia/cuda:12.8.0-runtime-ubuntu22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -26,11 +26,13 @@ RUN /usr/share/autoware/1.7.1/activate-dds-config.sh
 # Step 4: Install autoware-full-1-7-1 (pulls all Autoware packages from local repo)
 RUN apt-get update && apt-get install -y autoware-full-1-7-1
 
-# Verify setup.bash works and ros2 can see packages
+# Verify setup.bash and autoware-env.bash work, and ros2 can see packages
 RUN bash -c 'source /opt/autoware/1.7.1/setup.bash && \
+    source /opt/autoware/1.7.1/autoware-env.bash && \
     echo "Environment loaded successfully" && \
     echo "AUTOWARE_HOME=$AUTOWARE_HOME" && \
     echo "RMW_IMPLEMENTATION=$RMW_IMPLEMENTATION" && \
+    echo "CYCLONEDDS_URI=$CYCLONEDDS_URI" && \
     echo "Autoware packages: $(ros2 pkg list 2>/dev/null | grep -c autoware)"'
 
 RUN echo "Installation test completed successfully!"
