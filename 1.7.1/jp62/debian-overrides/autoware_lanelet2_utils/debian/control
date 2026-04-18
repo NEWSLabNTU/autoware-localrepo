@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-lanelet2-utils-1-7-1
+Section: misc
+Priority: optional
+Maintainer: Mamoru Sobue <mamoru.sobue@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), librange-v3-dev, libyaml-cpp-dev <!nocheck>, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-index-cpp <!nocheck>, ros-humble-autoware-cmake-1-7-1, ros-humble-autoware-lanelet2-extension-1-7-1, ros-humble-autoware-map-msgs-1-7-1, ros-humble-autoware-planning-msgs-1-7-1, ros-humble-autoware-pyplot-1-7-1 <!nocheck>, ros-humble-autoware-test-utils-1-7-1 <!nocheck>, ros-humble-autoware-utils-geometry-1-7-1, ros-humble-autoware-utils-math-1-7-1, ros-humble-rclcpp, ros-humble-rclpy-message-converter <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-lanelet2-utils-1-7-1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, librange-v3-dev, ros-humble-autoware-lanelet2-extension-1-7-1, ros-humble-autoware-map-msgs-1-7-1, ros-humble-autoware-planning-msgs-1-7-1, ros-humble-autoware-utils-geometry-1-7-1, ros-humble-autoware-utils-math-1-7-1, ros-humble-rclcpp
+Description: The autoware_lanelet2_utils package

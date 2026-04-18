@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-planning-validator-trajectory-checker-1-7-1
+Section: misc
+Priority: optional
+Maintainer: Satoshi Ota <satoshi.ota@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-angles, ros-humble-autoware-cmake-1-7-1, ros-humble-autoware-lint-common-1-7-1 <!nocheck>, ros-humble-autoware-motion-utils-1-7-1, ros-humble-autoware-planning-test-manager-1-7-1 <!nocheck>, ros-humble-autoware-planning-validator-1-7-1, ros-humble-autoware-planning-validator-test-utils-1-7-1 <!nocheck>, ros-humble-autoware-trajectory-1-7-1, ros-humble-autoware-utils-1-7-1, ros-humble-autoware-vehicle-info-utils-1-7-1, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-planning-validator-trajectory-checker-1-7-1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-angles, ros-humble-autoware-motion-utils-1-7-1, ros-humble-autoware-planning-validator-1-7-1, ros-humble-autoware-trajectory-1-7-1, ros-humble-autoware-utils-1-7-1, ros-humble-autoware-vehicle-info-utils-1-7-1, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: The autoware_planning_validator_trajectory_checker package
