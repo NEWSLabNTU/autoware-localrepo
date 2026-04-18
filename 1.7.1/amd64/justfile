@@ -59,9 +59,14 @@ localrepo:
     rm -rf "$REPODIR"
     mkdir -p "$REPODIR/pool/main"
 
-    # Copy ROS packages
+    # Copy ROS packages (exclude superseded packages that cause file conflicts)
     echo "Copying ROS packages..."
-    cp "$BASEDIR/build/debs/"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
+    for deb in "$BASEDIR/build/debs/"*.deb; do
+        case "$(basename "$deb")" in
+            ros-humble-autoware-mission-planner-1-7-1_*) continue ;;  # superseded by mission-planner-universe
+        esac
+        cp "$deb" "$REPODIR/pool/main/"
+    done
 
     # Copy meta-packages (except autoware-localrepo itself)
     echo "Copying meta-packages..."
