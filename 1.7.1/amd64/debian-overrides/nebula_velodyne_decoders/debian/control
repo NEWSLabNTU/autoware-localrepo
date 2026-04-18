@@ -1,0 +1,12 @@
+Source: ros-humble-nebula-velodyne-decoders-1-7-1
+Section: misc
+Priority: optional
+Maintainer: David Wong <david.wong@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), libpcl-dev, ros-humble-angles, ros-humble-autoware-cmake-1-7-1, ros-humble-nebula-core-common-1-7-1, ros-humble-nebula-core-decoders-1-7-1, ros-humble-nebula-velodyne-common-1-7-1, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-ros-environment, ros-humble-velodyne-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-nebula-velodyne-decoders-1-7-1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libpcl-dev, ros-humble-angles, ros-humble-nebula-core-common-1-7-1, ros-humble-nebula-core-decoders-1-7-1, ros-humble-nebula-velodyne-common-1-7-1, ros-humble-pcl-conversions, ros-humble-rclcpp, ros-humble-velodyne-msgs
+Description: Nebula Velodyne Decoders Library

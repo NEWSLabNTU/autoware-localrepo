@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-planning-validator-1-7-1
+Section: misc
+Priority: optional
+Maintainer: Takamasa Horibe <takamasa.horibe@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), libboost-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-angles, ros-humble-autoware-adapi-v1-msgs-1-7-1, ros-humble-autoware-cmake-1-7-1, ros-humble-autoware-lint-common-1-7-1 <!nocheck>, ros-humble-autoware-motion-utils-1-7-1, ros-humble-autoware-perception-msgs-1-7-1, ros-humble-autoware-planning-factor-interface-1-7-1, ros-humble-autoware-planning-msgs-1-7-1, ros-humble-autoware-planning-test-manager-1-7-1, ros-humble-autoware-planning-validator-test-utils-1-7-1 <!nocheck>, ros-humble-autoware-route-handler-1-7-1, ros-humble-autoware-utils-1-7-1, ros-humble-autoware-vehicle-info-utils-1-7-1, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosidl-default-generators, ros-humble-sensor-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-planning-validator-1-7-1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-dev, ros-humble-angles, ros-humble-autoware-adapi-v1-msgs-1-7-1, ros-humble-autoware-motion-utils-1-7-1, ros-humble-autoware-perception-msgs-1-7-1, ros-humble-autoware-planning-factor-interface-1-7-1, ros-humble-autoware-planning-msgs-1-7-1, ros-humble-autoware-planning-test-manager-1-7-1, ros-humble-autoware-route-handler-1-7-1, ros-humble-autoware-utils-1-7-1, ros-humble-autoware-vehicle-info-utils-1-7-1, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rosidl-default-runtime, ros-humble-sensor-msgs, ros-humble-visualization-msgs
+Description: ros node for autoware_planning_validator

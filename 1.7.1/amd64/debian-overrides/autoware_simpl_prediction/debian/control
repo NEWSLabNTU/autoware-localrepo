@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-simpl-prediction-1-7-1
+Section: misc
+Priority: optional
+Maintainer: Kotaro Uetake <kotaro.uetake@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-7-1, ros-humble-autoware-cuda-utils-1-7-1, ros-humble-autoware-internal-debug-msgs-1-7-1, ros-humble-autoware-lanelet2-extension-1-7-1, ros-humble-autoware-lint-common-1-7-1 <!nocheck>, ros-humble-autoware-map-msgs-1-7-1, ros-humble-autoware-object-recognition-utils-1-7-1, ros-humble-autoware-perception-msgs-1-7-1, ros-humble-autoware-tensorrt-common-1-7-1, ros-humble-autoware-utils-1-7-1, ros-humble-autoware-utils-debug-1-7-1, ros-humble-autoware-utils-geometry-1-7-1, ros-humble-autoware-utils-system-1-7-1, ros-humble-cudnn-cmake-module, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tensorrt-cmake-module
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-simpl-prediction-1-7-1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-cuda-utils-1-7-1, ros-humble-autoware-internal-debug-msgs-1-7-1, ros-humble-autoware-lanelet2-extension-1-7-1, ros-humble-autoware-map-msgs-1-7-1, ros-humble-autoware-object-recognition-utils-1-7-1, ros-humble-autoware-perception-msgs-1-7-1, ros-humble-autoware-tensorrt-common-1-7-1, ros-humble-autoware-utils-1-7-1, ros-humble-autoware-utils-debug-1-7-1, ros-humble-autoware-utils-geometry-1-7-1, ros-humble-autoware-utils-system-1-7-1, ros-humble-cudnn-cmake-module, ros-humble-geometry-msgs, ros-humble-lanelet2-core, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tensorrt-cmake-module
+Description: The ROS 2 package for SIMPL.
