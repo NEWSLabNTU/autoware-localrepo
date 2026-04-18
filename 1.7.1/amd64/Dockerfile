@@ -1,7 +1,5 @@
-# Use Autoware base CUDA image matching Autoware 1.7.1 release (November 20, 2025)
-# Tag cuda-20251120 matches the exact release date
-# Includes: CUDA 12.4, cuDNN 8.9.7, TensorRT 10.8.0 (per amd64.env)
-FROM ghcr.io/autowarefoundation/autoware-base:cuda-20251120
+# Use Autoware base CUDA image with CUDA 12.8 (required by Autoware 1.7.1 per amd64.env)
+FROM ghcr.io/autowarefoundation/autoware-base:cuda-latest
 
 # Set up CUDA environment variables
 ENV CUDA_HOME=/usr/local/cuda
@@ -63,23 +61,23 @@ RUN apt update -y && \
     && rm -rf /var/lib/apt/lists/*
 
 # Install cuDNN, TensorRT, and CUDA development packages (headers and dev libs)
-# Pin TensorRT/cuDNN versions to match the runtime libraries installed in the base image
-# TensorRT 10.8.0.43-1+cuda12.8, cuDNN 8.9.7, CUDA 12.4
+# Pin TensorRT/cuDNN versions to match the runtime libraries in the base image
+# CUDA 12.8, TensorRT 10.8.0.43, cuDNN 9 (per amd64.env)
 RUN apt update -y && \
     apt install -y \
-        libcudnn8-dev=8.9.7.29-1+cuda12.2 \
+        libcudnn9-dev-cuda-12 \
         libnvinfer-dev=10.8.0.43-1+cuda12.8 \
         libnvinfer-headers-dev=10.8.0.43-1+cuda12.8 \
         libnvinfer-headers-plugin-dev=10.8.0.43-1+cuda12.8 \
         libnvinfer-plugin-dev=10.8.0.43-1+cuda12.8 \
         libnvonnxparsers-dev=10.8.0.43-1+cuda12.8 \
-        libcublas-dev-12-4 \
-        libcurand-dev-12-4 \
-        libcusparse-dev-12-4 \
-        libcusolver-dev-12-4 \
-        cuda-nvrtc-dev-12-4 \
-        libcufft-dev-12-4 \
-        cuda-nvml-dev-12-4 \
+        libcublas-dev-12-8 \
+        libcurand-dev-12-8 \
+        libcusparse-dev-12-8 \
+        libcusolver-dev-12-8 \
+        cuda-nvrtc-dev-12-8 \
+        libcufft-dev-12-8 \
+        cuda-nvml-dev-12-8 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install message_filters - required by nebula_ros but sometimes not detected by rosdep
