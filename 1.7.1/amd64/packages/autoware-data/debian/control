@@ -1,11 +1,11 @@
-Source: autoware-data
+Source: autoware-data-1-7-1
 Section: misc
 Priority: optional
 Maintainer: Jerry Lin <jerry73204@gmail.com>
 Build-Depends: debhelper-compat (= 13), aria2, ca-certificates
 Standards-Version: 4.6.2
 
-Package: autoware-data
+Package: autoware-data-1-7-1
 Architecture: all
 Depends: ${misc:Depends}
 Description: Autoware ML model data files

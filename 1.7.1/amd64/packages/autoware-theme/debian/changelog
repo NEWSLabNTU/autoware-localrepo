@@ -1,4 +1,4 @@
-autoware-theme (1.7.1-1) jammy; urgency=medium
+autoware-theme-1-7-1 (1.7.1-1) jammy; urgency=medium
 
   * Initial release
   * Qt5 theme and RViz icons for Autoware

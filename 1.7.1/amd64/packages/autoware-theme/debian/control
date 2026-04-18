@@ -1,11 +1,11 @@
-Source: autoware-theme
+Source: autoware-theme-1-7-1
 Section: misc
 Priority: optional
 Maintainer: Jerry Lin <jerry73204@gmail.com>
 Build-Depends: debhelper-compat (= 13), aria2, ca-certificates
 Standards-Version: 4.6.2
 
-Package: autoware-theme
+Package: autoware-theme-1-7-1
 Architecture: all
 Depends: ${misc:Depends}, qt5ct
 Description: Autoware Qt5 theme and RViz icons
