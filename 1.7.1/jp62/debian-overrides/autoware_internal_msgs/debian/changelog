@@ -1,3 +1,9 @@
+ros-humble-autoware-internal-msgs-1-7-1 (1.12.1-0jammy) jammy; urgency=high
+
+
+
+ -- Berkay Karaman <berkay@leodrive.ai>  Sun, 21 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-internal-msgs-1-7-1 (1.12.0-0jammy) jammy; urgency=high
 
 
@@ -47,7 +53,7 @@ ros-humble-autoware-internal-msgs-1-7-1 (1.6.0-0jammy) jammy; urgency=high
 
  -- Berkay Karaman <berkay@leodrive.ai>  Tue, 18 Feb 2025 16:00:00 -0000
 
-ros-humble-autoware-internal-msgs-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-internal-msgs-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
 
 

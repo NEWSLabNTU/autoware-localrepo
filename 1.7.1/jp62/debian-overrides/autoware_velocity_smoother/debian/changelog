@@ -1,4 +1,37 @@
-ros-humble-autoware-velocity-smoother-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-velocity-smoother-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix(velocity_smoother): remove dead store in jerk_filtered_smoother (#814 <https://github.com/autowarefoundation/autoware_core/issues/814>)
+    Remove unnecessary increment of constr_idx after the last constraint
+    setup. The variable is never read after this point, making it a dead store.
+    Detected by Facebook Infer static analyzer (DEAD_STORE).
+    Co-authored-by: Claude Opus 4.5 <mailto:noreply@anthropic.com>
+  * Contributors: Ryohsuke Mitsudome, Ryuta Kambe
+
+ -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-velocity-smoother-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * chore: tf2_ros to hpp headers (#616 <https://github.com/autowarefoundation/autoware_core/issues/616>)
+  * ci(pre-commit): autoupdate (#723 <https://github.com/autowarefoundation/autoware_core/issues/723>)
+    * pre-commit formatting changes
+  * fix(velocity_smoother): missing unit tests for resampling and invalid subscribed input topic (#562 <https://github.com/autowarefoundation/autoware_core/issues/562>)
+    * fix(velocity_smoother): correct input trajectory topic in tests
+    * fix(velocity_smoother): add missing resample unit tests
+    * style(pre-commit): autofix
+    * build test_resample.cpp
+    * #562 <https://github.com/autowarefoundation/autoware_core/issues/562> PR remarks
+    * style(pre-commit): autofix
+    * use current utils geometry namespace
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+  * Contributors: Mete Fatih Cırıt, Tim Clephas, github-actions, ralwing
+
+ -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-velocity-smoother-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)

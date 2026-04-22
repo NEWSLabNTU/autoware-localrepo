@@ -1,3 +1,29 @@
+ros-humble-autoware-behavior-path-goal-planner-module-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * refactor(goal_planner): replace getClosesetLanelet, fix undefined behavior for default-initialized Lanelet (#11993 <https://github.com/autowarefoundation/autoware_universe/issues/11993>)
+    refactor(start_planner): replace getClosesetLanelet, fix undefined behavior for default-initialized Lanelet
+  * docs(goal_planner): use same terminology from bpp main docs (#11868 <https://github.com/autowarefoundation/autoware_universe/issues/11868>)
+  * docs(goal_planner): document revision (#11843 <https://github.com/autowarefoundation/autoware_universe/issues/11843>)
+  * Contributors: Mamoru Sobue, Ryohsuke Mitsudome, Zulfaqar Azmi
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-behavior-path-goal-planner-module-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * feat(autoware_lanelet2_utils): replace from/toBinMsg (Planning and Control Component) (#11784 <https://github.com/autowarefoundation/autoware_universe/issues/11784>)
+    * planning component toBinMsg replacement
+    * control component fromBinMsg replacement
+    * planning component fromBinMsg replacement
+    ---------
+  * chore(goal_planner): change bezier parking parameters in default config (#11698 <https://github.com/autowarefoundation/autoware_universe/issues/11698>)
+  * feat(goal_planner): filter out bezier path with high curvature near start  pose (#11693 <https://github.com/autowarefoundation/autoware_universe/issues/11693>)
+    feat(goal_planner): fiter bezier path with high curvature near start pose
+  * Contributors: Kosuke Takeuchi, Ryohsuke Mitsudome, Sarun MUKDAPITAK
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-behavior-path-goal-planner-module-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble

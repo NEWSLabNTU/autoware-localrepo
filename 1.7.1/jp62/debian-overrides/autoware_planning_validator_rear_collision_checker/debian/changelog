@@ -1,3 +1,20 @@
+ros-humble-autoware-planning-validator-rear-collision-checker-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix(planning_validator_rear_collision_checker): use autoware_utils_geometry type (#11940 <https://github.com/autowarefoundation/autoware_universe/issues/11940>)
+  * docs(rear_collision_checker): revise sentence from README. (#11837 <https://github.com/autowarefoundation/autoware_universe/issues/11837>)
+  * Contributors: Mete Fatih Cırıt, Ryohsuke Mitsudome, Zulfaqar Azmi
+
+ -- Satoshi Ota <satoshi.ota@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-planning-validator-rear-collision-checker-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * refactor: fix leftover dependent autoware_utils from updating vehicle_info_utils (#11734 <https://github.com/autowarefoundation/autoware_universe/issues/11734>)
+  * Contributors: Mete Fatih Cırıt, Ryohsuke Mitsudome
+
+ -- Satoshi Ota <satoshi.ota@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-planning-validator-rear-collision-checker-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble

@@ -1,3 +1,22 @@
+ros-humble-autoware-command-mode-switcher-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-command-mode-switcher-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * feat(command_mode_decider, switcher): use velocity only and steer only conditions (#11811 <https://github.com/autowarefoundation/autoware_universe/issues/11811>)
+    * feat(command_mode_decider): fix to use velocity only and steer only
+    status
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci-lite[bot] <117423508+pre-commit-ci-lite[bot]@users.noreply.github.com>
+  * Contributors: Makoto Kurihara, Ryohsuke Mitsudome
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-command-mode-switcher-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
 

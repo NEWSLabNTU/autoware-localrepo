@@ -1,0 +1,12 @@
+ros-humble-autoware-spheric-collision-detector-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * chore: match all package versions
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix(autoware_spheric_collision_detector): drop galactic support (#12036 <https://github.com/autowarefoundation/autoware_universe/issues/12036>)
+  * chore(spheric_collision_detector): fix exec_depend (#11948 <https://github.com/autowarefoundation/autoware_universe/issues/11948>)
+  * feat(control): add spheric collision detector (#11409 <https://github.com/autowarefoundation/autoware_universe/issues/11409>)
+  * Contributors: Mamoru Sobue, Mete Fatih Cırıt, Ryohsuke Mitsudome, Simon Ranjith
+
+ -- Simon Ranjith <simon.ranjith@lx.it.pt>  Fri, 13 Feb 2026 16:00:00 -0000
+
+

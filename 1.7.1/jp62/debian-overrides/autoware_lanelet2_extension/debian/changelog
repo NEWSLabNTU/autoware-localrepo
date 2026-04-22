@@ -1,3 +1,48 @@
+ros-humble-autoware-lanelet2-extension-1-7-1 (0.12.0-0jammy) jammy; urgency=high
+
+  * feat(visualizer): change a tag name; map_area_filter to obstacle_removal_area (#100 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/100>)
+  * feat(visualzer): add new maker type (#96 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/96>)
+    * add new maker
+    * add docs
+    * fix spell
+    ---------
+  * Contributors: Yuki TAKAGI
+
+ -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Mon, 16 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-lanelet2-extension-1-7-1 (0.11.0-0jammy) jammy; urgency=high
+
+  * feat(lanelet2_extension): deprecate some functions in query (2) (#94 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/94>)
+    deprecate ported functions
+    - getLaneChangeableNeighbors
+    - getSuceedingLaneletSequences
+    - getPrecedingLaneletSequences
+  * feat(lanelet2_extension): deprecate some functions in query (#91 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/91>)
+    * deprecate following functions
+    - getAllNeighbors
+    - getAllNeighborsLeft
+    - getAllNeighborsRight
+    - getLaneletsWithinRange
+    * deprecate overload of getAllNeighbors
+    ---------
+  * fix(autoware_lanelet2_extension): remove unused variable (#93 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/93>)
+    Remove unused  variable that was declared but never used.
+    The lanelet::Origin is created directly in the UtmProjector constructor.
+    Detected by Facebook Infer static analyzer (DEAD_STORE).
+  * fix(autoware_lanelet2_extension): remove unused variables (#92 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/92>)
+    fix(autoware_lanelet2_extension): remove unused variables in visualization.cpp
+    Remove unused 'point' and 'color' variables that were declared but never used.
+    The code directly assigns to marker->pose.position and marker->color
+    without using these local variables.
+    Detected by Facebook Infer static analyzer (DEAD_STORE).
+  * feat(lanelet2_extension): deprecate fromBinMsg and toBinMsg (#89 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/89>)
+  * feat(lanelet2_extension): deprecate getLaneletLength2d and getLaneletLength3d (#88 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/88>)
+    Co-authored-by: Mamoru Sobue <mailto:hilo.soblin@gmail.com>
+  * feat(lanelet2_extension): deprecate ported functions in lanelet2_extension (#81 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/81>)
+  * Contributors: Ryuta Kambe, Sarun MUKDAPITAK
+
+ -- mitsudome-r <ryohsuke.mitsudome@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
 ros-humble-autoware-lanelet2-extension-1-7-1 (0.10.0-0jammy) jammy; urgency=high
 
   * chore: add build option -Wno-error=maybe-uninitialized (#79 <https://github.com/autowarefoundation/autoware_lanelet2_extension/issues/79>)

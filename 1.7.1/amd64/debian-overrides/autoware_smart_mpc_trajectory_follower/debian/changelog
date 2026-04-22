@@ -1,3 +1,27 @@
+ros-humble-autoware-smart-mpc-trajectory-follower-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix(smart_mpc_trajectory_follower): remove cmake pip install command (#12037 <https://github.com/autowarefoundation/autoware_universe/issues/12037>)
+  * chore: reflect the move of the description packages (#11969 <https://github.com/autowarefoundation/autoware_universe/issues/11969>)
+  * fix(smart_mpc_trajectory_follower): python3-torch into exec_depend with condition (#11942 <https://github.com/autowarefoundation/autoware_universe/issues/11942>)
+  * Contributors: Mete Fatih Cırıt, Ryohsuke Mitsudome, Takagi, Isamu
+
+ -- Masayuki Aino <masayuki.aino@proxima-ai-tech.com>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-smart-mpc-trajectory-follower-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * chore: sync files (#11500 <https://github.com/autowarefoundation/autoware_universe/issues/11500>)
+    * chore: sync files
+    * clang-format fixes
+    * markdownlint fix table
+    ---------
+    Co-authored-by: github-actions <mailto:github-actions@github.com>
+    Co-authored-by: Mete Fatih Cırıt <mailto:mfc@autoware.org>
+  * Contributors: Ryohsuke Mitsudome, awf-autoware-bot[bot]
+
+ -- Masayuki Aino <masayuki.aino@proxima-ai-tech.com>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-smart-mpc-trajectory-follower-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
 

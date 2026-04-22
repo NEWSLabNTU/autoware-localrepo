@@ -1,4 +1,16 @@
-ros-humble-autoware-adapi-specs-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-adapi-specs-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-adapi-specs-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takagi, Isamu <isamu.takagi@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-adapi-specs-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)

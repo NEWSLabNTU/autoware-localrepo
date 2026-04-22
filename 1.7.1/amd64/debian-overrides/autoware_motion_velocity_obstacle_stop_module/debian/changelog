@@ -1,4 +1,24 @@
-ros-humble-autoware-motion-velocity-obstacle-stop-module-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-velocity-obstacle-stop-module-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * feat(obstacle_stop): add height and size filter (#822 <https://github.com/autowarefoundation/autoware_core/issues/822>)
+  * feat(motion_velocity_planner): publish debug trajectory for each module (#761 <https://github.com/autowarefoundation/autoware_core/issues/761>)
+  * docs(obstacle_stop): revise documentation (#793 <https://github.com/autowarefoundation/autoware_core/issues/793>)
+  * Contributors: Maxime CLEMENT, Ryohsuke Mitsudome, Yuki TAKAGI, Zulfaqar Azmi
+
+ -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-stop-module-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * refactor(vehicle_info_utils): reduce autoware_utils deps (#754 <https://github.com/autowarefoundation/autoware_core/issues/754>)
+  * chore: tf2_ros to hpp headers (#616 <https://github.com/autowarefoundation/autoware_core/issues/616>)
+  * refactor(motion_velocity_planner): refactor time publisher (#718 <https://github.com/autowarefoundation/autoware_core/issues/718>)
+  * Contributors: Mete Fatih Cırıt, Tim Clephas, Yuki TAKAGI, github-actions
+
+ -- Takayuki Murooka <takayuki.murooka@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-motion-velocity-obstacle-stop-module-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)

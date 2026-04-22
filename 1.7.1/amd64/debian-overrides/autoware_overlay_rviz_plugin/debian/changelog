@@ -1,3 +1,14 @@
+ros-humble-autoware-overlay-rviz-plugin-1-7-1 (0.4.0-0jammy) jammy; urgency=high
+
+  * feat: use rviz_2d_overlay_plugins package for OverlayObject class (#29 <https://github.com/autowarefoundation/autoware_rviz_plugins/issues/29>)
+    * feat: use rviz_2d_overlay_plugins package for OverlayObject class
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * Contributors: Ryohsuke Mitsudome
+
+ -- Khalil Selyan <khalil@leodrive.ai>  Fri, 13 Feb 2026 16:00:00 -0000
+
 ros-humble-autoware-overlay-rviz-plugin-1-7-1 (0.3.0-0jammy) jammy; urgency=high
 
 

@@ -1,3 +1,24 @@
+ros-humble-autoware-simpl-prediction-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * chore(autoware_simpl_prediction): remove cudnn dependency (#11893 <https://github.com/autowarefoundation/autoware_universe/issues/11893>)
+  * Contributors: Amadeusz Szymko, Ryohsuke Mitsudome
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-simpl-prediction-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * feat(autoware_lanelet2_utils): replace from/toBinMsg (Sensing, Visualization and Perception Component) (#11785 <https://github.com/autowarefoundation/autoware_universe/issues/11785>)
+    * perception component toBinMsg replacement
+    * visualization component fromBinMsg replacement
+    * sensing component fromBinMsg replacement
+    * perception component fromBinMsg replacement
+    ---------
+  * Contributors: Ryohsuke Mitsudome, Sarun MUKDAPITAK
+
+ -- Kotaro Uetake <kotaro.uetake@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-simpl-prediction-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble

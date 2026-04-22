@@ -2,7 +2,7 @@ Source: ros-humble-autoware-object-range-splitter-1-7-1
 Section: misc
 Priority: optional
 Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-7-1, ros-humble-autoware-lint-common-1-7-1 <!nocheck>, ros-humble-autoware-perception-msgs-1-7-1, ros-humble-rclcpp, ros-humble-rclcpp-components
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-7-1, ros-humble-autoware-lint-common-1-7-1 <!nocheck>, ros-humble-autoware-perception-msgs-1-7-1, ros-humble-launch-testing <!nocheck>, ros-humble-launch-testing-ament-cmake <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp-components
 Homepage: 
 Standards-Version: 3.9.2
 

@@ -1,3 +1,28 @@
+ros-humble-autoware-behavior-path-start-planner-module-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix(start_planner): reuse previous stop pose to stop for dynamic objects (#12011 <https://github.com/autowarefoundation/autoware_universe/issues/12011>)
+  * refactor(start_planner): replace getClosesetLanelet, fix undefined behavior for default-initialized Lanelet (#11990 <https://github.com/autowarefoundation/autoware_universe/issues/11990>)
+  * fix(behavior_path_start_planner_module): add missing dependencies to CMakeLists (#11936 <https://github.com/autowarefoundation/autoware_universe/issues/11936>)
+  * docs(start_planner): document revision (#11844 <https://github.com/autowarefoundation/autoware_universe/issues/11844>)
+  * Contributors: Mamoru Sobue, Maxime CLEMENT, Mete Fatih Cırıt, Ryohsuke Mitsudome, Zulfaqar Azmi
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-behavior-path-start-planner-module-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * chore: sync files (#11500 <https://github.com/autowarefoundation/autoware_universe/issues/11500>)
+    * chore: sync files
+    * clang-format fixes
+    * markdownlint fix table
+    ---------
+    Co-authored-by: github-actions <mailto:github-actions@github.com>
+    Co-authored-by: Mete Fatih Cırıt <mailto:mfc@autoware.org>
+  * Contributors: Ryohsuke Mitsudome, awf-autoware-bot[bot]
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-behavior-path-start-planner-module-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble

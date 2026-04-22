@@ -1,3 +1,25 @@
+ros-humble-autoware-calibration-status-classifier-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * feat(autoware_calibration_status_classifier): update nvcc flags (#12058 <https://github.com/autowarefoundation/autoware_universe/issues/12058>)
+  * chore: update autoware_calibration_status_classifier maintainer (#12035 <https://github.com/autowarefoundation/autoware_universe/issues/12035>)
+  * chore(autoware_calibration_status_classifier): remove cudnn dependency (#11902 <https://github.com/autowarefoundation/autoware_universe/issues/11902>)
+  * chore: add maintainer of PTv3, FRNet, and CalibrationStatusClassifier (#11945 <https://github.com/autowarefoundation/autoware_universe/issues/11945>)
+    * chore: update autoware_ptv3 maintainer
+    * chore: update autoware_lidar_frnet maintainer
+    * chore: update autoware_calibration_status_classifier maintainer
+    ---------
+  * fix: add missing ament_index_cpp dependency (#11875 <https://github.com/autowarefoundation/autoware_universe/issues/11875>)
+  * Contributors: Amadeusz Szymko, Manato Hirabayashi, Mete Fatih Cırıt, Patiphon Narksri, Ryohsuke Mitsudome
+
+ -- Amadeusz Szymko <amadeusz.szymko.2@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-calibration-status-classifier-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+
+
+ -- Amadeusz Szymko <amadeusz.szymko.2@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-calibration-status-classifier-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble

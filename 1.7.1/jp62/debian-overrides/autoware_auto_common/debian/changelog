@@ -1,3 +1,25 @@
+ros-humble-autoware-auto-common-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * feat: control : fix contol packages compile error when using ros2 jazzy (#11556 <https://github.com/autowarefoundation/autoware_universe/issues/11556>)
+  * Contributors: Ryohsuke Mitsudome, 心刚
+
+ -- Apex.AI, Inc. <opensource@apex.ai>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-auto-common-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * chore: sync files (#11500 <https://github.com/autowarefoundation/autoware_universe/issues/11500>)
+    * chore: sync files
+    * clang-format fixes
+    * markdownlint fix table
+    ---------
+    Co-authored-by: github-actions <mailto:github-actions@github.com>
+    Co-authored-by: Mete Fatih Cırıt <mailto:mfc@autoware.org>
+  * Contributors: Ryohsuke Mitsudome, awf-autoware-bot[bot]
+
+ -- Apex.AI, Inc. <opensource@apex.ai>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-auto-common-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
 

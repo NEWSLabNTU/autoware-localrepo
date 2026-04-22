@@ -1,4 +1,26 @@
-ros-humble-autoware-crop-box-filter-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-crop-box-filter-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+
+
+ -- amc-nu <abrahammonrroy@yahoo.com>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-crop-box-filter-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * fix(autoware_crop_box_filter): initialize transform variables on TF acquisition failure (#750 <https://github.com/autowarefoundation/autoware_core/issues/750>)
+    When TF acquisition fails during initialization, the transform matrices
+    and flags were left uninitialized, potentially leading to undefined
+    behavior when used in pointcloud filtering.
+    This commit ensures that when TF acquisition fails:
+    - need_preprocess_transform_ and need_postprocess_transform_ are set to false
+    - eigen_transform_preprocess_ and eigen_transform_postprocess_ are initialized to identity matrices
+    This matches the behavior when frames are equal and prevents the use of
+    uninitialized values.
+  * Contributors: Yutaka Kondo, github-actions
+
+ -- amc-nu <abrahammonrroy@yahoo.com>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-crop-box-filter-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)

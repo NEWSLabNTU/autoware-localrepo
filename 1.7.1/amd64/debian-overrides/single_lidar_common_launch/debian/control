@@ -8,5 +8,5 @@ Standards-Version: 3.9.2
 
 Package: ros-humble-single-lidar-common-launch-1-7-1
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-velodyne-monitor-1-7-1, ros-humble-nebula-sensor-driver-1-7-1
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-velodyne-monitor-1-7-1, ros-humble-nebula-1-7-1
 Description: The single_lidar_common_launch package

@@ -1,4 +1,28 @@
-ros-humble-autoware-mission-planner-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-mission-planner-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * refactor(planning): deprecate lanelet_extension geometry conversion function (#834 <https://github.com/autowarefoundation/autoware_core/issues/834>)
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+  * refactor(planning, common): replace lanelet2_extension function (#796 <https://github.com/autowarefoundation/autoware_core/issues/796>)
+  * Contributors: Mamoru Sobue, Ryohsuke Mitsudome
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-mission-planner-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * feat(autoware_lanelet2_utils): replace from/toBinMsg (#737 <https://github.com/autowarefoundation/autoware_core/issues/737>)
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+    Co-authored-by: Mamoru Sobue <mailto:hilo.soblin@gmail.com>
+  * feat(autoware_lanelet2_utils): define remove_const in header (#741 <https://github.com/autowarefoundation/autoware_core/issues/741>)
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+  * refactor(vehicle_info_utils): reduce autoware_utils deps (#754 <https://github.com/autowarefoundation/autoware_core/issues/754>)
+  * chore: tf2_ros to hpp headers (#616 <https://github.com/autowarefoundation/autoware_core/issues/616>)
+  * Contributors: Mete Fatih Cırıt, Sarun MUKDAPITAK, Tim Clephas, github-actions
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-mission-planner-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(autoware_lanelet2_utils): replace ported functions from autoware_lanelet2_extension (#695 <https://github.com/autowarefoundation/autoware_core/issues/695>)

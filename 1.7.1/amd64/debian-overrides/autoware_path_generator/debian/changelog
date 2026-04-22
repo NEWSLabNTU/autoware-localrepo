@@ -1,4 +1,52 @@
-ros-humble-autoware-path-generator-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-path-generator-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * refactor(planning): deprecate lanelet_extension geometry conversion function (#834 <https://github.com/autowarefoundation/autoware_core/issues/834>)
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+  * chore: reflect the move of the description packages (#811 <https://github.com/autowarefoundation/autoware_core/issues/811>)
+  * refactor(planning, common): replace lanelet2_extension function (#796 <https://github.com/autowarefoundation/autoware_core/issues/796>)
+  * revert: feat(path_generator): use route_manager to handle route data #725 <https://github.com/autowarefoundation/autoware_core/issues/725> (#801 <https://github.com/autowarefoundation/autoware_core/issues/801>)
+    This reverts commit 2403cb5952d33db8e4a403d6cc7b368521d47f5e.
+  * feat(path_generator): use route_manager to handle route data (#725 <https://github.com/autowarefoundation/autoware_core/issues/725>)
+  * Contributors: Mamoru Sobue, Mitsuhiro Sakamoto, Ryohsuke Mitsudome, Takagi, Isamu
+
+ -- Mitsuhiro Sakamoto <mitsuhiro.sakamoto@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-path-generator-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * chore(path_generator): add new maintainers to package.xml of path_generator (#768 <https://github.com/autowarefoundation/autoware_core/issues/768>)
+    * chore: add new maintainers to package.xml of path_generator
+    * chore: remove maintainers
+    ---------
+  * feat(autoware_lanelet2_utils): replace from/toBinMsg (#737 <https://github.com/autowarefoundation/autoware_core/issues/737>)
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+    Co-authored-by: Mamoru Sobue <mailto:hilo.soblin@gmail.com>
+  * fix(path_generator): cut path before loop prior to intersection check (#758 <https://github.com/autowarefoundation/autoware_core/issues/758>)
+    * fix(path_generator): cut path before loop prior to intersection check
+    * fix(path_generator): prevent crash when trimming short bounds in intersection check
+    Add defensive check in trim_bound lambda to prevent calling crop() on trajectories that are too short. This fixes SIGSEGV crashes that occurred when lanelet_sequence was shortened by loop detection, resulting in bounds that were shorter than vehicle_length.
+    The fix ensures that:
+    - If bound.length() <= vehicle_length, the original bound is returned
+    - If bound.length() > vehicle_length, crop() is safely executed
+    - After crop(), if the result is empty, the original bound is returned
+    This resolves test failures in:
+    - test_test_static_centerline_generator_path_generator_case1_launch.test.py (Test 6)
+    - test_test_static_centerline_generator_path_generator_case4_launch.test.py (Test 9)
+    Both tests were timing out due to crashes in get_first_start_edge_bound_intersection_arc_length() when calling Trajectory<>::restore() on invalid cropped trajectories.
+    ---------
+  * refactor(vehicle_info_utils): reduce autoware_utils deps (#754 <https://github.com/autowarefoundation/autoware_core/issues/754>)
+  * feat(QC, path_generator): use build_reference_path() for path generation (#736 <https://github.com/autowarefoundation/autoware_core/issues/736>)
+  * fix(autoware_path_generator): fix maybe-unitialized warning from test code (#730 <https://github.com/autowarefoundation/autoware_core/issues/730>)
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+  * ci(pre-commit): autoupdate (#723 <https://github.com/autowarefoundation/autoware_core/issues/723>)
+    * pre-commit formatting changes
+  * Contributors: Mamoru Sobue, Masahiro Kubota, Mete Fatih Cırıt, Ryohsuke Mitsudome, Sarun MUKDAPITAK, github-actions, tera24
+
+ -- Mitsuhiro Sakamoto <mitsuhiro.sakamoto@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-path-generator-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(lanelet2_utils): organize maps by vm-map-spec id (#716 <https://github.com/autowarefoundation/autoware_core/issues/716>)
@@ -31,7 +79,7 @@ ros-humble-autoware-path-generator-1-7-1 (1.7.1-0jammy) jammy; urgency=high
   * chore: bump version (1.4.0) and update changelog (#608 <https://github.com/autowarefoundation/autoware_core/issues/608>)
   * Contributors: Mamoru Sobue, Mete Fatih Cırıt, Mitsuhiro Sakamoto, Sarun MUKDAPITAK, Yutaka Kondo, mitsudome-r
 
- -- Satoshi Ota <satoshi.ota@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
+ -- Mitsuhiro Sakamoto <mitsuhiro.sakamoto@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
 
 ros-humble-autoware-path-generator-1-7-1 (1.4.0-0jammy) jammy; urgency=high
 
@@ -99,7 +147,7 @@ ros-humble-autoware-path-generator-1-7-1 (1.4.0-0jammy) jammy; urgency=high
   * fix(path_generator): support 0s turn signal search time (#557 <https://github.com/autowarefoundation/autoware_core/issues/557>)
   * Contributors: Kosuke Takeuchi, Mitsuhiro Sakamoto, Ryohsuke Mitsudome
 
- -- Satoshi Ota <satoshi.ota@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
+ -- Mitsuhiro Sakamoto <mitsuhiro.sakamoto@tier4.jp>  Sun, 10 Aug 2025 16:00:00 -0000
 
 ros-humble-autoware-path-generator-1-7-1 (1.3.0-0jammy) jammy; urgency=high
 
@@ -204,7 +252,7 @@ ros-humble-autoware-path-generator-1-7-1 (1.3.0-0jammy) jammy; urgency=high
   * feat(autoware_path_generator): use autoware_trajectory for cropping bounds (#349 <https://github.com/autowarefoundation/autoware_core/issues/349>)
   * Contributors: Kazunori-Nakajima, Kosuke Takeuchi, Mamoru Sobue, Mitsuhiro Sakamoto, Yukinari Hisaki, Yutaka Kondo, github-actions, taikitanaka3
 
- -- Satoshi Ota <satoshi.ota@tier4.jp>  Sun, 22 Jun 2025 16:00:00 -0000
+ -- Mitsuhiro Sakamoto <mitsuhiro.sakamoto@tier4.jp>  Sun, 22 Jun 2025 16:00:00 -0000
 
 ros-humble-autoware-path-generator-1-7-1 (1.1.0-0jammy) jammy; urgency=high
 
@@ -267,7 +315,7 @@ ros-humble-autoware-path-generator-1-7-1 (1.1.0-0jammy) jammy; urgency=high
   * feat(autoware_path_generator): use autoware_trajectory for cropping bounds (#349 <https://github.com/autowarefoundation/autoware_core/issues/349>)
   * Contributors: Kazunori-Nakajima, Mamoru Sobue, Mitsuhiro Sakamoto, Yukinari Hisaki
 
- -- Satoshi Ota <satoshi.ota@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
+ -- Mitsuhiro Sakamoto <mitsuhiro.sakamoto@tier4.jp>  Wed, 30 Apr 2025 16:00:00 -0000
 
 ros-humble-autoware-path-generator-1-7-1 (1.0.0-0jammy) jammy; urgency=high
 
@@ -297,7 +345,7 @@ ros-humble-autoware-path-generator-1-7-1 (1.0.0-0jammy) jammy; urgency=high
     Co-authored-by: kosuke55 <mailto:kosuke.tnp@gmail.com>
   * Contributors: Kosuke Takeuchi, Mitsuhiro Sakamoto, Shane Loretz
 
- -- Satoshi Ota <satoshi.ota@tier4.jp>  Sun, 30 Mar 2025 16:00:00 -0000
+ -- Mitsuhiro Sakamoto <mitsuhiro.sakamoto@tier4.jp>  Sun, 30 Mar 2025 16:00:00 -0000
 
 ros-humble-autoware-path-generator-1-7-1 (0.3.0-0jammy) jammy; urgency=high
 
@@ -553,6 +601,6 @@ ros-humble-autoware-path-generator-1-7-1 (0.3.0-0jammy) jammy; urgency=high
     Co-authored-by: kosuke55 <mailto:kosuke.tnp@gmail.com>
   * Contributors: Junya Sasaki, Kosuke Takeuchi, Mitsuhiro Sakamoto, NorahXiong, Yutaka Kondo, mitsudome-r
 
- -- Satoshi Ota <satoshi.ota@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
+ -- Mitsuhiro Sakamoto <mitsuhiro.sakamoto@tier4.jp>  Thu, 20 Mar 2025 16:00:00 -0000
 
 

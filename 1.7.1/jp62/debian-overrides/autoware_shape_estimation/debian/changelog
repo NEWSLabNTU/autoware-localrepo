@@ -1,3 +1,30 @@
+ros-humble-autoware-shape-estimation-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * feat!: remove ROS 2 Galactic codes (#11905 <https://github.com/autowarefoundation/autoware_universe/issues/11905>)
+  * chore(autoware_shape_estimation): remove cudnn dependency (#11892 <https://github.com/autowarefoundation/autoware_universe/issues/11892>)
+  * feat: simulation related packages support jazzy (#11424 <https://github.com/autowarefoundation/autoware_universe/issues/11424>)
+  * Contributors: Amadeusz Szymko, Ryohsuke Mitsudome, 心刚
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-shape-estimation-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * feat(shape_estimation): correcting yaw (#11309 <https://github.com/autowarefoundation/autoware_universe/issues/11309>) (#11634 <https://github.com/autowarefoundation/autoware_universe/issues/11634>)
+    * feat(shape_estimation): correcting yaw
+    * fix test
+    * fix: test and pre-commit
+    ---------
+  * feat: refactor shape estimation and documentations; from autowarefoundation #11353 <https://github.com/autowarefoundation/autoware_universe/issues/11353> (#11631 <https://github.com/autowarefoundation/autoware_universe/issues/11631>)
+    * feat: refactor shape estimation and documentations; from autowarefoundation #11353 <https://github.com/autowarefoundation/autoware_universe/issues/11353>
+    * fix CI
+    * fix: CI last line
+    ---------
+  * Contributors: Ryohsuke Mitsudome, Yuxuan Liu
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-shape-estimation-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble

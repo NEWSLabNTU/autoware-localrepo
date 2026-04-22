@@ -1,3 +1,33 @@
+ros-humble-tier4-system-launch-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * chore: import tier4 launchers from universe (#1740 <https://github.com/autowarefoundation/autoware_launch/issues/1740>)
+  * Contributors: Taeseung Sohn, github-actions
+
+ -- Fumihito Ito <fumihito.ito@tier4.jp>  Thu, 12 Feb 2026 16:00:00 -0000
+
+ros-humble-tier4-system-launch-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * feat(diagnostic_graph_aggregator): "var" substitution support (#11802 <https://github.com/autowarefoundation/autoware_universe/issues/11802>)
+    * implement vars substitution
+    * add test
+    * update launch
+    * update doc
+    * add parameter passing
+    * fix [build/include_what_you_use]
+    * format code
+    * format table
+    * unify same namespace block
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+    * refactor(autoware_diagnostic_graph_aggregator): use YAML map format for graph_vars parameter
+    * update path.md
+    ---------
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+  * Contributors: Autumn60, Ryohsuke Mitsudome
+
+ -- Fumihito Ito <fumihito.ito@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-tier4-system-launch-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
 

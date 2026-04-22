@@ -1,3 +1,17 @@
+ros-humble-autoware-agnocast-wrapper-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix(agnocast): build on jazzy, remove from ground_segmentation_cuda (#11960 <https://github.com/autowarefoundation/autoware_universe/issues/11960>)
+  * Contributors: Mete Fatih Cırıt, Ryohsuke Mitsudome
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-agnocast-wrapper-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-agnocast-wrapper-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble

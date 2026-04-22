@@ -1,4 +1,32 @@
-ros-humble-autoware-motion-utils-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-motion-utils-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * fix(autoware_motion_utils): stop point detection while resampling trajectory (#808 <https://github.com/autowarefoundation/autoware_core/issues/808>)
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: Shumpei Wakabayashi <mailto:42209144+shmpwk@users.noreply.github.com>
+  * chore(autoware_motion_utils, autoware_trajectory, autoware_interpolation): add maintainers for packages (#821 <https://github.com/autowarefoundation/autoware_core/issues/821>)
+    * add maintainers for autoware_interpolation
+    * add maintainers for autoware_motion_utils
+    * add maintainers for autoware_trajectory
+    ---------
+    Co-authored-by: Satoshi OTA <mailto:44889564+satoshi-ota@users.noreply.github.com>
+  * chore(autoware_motion_utils): add a maintainer (#820 <https://github.com/autowarefoundation/autoware_core/issues/820>)
+  * chore(autoware_motion_utils): remove boost (#646 <https://github.com/autowarefoundation/autoware_core/issues/646>)
+    remove boost from cmake and package.xml
+  * Contributors: Felix F Xu, Junya Sasaki, Mehmet Emin BAŞOĞLU, Ryohsuke Mitsudome, mkquda
+
+ -- Satoshi Ota <satoshi.ota@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-motion-utils-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * ci(pre-commit): autoupdate (#723 <https://github.com/autowarefoundation/autoware_core/issues/723>)
+    * pre-commit formatting changes
+  * Contributors: Mete Fatih Cırıt, github-actions
+
+ -- Satoshi Ota <satoshi.ota@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-motion-utils-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)

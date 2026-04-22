@@ -37,7 +37,7 @@ ros-humble-autoware-map-msgs-1-7-1 (1.6.0-0jammy) jammy; urgency=high
 
  -- Mete Fatih Cırıt <mfc@autoware.org>  Sun, 06 Apr 2025 16:00:00 -0000
 
-ros-humble-autoware-map-msgs-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-map-msgs-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * feat(autoware_msg_msgs): add scale factor remove altitude (#121 <https://github.com/autowarefoundation/autoware_msgs/issues/121>)
     * add_scale_factor_remove_altitude

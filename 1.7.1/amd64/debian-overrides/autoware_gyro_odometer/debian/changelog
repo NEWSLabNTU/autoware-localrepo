@@ -1,4 +1,20 @@
-ros-humble-autoware-gyro-odometer-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-gyro-odometer-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yamato Ando <yamato.ando@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-gyro-odometer-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * perf(localization, sensing): reduce subscription queue size from 100 to 10 (#751 <https://github.com/autowarefoundation/autoware_core/issues/751>)
+  * ci(pre-commit): autoupdate (#723 <https://github.com/autowarefoundation/autoware_core/issues/723>)
+    * pre-commit formatting changes
+  * Contributors: Mete Fatih Cırıt, Yutaka Kondo, github-actions
+
+ -- Yamato Ando <yamato.ando@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-gyro-odometer-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)

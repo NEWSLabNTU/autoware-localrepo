@@ -8,5 +8,5 @@ Standards-Version: 3.9.2
 
 Package: ros-humble-tier4-autoware-api-launch-1-7-1
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-adaptors-1-7-1, ros-humble-autoware-default-adapi-universe-1-7-1, ros-humble-autoware-iv-external-api-adaptor-1-7-1, ros-humble-autoware-iv-internal-api-adaptor-1-7-1, ros-humble-awapi-awiv-adapter-1-7-1, ros-humble-rosbridge-server, ros-humble-tier4-autoware-api-extension-1-7-1, ros-humble-tier4-deprecated-api-adapter-1-7-1, ros-humble-topic-tools
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-adaptors-1-7-1, ros-humble-autoware-default-adapi-universe-1-7-1, ros-humble-autoware-evaluation-adapter-1-7-1
 Description: The tier4_autoware_api_launch package

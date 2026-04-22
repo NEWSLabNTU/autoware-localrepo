@@ -1,4 +1,40 @@
-ros-humble-autoware-interpolation-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-interpolation-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * chore(autoware_motion_utils, autoware_trajectory, autoware_interpolation): add maintainers for packages (#821 <https://github.com/autowarefoundation/autoware_core/issues/821>)
+    * add maintainers for autoware_interpolation
+    * add maintainers for autoware_motion_utils
+    * add maintainers for autoware_trajectory
+    ---------
+    Co-authored-by: Satoshi OTA <mailto:44889564+satoshi-ota@users.noreply.github.com>
+  * chore(autoware_interpolation): add a maintainer (#818 <https://github.com/autowarefoundation/autoware_core/issues/818>)
+  * feat(autoware_interpolation): exposing access to coefficients (#671 <https://github.com/autowarefoundation/autoware_core/issues/671>)
+    * Changes to spline_interpolation code to expose access to spline coefficients
+    * fixes
+    * style(pre-commit): autofix
+    * removed unnecessary comments
+    * Added includes
+    * add includes
+    * added comment
+    * style(pre-commit): autofix
+    * unit-testing for new public functions
+    * style(pre-commit): autofix
+    * extra unit tests
+    ---------
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+    Co-authored-by: Taiki Yamada <mailto:129915538+TaikiYamada4@users.noreply.github.com>
+  * perf(interpolation): optimize calc_closest_segment_indices (#797 <https://github.com/autowarefoundation/autoware_core/issues/797>)
+  * Contributors: Arjun Jagdish Ram, Junya Sasaki, Maxime CLEMENT, Ryohsuke Mitsudome, mkquda
+
+ -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-interpolation-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+
+
+ -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-interpolation-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)

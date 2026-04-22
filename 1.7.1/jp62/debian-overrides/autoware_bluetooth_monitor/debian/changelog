@@ -1,3 +1,21 @@
+ros-humble-autoware-bluetooth-monitor-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+
+
+ -- Fumihito Ito <fumihito.ito@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-bluetooth-monitor-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * fix(autoware_bluetooth_monitor): add respawn_delay to prevent rapid respawn loop (#11742 <https://github.com/autowarefoundation/autoware_universe/issues/11742>)
+    Add respawn_delay="5.0" to the launch file to prevent rapid respawn
+    loops when the node crashes. This addresses the Process Respawn Loop
+    anti-pattern by ensuring a 5-second delay between node restarts.
+    Fixes #11736 <https://github.com/autowarefoundation/autoware_universe/issues/11736>
+  * Contributors: Ryohsuke Mitsudome, Yutaka Kondo
+
+ -- Fumihito Ito <fumihito.ito@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-bluetooth-monitor-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
 

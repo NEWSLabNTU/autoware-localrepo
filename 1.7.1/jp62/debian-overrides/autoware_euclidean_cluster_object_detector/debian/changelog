@@ -1,4 +1,26 @@
-ros-humble-autoware-euclidean-cluster-object-detector-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-euclidean-cluster-object-detector-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * chore: use local default config files instead of autoware_launch (for core) (#832 <https://github.com/autowarefoundation/autoware_core/issues/832>)
+    use local default config files instead of autoware_launch
+  * Contributors: Ryohsuke Mitsudome, Taeseung Sohn
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-euclidean-cluster-object-detector-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * fix(autoware_euclidean_cluster_object_detector): prevent zero division in getCentroid (#745 <https://github.com/autowarefoundation/autoware_core/issues/745>)
+    - Add zero division check in getCentroid() function
+    - Return origin point (0, 0, 0) when empty point cloud is passed
+    - Add unit test for empty point cloud case
+  * fix(autoware_euclidean_cluster_object_detector): add early return for empty point cloud in voxel grid node (#747 <https://github.com/autowarefoundation/autoware_core/issues/747>)
+  * fix(autoware_euclidean_cluster_object_detector): add empty point cloud check (#743 <https://github.com/autowarefoundation/autoware_core/issues/743>)
+  * Contributors: Yutaka Kondo, github-actions
+
+ -- Yukihiro Saito <yukihiro.saito@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-euclidean-cluster-object-detector-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)

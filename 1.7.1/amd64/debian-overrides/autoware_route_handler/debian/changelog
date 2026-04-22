@@ -1,4 +1,42 @@
-ros-humble-autoware-route-handler-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-route-handler-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * refactor(planning): deprecate lanelet_extension geometry conversion function (#834 <https://github.com/autowarefoundation/autoware_core/issues/834>)
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+  * feat(lanelet2_extension): port some lanelet2_extension query functions (2) (#809 <https://github.com/autowarefoundation/autoware_core/issues/809>)
+  * feat(lanelet2_extension): port some lanelet2_extension query functions  (#790 <https://github.com/autowarefoundation/autoware_core/issues/790>)
+    * port left/right/all_neighbor_lanelets and their tests
+    * replace getAllNeighbors* with ported functions
+    * add neighbors order description and verify in test
+    * add ported functions to API table
+    * add example code snippet
+    * Remove optional from return value
+    Assume one lanelet is always in return value (itself)
+    * change usage of left/right_lanelets (always check access)
+    * fix README for example code snippet
+    * fix cppcheck-differential
+    * fix README description
+    ---------
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+    Co-authored-by: Mamoru Sobue <mailto:hilo.soblin@gmail.com>
+  * refactor(planning, common): replace lanelet2_extension function (#796 <https://github.com/autowarefoundation/autoware_core/issues/796>)
+  * Contributors: Mamoru Sobue, Ryohsuke Mitsudome, Sarun MUKDAPITAK
+
+ -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-route-handler-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * feat(autoware_lanelet2_utils): replace from/toBinMsg (#737 <https://github.com/autowarefoundation/autoware_core/issues/737>)
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+    Co-authored-by: Mamoru Sobue <mailto:hilo.soblin@gmail.com>
+  * ci(pre-commit): autoupdate (#723 <https://github.com/autowarefoundation/autoware_core/issues/723>)
+    * pre-commit formatting changes
+  * Contributors: Mete Fatih Cırıt, Sarun MUKDAPITAK, github-actions
+
+ -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-route-handler-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(autoware_lanelet2_utils): replace ported functions from autoware_lanelet2_extension (#695 <https://github.com/autowarefoundation/autoware_core/issues/695>)

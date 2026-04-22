@@ -1,3 +1,11 @@
+ros-humble-autoware-utils-system-1-7-1 (1.5.0-0jammy) jammy; urgency=high
+
+  * chore: replace INSTANTIATE_TEST_CASE_P with INSTANTIATE_TEST_SUITE_P (#73 <https://github.com/autowarefoundation/autoware_utils/issues/73>)
+    replace INSTANTIATE_TEST_SUITE_P with INSTANTIATE_TEST_CASE_P
+  * Contributors: Daisuke Nishimatsu
+
+ -- Jian Kang <egon.kang@autocore.ai>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-utils-system-1-7-1 (1.4.2-0jammy) jammy; urgency=high
 
 

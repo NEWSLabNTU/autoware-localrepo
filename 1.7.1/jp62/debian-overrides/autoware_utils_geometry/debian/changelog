@@ -1,3 +1,17 @@
+ros-humble-autoware-utils-geometry-1-7-1 (1.5.0-0jammy) jammy; urgency=high
+
+  * fix(autoware_utils_geometry): handle floating-point errors in segment collision detection (#86 <https://github.com/autowarefoundation/autoware_utils/issues/86>)
+    fix(arc_lane_utils): handle floating-point errors in segment collision detection
+  * ci(pre-commit): autoupdate (#77 <https://github.com/autowarefoundation/autoware_utils/issues/77>)
+    * ci(pre-commit): autoupdate
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: github-actions <mailto:github-actions@github.com>
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * Contributors: Jakub Zeifert, awf-autoware-bot[bot]
+
+ -- Jian Kang <egon.kang@autocore.ai>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-utils-geometry-1-7-1 (1.4.2-0jammy) jammy; urgency=high
 
   * fix: include tf2/convert.hpp instead of tf2/convert.h (#67 <https://github.com/autowarefoundation/autoware_utils/issues/67>)

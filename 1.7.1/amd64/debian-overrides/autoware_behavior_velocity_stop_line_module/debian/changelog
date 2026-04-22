@@ -1,4 +1,37 @@
-ros-humble-autoware-behavior-velocity-stop-line-module-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-behavior-velocity-stop-line-module-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-behavior-velocity-stop-line-module-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * refactor(vehicle_info_utils): reduce autoware_utils deps (#754 <https://github.com/autowarefoundation/autoware_core/issues/754>)
+  * ci(pre-commit): autoupdate (#723 <https://github.com/autowarefoundation/autoware_core/issues/723>)
+    * pre-commit formatting changes
+  * feat(stop_line): add vehicle_stopped_duration_threshold parameter (#721 <https://github.com/autowarefoundation/autoware_core/issues/721>)
+    * feat(stop_line): add vehicle_stopped_duration_threshold parameter
+    - Add new parameter vehicle_stopped_duration_threshold
+    - Duration threshold for determining if the vehicle is stopped
+    - Used in isVehicleStopped() function
+    - Rename stop_duration_sec to required_stop_duration_sec
+    - Required stop duration at the stop line
+    - Used for state transition from STOPPED to START
+    This change adds a configurable threshold for vehicle stopped detection
+    and improves parameter naming clarity to distinguish between the two
+    duration-related parameters.
+    * feat(stop_line): add vehicle_stopped_duration_threshold to experimental module
+    - Add vehicle_stopped_duration_threshold parameter to experimental PlannerParam
+    - Use vehicle_stopped_duration_threshold in isVehicleStopped() call
+    - Add parameter loading in experimental manager
+    This extends the vehicle_stopped_duration_threshold functionality to
+    the experimental stop line module implementation.
+  * Contributors: Mete Fatih Cırıt, Yukinari Hisaki, github-actions
+
+ -- Yukinari Hisaki <yukinari.hisaki.2@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-behavior-velocity-stop-line-module-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)

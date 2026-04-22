@@ -1,3 +1,10 @@
+ros-humble-autoware-utils-uuid-1-7-1 (1.5.0-0jammy) jammy; urgency=high
+
+  * fix(autoware_utils_uuid): include cstdint as uint8_t is used (#79 <https://github.com/autowarefoundation/autoware_utils/issues/79>)
+  * Contributors: Silvio Traversaro
+
+ -- Jian Kang <egon.kang@autocore.ai>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-utils-uuid-1-7-1 (1.4.2-0jammy) jammy; urgency=high
 
 

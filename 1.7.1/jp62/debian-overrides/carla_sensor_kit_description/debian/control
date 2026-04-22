@@ -8,5 +8,5 @@ Standards-Version: 3.9.2
 
 Package: ros-humble-carla-sensor-kit-description-1-7-1
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-camera-description-1-7-1, ros-humble-imu-description-1-7-1, ros-humble-velodyne-description-1-7-1, ros-humble-xacro
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-sample-sensor-kit-description-1-7-1, ros-humble-velodyne-description-1-7-1, ros-humble-xacro
 Description: The carla_sensor_kit_description package - Sensor kit calibration for CARLA simulator

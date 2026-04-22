@@ -1,3 +1,25 @@
+ros-humble-autoware-trajectory-traffic-rule-filter-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * chore(trajectory_ranker,trajectory_traffic_rule_filter): add maintainers (#12020 <https://github.com/autowarefoundation/autoware_universe/issues/12020>)
+    chore(trajectory_ranker,traffic_rule_filter): add maintainers
+  * fix(traffic_rule_filter): improve traffic light filter (#11983 <https://github.com/autowarefoundation/autoware_universe/issues/11983>)
+  * Contributors: Maxime CLEMENT, Ryohsuke Mitsudome
+
+ -- Daniel Sanchez <daniel.sanchez@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-trajectory-traffic-rule-filter-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * feat(autoware_lanelet2_utils): replace from/toBinMsg (Planning and Control Component) (#11784 <https://github.com/autowarefoundation/autoware_universe/issues/11784>)
+    * planning component toBinMsg replacement
+    * control component fromBinMsg replacement
+    * planning component fromBinMsg replacement
+    ---------
+  * Contributors: Ryohsuke Mitsudome, Sarun MUKDAPITAK
+
+ -- Daniel Sanchez <daniel.sanchez@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-trajectory-traffic-rule-filter-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble

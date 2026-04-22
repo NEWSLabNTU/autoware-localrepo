@@ -1,4 +1,29 @@
-ros-humble-autoware-simple-pure-pursuit-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-simple-pure-pursuit-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+
+
+ -- Yuki Takagi <yuki.takagi@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-simple-pure-pursuit-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * fix(autoware_simple_pure_pursuit): add empty trajectory check to prevent crash (#744 <https://github.com/autowarefoundation/autoware_core/issues/744>)
+    * fix(autoware_simple_pure_pursuit): add empty trajectory check to prevent crash
+    * Apply suggestion from @Copilot
+    Co-authored-by: Copilot <mailto:175728472+Copilot@users.noreply.github.com>
+    * test(autoware_simple_pure_pursuit): add test for empty trajectory check
+    * Update control/autoware_simple_pure_pursuit/src/simple_pure_pursuit.cpp
+    Co-authored-by: Mamoru Sobue <mailto:hilo.soblin@gmail.com>
+    ---------
+    Co-authored-by: Copilot <mailto:175728472+Copilot@users.noreply.github.com>
+    Co-authored-by: Mamoru Sobue <mailto:hilo.soblin@gmail.com>
+  * ci(pre-commit): autoupdate (#723 <https://github.com/autowarefoundation/autoware_core/issues/723>)
+    * pre-commit formatting changes
+  * Contributors: Mete Fatih Cırıt, Yutaka Kondo, github-actions
+
+ -- Yuki Takagi <yuki.takagi@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-simple-pure-pursuit-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat: replace ament_auto_package to autoware_ament_auto_package (#700 <https://github.com/autowarefoundation/autoware_core/issues/700>)

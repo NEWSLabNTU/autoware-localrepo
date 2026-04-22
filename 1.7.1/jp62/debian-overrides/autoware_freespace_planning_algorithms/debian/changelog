@@ -1,3 +1,20 @@
+ros-humble-autoware-freespace-planning-algorithms-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * feat!: remove ROS 2 Galactic codes (#11905 <https://github.com/autowarefoundation/autoware_universe/issues/11905>)
+  * fix(freespace_planning_algorithms): conform to new SerializedBagMessage (#11882 <https://github.com/autowarefoundation/autoware_universe/issues/11882>)
+  * Contributors: Mete Fatih Cırıt, Ryohsuke Mitsudome
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-freespace-planning-algorithms-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * refactor(freespace_planning_algorithms): reduce autoware_utils deps (#11731 <https://github.com/autowarefoundation/autoware_universe/issues/11731>)
+  * Contributors: Mete Fatih Cırıt, Ryohsuke Mitsudome
+
+ -- Kosuke Takeuchi <kosuke.takeuchi@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-freespace-planning-algorithms-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble

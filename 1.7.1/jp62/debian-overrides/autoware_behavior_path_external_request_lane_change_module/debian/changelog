@@ -1,3 +1,15 @@
+ros-humble-autoware-behavior-path-external-request-lane-change-module-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+
+
+ -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-behavior-path-external-request-lane-change-module-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+
+
+ -- Fumiya Watanabe <fumiya.watanabe@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-behavior-path-external-request-lane-change-module-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
 

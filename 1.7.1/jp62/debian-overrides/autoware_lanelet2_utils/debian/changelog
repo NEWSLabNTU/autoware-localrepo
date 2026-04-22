@@ -1,4 +1,75 @@
-ros-humble-autoware-lanelet2-utils-1-7-1 (1.7.1-0jammy) jammy; urgency=high
+ros-humble-autoware-lanelet2-utils-1-7-1 (1.7.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * feat(lanelet2_utils): add empty input handler for get_arc_coordinates (#831 <https://github.com/autowarefoundation/autoware_core/issues/831>)
+    * add empty input lanelets handler for get_arc_coordinates
+    * add test ensure default ArcCoordinates
+    ---------
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+  * docs(lanelet2_utils): add succeeding/preceding lanelet sequence illustration (#830 <https://github.com/autowarefoundation/autoware_core/issues/830>)
+    added succeeding/preceding lanelet sequences illustration
+  * feat(lanelet2_extension): port some lanelet2_extension query functions (2) (#809 <https://github.com/autowarefoundation/autoware_core/issues/809>)
+  * feat(lanelet2_extension): port remaining lanelet2_extension utilities functions (#760 <https://github.com/autowarefoundation/autoware_core/issues/760>)
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+  * feat(lanelet2_extension): port some lanelet2_extension query functions  (#790 <https://github.com/autowarefoundation/autoware_core/issues/790>)
+    * port left/right/all_neighbor_lanelets and their tests
+    * replace getAllNeighbors* with ported functions
+    * add neighbors order description and verify in test
+    * add ported functions to API table
+    * add example code snippet
+    * Remove optional from return value
+    Assume one lanelet is always in return value (itself)
+    * change usage of left/right_lanelets (always check access)
+    * fix README for example code snippet
+    * fix cppcheck-differential
+    * fix README description
+    ---------
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+    Co-authored-by: Mamoru Sobue <mailto:hilo.soblin@gmail.com>
+  * revert: feat(path_generator): use route_manager to handle route data #725 <https://github.com/autowarefoundation/autoware_core/issues/725> (#801 <https://github.com/autowarefoundation/autoware_core/issues/801>)
+    This reverts commit 2403cb5952d33db8e4a403d6cc7b368521d47f5e.
+  * feat(path_generator): use route_manager to handle route data (#725 <https://github.com/autowarefoundation/autoware_core/issues/725>)
+  * Contributors: Mitsuhiro Sakamoto, Ryohsuke Mitsudome, Sarun MUKDAPITAK
+
+ -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-lanelet2-utils-1-7-1 (1.6.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * feat(autoware_lanelet2_utils): define remove_const in header (#741 <https://github.com/autowarefoundation/autoware_core/issues/741>)
+    Co-authored-by: Junya Sasaki <mailto:j2sasaki1990@gmail.com>
+  * chore: jazzy-porting: fix test depend launch-test missing (#738 <https://github.com/autowarefoundation/autoware_core/issues/738>)
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * docs(lanelet2_utils): add example usage to autoware_lanelet2_utils documentation (#720 <https://github.com/autowarefoundation/autoware_core/issues/720>)
+    * add lanelet2_utils geometry functions example
+    * add conversion functions example
+    * add kind functions example
+    * fix conversion code line after pre-commit format
+    * fix code snippet title typo
+    * add hatched_road_markings functions example
+    * fix cppcheck
+    * add topology functions example
+    * add intersection functions example
+    * add lane_sequence functions example
+    * add nn_search functions example
+    * add map_handler functions example
+    * add route_manager functions example
+    * fix shadow variable in example_map_handler
+    * fix small typo in example_map_handler
+    * remove map_handler question comment
+    * modify CMakeLists to support jazzy
+    * Update common/autoware_lanelet2_utils/CMakeLists.txt
+    ---------
+    Co-authored-by: Mamoru Sobue <mailto:hilo.soblin@gmail.com>
+  * feat(trajectory): align build_reference_path with vm-01-11 spec (#702 <https://github.com/autowarefoundation/autoware_core/issues/702>)
+    Co-authored-by: mitukou1109 <mailto:mitukou1109@gmail.com>
+  * ci(pre-commit): autoupdate (#723 <https://github.com/autowarefoundation/autoware_core/issues/723>)
+    * pre-commit formatting changes
+  * Contributors: Mamoru Sobue, Mete Fatih Cırıt, Sarun MUKDAPITAK, github-actions, 心刚
+
+ -- Mamoru Sobue <mamoru.sobue@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-autoware-lanelet2-utils-1-7-1 (1.5.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble
   * feat(lanelet2_utils): organize maps by vm-map-spec id (#716 <https://github.com/autowarefoundation/autoware_core/issues/716>)

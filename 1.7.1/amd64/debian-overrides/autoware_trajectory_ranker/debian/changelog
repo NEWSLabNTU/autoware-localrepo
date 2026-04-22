@@ -1,3 +1,34 @@
+ros-humble-autoware-trajectory-ranker-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * chore(trajectory_ranker,trajectory_traffic_rule_filter): add maintainers (#12020 <https://github.com/autowarefoundation/autoware_universe/issues/12020>)
+    chore(trajectory_ranker,traffic_rule_filter): add maintainers
+  * fix(autoware_trajectory_ranker): prevent node crash when performing inner product operation (#12009 <https://github.com/autowarefoundation/autoware_universe/issues/12009>)
+    * fix: prevent not crash when performing inner product operation
+    * fix: missing code
+    * fix: wrong variable
+    ---------
+  * Contributors: Maxime CLEMENT, Ryohsuke Mitsudome, Zulfaqar Azmi
+
+ -- Daniel Sanchez <daniel.sanchez@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-trajectory-ranker-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * feat(trajectory_ranker): add trajectory consistency score (#11762 <https://github.com/autowarefoundation/autoware_universe/issues/11762>)
+    * add trajectory consistency score
+    * add test
+    * metric with configurable parameters
+    * fix pre-commit
+    * fix comments
+    * fix calculation of total variance
+    * extract common ego frame transformation logic
+    * updated test
+    ---------
+  * Contributors: Go Sakayori, Ryohsuke Mitsudome
+
+ -- Daniel Sanchez <daniel.sanchez@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-trajectory-ranker-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble

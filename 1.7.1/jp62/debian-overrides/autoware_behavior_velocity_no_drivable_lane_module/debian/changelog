@@ -1,3 +1,17 @@
+ros-humble-autoware-behavior-velocity-no-drivable-lane-module-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+
+
+ -- Ahmed Ebrahim <ahmed.ebrahim@leodrive.ai>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-behavior-velocity-no-drivable-lane-module-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * refactor: fix leftover dependent autoware_utils from updating vehicle_info_utils (#11734 <https://github.com/autowarefoundation/autoware_universe/issues/11734>)
+  * Contributors: Mete Fatih Cırıt, Ryohsuke Mitsudome
+
+ -- Ahmed Ebrahim <ahmed.ebrahim@leodrive.ai>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-behavior-velocity-no-drivable-lane-module-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble

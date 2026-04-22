@@ -1,3 +1,28 @@
+ros-humble-autoware-traffic-light-occlusion-predictor-1-7-1 (0.50.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into humble
+  * feat(traffic_light_occlusion_predictor): improve type safety (#11916 <https://github.com/autowarefoundation/autoware_universe/issues/11916>)
+  * refactor(traffic_light_occlusion_predictor): rename synchronizer_ to synchronizer_car_ (#11915 <https://github.com/autowarefoundation/autoware_universe/issues/11915>)
+  * docs(traffic_light_occlusion_predictor): add doxygen comments (#11914 <https://github.com/autowarefoundation/autoware_universe/issues/11914>)
+  * refactor(traffic_light_occlusion_predictor): reorganize includes, remove unused (#11913 <https://github.com/autowarefoundation/autoware_universe/issues/11913>)
+  * fix(traffic_light_occlusion_predictor): use array of bools instead (#11883 <https://github.com/autowarefoundation/autoware_universe/issues/11883>)
+  * Contributors: Mete Fatih Cırıt, Ryohsuke Mitsudome
+
+ -- Tao Zhong <tao.zhong@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-traffic-light-occlusion-predictor-1-7-1 (0.49.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into prepare-0.49.0-changelog
+  * feat(autoware_lanelet2_utils): replace from/toBinMsg (Sensing, Visualization and Perception Component) (#11785 <https://github.com/autowarefoundation/autoware_universe/issues/11785>)
+    * perception component toBinMsg replacement
+    * visualization component fromBinMsg replacement
+    * sensing component fromBinMsg replacement
+    * perception component fromBinMsg replacement
+    ---------
+  * Contributors: Ryohsuke Mitsudome, Sarun MUKDAPITAK
+
+ -- Tao Zhong <tao.zhong@tier4.jp>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-traffic-light-occlusion-predictor-1-7-1 (0.48.0-0jammy) jammy; urgency=high
 
   * Merge remote-tracking branch 'origin/main' into humble

@@ -1,3 +1,18 @@
+ros-humble-managed-transform-buffer-1-7-1 (0.2.0-0jammy) jammy; urgency=high
+
+  * chore: tf2_ros to hpp headers (#26 <https://github.com/autowarefoundation/managed_transform_buffer/issues/26>)
+    * chore: tf2_ros to hpp headers
+    * fixup! chore: tf2_ros to hpp headers
+    ---------
+  * fix: tf2 uses hpp headers in rolling (and is backported) (#23 <https://github.com/autowarefoundation/managed_transform_buffer/issues/23>)
+    * fix: tf2 uses hpp headers in rolling (and is backported)
+    * Too enthusiastic regex replace
+    ---------
+  * fix: templated pointcloud transform for PCL cloud (#22 <https://github.com/autowarefoundation/managed_transform_buffer/issues/22>)
+  * Contributors: Amadeusz Szymko, Tim Clephas
+
+ -- Amadeusz Szymko <amadeusz.szymko.2@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
 ros-humble-managed-transform-buffer-1-7-1 (0.1.0-0jammy) jammy; urgency=high
 
   * fix: simplified get transform handling  (#18 <https://github.com/autowarefoundation/ManagedTransformBuffer/issues/18>)

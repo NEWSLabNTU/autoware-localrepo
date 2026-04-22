@@ -1,3 +1,11 @@
+ros-humble-autoware-utils-visualization-1-7-1 (1.5.0-0jammy) jammy; urgency=high
+
+  * refactor: set constant value for marker lifetime (#76 <https://github.com/autowarefoundation/autoware_utils/issues/76>)
+    refactor: set constant value for marker lifetime, and use it in create_default_marker
+  * Contributors: Sarun MUKDAPITAK
+
+ -- Jian Kang <egon.kang@autocore.ai>  Mon, 29 Dec 2025 16:00:00 -0000
+
 ros-humble-autoware-utils-visualization-1-7-1 (1.4.2-0jammy) jammy; urgency=high
 
 

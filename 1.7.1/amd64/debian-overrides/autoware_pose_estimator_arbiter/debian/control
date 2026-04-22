@@ -2,11 +2,11 @@ Source: ros-humble-autoware-pose-estimator-arbiter-1-7-1
 Section: misc
 Priority: optional
 Maintainer: Yamato Ando <yamato.ando@tier4.jp>
-Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs-1-7-1, ros-humble-autoware-cmake-1-7-1, ros-humble-autoware-lanelet2-extension-1-7-1, ros-humble-autoware-lint-common-1-7-1 <!nocheck>, ros-humble-autoware-map-msgs-1-7-1, ros-humble-autoware-utils-logging-1-7-1, ros-humble-autoware-utils-rclcpp-1-7-1, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-magic-enum, ros-humble-pcl-conversions, ros-humble-rclcpp-components, ros-humble-ros-testing <!nocheck>, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-visualization-msgs
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-adapi-v1-msgs-1-7-1, ros-humble-autoware-cmake-1-7-1, ros-humble-autoware-lanelet2-utils-1-7-1, ros-humble-autoware-lint-common-1-7-1 <!nocheck>, ros-humble-autoware-map-msgs-1-7-1, ros-humble-autoware-qos-utils-1-7-1, ros-humble-autoware-utils-logging-1-7-1, ros-humble-autoware-utils-rclcpp-1-7-1, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-magic-enum, ros-humble-pcl-conversions, ros-humble-rclcpp-components, ros-humble-ros-testing <!nocheck>, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-visualization-msgs
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-humble-autoware-pose-estimator-arbiter-1-7-1
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs-1-7-1, ros-humble-autoware-lanelet2-extension-1-7-1, ros-humble-autoware-map-msgs-1-7-1, ros-humble-autoware-utils-logging-1-7-1, ros-humble-autoware-utils-rclcpp-1-7-1, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-magic-enum, ros-humble-pcl-conversions, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-visualization-msgs
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs-1-7-1, ros-humble-autoware-lanelet2-utils-1-7-1, ros-humble-autoware-map-msgs-1-7-1, ros-humble-autoware-qos-utils-1-7-1, ros-humble-autoware-utils-logging-1-7-1, ros-humble-autoware-utils-rclcpp-1-7-1, ros-humble-diagnostic-msgs, ros-humble-geometry-msgs, ros-humble-magic-enum, ros-humble-pcl-conversions, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-std-srvs, ros-humble-visualization-msgs
 Description: The arbiter of multiple pose estimators
