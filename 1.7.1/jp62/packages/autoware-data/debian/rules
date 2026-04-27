@@ -180,3 +180,7 @@ override_dh_strip:
 
 override_dh_shlibdeps:
 	# Skip shared library dependency detection
+
+override_dh_builddeb:
+	# Use xz for ~15% smaller deb (important: stay under GitHub 2GB asset limit)
+	dh_builddeb -- -Zxz

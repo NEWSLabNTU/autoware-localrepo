@@ -147,6 +147,32 @@ download-rosbag:
 # Download all assets (data + theme + maps + rosbag) from upstream
 download-assets: download-data download-theme download-maps download-rosbag
 
+# Prepare release artifacts for GitHub upload (splits .deb if over 2 GiB)
+release:
+    #!/usr/bin/env bash
+    set -e
+    DEB=$(ls packages/autoware-localrepo-1-7-1_*.deb 2>/dev/null | head -1)
+    if [ -z "$DEB" ]; then
+        echo "Error: localrepo .deb not found. Run 'just localrepo' first."
+        exit 1
+    fi
+    OUT=packages/release
+    rm -rf "$OUT" && mkdir -p "$OUT"
+    SIZE=$(stat -c%s "$DEB")
+    LIMIT=2147483648  # 2 GiB GitHub release asset limit
+    if [ "$SIZE" -le "$LIMIT" ]; then
+        cp "$DEB" "$OUT/"
+        echo "✓ $(basename "$DEB") fits under 2 GiB ($(numfmt --to=iec --suffix=B $SIZE)), no split needed"
+    else
+        # Split into ~1.5 GiB chunks
+        cd "$OUT"
+        split -b 1500M -d "../$(basename "$DEB")" "$(basename "$DEB").part-"
+        echo "✓ Split $(basename "$DEB") ($(numfmt --to=iec --suffix=B $SIZE)) into:"
+        ls -la *.part-*
+        echo ""
+        echo "Reassemble at install time with: cat *.part-* > $(basename "$DEB")"
+    fi
+
 # Clean meta-package build artifacts (keeps ROS packages in build/)
 clean:
     @echo "Cleaning meta-package artifacts..."
