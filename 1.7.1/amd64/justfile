@@ -68,9 +68,13 @@ localrepo:
         cp "$deb" "$REPODIR/pool/main/"
     done
 
-    # Copy meta-packages (except autoware-localrepo itself)
+    # Copy meta-packages (except autoware-localrepo and autoware-data)
+    # autoware-data is shipped as a separate release asset (~1.9 GiB) so the
+    # bundled localrepo stays under GitHub's 2 GiB asset limit.
+    # Users dpkg-install autoware-data alongside the localrepo, then apt install
+    # autoware-full-1-7-1 finds autoware-data's dep already satisfied.
     echo "Copying meta-packages..."
-    for pkg in autoware-config-1-7-1 autoware-theme-1-7-1 autoware-data-1-7-1 autoware-ros-packages-1-7-1 autoware-maps-1-7-1 autoware-full-1-7-1; do
+    for pkg in autoware-config-1-7-1 autoware-theme-1-7-1 autoware-ros-packages-1-7-1 autoware-maps-1-7-1 autoware-full-1-7-1; do
         cp "$BASEDIR/packages/${pkg}_"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
     done
 
@@ -147,31 +151,30 @@ download-rosbag:
 # Download all assets (data + theme + maps + rosbag) from upstream
 download-assets: download-data download-theme download-maps download-rosbag
 
-# Prepare release artifacts for GitHub upload (splits .deb if over 2 GiB)
+# Stage release artifacts for GitHub upload: localrepo + autoware-data + checksums
 release:
     #!/usr/bin/env bash
     set -e
-    DEB=$(ls packages/autoware-localrepo-1-7-1_*.deb 2>/dev/null | head -1)
-    if [ -z "$DEB" ]; then
-        echo "Error: localrepo .deb not found. Run 'just localrepo' first."
+    LOCALREPO=$(ls packages/autoware-localrepo-1-7-1_*.deb 2>/dev/null | head -1)
+    DATA=$(ls packages/autoware-data-1-7-1_*.deb 2>/dev/null | head -1)
+    if [ -z "$LOCALREPO" ] || [ -z "$DATA" ]; then
+        echo "Error: localrepo or autoware-data .deb not found. Run 'just all' first."
         exit 1
     fi
+    LIMIT=2147483648  # 2 GiB GitHub release asset limit
+    for f in "$LOCALREPO" "$DATA"; do
+        SIZE=$(stat -c%s "$f")
+        if [ "$SIZE" -gt "$LIMIT" ]; then
+            echo "Error: $(basename "$f") is $(numfmt --to=iec --suffix=B $SIZE), over 2 GiB GitHub limit."
+            exit 1
+        fi
+    done
     OUT=packages/release
     rm -rf "$OUT" && mkdir -p "$OUT"
-    SIZE=$(stat -c%s "$DEB")
-    LIMIT=2147483648  # 2 GiB GitHub release asset limit
-    if [ "$SIZE" -le "$LIMIT" ]; then
-        cp "$DEB" "$OUT/"
-        echo "✓ $(basename "$DEB") fits under 2 GiB ($(numfmt --to=iec --suffix=B $SIZE)), no split needed"
-    else
-        # Split into ~1.5 GiB chunks
-        cd "$OUT"
-        split -b 1500M -d "../$(basename "$DEB")" "$(basename "$DEB").part-"
-        echo "✓ Split $(basename "$DEB") ($(numfmt --to=iec --suffix=B $SIZE)) into:"
-        ls -la *.part-*
-        echo ""
-        echo "Reassemble at install time with: cat *.part-* > $(basename "$DEB")"
-    fi
+    cp "$LOCALREPO" "$DATA" "$OUT/"
+    (cd "$OUT" && sha256sum *.deb > SHA256SUMS.txt)
+    echo "✓ Release artifacts staged in $OUT/"
+    ls -la "$OUT"
 
 # Clean meta-package build artifacts (keeps ROS packages in build/)
 clean:

@@ -16,9 +16,10 @@ ENV DEBIAN_FRONTEND=noninteractive
 COPY setup-prerequisites.sh /tmp/
 RUN chmod +x /tmp/setup-prerequisites.sh && /tmp/setup-prerequisites.sh -y && rm -f /tmp/setup-prerequisites.sh
 
-# Step 2: Install autoware-localrepo (sets up local APT repo)
-COPY autoware-localrepo.deb /tmp/
-RUN dpkg -i /tmp/autoware-localrepo.deb && rm /tmp/autoware-localrepo.deb
+# Step 2: Install autoware-localrepo + autoware-data (data is shipped separately)
+COPY autoware-localrepo.deb autoware-data.deb /tmp/
+RUN dpkg -i /tmp/autoware-localrepo.deb /tmp/autoware-data.deb && \
+    rm /tmp/autoware-localrepo.deb /tmp/autoware-data.deb
 
 # Step 3: Activate DDS configuration (sysctl + multicast)
 RUN /usr/share/autoware/1.7.1/activate-dds-config.sh

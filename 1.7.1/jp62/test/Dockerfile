@@ -78,10 +78,11 @@ RUN wget -q https://github.com/autowarefoundation/spconv_cpp/releases/download/s
     rm -f cumm_0.5.3_arm64-jetson.deb spconv_2.3.8_arm64-jetson.deb
 
 # =============================================================================
-# Install autoware-localrepo
+# Install autoware-localrepo + autoware-data (data shipped separately)
 # =============================================================================
-COPY autoware-localrepo.deb /tmp/
-RUN dpkg -i /tmp/autoware-localrepo.deb && rm /tmp/autoware-localrepo.deb
+COPY autoware-localrepo.deb autoware-data.deb /tmp/
+RUN dpkg -i /tmp/autoware-localrepo.deb /tmp/autoware-data.deb && \
+    rm /tmp/autoware-localrepo.deb /tmp/autoware-data.deb
 
 # Activate DDS configuration (sysctl + multicast)
 RUN /usr/share/autoware/1.7.1/activate-dds-config.sh
