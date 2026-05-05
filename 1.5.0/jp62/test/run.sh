@@ -10,10 +10,10 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASEDIR="$(dirname "$SCRIPT_DIR")"
-DEB_FILE="$BASEDIR/packages/autoware-localrepo-1-5-0_1.5.0-1jetpack62_all.deb"
+DEB_FILE=$(ls "$BASEDIR/packages/autoware-localrepo-1-5-0_"*jetpack62_all.deb 2>/dev/null | head -1)
 
-if [ ! -f "$DEB_FILE" ]; then
-    echo "Error: $DEB_FILE not found. Run 'just localrepo' first."
+if [ -z "$DEB_FILE" ] || [ ! -f "$DEB_FILE" ]; then
+    echo "Error: autoware-localrepo deb not found in $BASEDIR/packages/. Run 'just localrepo' first."
     exit 1
 fi
 

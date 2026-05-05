@@ -142,6 +142,29 @@ download-rosbag:
 # Download all assets (data + theme + maps + rosbag) from upstream
 download-assets: download-data download-theme download-maps download-rosbag
 
+# Stage release artifacts for GitHub upload (localrepo deb + SHA256SUMS)
+release:
+    #!/usr/bin/env bash
+    set -e
+    LOCALREPO=$(ls packages/autoware-localrepo-1-5-0_*.deb 2>/dev/null | head -1)
+    if [ -z "$LOCALREPO" ]; then
+        echo "Error: localrepo .deb not found. Run 'just all' first."
+        exit 1
+    fi
+    LIMIT=2147483648  # 2 GiB GitHub release asset limit
+    SIZE=$(stat -c%s "$LOCALREPO")
+    if [ "$SIZE" -gt "$LIMIT" ]; then
+        echo "Error: $(basename "$LOCALREPO") is $(numfmt --to=iec --suffix=B $SIZE), over 2 GiB GitHub limit."
+        echo "Consider splitting autoware-data out (see 1.7.1 for the pattern)."
+        exit 1
+    fi
+    OUT=packages/release
+    rm -rf "$OUT" && mkdir -p "$OUT"
+    cp "$LOCALREPO" "$OUT/"
+    (cd "$OUT" && sha256sum *.deb > SHA256SUMS.txt)
+    echo "✓ Release artifacts staged in $OUT/"
+    ls -la "$OUT"
+
 # Clean meta-package build artifacts (keeps ROS packages in build/)
 clean:
     @echo "Cleaning meta-package artifacts..."
