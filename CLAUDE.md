@@ -6,51 +6,53 @@ This file provides guidance to Claude Code when working with this repository.
 
 This project builds Debian packages for multiple Autoware versions and creates a local APT repository. It combines:
 - **ROS packages** built via colcon2deb (in Docker)
-- **Meta-packages** built with debhelper (all with version suffix `-1-5-0` for Autoware 1.5.0):
-  - autoware-config-1-5-0, autoware-theme-1-5-0, autoware-data-1-5-0
-  - autoware-ros-packages-1-5-0, autoware-maps-1-5-0
-  - autoware-full-1-5-0, autoware-localrepo-1-5-0
+- **Meta-packages** built with debhelper. Package names carry a version suffix (e.g., `-1-5-0`, `-1-7-1`) so multiple Autoware versions can coexist:
+  - autoware-config, autoware-theme, autoware-data
+  - autoware-ros-packages, autoware-maps
+  - autoware-full, autoware-localrepo
 
-## Autoware 1.5.0 Usage
+## Released Versions
 
-### Download
+| Version | Tag | Release | Notes |
+|---------|-----|---------|-------|
+| 1.5.0-2 | https://github.com/NEWSLabNTU/autoware/tree/1.5.0-2 | https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.5.0-2 | Single bundled deb (~1.85 GiB) |
+| 1.7.1-1 | https://github.com/NEWSLabNTU/autoware/tree/1.7.1-1 | https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.7.1-1 | autoware-data shipped separately |
 
-Pre-built packages are available on GitHub Releases:
-- **Release page**: https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.5.0-1
-- `autoware-localrepo-1-5-0_1.5.0-1ubuntu2204_all.deb` - Ubuntu 22.04 x86_64
-- `autoware-localrepo-1-5-0_1.5.0-1jetpack62_all.deb` - JetPack 6.2 (Jetson Orin)
+## Installation (User-facing)
 
-### Installation
+### 1.5.0
 
 ```bash
-# 1. Install the localrepo package
-sudo dpkg -i autoware-localrepo-1-5-0_1.5.0-1ubuntu2204_all.deb  # or 1jetpack62 for Jetson
-
-# 2. Install prerequisites (ROS 2 Humble, optionally CUDA/TensorRT/SpConv)
+sudo dpkg -i autoware-localrepo-1-5-0_1.5.0-2ubuntu2204_all.deb  # or 2jetpack62 for Jetson
 sudo /usr/share/autoware/1.5.0/setup-prerequisites.sh
-
-# 3. Install Autoware
+sudo /usr/share/autoware/1.5.0/activate-dds-config.sh
 sudo apt update
 sudo apt install autoware-full-1-5-0
-
-# 4. Source the environment
-source /opt/autoware/1.5.0/setup.bash           # workspace env (ament + ROS)
-source /opt/autoware/1.5.0/autoware-env.bash    # DDS/CycloneDDS/Qt config
+source /opt/autoware/1.5.0/setup.bash         # workspace env (ament + ROS)
+source /opt/autoware/1.5.0/autoware-env.bash  # DDS/CycloneDDS/Qt config
 ```
 
-### Network Configuration
+### 1.7.1
 
-Apply DDS settings for optimal performance (required for point clouds):
+ML models are shipped as a separate `autoware-data` deb to keep each release asset under GitHub's 2 GiB limit. Install both at once:
+
 ```bash
-sudo /usr/share/autoware/1.5.0/activate-dds-config.sh
+sudo dpkg -i \
+    autoware-localrepo-1-7-1_1.7.1-1ubuntu2204_all.deb \
+    autoware-data-1-7-1_1.7.1-1_all.deb
+sudo /usr/share/autoware/1.7.1/setup-prerequisites.sh
+sudo /usr/share/autoware/1.7.1/activate-dds-config.sh
+sudo apt update
+sudo apt install autoware-full-1-7-1
+source /opt/autoware/1.7.1/setup.bash
+source /opt/autoware/1.7.1/autoware-env.bash
 ```
 
-### Testing
+### Testing the install
 
-Run planning simulation with the bundled sample map:
 ```bash
 ros2 launch autoware_launch planning_simulator.launch.xml \
-  map_path:=/opt/autoware/1.5.0/share/autoware_maps/sample-map-planning \
+  map_path:=/opt/autoware/<version>/share/autoware_maps/sample-map-planning \
   vehicle_model:=sample_vehicle \
   sensor_model:=sample_sensor_kit
 ```
@@ -58,8 +60,9 @@ ros2 launch autoware_launch planning_simulator.launch.xml \
 ### Uninstallation
 
 ```bash
-sudo /usr/share/autoware/1.5.0/uninstall-autoware.sh
-sudo dpkg -r autoware-localrepo-1-5-0
+sudo /usr/share/autoware/<version>/uninstall-autoware.sh
+sudo dpkg -r autoware-localrepo-<version-dashes>          # e.g., autoware-localrepo-1-7-1
+sudo dpkg -r autoware-data-<version-dashes>               # 1.7.1+ only
 ```
 
 ## Directory Structure
@@ -84,10 +87,9 @@ autoware-localrepo/
 │   │   └── justfile
 │   └── jp62/                     # colcon2deb build for JetPack 6.2 (arm64)
 │       └── ...                   # Same structure as amd64/
-├── 2025.02/                      # Autoware 2025.02 version
-│   ├── amd64/                    # colcon2deb build for x86_64
-│   ├── jp60/                     # colcon2deb build for JetPack 6.0 (arm64)
-│   └── ...
+├── 1.7.1/                        # Autoware 1.7.1 version (same layout)
+│   ├── amd64/
+│   └── jp62/
 └── justfile                      # Top-level build automation
 ```
 
@@ -169,8 +171,19 @@ just test
 The test verifies:
 1. Prerequisites install correctly (ROS2, CUDA libs, TensorRT, SpConv)
 2. autoware-full installs without package conflicts
-3. setup.bash sources without errors
-4. ROS2 can see all Autoware packages
+3. `setup.bash` and `autoware-env.bash` source correctly
+4. Env vars set: `AUTOWARE_HOME`, `RMW_IMPLEMENTATION`, `CYCLONEDDS_URI`
+5. ROS2 can see all Autoware packages
+
+### Stage Release Artifacts
+
+```bash
+# From version/arch directory — produces packages/release/ for GitHub upload
+just release
+```
+
+For 1.5.0 this stages a single `autoware-localrepo-*.deb` plus `SHA256SUMS.txt`.
+For 1.7.1+ it also stages `autoware-data-*.deb` separately (see "GitHub 2 GiB asset limit" below).
 
 ### Run Planning Simulation Test
 
@@ -181,17 +194,17 @@ The test verifies:
 
 ## Package Types
 
-All meta-packages for version 1.5.0 have the `-1-5-0` suffix (e.g., `autoware-full-1-5-0`).
+Each version has the same set of meta-packages. The package name carries the version suffix (e.g., `autoware-full-1-5-0`, `autoware-full-1-7-1`).
 
-| Package                    | Arch | Size   | Description                              |
-|----------------------------|------|--------|------------------------------------------|
-| autoware-config-1-5-0      | all  | 4 KB   | CycloneDDS config, setup/autoware-env scripts |
-| autoware-theme-1-5-0       | all  | 11 KB  | RViz icons and Qt theme (bundled)        |
-| autoware-data-1-5-0        | all  | 1.7 GB | ML model files (bundled ONNX files)      |
-| autoware-ros-packages-1-5-0| any  | 4 KB   | Meta-package depending on ALL ROS debs   |
-| autoware-maps-1-5-0        | all  | 17 MB  | Sample maps for planning simulator       |
-| autoware-full-1-5-0        | any  | 1 KB   | Complete Autoware installation           |
-| autoware-localrepo-1-5-0   | all  | ~1.9 GB| Bundled APT repo with all packages       |
+| Package                | Arch | Size (1.5.0 / 1.7.1) | Description                              |
+|------------------------|------|----------------------|------------------------------------------|
+| autoware-config        | all  | 4 KB                 | CycloneDDS config, setup/autoware-env scripts |
+| autoware-theme         | all  | 11 KB                | RViz icons and Qt theme (bundled)        |
+| autoware-data          | all  | 1.7 GB / 2.0 GB      | ML model files (bundled ONNX files)      |
+| autoware-ros-packages  | any  | 4 KB                 | Meta-package depending on ALL ROS debs   |
+| autoware-maps          | all  | 17 MB                | Sample maps for planning simulator       |
+| autoware-full          | any  | 1 KB                 | Complete Autoware installation           |
+| autoware-localrepo     | all  | ~1.9 GB / ~210 MB    | Bundled APT repo. 1.7.1+ excludes autoware-data — see "GitHub 2 GiB Asset Limit". |
 
 ### Setup Scripts (in autoware-config)
 
@@ -320,10 +333,44 @@ All files installed outside `/opt/autoware/1.5.0/` use version suffixes to allow
 
 ### Adding a New Autoware Version
 
-1. Copy existing version directory structure
-2. Update version in `packages/*/debian/changelog`
-3. Regenerate package files: `python3 genpkg.py --version <new-version>`
-4. Update justfile if needed
+1. **Prepare workspace in `~/repos/autoware/`**: pull from upstream, create a `<version>-ws` branch, convert vcs repos to submodules with `vcs2git`, push to NEWSLab remote.
+2. Copy an existing localrepo version directory (e.g., `1.5.0/`) and rename to the new version.
+3. Update version strings: package suffixes (`-1-7-1`), install paths (`/opt/autoware/1.7.1`), file names (sysctl, APT source, etc.).
+4. Regenerate `autoware-data` and `autoware-theme` packages: `python3 genpkg.py --version <new-version>`.
+5. After `genpkg.py` runs, restore the version suffix in generated `debian/control`/`changelog`/`rules` (genpkg.py omits it). See commit `43e4d18e` for the pattern.
+6. Update justfile if needed.
+
+### Publishing a Release
+
+1. **Tag the autoware repo** at the workspace HEAD:
+   ```bash
+   cd ~/repos/autoware
+   git tag -a <version>-<rev> newslab/<version>-ws -m "Autoware <version>-<rev> (NEWSLab build)"
+   git push newslab <version>-<rev>
+   ```
+2. **Build, test, stage** (per arch):
+   ```bash
+   cd <version>/<arch>
+   just all       # ROS debs → meta → localrepo
+   just test      # verify install in clean Docker
+   just release   # stage artifacts under packages/release/
+   ```
+3. **Publish to `NEWSLabNTU/autoware-localrepo`**:
+   ```bash
+   gh release create <version>-<rev> --repo NEWSLabNTU/autoware-localrepo \
+     --title "Autoware <version>-<rev>" \
+     --notes-file release-notes.md \
+     <staged-artifacts>
+   ```
+
+### GitHub 2 GiB Asset Limit
+
+GitHub release assets are capped at 2 GiB each. From 1.7.1 onwards, `autoware-data` (~1.9 GiB of ML models) is excluded from the bundled localrepo and shipped as a separate release asset:
+
+- 1.5.0: bundled localrepo deb (~1.85 GiB) — fits, single asset.
+- 1.7.1+: split into `autoware-localrepo` (~210 MiB) + `autoware-data` (~1.9 GiB).
+
+**Implementation** (in `justfile`'s `localrepo` recipe): skip copying `autoware-data-*` into `pool/main/`. Users `dpkg -i` both debs together; apt then satisfies the autoware-data dep without it being in the apt source. See commit `75f64f97`.
 
 ### Modifying Package Dependencies
 
