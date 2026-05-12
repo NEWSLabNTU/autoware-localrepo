@@ -15,3 +15,8 @@ downloads/bevfusion/bevfusion_camera_lidar.onnx
 downloads/lidar_transfusion/transfusion.onnx
 downloads/tensorrt_bevdet/tensorrt_bevdet.tar.gz
 downloads/tensorrt_rtmdet/tensorrt_rtmdet_onnx_models.tar.gz
+
+# Files exceeding GitHub's 100MB hard limit — fetched by aria2c via downloads.txt at build time
+downloads/bevfusion/bevfusion_image_backbone.onnx
+downloads/vad/v0.1/vad-carla-tiny_head.onnx
+downloads/vad/v0.1/vad-carla-tiny_head_no_prev.onnx
