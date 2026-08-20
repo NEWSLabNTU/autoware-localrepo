@@ -1,0 +1,215 @@
+# Autoware 1.9.0 AMD64 Local Repository Builder
+
+# Autoware upstream tag for fetching assets
+version := "1.9.0"
+
+# Default recipe: list all available recipes
+default:
+    @just --list
+
+# Build everything: ROS packages + meta-packages + bundled localrepo
+all: ros meta localrepo
+    @echo "✓ Build complete!"
+    @echo "  Final package: packages/autoware-localrepo_*.deb"
+
+# Build ROS packages from Autoware repo (via colcon2deb)
+ros:
+    #!/usr/bin/env bash
+    set -e
+    if ! command -v colcon2deb &> /dev/null; then
+        echo "Error: colcon2deb is not available."
+        echo "Please install it: pip install colcon2deb"
+        exit 1
+    fi
+    colcon2deb --workspace source --config config.yaml
+
+# Build meta-packages (except autoware-localrepo which needs the repo first)
+meta:
+    #!/usr/bin/env bash
+    set -e
+    echo "Building meta-packages..."
+
+    # Generate autoware-ros-packages control file from build/debs
+    echo "Generating autoware-ros-packages dependencies..."
+    packages/autoware-ros-packages/genpkg.sh
+
+    # Build independent packages in parallel
+    echo "Building packages (parallel)..."
+    parallel --halt now,fail=1 \
+        'cd packages/{} && dpkg-buildpackage -us -uc -b' \
+        ::: autoware-config autoware-theme autoware-data autoware-ros-packages autoware-maps
+
+    # Build autoware-full last (depends on the others)
+    cd packages/autoware-full && dpkg-buildpackage -us -uc -b
+
+    echo "✓ Meta-packages built"
+
+# Create repo and build autoware-localrepo with bundled packages
+localrepo:
+    #!/usr/bin/env bash
+    set -e
+
+    # Get absolute path to working directory (just runs from justfile's directory)
+    BASEDIR="$(pwd)"
+    REPODIR="$BASEDIR/packages/autoware-localrepo/repo"
+
+    echo "Creating repository structure..."
+
+    # Clean and create repo directory inside autoware-localrepo package
+    rm -rf "$REPODIR"
+    mkdir -p "$REPODIR/pool/main"
+
+    # Copy ROS packages (exclude superseded packages that cause file conflicts)
+    echo "Copying ROS packages..."
+    for deb in "$BASEDIR/build/debs/"*.deb; do
+        case "$(basename "$deb")" in
+            ros-humble-autoware-mission-planner-1-9-0_*) continue ;;  # superseded by mission-planner-universe
+        esac
+        cp "$deb" "$REPODIR/pool/main/"
+    done
+
+    # Copy meta-packages (except autoware-localrepo and the autoware-data payload).
+    #
+    # The ML models are ~2.8 GiB raw / 2.24 GiB as one deb, over GitHub's hard
+    # 2 GiB release-asset limit, so they are split into three topic packages
+    # (vision / perception3d / planning) that ship as separate release assets.
+    # Only the tiny autoware-data-1-9-0 metapackage goes into the bundled repo;
+    # users dpkg-install the three payload debs alongside the localrepo, after
+    # which apt install autoware-full-1-9-0 finds its autoware-data dep satisfied.
+    echo "Copying meta-packages..."
+    for pkg in autoware-config-1-9-0 autoware-theme-1-9-0 autoware-ros-packages-1-9-0 autoware-maps-1-9-0 autoware-data-1-9-0 autoware-full-1-9-0; do
+        cp "$BASEDIR/packages/${pkg}_"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
+    done
+
+    # Generate Packages index
+    echo "Generating Packages index..."
+    (cd "$REPODIR" && dpkg-scanpackages pool/main /dev/null > Packages)
+    (cd "$REPODIR" && gzip -k -f Packages)
+
+    # Count packages
+    count=$(ls -1 "$REPODIR/pool/main/"*.deb 2>/dev/null | wc -l)
+    echo "  Bundling $count packages into autoware-localrepo..."
+
+    # Build autoware-localrepo
+    echo "Building autoware-localrepo..."
+    (cd "$BASEDIR/packages/autoware-localrepo" && dpkg-buildpackage -us -uc -b)
+
+    echo "✓ autoware-localrepo built with $count bundled packages"
+
+# Test localrepo installation in a clean Docker container
+test:
+    ./test/run.sh
+
+# Run planning simulation in test container (requires X11 display and NVIDIA GPU)
+sim map_path="$HOME/autoware_map/sample-map-planning":
+    ./test/sim/run.sh "{{map_path}}"
+
+# Download ML model files from upstream Autoware
+download-data:
+    #!/usr/bin/env bash
+    set -e
+    cd packages/autoware-data
+    # --suffix/--install-dir keep the versioned package names and install prefix;
+    # without them genpkg.py emits unsuffixed names into /opt/autoware/data.
+    python3 genpkg.py --download "{{version}}" --version "{{version}}" \
+        --suffix=-1-9-0 --install-dir "/opt/autoware/{{version}}/data"
+    echo "Downloading model files..."
+    aria2c -i downloads.txt -j 8 --continue=true --auto-file-renaming=false --allow-overwrite=true
+    echo "✓ ML model files downloaded"
+
+# Download RViz theme files from upstream Autoware
+download-theme:
+    #!/usr/bin/env bash
+    set -e
+    cd packages/autoware-theme
+    python3 genpkg.py -v "{{version}}"
+    echo "Downloading theme files..."
+    aria2c -i downloads.txt -j 8 --auto-file-renaming=false --allow-overwrite=true
+    echo "✓ Theme files downloaded"
+
+# Download sample maps from Autoware (Google Drive)
+download-maps:
+    #!/usr/bin/env bash
+    set -e
+    mkdir -p packages/autoware-maps/src
+    echo "Downloading sample-map-planning.zip..."
+    gdown -O packages/autoware-maps/src/sample-map-planning.zip \
+        'https://docs.google.com/uc?export=download&id=1499_nsbUbIeturZaDj7jhUownh5fvXHd'
+    echo "Downloading sample-map-rosbag.zip..."
+    gdown -O packages/autoware-maps/src/sample-map-rosbag.zip \
+        'https://docs.google.com/uc?export=download&id=1A-8BvYRX3DhSzkAnOcGWFw5T30xTlwZI'
+    echo "✓ Maps downloaded"
+
+# Download sample rosbag from Autoware (Google Drive)
+download-rosbag:
+    #!/usr/bin/env bash
+    set -e
+    mkdir -p packages/autoware-rosbag-sample/src
+    echo "Downloading sample-rosbag.zip..."
+    gdown -O packages/autoware-rosbag-sample/src/sample-rosbag.zip \
+        'https://docs.google.com/uc?export=download&id=1sU5wbxlXAfHIksuHjP3PyI2UVED8lZkP'
+    echo "Splitting for GitHub (50MB chunks)..."
+    split -b 50M packages/autoware-rosbag-sample/src/sample-rosbag.zip \
+        packages/autoware-rosbag-sample/src/sample-rosbag.zip.part-
+    rm packages/autoware-rosbag-sample/src/sample-rosbag.zip
+    echo "✓ Rosbag downloaded and split"
+
+# Download all assets (data + theme + maps + rosbag) from upstream
+download-assets: download-data download-theme download-maps download-rosbag
+
+# Stage release artifacts for GitHub upload: localrepo + autoware-data topics + checksums
+release:
+    #!/usr/bin/env bash
+    set -e
+    LOCALREPO=$(ls packages/autoware-localrepo-1-9-0_*.deb 2>/dev/null | head -1)
+    if [ -z "$LOCALREPO" ]; then
+        echo "Error: autoware-localrepo .deb not found. Run 'just all' first."
+        exit 1
+    fi
+
+    # The ML models ship as three separate assets; a single deb would be 2.24 GiB,
+    # over GitHub's limit. The metapackage rides inside the localrepo, not here.
+    DATA_DEBS=()
+    for topic in vision perception3d planning; do
+        f=$(ls "packages/autoware-data-${topic}-1-9-0_"*.deb 2>/dev/null | head -1)
+        if [ -z "$f" ]; then
+            echo "Error: autoware-data-${topic}-1-9-0 .deb not found. Run 'just meta' first."
+            exit 1
+        fi
+        DATA_DEBS+=("$f")
+    done
+
+    LIMIT=2147483648  # 2 GiB GitHub release asset limit
+    for f in "$LOCALREPO" "${DATA_DEBS[@]}"; do
+        SIZE=$(stat -c%s "$f")
+        if [ "$SIZE" -gt "$LIMIT" ]; then
+            echo "Error: $(basename "$f") is $(numfmt --to=iec --suffix=B $SIZE), over 2 GiB GitHub limit."
+            exit 1
+        fi
+    done
+
+    OUT=packages/release
+    rm -rf "$OUT" && mkdir -p "$OUT"
+    cp "$LOCALREPO" "${DATA_DEBS[@]}" "$OUT/"
+    (cd "$OUT" && sha256sum *.deb > SHA256SUMS.txt)
+    echo "✓ Release artifacts staged in $OUT/"
+    ls -la "$OUT"
+
+# Clean meta-package build artifacts (keeps ROS packages in build/)
+clean:
+    @echo "Cleaning meta-package artifacts..."
+    rm -rf packages/autoware-localrepo/repo/
+    # Clean generated deb files (dpkg-buildpackage outputs to parent dir)
+    rm -f packages/*.deb packages/*.buildinfo packages/*.changes packages/*.ddeb
+    # Clean debhelper build state
+    rm -rf packages/*/debian/.debhelper/
+    rm -f packages/*/debian/debhelper-build-stamp packages/*/debian/files
+    # Clean built package directories
+    rm -rf packages/*/debian/autoware-*/
+    @echo "✓ Clean complete (build/ preserved)"
+
+# Clean ROS package build (WARNING: takes hours to rebuild!)
+[confirm("WARNING: This will delete build/ which takes hours to rebuild! Continue?")]
+clean-ros:
+    rm -rf build/
+    @echo "✓ ROS build cleaned"

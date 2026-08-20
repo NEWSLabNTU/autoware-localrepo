@@ -1,0 +1,43 @@
+# Test Dockerfile: Simulates clean user installation
+# 1. Run setup-prerequisites.sh first (cached layer when prerequisites unchanged)
+# 2. Install autoware-localrepo (sets up APT repo + provides helper scripts)
+# 3. Install autoware-full-1-9-0
+#
+# Uses NVIDIA CUDA base image for libcudart.so (CUDA runtime)
+# Additional libraries (cuDNN, TensorRT) are installed by setup-prerequisites.sh
+FROM nvidia/cuda:12.8.0-runtime-ubuntu22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Step 1: Install prerequisites FIRST (separate layer for better caching)
+# Installs: ROS 2 Humble, cuDNN, TensorRT, SpConv/Cumm
+# Use -y to skip interactive prompts and install everything
+# This is a hack - copy the script separately so it doesn't depend on autoware-localrepo.deb
+COPY setup-prerequisites.sh /tmp/
+RUN chmod +x /tmp/setup-prerequisites.sh && /tmp/setup-prerequisites.sh -y && rm -f /tmp/setup-prerequisites.sh
+
+# Step 2: Install autoware-localrepo + the autoware-data topic debs.
+# The models ship as three separate packages (vision / perception3d / planning)
+# because a combined deb exceeds GitHub's 2 GiB release-asset limit. They must be
+# installed together with dpkg so that apt can later satisfy autoware-full's
+# dependency on the autoware-data-1-9-0 metapackage from the bundled repo.
+COPY autoware-localrepo.deb autoware-data-*.deb /tmp/
+RUN dpkg -i /tmp/autoware-localrepo.deb /tmp/autoware-data-*.deb && \
+    rm /tmp/autoware-localrepo.deb /tmp/autoware-data-*.deb
+
+# Step 3: Activate DDS configuration (sysctl + multicast)
+RUN /usr/share/autoware/1.9.0/activate-dds-config.sh
+
+# Step 4: Install autoware-full-1-9-0 (pulls all Autoware packages from local repo)
+RUN apt-get update && apt-get install -y autoware-full-1-9-0
+
+# Verify setup.bash and autoware-env.bash work, and ros2 can see packages
+RUN bash -c 'source /opt/autoware/1.9.0/setup.bash && \
+    source /opt/autoware/1.9.0/autoware-env.bash && \
+    echo "Environment loaded successfully" && \
+    echo "AUTOWARE_HOME=$AUTOWARE_HOME" && \
+    echo "RMW_IMPLEMENTATION=$RMW_IMPLEMENTATION" && \
+    echo "CYCLONEDDS_URI=$CYCLONEDDS_URI" && \
+    echo "Autoware packages: $(ros2 pkg list 2>/dev/null | grep -c autoware)"'
+
+RUN echo "Installation test completed successfully!"
