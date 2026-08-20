@@ -4,7 +4,7 @@
 # Debhelper build artifacts
 debian/.debhelper/
 debian/*.substvars
-debian/autoware-rosbag-sample/
+debian/autoware-rosbag-sample-1-9-0/
 debian/debhelper-build-stamp
 debian/files
 

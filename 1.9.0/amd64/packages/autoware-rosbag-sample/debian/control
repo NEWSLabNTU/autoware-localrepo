@@ -1,11 +1,11 @@
-Source: autoware-rosbag-sample
+Source: autoware-rosbag-sample-1-9-0
 Section: misc
 Priority: optional
 Maintainer: Jerry Lin <jerry73204@gmail.com>
 Build-Depends: debhelper-compat (= 13), unzip
 Standards-Version: 4.6.2
 
-Package: autoware-rosbag-sample
+Package: autoware-rosbag-sample-1-9-0
 Architecture: all
 Depends: ${misc:Depends}
 Description: Autoware sample rosbag for replay simulation demo
