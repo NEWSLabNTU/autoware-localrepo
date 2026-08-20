@@ -1,0 +1,103 @@
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (2.3.5-0jammy) jammy; urgency=high
+
+  * feat(cie_thread_configurator): add pure-Rust non-ROS thread notification client (#1371 <https://github.com/autowarefoundation/agnocast/issues/1371>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 08 Jun 2026 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (2.3.4-0jammy) jammy; urgency=high
+
+  * fix: ubuntu24.04/jazzy compilation warnings (#1339 <https://github.com/autowarefoundation/agnocast/issues/1339>)
+  * fix(sample_application): add agnocast_ prefix to sample app and thread_configurator (#1319 <https://github.com/autowarefoundation/agnocast/issues/1319>)
+  * feat(cie_thread_configurator): add ~/reapply_config service for runtime YAML reload (#1303 <https://github.com/autowarefoundation/agnocast/issues/1303>)
+  * refactor(cie_thread_configurator): extract ThreadConfig and YAML parser into thread_config.hpp/cpp (#1304 <https://github.com/autowarefoundation/agnocast/issues/1304>)
+  * refactor(cie_thread_configurator): migrate non-ROS thread reporting from rclcpp pub/sub to abstract Unix domain socket (#1295 <https://github.com/autowarefoundation/agnocast/issues/1295>)
+  * refactor(cie_thread_configurator): split callback groups and atomicize shared state (#1288 <https://github.com/autowarefoundation/agnocast/issues/1288>)
+  * fix(cie_thread_configurator): address misc code quality issues (#1277 <https://github.com/autowarefoundation/agnocast/issues/1277>)
+  * fix(cie_thread_configurator): always re-apply configuration regardless of thread_id (#1262 <https://github.com/autowarefoundation/agnocast/issues/1262>)
+  * refactor(cie_thread_configurator): apply SCHED_DEADLINE immediately with RESET_ON_FORK (#1248 <https://github.com/autowarefoundation/agnocast/issues/1248>)
+  * fix: add missing export dependencies (#1254 <https://github.com/autowarefoundation/agnocast/issues/1254>)
+  * refactor(thread_configurator): split into separate executables and use ROS parameters (#1234 <https://github.com/autowarefoundation/agnocast/issues/1234>)
+  * fix(cie_thread_configurator): make spawn_non_ros2_thread node name unique using thread_name (#1243 <https://github.com/autowarefoundation/agnocast/issues/1243>)
+  * fix(cie_thread_configurator): align QoS settings between ThreadConfiguratorNode and PrerunNode (#1218 <https://github.com/autowarefoundation/agnocast/issues/1218>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 20 May 2026 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (2.3.3-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 01 Apr 2026 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (2.3.2-0jammy) jammy; urgency=high
+
+  * dont define sched_attr for glibc 2.42 (#1190 <https://github.com/autowarefoundation/agnocast/issues/1190>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 23 Mar 2026 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (2.3.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 16 Mar 2026 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (2.3.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 08 Mar 2026 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (2.2.0-0jammy) jammy; urgency=high
+
+  * fix: change package names from cie_* to agnocast_cie* (#1071 <https://github.com/tier4/agnocast/issues/1071>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 18 Feb 2026 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (2.1.2-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 18 Aug 2025 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (2.1.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 12 May 2025 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (2.1.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Tue, 15 Apr 2025 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (2.0.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 02 Apr 2025 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (2.0.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Tue, 01 Apr 2025 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (1.0.2-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Thu, 13 Mar 2025 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (1.0.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 09 Mar 2025 16:00:00 -0000
+
+ros-humble-agnocast-cie-thread-configurator-1-9-0 (1.0.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 02 Mar 2025 16:00:00 -0000
+
+

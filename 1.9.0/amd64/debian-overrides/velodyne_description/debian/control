@@ -1,0 +1,12 @@
+Source: ros-humble-velodyne-description-1-9-0
+Section: misc
+Priority: optional
+Maintainer: Kevin Hallenbeck <khallenbeck@dataspeedinc.com>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-1-9-0
+Homepage: http://wiki.ros.org/velodyne_description
+Standards-Version: 3.9.2
+
+Package: ros-humble-velodyne-description-1-9-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-urdf, ros-humble-xacro
+Description: URDF and meshes describing Velodyne laser scanners.

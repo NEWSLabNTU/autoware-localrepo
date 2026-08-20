@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-behavior-path-start-planner-module-1-9-0
+Section: misc
+Priority: optional
+Maintainer: Kyoichi Sugahara <kyoichi.sugahara@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-behavior-path-planner-1-9-0, ros-humble-autoware-behavior-path-planner-common-1-9-0, ros-humble-autoware-cmake-1-9-0, ros-humble-autoware-freespace-planning-algorithms-1-9-0, ros-humble-autoware-lint-common-1-9-0 <!nocheck>, ros-humble-autoware-motion-utils-1-9-0, ros-humble-autoware-pyplot-1-9-0 <!nocheck>, ros-humble-autoware-rtc-interface-1-9-0, ros-humble-autoware-test-utils-1-9-0 <!nocheck>, ros-humble-autoware-utils-1-9-0, ros-humble-eigen3-cmake-module, ros-humble-pluginlib, ros-humble-pybind11-vendor <!nocheck>, ros-humble-rclcpp, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-behavior-path-start-planner-module-1-9-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-behavior-path-planner-1-9-0, ros-humble-autoware-behavior-path-planner-common-1-9-0, ros-humble-autoware-freespace-planning-algorithms-1-9-0, ros-humble-autoware-motion-utils-1-9-0, ros-humble-autoware-rtc-interface-1-9-0, ros-humble-autoware-utils-1-9-0, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-visualization-msgs
+Description: The autoware_behavior_path_start_planner_module package

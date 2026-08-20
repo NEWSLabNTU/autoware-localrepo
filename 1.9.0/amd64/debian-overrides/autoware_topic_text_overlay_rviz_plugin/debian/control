@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-topic-text-overlay-rviz-plugin-1-9-0
+Section: misc
+Priority: optional
+Maintainer: Satoshi Ota <satoshi.ota@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-9-0, ros-humble-autoware-internal-debug-msgs-1-9-0, ros-humble-autoware-lint-common-1-9-0 <!nocheck>, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rviz-2d-overlay-msgs-1-9-0, ros-humble-rviz-2d-overlay-plugins-1-9-0, ros-humble-rviz-common, ros-humble-rviz-ogre-vendor, ros-humble-rviz-rendering, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-topic-text-overlay-rviz-plugin-1-9-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-internal-debug-msgs-1-9-0, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rviz-2d-overlay-msgs-1-9-0, ros-humble-rviz-2d-overlay-plugins-1-9-0, ros-humble-rviz-common, ros-humble-rviz-ogre-vendor, ros-humble-rviz-rendering, ros-humble-visualization-msgs
+Description: RViz panel plugin for overlaying selected text topics in the 3D view.

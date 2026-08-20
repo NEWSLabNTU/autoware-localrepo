@@ -1,0 +1,58 @@
+ros-humble-autoware-topic-text-overlay-rviz-plugin-1-9-0 (0.6.0-0jammy) jammy; urgency=high
+
+
+
+ -- Satoshi Ota <satoshi.ota@tier4.jp>  Mon, 29 Jun 2026 16:00:00 -0000
+
+ros-humble-autoware-topic-text-overlay-rviz-plugin-1-9-0 (0.5.0-0jammy) jammy; urgency=high
+
+  * fix: to be consistent version in all package.xml(s)
+  * feat(rviz): add topic text overlay plugin (#37 <https://github.com/autowarefoundation/autoware_rviz_plugins/issues/37>)
+    * feat(rviz): add topic text overlay plugin
+    * refactor(rviz): reuse shared overlay utility
+    * style(rviz): use snake case in topic text overlay
+    * fix(topic_text_overlay): hide topic types in overlay
+    * fix(topic_text_overlay): remove tier4 debug message support
+    * chore: add maintainer
+    * docs(topic_text_overlay): add README
+    ---------
+  * Contributors: Satoshi OTA, github-actions
+  * fix: to be consistent version in all package.xml(s)
+  * feat(rviz): add topic text overlay plugin (#37 <https://github.com/autowarefoundation/autoware_rviz_plugins/issues/37>)
+    * feat(rviz): add topic text overlay plugin
+    * refactor(rviz): reuse shared overlay utility
+    * style(rviz): use snake case in topic text overlay
+    * fix(topic_text_overlay): hide topic types in overlay
+    * fix(topic_text_overlay): remove tier4 debug message support
+    * chore: add maintainer
+    * docs(topic_text_overlay): add README
+    ---------
+  * Contributors: Satoshi OTA, github-actions
+
+ -- Satoshi Ota <satoshi.ota@tier4.jp>  Thu, 30 Apr 2026 16:00:00 -0000
+
+ros-humble-autoware-topic-text-overlay-rviz-plugin-1-9-0 (0.4.0-0jammy) jammy; urgency=high
+
+
+
+ -- Satoshi Ota <satoshi.ota@tier4.jp>  Fri, 13 Feb 2026 16:00:00 -0000
+
+ros-humble-autoware-topic-text-overlay-rviz-plugin-1-9-0 (0.3.0-0jammy) jammy; urgency=high
+
+
+
+ -- Satoshi Ota <satoshi.ota@tier4.jp>  Sat, 15 Nov 2025 16:00:00 -0000
+
+ros-humble-autoware-topic-text-overlay-rviz-plugin-1-9-0 (0.2.0-0jammy) jammy; urgency=high
+
+
+
+ -- Satoshi Ota <satoshi.ota@tier4.jp>  Wed, 13 Aug 2025 16:00:00 -0000
+
+ros-humble-autoware-topic-text-overlay-rviz-plugin-1-9-0 (0.1.0-0jammy) jammy; urgency=high
+
+
+
+ -- Satoshi Ota <satoshi.ota@tier4.jp>  Fri, 27 Jun 2025 16:00:00 -0000
+
+

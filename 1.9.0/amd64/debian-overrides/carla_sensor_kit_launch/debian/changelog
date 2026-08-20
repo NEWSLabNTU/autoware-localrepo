@@ -1,0 +1,47 @@
+ros-humble-carla-sensor-kit-launch-1-9-0 (0.52.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * chore: sync files (#1338 <https://github.com/autowarefoundation/autoware_launch/issues/1338>)
+    * chore: sync files
+    * style(pre-commit): autofix
+    ---------
+    Co-authored-by: github-actions <mailto:github-actions@github.com>
+    Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+  * Contributors: awf-autoware-bot[bot], github-actions
+
+ -- Autoware Maintainer <noreply@example.com>  Mon, 29 Jun 2026 16:00:00 -0000
+
+ros-humble-carla-sensor-kit-launch-1-9-0 (0.51.0-0jammy) jammy; urgency=high
+
+  * Merge remote-tracking branch 'origin/main' into tmp/bot/bump_version_base
+  * refactor: replace ament_index_python with launch.substitutions (#1762 <https://github.com/autowarefoundation/autoware_launch/issues/1762>)
+    * refactor: replace ament_index_python with launch.substitutions
+    * flatten nested pathjoinsubstitution
+    ---------
+  * Contributors: Taeseung Sohn, github-actions
+
+ -- Autoware Maintainer <noreply@example.com>  Thu, 30 Apr 2026 16:00:00 -0000
+
+ros-humble-carla-sensor-kit-launch-1-9-0 (0.50.0-0jammy) jammy; urgency=high
+
+
+
+ -- Autoware Maintainer <noreply@example.com>  Thu, 12 Feb 2026 16:00:00 -0000
+
+ros-humble-carla-sensor-kit-launch-1-9-0 (0.49.0-0jammy) jammy; urgency=high
+
+
+
+ -- Autoware Maintainer <noreply@example.com>  Mon, 29 Dec 2025 16:00:00 -0000
+
+ros-humble-carla-sensor-kit-launch-1-9-0 (0.48.0-0jammy) jammy; urgency=high
+
+  * fix(carla_sensor_kit_description): align package version
+  * Merge remote-tracking branch 'origin/main' into release-humble-0.48.0
+  * feat(autoware_launch): add CARLA sensor kit support packages (#1655 <https://github.com/autowarefoundation/autoware_launch/issues/1655>)
+    Co-authored-by: Yukihiro Saito <mailto:yukky.saito@gmail.com>
+  * Contributors: Max-Bin, mitsudome-r
+
+ -- Autoware Maintainer <noreply@example.com>  Sat, 15 Nov 2025 16:00:00 -0000
+
+

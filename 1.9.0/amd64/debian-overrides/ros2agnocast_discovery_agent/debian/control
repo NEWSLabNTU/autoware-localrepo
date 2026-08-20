@@ -1,0 +1,12 @@
+Source: ros-humble-ros2agnocast-discovery-agent-1-9-0
+Section: misc
+Priority: optional
+Maintainer: Keita Morisaki <keita.morisaki@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), python3-pytest <!nocheck>, ros-humble-ament-copyright <!nocheck>, ros-humble-ament-flake8 <!nocheck>, ros-humble-ament-pep257 <!nocheck>, python3-all, python3-setuptools, dh-python
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-ros2agnocast-discovery-agent-1-9-0
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, ros-humble-agnocast-ioctl-wrapper-1-9-0, ros-humble-rclpy, ros-humble-ros2agnocast-discovery-msgs-1-9-0
+Description: Per-IPC-namespace daemon that reads the local Agnocast state via the existing NS-scoped ioctl and publishes it on /_agnocast_discovery so other namespaces and ECUs running ros2agnocast tooling can build a cross-NS / cross-ECU view and request bridges on demand.

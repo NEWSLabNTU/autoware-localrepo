@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-trajectory-modifier-1-9-0
+Section: misc
+Priority: optional
+Maintainer: Daniel Sanchez <daniel.sanchez@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), librange-v3-dev, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-agnocast-wrapper-1-9-0, ros-humble-autoware-internal-planning-msgs-1-9-0, ros-humble-autoware-lint-common-1-9-0 <!nocheck>, ros-humble-autoware-motion-utils-1-9-0, ros-humble-autoware-path-optimizer-1-9-0, ros-humble-autoware-path-smoother-1-9-0, ros-humble-autoware-planning-factor-interface-1-9-0, ros-humble-autoware-planning-msgs-1-9-0, ros-humble-autoware-signal-processing-1-9-0, ros-humble-autoware-trajectory-1-9-0, ros-humble-autoware-utils-1-9-0, ros-humble-autoware-utils-debug-1-9-0, ros-humble-autoware-utils-rclcpp-1-9-0, ros-humble-autoware-vehicle-info-utils-1-9-0, ros-humble-generate-parameter-library, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-trajectory-modifier-1-9-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, librange-v3-dev, ros-humble-autoware-agnocast-wrapper-1-9-0, ros-humble-autoware-internal-planning-msgs-1-9-0, ros-humble-autoware-motion-utils-1-9-0, ros-humble-autoware-path-optimizer-1-9-0, ros-humble-autoware-path-smoother-1-9-0, ros-humble-autoware-planning-factor-interface-1-9-0, ros-humble-autoware-planning-msgs-1-9-0, ros-humble-autoware-signal-processing-1-9-0, ros-humble-autoware-trajectory-1-9-0, ros-humble-autoware-utils-1-9-0, ros-humble-autoware-utils-debug-1-9-0, ros-humble-autoware-utils-rclcpp-1-9-0, ros-humble-autoware-vehicle-info-utils-1-9-0, ros-humble-generate-parameter-library, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: The autoware_trajectory_modifier package

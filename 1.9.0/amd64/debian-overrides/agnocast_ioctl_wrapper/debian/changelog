@@ -1,0 +1,103 @@
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (2.3.5-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 08 Jun 2026 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (2.3.4-0jammy) jammy; urgency=high
+
+  * refactor(ros2agnocast): typo, memory handle (#1305 <https://github.com/autowarefoundation/agnocast/issues/1305>)
+  * refactor(ros2agnocast): use context manager for ctypes topic arrays (#1293 <https://github.com/autowarefoundation/agnocast/issues/1293>)
+  * chore: remove @veqcc from maintainers (#1296 <https://github.com/autowarefoundation/agnocast/issues/1296>)
+  * feat:add version check command (#1224 <https://github.com/autowarefoundation/agnocast/issues/1224>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 20 May 2026 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (2.3.3-0jammy) jammy; urgency=high
+
+  * fix: topic list_agnocast warning (#1208 <https://github.com/autowarefoundation/agnocast/issues/1208>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 01 Apr 2026 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (2.3.2-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 23 Mar 2026 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (2.3.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 16 Mar 2026 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (2.3.0-0jammy) jammy; urgency=high
+
+  * feat(kmod): bump capacity constants and default mempool size (#1151 <https://github.com/autowarefoundation/agnocast/issues/1151>)
+  * fix(kmod)[need-minor-update]: add topic_name_buffer_size field for get_agnocast_pub/sub_topics (#1113 <https://github.com/autowarefoundation/agnocast/issues/1113>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 08 Mar 2026 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (2.2.0-0jammy) jammy; urgency=high
+
+  * feat(kmod)[need-minor-update]: increase MAX_PUBLISHER_NUM (#1060 <https://github.com/tier4/agnocast/issues/1060>)
+  * feat(kmod): Increase MAX_SUBSCRIBER_NUM by using bitmap (#1015 <https://github.com/tier4/agnocast/issues/1015>)
+  * feat(agnocast_ioctl_wrapper, ros2agnocast): enhance topic list agnocast command (#1002 <https://github.com/tier4/agnocast/issues/1002>)
+  * feat(agnocast_ioctl_wrapper, ros2agnocast): mode print feature topic list (#992 <https://github.com/tier4/agnocast/issues/992>)
+  * refactor(agnocastlib)[needs minor version update]: add debug mode for bridge (#963 <https://github.com/tier4/agnocast/issues/963>)
+  * fix(agnocastlib): error output when opening agnocast driver failed (#732 <https://github.com/tier4/agnocast/issues/732>)
+  * fix(ros2agnocast): account for topic names used by Agnocast services (#712 <https://github.com/tier4/agnocast/issues/712>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 18 Feb 2026 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (2.1.2-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 17 Aug 2025 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (2.1.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 12 May 2025 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (2.1.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 14 Apr 2025 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (2.0.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 02 Apr 2025 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (2.0.0-0jammy) jammy; urgency=high
+
+  * refactor(kmod): unified magic number for ioctl (#569 <https://github.com/tier4/agnocast/issues/569>)
+  * fix: pass string length along with its pointer (#534 <https://github.com/tier4/agnocast/issues/534>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Tue, 01 Apr 2025 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (1.0.2-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Thu, 13 Mar 2025 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (1.0.1-0jammy) jammy; urgency=high
+
+  * fix(ioctl_wrapper): remove NOLINT (#477 <https://github.com/tier4/agnocast/issues/477>)
+  * feat(ros2agnocast): add topic info cmd base (#442 <https://github.com/tier4/agnocast/issues/442>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 09 Mar 2025 16:00:00 -0000
+
+ros-humble-agnocast-ioctl-wrapper-1-9-0 (1.0.0-0jammy) jammy; urgency=high
+
+  * First release.
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sat, 02 Mar 2024 16:00:00 -0000
+
+

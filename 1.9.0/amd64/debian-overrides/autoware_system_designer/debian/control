@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-system-designer-1-9-0
+Section: misc
+Priority: optional
+Maintainer: Taekjin Lee <taekjin.lee@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), python3-jinja2, python3-jsonschema, python3-yaml, ros-humble-ament-cmake-auto, ros-humble-ament-cmake-python-1-9-0, ros-humble-autoware-cmake-1-9-0
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-system-designer-1-9-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-jinja2, python3-jsonschema, python3-yaml, ros-humble-ament-index-python
+Description: The autoware_system_designer package

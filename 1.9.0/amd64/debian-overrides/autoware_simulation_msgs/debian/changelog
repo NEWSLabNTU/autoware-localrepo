@@ -1,0 +1,82 @@
+ros-humble-autoware-simulation-msgs-1-9-0 (1.13.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Tue, 19 May 2026 16:00:00 -0000
+
+ros-humble-autoware-simulation-msgs-1-9-0 (1.12.0-0jammy) jammy; urgency=high
+
+  * chore(autoware_simulation_msgs): ported from tier4_autoware_msgs (#162 <https://github.com/autowarefoundation/autoware_msgs/issues/162>)
+  * Contributors: Junya Sasaki
+  * chore(autoware_simulation_msgs): ported from tier4_autoware_msgs (#162 <https://github.com/autowarefoundation/autoware_msgs/issues/162>)
+  * Contributors: Junya Sasaki
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Sun, 26 Apr 2026 16:00:00 -0000
+
+ros-humble-autoware-simulation-msgs-1-9-0 (1.11.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Sun, 26 Oct 2025 16:00:00 -0000
+
+ros-humble-autoware-simulation-msgs-1-9-0 (1.10.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Thu, 17 Jul 2025 16:00:00 -0000
+
+ros-humble-autoware-simulation-msgs-1-9-0 (1.9.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Tue, 17 Jun 2025 16:00:00 -0000
+
+ros-humble-autoware-simulation-msgs-1-9-0 (1.8.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Tue, 20 May 2025 16:00:00 -0000
+
+ros-humble-autoware-simulation-msgs-1-9-0 (1.7.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Mon, 21 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-simulation-msgs-1-9-0 (1.6.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Sun, 06 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-simulation-msgs-1-9-0 (1.5.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Thu, 03 Apr 2025 16:00:00 -0000
+
+ros-humble-autoware-simulation-msgs-1-9-0 (1.4.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Mon, 24 Feb 2025 16:00:00 -0000
+
+ros-humble-autoware-simulation-msgs-1-9-0 (1.3.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Mon, 25 Nov 2024 16:00:00 -0000
+
+ros-humble-autoware-simulation-msgs-1-9-0 (1.2.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Mon, 30 Sep 2024 16:00:00 -0000
+
+ros-humble-autoware-simulation-msgs-1-9-0 (1.1.0-0jammy) jammy; urgency=high
+
+
+
+ -- Mete Fatih Cırıt <mfc@autoware.org>  Thu, 09 May 2024 16:00:00 -0000
+
+

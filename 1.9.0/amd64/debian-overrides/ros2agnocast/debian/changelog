@@ -1,0 +1,123 @@
+ros-humble-ros2agnocast-1-9-0 (2.3.5-0jammy) jammy; urgency=high
+
+  * Feat/ros2 bag record agnocast/topic filter (#1377 <https://github.com/autowarefoundation/agnocast/issues/1377>)
+  * refactor(ros2agnocast): reorganize verb directory and extract common logic (#1374 <https://github.com/autowarefoundation/agnocast/issues/1374>)
+  * feat(ros2agnocast): add ros2 bag record_agnocast CLI verb (#1373 <https://github.com/autowarefoundation/agnocast/issues/1373>)
+  * feat(ros2agnocast): add ros2agnocast verb ros2 agnocast bridge-daemo… (`#1369 <https://github.com/autowarefoundation/agnocast/issues/1369>)
+  * perf(ros2agnocast): return from gossip collection once all publishers report (#1370 <https://github.com/autowarefoundation/agnocast/issues/1370>)
+  * feat(ros2agnocast): add discovery_daemon_status verb for daemon liveness (#1363 <https://github.com/autowarefoundation/agnocast/issues/1363>)
+  * feat(ros2agnocast): support ros2 topic hz/echo/delay for Agnocast (#1357 <https://github.com/autowarefoundation/agnocast/issues/1357>)
+  * feat: ros2agnocast CLI verbs see Agnocast endpoints across IPC namespaces and ECUs (#1351 <https://github.com/autowarefoundation/agnocast/issues/1351>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 08 Jun 2026 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (2.3.4-0jammy) jammy; urgency=high
+
+  * fix(bridge): suppress bridge plugin compilation warning (#1347 <https://github.com/autowarefoundation/agnocast/issues/1347>)
+  * fix: ubuntu24.04/jazzy compilation warnings (#1339 <https://github.com/autowarefoundation/agnocast/issues/1339>)
+  * perf(bridge-plugins): make bridge nodes use generic publisher and subscriber (#1337 <https://github.com/autowarefoundation/agnocast/issues/1337>)
+  * refactor(bridge-plugins): consolidate .so and enable unity/lld build (#1336 <https://github.com/autowarefoundation/agnocast/issues/1336>)
+  * feat(bridge): introduce shadow node to Agnocast bridge (#1300 <https://github.com/autowarefoundation/agnocast/issues/1300>)
+  * enhance(ros2agnocas): use get_agnocast_node_topics in node info_agnocast (#1237 <https://github.com/autowarefoundation/agnocast/issues/1237>)
+  * feat(bridge): add standard-mode R2A service bridge support (#1289 <https://github.com/autowarefoundation/agnocast/issues/1289>)
+  * enhance(ros2agnocast): avoid unnecessary get_topic_names_and_types in topic info_agnocast (#1236 <https://github.com/autowarefoundation/agnocast/issues/1236>)
+  * refactor(ros2agnocast): typo, memory handle (#1305 <https://github.com/autowarefoundation/agnocast/issues/1305>)
+  * refactor(ros2agnocast): use context manager for ctypes topic arrays (#1293 <https://github.com/autowarefoundation/agnocast/issues/1293>)
+  * feat(bridge): add e2e support for R2A service bridges in performance mode (#1274 <https://github.com/autowarefoundation/agnocast/issues/1274>)
+  * enhance(ros2agnocast): avoid unnecessary get_publishers/subscriptions_info_by_topic calls in topic list_agnocast (#1235 <https://github.com/autowarefoundation/agnocast/issues/1235>)
+  * fix(bridge): inherit version of ros2agnocast for agnocast bridge plugins (#1219 <https://github.com/autowarefoundation/agnocast/issues/1219>)
+  * feat:add version check command (#1224 <https://github.com/autowarefoundation/agnocast/issues/1224>)
+  * feat(ros2agnocast): add R2A service plugin template (#1144 <https://github.com/autowarefoundation/agnocast/issues/1144>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 20 May 2026 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (2.3.3-0jammy) jammy; urgency=high
+
+  * fix: topic list_agnocast warning (#1208 <https://github.com/autowarefoundation/agnocast/issues/1208>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 01 Apr 2026 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (2.3.2-0jammy) jammy; urgency=high
+
+  * refactor(bridge): use CallbackIsolatedAgnocastExecutor for bridge callback scheduling (#1170 <https://github.com/autowarefoundation/agnocast/issues/1170>)
+  * fix(ros2agnocast): show Agnocast label for topics that exist in both ROS2 and Agnocast (#1180 <https://github.com/autowarefoundation/agnocast/issues/1180>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 23 Mar 2026 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (2.3.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 16 Mar 2026 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (2.3.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 08 Mar 2026 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (2.2.0-0jammy) jammy; urgency=high
+
+  * fix(bridge): unify r2a and a2r plugin into one to improve build time (#1064 <https://github.com/tier4/agnocast/issues/1064>)
+  * fix(bridge): improve bridge plugins build time (#1063 <https://github.com/tier4/agnocast/issues/1063>)
+  * feat(ros2agnocast): change bridge display meaning (#1005 <https://github.com/tier4/agnocast/issues/1005>)
+  * fix email address of package.xml. template (#1024 <https://github.com/tier4/agnocast/issues/1024>)
+  * feat(ros2agnocast): enhance node info agnocast command (#1004 <https://github.com/tier4/agnocast/issues/1004>)
+  * feat: redesign plugin generation process of performance bridge (#1006 <https://github.com/tier4/agnocast/issues/1006>)
+  * feat(agnocast_ioctl_wrapper, ros2agnocast): add node list agnocast command (#1003 <https://github.com/tier4/agnocast/issues/1003>)
+  * feat(agnocast_ioctl_wrapper, ros2agnocast): enhance topic list agnocast command (#1002 <https://github.com/tier4/agnocast/issues/1002>)
+  * feat(agnocast_ioctl_wrapper, ros2agnocast): mode print feature topic list (#992 <https://github.com/tier4/agnocast/issues/992>)
+  * refactor(agnocastlib)[needs minor version update]: add debug mode for bridge (#963 <https://github.com/tier4/agnocast/issues/963>)
+  * fix(ros2agnocast): account for topic names used by Agnocast services (#712 <https://github.com/tier4/agnocast/issues/712>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 18 Feb 2026 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (2.1.2-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 17 Aug 2025 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (2.1.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 12 May 2025 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (2.1.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Mon, 14 Apr 2025 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (2.0.1-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Wed, 02 Apr 2025 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (2.0.0-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Tue, 01 Apr 2025 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (1.0.2-0jammy) jammy; urgency=high
+
+
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Thu, 13 Mar 2025 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (1.0.1-0jammy) jammy; urgency=high
+
+  * feat(ros2agnocast): add topic info cmd base (#442 <https://github.com/tier4/agnocast/issues/442>)
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sun, 09 Mar 2025 16:00:00 -0000
+
+ros-humble-ros2agnocast-1-9-0 (1.0.0-0jammy) jammy; urgency=high
+
+  * First release.
+
+ -- Takahiro Ishikawa-Aso <sykwer@gmail.com>  Sat, 02 Mar 2024 16:00:00 -0000
+
+

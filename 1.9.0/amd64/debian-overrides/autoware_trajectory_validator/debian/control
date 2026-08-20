@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-trajectory-validator-1-9-0
+Section: misc
+Priority: optional
+Maintainer: Alqudah Mohammad <alqudah.mohammad@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-1-9-0, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-boundary-departure-checker-1-9-0, ros-humble-autoware-cmake-1-9-0, ros-humble-autoware-internal-planning-msgs-1-9-0, ros-humble-autoware-lanelet2-utils-1-9-0, ros-humble-autoware-lint-common-1-9-0 <!nocheck>, ros-humble-autoware-map-msgs-1-9-0, ros-humble-autoware-motion-utils-1-9-0, ros-humble-autoware-perception-msgs-1-9-0, ros-humble-autoware-planning-msgs-1-9-0, ros-humble-autoware-traffic-light-compliance-checker-1-9-0, ros-humble-autoware-traffic-light-utils-1-9-0, ros-humble-autoware-utils-debug-1-9-0, ros-humble-autoware-utils-diagnostics-1-9-0, ros-humble-autoware-utils-geometry-1-9-0, ros-humble-autoware-vehicle-info-utils-1-9-0, ros-humble-builtin-interfaces, ros-humble-generate-parameter-library, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rosidl-default-generators, ros-humble-tl-expected, ros-humble-unique-identifier-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-trajectory-validator-1-9-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-boundary-departure-checker-1-9-0, ros-humble-autoware-internal-planning-msgs-1-9-0, ros-humble-autoware-lanelet2-utils-1-9-0, ros-humble-autoware-map-msgs-1-9-0, ros-humble-autoware-motion-utils-1-9-0, ros-humble-autoware-perception-msgs-1-9-0, ros-humble-autoware-planning-msgs-1-9-0, ros-humble-autoware-traffic-light-compliance-checker-1-9-0, ros-humble-autoware-traffic-light-utils-1-9-0, ros-humble-autoware-utils-debug-1-9-0, ros-humble-autoware-utils-diagnostics-1-9-0, ros-humble-autoware-utils-geometry-1-9-0, ros-humble-autoware-vehicle-info-utils-1-9-0, ros-humble-builtin-interfaces, ros-humble-generate-parameter-library, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rosidl-default-runtime, ros-humble-tl-expected, ros-humble-unique-identifier-msgs
+Description: The autoware_trajectory_validator package
