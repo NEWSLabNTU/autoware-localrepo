@@ -1,0 +1,71 @@
+{
+  "major_version": 0,
+  "minor_version": 1,
+  "model_name": "vad-carla-tiny",
+  "training_dataset": "Bench2Drive CARLA",
+  "release_date": "2025-11-04",
+  "description": "VAD model trained on Bench2Drive CARLA dataset with 6-camera surround view",
+
+  "image_normalization": {
+    "mean": [123.675, 116.28, 103.53],
+    "std": [58.395, 57.12, 57.375],
+    "format": "RGB",
+    "note": "ImageNet normalization statistics"
+  },
+
+  "input_specs": {
+    "target_image_width": 640,
+    "target_image_height": 384,
+    "num_cameras": 6,
+    "camera_order": ["FRONT", "BACK", "FRONT_LEFT", "BACK_LEFT", "FRONT_RIGHT", "BACK_RIGHT"]
+  },
+
+  "class_definitions": {
+    "map_classes": ["Broken", "Solid", "SolidSolid", "Center", "TrafficLight", "StopSign"],
+    "object_classes": ["car", "van", "truck", "bicycle", "traffic_sign", "traffic_cone", "traffic_light", "pedestrian", "others"]
+  },
+
+  "network_architecture": {
+    "bev": {
+      "height": 106,
+      "width": 200,
+      "feature_dim": 256,
+      "downsample_factor": 32
+    },
+    "transformer": {
+      "num_decoder_layers": 3
+    },
+    "prediction": {
+      "num_queries": 300,
+      "num_classes": 9,
+      "bbox_pred_dim": 10,
+      "trajectory_modes": 6,
+      "timesteps": 6,
+      "bbox_format": "[cx, cy, w, l, cz, h, sin, cos, vx, vy]"
+    },
+    "planning": {
+      "ego_commands": 6,
+      "timesteps": 6
+    },
+    "map": {
+      "num_queries": 100,
+      "num_classes": 6,
+      "points_per_polyline": 20
+    },
+    "vehicle_state": {
+      "can_bus_dim": 18
+    }
+  },
+
+  "model_files": {
+    "backbone": "vad-carla-tiny_backbone.onnx",
+    "head": "vad-carla-tiny_head.onnx",
+    "head_no_prev": "vad-carla-tiny_head_no_prev.onnx"
+  },
+
+  "compatibility": {
+    "autoware_tensorrt_vad_version": ">= 0.1.0",
+    "tensorrt_version": ">= 8.6",
+    "cuda_version": ">= 11.4"
+  }
+}

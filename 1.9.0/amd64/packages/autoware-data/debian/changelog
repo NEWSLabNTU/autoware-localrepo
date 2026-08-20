@@ -1,0 +1,6 @@
+autoware-data-1-9-0 (1.9.0-1) jammy; urgency=medium
+
+  * Initial release
+  * Package ML models for Autoware perception
+
+ -- Jerry Lin <jerry73204@gmail.com>  Thu, 20 Aug 2026 16:32:18 +0000
