@@ -4,6 +4,46 @@ Checkpoint written 2026-08-20. The amd64 packaging is complete and committed;
 the ROS build was stopped part-way through the final phase because the build
 host ran out of disk on `/`. Nothing is broken — resuming is a short job.
 
+## Status: amd64 E2E COMPLETE (2026-08-21)
+
+The full chain finished on the original host: `just ros` (488/488 ROS debs,
+Status SUCCESS) → `just meta` → `just localrepo` (493 bundled packages,
+`autoware-localrepo-1-9-0_1.9.0-1ubuntu2204_all.deb`).
+
+What changed since the 2026-08-20 checkpoint below:
+
+- **debian-overrides pruned from 488 frozen dirs to 19 targeted ones.**
+  colcon2deb no longer needs bloom output frozen as overrides (it
+  regenerates and fingerprints per package), and a full freeze goes stale
+  on any version/prefix change. The 19 kept are real patches: 17 CUDA
+  packages with LTO disabled (fatbin symbol conflicts) and Replaces:
+  fields for autoware_mission_planner_universe and
+  autoware_overlay_rviz_plugin (open item 2 below — resolved).
+- **Workspace repinned** to NEWSLabNTU/autoware_universe `1.9.0-patches`:
+  the acados codegen custom commands raced under `make -j` (multi-output
+  rule runs the generator twice; FileExistsError) — serialized with a
+  stamp file. 1.5.0-ws similarly repinned for the system_monitor
+  missing-include fix.
+- **Dockerfile acados block finalized**: full ansible layout at
+  /opt/acados (source, venv, tera renderer) plus a /usr/local install so
+  find_package(acados) works in the debian/rules pass, whose generated
+  rules overwrite CMAKE_PREFIX_PATH.
+- **Open item 1 verified real**: `libacados_interface.so` in
+  ros-humble-autoware-path-optimizer-1-9-0 has `NEEDED libacados.so`, no
+  RPATH, and the deb declares no acados dependency. Runtime on user
+  machines is broken until acados ships as its own package (e.g.
+  `autoware-acados-1-9-0`) with Depends added — still TODO.
+- colcon2deb grew skip_tests support, prerequisite checks, and a
+  writable install prefix in the container (autoware_system_design_examples
+  writes deployments into the prefix during dh_auto_build).
+
+Remaining open items: acados runtime package (above), jp62 (untouched),
+rosbag-sample suffix backports to 1.5.0/1.7.1.
+
+---
+
+# Original checkpoint (2026-08-20, superseded)
+
 ## Where the build got to
 
 `just ros` (colcon2deb 0.4.1) on the third attempt:

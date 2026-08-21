@@ -11,6 +11,29 @@ ENV CMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc
 ENV PATH=/usr/local/cuda/bin:${PATH}
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 
+
+# acados (new build dependency of autoware_path_optimizer in 1.9.0).
+# Mirrors ansible/roles/acados: full source tree + venv + tera renderer at
+# /opt/acados (the package's codegen step hardcodes that layout), plus a
+# second install into /usr/local so find_package(acados) works in the
+# debian/rules pass without CMAKE_PREFIX_PATH (the generated rules build
+# their own prefix path).
+RUN git clone --depth 1 --branch v0.5.3 --recursive https://github.com/acados/acados.git /opt/acados && \
+    cmake -S /opt/acados -B /opt/acados/build \
+        -DACADOS_WITH_QPOASES=ON \
+        -DCMAKE_POSITION_INDEPENDENT_CODE=ON && \
+    make -C /opt/acados/build install -j"$(nproc)" && \
+    cmake --install /opt/acados/build --prefix /usr/local
+
+ADD https://github.com/acados/tera_renderer/releases/download/v0.2.0/t_renderer-v0.2.0-linux-amd64 /opt/acados/bin/t_renderer
+
+RUN chmod 755 /opt/acados/bin/t_renderer && \
+    python3 -m venv /opt/acados/.venv && \
+    /opt/acados/.venv/bin/pip install --no-cache-dir --upgrade pip && \
+    /opt/acados/.venv/bin/pip install --no-cache-dir casadi sympy && \
+    /opt/acados/.venv/bin/pip install --no-cache-dir -e /opt/acados/interfaces/acados_template
+ENV ACADOS_SOURCE_DIR=/opt/acados
+
 # Configure the locale and timezone
 RUN apt update -y && \
     apt install -y locales && \
@@ -84,43 +107,13 @@ RUN apt update -y && \
         cuda-nvml-dev-12-8 \
     && rm -rf /var/lib/apt/lists/*
 
-# Build and install acados.
-#
-# Autoware 1.9.0 removed universe/external/acados and universe/external/tera_renderer
-# from repositories/autoware.repos; upstream now bakes acados into the builder image
-# instead (docker/universe.Dockerfile runs the `acados` ansible tag and exports
-# CMAKE_PREFIX_PATH / ACADOS_SOURCE_DIR / LD_LIBRARY_PATH). Reproduce that here:
-# autoware_path_optimizer does find_package(acados REQUIRED) and fails to configure
-# without it, which aborts the whole colcon build.
-# Versions from ansible/roles/acados/defaults/main.yaml at tag 1.9.0.
-ARG ACADOS_VERSION=v0.5.3
-ARG ACADOS_TERA_RENDERER_VERSION=v0.2.0
-RUN apt update -y && \
-    apt install -y git cmake build-essential wget python3-venv \
-    && rm -rf /var/lib/apt/lists/*
-RUN git clone --depth 1 --branch ${ACADOS_VERSION} --recursive \
-        https://github.com/acados/acados.git /opt/acados && \
-    mkdir -p /opt/acados/build && \
-    cd /opt/acados/build && \
-    cmake -DACADOS_WITH_QPOASES=ON -DCMAKE_POSITION_INDEPENDENT_CODE=ON .. && \
-    make install -j"$(nproc)" && \
-    rm -rf /opt/acados/.git
-RUN mkdir -p /opt/acados/bin && \
-    wget -q -O /opt/acados/bin/t_renderer \
-        "https://github.com/acados/tera_renderer/releases/download/${ACADOS_TERA_RENDERER_VERSION}/t_renderer-${ACADOS_TERA_RENDERER_VERSION}-linux-amd64" && \
-    chmod 0755 /opt/acados/bin/t_renderer
-# acados Python venv. autoware_path_optimizer's codegen step invokes
-# ${ACADOS_SOURCE_DIR}/.venv/bin/python3 explicitly (see src/acados_mpc/CMakeLists.txt)
-# to render the MPC solver C code, so the venv path is load-bearing, not optional.
-# Mirrors ansible/roles/acados/tasks/main.yaml.
-RUN python3 -m venv /opt/acados/.venv && \
-    /opt/acados/.venv/bin/pip install --no-cache-dir --upgrade pip && \
-    /opt/acados/.venv/bin/pip install --no-cache-dir casadi sympy && \
-    /opt/acados/.venv/bin/pip install --no-cache-dir -e /opt/acados/interfaces/acados_template
-
-ENV ACADOS_SOURCE_DIR=/opt/acados
-ENV CMAKE_PREFIX_PATH=/opt/acados:${CMAKE_PREFIX_PATH}
-ENV LD_LIBRARY_PATH=/opt/acados/lib:${LD_LIBRARY_PATH}
+# NOTE on acados: Autoware 1.9.0 dropped universe/external/acados and
+# universe/external/tera_renderer from repositories/autoware.repos, and upstream's
+# docker/universe.Dockerfile now installs acados into the image instead. We
+# deliberately do NOT install it here: nothing in the 1.9.0 workspace references
+# acados (verified with `grep -ri acados src` over all 32 submodules -- zero hits;
+# autoware_smart_mpc_trajectory_follower, the 1.7.1 consumer, no longer depends on
+# it at universe 0.52.0). Revisit if a future bump reintroduces the dependency.
 
 # Install message_filters - required by nebula_ros but sometimes not detected by rosdep
 RUN apt update -y && \

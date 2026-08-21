@@ -9,4 +9,5 @@ Standards-Version: 3.9.2
 Package: ros-humble-autoware-mission-planner-universe-1-9-0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-adapi-v1-msgs-1-9-0, ros-humble-autoware-lanelet2-utils-1-9-0, ros-humble-autoware-map-msgs-1-9-0, ros-humble-autoware-motion-utils-1-9-0, ros-humble-autoware-planning-msgs-1-9-0, ros-humble-autoware-qos-utils-1-9-0, ros-humble-autoware-route-handler-1-9-0, ros-humble-autoware-utils-1-9-0, ros-humble-autoware-vehicle-info-utils-1-9-0, ros-humble-geometry-msgs, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-geometry-msgs, ros-humble-tf2-ros, ros-humble-tier4-planning-msgs-1-9-0
+Replaces: ros-humble-autoware-mission-planner-1-9-0
 Description: The autoware_mission_planner_universe package
