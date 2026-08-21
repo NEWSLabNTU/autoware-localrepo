@@ -28,16 +28,17 @@ What changed since the 2026-08-20 checkpoint below:
   /opt/acados (source, venv, tera renderer) plus a /usr/local install so
   find_package(acados) works in the debian/rules pass, whose generated
   rules overwrite CMAKE_PREFIX_PATH.
-- **Open item 1 verified real**: `libacados_interface.so` in
-  ros-humble-autoware-path-optimizer-1-9-0 has `NEEDED libacados.so`, no
-  RPATH, and the deb declares no acados dependency. Runtime on user
-  machines is broken until acados ships as its own package (e.g.
-  `autoware-acados-1-9-0`) with Depends added — still TODO.
+- **Open item 1 RESOLVED**: acados now ships as its own deb
+  (`packages/autoware-acados-1-9-0/`, acados v0.5.3 built from the pinned
+  upstream tag into /opt/autoware/1.9.0 with blasfeo/hpipm/qpOASES), and
+  debian-overrides add `Depends: autoware-acados-1-9-0` to
+  autoware_path_optimizer and autoware_trajectory_optimizer. Bundled in
+  the localrepo (493 packages).
 - colcon2deb grew skip_tests support, prerequisite checks, and a
   writable install prefix in the container (autoware_system_design_examples
   writes deployments into the prefix during dh_auto_build).
 
-Remaining open items: acados runtime package (above), jp62 (untouched),
+Remaining open items: jp62 (untouched),
 rosbag-sample suffix backports to 1.5.0/1.7.1.
 
 ---
