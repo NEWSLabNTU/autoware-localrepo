@@ -38,7 +38,11 @@ What changed since the 2026-08-20 checkpoint below:
   writable install prefix in the container (autoware_system_design_examples
   writes deployments into the prefix during dh_auto_build).
 
-Remaining open items: jp62 (untouched),
+Remaining open items: jp62 (untouched — `1.9.0/arm64/` is the generic
+arm64 dir for native arm64 hosts, prepared 2026-08-23 from the amd64
+tree: multi-arch autoware-base confirmed, arm64 tera renderer, acados
+package Architecture: any, same 19 overrides, workspace pinned at the
+patched 1.9.0-ws; not yet built),
 rosbag-sample suffix backports to 1.5.0/1.7.1.
 
 ---

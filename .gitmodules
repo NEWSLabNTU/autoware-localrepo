@@ -26,3 +26,7 @@
 	path = 1.9.0/amd64/source
 	url = https://github.com/NEWSLabNTU/autoware.git
 	branch = 1.9.0-ws
+[submodule "1.9.0/arm64/source"]
+	path = 1.9.0/arm64/source
+	url = https://github.com/NEWSLabNTU/autoware.git
+	branch = 1.9.0-ws

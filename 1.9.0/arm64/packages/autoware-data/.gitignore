@@ -1,0 +1,28 @@
+# Build artifacts
+*.deb
+
+# Debhelper build artifacts
+debian/.debhelper/
+debian/*.substvars
+debian/autoware-data-1-9-0/
+debian/autoware-data-vision-1-9-0/
+debian/autoware-data-perception3d-1-9-0/
+debian/autoware-data-planning-1-9-0/
+debian/debhelper-build-stamp
+debian/files
+
+# aria2 control files
+*.aria2
+
+# Model files exceeding GitHub's 100MB hard limit.
+# Not tracked in git -- debian/rules fetches them with aria2c via downloads.txt
+# at package build time. Regenerate this list after changing Autoware versions:
+#   find downloads -type f -size +100M
+downloads/bevfusion/bevfusion_image_backbone.onnx
+downloads/camera_streampetr/simplify_extract_img_feat.onnx
+downloads/lidar_transfusion/transfusion.onnx
+downloads/ptv3/ptv3_backbone.onnx
+downloads/tensorrt_bevdet/tensorrt_bevdet.tar.gz
+downloads/tensorrt_rtmdet/tensorrt_rtmdet_onnx_models.tar.gz
+downloads/vad/v0.1/vad-carla-tiny_head.onnx
+downloads/vad/v0.1/vad-carla-tiny_head_no_prev.onnx
