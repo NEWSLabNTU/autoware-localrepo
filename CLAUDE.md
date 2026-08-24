@@ -17,6 +17,7 @@ This project builds Debian packages for multiple Autoware versions and creates a
 |---------|-----|---------|-------|
 | 1.5.0-2 | https://github.com/NEWSLabNTU/autoware/tree/1.5.0-2 | https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.5.0-2 | Single bundled deb (~1.85 GiB) |
 | 1.7.1-1 | https://github.com/NEWSLabNTU/autoware/tree/1.7.1-1 | https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.7.1-1 | autoware-data shipped separately |
+| 1.9.0 (unreleased) | NEWSLabNTU/autoware @ 1.9.0-ws | amd64 built E2E 2026-08 (493-pkg bundle); arm64 dir prepared | autoware-data split in three topic debs; acados as own deb |
 
 ## Installation (User-facing)
 
@@ -90,6 +91,12 @@ autoware-localrepo/
 ├── 1.7.1/                        # Autoware 1.7.1 version (same layout)
 │   ├── amd64/
 │   └── jp62/
+├── 1.9.0/                        # Autoware 1.9.0 version
+│   ├── amd64/                    # built E2E (2026-08); see 1.9.0/HANDOFF.md
+│   │   ├── debian-overrides/     # 19 targeted patches (LTO, Replaces, acados deps)
+│   │   └── packages/autoware-acados-1-9-0/  # acados runtime deb (not a ROS pkg)
+│   └── arm64/                    # generic arm64 (native host build; not Jetson)
+├── 2025.02/                      # rolling snapshot layout
 └── justfile                      # Top-level build automation
 ```
 
@@ -100,6 +107,12 @@ Each version/arch directory is self-contained with its own packages/, build/, an
 Jetson builds use JetPack version suffixes instead of architecture:
 - `jp60/` - JetPack 6.0 (L4T R36.3, CUDA 12.2)
 - `jp62/` - JetPack 6.2 (L4T R36.4, CUDA 12.6)
+
+Generic (non-Jetson) arm64 servers use an `arm64/` directory instead
+(first added for 1.9.0). It reuses the amd64 Dockerfile flow — the ghcr
+`autoware-base:cuda-latest` manifest is multi-arch — with the arm64 tera
+renderer asset. Build natively on an arm64 host; QEMU cross-builds are a
+last resort (see BUILDING.md for the ASLR workaround).
 
 ## Key Commands
 
@@ -121,8 +134,10 @@ just ros
 cd 1.5.0/jp62
 just ros
 
-# Monitor build progress (arm64 builds take several hours)
-tail -f build/log/latest/*colcon_build.log
+# Monitor build progress (colcon2deb >= 0.4 log layout)
+tail -f build/logs/latest/phases/phase4_build_src.log   # colcon compile
+ls build/logs/latest/packages/<pkg>/                    # per-package dh logs
+cat build/logs/latest/reports/summary.txt               # final tally
 ```
 
 ### Build Meta-Packages
@@ -136,7 +151,7 @@ cd packages/autoware-config && dpkg-buildpackage -us -uc -b
 ```
 
 The `just meta` recipe:
-1. Runs `packages/autoware-ros-packages/genpkg.sh` to auto-generate dependencies from `build/dist/`
+1. Runs `packages/autoware-ros-packages/genpkg.sh` to auto-generate dependencies from `build/debs/`
 2. Builds packages in parallel: autoware-config, autoware-theme, autoware-data, autoware-ros-packages, autoware-maps
 3. Builds autoware-full last (depends on others)
 
@@ -191,6 +206,59 @@ For 1.7.1+ it also stages `autoware-data-*.deb` separately (see "GitHub 2 GiB as
 # From version/arch directory
 ./test/sim/run.sh [map_path]
 ```
+
+## Build Practices (learned on 1.9.0)
+
+### colcon2deb behavior to rely on
+
+- **Pipelined phases**: colcon (phase 4) runs concurrently with debian
+  generation, and each package's .deb build starts as soon as colcon
+  finishes that package. Wall-clock ≈ max(compile, packaging), not sum.
+- **Fingerprint caching**: unchanged packages skip phases 7/8. Changing
+  the builder image invalidates *all* fingerprints (image ID is a
+  fingerprint input) — one full repackaging pass after any Dockerfile
+  change is expected. Warm no-change rerun: ~1-6 min; one-package
+  change: ~10-20 min; cold amd64 1.9.0: ~2-2.5 h (dominated by the dh
+  pass and the throttled ghcr image pull).
+- **Exit codes are trustworthy**: phase failures and per-package
+  failures both exit non-zero; packages colcon finished before a
+  failure still produce debs.
+- **Never run two builds against the same version/arch dir** (no lock
+  yet): stopping a log monitor does not stop the container — check
+  `docker ps` before relaunching, or two containers will race in the
+  shared workspace and corrupt each other's dh builds.
+
+### debian-overrides are targeted patches, not a cache
+
+colcon2deb (>= current main) regenerates debian metadata itself and
+never writes into `debian-overrides/`. Keep only real deltas there —
+each override is a complete `debian/` dir harvested from
+`build/packaging/<pkg>/debian/` and then patched. 1.9.0 carries 19:
+17 CUDA packages with `optimize=-lto` in rules (fatbin conflicts), 2
+with `Replaces:`/`Depends:` edits. Do **not** freeze all packages'
+bloom output as overrides — it goes stale on any version/prefix change.
+
+### Upstream workspace bugs → fork patch branches
+
+Carry source fixes on `NEWSLabNTU/autoware_universe` branches named
+`<version>-patches` (pinned tag + fixes), then repin the `<version>-ws`
+submodule and bump the localrepo submodule pointer. Existing branches:
+`1.5.0-patches` (system_monitor missing rclcpp includes),
+`1.9.0-patches` (acados codegen flock-serialized — CMake duplicates
+custom-command recipes per consuming target, so parallel make ran the
+generator twice; a stamp file alone is NOT sufficient).
+
+### Non-ROS build dependencies
+
+If a workspace package needs a non-ROS library (no package.xml, no
+official deb), give it its own debhelper package dir under `packages/`
+and add `Depends:` to the consumers via debian-overrides. Example:
+`packages/autoware-acados-1-9-0/` builds acados v0.5.3 from the pinned
+tag into `/opt/autoware/<version>` (dh_shlibdeps needs
+`-l$(DESTROOT)/opt/autoware/<version>/lib` for intra-package sonames).
+The builder image additionally needs the full upstream layout at
+`/opt/acados` (source + venv + tera renderer) because the codegen step
+hardcodes those paths.
 
 ## Package Types
 
@@ -336,9 +404,14 @@ All files installed outside `/opt/autoware/1.5.0/` use version suffixes to allow
 1. **Prepare workspace in `~/repos/autoware/`**: pull from upstream, create a `<version>-ws` branch, convert vcs repos to submodules with `vcs2git`, push to NEWSLab remote.
 2. Copy an existing localrepo version directory (e.g., `1.5.0/`) and rename to the new version.
 3. Update version strings: package suffixes (`-1-7-1`), install paths (`/opt/autoware/1.7.1`), file names (sysctl, APT source, etc.).
-4. Regenerate `autoware-data` and `autoware-theme` packages: `python3 genpkg.py --version <new-version>`.
-5. After `genpkg.py` runs, restore the version suffix in generated `debian/control`/`changelog`/`rules` (genpkg.py omits it). See commit `43e4d18e` for the pattern.
-6. Update justfile if needed.
+4. Regenerate `autoware-data` and `autoware-theme` packages with
+   `python3 genpkg.py --suffix <x-y-z> --install-dir /opt/autoware/<version>`
+   (both genpkg scripts take these flags now; the old "restore the suffix
+   by hand afterwards" step is obsolete).
+5. Update justfile if needed.
+6. Check the new workspace for upstream build bugs; carry fixes on a
+   NEWSLabNTU/autoware_universe `<version>-patches` branch and repin the
+   ws submodule (see Build Practices below).
 
 ### Publishing a Release
 
