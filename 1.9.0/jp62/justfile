@@ -1,4 +1,4 @@
-# Autoware 1.9.0 AMD64 Local Repository Builder
+# Autoware 1.9.0 JetPack 6.2 Local Repository Builder
 
 # Autoware upstream tag for fetching assets
 version := "1.9.0"

@@ -6,7 +6,11 @@ docker:
   dockerfile: Dockerfile
 
   # Optional: Custom image name for caching
-  image_name: autoware-1.9.0-arm64-builder
+  image_name: autoware-1.9.0-jp62-builder
+
+  # Target platform. Required when cross-building arm64 on an amd64 host
+  # (QEMU); on a native arm64 host it is a no-op that documents intent.
+  platform: linux/arm64
 
 # Output configuration with descriptive name
 output:
@@ -19,6 +23,8 @@ packages:
 # Build options
 build:
   ros_distro: humble
+  # 0 = use all cores. Lower this when cross-building under QEMU emulation,
+  # where parallel linking triggers OOM/segfaults.
   parallel_jobs: 0
   skip_tests: true
   # Custom installation prefix for Autoware 1.9.0
