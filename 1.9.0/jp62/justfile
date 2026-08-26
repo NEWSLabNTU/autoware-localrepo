@@ -3,6 +3,9 @@
 # Autoware upstream tag for fetching assets
 version := "1.9.0"
 
+# Directory name this build publishes under on the repo host
+arch_label := "jp62"
+
 # Default recipe: list all available recipes
 default:
     @just --list
@@ -95,6 +98,14 @@ localrepo:
     (cd "$BASEDIR/packages/autoware-localrepo" && dpkg-buildpackage -us -uc -b)
 
     echo "✓ autoware-localrepo built with $count bundled packages"
+
+# Publish the bundled repo to a Synology NAS over rsync/SSH (needs deploy.env)
+deploy:
+    @scripts/deploy-to-nas.sh {{version}} {{arch_label}}
+
+# Build the thin bootstrap deb pointing at the NAS-hosted repo (needs deploy.env)
+localrepo-remote:
+    @scripts/build-remote-bootstrap.sh {{version}} {{arch_label}}
 
 # Test localrepo installation in a clean Docker container
 test:

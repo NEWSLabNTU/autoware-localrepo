@@ -31,3 +31,11 @@ repo/
 
 # acados deb build tree (just meta); debian/rules clones upstream into it
 */*/packages/autoware-acados-*/build-src/
+
+# Deployment secrets -- this repository is PUBLIC. Never commit NAS
+# credentials, private GPG keys, or exported keyrings.
+deploy.env
+*/*/deploy.env
+*.gpg-private
+*.private.key
+secring.*

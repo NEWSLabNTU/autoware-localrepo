@@ -482,6 +482,71 @@ GitHub release assets are capped at 2 GiB each. The three releases handle this d
 
 Note the models then exist twice on the target: ~2.24 GiB in `/opt/autoware/1.9.0/repo/pool/main/` and ~2.86 GiB extracted. Removing the localrepo deb after installing reclaims the pool copy, at the cost of the offline APT source.
 
+### Deploying to a hosted APT repository (Synology NAS)
+
+The bundled repo tree is already a valid *flat* apt repository — `Packages` +
+`Packages.gz` at the root, `pool/main/` beneath, `Filename:` paths relative to
+the root. Serving it over HTTP needs no re-layout; only the source line changes
+from `file:/opt/autoware/<ver>/repo` to an `https://` URL.
+
+**One-time setup** (per build host):
+
+```bash
+cd 1.9.0/jp62
+cp deploy.env.example deploy.env       # gitignored -- this repo is PUBLIC
+$EDITOR deploy.env                     # NAS host/user/path, public URL, GPG key id
+```
+
+Generate a signing key if you don't have one. Keep the private half on the
+build host and back it up — losing it forces every client to re-import:
+
+```bash
+gpg --quick-generate-key "NEWSLab Autoware Repository <you@example.com>" rsa4096 sign never
+gpg --list-secret-keys --keyid-format=long     # copy the key id into deploy.env
+```
+
+On the NAS: DSM → Control Panel → Terminal & SNMP → **Enable SSH service**,
+then `ssh-copy-id user@nas`. Serve `NAS_PATH` with Web Station, and issue a
+certificate via DSM's built-in Let's Encrypt client so the URL is `https://`.
+
+**Each release:**
+
+```bash
+just all                # ros -> meta -> localrepo (assembles repo/)
+just deploy             # sign + rsync + atomic publish
+just localrepo-remote   # thin bootstrap deb pointing at the NAS
+```
+
+`just deploy` generates `Release` with `apt-ftparchive`, signs `InRelease` and
+`Release.gpg`, exports the **public** key beside them, then rsyncs into
+`<target>.staging` and swaps a symlink. The swap matters: without it a client
+running `apt update` mid-upload fetches a `Packages` index referencing `.deb`
+files that have not landed yet. Uploads are incremental — the staging dir is
+seeded from the published tree with `cp -al`, so a rebuild that changes three
+packages transfers three packages, not 2.5 GB.
+
+**Two localrepo variants, deliberately:**
+
+| Package | Size | Use |
+|---------|------|-----|
+| `autoware-localrepo-1-9-0` | 2.43 GiB | offline / air-gapped; carries every package |
+| `autoware-localrepo-remote-1-9-0` | ~6 KB | networked; source line + public key + helper scripts |
+
+They declare `Conflicts:`/`Replaces:` on each other, so a machine has one or
+the other. The remote variant sidesteps the 2 GiB asset limit, the split-parts
+workaround, and the duplicate on-disk copy of the models entirely.
+
+**Never commit `deploy.env`, a private key, or NAS credentials.** This
+repository is public on GitHub; `.gitignore` covers `deploy.env`, `*.private.key`,
+`*.gpg-private` and `secring.*`, but the guard is only as good as the habit.
+Only the public key is ever shipped.
+
+**Verified end to end** (against a local HTTP server standing in for the NAS):
+apt fetches `InRelease`, validates the signature, resolves all 497 packages,
+and installs over HTTP. Tampering with `Packages.gz` makes `apt-get update`
+exit 100 with a hash mismatch and the injected package never becomes visible —
+so the signature chain is actually enforced, not merely present.
+
 ### Modifying Package Dependencies
 
 Edit `debian/control` in the respective package directory.
