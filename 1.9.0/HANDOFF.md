@@ -45,8 +45,10 @@ of these could surface there:
    `ansible/roles/acados` pins nothing, and the amd64 wheel of the same
    version links an older toolchain).
 
-**Both architectures — packaging, found by `just test`.** Apply these to
-`1.9.0/amd64/` as well; they are not arch-specific:
+**Both architectures — packaging, found by `just test`.** Now fixed in
+**both** `1.9.0/jp62/` and `1.9.0/amd64/`; the amd64 side is code-complete but
+**unverified** — it needs `just ros` (rebuilds `autoware_core_planning` only,
+the rest fingerprint-cached), then `just localrepo` and `just test`:
 
 3. `autoware-acados-1-9-0` was **never bundled into the localrepo**. The
    `localrepo` recipe's meta-package copy list omits it, so the deb that
@@ -107,10 +109,29 @@ What changed since the 2026-08-20 checkpoint below:
   writable install prefix in the container (autoware_system_design_examples
   writes deployments into the prefix during dh_auto_build).
 
-Remaining open items: port fixes 3 and 4 above into `1.9.0/amd64/`
-(acados not bundled; core_planning's dead mission-planner dep) and re-run its
-`just localrepo` + `just test`; upstream the cuda_blackboard patch; rosbag-sample
-suffix backports to 1.5.0/1.7.1.
+Remaining open items:
+
+- **Verify the amd64 packaging fixes** (3 and 4 above, applied 2026-08-26 but
+  not built). `just ros` → `just localrepo` → `just test`. Expect 487 cached +
+  1 rebuilt, and the bundled count to go 493 → 494. The two `debian-overrides`
+  sets are now byte-identical across amd64 and jp62, and the two justfiles
+  differ only in their header comment.
+- **Optional, not applied to amd64: pin casadi.** jp62 had to pin
+  `casadi==3.7.2` (see 2 above). amd64 floats to latest and currently works,
+  so this is latent rather than broken — a future casadi release could break
+  it the same way. Pinning is a Dockerfile change, which changes the image ID,
+  which invalidates *every* colcon2deb fingerprint and forces a full
+  repackaging pass. Not worth doing on its own; fold it into the next amd64
+  image rebuild.
+- **Upstream the cuda_blackboard patch** (fork to NEWSLabNTU, `1.9.0-patches`,
+  repin the submodule) so jp62 stops needing a manual `git apply`.
+- **`autoware-full` does not depend on `autoware-maps`** in 1.5.0, 1.7.1 and
+  1.9.0 alike, so maps are an opt-in `apt install autoware-maps-<ver>`. The
+  sim harness mounts a host map, so nothing is broken — but the install docs
+  point at `/opt/autoware/<version>/share/autoware_maps/`, which is empty
+  until that package is installed. Decide whether to add the dep or amend the
+  docs; changing it shifts release semantics across all three versions.
+- rosbag-sample suffix backports to 1.5.0/1.7.1.
 
 ---
 
