@@ -125,12 +125,15 @@ Remaining open items:
   image rebuild.
 - **Upstream the cuda_blackboard patch** (fork to NEWSLabNTU, `1.9.0-patches`,
   repin the submodule) so jp62 stops needing a manual `git apply`.
-- **`autoware-full` does not depend on `autoware-maps`** in 1.5.0, 1.7.1 and
-  1.9.0 alike, so maps are an opt-in `apt install autoware-maps-<ver>`. The
-  sim harness mounts a host map, so nothing is broken — but the install docs
-  point at `/opt/autoware/<version>/share/autoware_maps/`, which is empty
-  until that package is installed. Decide whether to add the dep or amend the
-  docs; changing it shifts release semantics across all three versions.
+- **`autoware-maps` is now a dependency of `autoware-full` — in 1.9.0 only.**
+  Previously maps were opt-in in 1.5.0, 1.7.1 and 1.9.0 alike, which left the
+  documented `map_path` (`/opt/autoware/<version>/share/autoware_maps/`) empty
+  after a default install. Fixed for 1.9.0 on both arches and verified on
+  jp62: `apt install autoware-full-1-9-0` now pulls `autoware-maps-1-9-0`
+  (+13 MB) and both `sample-map-planning` and `sample-map-rosbag` land at that
+  path. **1.5.0 and 1.7.1 were left alone** — both are already published, so
+  changing what `autoware-full` installs would alter released packages; decide
+  separately whether to backport or amend their docs.
 - rosbag-sample suffix backports to 1.5.0/1.7.1.
 
 ---

@@ -11,8 +11,9 @@ Depends: ${misc:Depends},
          autoware-config-1-9-0,
          autoware-theme-1-9-0,
          autoware-data-1-9-0,
+         autoware-maps-1-9-0,
          autoware-ros-packages-1-9-0
 Description: Autoware complete installation meta-package
  This meta-package installs all Autoware components including
- configuration files, visual theme, ML model data, and runtime packages.
- Install this package for a complete Autoware setup.
+ configuration files, visual theme, ML model data, sample maps, and
+ runtime packages. Install this package for a complete Autoware setup.
