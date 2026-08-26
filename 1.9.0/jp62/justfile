@@ -77,7 +77,7 @@ localrepo:
     # users dpkg-install the three payload debs alongside the localrepo, after
     # which apt install autoware-full-1-9-0 finds its autoware-data dep satisfied.
     echo "Copying meta-packages..."
-    for pkg in autoware-config-1-9-0 autoware-theme-1-9-0 autoware-ros-packages-1-9-0 autoware-maps-1-9-0 autoware-data-1-9-0 autoware-full-1-9-0; do
+    for pkg in autoware-config-1-9-0 autoware-theme-1-9-0 autoware-ros-packages-1-9-0 autoware-maps-1-9-0 autoware-data-1-9-0 autoware-acados-1-9-0 autoware-full-1-9-0; do
         cp "$BASEDIR/packages/${pkg}_"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
     done
 
