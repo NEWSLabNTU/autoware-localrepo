@@ -43,12 +43,38 @@ These are the deltas from the amd64 build; each has bitten a previous release.
 | L4T OpenCV 4.8.0 removed, Ubuntu's 4.5.4 pinned via `opencv-preferences` | L4T ships OpenCV outside APT; ROS `cv_bridge` links Ubuntu's version and CMake fails on the mismatched `libopencv_core.so.4.8.0` |
 | L4T CMake 3.14.4 removed from `/usr/local/bin`, Ubuntu's 3.22.1 installed | Autoware needs 3.16+; 3.22 still has a working `FindCUDA` module |
 | `CUDAARCHS=87` | Orin. Avoids `CUDA_ARCHITECTURES native`, which needs a GPU present at image-build time |
-| `python3-torch` commented out of `rosdep-packages.txt` | Not in the Ubuntu arm64 archive — install NVIDIA's Jetson wheel on target if needed |
+| `python3-torch` commented out of `rosdep-packages.txt` | Inherited from 1.7.1, where the comment claims it is unavailable on arm64. That is **wrong** — jammy/universe arm64 carries `python3-torch` 1.8.1-4, and rosdep installs it during phase 3 regardless. Left commented only because `rosdep-packages.txt` is a Docker build input: uncommenting it rebuilds the image and invalidates every colcon2deb fingerprint, for no gain beyond baking it into the image a phase earlier |
 | `libvtk9-dev`, `libvtk9-qt-dev`, `ros-humble-cudnn-cmake-module`, `ros-humble-pacmod3-msgs` added to `rosdep-packages.txt` | Not pulled in transitively on arm64 |
 | `nvidia-l4t-core`, `nvidia-l4t-cuda`, `nvidia-l4t-dla-compiler` from the r36.4 APT repos | CUDA driver stubs and the DLA compiler |
 | spconv/cumm installed from `autowarefoundation/spconv_cpp` `*_arm64-jetson.deb` | `autoware_tensorrt_plugins` links `spconv::spconv` |
 | acados tera renderer: `t_renderer-v0.2.0-linux-arm64` | arm64 binary, not the amd64 one |
 | No `CMAKE_THREAD_LIBS_INIT` override in `/colcon2deb-setup.sh` | That workaround exists only for QEMU cross-builds, where CMake's `FindThreads` compile-and-run test fails. Re-add it if you cross-build |
+
+## Workspace source patches (`patches/`)
+
+JetPack 6.2 ships CUDA 12.6, while the amd64 builder image is on CUDA 12.8, so
+the amd64 build never exercised the 12.6 ceiling. One workspace package uses a
+CUDA 12.8-only API:
+
+| Patch | Package | Problem |
+|-------|---------|---------|
+| `0001-cuda_blackboard-cuda-12.6-compat.patch` | `src/universe/external/cuda_blackboard` | `cudaStreamGetDevice()` was introduced in CUDA 12.8. On 12.6 the build fails with `error: 'cudaStreamGetDevice' was not declared in this scope`. The patch guards the call with `#if CUDART_VERSION >= 12080` and falls back to `cudaGetDevice()`, which returns the same id here — both streams are created on the current device immediately above the call |
+
+`cuda_blackboard` is a leaf that much of the perception stack depends on, so the
+failure cascades: one `Failed <<<` plus a long tail of `Aborted <<<`.
+
+Apply before building on a fresh checkout:
+
+```bash
+git -C source/src/universe/external/cuda_blackboard apply \
+    ../../../../../patches/0001-cuda_blackboard-cuda-12.6-compat.patch
+```
+
+**To upstream**: fork `autowarefoundation/cuda_blackboard` to NEWSLabNTU, land
+this on a `1.9.0-patches` branch, repin the submodule in
+`NEWSLabNTU/autoware` `1.9.0-ws`, then bump the localrepo submodule pointer —
+the same flow used for `autoware_universe` (see the root `CLAUDE.md`). Until
+that happens the patch has to be re-applied by hand after every fresh clone.
 
 ## Patches (debian-overrides)
 

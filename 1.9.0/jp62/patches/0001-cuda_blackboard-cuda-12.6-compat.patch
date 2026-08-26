@@ -1,0 +1,19 @@
+diff --git a/src/cuda_mem_pool_context.cpp b/src/cuda_mem_pool_context.cpp
+index 3cc597c..4a4adfe 100644
+--- a/src/cuda_mem_pool_context.cpp
++++ b/src/cuda_mem_pool_context.cpp
+@@ -39,7 +39,14 @@ CudaMemPoolContext::CudaMemPoolContext()
+   CUDA_BLACKBOARD_CHECK_CUDA_ERROR(cudaStreamCreateWithFlags(&free_stream_, cudaStreamNonBlocking));
+ 
+   int device_id = 0;
++#if CUDART_VERSION >= 12080
+   CUDA_BLACKBOARD_CHECK_CUDA_ERROR(cudaStreamGetDevice(stream_, &device_id));
++#else
++  // cudaStreamGetDevice() was introduced in CUDA 12.8. JetPack 6.2 ships CUDA
++  // 12.6, so fall back to querying the current device: both streams above were
++  // just created on it, so cudaStreamGetDevice() would return the same id.
++  CUDA_BLACKBOARD_CHECK_CUDA_ERROR(cudaGetDevice(&device_id));
++#endif
+ 
+   cudaMemPoolProps pool_props = {};
+   pool_props.allocType = cudaMemAllocationTypePinned;

@@ -173,10 +173,18 @@ RUN git clone --depth 1 --branch v0.5.3 --recursive https://github.com/acados/ac
 
 ADD https://github.com/acados/tera_renderer/releases/download/v0.2.0/t_renderer-v0.2.0-linux-arm64 /opt/acados/bin/t_renderer
 
+# casadi is pinned to 3.7.2: the 3.8.0 aarch64 wheel is built against GCC 13 and
+# needs GLIBCXX_3.4.32, while Ubuntu 22.04 (this image, and the Jetson target)
+# tops out at GLIBCXX_3.4.30. Importing it fails at autoware_path_optimizer's
+# acados codegen step with:
+#   ImportError: /lib/aarch64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.32'
+#   not found (required by .../casadi/_casadi.so)
+# The amd64 wheel of the same version links against an older toolchain, which is
+# why ../amd64/ can float to latest (upstream's ansible/roles/acados pins nothing).
 RUN chmod 755 /opt/acados/bin/t_renderer && \
     python3 -m venv /opt/acados/.venv && \
     /opt/acados/.venv/bin/pip install --no-cache-dir --upgrade pip && \
-    /opt/acados/.venv/bin/pip install --no-cache-dir casadi sympy && \
+    /opt/acados/.venv/bin/pip install --no-cache-dir 'casadi==3.7.2' sympy && \
     /opt/acados/.venv/bin/pip install --no-cache-dir -e /opt/acados/interfaces/acados_template
 ENV ACADOS_SOURCE_DIR=/opt/acados
 
