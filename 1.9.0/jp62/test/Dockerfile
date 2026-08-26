@@ -43,18 +43,11 @@ COPY opencv-preferences /etc/apt/preferences.d/opencv-preferences
 RUN apt-get update && apt-get install -y libopencv-dev
 
 # =============================================================================
-# Install ROS 2 Humble (using ros2-apt-source package)
-# =============================================================================
-RUN ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}') && \
-    curl -L -o /tmp/ros2-apt-source.deb \
-        "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.jammy_all.deb" && \
-    dpkg -i /tmp/ros2-apt-source.deb && \
-    rm /tmp/ros2-apt-source.deb
-
-RUN apt-get update && apt-get install -y ros-humble-ros-base ros-humble-rmw-cyclonedds-cpp
-
-# =============================================================================
 # Add NVIDIA L4T APT sources (r36.4 for JetPack 6.2)
+#
+# This and the OpenCV swap above are container-only: a real JetPack 6.2 device
+# already ships the L4T runtime packages, and setup-prerequisites.sh therefore
+# does not install them.
 # =============================================================================
 RUN apt-key adv --fetch-key http://repo.download.nvidia.com/jetson/jetson-ota-public.asc && \
     echo "deb https://repo.download.nvidia.com/jetson/common r36.4 main" > /etc/apt/sources.list.d/nvidia-l4t-apt-source.list && \
@@ -70,12 +63,17 @@ RUN apt-get install -o DPkg::Options::="--force-confold" -y \
     libcudnn9-cuda-12
 
 # =============================================================================
-# Install SpConv and Cumm (for BEVFusion and other perception models)
+# Run the shipped setup-prerequisites.sh -- the same script a user runs from
+# /usr/share/autoware/1.9.0/ after dpkg -i'ing the localrepo. Running it here
+# (rather than inlining apt commands, as the 1.7.1 jp62 test did) means
+# `just test` actually exercises the documented setup procedure. It installs
+# ROS 2 Humble and SpConv/Cumm; on JetPack, CUDA / cuDNN / TensorRT are
+# already present, which is why the script does not offer them.
+#
+# Copied in separately from the .deb so this layer caches independently.
 # =============================================================================
-RUN wget -q https://github.com/autowarefoundation/spconv_cpp/releases/download/spconv_v2.3.8%2Bcumm_v0.5.3%2Bcu128/cumm_0.5.3_arm64-jetson.deb && \
-    wget -q https://github.com/autowarefoundation/spconv_cpp/releases/download/spconv_v2.3.8%2Bcumm_v0.5.3%2Bcu128/spconv_2.3.8_arm64-jetson.deb && \
-    apt-get install -y ./cumm_0.5.3_arm64-jetson.deb ./spconv_2.3.8_arm64-jetson.deb && \
-    rm -f cumm_0.5.3_arm64-jetson.deb spconv_2.3.8_arm64-jetson.deb
+COPY setup-prerequisites.sh /tmp/
+RUN chmod +x /tmp/setup-prerequisites.sh && /tmp/setup-prerequisites.sh -y && rm -f /tmp/setup-prerequisites.sh
 
 # =============================================================================
 # Install autoware-localrepo + the autoware-data topic debs.

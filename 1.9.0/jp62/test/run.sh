@@ -44,6 +44,9 @@ for f in "${DATA_FILES[@]}"; do
 done
 cp "$SCRIPT_DIR/Dockerfile" "$TMPDIR/Dockerfile"
 cp "$SCRIPT_DIR/opencv-preferences" "$TMPDIR/opencv-preferences"
+# The prerequisites script is copied separately from the .deb it ships in, so
+# Docker can cache the (slow) prerequisite layer independently of the packages.
+cp "$BASEDIR/packages/autoware-localrepo/src/setup-prerequisites.sh" "$TMPDIR/"
 
 # Build the test container (arm64 platform)
 echo "Building test container (arm64)..."
