@@ -25,3 +25,9 @@ repo/
 *.swp
 *.swo
 .*.~undo-tree~
+
+# Release staging (just release) -- assets are uploaded to GitHub, not tracked
+*/*/packages/release/
+
+# acados deb build tree (just meta); debian/rules clones upstream into it
+*/*/packages/autoware-acados-*/build-src/

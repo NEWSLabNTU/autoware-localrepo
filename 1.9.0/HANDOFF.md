@@ -4,6 +4,75 @@ Checkpoint written 2026-08-20. The amd64 packaging is complete and committed;
 the ROS build was stopped part-way through the final phase because the build
 host ran out of disk on `/`. Nothing is broken — resuming is a short job.
 
+## Status: jp62 E2E COMPLETE (2026-08-26)
+
+`1.9.0/arm64/` — the generic-arm64 directory prepared on 2026-08-23 — was a
+copy of the amd64 tree with only the acados tera-renderer URL and the acados
+package architecture changed. It kept the amd64 base image (CUDA 12.8 /
+TensorRT 10.8, which JetPack 6.2 does not ship), the amd64 rosdep list, the
+amd64 setup-prerequisites.sh, and an amd64 test harness. It has been replaced
+by `1.9.0/jp62/`, rebuilt from the 1.7.1/jp62 recipe on
+`nvcr.io/nvidia/l4t-tensorrt:r10.3.0-devel`.
+
+The full chain now passes on a **native arm64 host** (80 cores, 498 GB RAM —
+no QEMU, so the ASLR and `CMAKE_THREAD_LIBS_INIT` cross-build workarounds are
+deliberately absent):
+
+| Step | Result |
+|------|--------|
+| `just ros` | 488/488, Status SUCCESS |
+| `just meta` | 10 debs; data split vision 830 MB / perception3d 1.02 GB / planning 553 MB |
+| `just localrepo` | **494** bundled packages, `autoware-localrepo-1-9-0_1.9.0-1jetpack62_all.deb` (203 MB) |
+| `just test` | PASS — autoware-full installs, 345 Autoware packages visible to ros2 |
+| `just release` | 4 assets staged, largest 1.02 GB |
+
+### Four bugs fixed on the way; two of them are amd64 bugs too
+
+**jp62-only — CUDA/toolchain skew.** JetPack 6.2 pins CUDA 12.6 on Ubuntu
+22.04; the amd64 builder is on CUDA 12.8 with GCC-13-era wheels, so neither
+of these could surface there:
+
+1. `cuda_blackboard` calls `cudaStreamGetDevice()`, added in CUDA 12.8. It is
+   a leaf much of perception depends on, so pass 1 stopped at 138/488 with 34
+   aborted and 315 unprocessed. `patches/0001-cuda_blackboard-cuda-12.6-compat.patch`
+   guards it with `#if CUDART_VERSION >= 12080` and falls back to
+   `cudaGetDevice()`. **Not yet upstreamed** — `cuda_blackboard` is a
+   submodule of a submodule, so this must be re-applied after a fresh clone
+   until it is forked to NEWSLabNTU and the pins move.
+2. casadi 3.8.0's aarch64 wheel needs `GLIBCXX_3.4.32`; Ubuntu 22.04 tops out
+   at 3.4.30, so `autoware_path_optimizer`'s acados codegen died on import.
+   Pinned `casadi==3.7.2` in the Dockerfile (upstream's
+   `ansible/roles/acados` pins nothing, and the amd64 wheel of the same
+   version links an older toolchain).
+
+**Both architectures — packaging, found by `just test`.** Apply these to
+`1.9.0/amd64/` as well; they are not arch-specific:
+
+3. `autoware-acados-1-9-0` was **never bundled into the localrepo**. The
+   `localrepo` recipe's meta-package copy list omits it, so the deb that
+   80282eaf added to close the acados runtime gap was built but never
+   shipped, and `apt install autoware-full` could not satisfy the `Depends:`
+   it introduced. The old "493 bundled packages" is 487 ROS + 6 meta. Now 494.
+4. `autoware_core_planning` depended on
+   `ros-humble-autoware-mission-planner-1-9-0`, which the same recipe
+   deliberately drops as superseded — an unsatisfiable dep. 1.7.1 had an
+   override for exactly this; 1.9.0 never got one. Added
+   `debian-overrides/autoware_core_planning` pointing at
+   `-mission-planner-universe-`. It is the only deb of the 488 that
+   referenced the dropped name.
+
+Also worth knowing: the inherited claim that `python3-torch` is unavailable on
+arm64 is **wrong** — jammy/universe carries 1.8.1-4 and rosdep installs it in
+phase 3 regardless. Left commented out in `rosdep-packages.txt` only because
+that file is a Docker build input, and touching it rebuilds the image and
+invalidates every colcon2deb fingerprint.
+
+Two ML archives (`tensorrt_rtmdet_onnx_models.tar.gz`, `tensorrt_bevdet.tar.gz`)
+arrived byte-complete but gzip-corrupt from aria2's 8-way ranged fetches
+against a throttling S3 endpoint. `gzip -t` catches it; a single-stream
+`curl -C -` retry loop fixes it. Worth a `gzip -t` sweep before `just meta` on
+a slow link.
+
 ## Status: amd64 E2E COMPLETE (2026-08-21)
 
 The full chain finished on the original host: `just ros` (488/488 ROS debs,
@@ -38,12 +107,10 @@ What changed since the 2026-08-20 checkpoint below:
   writable install prefix in the container (autoware_system_design_examples
   writes deployments into the prefix during dh_auto_build).
 
-Remaining open items: jp62 (untouched — `1.9.0/arm64/` is the generic
-arm64 dir for native arm64 hosts, prepared 2026-08-23 from the amd64
-tree: multi-arch autoware-base confirmed, arm64 tera renderer, acados
-package Architecture: any, same 19 overrides, workspace pinned at the
-patched 1.9.0-ws; not yet built),
-rosbag-sample suffix backports to 1.5.0/1.7.1.
+Remaining open items: port fixes 3 and 4 above into `1.9.0/amd64/`
+(acados not bundled; core_planning's dead mission-planner dep) and re-run its
+`just localrepo` + `just test`; upstream the cuda_blackboard patch; rosbag-sample
+suffix backports to 1.5.0/1.7.1.
 
 ---
 
