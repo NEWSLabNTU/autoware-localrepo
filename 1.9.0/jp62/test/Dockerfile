@@ -76,21 +76,22 @@ COPY setup-prerequisites.sh /tmp/
 RUN chmod +x /tmp/setup-prerequisites.sh && /tmp/setup-prerequisites.sh -y && rm -f /tmp/setup-prerequisites.sh
 
 # =============================================================================
-# Install autoware-localrepo + the autoware-data topic debs.
-# The models ship as three separate packages (vision / perception3d / planning)
-# because a combined deb exceeds GitHub's 2 GiB release-asset limit. They must be
-# installed together with dpkg so that apt can later satisfy autoware-full's
-# dependency on the autoware-data-1-9-0 metapackage from the bundled repo.
+# Install autoware-localrepo. It is the single APT source that provides every
+# package, ML models included, so there is nothing else to dpkg -i here.
 # =============================================================================
-COPY autoware-localrepo.deb autoware-data-*.deb /tmp/
-RUN dpkg -i /tmp/autoware-localrepo.deb /tmp/autoware-data-*.deb && \
-    rm /tmp/autoware-localrepo.deb /tmp/autoware-data-*.deb
+COPY autoware-localrepo.deb /tmp/
+RUN dpkg -i /tmp/autoware-localrepo.deb && rm /tmp/autoware-localrepo.deb
 
-# Activate DDS configuration (sysctl + multicast)
-RUN /usr/share/autoware/1.9.0/activate-dds-config.sh
-
-# Install autoware-full-1-9-0 (pulls all Autoware packages from local repo)
+# Install autoware-full-1-9-0 (pulls all Autoware packages, and the ML models,
+# from the local repo)
 RUN apt-get update && apt-get install -y autoware-full-1-9-0
+
+# Activate DDS configuration (sysctl + multicast).
+#
+# This must run AFTER autoware-full: the sysctl drop-in and multicast unit it
+# activates are shipped by autoware-config, which arrives with autoware-full.
+# Run earlier it finds nothing to do -- which is what this test used to do.
+RUN /usr/share/autoware/1.9.0/activate-dds-config.sh
 
 # =============================================================================
 # Verify installation

@@ -32,6 +32,25 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # =============================================================================
+# Step 0: Check that autoware-config is installed
+#
+# The sysctl drop-in and the multicast unit this script activates are shipped
+# by autoware-config-1-9-0, which arrives with autoware-full-1-9-0. Run before
+# that, this script used to warn twice and exit 0 -- looking like it worked
+# while applying nothing. Fail loudly instead, so the ordering mistake cannot
+# pass silently.
+# =============================================================================
+if [ ! -f /etc/sysctl.d/10-cyclone-max-1-9-0.conf ] && \
+   [ ! -f /etc/systemd/system/multicast-lo-1-9-0.service ]; then
+    log_error "DDS configuration files not found -- autoware-config-1-9-0 is not installed."
+    echo ""
+    echo "Run this script AFTER installing Autoware:"
+    echo "    sudo apt-get install autoware-full-1-9-0"
+    echo "    sudo /usr/share/autoware/1.9.0/activate-dds-config.sh"
+    exit 1
+fi
+
+# =============================================================================
 # Step 1: Apply sysctl settings
 # =============================================================================
 log_info "Applying sysctl settings..."

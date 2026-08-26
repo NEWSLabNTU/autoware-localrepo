@@ -26,9 +26,9 @@ This project builds Debian packages for multiple Autoware versions and creates a
 ```bash
 sudo dpkg -i autoware-localrepo-1-5-0_1.5.0-2ubuntu2204_all.deb  # or 2jetpack62 for Jetson
 sudo /usr/share/autoware/1.5.0/setup-prerequisites.sh
-sudo /usr/share/autoware/1.5.0/activate-dds-config.sh
 sudo apt update
 sudo apt install autoware-full-1-5-0
+sudo /usr/share/autoware/1.5.0/activate-dds-config.sh  # AFTER install -- see note below
 source /opt/autoware/1.5.0/setup.bash         # workspace env (ament + ROS)
 source /opt/autoware/1.5.0/autoware-env.bash  # DDS/CycloneDDS/Qt config
 ```
@@ -42,12 +42,42 @@ sudo dpkg -i \
     autoware-localrepo-1-7-1_1.7.1-1ubuntu2204_all.deb \
     autoware-data-1-7-1_1.7.1-1_all.deb
 sudo /usr/share/autoware/1.7.1/setup-prerequisites.sh
-sudo /usr/share/autoware/1.7.1/activate-dds-config.sh
 sudo apt update
 sudo apt install autoware-full-1-7-1
+sudo /usr/share/autoware/1.7.1/activate-dds-config.sh  # AFTER install -- see note below
 source /opt/autoware/1.7.1/setup.bash
 source /opt/autoware/1.7.1/autoware-env.bash
 ```
+
+### 1.9.0
+
+The localrepo bundles everything, ML models included, so it is the only
+artifact to install. It is ~2.43 GiB, over GitHub's release-asset limit — see
+"Release asset hosting" below.
+
+```bash
+sudo dpkg -i autoware-localrepo-1-9-0_1.9.0-1jetpack62_all.deb  # or 1ubuntu2204 for amd64
+sudo /usr/share/autoware/1.9.0/setup-prerequisites.sh
+sudo apt update
+sudo apt install autoware-full-1-9-0        # pulls ROS packages, maps and ML models
+sudo /usr/share/autoware/1.9.0/activate-dds-config.sh
+source /opt/autoware/1.9.0/setup.bash
+source /opt/autoware/1.9.0/autoware-env.bash
+```
+
+### `activate-dds-config.sh` must run AFTER `apt install`
+
+It applies `/etc/sysctl.d/10-cyclone-max-<ver>.conf` and enables
+`multicast-lo-<ver>.service` — both shipped by **autoware-config**, which
+arrives with `autoware-full`. Run before that, it finds neither file.
+
+Until 1.9.0 the docs and every `test/Dockerfile` had it in the wrong position,
+where it warned twice and exited 0 — so it looked like it had worked while
+applying nothing, and users ran without the CycloneDDS buffer and fragment
+tuning that large messages (point clouds, images) depend on. The 1.9.0 script
+now exits non-zero with an explanatory message if the config files are absent,
+so the mistake cannot pass silently again. 1.5.0 and 1.7.1 ship the old
+warn-and-continue script; their ordering is corrected above.
 
 ### Testing the install
 
@@ -436,14 +466,21 @@ All files installed outside `/opt/autoware/1.5.0/` use version suffixes to allow
      <staged-artifacts>
    ```
 
-### GitHub 2 GiB Asset Limit
+### Release asset hosting (the 2 GiB limit)
 
-GitHub release assets are capped at 2 GiB each. From 1.7.1 onwards, `autoware-data` (~1.9 GiB of ML models) is excluded from the bundled localrepo and shipped as a separate release asset:
+GitHub release assets are capped at 2 GiB each. The three releases handle this differently:
 
-- 1.5.0: bundled localrepo deb (~1.85 GiB) — fits, single asset.
-- 1.7.1+: split into `autoware-localrepo` (~210 MiB) + `autoware-data` (~1.9 GiB).
+| Version | Shape | Assets |
+|---------|-------|--------|
+| 1.5.0 | everything bundled | one ~1.85 GiB localrepo deb — fits |
+| 1.7.1 | data split out | `autoware-localrepo` (~210 MiB) + `autoware-data` (~1.9 GiB), both `dpkg -i`'d |
+| 1.9.0 | everything bundled again | one ~2.43 GiB localrepo deb — **over the limit** |
 
-**Implementation** (in `justfile`'s `localrepo` recipe): skip copying `autoware-data-*` into `pool/main/`. Users `dpkg -i` both debs together; apt then satisfies the autoware-data dep without it being in the apt source. See commit `75f64f97`.
+1.9.0 puts the `autoware-data-{vision,perception3d,planning}` payload debs back into `pool/main/` so the localrepo is the single APT source that provides every package: `apt install autoware-full-1-9-0` resolves the ML models like anything else, with no separate `dpkg -i` step. The cost is that the deb no longer fits a GitHub release asset.
+
+**Implementation** (`justfile`'s `localrepo` and `release` recipes): the copy list includes the three data payload debs. `just release` stages the single deb, and when it exceeds 2 GiB also emits `split -b 1900M` parts plus `REASSEMBLE.md`, so it can go on GitHub as parts or on any other host as one file. See `packages/autoware-localrepo/src/REASSEMBLE.md`.
+
+Note the models then exist twice on the target: ~2.24 GiB in `/opt/autoware/1.9.0/repo/pool/main/` and ~2.86 GiB extracted. Removing the localrepo deb after installing reclaims the pool copy, at the cost of the offline APT source.
 
 ### Modifying Package Dependencies
 

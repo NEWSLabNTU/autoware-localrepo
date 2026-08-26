@@ -7,25 +7,15 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASEDIR="$(dirname "$SCRIPT_DIR")"
 DEB_FILE="$BASEDIR/packages/autoware-localrepo-1-9-0_1.9.0-1ubuntu2204_all.deb"
 
-# The ML models ship as three topic debs (see packages/autoware-data/groups.yaml);
-# a single one would exceed GitHub's 2 GiB release-asset limit.
-DATA_FILES=()
-for topic in vision perception3d planning; do
-    DATA_FILES+=("$BASEDIR/packages/autoware-data-${topic}-1-9-0_1.9.0-1_all.deb")
-done
-
-for f in "$DEB_FILE" "${DATA_FILES[@]}"; do
-    if [ ! -f "$f" ]; then
-        echo "Error: $f not found. Run 'just all' first."
-        exit 1
-    fi
-done
+# The localrepo bundles everything, ML models included, so it is the only
+# artifact the test needs.
+if [ ! -f "$DEB_FILE" ]; then
+    echo "Error: $DEB_FILE not found. Run 'just all' first."
+    exit 1
+fi
 
 echo "Testing autoware-localrepo installation..."
-echo "  Package: $DEB_FILE"
-for f in "${DATA_FILES[@]}"; do
-    echo "  Data:    $f"
-done
+echo "  Package: $DEB_FILE ($(du -h "$DEB_FILE" | cut -f1))"
 echo ""
 
 # Create temporary directory for Docker context
@@ -35,9 +25,6 @@ trap "rm -rf $TMPDIR" EXIT
 # Copy the deb files, Dockerfile, and prerequisites script
 # (prerequisites script copied separately for better Docker layer caching)
 cp "$DEB_FILE" "$TMPDIR/autoware-localrepo.deb"
-for f in "${DATA_FILES[@]}"; do
-    cp "$f" "$TMPDIR/"
-done
 cp "$SCRIPT_DIR/Dockerfile" "$TMPDIR/Dockerfile"
 cp "$BASEDIR/packages/autoware-localrepo/src/setup-prerequisites.sh" "$TMPDIR/"
 

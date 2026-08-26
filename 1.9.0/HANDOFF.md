@@ -22,9 +22,53 @@ deliberately absent):
 |------|--------|
 | `just ros` | 488/488, Status SUCCESS |
 | `just meta` | 10 debs; data split vision 830 MB / perception3d 1.02 GB / planning 553 MB |
-| `just localrepo` | **494** bundled packages, `autoware-localrepo-1-9-0_1.9.0-1jetpack62_all.deb` (203 MB) |
+| `just localrepo` | **497** bundled packages, `autoware-localrepo-1-9-0_1.9.0-1jetpack62_all.deb` (2.43 GiB, 2m15s) |
 | `just test` | PASS — autoware-full installs, 345 Autoware packages visible to ros2 |
-| `just release` | 4 assets staged, largest 1.02 GB |
+| `just release` | 1 asset + split parts (over GitHub's 2 GiB limit — see below) |
+
+### The localrepo is now the single source for everything (2026-08-26)
+
+The three `autoware-data-{vision,perception3d,planning}` payload debs went back
+into `pool/main/`, so `apt install autoware-full-1-9-0` resolves the ML models
+from the bundled repo like any other package — no separate `dpkg -i` step, and
+the test harness takes one artifact instead of four. Verified: apt fetches them
+from `file:/opt/autoware/1.9.0/repo`, 2.9 GB of models land in
+`/opt/autoware/1.9.0/data`.
+
+The deliberate trade: at **2.43 GiB the localrepo no longer fits a GitHub
+release asset** (2 GiB cap). `just release` stages the single deb and, when it
+is over the limit, also emits `split -b 1900M` parts plus `REASSEMBLE.md`. Host
+the single file wherever the cap does not apply, or upload the parts. The
+models also now exist twice on the target (~2.24 GiB pool + ~2.86 GiB
+extracted); `dpkg -r` the localrepo after installing to reclaim the pool copy,
+at the cost of the offline APT source.
+
+### DDS activation ordering (2026-08-26)
+
+`activate-dds-config.sh` was documented — and run by every `test/Dockerfile` —
+*before* `apt install autoware-full`. But the sysctl drop-in
+(`10-cyclone-max-1-9-0.conf`) and `multicast-lo-1-9-0.service` it activates are
+shipped by **autoware-config**, which only arrives with autoware-full. Run
+early it warned twice and exited 0, so it looked successful while applying
+nothing: every user following the published instructions has been running
+without the CycloneDDS buffer/fragment tuning that point clouds and images
+depend on. Not a crash, which is why it survived two releases.
+
+Fixed three ways: the 1.9.0 script now exits non-zero with the correct command
+order if its config files are absent; both 1.9.0 `test/Dockerfile`s run it
+after the install; and `CLAUDE.md` is corrected for 1.5.0 and 1.7.1 as well
+(docs only — those ship the old warn-and-continue script).
+
+Note the test container reports the *default* sysctl values, because a Docker
+build sandbox has `/proc/sys` read-only and `sysctl --system` fails silently
+there. Confirmed working separately under `--privileged`: `ipfrag_time=3`,
+`ipfrag_high_thresh=134217728`, loopback multicast ENABLED.
+
+**Checked while investigating:** `setup.bash`, `autoware-env.bash` and
+`local_setup.*` contain zero `sudo`/`sysctl`/`ip`/`systemctl` calls — pure
+environment exports, safe to source non-interactively. The three helper scripts
+require *being* root (`EUID` guard) but never invoke `sudo` themselves; every
+`sudo` string in them is in a comment or echoed instruction.
 
 ### Four bugs fixed on the way; two of them are amd64 bugs too
 

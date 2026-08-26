@@ -68,16 +68,16 @@ localrepo:
         cp "$deb" "$REPODIR/pool/main/"
     done
 
-    # Copy meta-packages (except autoware-localrepo and the autoware-data payload).
+    # Copy meta-packages, including the three autoware-data payload debs.
     #
-    # The ML models are ~2.8 GiB raw / 2.24 GiB as one deb, over GitHub's hard
-    # 2 GiB release-asset limit, so they are split into three topic packages
-    # (vision / perception3d / planning) that ship as separate release assets.
-    # Only the tiny autoware-data-1-9-0 metapackage goes into the bundled repo;
-    # users dpkg-install the three payload debs alongside the localrepo, after
-    # which apt install autoware-full-1-9-0 finds its autoware-data dep satisfied.
+    # Everything a user needs now lives in this one repository: the localrepo is
+    # the single APT source that provides all packages, so `apt install
+    # autoware-full-1-9-0` resolves the ML models too and there is no separate
+    # `dpkg -i` step for them. The models add ~2.24 GiB, which takes the
+    # localrepo deb to ~2.43 GiB -- over GitHub's hard 2 GiB release-asset
+    # limit, so it must be hosted elsewhere or split (see `just release`).
     echo "Copying meta-packages..."
-    for pkg in autoware-config-1-9-0 autoware-theme-1-9-0 autoware-ros-packages-1-9-0 autoware-maps-1-9-0 autoware-data-1-9-0 autoware-acados-1-9-0 autoware-full-1-9-0; do
+    for pkg in autoware-config-1-9-0 autoware-theme-1-9-0 autoware-ros-packages-1-9-0 autoware-maps-1-9-0 autoware-data-1-9-0 autoware-data-vision-1-9-0 autoware-data-perception3d-1-9-0 autoware-data-planning-1-9-0 autoware-acados-1-9-0 autoware-full-1-9-0; do
         cp "$BASEDIR/packages/${pkg}_"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
     done
 
@@ -167,31 +167,24 @@ release:
         exit 1
     fi
 
-    # The ML models ship as three separate assets; a single deb would be 2.24 GiB,
-    # over GitHub's limit. The metapackage rides inside the localrepo, not here.
-    DATA_DEBS=()
-    for topic in vision perception3d planning; do
-        f=$(ls "packages/autoware-data-${topic}-1-9-0_"*.deb 2>/dev/null | head -1)
-        if [ -z "$f" ]; then
-            echo "Error: autoware-data-${topic}-1-9-0 .deb not found. Run 'just meta' first."
-            exit 1
-        fi
-        DATA_DEBS+=("$f")
-    done
-
-    LIMIT=2147483648  # 2 GiB GitHub release asset limit
-    for f in "$LOCALREPO" "${DATA_DEBS[@]}"; do
-        SIZE=$(stat -c%s "$f")
-        if [ "$SIZE" -gt "$LIMIT" ]; then
-            echo "Error: $(basename "$f") is $(numfmt --to=iec --suffix=B $SIZE), over 2 GiB GitHub limit."
-            exit 1
-        fi
-    done
-
     OUT=packages/release
     rm -rf "$OUT" && mkdir -p "$OUT"
-    cp "$LOCALREPO" "${DATA_DEBS[@]}" "$OUT/"
-    (cd "$OUT" && sha256sum *.deb > SHA256SUMS.txt)
+    cp "$LOCALREPO" "$OUT/"
+
+    # The localrepo now carries the ML models, so it is a single self-contained
+    # asset -- and at ~2.43 GiB it is over GitHub's hard 2 GiB release-asset
+    # limit. Host it directly wherever that limit does not apply; for GitHub,
+    # upload the split parts instead and have users reassemble with `cat`.
+    LIMIT=2147483648  # 2 GiB GitHub release asset limit
+    SIZE=$(stat -c%s "$LOCALREPO")
+    if [ "$SIZE" -gt "$LIMIT" ]; then
+        echo "Note: $(basename "$LOCALREPO") is $(numfmt --to=iec --suffix=B $SIZE), over GitHub's 2 GiB limit."
+        echo "      Staging split parts alongside it for GitHub uploads."
+        (cd "$OUT" && split -b 1900M -d "$(basename "$LOCALREPO")" "$(basename "$LOCALREPO").part-")
+        cp packages/autoware-localrepo/src/REASSEMBLE.md "$OUT/"
+    fi
+
+    (cd "$OUT" && sha256sum *.deb *.part-* > SHA256SUMS.txt 2>/dev/null || sha256sum *.deb > SHA256SUMS.txt)
     echo "✓ Release artifacts staged in $OUT/"
     ls -la "$OUT"
 
