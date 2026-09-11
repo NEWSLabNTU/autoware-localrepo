@@ -278,6 +278,33 @@ submodule and bump the localrepo submodule pointer. Existing branches:
 custom-command recipes per consuming target, so parallel make ran the
 generator twice; a stamp file alone is NOT sufficient).
 
+**Build bugs only.** A `<version>-patches` branch carries what stops the
+build on this workspace and nothing else: missing includes, codegen
+races, toolchain incompatibilities. Not features, not behaviour changes,
+not backports of pending upstream PRs — even correct ones, even ones a
+downstream project is waiting on.
+
+The reason is what these Debians are for. `/opt/autoware/<version>`
+being official Autoware is what makes it a baseline anyone can reason
+about: what it does is what upstream does, and a bug reproduced against
+it is reportable. A behaviour patch in here is invisible from every
+launch file and every `apt` listing on the vehicle, so the next person
+to hit the difference has no thread to pull. Vehicle-side patches belong
+in the vehicle repository (AutoSDV, 2026-golf-cart) or a submodule of
+it, where they are named in the source tree that ships them.
+
+This is not hypothetical: three commits adding CUDA crop box and random
+downsample filters (autowarefoundation/autoware_universe#13301) and one
+fixing a log flood were cherry-picked onto `1.5.0-patches` and the ws
+submodule repinned, to let AutoSDV drop a submodule before the PR
+merged. Reverted; the commits live on `1.5.0-cuda-filters`, which
+nothing pins.
+
+Because the documented flow is "commit on `<version>-patches`, then
+repin `<version>-ws`", a branch carrying extra commits hands them to the
+next person who follows it correctly. Keep the branch equal to
+tag + build fixes so repinning to its tip is always safe.
+
 ### Non-ROS build dependencies
 
 If a workspace package needs a non-ROS library (no package.xml, no
