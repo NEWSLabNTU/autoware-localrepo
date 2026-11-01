@@ -384,8 +384,16 @@ if [ "$INSTALL_ROS" = "y" ]; then
     # Use ros2-apt-source package (recommended method)
     # See: https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html
     if [ ! -f /etc/apt/sources.list.d/ros2.sources ]; then
-        ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')
-        curl -L -o /tmp/ros2-apt-source.deb \
+        # Resolve the latest tag from the release page redirect rather than
+        # the GitHub API: the API allows 60 unauthenticated requests per hour
+        # per IP, which a shared campus or lab address exhausts, and then the
+        # version comes back empty and the download below fetches a 404 page.
+        ROS_APT_SOURCE_VERSION=$(curl -fsSLI -o /dev/null -w '%{url_effective}' \
+            https://github.com/ros-infrastructure/ros-apt-source/releases/latest | sed 's#.*/tag/##')
+        case "$ROS_APT_SOURCE_VERSION" in
+            ''|*/*) log_error "Could not determine the latest ros-apt-source release"; exit 1 ;;
+        esac
+        curl -fL -o /tmp/ros2-apt-source.deb \
             "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.jammy_all.deb"
         dpkg -i /tmp/ros2-apt-source.deb
         rm /tmp/ros2-apt-source.deb
