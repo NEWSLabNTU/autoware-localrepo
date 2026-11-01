@@ -1,0 +1,31 @@
+version: 1
+
+# Docker configuration
+docker:
+  # Always prefer remote URLs to avoid maintaining Dockerfiles locally
+  dockerfile: Dockerfile
+
+  # Optional: Custom image name for caching
+  image_name: autoware-1.9.0-arm64-builder
+
+  # Native build on an arm64 host. Stated so that a run on an amd64 host
+  # builds arm64 (slowly, under QEMU) rather than silently building amd64.
+  platform: linux/arm64
+
+# Output configuration with descriptive name
+output:
+  directory: ./build
+
+# Package configurations with descriptive name
+packages:
+  directory: ./debian-overrides
+
+# Build options
+build:
+  ros_distro: humble
+  parallel_jobs: 0
+  skip_tests: true
+  # Custom installation prefix for Autoware 1.9.0
+  install_prefix: /opt/autoware/1.9.0
+  # Package name suffix - appended to package names (e.g., ros-humble-pkg-1-9-0)
+  package_suffix: "1-9-0"

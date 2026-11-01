@@ -1,0 +1,54 @@
+# Topic split for the autoware-data binary packages.
+#
+# Autoware 1.9.0's model set is 2.78 GiB raw / 2.24 GiB as a single .deb, which
+# exceeds GitHub's hard 2 GiB release-asset limit. The models are therefore split
+# across several binary packages, grouped by the pipeline stage that consumes them.
+# A metapackage (autoware-data<suffix>) depends on all of them, so autoware-full
+# and the install docs keep referring to a single name.
+#
+# `dirs` lists top-level directories under downloads/ (the first path component of
+# each dest in tasks.yaml). EVERY such directory must be claimed by exactly one
+# group -- genpkg.py aborts on anything unmapped or claimed twice, so a future
+# Autoware bump that introduces a new model family fails loudly instead of
+# silently dropping it from the packages.
+
+groups:
+  vision:
+    summary: Autoware 2D camera and traffic light recognition models
+    description: |
+      Camera-based 2D object detection and traffic light recognition models:
+      RTMDet and YOLOX detectors, traffic light fine detector and classifier.
+    dirs:
+      - tensorrt_rtmdet
+      - tensorrt_yolox
+      - traffic_light_fine_detector
+      - traffic_light_classifier
+
+  perception3d:
+    summary: Autoware 3D object detection and camera-LiDAR fusion models
+    description: |
+      3D object detection, semantic segmentation and camera-LiDAR fusion models:
+      StreamPETR, BEVDet, BEVFusion, TransFusion, PTv3, FRNet, Apollo instance
+      segmentation and PointPainting.
+    dirs:
+      - camera_streampetr
+      - tensorrt_bevdet
+      - bevfusion
+      - lidar_transfusion
+      - ptv3
+      - lidar_frnet
+      - lidar_apollo_instance_segmentation
+      - image_projection_based_fusion
+
+  planning:
+    summary: Autoware planning, prediction, localization and calibration models
+    description: |
+      End-to-end driving and planning models plus supporting models: VAD,
+      Diffusion Planner, SIMPL trajectory prediction, YabLoc pose initializer
+      and the sensor calibration status classifier.
+    dirs:
+      - vad
+      - diffusion_planner
+      - simpl_prediction
+      - yabloc_pose_initializer
+      - calibration_status_classifier

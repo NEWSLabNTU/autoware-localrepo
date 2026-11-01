@@ -1,0 +1,18 @@
+Source: autoware-full-1-7-1
+Section: misc
+Priority: optional
+Maintainer: Jerry Lin <jerry73204@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: autoware-full-1-7-1
+Architecture: all
+Depends: ${misc:Depends},
+         autoware-config-1-7-1,
+         autoware-theme-1-7-1,
+         autoware-data-1-7-1,
+         autoware-ros-packages-1-7-1
+Description: Autoware complete installation meta-package
+ This meta-package installs all Autoware components including
+ configuration files, visual theme, ML model data, and runtime packages.
+ Install this package for a complete Autoware setup.
