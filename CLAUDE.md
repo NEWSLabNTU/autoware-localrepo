@@ -17,14 +17,19 @@ This project builds Debian packages for multiple Autoware versions and creates a
 |---------|-----|---------|-------|
 | 1.5.0-2 | https://github.com/NEWSLabNTU/autoware/tree/1.5.0-2 | https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.5.0-2 | Single bundled deb (~1.85 GiB) |
 | 1.7.1-1 | https://github.com/NEWSLabNTU/autoware/tree/1.7.1-1 | https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.7.1-1 | autoware-data shipped separately |
-| 1.9.0 (unreleased) | NEWSLabNTU/autoware @ 1.9.0-ws | amd64 built E2E 2026-08 (493-pkg bundle); arm64 dir prepared | autoware-data split in three topic debs; acados as own deb |
+| 1.9.0 (unreleased) | NEWSLabNTU/autoware @ 1.9.0-ws | amd64 built E2E 2026-08 (493-pkg bundle) | autoware-data split in three topic debs; acados as own deb |
+
+arm64 server (SBSA) builds exist for 1.5.0, 1.7.1 and 1.9.0 in `<ver>/arm64/`,
+pinned to the same workspace commit as amd64, with the version suffix
+`ubuntu2204sbsa`. They are not yet attached to any release. See
+[arm64 server builds](#arm64-server-builds-sbsa).
 
 ## Installation (User-facing)
 
 ### 1.5.0
 
 ```bash
-sudo dpkg -i autoware-localrepo-1-5-0_1.5.0-2ubuntu2204_all.deb  # or 2jetpack62 for Jetson
+sudo dpkg -i autoware-localrepo-1-5-0_1.5.0-2ubuntu2204_all.deb  # or 2jetpack62 for Jetson, 2ubuntu2204sbsa for arm64 servers
 sudo /usr/share/autoware/1.5.0/setup-prerequisites.sh
 sudo apt update
 sudo apt install autoware-full-1-5-0
@@ -116,16 +121,19 @@ autoware-localrepo/
 │   │   │   └── Dockerfile        # Test container
 │   │   ├── build/                # colcon2deb output (ROS .debs)
 │   │   └── justfile
-│   └── jp62/                     # colcon2deb build for JetPack 6.2 (arm64)
-│       └── ...                   # Same structure as amd64/
+│   ├── jp62/                     # colcon2deb build for JetPack 6.2 (arm64)
+│   │   └── ...                   # Same structure as amd64/
+│   └── arm64/                    # arm64 server (SBSA, not Jetson); same structure
 ├── 1.7.1/                        # Autoware 1.7.1 version (same layout)
 │   ├── amd64/
-│   └── jp62/
+│   ├── jp62/
+│   └── arm64/
 ├── 1.9.0/                        # Autoware 1.9.0 version
 │   ├── amd64/                    # built E2E (2026-08); see 1.9.0/HANDOFF.md
 │   │   ├── debian-overrides/     # 19 targeted patches (LTO, Replaces, acados deps)
 │   │   └── packages/autoware-acados-1-9-0/  # acados runtime deb (not a ROS pkg)
-│   └── arm64/                    # generic arm64 (native host build; not Jetson)
+│   ├── jp62/
+│   └── arm64/                    # arm64 server (SBSA, not Jetson)
 ├── 2025.02/                      # rolling snapshot layout
 └── justfile                      # Top-level build automation
 ```
@@ -138,11 +146,47 @@ Jetson builds use JetPack version suffixes instead of architecture:
 - `jp60/` - JetPack 6.0 (L4T R36.3, CUDA 12.2)
 - `jp62/` - JetPack 6.2 (L4T R36.4, CUDA 12.6)
 
-Generic (non-Jetson) arm64 servers use an `arm64/` directory instead
-(first added for 1.9.0). It reuses the amd64 Dockerfile flow — the ghcr
-`autoware-base:cuda-latest` manifest is multi-arch — with the arm64 tera
-renderer asset. Build natively on an arm64 host; QEMU cross-builds are a
-last resort (see BUILDING.md for the ASLR workaround).
+Non-Jetson arm64 servers (SBSA: Grace, Ampere Altra with A100/H100) use an
+`arm64/` directory instead. See [arm64 server builds](#arm64-server-builds-sbsa).
+
+### arm64 server builds (SBSA)
+
+Each `<ver>/arm64/` is the version's amd64 recipe with these differences, and
+nothing else; every directory's README.md has the table:
+
+- **Same base image.** The ghcr `autoware-base` tags are multi-arch, so the
+  `FROM` line is unchanged. The arm64 variants pull CUDA, cuDNN and TensorRT
+  from NVIDIA's `ubuntu2204/sbsa` repo.
+- **TensorRT 10.3.0.26-1+cuda12.5.** It is the newest TensorRT in the sbsa
+  repo (amd64 uses 10.8) and the version upstream Autoware's own `arm64.env`
+  picks. The Dockerfile pins it with `--allow-downgrades`, and
+  `setup-prerequisites.sh` installs the same runtime.
+- **`NVCC_APPEND_FLAGS` adds sm_80, sm_90 and compute_75 PTX.** Upstream's
+  CUDA packages hardcode sm_75/86/87/89 (plus 101/120 on CUDA 12.8), which
+  leaves out A100 and H100/GH200: the packages install and then fail at the
+  first kernel launch. The env var adds the architectures without patching
+  any source. compute_75 PTX is there because an explicit `-gencode` drops
+  nvcc's default PTX for packages that set no architecture of their own
+  (trt_batched_nms), which would otherwise run on sm_80/sm_90 only.
+- **Version suffix `ubuntu2204sbsa`** in the localrepo changelog, so the
+  arm64 bundle does not share a file name with the amd64 one in a release.
+- **`setup-prerequisites.sh`** uses the sbsa CUDA repo and the
+  `_arm64-sbsa.deb` spconv/cumm assets, and refuses to run on a Jetson
+  (`/etc/nv_tegra_release`). It reads the ros-apt-source version from the
+  release redirect, not the GitHub API, whose 60 requests/hour limit a
+  shared address exhausts.
+- `python3-torch` is dropped from `rosdep-packages.txt` (no arm64 apt
+  package). 1.5.0 carries the jp62 LTO overrides; 1.9.0 builds acados
+  natively (`Architecture: any`) and uses the arm64 tera renderer.
+
+Build natively on an arm64 host. QEMU cross-builds are a last resort (see
+BUILDING.md for the ASLR workaround).
+
+**colcon2deb must be at 13b4138 or later on Ubuntu 5.15 hosts.** Before it,
+phase 8 ran `fakeroot-sysv`, whose SysV message queues are freed with the
+container's IPC namespace on exit; on 5.15.0-176 that path (`free_ipc`,
+`freeque`) oopsed in `percpu_counter_add_batch` and panicked an arm64 build
+host twice, each time as a colcon2deb container exited.
 
 ## Key Commands
 

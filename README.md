@@ -9,6 +9,10 @@ Debian packages for Autoware 1.5.0, bundled as a local APT repository.
 | [autoware-localrepo-1-5-0_1.5.0-1ubuntu2204_all.deb](https://github.com/NEWSLabNTU/autoware-localrepo/releases/download/1.5.0-1/autoware-localrepo-1-5-0_1.5.0-1ubuntu2204_all.deb) | Ubuntu 22.04 x86_64 |
 | [autoware-localrepo-1-5-0_1.5.0-1jetpack62_all.deb](https://github.com/NEWSLabNTU/autoware-localrepo/releases/download/1.5.0-1/autoware-localrepo-1-5-0_1.5.0-1jetpack62_all.deb) | JetPack 6.2 (Jetson Orin) |
 
+arm64 servers (SBSA, e.g. Grace or Ampere Altra with A100/H100) have their own
+build with the suffix `ubuntu2204sbsa`, made from `<version>/arm64/`; see
+that directory's README.md. It is not attached to a release yet.
+
 ## Contents
 
 - 450+ ROS 2 Humble packages for Autoware
