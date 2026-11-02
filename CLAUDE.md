@@ -17,7 +17,7 @@ This project builds Debian packages for multiple Autoware versions and creates a
 |---------|-----|---------|-------|
 | 1.5.0-2 | https://github.com/NEWSLabNTU/autoware/tree/1.5.0-2 | https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.5.0-2 | Single bundled deb (~1.85 GiB) |
 | 1.7.1-1 | https://github.com/NEWSLabNTU/autoware/tree/1.7.1-1 | https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.7.1-1 | autoware-data shipped separately |
-| 1.9.0 (unreleased) | NEWSLabNTU/autoware @ 1.9.0-ws | amd64 built E2E 2026-08 (493-pkg bundle) | autoware-data split in three topic debs; acados as own deb |
+| 1.9.0 (unreleased) | NEWSLabNTU/autoware @ 1.9.0-ws | amd64 built E2E 2026-08 (493-pkg bundle) | models not bundled: fetched by `autoware-download-models-1-9-0`; autoware-data debs optional for offline; acados as own deb |
 
 arm64 server (SBSA) builds exist for 1.5.0, 1.7.1 and 1.9.0 in `<ver>/arm64/`,
 pinned to the same workspace commit as amd64, with the version suffix
@@ -28,12 +28,17 @@ pinned to the same workspace commit as amd64, with the version suffix
 
 ### 1.5.0
 
+From `1.5.0-3` the localrepo no longer bundles the ML models (~1.85 GiB before,
+~0.2 GiB now); they are downloaded afterwards as the user, as for 1.9.0 below.
+`1.5.0-2` and earlier bundle them in `/opt/autoware/1.5.0/data`.
+
 ```bash
-sudo dpkg -i autoware-localrepo-1-5-0_1.5.0-2ubuntu2204_all.deb  # or 2jetpack62 for Jetson, 2ubuntu2204sbsa for arm64 servers
+sudo dpkg -i autoware-localrepo-1-5-0_1.5.0-3ubuntu2204_all.deb  # or 3jetpack62 for Jetson, 3ubuntu2204sbsa for arm64 servers
 sudo /usr/share/autoware/1.5.0/setup-prerequisites.sh
 sudo apt update
 sudo apt install autoware-full-1-5-0
 sudo /usr/share/autoware/1.5.0/activate-dds-config.sh  # AFTER install -- see note below
+autoware-download-models-1-5-0                # no sudo; ML models into ~/autoware_data
 source /opt/autoware/1.5.0/setup.bash         # workspace env (ament + ROS)
 source /opt/autoware/1.5.0/autoware-env.bash  # DDS/CycloneDDS/Qt config
 ```
@@ -56,19 +61,72 @@ source /opt/autoware/1.7.1/autoware-env.bash
 
 ### 1.9.0
 
-The localrepo bundles everything, ML models included, so it is the only
-artifact to install. It is ~2.43 GiB, over GitHub's release-asset limit — see
-"Release asset hosting" below.
+The localrepo carries every package except the ML models (~0.2 GiB). The
+models are downloaded afterwards, **as the user who launches Autoware, without
+sudo** — see "ML models (1.5.0-3+, 1.9.0)" below for why.
 
 ```bash
 sudo dpkg -i autoware-localrepo-1-9-0_1.9.0-1jetpack62_all.deb  # or 1ubuntu2204 for amd64
 sudo /usr/share/autoware/1.9.0/setup-prerequisites.sh
 sudo apt update
-sudo apt install autoware-full-1-9-0        # pulls ROS packages, maps and ML models
+sudo apt install autoware-full-1-9-0        # ROS packages, maps, model downloader
 sudo /usr/share/autoware/1.9.0/activate-dds-config.sh
+autoware-download-models-1-9-0              # no sudo; into ~/autoware_data
 source /opt/autoware/1.9.0/setup.bash
 source /opt/autoware/1.9.0/autoware-env.bash
 ```
+
+### ML models (1.5.0-3+, 1.9.0)
+
+`autoware-full-1-9-0` depends on `autoware-model-downloader-1-9-0`, which
+installs `autoware-download-models-1-9-0` (a stdlib-only Python script in
+`/opt/autoware/1.9.0/bin/`) and the manifest it reads,
+`/opt/autoware/1.9.0/share/autoware-model-downloader/models.tsv`: one line
+per file with its topic group, path, sha256 and upstream URL. `genpkg.py`
+writes the manifest from the same `tasks.yaml` that generates the
+`autoware-data` packages, so the two always list the same files.
+
+**Why a user-owned directory, not the deb.** Autoware's launch files default
+`data_path` to `$HOME/autoware_data`, and every TensorRT node writes its
+compiled `.engine` next to the `.onnx` it reads
+(`autoware_tensorrt_common`, `TrtCommonConfig`: the engine path defaults to the
+onnx path with the extension replaced). A deb installs into root-owned
+`/opt/autoware/1.9.0/data`, where that write fails with
+`Fail to open engine file`, the node exits, and the engine build is repeated on
+every launch. Nothing points `data_path` at `/opt` either. Downloaded into the
+user's `~/autoware_data`, the models are where the launch looks by default and
+the engines can be cached beside them.
+
+What the script guarantees:
+
+- **Refuses to run as root** unless `--dir` is given. `sudo` would write into
+  `/root` or leave root-owned files where TensorRT cannot write.
+- **Verifies every file** against the manifest's sha256, resumes partial
+  downloads (`.part` files), and skips files that already verify, so a re-run
+  is cheap. Tarballs are extracted, deleted, and remembered with a
+  `.<name>.sha256` stamp.
+- **Removes a stale engine** (`<stem>.engine`, `<stem>.json`) when it replaces
+  an `.onnx`. TensorRT only checks that a cached engine matches its own
+  version, not the model it was built from, so an old engine would otherwise
+  be loaded in place of the new model.
+- **Stamps the directory** with `.autoware-version` and refuses to mix versions
+  without `--force`, because several models differ between releases. Keep a
+  second version apart with `--dir ~/autoware_data-<ver>` and launch with
+  `data_path:=`.
+- **Subsets**: `--list`, `--group vision|perception3d|planning`,
+  `--only lidar_centerpoint,tensorrt_yolox`. A lidar-only vehicle needs tens
+  of MB, not 2.4 GB.
+- **Offline**: install the `autoware-data-1-9-0*` debs (release assets) with
+  `dpkg -i`, then `autoware-download-models-1-9-0 --link-from
+  /opt/autoware/1.9.0/data` builds a writable tree of symlinks to them.
+
+Hosts: 74 files on `awf.ml.dev.web.auto`, 3 on `autoware-files.s3`, and
+CenterPoint from Hugging Face (`AutowareFoundation/lidar_centerpoint`,
+revision `v3.0`, public, no token). Upstream fetches CenterPoint with
+`hf download` rather than `get_url`; `genpkg.py` resolves such snapshots to
+per-file URLs and checksums through the Hugging Face API, and now aborts on any
+download command it cannot translate. Before that, the 1.9.0 `autoware-data`
+debs silently lacked `lidar_centerpoint`.
 
 ### `activate-dds-config.sh` must run AFTER `apt install`
 
@@ -98,7 +156,8 @@ ros2 launch autoware_launch planning_simulator.launch.xml \
 ```bash
 sudo /usr/share/autoware/<version>/uninstall-autoware.sh
 sudo dpkg -r autoware-localrepo-<version-dashes>          # e.g., autoware-localrepo-1-7-1
-sudo dpkg -r autoware-data-<version-dashes>               # 1.7.1+ only
+sudo dpkg -r autoware-data-<version-dashes>               # 1.7.1, and 1.9.0 offline installs
+rm -rf ~/autoware_data                                    # 1.9.0: models downloaded per user
 ```
 
 ## Directory Structure
@@ -543,15 +602,16 @@ GitHub release assets are capped at 2 GiB each. The three releases handle this d
 
 | Version | Shape | Assets |
 |---------|-------|--------|
-| 1.5.0 | everything bundled | one ~1.85 GiB localrepo deb — fits |
+| 1.5.0 | bundled to 1.5.0-2; downloaded by the user from 1.5.0-3 | one ~1.85 GiB localrepo deb; from 1.5.0-3 ~0.2 GiB plus an optional `autoware-data-1-5-0` (~1.7 GiB) for offline sites |
 | 1.7.1 | data split out | `autoware-localrepo` (~210 MiB) + `autoware-data` (~1.9 GiB), both `dpkg -i`'d |
-| 1.9.0 | everything bundled again | one ~2.43 GiB localrepo deb — **over the limit** |
+| 1.9.0 | models downloaded by the user | `autoware-localrepo` (~0.2 GiB); optional `autoware-data-{vision,perception3d,planning}` debs for offline sites, each < 1 GiB |
 
-1.9.0 puts the `autoware-data-{vision,perception3d,planning}` payload debs back into `pool/main/` so the localrepo is the single APT source that provides every package: `apt install autoware-full-1-9-0` resolves the ML models like anything else, with no separate `dpkg -i` step. The cost is that the deb no longer fits a GitHub release asset.
-
-**Implementation** (`justfile`'s `localrepo` and `release` recipes): the copy list includes the three data payload debs. `just release` stages the single deb, and when it exceeds 2 GiB also emits `split -b 1900M` parts plus `REASSEMBLE.md`, so it can go on GitHub as parts or on any other host as one file. See `packages/autoware-localrepo/src/REASSEMBLE.md`.
-
-Note the models then exist twice on the target: ~2.24 GiB in `/opt/autoware/1.9.0/repo/pool/main/` and ~2.86 GiB extracted. Removing the localrepo deb after installing reclaims the pool copy, at the cost of the offline APT source.
+1.9.0 briefly bundled the three data payload debs into `pool/main/` (commit
+`00f17729`), which took the localrepo to ~2.43 GiB and needed split parts.
+That was reverted in favour of `autoware-download-models-1-9-0` (see "ML models
+(1.9.0+)"): the models are 2.4 GB of a 2.6 GB bundle and cannot be used from a
+root-owned `/opt` directory anyway. `just release` stages the localrepo, the
+data debs and `SHA256SUMS.txt`, and fails if any asset reaches 2 GiB.
 
 ### Deploying to a hosted APT repository (Synology NAS)
 
@@ -600,12 +660,12 @@ packages transfers three packages, not 2.5 GB.
 
 | Package | Size | Use |
 |---------|------|-----|
-| `autoware-localrepo-1-9-0` | 2.43 GiB | offline / air-gapped; carries every package |
+| `autoware-localrepo-1-9-0` | ~0.2 GiB | offline / air-gapped; carries every package except the models |
 | `autoware-localrepo-remote-1-9-0` | ~6 KB | networked; source line + public key + helper scripts |
 
 They declare `Conflicts:`/`Replaces:` on each other, so a machine has one or
-the other. The remote variant sidesteps the 2 GiB asset limit, the split-parts
-workaround, and the duplicate on-disk copy of the models entirely.
+the other. Neither carries the models; users run
+`autoware-download-models-1-9-0` with either.
 
 **Never commit `deploy.env`, a private key, or NAS credentials.** This
 repository is public on GitHub; `.gitignore` covers `deploy.env`, `*.private.key`,

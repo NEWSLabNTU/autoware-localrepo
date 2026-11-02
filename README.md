@@ -16,7 +16,7 @@ that directory's README.md. It is not attached to a release yet.
 ## Contents
 
 - 450+ ROS 2 Humble packages for Autoware
-- ML models (ONNX) for perception
+- A downloader for the ML models (ONNX); the models themselves are bundled only up to 1.5.0-2
 - CycloneDDS configuration
 - Sample maps for planning simulation
 - RViz theme and icons
@@ -34,9 +34,20 @@ sudo /usr/share/autoware/setup-prerequisites.sh
 sudo apt update
 sudo apt install autoware-full-1-5-0
 
-# 4. Source the environment
+# 4. Download the ML models (1.5.0-3 and later), as your own user, not sudo
+autoware-download-models-1-5-0
+
+# 5. Source the environment
 source /opt/autoware/1.5.0/setup.bash
 ```
+
+From 1.5.0-3 the localrepo does not carry the ML models. Step 4 downloads them
+into `~/autoware_data`, which is Autoware's default `data_path`, and verifies
+each file's checksum. It must run as the user who launches Autoware: TensorRT
+compiles each model into an `.engine` file next to it on first launch, so the
+directory has to be writable by that user. `--list` shows the models,
+`--only lidar_centerpoint,...` fetches a subset, and `--help` covers offline
+installs from the `autoware-data` deb.
 
 ## Network Configuration
 
