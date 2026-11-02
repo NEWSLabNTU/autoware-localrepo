@@ -333,6 +333,17 @@ just release
 For 1.5.0 this stages a single `autoware-localrepo-*.deb` plus `SHA256SUMS.txt`.
 For 1.7.1+ it also stages `autoware-data-*.deb` separately (see "GitHub 2 GiB asset limit" below).
 
+### CI: self-hosted runners
+
+`.github/workflows/localrepo.yml` runs download, `just all`, `just test` and
+`just release` on two self-hosted runner containers (`ci/runner/`): the x86
+host builds amd64, and the arm64 server builds arm64 and jp62 (no Jetson is
+involved). A tag such as `1.9.0-2`, or a manual run with a release tag, attaches
+the debs to a **draft** release and writes `SHA256SUMS.txt` from GitHub's asset
+digests; a maintainer publishes it. The runners hold the host's Docker socket,
+so the workflow must never gain a `pull_request` trigger. Setup, the same-path
+mount colcon2deb needs, and the security notes: `ci/runner/README.md`.
+
 ### Run Planning Simulation Test
 
 ```bash
