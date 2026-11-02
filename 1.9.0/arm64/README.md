@@ -52,7 +52,12 @@ sudo /usr/share/autoware/1.9.0/setup-prerequisites.sh   # ROS 2, CUDA 12.8 libs,
 sudo apt update
 sudo apt install autoware-full-1-9-0
 sudo /usr/share/autoware/1.9.0/activate-dds-config.sh
+autoware-download-models-1-9-0     # as your own user, no sudo: ML models into ~/autoware_data
 ```
+
+The ML models are not in the localrepo. The last line fetches them into
+`~/autoware_data`, Autoware's default `data_path`, where TensorRT can also
+write its engines; see "ML models (1.9.0+)" in the top-level `CLAUDE.md`.
 
 The prerequisites script refuses to run on a Jetson.
 

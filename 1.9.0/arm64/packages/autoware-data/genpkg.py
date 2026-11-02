@@ -4,7 +4,11 @@
 import yaml
 import sys
 import os
+import json
+import shlex
+import hashlib
 import argparse
+import urllib.parse
 import urllib.request
 from pathlib import Path
 from datetime import datetime
@@ -48,12 +52,106 @@ def parse_ansible_yaml(file_path):
         return None
 
 
+HF_API = "https://huggingface.co/api/models/{repo}/tree/{revision}?recursive=true"
+HF_RESOLVE = "https://huggingface.co/{repo}/resolve/{revision}/{path}"
+# Repository housekeeping that `hf download` also fetches but no node reads.
+HF_SKIP = {".gitattributes", ".gitignore", "README.md"}
+
+
+def _http_get(url):
+    with urllib.request.urlopen(url) as response:
+        return response.read()
+
+
+def parse_hf_download(cmd):
+    """Parse an `hf download REPO --revision REV --local-dir DIR` command line.
+
+    Returns (repo, revision, dest_dir relative to data_dir) or None.
+    """
+    # The Jinja placeholder contains spaces; protect it from shlex.
+    argv = shlex.split(cmd.replace("{{ data_dir }}", "@DATA_DIR@"))
+    if len(argv) < 3 or argv[0] != "hf" or argv[1] != "download":
+        return None
+    repo, revision, local_dir = argv[2], "main", None
+    i = 3
+    while i < len(argv):
+        if argv[i] == "--revision" and i + 1 < len(argv):
+            revision = argv[i + 1]
+            i += 2
+        elif argv[i] == "--local-dir" and i + 1 < len(argv):
+            local_dir = argv[i + 1]
+            i += 2
+        else:
+            i += 1
+    if not local_dir or not local_dir.startswith("@DATA_DIR@/"):
+        return None
+    return repo, revision, local_dir.replace("@DATA_DIR@/", "").rstrip("/")
+
+
+def resolve_hf_download(repo, revision, dest_dir):
+    """Expand a Hugging Face repository snapshot into per-file downloads.
+
+    Upstream fetches some models with `hf download` instead of get_url. Those
+    tasks carry no URL or checksum, so resolve them here: list the revision's
+    files through the public API, take LFS files' sha256 from their pointer,
+    and hash the small inline files directly.
+    """
+    url = HF_API.format(repo=repo, revision=urllib.parse.quote(revision, safe=""))
+    print(f"Resolving Hugging Face snapshot {repo}@{revision}...")
+    entries = json.loads(_http_get(url))
+    downloads = []
+    for entry in entries:
+        if entry.get("type") != "file":
+            continue
+        path = entry["path"]
+        if os.path.basename(path) in HF_SKIP:
+            continue
+        file_url = HF_RESOLVE.format(
+            repo=repo, revision=urllib.parse.quote(revision, safe=""),
+            path=urllib.parse.quote(path))
+        lfs = entry.get("lfs")
+        if lfs and lfs.get("oid"):
+            sha256 = lfs["oid"]
+        else:
+            sha256 = hashlib.sha256(_http_get(file_url)).hexdigest()
+        dest_path = f"{dest_dir}/{path}"
+        downloads.append({
+            'url': file_url,
+            'filename': os.path.basename(dest_path),
+            'parent_dir': os.path.dirname(dest_path),
+            'dest_path': dest_path,
+            'sha256': sha256,
+            'is_tarball': dest_path.endswith('.tar.gz'),
+        })
+    if not downloads:
+        print(f"Error: Hugging Face snapshot {repo}@{revision} has no files",
+              file=sys.stderr)
+        sys.exit(1)
+    return sorted(downloads, key=lambda d: d['dest_path'])
+
+
 def extract_downloads(tasks):
     """Extract download information from Ansible tasks."""
     downloads = []
 
     for task in tasks:
-        if isinstance(task, dict) and 'ansible.builtin.get_url' in task:
+        if not isinstance(task, dict):
+            continue
+        command = task.get('ansible.builtin.command')
+        if command is not None:
+            cmd = command.get('cmd', '') if isinstance(command, dict) else command
+            hf = parse_hf_download(" ".join(str(cmd).split()))
+            if hf:
+                downloads.extend(resolve_hf_download(*hf))
+            elif 'download' in str(cmd):
+                # A download step this script cannot translate would silently
+                # drop a model from the packages, which is how 1.9.0 shipped
+                # without lidar_centerpoint. Refuse instead.
+                print(f"Error: unsupported download command in task "
+                      f"'{task.get('name')}': {cmd}", file=sys.stderr)
+                sys.exit(1)
+            continue
+        if 'ansible.builtin.get_url' in task:
             get_url = task['ansible.builtin.get_url']
             url = get_url.get('url')
             dest = get_url.get('dest')
@@ -220,6 +318,31 @@ def generate_aria2_input(downloads):
     return "\n".join(lines)
 
 
+def generate_manifest(downloads, buckets=None):
+    """Generate the model manifest read by autoware-download-models.
+
+    One tab-separated line per file: group, destination path relative to the
+    data directory, sha256, URL. A .tar.gz destination is extracted into its
+    directory after download, as debian/rules does for the packages.
+    """
+    group_of = {}
+    if buckets:
+        for group, items in buckets.items():
+            for dl in items:
+                group_of[dl['dest_path']] = group
+    lines = [
+        "# Autoware model manifest, generated by genpkg.py from tasks.yaml.",
+        "# group<TAB>path<TAB>sha256<TAB>url",
+    ]
+    for dl in sorted(downloads, key=lambda d: d['dest_path']):
+        if not dl['sha256']:
+            print(f"Error: no sha256 for {dl['dest_path']}", file=sys.stderr)
+            sys.exit(1)
+        group = group_of.get(dl['dest_path'], 'all')
+        lines.append(f"{group}\t{dl['dest_path']}\t{dl['sha256']}\t{dl['url']}")
+    return "\n".join(lines) + "\n"
+
+
 def _install_commands(downloads, destdir, install_dir):
     """Install/extract commands for one binary package's staging directory."""
     cmds = [f'\tinstall -d {destdir}{install_dir}']
@@ -330,10 +453,16 @@ def generate_source_format():
 
 
 def write_debian_files(debian_dir, downloads, version="1.0.0", suffix="",
-                       install_dir=INSTALL_DIR, groups=None, buckets=None):
+                       install_dir=INSTALL_DIR, groups=None, buckets=None,
+                       manifest=None):
     """Write all debian files to the specified directory."""
     debian_dir = Path(debian_dir)
     debian_dir.mkdir(parents=True, exist_ok=True)
+
+    if manifest:
+        Path(manifest).parent.mkdir(parents=True, exist_ok=True)
+        Path(manifest).write_text(generate_manifest(downloads, buckets))
+        print(f"  Written: {manifest}")
 
     # Write downloads.txt (aria2c input file) in parent directory
     output_dir = debian_dir.parent
@@ -432,6 +561,20 @@ Examples:
     )
 
     parser.add_argument(
+        '-m', '--manifest',
+        default='../autoware-model-downloader/models.tsv',
+        help='Where to write the model manifest that autoware-download-models '
+             'reads (default: ../autoware-model-downloader/models.tsv). '
+             'Pass an empty string to skip it.'
+    )
+
+    parser.add_argument(
+        '--manifest-only',
+        action='store_true',
+        help='Write only the model manifest; leave debian/ and downloads.txt alone'
+    )
+
+    parser.add_argument(
         '--no-groups',
         action='store_true',
         help='Ignore the groups file and emit a single binary package'
@@ -499,11 +642,28 @@ Examples:
             print(f"No groups file at {groups_path}; "
                   "generating a single package")
 
+    if args.manifest_only:
+        if not args.manifest:
+            print("Error: --manifest-only needs --manifest", file=sys.stderr)
+            sys.exit(1)
+        manifest = Path(args.manifest)
+        if not manifest.is_absolute():
+            manifest = script_dir / manifest
+        manifest.parent.mkdir(parents=True, exist_ok=True)
+        manifest.write_text(generate_manifest(downloads, buckets))
+        print(f"Written: {manifest}")
+        return
+
     # Generate debian files
     debian_dir = output_dir / 'debian'
     print(f"\nGenerating debian files in {debian_dir}...")
+    manifest = None
+    if args.manifest:
+        manifest = Path(args.manifest)
+        if not manifest.is_absolute():
+            manifest = script_dir / manifest
     write_debian_files(debian_dir, downloads, args.version, args.suffix,
-                       args.install_dir, groups, buckets)
+                       args.install_dir, groups, buckets, manifest)
 
     print(f"\nDone! To build the package:")
     print(f"  cd {output_dir}")

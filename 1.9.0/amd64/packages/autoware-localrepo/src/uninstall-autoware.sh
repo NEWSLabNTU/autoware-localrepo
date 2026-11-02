@@ -31,7 +31,7 @@ AUTOWARE_PKGS=$(dpkg -l | grep -E 'ros-humble-.*-1-9-0' | awk '{print $2}' || tr
 # autoware-data ships as a metapackage plus one deb per model topic
 # (vision/perception3d/planning), so match those too -- otherwise ~2.2 GiB of
 # model data would be left behind on uninstall.
-META_PKGS=$(dpkg -l | grep -E '^ii\s+(autoware-config-1-9-0|autoware-theme-1-9-0|autoware-data(-[a-z0-9]+)?-1-9-0|autoware-ros-packages-1-9-0|autoware-full-1-9-0|autoware-maps-1-9-0)\s' | awk '{print $2}' || true)
+META_PKGS=$(dpkg -l | grep -E '^ii\s+(autoware-config-1-9-0|autoware-theme-1-9-0|autoware-data(-[a-z0-9]+)?-1-9-0|autoware-ros-packages-1-9-0|autoware-full-1-9-0|autoware-maps-1-9-0|autoware-model-downloader-1-9-0)\s' | awk '{print $2}' || true)
 
 # Combine and count packages
 ALL_PKGS=$(echo -e "${AUTOWARE_PKGS}\n${META_PKGS}" | grep -v '^$' | sort -u)

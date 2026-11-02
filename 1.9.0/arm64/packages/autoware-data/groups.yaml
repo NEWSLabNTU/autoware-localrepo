@@ -28,12 +28,13 @@ groups:
     summary: Autoware 3D object detection and camera-LiDAR fusion models
     description: |
       3D object detection, semantic segmentation and camera-LiDAR fusion models:
-      StreamPETR, BEVDet, BEVFusion, TransFusion, PTv3, FRNet, Apollo instance
-      segmentation and PointPainting.
+      CenterPoint, StreamPETR, BEVDet, BEVFusion, TransFusion, PTv3, FRNet,
+      Apollo instance segmentation and PointPainting.
     dirs:
       - camera_streampetr
       - tensorrt_bevdet
       - bevfusion
+      - lidar_centerpoint
       - lidar_transfusion
       - ptv3
       - lidar_frnet

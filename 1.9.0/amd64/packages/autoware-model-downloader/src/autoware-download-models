@@ -1,0 +1,365 @@
+#!/usr/bin/env python3
+"""Download Autoware's ML models into a directory the user owns.
+
+The localrepo does not carry the models: they would make it several times
+larger than every other package combined. This script fetches them instead,
+from the same upstream URLs Autoware's own Ansible role uses, and verifies
+each file against the sha256 recorded in the manifest at build time.
+
+Why the models must live in a user-owned directory
+--------------------------------------------------
+Autoware's launch files take `data_path` (default: $HOME/autoware_data) and
+every TensorRT node writes its compiled .engine NEXT TO the .onnx it reads. In
+a root-owned directory such as /opt/autoware/<version>/data that write fails
+("Fail to open engine file"), the node dies, and the engine build -- minutes
+per model -- is thrown away and repeated on every launch. So run this as the
+user who will launch Autoware, not with sudo. The default target is the
+default `data_path`, so launches need no extra arguments.
+
+Run with --help for usage.
+"""
+
+import argparse
+import concurrent.futures
+import hashlib
+import os
+import shutil
+import sys
+import tarfile
+import threading
+import time
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+PREFIX = Path(__file__).resolve().parent.parent  # /opt/autoware/<version>
+VERSION = PREFIX.name
+MANIFEST = PREFIX / "share" / "autoware-model-downloader" / "models.tsv"
+STAMP = ".autoware-version"
+CHUNK = 1 << 20
+RETRIES = 4
+
+print_lock = threading.Lock()
+
+
+def log(msg, file=sys.stdout):
+    with print_lock:
+        print(msg, file=file, flush=True)
+
+
+def human(n):
+    for unit in ("B", "KiB", "MiB", "GiB"):
+        if n < 1024 or unit == "GiB":
+            return f"{n:.1f} {unit}" if unit != "B" else f"{n} B"
+        n /= 1024
+    return f"{n:.1f} GiB"
+
+
+class Entry:
+    def __init__(self, group, path, sha256, url):
+        self.group = group
+        self.path = path
+        self.sha256 = sha256
+        self.url = url
+
+    @property
+    def model(self):
+        return self.path.split("/", 1)[0]
+
+    @property
+    def is_tarball(self):
+        return self.path.endswith(".tar.gz")
+
+
+def load_manifest(path):
+    entries = []
+    with open(path) as f:
+        for lineno, line in enumerate(f, 1):
+            line = line.rstrip("\n")
+            if not line or line.startswith("#"):
+                continue
+            fields = line.split("\t")
+            if len(fields) != 4:
+                sys.exit(f"error: {path}:{lineno}: expected 4 tab-separated fields")
+            entries.append(Entry(*fields))
+    return entries
+
+
+def sha256_of(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for block in iter(lambda: f.read(CHUNK), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def tarball_stamp(dest):
+    """A downloaded tarball is extracted and deleted; this records which one."""
+    return dest.parent / f".{dest.name}.sha256"
+
+
+def is_current(entry, dest):
+    if entry.is_tarball:
+        stamp = tarball_stamp(dest)
+        return stamp.is_file() and stamp.read_text().strip() == entry.sha256
+    return dest.is_file() and not dest.is_symlink() and sha256_of(dest) == entry.sha256
+
+
+def drop_stale_engine(dest):
+    """Remove an engine compiled from a model file that is being replaced.
+
+    TensorRT only checks that a cached engine matches the TensorRT version, not
+    that it was built from the .onnx beside it, so an engine left over from an
+    older model would be loaded silently in place of the new one.
+    """
+    if dest.suffix != ".onnx":
+        return
+    for suffix in (".engine", ".json"):
+        stale = dest.with_suffix(suffix)
+        if stale.is_file():
+            stale.unlink()
+            log(f"  removed stale {stale.name} (built from the previous {dest.name})")
+
+
+def fetch(entry, dest):
+    """Download entry.url to dest via a resumable .part file, then verify."""
+    part = dest.parent / (dest.name + ".part")
+    last_error = None
+    for attempt in range(1, RETRIES + 1):
+        try:
+            offset = part.stat().st_size if part.exists() else 0
+            req = urllib.request.Request(entry.url, headers={"User-Agent": "autoware-download-models"})
+            if offset:
+                req.add_header("Range", f"bytes={offset}-")
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                if offset and resp.status != 206:
+                    offset = 0  # server ignored the range; start over
+                with open(part, "ab" if offset else "wb") as out:
+                    shutil.copyfileobj(resp, out, CHUNK)
+            digest = sha256_of(part)
+            if digest != entry.sha256:
+                part.unlink()
+                raise ValueError(f"sha256 mismatch (got {digest[:12]}..., want {entry.sha256[:12]}...)")
+            return part
+        except urllib.error.HTTPError as e:
+            if e.code == 416:  # range past the end: the .part is complete or corrupt
+                part.unlink(missing_ok=True)
+            last_error = e
+        except (urllib.error.URLError, OSError, ValueError) as e:
+            last_error = e
+        if attempt < RETRIES:
+            time.sleep(2 * attempt)
+    raise RuntimeError(f"{entry.path}: {last_error}")
+
+
+def safe_extract(tarball, into):
+    with tarfile.open(tarball) as tar:
+        if hasattr(tarfile, "data_filter"):
+            tar.extractall(into, filter="data")
+        else:  # Python without extraction filters: refuse unsafe members
+            base = into.resolve()
+            for member in tar.getmembers():
+                target = (into / member.name).resolve()
+                if base != target and base not in target.parents:
+                    raise RuntimeError(f"{tarball.name}: unsafe member {member.name}")
+                if member.issym() or member.islnk():
+                    raise RuntimeError(f"{tarball.name}: link member {member.name}")
+            tar.extractall(into)
+
+
+def install(entry, root):
+    dest = root / entry.path
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    if is_current(entry, dest):
+        return "kept", 0
+    part = fetch(entry, dest)
+    size = part.stat().st_size
+    if entry.is_tarball:
+        safe_extract(part, dest.parent)
+        part.unlink()
+        tarball_stamp(dest).write_text(entry.sha256 + "\n")
+    else:
+        if dest.is_symlink():
+            dest.unlink()
+        drop_stale_engine(dest)
+        os.replace(part, dest)
+    return "downloaded", size
+
+
+def link(entry, root, source):
+    """Symlink one packaged file into root (offline mode, no network)."""
+    dest = root / entry.path
+    src = source / entry.path
+    if entry.is_tarball:
+        # The packages ship tarballs already extracted; mirror their directory.
+        src_dir = src.parent
+        if not src_dir.is_dir():
+            raise RuntimeError(f"{src_dir} not found")
+        made = 0
+        for f in sorted(p for p in src_dir.rglob("*") if p.is_file()):
+            target = root / f.relative_to(source)
+            if target.exists() and not target.is_symlink():
+                continue
+            target.parent.mkdir(parents=True, exist_ok=True)
+            if target.is_symlink():
+                target.unlink()
+            target.symlink_to(f)
+            made += 1
+        return "linked" if made else "kept", 0
+    if not src.is_file():
+        raise RuntimeError(f"{src} not found")
+    if dest.exists() and not dest.is_symlink():
+        return "kept", 0  # a real file the user put there; never clobber it
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    if dest.is_symlink():
+        if os.readlink(dest) == str(src):
+            return "kept", 0
+        dest.unlink()
+    dest.symlink_to(src)
+    return "linked", 0
+
+
+def select(entries, groups, only):
+    chosen = entries
+    if groups:
+        known = {e.group for e in entries}
+        bad = sorted(set(groups) - known)
+        if bad:
+            sys.exit(f"error: unknown group(s): {', '.join(bad)} (have: {', '.join(sorted(known))})")
+        chosen = [e for e in chosen if e.group in groups]
+    if only:
+        known = {e.model for e in entries}
+        bad = sorted(set(only) - known)
+        if bad:
+            sys.exit(f"error: unknown model(s): {', '.join(bad)}; see --list")
+        chosen = [e for e in chosen if e.model in only]
+    if not chosen:
+        sys.exit("error: the selection matches no files")
+    return chosen
+
+
+def print_list(entries):
+    print(f"Autoware {VERSION} models ({MANIFEST}):\n")
+    by_group = {}
+    for e in entries:
+        by_group.setdefault(e.group, {}).setdefault(e.model, 0)
+        by_group[e.group][e.model] += 1
+    for group in sorted(by_group):
+        print(f"{group}:")
+        for model, n in sorted(by_group[group].items()):
+            print(f"  {model:40s} {n:3d} file(s)")
+    print("\nSelect with --group GROUP and/or --only MODEL[,MODEL...].")
+
+
+def check_version_stamp(root, force):
+    stamp = root / STAMP
+    if not stamp.is_file():
+        return
+    have = stamp.read_text().strip()
+    if have == VERSION or force:
+        return
+    sys.exit(
+        f"error: {root} holds models for Autoware {have}, not {VERSION}.\n"
+        f"  Several models differ between versions, so mixing them breaks one of the two.\n"
+        f"  Either keep them apart and point the launch at the new directory:\n"
+        f"      autoware-download-models-{VERSION.replace('.', '-')} --dir ~/autoware_data-{VERSION}\n"
+        f"      ros2 launch ... data_path:=$HOME/autoware_data-{VERSION}\n"
+        f"  or replace them in place with --force.")
+
+
+def main():
+    default_dir = Path(os.environ.get("HOME", "~")) / "autoware_data"
+    ap = argparse.ArgumentParser(
+        prog=Path(sys.argv[0]).name,
+        description=f"Download the Autoware {VERSION} ML models into a directory you own.",
+        epilog=(
+            "Run as the user who launches Autoware, not with sudo: TensorRT writes its\n"
+            "compiled engines next to the models, so the directory must be writable by\n"
+            "that user. Re-running resumes partial downloads and skips verified files.\n\n"
+            "examples:\n"
+            "  %(prog)s                                # everything, into ~/autoware_data\n"
+            "  %(prog)s --only lidar_centerpoint,tensorrt_yolox\n"
+            "  %(prog)s --group perception3d --dir /data/autoware_data\n"
+            f"  %(prog)s --link-from /opt/autoware/{VERSION}/data   # offline, from autoware-data debs"),
+        formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--dir", type=Path, help=f"target directory (default: {default_dir}, Autoware's default data_path)")
+    ap.add_argument("--group", action="append", default=[], help="only this group (repeatable); see --list")
+    ap.add_argument("--only", action="append", default=[], help="only these models, comma-separated; see --list")
+    ap.add_argument("--list", action="store_true", help="list groups and models, then exit")
+    ap.add_argument("--verify", action="store_true", help="check the selected files without downloading")
+    ap.add_argument("--link-from", type=Path, metavar="DIR",
+                    help="symlink files from an installed autoware-data tree instead of downloading")
+    ap.add_argument("--jobs", type=int, default=4, help="parallel downloads (default: 4)")
+    ap.add_argument("--force", action="store_true", help="replace models stamped with another Autoware version")
+    args = ap.parse_args()
+
+    if not MANIFEST.is_file():
+        sys.exit(f"error: manifest not found at {MANIFEST}")
+    entries = load_manifest(MANIFEST)
+    if args.list:
+        print_list(entries)
+        return
+
+    only = [m for chunk in args.only for m in chunk.split(",") if m]
+    chosen = select(entries, args.group, only)
+
+    if os.geteuid() == 0 and args.dir is None:
+        sys.exit(
+            "error: refusing to run as root without --dir.\n"
+            "  Run this as the user who will launch Autoware (no sudo). As root it would\n"
+            "  fill root's home, or leave root-owned files where TensorRT cannot write\n"
+            "  its engines. For a shared directory, pass --dir explicitly and make it\n"
+            "  writable by the users who launch Autoware.")
+    root = (args.dir or default_dir).expanduser().absolute()
+
+    if args.verify:
+        bad = [e.path for e in chosen if not is_current(e, root / e.path)]
+        for p in bad:
+            print(f"  missing or wrong: {p}")
+        print(f"{len(chosen) - len(bad)}/{len(chosen)} file(s) verified in {root}")
+        sys.exit(1 if bad else 0)
+
+    check_version_stamp(root, args.force)
+    root.mkdir(parents=True, exist_ok=True)
+    if not os.access(root, os.W_OK):
+        sys.exit(f"error: {root} is not writable by this user; TensorRT could not cache engines there either")
+
+    if args.link_from:
+        source = args.link_from.expanduser().absolute()
+        work = lambda e: link(e, root, source)  # noqa: E731
+        verb = "Linking"
+    else:
+        work = lambda e: install(e, root)  # noqa: E731
+        verb = "Downloading"
+    print(f"{verb} {len(chosen)} file(s) for Autoware {VERSION} into {root}")
+
+    counts = {"downloaded": 0, "linked": 0, "kept": 0}
+    total = 0
+    failures = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, args.jobs)) as pool:
+        futures = {pool.submit(work, e): e for e in chosen}
+        for fut in concurrent.futures.as_completed(futures):
+            e = futures[fut]
+            try:
+                status, size = fut.result()
+            except Exception as exc:  # report every failure, keep the rest going
+                failures.append(f"{e.path}: {exc}")
+                log(f"  FAILED {e.path}: {exc}", file=sys.stderr)
+                continue
+            counts[status] += 1
+            total += size
+            if status != "kept":
+                log(f"  {status:10s} {e.path}" + (f" ({human(size)})" if size else ""))
+
+    (root / STAMP).write_text(VERSION + "\n")
+    print(f"done: {counts['downloaded']} downloaded ({human(total)}), "
+          f"{counts['linked']} linked, {counts['kept']} already present, {len(failures)} failed")
+    if failures:
+        print("Re-run to retry; completed files are kept.", file=sys.stderr)
+        sys.exit(1)
+    if root != default_dir.absolute():
+        print(f"\nThis is not the default data_path. Launch Autoware with:\n    data_path:={root}")
+
+
+if __name__ == "__main__":
+    main()

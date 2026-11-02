@@ -12,8 +12,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASEDIR="$(dirname "$SCRIPT_DIR")"
 DEB_FILE="$BASEDIR/packages/autoware-localrepo-1-9-0_1.9.0-1jetpack62_all.deb"
 
-# The localrepo bundles everything, ML models included, so it is the only
-# artifact the test needs.
+# The localrepo bundles every package (models are downloaded inside the test),
+# so it is the only artifact the test needs.
 if [ ! -f "$DEB_FILE" ]; then
     echo "Error: $DEB_FILE not found. Run 'just all' first."
     exit 1

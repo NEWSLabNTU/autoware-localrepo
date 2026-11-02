@@ -30,8 +30,8 @@ Architecture: all
 Depends: ${misc:Depends}
 Description: Autoware 3D object detection and camera-LiDAR fusion models
  3D object detection, semantic segmentation and camera-LiDAR fusion models:
- StreamPETR, BEVDet, BEVFusion, TransFusion, PTv3, FRNet, Apollo instance
- segmentation and PointPainting.
+ CenterPoint, StreamPETR, BEVDet, BEVFusion, TransFusion, PTv3, FRNet,
+ Apollo instance segmentation and PointPainting.
 
 Package: autoware-data-planning-1-9-0
 Architecture: all

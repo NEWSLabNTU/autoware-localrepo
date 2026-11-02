@@ -16,6 +16,7 @@ override_dh_auto_build:
 	mkdir -p downloads/diffusion_planner/v5.0
 	mkdir -p downloads/image_projection_based_fusion
 	mkdir -p downloads/lidar_apollo_instance_segmentation
+	mkdir -p downloads/lidar_centerpoint
 	mkdir -p downloads/lidar_frnet
 	mkdir -p downloads/lidar_transfusion
 	mkdir -p downloads/ptv3
@@ -126,6 +127,24 @@ override_dh_auto_install:
 	install -m 644 downloads/lidar_apollo_instance_segmentation/hdl-64.onnx $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_apollo_instance_segmentation/
 	install -d $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_apollo_instance_segmentation
 	install -m 644 downloads/lidar_apollo_instance_segmentation/vls-128.onnx $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_apollo_instance_segmentation/
+	install -d $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/centerpoint_ml_package.param.yaml $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/centerpoint_sigma_ml_package.param.yaml $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/centerpoint_tiny_ml_package.param.yaml $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/deploy_metadata.yaml $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/detection_class_remapper.param.yaml $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/pts_backbone_neck_head_centerpoint.onnx $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/pts_backbone_neck_head_centerpoint_tiny.onnx $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/pts_voxel_encoder_centerpoint.onnx $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint/
+	install -d $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint
+	install -m 644 downloads/lidar_centerpoint/pts_voxel_encoder_centerpoint_tiny.onnx $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_centerpoint/
 	install -d $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_transfusion
 	install -m 644 downloads/lidar_transfusion/transfusion.onnx $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_transfusion/
 	install -d $(CURDIR)/debian/autoware-data-perception3d-1-9-0/opt/autoware/1.9.0/data/lidar_transfusion
