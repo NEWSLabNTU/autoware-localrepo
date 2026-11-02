@@ -5,7 +5,7 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASEDIR="$(dirname "$SCRIPT_DIR")"
-DEB_FILE=$(ls "$BASEDIR/packages/autoware-localrepo-1-5-0_"*ubuntu2204sbsa_all.deb 2>/dev/null | head -1)
+DEB_FILE=$(ls "$BASEDIR/packages/autoware-localrepo-1-5-0_"*ubuntu2204sbsa_all.deb 2>/dev/null | sort -V | tail -1)
 
 if [ -z "$DEB_FILE" ] || [ ! -f "$DEB_FILE" ]; then
     echo "Error: autoware-localrepo deb not found in $BASEDIR/packages/. Run 'just localrepo' first."

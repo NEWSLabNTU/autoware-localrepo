@@ -1,3 +1,10 @@
+autoware-full-1-5-0 (1.5.0-2) jammy; urgency=medium
+
+  * Depend on autoware-model-downloader-1-5-0 instead of autoware-data-1-5-0;
+    the ML models are downloaded per user into ~/autoware_data.
+
+ -- Jerry Lin <jerry73204@gmail.com>  Mon, 02 Nov 2026 00:00:00 +0800
+
 autoware-full-1-5-0 (1.5.0-1) jammy; urgency=medium
 
   * Initial release for Autoware 1.5.0

@@ -1,0 +1,21 @@
+Source: autoware-model-downloader-1-5-0
+Section: misc
+Priority: optional
+Maintainer: Jerry Lin <jerry73204@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: autoware-model-downloader-1-5-0
+Architecture: all
+Depends: ${misc:Depends}, python3 (>= 3.8), ca-certificates
+Suggests: autoware-data-1-5-0
+Description: Downloader for the Autoware 1.5.0 ML models
+ Provides autoware-download-models-1-5-0, which fetches the ML models used by
+ Autoware 1.5.0 from their upstream URLs into a directory owned by the user
+ (default: ~/autoware_data, Autoware's default data_path) and verifies each
+ file against a recorded sha256.
+ .
+ The models are not shipped in the local repository. They must sit in a
+ user-writable directory anyway, because TensorRT writes its compiled engines
+ next to them. For offline installs, the autoware-data-1-5-0 packages carry
+ the same files, and the downloader can link them with --link-from.

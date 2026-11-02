@@ -37,7 +37,7 @@ meta:
     echo "Building packages (parallel)..."
     parallel --halt now,fail=1 \
         'cd packages/{} && dpkg-buildpackage -us -uc -b' \
-        ::: autoware-config autoware-theme autoware-data autoware-ros-packages autoware-maps
+        ::: autoware-config autoware-theme autoware-data autoware-model-downloader autoware-ros-packages autoware-maps
 
     # Build autoware-full last (depends on the others)
     cd packages/autoware-full && dpkg-buildpackage -us -uc -b
@@ -63,9 +63,15 @@ localrepo:
     echo "Copying ROS packages..."
     cp "$BASEDIR/build/debs/"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
 
-    # Copy meta-packages (except autoware-localrepo itself)
+    # Copy meta-packages (except autoware-localrepo itself, and autoware-data).
+    #
+    # The models are not bundled: they were 1.8 GB of the 2.0 GB repo, and
+    # TensorRT cannot cache engines beside them in root-owned
+    # /opt/autoware/1.5.0/data. autoware-full pulls autoware-model-downloader
+    # instead, and users run autoware-download-models-1-5-0 into
+    # ~/autoware_data. autoware-data is still built for offline sites.
     echo "Copying meta-packages..."
-    for pkg in autoware-config-1-5-0 autoware-theme-1-5-0 autoware-data-1-5-0 autoware-ros-packages-1-5-0 autoware-maps-1-5-0 autoware-full-1-5-0; do
+    for pkg in autoware-config-1-5-0 autoware-theme-1-5-0 autoware-model-downloader-1-5-0 autoware-ros-packages-1-5-0 autoware-maps-1-5-0 autoware-full-1-5-0; do
         cp "$BASEDIR/packages/${pkg}_"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
     done
 
@@ -146,7 +152,7 @@ download-assets: download-data download-theme download-maps download-rosbag
 release:
     #!/usr/bin/env bash
     set -e
-    LOCALREPO=$(ls packages/autoware-localrepo-1-5-0_*.deb 2>/dev/null | head -1)
+    LOCALREPO=$(ls packages/autoware-localrepo-1-5-0_*.deb 2>/dev/null | sort -V | tail -1)
     if [ -z "$LOCALREPO" ]; then
         echo "Error: localrepo .deb not found. Run 'just all' first."
         exit 1
@@ -155,12 +161,21 @@ release:
     SIZE=$(stat -c%s "$LOCALREPO")
     if [ "$SIZE" -gt "$LIMIT" ]; then
         echo "Error: $(basename "$LOCALREPO") is $(numfmt --to=iec --suffix=B $SIZE), over 2 GiB GitHub limit."
-        echo "Consider splitting autoware-data out (see 1.7.1 for the pattern)."
         exit 1
     fi
     OUT=packages/release
     rm -rf "$OUT" && mkdir -p "$OUT"
     cp "$LOCALREPO" "$OUT/"
+    # Optional asset for offline sites: dpkg -i it, then run
+    # autoware-download-models-1-5-0 --link-from /opt/autoware/1.5.0/data.
+    DATA=$(ls packages/autoware-data-1-5-0_*.deb 2>/dev/null | head -1)
+    if [ -n "$DATA" ]; then
+        if [ "$(stat -c%s "$DATA")" -ge "$LIMIT" ]; then
+            echo "Error: $(basename "$DATA") is over GitHub's 2 GiB limit."
+            exit 1
+        fi
+        cp "$DATA" "$OUT/"
+    fi
     (cd "$OUT" && sha256sum *.deb > SHA256SUMS.txt)
     echo "✓ Release artifacts staged in $OUT/"
     ls -la "$OUT"
