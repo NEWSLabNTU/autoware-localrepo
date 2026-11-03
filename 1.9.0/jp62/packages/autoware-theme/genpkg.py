@@ -242,7 +242,7 @@ override_dh_auto_install:
 \tinstall -m 644 downloads/qt5ct.conf $(CURDIR)/debian/{pkg}{install_dir}/
 \tcp -r downloads/autoware-rviz-icons $(CURDIR)/debian/{pkg}{install_dir}/
 \tinstall -d $(CURDIR)/debian/{pkg}/usr/bin
-\tinstall -m 755 apply-autoware-theme $(CURDIR)/debian/{pkg}/usr/bin/
+\tinstall -m 755 apply-autoware-theme $(CURDIR)/debian/{pkg}/usr/bin/apply-autoware-theme{suffix}
 
 override_dh_auto_clean:
 \trm -rf downloads/
