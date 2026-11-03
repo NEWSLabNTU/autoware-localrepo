@@ -9,6 +9,18 @@ ENV CMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc
 ENV PATH=/usr/local/cuda/bin:${PATH}
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 
+# Data-center GPU kernels, the same flags as the arm64 server build. The CUDA
+# packages hardcode their -gencode list, which has no A100 (sm_80) or H100
+# (sm_90) code, and its only PTX targets a newer GPU than either, so it cannot
+# JIT down to them. nvcc appends this to every invocation, in colcon's pass and
+# in debian/rules alike, so no package source is patched.
+#
+# compute_75 PTX covers every GPU from Turing up that has no matching SASS, B200
+# (sm_100) included, and the packages that set no architecture at all
+# (trt_batched_nms, among others), which an explicit -gencode would otherwise
+# restrict to sm_80/sm_90.
+ENV NVCC_APPEND_FLAGS="-gencode arch=compute_80,code=sm_80 -gencode arch=compute_90,code=sm_90 -gencode arch=compute_75,code=compute_75"
+
 # Configure the locale and timezone
 RUN apt update -y && \
     apt install -y locales && \

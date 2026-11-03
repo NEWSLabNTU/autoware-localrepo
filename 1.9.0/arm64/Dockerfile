@@ -31,7 +31,11 @@ ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 # without a PTX here they would run on sm_80/sm_90 only and fail on a T4G
 # (AWS g5g, sm_75) or an RTX card. compute_75 PTX JITs on every GPU from
 # Turing up.
-ENV NVCC_APPEND_FLAGS="-gencode arch=compute_80,code=sm_80 -gencode arch=compute_90,code=sm_90 -gencode arch=compute_75,code=compute_75"
+# sm_100 (B200/GB200) SASS too, because PTX is not always enough: packages
+# built with separable compilation (probabilistic_occupancy_grid_map) keep no
+# PTX in the final library, so they run only where they have matching SASS.
+# This builder's CUDA 12.8 can target sm_100; 1.5.0's CUDA 12.4 cannot.
+ENV NVCC_APPEND_FLAGS="-gencode arch=compute_80,code=sm_80 -gencode arch=compute_90,code=sm_90 -gencode arch=compute_100,code=sm_100 -gencode arch=compute_75,code=compute_75"
 
 
 # acados (new build dependency of autoware_path_optimizer in 1.9.0).
