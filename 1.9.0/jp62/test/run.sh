@@ -10,7 +10,8 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASEDIR="$(dirname "$SCRIPT_DIR")"
-DEB_FILE="$BASEDIR/packages/autoware-localrepo-1-9-0_1.9.0-1jetpack62_all.deb"
+# Newest revision: packages/ keeps every localrepo deb ever built.
+DEB_FILE="$(ls "$BASEDIR/packages/autoware-localrepo-1-9-0_"*_all.deb 2>/dev/null | sort -V | tail -1)"
 
 # The localrepo bundles every package (models are downloaded inside the test),
 # so it is the only artifact the test needs.

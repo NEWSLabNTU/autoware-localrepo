@@ -5,7 +5,8 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASEDIR="$(dirname "$SCRIPT_DIR")"
-DEB_FILE="$BASEDIR/packages/autoware-localrepo-1-7-1_1.7.1-1ubuntu2204sbsa_all.deb"
+# Newest revision: packages/ keeps every localrepo deb ever built.
+DEB_FILE="$(ls "$BASEDIR/packages/autoware-localrepo-1-7-1_"*_all.deb 2>/dev/null | sort -V | tail -1)"
 DATA_FILE="$BASEDIR/packages/autoware-data-1-7-1_1.7.1-1_all.deb"
 
 for f in "$DEB_FILE" "$DATA_FILE"; do

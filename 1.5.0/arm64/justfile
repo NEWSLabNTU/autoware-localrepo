@@ -72,7 +72,14 @@ localrepo:
     # ~/autoware_data. autoware-data is still built for offline sites.
     echo "Copying meta-packages..."
     for pkg in autoware-config-1-5-0 autoware-theme-1-5-0 autoware-model-downloader-1-5-0 autoware-ros-packages-1-5-0 autoware-maps-1-5-0 autoware-full-1-5-0; do
-        cp "$BASEDIR/packages/${pkg}_"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
+        # Newest revision only: packages/ keeps every deb ever built, and a
+        # changelog bump leaves the previous revision beside the new one.
+        deb=$(ls "$BASEDIR/packages/${pkg}_"*.deb 2>/dev/null | sort -V | tail -1)
+        if [ -z "$deb" ]; then
+            echo "Error: no ${pkg}_*.deb in packages/. Run 'just meta' first."
+            exit 1
+        fi
+        cp "$deb" "$REPODIR/pool/main/"
     done
 
     # Generate Packages index

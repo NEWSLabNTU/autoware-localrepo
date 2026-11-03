@@ -75,7 +75,14 @@ localrepo:
     # autoware-full-1-7-1 finds autoware-data's dep already satisfied.
     echo "Copying meta-packages..."
     for pkg in autoware-config-1-7-1 autoware-theme-1-7-1 autoware-ros-packages-1-7-1 autoware-maps-1-7-1 autoware-full-1-7-1; do
-        cp "$BASEDIR/packages/${pkg}_"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
+        # Newest revision only: packages/ keeps every deb ever built, and a
+        # changelog bump leaves the previous revision beside the new one.
+        deb=$(ls "$BASEDIR/packages/${pkg}_"*.deb 2>/dev/null | sort -V | tail -1)
+        if [ -z "$deb" ]; then
+            echo "Error: no ${pkg}_*.deb in packages/. Run 'just meta' first."
+            exit 1
+        fi
+        cp "$deb" "$REPODIR/pool/main/"
     done
 
     # Generate Packages index
@@ -161,7 +168,7 @@ download-assets: download-data download-theme download-maps download-rosbag
 release:
     #!/usr/bin/env bash
     set -e
-    LOCALREPO=$(ls packages/autoware-localrepo-1-7-1_*.deb 2>/dev/null | head -1)
+    LOCALREPO=$(ls packages/autoware-localrepo-1-7-1_*.deb 2>/dev/null | sort -V | tail -1)
     DATA=$(ls packages/autoware-data-1-7-1_*.deb 2>/dev/null | head -1)
     if [ -z "$LOCALREPO" ] || [ -z "$DATA" ]; then
         echo "Error: localrepo or autoware-data .deb not found. Run 'just all' first."
