@@ -101,25 +101,31 @@ test:
 sim map_path="$HOME/autoware_map/sample-map-planning":
     ./test/sim/run.sh "{{map_path}}"
 
-# Download ML model files from upstream Autoware
+# Download ML model files from upstream Autoware.
+#
+# Only fetches what the committed downloads.txt lists. It does not run
+# genpkg.py: that rewrites the committed debian/ files, and run plainly it
+# drops the -1-7-1 package suffix and the versioned install prefix.
 download-data:
     #!/usr/bin/env bash
     set -e
     cd packages/autoware-data
-    python3 genpkg.py --download "{{version}}" --version "{{version}}"
     echo "Downloading model files..."
     aria2c -i downloads.txt -j 8 --continue=true --auto-file-renaming=false --allow-overwrite=true
     echo "✓ ML model files downloaded"
 
-# Download RViz theme files from upstream Autoware
+# Download RViz theme files from upstream Autoware (committed downloads.txt only)
 download-theme:
     #!/usr/bin/env bash
     set -e
     cd packages/autoware-theme
-    python3 genpkg.py -v "{{version}}"
     echo "Downloading theme files..."
-    aria2c -i downloads.txt -j 8 --auto-file-renaming=false --allow-overwrite=true
+    aria2c -i downloads.txt -j 8 --continue=true --auto-file-renaming=false --allow-overwrite=true
     echo "✓ Theme files downloaded"
+
+# There is no gen-data/gen-theme for this version: its genpkg.py scripts
+# predate the package suffix, and the committed debian/ files were adjusted by
+# hand after generation. Edit those files directly.
 
 # Download sample maps from Autoware (Google Drive)
 download-maps:
