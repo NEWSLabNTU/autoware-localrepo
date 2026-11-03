@@ -154,11 +154,22 @@ ros2 launch autoware_launch planning_simulator.launch.xml \
 ### Uninstallation
 
 ```bash
-sudo /usr/share/autoware/<version>/uninstall-autoware.sh
-sudo dpkg -r autoware-localrepo-<version-dashes>          # e.g., autoware-localrepo-1-7-1
-sudo dpkg -r autoware-data-<version-dashes>               # 1.7.1, and 1.9.0 offline installs
-rm -rf ~/autoware_data                                    # 1.9.0: models downloaded per user
+sudo /usr/share/autoware/<version>/uninstall-autoware.sh            # packages; keeps config + localrepo
+sudo /usr/share/autoware/<version>/uninstall-autoware.sh --purge    # also config, localrepo, /opt/autoware/<version>
+sudo /usr/share/autoware/<version>/uninstall-autoware.sh --purge --all-versions   # every version
+rm -rf ~/autoware_data                                                # models: per user, never touched by the script
 ```
+
+The script is generated from one template for every version and platform; edit
+all copies together (`<ver>/<platform>/packages/autoware-localrepo/src/`). It
+matches packages by version suffix, so acados, autoware-data parts and the
+downloader are covered without a list. Autoremove is offered separately,
+after listing what it would take, because it also removes the system
+packages Autoware pulled in (over 1,100 in a clean container).
+
+Versions coexist: package names and install prefixes carry the version. The
+one shared path, `/usr/bin/apply-autoware-theme`, is per version from
+autoware-theme 1.5.0-2 / 1.7.1-2 / 1.9.0-1 on.
 
 ## Directory Structure
 
