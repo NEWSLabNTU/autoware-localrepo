@@ -1,3 +1,12 @@
+autoware-localrepo-1-7-1 (1.7.1-2ubuntu2204sbsa) jammy; urgency=medium
+
+  * autoware-theme-1-7-1 1.7.1-2: the theme script is now
+    apply-autoware-theme-1-7-1, so other Autoware versions can be installed
+    beside this one.
+  * uninstall-autoware.sh: --purge, --all-versions and -y, as in 1.5.0-3.
+
+ -- Jerry Lin <jerry73204@gmail.com>  Tue, 03 Nov 2026 00:00:00 +0800
+
 autoware-localrepo-1-7-1 (1.7.1-1ubuntu2204sbsa) jammy; urgency=medium
 
   * First build for generic arm64 servers (SBSA): Autoware 1.7.1 with
