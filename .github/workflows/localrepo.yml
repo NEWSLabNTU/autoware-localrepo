@@ -46,7 +46,7 @@ concurrency:
 env:
   # colcon2deb commit to build with. Bump deliberately; a new colcon2deb can
   # change every package it produces.
-  COLCON2DEB_REF: 13b41383e944a7dc22504f4e87e9e9e7b6e73f5d
+  COLCON2DEB_REF: f4a74a5264430270c8b38b1f7da31215dbe02d1d
 
 jobs:
   plan:
