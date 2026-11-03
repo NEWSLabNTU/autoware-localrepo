@@ -334,26 +334,35 @@ The test verifies:
 4. Env vars set: `AUTOWARE_HOME`, `RMW_IMPLEMENTATION`, `CYCLONEDDS_URI`
 5. ROS2 can see all Autoware packages
 
-### Stage Release Artifacts
+### Stage and Publish a Release
+
+Releases are built and published by hand, on the machine that built them;
+there is no CI (a cold build needs hours and ~100 GB, beyond GitHub's hosted
+runners). The x86 host builds amd64; the arm64 server builds arm64 and jp62.
 
 ```bash
-# From version/arch directory — produces packages/release/ for GitHub upload
-just release
+# On each build host, per <version>/<platform> it built:
+just download-data download-theme   # once; fetches what downloads.txt lists
+just all && just test && just release   # stages packages/release/ + SHA256SUMS.txt
+
+# Then, from the repository root, attach them to a DRAFT release:
+scripts/publish-release.sh --dry-run 1.9.0-1 1.9.0/arm64 1.9.0/jp62   # see what it would do
+scripts/publish-release.sh 1.9.0-1 1.9.0/arm64 1.9.0/jp62             # arm64 server
+scripts/publish-release.sh 1.9.0-1 1.9.0/amd64                        # x86 host
 ```
 
-For 1.5.0 this stages a single `autoware-localrepo-*.deb` plus `SHA256SUMS.txt`.
-For 1.7.1+ it also stages `autoware-data-*.deb` separately (see "GitHub 2 GiB asset limit" below).
+`publish-release.sh` verifies the staged files against their `SHA256SUMS.txt`,
+creates the draft at HEAD (which must be on origin) if it does not exist, and
+uploads each platform's localrepo deb. It refuses to overwrite a localrepo deb
+that differs unless given `--replace`. The `autoware-data` debs are
+architecture-independent, so whichever host publishes first attaches them and
+later hosts keep those. After every run it rewrites the release's
+`SHA256SUMS.txt` from the digests GitHub records, so the file covers all
+platforms. It never publishes: review the draft, then publish on GitHub or with
+`gh release edit <tag> --draft=false`.
 
-### CI: self-hosted runners
-
-`.github/workflows/localrepo.yml` runs download, `just all`, `just test` and
-`just release` on two self-hosted runner containers (`ci/runner/`): the x86
-host builds amd64, and the arm64 server builds arm64 and jp62 (no Jetson is
-involved). A tag such as `1.9.0-2`, or a manual run with a release tag, attaches
-the debs to a **draft** release and writes `SHA256SUMS.txt` from GitHub's asset
-digests; a maintainer publishes it. The runners hold the host's Docker socket,
-so the workflow must never gain a `pull_request` trigger. Setup, the same-path
-mount colcon2deb needs, and the security notes: `ci/runner/README.md`.
+Publishing is outward-facing: run it only when the maintainer has asked for
+that release.
 
 ### Run Planning Simulation Test
 

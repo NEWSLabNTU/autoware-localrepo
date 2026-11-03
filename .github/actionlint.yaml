@@ -1,7 +1,0 @@
-# Labels of the self-hosted runners in ci/runner/README.md.
-self-hosted-runner:
-  labels:
-    - autoware-localrepo
-    - localrepo-amd64
-    - localrepo-arm64
-    - localrepo-jp62
