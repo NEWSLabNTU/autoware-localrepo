@@ -105,6 +105,17 @@ def is_current(entry, dest):
     return dest.is_file() and not dest.is_symlink() and sha256_of(dest) == entry.sha256
 
 
+def verifies(entry, dest):
+    """What --verify accepts: is_current, or a --link-from symlink to a good file.
+
+    is_current() rejects symlinks so that a download replaces links with real
+    files; checking an offline install must follow them instead.
+    """
+    if entry.is_tarball:
+        return is_current(entry, dest)
+    return dest.is_file() and sha256_of(dest) == entry.sha256
+
+
 def drop_stale_engine(dest):
     """Remove an engine compiled from a model file that is being replaced.
 
@@ -205,6 +216,10 @@ def link(entry, root, source):
                 target.unlink()
             target.symlink_to(f)
             made += 1
+        # The packaged tree was extracted from this same tarball, so stamp it
+        # as is_current() expects; --verify then accepts the linked copy.
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        tarball_stamp(dest).write_text(entry.sha256 + "\n")
         return "linked" if made else "kept", 0
     if not src.is_file():
         raise RuntimeError(f"{src} not found")
@@ -313,7 +328,7 @@ def main():
     root = (args.dir or default_dir).expanduser().absolute()
 
     if args.verify:
-        bad = [e.path for e in chosen if not is_current(e, root / e.path)]
+        bad = [e.path for e in chosen if not verifies(e, root / e.path)]
         for p in bad:
             print(f"  missing or wrong: {p}")
         print(f"{len(chosen) - len(bad)}/{len(chosen)} file(s) verified in {root}")
