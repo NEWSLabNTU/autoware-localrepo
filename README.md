@@ -73,7 +73,7 @@ See [Planning Simulation Demo](https://autowarefoundation.github.io/autoware-doc
 Turing or newer. Nothing is built for Volta or Pascal (V100, GTX 10xx), and
 TensorRT 10 does not support them.
 
-| GPU | amd64 1.5.0 | amd64 1.9.0 | arm64 server | Jetson (jp62) |
+| GPU | amd64 1.5.0 | amd64 1.7.1, 1.9.0 | arm64 server | Jetson (jp62) |
 |---|---|---|---|---|
 | Turing: RTX 20, T4, T4G | yes | yes | yes | |
 | A100, A30 | yes | yes | yes | |

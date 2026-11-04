@@ -21,7 +21,10 @@ ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 # built with separable compilation (probabilistic_occupancy_grid_map) keep no
 # PTX in the final library, so they run only where they have matching SASS.
 # This builder's CUDA 12.8 can target sm_100; 1.5.0's CUDA 12.4 cannot.
-ENV NVCC_APPEND_FLAGS="-gencode arch=compute_80,code=sm_80 -gencode arch=compute_90,code=sm_90 -gencode arch=compute_100,code=sm_100 -gencode arch=compute_75,code=compute_75"
+# sm_75 (Turing: RTX 20, T4, T4G) SASS as well, for the same reason: universe
+# 0.50.0 dropped sm_75 from the packages' own -gencode lists, and without it
+# the occupancy grid map library has no kernel at all for a Turing GPU.
+ENV NVCC_APPEND_FLAGS="-gencode arch=compute_75,code=sm_75 -gencode arch=compute_80,code=sm_80 -gencode arch=compute_90,code=sm_90 -gencode arch=compute_100,code=sm_100 -gencode arch=compute_75,code=compute_75"
 
 # Configure the locale and timezone
 RUN apt update -y && \
