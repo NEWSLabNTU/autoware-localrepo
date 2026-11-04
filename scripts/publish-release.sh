@@ -13,7 +13,9 @@
 #
 #   1. checks each DIR/packages/release/ against its SHA256SUMS.txt;
 #   2. creates the draft release if it does not exist, at the commit HEAD
-#      points to (which must already be on origin);
+#      points to (which must already be on origin), with the notes in
+#      release-notes/TAG.md. An existing draft gets that file's notes too,
+#      so the committed file is what the release says;
 #   3. uploads the autoware-localrepo deb of every DIR. An asset of the same
 #      name with different content is refused unless --replace is given;
 #   4. uploads the optional autoware-data debs only if no platform has yet.
@@ -28,7 +30,7 @@
 # Needs gh logged in with write access to the repository.
 set -euo pipefail
 
-usage() { sed -n '2,29p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
+usage() { sed -n '2,30p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
 
 DRY=0
 REPLACE=0
@@ -66,6 +68,10 @@ for dir in "$@"; do
 done
 
 # 2. The draft release.
+NOTES="release-notes/$TAG.md"
+[ -f "$NOTES" ] || { echo "error: $NOTES missing; write the release notes first" >&2; exit 1; }
+git ls-files --error-unmatch "$NOTES" >/dev/null 2>&1 && git diff --quiet HEAD -- "$NOTES" \
+    || { echo "error: commit $NOTES first, so the release notes are on origin with the code" >&2; exit 1; }
 head=$(git rev-parse HEAD)
 if ! git branch -r --contains "$head" | grep -q 'origin/'; then
     echo "error: HEAD $head is not on origin; push it first so the release points at a published commit" >&2
@@ -79,13 +85,14 @@ info=$(release_json)
 if [ -z "$info" ]; then
     echo "Creating draft release $TAG at $head"
     run gh release create "$TAG" -R "$REPO" --draft --target "$head" --title "Autoware $TAG" \
-        --notes "Autoware $VERSION local APT repository. See README.md for installation."
+        --notes-file "$NOTES"
     [ "$DRY" -eq 1 ] || info=$(release_json)
 elif [ "$(jq -r .draft <<<"$info")" != true ]; then
     echo "error: release $TAG is already published; this script only fills drafts" >&2
     exit 1
 else
-    echo "Using existing draft release $TAG"
+    echo "Using existing draft release $TAG; setting its notes from $NOTES"
+    run gh release edit "$TAG" -R "$REPO" --notes-file "$NOTES"
 fi
 
 # name -> sha256 of what is attached now
