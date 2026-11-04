@@ -157,13 +157,13 @@ ros2 launch autoware_launch planning_simulator.launch.xml \
 ```bash
 sudo /usr/share/autoware/<version>/uninstall-autoware.sh            # packages; keeps config + localrepo
 sudo /usr/share/autoware/<version>/uninstall-autoware.sh --purge    # also config, localrepo, /opt/autoware/<version>
-sudo /usr/share/autoware/<version>/uninstall-autoware.sh --purge --all-versions   # every version
 rm -rf ~/autoware_data                                                # models: per user, never touched by the script
 ```
 
 The script is generated from one template for every version and platform; edit
 all copies together (`<ver>/<platform>/packages/autoware-localrepo/src/`). It
-matches packages by version suffix, so acados, autoware-data parts and the
+matches packages by its own version suffix only (there is deliberately no
+option to remove other versions), so acados, autoware-data parts and the
 downloader are covered without a list. Autoremove is offered separately,
 after listing what it would take, because it also removes the system
 packages Autoware pulled in (over 1,100 in a clean container).

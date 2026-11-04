@@ -115,10 +115,10 @@ sudo /usr/share/autoware/1.5.0/uninstall-autoware.sh
 
 # Remove 1.5.0 completely: config files, localrepo, /opt/autoware/1.5.0
 sudo /usr/share/autoware/1.5.0/uninstall-autoware.sh --purge
-
-# Remove every Autoware version from this machine
-sudo /usr/share/autoware/1.5.0/uninstall-autoware.sh --purge --all-versions
 ```
+
+Each version's script removes only that version. With several installed, run
+each one's own script, e.g. `/usr/share/autoware/1.9.0/uninstall-autoware.sh`.
 
 The script lists what it will remove and asks first; `-y` skips the questions.
 It also offers to remove the dependencies Autoware pulled in that nothing else

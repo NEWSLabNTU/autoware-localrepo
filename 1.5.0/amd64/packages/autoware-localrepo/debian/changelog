@@ -8,8 +8,8 @@ autoware-localrepo-1-5-0 (1.5.0-3ubuntu2204) jammy; urgency=medium
     apply-autoware-theme-1-5-0, so other Autoware versions can be installed
     beside this one.
   * uninstall-autoware.sh: --purge also removes config files, the localrepo
-    and leftovers under /opt/autoware/1.5.0; --all-versions covers every
-    installed Autoware version; -y skips the questions. It now catches
+    and leftovers under /opt/autoware/1.5.0; -y skips the questions. It
+    touches only 1.5.0: other installed versions keep their packages. It now catches
     acados and the model downloader, lists what apt autoremove would take
     before taking it, and lists users' model directories without deleting
     them.
