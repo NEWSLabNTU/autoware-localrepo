@@ -352,15 +352,25 @@ scripts/publish-release.sh 1.9.0-1 1.9.0/arm64 1.9.0/jp62             # arm64 se
 scripts/publish-release.sh 1.9.0-1 1.9.0/amd64                        # x86 host
 ```
 
-`publish-release.sh` verifies the staged files against their `SHA256SUMS.txt`,
-creates the draft at HEAD (which must be on origin) if it does not exist, and
-uploads each platform's localrepo deb. It refuses to overwrite a localrepo deb
-that differs unless given `--replace`. The `autoware-data` debs are
-architecture-independent, so whichever host publishes first attaches them and
-later hosts keep those. After every run it rewrites the release's
-`SHA256SUMS.txt` from the digests GitHub records, so the file covers all
-platforms. It never publishes: review the draft, then publish on GitHub or with
-`gh release edit <tag> --draft=false`.
+Each version gets two releases, so visitors do not take the offline model
+packages for part of the install:
+
+- `<version>-<rev>` (`1.9.0-1`): the localrepo debs, one per platform.
+- `data-<dataver>` (`data-1.9.0-1`): the optional `autoware-data` debs, for
+  offline installs. `<dataver>` is the data debs' own version, which changes
+  only when the models do, so localrepo revisions share a data release; the
+  script reuses a published one whose debs match.
+
+Notes come from `release-notes/<tag>.md` for both, and must be committed
+first. `publish-release.sh` verifies the staged files against their
+`SHA256SUMS.txt`, creates each draft at HEAD (which must be on origin) if it
+does not exist, and uploads each platform's localrepo deb. It refuses to
+overwrite a localrepo deb that differs unless given `--replace`. The
+`autoware-data` debs are architecture-independent, so whichever host
+publishes first attaches them and later hosts keep those. After every run it
+rewrites each release's `SHA256SUMS.txt` from the digests GitHub records, so
+the file covers all platforms. It never publishes: review the drafts, then
+publish on GitHub or with `gh release edit <tag> --draft=false`.
 
 Publishing is outward-facing: run it only when the maintainer has asked for
 that release.
