@@ -12,9 +12,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASEDIR="$(dirname "$SCRIPT_DIR")"
 # Newest revision: packages/ keeps every localrepo deb ever built.
 DEB_FILE="$(ls "$BASEDIR/packages/autoware-localrepo-1-7-1_"*_all.deb 2>/dev/null | sort -V | tail -1)"
-DATA_FILE="$BASEDIR/packages/autoware-data-1-7-1_1.7.1-1_all.deb"
 
-for f in "$DEB_FILE" "$DATA_FILE"; do
+for f in "$DEB_FILE"; do
     if [ ! -f "$f" ]; then
         echo "Error: $f not found. Run 'just all' first."
         exit 1
@@ -23,7 +22,6 @@ done
 
 echo "Testing autoware-localrepo installation (JetPack 6.2 / arm64)..."
 echo "  Package: $DEB_FILE"
-echo "  Data:    $DATA_FILE"
 echo ""
 
 # Create temporary directory for Docker context
@@ -32,7 +30,6 @@ trap "rm -rf $TMPDIR" EXIT
 
 # Copy required files to Docker context
 cp "$DEB_FILE" "$TMPDIR/autoware-localrepo.deb"
-cp "$DATA_FILE" "$TMPDIR/autoware-data.deb"
 cp "$SCRIPT_DIR/Dockerfile" "$TMPDIR/Dockerfile"
 cp "$SCRIPT_DIR/opencv-preferences" "$TMPDIR/opencv-preferences"
 

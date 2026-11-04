@@ -37,7 +37,7 @@ meta:
     echo "Building packages (parallel)..."
     parallel --halt now,fail=1 \
         'cd packages/{} && dpkg-buildpackage -us -uc -b' \
-        ::: autoware-config autoware-theme autoware-data autoware-ros-packages autoware-maps
+        ::: autoware-config autoware-theme autoware-data autoware-model-downloader autoware-ros-packages autoware-maps
 
     # Build autoware-full last (depends on the others)
     cd packages/autoware-full && dpkg-buildpackage -us -uc -b
@@ -74,7 +74,7 @@ localrepo:
     # Users dpkg-install autoware-data alongside the localrepo, then apt install
     # autoware-full-1-7-1 finds autoware-data's dep already satisfied.
     echo "Copying meta-packages..."
-    for pkg in autoware-config-1-7-1 autoware-theme-1-7-1 autoware-ros-packages-1-7-1 autoware-maps-1-7-1 autoware-full-1-7-1; do
+    for pkg in autoware-config-1-7-1 autoware-theme-1-7-1 autoware-model-downloader-1-7-1 autoware-ros-packages-1-7-1 autoware-maps-1-7-1 autoware-full-1-7-1; do
         # Newest revision only: packages/ keeps every deb ever built, and a
         # changelog bump leaves the previous revision beside the new one.
         deb=$(ls "$BASEDIR/packages/${pkg}_"*.deb 2>/dev/null | sort -V | tail -1)
@@ -169,7 +169,9 @@ release:
     #!/usr/bin/env bash
     set -e
     LOCALREPO=$(ls packages/autoware-localrepo-1-7-1_*.deb 2>/dev/null | sort -V | tail -1)
-    DATA=$(ls packages/autoware-data-1-7-1_*.deb 2>/dev/null | head -1)
+    # autoware-data is an optional asset for offline sites: dpkg -i it, then run
+    # autoware-download-models-1-7-1 --link-from /opt/autoware/1.7.1/data.
+    DATA=$(ls packages/autoware-data-1-7-1_*.deb 2>/dev/null | sort -V | tail -1)
     if [ -z "$LOCALREPO" ] || [ -z "$DATA" ]; then
         echo "Error: localrepo or autoware-data .deb not found. Run 'just all' first."
         exit 1

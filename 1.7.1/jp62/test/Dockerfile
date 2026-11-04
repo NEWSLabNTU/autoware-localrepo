@@ -78,17 +78,30 @@ RUN wget -q https://github.com/autowarefoundation/spconv_cpp/releases/download/s
     rm -f cumm_0.5.3_arm64-jetson.deb spconv_2.3.8_arm64-jetson.deb
 
 # =============================================================================
-# Install autoware-localrepo + autoware-data (data shipped separately)
+# Install autoware-localrepo, the only APT source the test needs; the ML
+# models are downloaded below, as a user does
 # =============================================================================
-COPY autoware-localrepo.deb autoware-data.deb /tmp/
-RUN dpkg -i /tmp/autoware-localrepo.deb /tmp/autoware-data.deb && \
-    rm /tmp/autoware-localrepo.deb /tmp/autoware-data.deb
+COPY autoware-localrepo.deb /tmp/
+RUN dpkg -i /tmp/autoware-localrepo.deb && rm /tmp/autoware-localrepo.deb
 
 # Activate DDS configuration (sysctl + multicast)
 RUN /usr/share/autoware/1.7.1/activate-dds-config.sh
 
 # Install autoware-full-1-7-1 (pulls all Autoware packages from local repo)
 RUN apt-get update && apt-get install -y autoware-full-1-7-1
+
+# Download ML models the way a user does: as an unprivileged user, into the
+# default data_path. Only CenterPoint (the default lidar detector, ~40 MB) and
+# the YabLoc tarball, to exercise download, checksum and extraction without
+# pulling 1.9 GB in every test run. Root must be refused.
+RUN useradd -m tester && \
+    ! autoware-download-models-1-7-1 --only lidar_centerpoint && \
+    su tester -c 'autoware-download-models-1-7-1 --only lidar_centerpoint,yabloc_pose_initializer && \
+        autoware-download-models-1-7-1 --only lidar_centerpoint,yabloc_pose_initializer --verify && \
+        test -O ~/autoware_data/lidar_centerpoint/pts_backbone_neck_head_centerpoint_tiny.onnx && \
+        test -d ~/autoware_data/yabloc_pose_initializer/saved_model && \
+        test -w ~/autoware_data/lidar_centerpoint' && \
+    test ! -e /opt/autoware/1.7.1/data
 
 # =============================================================================
 # Verify installation

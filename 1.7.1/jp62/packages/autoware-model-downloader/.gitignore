@@ -1,0 +1,5 @@
+debian/.debhelper/
+debian/*.substvars
+debian/autoware-model-downloader-1-7-1/
+debian/debhelper-build-stamp
+debian/files

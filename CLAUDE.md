@@ -45,16 +45,17 @@ source /opt/autoware/1.5.0/autoware-env.bash  # DDS/CycloneDDS/Qt config
 
 ### 1.7.1
 
-ML models are shipped as a separate `autoware-data` deb to keep each release asset under GitHub's 2 GiB limit. Install both at once:
+From 1.7.1-2 the ML models are downloaded per user, as for 1.5.0-3 and 1.9.0
+(see "ML models" below). 1.7.1-1 instead needed the separate `autoware-data` deb
+installed beside the localrepo.
 
 ```bash
-sudo dpkg -i \
-    autoware-localrepo-1-7-1_1.7.1-1ubuntu2204_all.deb \
-    autoware-data-1-7-1_1.7.1-1_all.deb
+sudo dpkg -i autoware-localrepo-1-7-1_1.7.1-2ubuntu2204_all.deb
 sudo /usr/share/autoware/1.7.1/setup-prerequisites.sh
 sudo apt update
 sudo apt install autoware-full-1-7-1
 sudo /usr/share/autoware/1.7.1/activate-dds-config.sh  # AFTER install -- see note below
+autoware-download-models-1-7-1                          # as your own user, not sudo
 source /opt/autoware/1.7.1/setup.bash
 source /opt/autoware/1.7.1/autoware-env.bash
 ```
@@ -63,7 +64,7 @@ source /opt/autoware/1.7.1/autoware-env.bash
 
 The localrepo carries every package except the ML models (~0.2 GiB). The
 models are downloaded afterwards, **as the user who launches Autoware, without
-sudo** — see "ML models (1.5.0-3+, 1.9.0)" below for why.
+sudo** — see "ML models (1.5.0-3+, 1.7.1-2+, 1.9.0)" below for why.
 
 ```bash
 sudo dpkg -i autoware-localrepo-1-9-0_1.9.0-1jetpack62_all.deb  # or 1ubuntu2204 for amd64
@@ -76,7 +77,7 @@ source /opt/autoware/1.9.0/setup.bash
 source /opt/autoware/1.9.0/autoware-env.bash
 ```
 
-### ML models (1.5.0-3+, 1.9.0)
+### ML models (1.5.0-3+, 1.7.1-2+, 1.9.0)
 
 `autoware-full-1-9-0` depends on `autoware-model-downloader-1-9-0`, which
 installs `autoware-download-models-1-9-0` (a stdlib-only Python script in
