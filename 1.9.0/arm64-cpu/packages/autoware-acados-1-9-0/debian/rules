@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+
+ACADOS_VERSION = v0.5.3
+PREFIX = /opt/autoware/1.9.0
+DESTROOT = $(CURDIR)/debian/autoware-acados-1-9-0
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	rm -rf build-src
+	git clone --depth 1 --branch $(ACADOS_VERSION) --recursive \
+	    https://github.com/acados/acados.git build-src
+	cmake -S build-src -B build-src/build \
+	    -DACADOS_WITH_QPOASES=ON \
+	    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
+	    -DCMAKE_BUILD_TYPE=Release \
+	    -DCMAKE_INSTALL_PREFIX=$(PREFIX)
+
+override_dh_auto_build:
+	$(MAKE) -C build-src/build -j$(shell nproc)
+
+override_dh_auto_install:
+	DESTDIR=$(DESTROOT) $(MAKE) -C build-src/build install
+
+override_dh_shlibdeps:
+	# blasfeo/hpipm live in this same package on a non-standard prefix
+	dh_shlibdeps -l$(DESTROOT)/opt/autoware/1.9.0/lib
+
+override_dh_auto_clean:
+	rm -rf build-src
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

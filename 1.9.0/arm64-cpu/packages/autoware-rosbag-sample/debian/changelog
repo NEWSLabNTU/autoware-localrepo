@@ -1,0 +1,5 @@
+autoware-rosbag-sample-1-9-0 (1.9.0-1) jammy; urgency=medium
+
+  * Initial release for Autoware 1.9.0
+
+ -- Jerry Lin <jerry73204@gmail.com>  Thu, 20 Aug 2026 00:00:00 +0800
