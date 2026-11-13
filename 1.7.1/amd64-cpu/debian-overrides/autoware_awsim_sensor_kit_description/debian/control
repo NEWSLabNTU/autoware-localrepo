@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-awsim-sensor-kit-description-1-7-1
+Section: misc
+Priority: optional
+Maintainer: Piotr Jaroszek <piotr.jaroszek@robotec.ai>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-awsim-sensor-kit-description-1-7-1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-sample-sensor-kit-description-1-7-1, ros-humble-velodyne-description-1-7-1, ros-humble-xacro
+Description: The autoware_awsim_sensor_kit_description package
