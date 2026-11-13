@@ -137,9 +137,20 @@ The script copies every tracked file except the source submodule. It then:
   after the install test: it drives the planning simulator headless and passes
   when the vehicle moves.
 
-Build them like any other directory, with `just all test`. Their downloaded
-assets (`just download-data download-theme`) are the same files as the CUDA
-sibling's.
+Build them like any other directory, with `just all test`, after filling in
+the source tree. `git submodule update --init source` checks out only the
+workspace repository; its `src/` (the vcs-imported repositories) stays empty,
+and colcon2deb then finds no packages. The commits are the CUDA sibling's, so
+copy its populated tree:
+
+```bash
+git submodule update --init 1.9.0/amd64-cpu/source
+rsync -a 1.9.0/amd64/source/src/ 1.9.0/amd64-cpu/source/src/
+(cd 1.9.0/amd64-cpu/source && vcs status src | grep -c '^=== ')   # sanity check
+```
+
+Their downloaded assets (`just download-data download-theme`) are the same
+files as the CUDA sibling's; hard-link them to save space.
 
 ## Build Commands Reference
 
