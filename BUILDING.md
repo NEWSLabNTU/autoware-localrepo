@@ -111,6 +111,36 @@ just test
 just sim
 ```
 
+## GPU-free (CPU-only) builds
+
+`<version>/amd64-cpu/` and `<version>/arm64-cpu/` are generated from
+`<version>/amd64/` and `<version>/arm64/` and must not be edited by hand. Make
+the change in the CUDA directory, then regenerate:
+
+```bash
+scripts/derive-cpu.py 1.9.0/amd64     # writes 1.9.0/amd64-cpu; adds its source submodule if missing
+scripts/derive-cpu.py --check-all     # fails if any -cpu directory has drifted
+```
+
+The script copies every tracked file except the source submodule. It then:
+
+- builds FROM `autoware-base:<tag>` instead of `:cuda-<tag>`, and drops the
+  CUDA environment, `NVCC_APPEND_FLAGS` and the cuDNN/TensorRT/CUDA library
+  installs;
+- names the builder image `...-cpu-builder` and the localrepo revision
+  `ubuntu2204cpu` / `ubuntu2204arm64cpu`;
+- makes the overrides' `make install` fall back to `cmake --install`. Without
+  CUDA the GPU-only packages declare nothing to install and are packaged empty.
+  colcon2deb 0.4.2 does the same for generated rules;
+- tests on plain `ubuntu:22.04` with ROS-only prerequisites, asserts that no
+  NVIDIA library got installed, and adds `test/smoke.sh`. `just test` runs it
+  after the install test: it drives the planning simulator headless and passes
+  when the vehicle moves.
+
+Build them like any other directory, with `just all test`. Their downloaded
+assets (`just download-data download-theme`) are the same files as the CUDA
+sibling's.
+
 ## Build Commands Reference
 
 | Command          | Description                                 |

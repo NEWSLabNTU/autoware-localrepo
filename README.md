@@ -23,6 +23,11 @@ Every release has a localrepo deb for each platform:
 | `ubuntu2204` | Ubuntu 22.04, x86_64 |
 | `ubuntu2204sbsa` | Ubuntu 22.04, arm64 server (SBSA: Grace, Ampere Altra) |
 | `jetpack62` | JetPack 6.2, Jetson Orin |
+| `ubuntu2204cpu` | Ubuntu 22.04, x86_64, no NVIDIA GPU needed |
+| `ubuntu2204arm64cpu` | Ubuntu 22.04, any arm64 machine, no NVIDIA GPU needed |
+
+The two `cpu` builds are new and not in a release yet; see
+[Machines without an NVIDIA GPU](#machines-without-an-nvidia-gpu).
 
 The "Offline ML models" releases are only for machines that cannot download
 the models; you do not need them otherwise. Each release's notes also say how
@@ -113,6 +118,9 @@ ros2 launch autoware_launch planning_simulator.launch.xml \
   sensor_model:=sample_sensor_kit
 ```
 
+In 1.5.0 and 1.7.1 the sample maps are their own package, not part of
+`autoware-full`: `sudo apt install autoware-maps-1-7-1` first.
+
 See [Planning Simulation Demo](https://autowarefoundation.github.io/autoware-documentation/main/demos/planning-sim/lane-driving/) for usage instructions.
 
 ## Supported NVIDIA GPUs
@@ -140,6 +148,34 @@ TensorRT 10 does not support them.
   Blackwell (GB200, DGX Spark).
 - **Drivers:** a driver that supports CUDA 12.8 (R570 or newer) for amd64, and
   CUDA 12.5 for arm64 servers.
+
+## Machines without an NVIDIA GPU
+
+The `ubuntu2204cpu` (x86_64) and `ubuntu2204arm64cpu` (arm64) localrepos are
+built without CUDA, cuDNN or TensorRT, and nothing in them depends on an NVIDIA
+library. Install them as above, but give the prerequisites script `--ros` alone:
+
+```bash
+sudo /usr/share/autoware/1.9.0/setup-prerequisites.sh --non-interactive --ros
+```
+
+Autoware's GPU packages build their CPU half or nothing without CUDA, and the
+GPU-only ones are installed as empty packages so the rest still resolves. What
+works and what does not:
+
+- **Works:** planning, control, localization by NDT, the planning simulator,
+  and LiDAR object detection by Euclidean clustering.
+- **Missing:** every neural network (CenterPoint, TransFusion, BEVFusion,
+  YOLOX, the traffic light classifiers), the CUDA pointcloud preprocessor and
+  ground segmentation, and the pointcloud-based occupancy grid map.
+- **Perception must be told:** launch with `lidar_detection_model:=clustering`
+  and `occupancy_grid_map_method:=laserscan_based` (arguments of
+  `autoware.launch.xml`). The defaults name GPU nodes that are not there.
+  This perception setup is not yet tested; the planning simulator is.
+
+The ML models are not needed. A CPU build and a CUDA build of the same version
+have the same package names, so a machine runs one of them: to switch, remove
+the installed one with `uninstall-autoware.sh --purge` first.
 
 ## Several Autoware versions
 
@@ -179,6 +215,8 @@ packages you installed yourself, keep what they depend on. Prerequisites
 
 Each `<version>/<platform>/` directory builds its own localrepo with
 [colcon2deb](https://github.com/NEWSLabNTU/colcon2deb); see
-[BUILDING.md](BUILDING.md). Releases are built on local machines and attached
+[BUILDING.md](BUILDING.md). The `<version>/<arch>-cpu/` directories are
+generated from their CUDA siblings by `scripts/derive-cpu.py` and are never
+edited by hand. Releases are built on local machines and attached
 with `scripts/publish-release.sh`, which keeps the offline model debs in their
 own `data-<version>` releases.

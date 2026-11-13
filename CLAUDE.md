@@ -194,22 +194,34 @@ autoware-localrepo/
 │   │   └── justfile
 │   ├── jp62/                     # colcon2deb build for JetPack 6.2 (arm64)
 │   │   └── ...                   # Same structure as amd64/
-│   └── arm64/                    # arm64 server (SBSA, not Jetson); same structure
+│   ├── arm64/                    # arm64 server (SBSA, not Jetson); same structure
+│   ├── amd64-cpu/                # GPU-free x86_64; GENERATED from amd64/ by scripts/derive-cpu.py
+│   └── arm64-cpu/                # GPU-free arm64;  GENERATED from arm64/ by scripts/derive-cpu.py
 ├── 1.7.1/                        # Autoware 1.7.1 version (same layout)
 │   ├── amd64/
 │   ├── jp62/
-│   └── arm64/
+│   ├── arm64/
+│   ├── amd64-cpu/
+│   └── arm64-cpu/
 ├── 1.9.0/                        # Autoware 1.9.0 version
 │   ├── amd64/                    # built E2E (2026-08); see 1.9.0/HANDOFF.md
 │   │   ├── debian-overrides/     # 19 targeted patches (LTO, Replaces, acados deps)
 │   │   └── packages/autoware-acados-1-9-0/  # acados runtime deb (not a ROS pkg)
 │   ├── jp62/
-│   └── arm64/                    # arm64 server (SBSA, not Jetson)
+│   ├── arm64/                    # arm64 server (SBSA, not Jetson)
+│   ├── amd64-cpu/
+│   └── arm64-cpu/
 ├── 2025.02/                      # rolling snapshot layout
 └── justfile                      # Top-level build automation
 ```
 
 Each version/arch directory is self-contained with its own packages/, build/, and justfile.
+
+**Never edit a `*-cpu/` directory by hand.** It is the CUDA sibling with the
+GPU parts removed (base image, NVIDIA libraries, NVCC flags, test image), plus a
+headless planning-simulator smoke test. Fix the sibling, then run
+`scripts/derive-cpu.py <ver>/<arch>`; `scripts/derive-cpu.py --check-all` fails
+on drift. See BUILDING.md, "GPU-free (CPU-only) builds".
 
 ### JetPack Directory Naming
 
