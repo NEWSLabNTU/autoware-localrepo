@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+PREFIX := /opt/autoware/1.7.1
+DEST := $(CURDIR)/debian/autoware-model-downloader-1-7-1
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	install -d $(DEST)$(PREFIX)/bin $(DEST)$(PREFIX)/share/autoware-model-downloader $(DEST)/usr/bin
+	install -m 755 src/autoware-download-models $(DEST)$(PREFIX)/bin/
+	install -m 644 models.tsv $(DEST)$(PREFIX)/share/autoware-model-downloader/
+	# Versioned name on PATH so several Autoware versions can coexist.
+	ln -s $(PREFIX)/bin/autoware-download-models $(DEST)/usr/bin/autoware-download-models-1-7-1

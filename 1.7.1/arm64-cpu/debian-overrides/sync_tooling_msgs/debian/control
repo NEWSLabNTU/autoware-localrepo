@@ -1,0 +1,12 @@
+Source: ros-humble-sync-tooling-msgs-1-7-1
+Section: misc
+Priority: optional
+Maintainer: Max Schmeller <max.schmeller@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), libprotobuf-dev, libprotoc-dev, protobuf-compiler, ros-humble-ament-cmake-1-7-1
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-sync-tooling-msgs-1-7-1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libprotobuf23
+Description: Protobuf definitions for synchronization diagnostics

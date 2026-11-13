@@ -1,0 +1,19 @@
+autoware-localrepo-1-7-1 (1.7.1-2ubuntu2204arm64cpu) jammy; urgency=medium
+
+  * autoware-theme-1-7-1 1.7.1-2: the theme script is now
+    apply-autoware-theme-1-7-1, so other Autoware versions can be installed
+    beside this one.
+  * uninstall-autoware.sh: --purge and -y, as in 1.5.0-3.
+  * autoware-full-1-7-1 1.7.1-2 depends on autoware-model-downloader-1-7-1
+    instead of autoware-data-1-7-1: run autoware-download-models-1-7-1 as
+    your own user to fetch the models into ~/autoware_data. The separate
+    autoware-data deb is no longer needed, except offline.
+
+ -- Jerry Lin <jerry73204@gmail.com>  Tue, 03 Nov 2026 00:00:00 +0800
+
+autoware-localrepo-1-7-1 (1.7.1-1ubuntu2204sbsa) jammy; urgency=medium
+
+  * First build for generic arm64 servers (SBSA): Autoware 1.7.1 with
+    TensorRT 10.3 and sm_80/sm_90 kernels added to the CUDA packages.
+
+ -- Jerry Lin <jerry73204@gmail.com>  Sat, 31 Oct 2026 00:00:00 +0800

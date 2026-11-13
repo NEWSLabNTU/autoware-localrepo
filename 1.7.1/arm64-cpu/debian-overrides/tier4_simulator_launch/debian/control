@@ -1,0 +1,12 @@
+Source: ros-humble-tier4-simulator-launch-1-7-1
+Section: misc
+Priority: optional
+Maintainer: Keisuke Shima <keisuke.shima@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-7-1, ros-humble-autoware-lint-common-1-7-1 <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-tier4-simulator-launch-1-7-1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-dummy-perception-publisher-1-7-1, ros-humble-autoware-elevation-map-loader-1-7-1, ros-humble-autoware-fault-injection-1-7-1, ros-humble-autoware-multi-object-tracker-1-7-1, ros-humble-autoware-perception-online-evaluator-1-7-1, ros-humble-autoware-pose-initializer-1-7-1, ros-humble-autoware-simple-planning-simulator-1-7-1, ros-humble-autoware-vehicle-door-simulator-1-7-1, ros-humble-autoware-vehicle-velocity-converter-1-7-1, ros-humble-tier4-localization-launch-1-7-1, ros-humble-tier4-perception-launch-1-7-1
+Description: The tier4_simulator_launch package

@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-lidar-centerpoint-1-7-1
+Section: misc
+Priority: optional
+Maintainer: Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-python-1-7-1, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-1-7-1, ros-humble-autoware-cuda-dependency-meta-1-7-1, ros-humble-autoware-cuda-utils-1-7-1, ros-humble-autoware-lint-common-1-7-1 <!nocheck>, ros-humble-autoware-object-recognition-utils-1-7-1, ros-humble-autoware-perception-msgs-1-7-1, ros-humble-autoware-tensorrt-common-1-7-1, ros-humble-autoware-utils-1-7-1, ros-humble-cuda-blackboard-1-7-1, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-sensor-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-lidar-centerpoint-1-7-1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-cuda-dependency-meta-1-7-1, ros-humble-autoware-cuda-utils-1-7-1, ros-humble-autoware-object-recognition-utils-1-7-1, ros-humble-autoware-perception-msgs-1-7-1, ros-humble-autoware-tensorrt-common-1-7-1, ros-humble-autoware-utils-1-7-1, ros-humble-cuda-blackboard-1-7-1, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tf2-eigen, ros-humble-tf2-geometry-msgs, ros-humble-tf2-sensor-msgs
+Description: The autoware_lidar_centerpoint package

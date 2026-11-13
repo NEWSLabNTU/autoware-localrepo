@@ -1,0 +1,16 @@
+Source: autoware-config-1-7-1
+Section: misc
+Priority: optional
+Maintainer: Jerry Lin <jerry73204@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: autoware-config-1-7-1
+Architecture: all
+Depends: ${misc:Depends},
+         ros-humble-rmw-cyclonedds-cpp
+Suggests: ros-humble-rmw-zenoh-cpp
+Description: Autoware system configuration files
+ This package provides system configuration files for Autoware,
+ including CycloneDDS settings, environment variables, and
+ network configuration for ROS 2 communication.
