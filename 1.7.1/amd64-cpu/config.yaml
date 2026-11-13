@@ -19,7 +19,7 @@ packages:
 # Build options
 build:
   ros_distro: humble
-  parallel_jobs: 12
+  parallel_jobs: 0
   skip_tests: true
   # Custom installation prefix for Autoware 1.7.1
   install_prefix: /opt/autoware/1.7.1
