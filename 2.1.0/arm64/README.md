@@ -17,14 +17,14 @@ submodule is pinned to the same commit as `../amd64/source`.
 |---|---|---|
 | Base image | `autoware:base-cuda-devel-humble-2.1.0` (CUDA 12.8) | same tag; its manifest is multi-arch |
 | TensorRT | 10.8.0.43-1+cuda12.8 | **10.3.0.26-1+cuda12.5** |
-| GPU kernels | sm_75/86/87/89 (+101/120 on CUDA 12.8) | the same **plus sm_80 and sm_90**, and compute_75 PTX |
+| GPU kernels | upstream sm_75/86/87/89/101/120, plus sm_80/90/100 SASS and compute_75 PTX via `NVCC_APPEND_FLAGS` | the same |
 | Localrepo version suffix | `ubuntu2204` | `ubuntu2204sbsa` |
 
 **TensorRT 10.3.** NVIDIA's `ubuntu2204/sbsa` apt repository stops at TensorRT
 10.3.0.26, so the amd64 pin does not exist for this architecture. It is also
 what Autoware's own `arm64.env` / ansible role selects for aarch64 Humble.
 
-**sm_80 and sm_90.** Every CUDA package hardcodes its `-gencode` list in its
+**sm_80 and sm_90.** These matter most here, and amd64 adds them too. Every CUDA package hardcodes its `-gencode` list in its
 CMakeLists. That list covers Turing, consumer Ampere, Orin and Ada, not A100
 (sm_80) or H100/GH200 (sm_90), and the PTX it embeds is for a newer
 architecture, which the driver cannot JIT backwards. Without the extra kernels
