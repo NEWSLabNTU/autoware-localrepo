@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-path-optimizer-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Takayuki Murooka <takayuki.murooka@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-export-link-flags, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-index-python <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-agnocast-wrapper-2-1-0, ros-humble-autoware-cmake-2-1-0, ros-humble-autoware-fake-test-node-2-1-0 <!nocheck>, ros-humble-autoware-internal-debug-msgs-2-1-0, ros-humble-autoware-interpolation-2-1-0, ros-humble-autoware-lint-common-2-1-0 <!nocheck>, ros-humble-autoware-motion-utils-2-1-0, ros-humble-autoware-osqp-interface-2-1-0, ros-humble-autoware-planning-msgs-2-1-0, ros-humble-autoware-planning-test-manager-2-1-0, ros-humble-autoware-testing-2-1-0 <!nocheck>, ros-humble-autoware-utils-2-1-0, ros-humble-autoware-utils-geometry-2-1-0, ros-humble-autoware-vehicle-info-utils-2-1-0, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tf2-ros, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-path-optimizer-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-agnocast-wrapper-2-1-0, ros-humble-autoware-global-parameter-loader-2-1-0, ros-humble-autoware-internal-debug-msgs-2-1-0, ros-humble-autoware-interpolation-2-1-0, ros-humble-autoware-motion-utils-2-1-0, ros-humble-autoware-osqp-interface-2-1-0, ros-humble-autoware-planning-msgs-2-1-0, ros-humble-autoware-planning-test-manager-2-1-0, ros-humble-autoware-utils-2-1-0, ros-humble-autoware-utils-geometry-2-1-0, ros-humble-autoware-vehicle-info-utils-2-1-0, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-nav-msgs, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-std-msgs, ros-humble-tf2-ros, ros-humble-visualization-msgs, autoware-acados-2-1-0
+Description: The autoware_path_optimizer package
