@@ -74,3 +74,7 @@
 	path = 2.1.0/arm64/source
 	url = https://github.com/NEWSLabNTU/autoware.git
 	branch = 2.1.0-ws
+[submodule "2.1.0/jp62/source"]
+	path = 2.1.0/jp62/source
+	url = https://github.com/NEWSLabNTU/autoware.git
+	branch = 2.1.0-ws
