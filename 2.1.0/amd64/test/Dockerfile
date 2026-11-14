@@ -40,7 +40,7 @@ RUN useradd -m tester && \
     ! autoware-download-models-2-1-0 --only lidar_centerpoint && \
     su tester -c 'autoware-download-models-2-1-0 --only lidar_centerpoint,yabloc_pose_initializer && \
         autoware-download-models-2-1-0 --only lidar_centerpoint,yabloc_pose_initializer --verify && \
-        test -O ~/autoware_data/lidar_centerpoint/pts_backbone_neck_head_centerpoint_tiny.onnx && \
+        test -O ~/autoware_data/lidar_centerpoint/tiny/pts_backbone_neck_head.onnx && \
         test -d ~/autoware_data/yabloc_pose_initializer/saved_model && \
         test -w ~/autoware_data/lidar_centerpoint' && \
     test ! -e /opt/autoware/2.1.0/data
