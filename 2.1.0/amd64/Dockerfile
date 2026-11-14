@@ -95,7 +95,16 @@ ENTRYPOINT []
 ENV PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:${PYTHONPATH}
 
 # Create colcon2deb setup script to source ROS environment before build
-RUN echo 'source /opt/ros/humble/setup.bash' > /colcon2deb-setup.sh
+# The base image runs Python from /opt/autoware-venv (ENV PATH, VIRTUAL_ENV;
+# a venv with system site-packages). colcon2deb pip-installs rosdeb-bloom as
+# root, which lands in that venv, then switches to the build user with su,
+# which resets PATH to the system Python: phase 7 then fails with
+# "ModuleNotFoundError: No module named 'rosdeb_bloom'". Put the venv back on
+# the build user's PATH so both see the same Python.
+RUN printf '%s\n' \
+        'export VIRTUAL_ENV=/opt/autoware-venv' \
+        'export PATH=/opt/autoware-venv/bin:$PATH' \
+        'source /opt/ros/humble/setup.bash' > /colcon2deb-setup.sh
 
 # Initialize rosdep
 RUN rosdep init || true && rosdep update
