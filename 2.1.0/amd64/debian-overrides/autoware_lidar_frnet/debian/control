@@ -1,0 +1,12 @@
+Source: ros-humble-autoware-lidar-frnet-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Amadeusz Szymko <amadeusz.szymko.2@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-humble-ament-cmake-auto, ros-humble-ament-cmake-ros <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-autoware-cmake-2-1-0, ros-humble-autoware-cuda-dependency-meta-2-1-0, ros-humble-autoware-cuda-utils-2-1-0, ros-humble-autoware-lint-common-2-1-0 <!nocheck>, ros-humble-autoware-object-recognition-utils-2-1-0, ros-humble-autoware-perception-msgs-2-1-0, ros-humble-autoware-point-types-2-1-0, ros-humble-autoware-tensorrt-common-2-1-0, ros-humble-autoware-utils-2-1-0, ros-humble-cuda-blackboard-2-1-0, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-autoware-lidar-frnet-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-autoware-cuda-dependency-meta-2-1-0, ros-humble-autoware-cuda-utils-2-1-0, ros-humble-autoware-object-recognition-utils-2-1-0, ros-humble-autoware-perception-msgs-2-1-0, ros-humble-autoware-point-types-2-1-0, ros-humble-autoware-tensorrt-common-2-1-0, ros-humble-autoware-utils-2-1-0, ros-humble-cuda-blackboard-2-1-0, ros-humble-diagnostic-updater, ros-humble-geometry-msgs, ros-humble-pcl-ros, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-sensor-msgs, ros-humble-visualization-msgs
+Description: LiDAR segmentation based on FRNet

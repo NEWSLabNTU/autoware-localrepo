@@ -1,0 +1,12 @@
+Source: ros-humble-bevdet-vendor-2-1-0
+Section: misc
+Priority: optional
+Maintainer: cyn-liu <cynthia.liu@autocore.ai>
+Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, libyaml-cpp-dev, ros-humble-ament-cmake-auto, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-tensorrt-cmake-module
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-humble-bevdet-vendor-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, libyaml-cpp-dev, ros-humble-rclcpp, ros-humble-rclcpp-components
+Description: The bevdet tensorrt package

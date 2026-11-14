@@ -21,12 +21,7 @@ debian/files
 downloads/bevfusion/bevfusion_image_backbone.onnx
 downloads/camera_streampetr/simplify_extract_img_feat.onnx
 downloads/lidar_transfusion/transfusion.onnx
-downloads/ptv3/ptv3_backbone.onnx
-downloads/tensorrt_bevdet/tensorrt_bevdet.tar.gz
-downloads/tensorrt_rtmdet/tensorrt_rtmdet_onnx_models.tar.gz
-downloads/vad/v0.1/vad-carla-tiny_head.onnx
+downloads/ptv3/ptv3_encoder.onnx
+downloads/tensorrt_bevdet/bevdet_one_lt_d.onnx
 downloads/vad/v0.1/vad-carla-tiny_head_no_prev.onnx
-
-# CenterPoint comes from Hugging Face (genpkg.py resolves the snapshot into
-# downloads.txt); aria2c fetches it at package build time like the files above.
-downloads/lidar_centerpoint/
+downloads/vad/v0.1/vad-carla-tiny_head.onnx
