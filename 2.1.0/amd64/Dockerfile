@@ -77,6 +77,13 @@ RUN apt update -y && \
         python3-vcstool \
     && rm -rf /var/lib/apt/lists/*
 
+# Build against CycloneDDS, as upstream's base image already does. Set here so
+# the build does not depend on the base: with RMW_IMPLEMENTATION unset, 2.1.0's
+# dependency order loads Fast DDS's config after mrt_cmake_modules' FindTinyXML2,
+# and tinyxml2_vendor aborts configuring autoware_lidar_marker_localizer (seen
+# on jp62). Build time only; the debs carry no RMW choice.
+ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+
 # Set up ROS2 Python path (needed for ament_package module used by CMake)
 ENV PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:${PYTHONPATH}
 
