@@ -26,7 +26,7 @@ Every release has a localrepo deb for each platform:
 | `ubuntu2204cpu` | Ubuntu 22.04, x86_64, no NVIDIA GPU needed |
 | `ubuntu2204arm64cpu` | Ubuntu 22.04, any arm64 machine, no NVIDIA GPU needed |
 
-The two `cpu` builds are new and not in a release yet; see
+The two `cpu` builds were added to these releases on 2026-11-14; see
 [Machines without an NVIDIA GPU](#machines-without-an-nvidia-gpu).
 
 The "Offline ML models" releases are only for machines that cannot download
