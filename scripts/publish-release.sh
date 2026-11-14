@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Attach locally built release files to DRAFT GitHub releases.
 #
-#   scripts/publish-release.sh [--dry-run] [--replace] TAG DIR...
+#   scripts/publish-release.sh [--dry-run] [--replace] [--add-platform] TAG DIR...
 #
 #   TAG    localrepo release tag, <version>-<revision>, e.g. 1.9.0-1
 #   DIR    one or more <version>/<platform> directories whose `just release`
@@ -36,26 +36,35 @@
 #   5. rewrites each release's SHA256SUMS.txt from the sha256 digests GitHub
 #      records for its debs.
 #
+# --add-platform adds a platform to a localrepo release that is already
+# published (e.g. the GPU-free ubuntu2204cpu debs). It uploads only localrepo
+# debs the release does not have yet, never replaces one (--replace is refused
+# with it), then rewrites SHA256SUMS.txt and the notes from release-notes/TAG.md.
+# The data release is handled as before.
+#
 # It never publishes a release. Check the drafts on GitHub, then publish them
 # there or with: gh release edit TAG --draft=false
 #
 # Needs gh logged in with write access to the repository.
 set -euo pipefail
 
-usage() { sed -n '2,42p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
+usage() { sed -n '2,48p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
 
 DRY=0
 REPLACE=0
+ADD=0
 while [ $# -gt 0 ]; do
     case "$1" in
         --dry-run) DRY=1; shift ;;
         --replace) REPLACE=1; shift ;;
+        --add-platform) ADD=1; shift ;;
         -h|--help) usage ;;
         --*) echo "unknown option: $1" >&2; exit 2 ;;
         *) break ;;
     esac
 done
 [ $# -ge 2 ] || usage
+[ "$ADD" -eq 1 ] && [ "$REPLACE" -eq 1 ] && { echo "error: --add-platform never replaces an asset; drop --replace" >&2; exit 2; }
 TAG="$1"; shift
 
 ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
@@ -107,18 +116,24 @@ release_json() {  # $1 = tag. releases/tags/<tag> does not return drafts, so sea
 declare -A attached   # asset name -> sha256 of what the current release holds
 INFO=""
 PUBLISHED=0
+ADDING=0   # 1 while filling a published localrepo release under --add-platform
 
 # 2. Find or create the draft; fills INFO, PUBLISHED and attached.
-open_release() {  # $1 = tag, $2 = title, $3 = 1 if a published release may be reused
+open_release() {  # $1 = tag, $2 = title, $3 = 1 if a published release may be reused, 2 to add platforms to it
     local tag=$1 title=$2 reuse=$3 notes="release-notes/$1.md" name digest
     INFO=$(release_json "$tag")
     PUBLISHED=0
+    ADDING=0
     attached=()
     echo "== $tag"
     if [ -z "$INFO" ]; then
         echo "Creating draft release $tag at $head"
         run gh release create "$tag" -R "$REPO" --draft --target "$head" --title "$title" --notes-file "$notes"
         [ "$DRY" -eq 1 ] || INFO=$(release_json "$tag")
+    elif [ "$(jq -r .draft <<<"$INFO")" != true ] && [ "$reuse" -eq 2 ]; then
+        echo "Release $tag is already published; adding the platforms it lacks"
+        PUBLISHED=1
+        ADDING=1
     elif [ "$(jq -r .draft <<<"$INFO")" != true ]; then
         [ "$reuse" -eq 1 ] || { echo "error: release $tag is already published; this script only fills drafts" >&2; exit 1; }
         echo "Release $tag is already published; checking that it holds the same files"
@@ -146,6 +161,13 @@ upload() {  # $1 = tag, $2 = glob, $3 = "replace" for per-platform debs, "first"
             have="${attached[$name]:-}"
             if [ "$have" = "$sum" ]; then
                 echo "  $name: already attached"
+            elif [ "$ADDING" -eq 1 ] && [ -z "$have" ]; then
+                echo "  $name: new platform, uploading ($(du -h "$f" | cut -f1))"
+                run gh release upload "$tag" -R "$REPO" "$f"
+                attached["$name"]="$sum"
+            elif [ "$ADDING" -eq 1 ]; then
+                echo "error: published release $tag has $name with different content; it is never replaced" >&2
+                exit 1
             elif [ "$PUBLISHED" -eq 1 ]; then
                 [ -n "$have" ] && [ "$mode" = first ] && { echo "  $name: published by another platform, kept"; continue; }
                 echo "error: published release $tag lacks $name; make a new data revision instead" >&2
@@ -168,7 +190,7 @@ upload() {  # $1 = tag, $2 = glob, $3 = "replace" for per-platform debs, "first"
 finish() {  # $1 = tag
     local tag=$1 sums
     [ "$DRY" -eq 1 ] && return 0
-    [ "$PUBLISHED" -eq 1 ] && return 0
+    [ "$PUBLISHED" -eq 1 ] && [ "$ADDING" -eq 0 ] && return 0
     sums=$(mktemp -d)
     release_json "$tag" | jq -r '.assets[] | select(.name | endswith(".deb")) | "\(.digest // "" | ltrimstr("sha256:"))  \(.name)"' \
         | sort -k2 > "$sums/SHA256SUMS.txt"
@@ -182,12 +204,18 @@ finish() {  # $1 = tag
     cat "$sums/SHA256SUMS.txt"
     rm -rf "$sums"
     echo
+    if [ "$ADDING" -eq 1 ]; then
+        gh release edit "$tag" -R "$REPO" --notes-file "release-notes/$tag.md"
+        echo "Published: $(gh release view "$tag" -R "$REPO" --json url --jq .url) (notes updated)"
+        echo
+        return 0
+    fi
     echo "Draft: $(gh release view "$tag" -R "$REPO" --json url --jq .url)"
     echo "Review it, then publish on GitHub or with: gh release edit $tag -R $REPO --draft=false"
     echo
 }
 
-open_release "$TAG" "Autoware $TAG" 0
+open_release "$TAG" "Autoware $TAG" $((ADD * 2))
 upload "$TAG" 'autoware-localrepo-*.deb' replace
 finish "$TAG"
 
