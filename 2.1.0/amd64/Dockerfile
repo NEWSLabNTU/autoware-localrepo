@@ -84,6 +84,13 @@ RUN apt update -y && \
 # on jp62). Build time only; the debs carry no RMW choice.
 ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
+# Clear the base image's ENTRYPOINT. Upstream's autoware:base image ends
+# /docker-entrypoint.sh with `exec gosu "${USERNAME}" "$@"`, so colcon2deb's
+# entry script would run as the unprivileged aw user and fail to create its
+# build user ("useradd: group '<gid>' does not exist"). The 1.x
+# autoware-base:cuda-* images had a root entrypoint.
+ENTRYPOINT []
+
 # Set up ROS2 Python path (needed for ament_package module used by CMake)
 ENV PYTHONPATH=/opt/ros/humble/lib/python3.10/site-packages:${PYTHONPATH}
 
