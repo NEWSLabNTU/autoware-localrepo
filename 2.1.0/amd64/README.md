@@ -19,77 +19,34 @@ build:
 
 Packages install to `/opt/autoware/2.1.0` instead of the default `/opt/ros/humble`.
 
-## Patches
+## Builder fixes for the 2.1.0 base image
 
-### Replaces for Conflicting Files
+The 2.1.0 builders start from upstream's release image instead of 1.x's
+`autoware-base:cuda-latest`, and it differs in three ways that break
+colcon2deb. The Dockerfile undoes each, as `../arm64/` does:
 
-Some packages have been renamed or merged but still install files to the same paths. This causes dpkg conflicts during installation. The fix is to add `Replaces:` to the new package's `debian/control`.
+| Base image behaviour | Symptom | Fix |
+|---|---|---|
+| `ENTRYPOINT /docker-entrypoint.sh` ends with `exec gosu aw` | colcon2deb's entry runs unprivileged: `useradd: group '<gid>' does not exist` | `ENTRYPOINT []` |
+| Python is `/opt/autoware-venv` via `ENV PATH`, which `su` drops | phase 7: `No module named 'rosdeb_bloom'` | `/colcon2deb-setup.sh` puts the venv back on PATH |
+| (sets `RMW_IMPLEMENTATION`; set again so the build does not depend on it) | without it, `autoware_lidar_marker_localizer` fails in tinyxml2_vendor (seen on jp62) | `ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp` |
 
-**Fix**: Add `Replaces:` field after the `Depends:` line in `debian/control`:
+## Patches (debian-overrides)
 
-| Package | Replaces | Reason |
-|---------|----------|--------|
-| `autoware_mission_planner_universe` | `ros-humble-autoware-mission-planner-2-1-0` | Supersedes autoware_mission_planner |
-| `autoware_overlay_rviz_plugin` | `ros-humble-autoware-mission-details-overlay-rviz-plugin-2-1-0` | Absorbed mission_details_overlay functionality |
+`debian-overrides/` holds 25 targeted patches, the 1.9.0 deltas ported to
+2.1.0's bloom output by `scripts/port-overrides.py`, whose header lists them:
 
-### LTO Disable for CUDA Packages
+| Delta | Packages |
+|---|---|
+| LTO off in `debian/rules` (CUDA fatbin: `symbol 'fatbinData' is already defined`) | 16 CUDA packages (1.9.0's 17 less `trt_batched_nms`, gone in 2.1.0) |
+| agnocast pinned to the system glog | `agnocastlib`, `agnocast_components`, `agnocast_e2e_test`, `agnocast_sample_application` |
+| `Depends: autoware-acados-2-1-0` (they link libacados) | `autoware_path_optimizer`, `autoware_trajectory_modifier` |
+| `Replaces:` | `autoware_mission_planner_universe`, `autoware_overlay_rviz_plugin` |
+| core_planning depends on mission-planner-universe | `autoware_core_planning` |
 
-Ubuntu 22.04 enables LTO (Link Time Optimization) by default via `dpkg-buildflags`. This conflicts with CUDA's fatbin symbols during linking:
-
-```
-Error: symbol 'fatbinData' is already defined
-lto-wrapper: fatal error: make returned 2 exit status
-```
-
-**Fix**: Add the following to the top of `debian/rules` (after the dh-make comment block):
-
-```makefile
-# Disable LTO - causes conflicts with CUDA fatbin symbols
-export DEB_BUILD_MAINT_OPTIONS = hardening=+all reproducible=+fixfilepath optimize=-lto
-```
-
-**Affected packages (17 total)**:
-- autoware_bevfusion
-- autoware_camera_streampetr
-- autoware_cuda_pointcloud_preprocessor
-- autoware_cuda_utils
-- autoware_lidar_centerpoint
-- autoware_lidar_frnet
-- autoware_lidar_transfusion
-- autoware_probabilistic_occupancy_grid_map
-- autoware_ptv3
-- autoware_tensorrt_bevdet
-- autoware_tensorrt_bevformer
-- autoware_tensorrt_classifier
-- autoware_tensorrt_common
-- autoware_tensorrt_plugins
-- autoware_tensorrt_yolox
-- bevdet_vendor
-- trt_batched_nms
-
-## Regenerating debian-overrides
-
-If you need to regenerate the debian-overrides directory:
-
-```bash
-# Delete existing overrides
-rm -rf debian-overrides/*
-
-# Regenerate with colcon2deb (runs through phase 7, skips the .deb build)
-colcon2deb --workspace source --config config.yaml \
-    --skip-rosdep-install --skip-copy-src --skip-gen-rosdep-list \
-    --skip-colcon-build --skip-build-deb
-
-# Harvest the generated debian/ dirs back into debian-overrides/
-for d in build/build/*/; do
-    pkg=$(basename "$d")
-    [ -d "$d/debian" ] && mkdir -p "debian-overrides/$pkg" && cp -r "$d/debian" "debian-overrides/$pkg/"
-done
-
-# Re-apply patches:
-# 1. CUDA LTO fixes - add to debian/rules (see LTO section above)
-# 2. Replaces fixes - add to debian/control (see Replaces section above)
-```
+To regenerate them, run `just ros` once with an empty `debian-overrides/`, then
+`scripts/port-overrides.py 2.1.0/amd64`. bloom's output is the same for every
+architecture of a version, so a harvest from one build fits the others.
 
 ## Building
 
