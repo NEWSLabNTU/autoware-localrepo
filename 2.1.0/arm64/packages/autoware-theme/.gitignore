@@ -1,0 +1,9 @@
+# Build artifacts
+*.deb
+
+# Debhelper build artifacts
+debian/.debhelper/
+debian/*.substvars
+debian/autoware-theme-2-1-0/
+debian/debhelper-build-stamp
+debian/files
