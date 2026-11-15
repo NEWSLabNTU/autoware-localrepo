@@ -8,10 +8,11 @@ side.
 ## Download
 
 Pick a version, then the localrepo deb for your machine from its release.
-1.9.0 is the newest.
+2.1.0 is the newest; it is for ROS 2 Humble.
 
 | Version | Release | Universe | Offline ML models |
 |---|---|---|---|
+| 2.1.0 | [2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/2.1.0-1) | 0.53.2 | [data-2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-2.1.0-1) |
 | 1.9.0 | [1.9.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.9.0-1) | 0.52.0 | [data-1.9.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.9.0-1) |
 | 1.7.1 | [1.7.1-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.7.1-2) | 0.50.0 | [data-1.7.1-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.7.1-1) |
 | 1.5.0 | [1.5.0-3](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.5.0-3) | 0.48.0 | [data-1.5.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.5.0-1) |
@@ -26,7 +27,8 @@ Every release has a localrepo deb for each platform:
 | `ubuntu2204cpu` | Ubuntu 22.04, x86_64, no NVIDIA GPU needed |
 | `ubuntu2204arm64cpu` | Ubuntu 22.04, any arm64 machine, no NVIDIA GPU needed |
 
-The two `cpu` builds were added to these releases on 2026-11-14; see
+The two `cpu` builds were added to the 1.x releases on 2026-11-14 and are part
+of 2.1.0 from its first release; see
 [Machines without an NVIDIA GPU](#machines-without-an-nvidia-gpu).
 
 The "Offline ML models" releases are only for machines that cannot download
@@ -35,7 +37,7 @@ to upgrade from its previous revision.
 
 ## Contents
 
-- About 460 to 495 Autoware packages for ROS 2 Humble, depending on the version
+- About 460 to 500 Autoware packages for ROS 2 Humble, depending on the version
 - `autoware-download-models-<version>`, which fetches the ML models
 - CycloneDDS configuration
 - Sample maps for planning simulation
@@ -43,26 +45,26 @@ to upgrade from its previous revision.
 
 ## Install Autoware
 
-The commands use 1.9.0 on x86_64; substitute your version (`1.9.0` in paths,
-`1-9-0` in package names) and platform suffix.
+The commands use 2.1.0 on x86_64; substitute your version (`2.1.0` in paths,
+`2-1-0` in package names) and platform suffix.
 
 ```bash
 # 1. Install the localrepo package
-sudo dpkg -i autoware-localrepo-1-9-0_1.9.0-1ubuntu2204_all.deb
+sudo dpkg -i autoware-localrepo-2-1-0_2.1.0-1ubuntu2204_all.deb
 
 # 2. Install prerequisites (ROS 2 Humble, optionally CUDA, TensorRT, SpConv)
-sudo /usr/share/autoware/1.9.0/setup-prerequisites.sh
+sudo /usr/share/autoware/2.1.0/setup-prerequisites.sh
 
 # 3. Install Autoware from the localrepo
 sudo apt update
-sudo apt install autoware-full-1-9-0
+sudo apt install autoware-full-2-1-0
 
 # 4. Apply the DDS network settings (sysctl and loopback multicast)
-sudo /usr/share/autoware/1.9.0/activate-dds-config.sh
+sudo /usr/share/autoware/2.1.0/activate-dds-config.sh
 
 # 5. Source the environment
-source /opt/autoware/1.9.0/setup.bash          # workspace (ament, ROS)
-source /opt/autoware/1.9.0/autoware-env.bash   # DDS, CycloneDDS, Qt
+source /opt/autoware/2.1.0/setup.bash          # workspace (ament, ROS)
+source /opt/autoware/2.1.0/autoware-env.bash   # DDS, CycloneDDS, Qt
 ```
 
 ## Install the ML models
@@ -77,7 +79,7 @@ run as root unless given `--dir`.
 ### Download (recommended)
 
 ```bash
-autoware-download-models-1-9-0
+autoware-download-models-2-1-0
 ```
 
 It fetches every model from its upstream URL and checks each file's sha256.
@@ -92,20 +94,20 @@ Hugging Face, S3). Download the debs from the version's "Offline ML models"
 release above, then:
 
 ```bash
-sudo dpkg -i autoware-data-*1-9-0_1.9.0-1_all.deb       # into /opt/autoware/1.9.0/data
-autoware-download-models-1-9-0 --link-from /opt/autoware/1.9.0/data
-autoware-download-models-1-9-0 --verify
+sudo dpkg -i autoware-data-*2-1-0_2.1.0-1_all.deb       # into /opt/autoware/2.1.0/data
+autoware-download-models-2-1-0 --link-from /opt/autoware/2.1.0/data
+autoware-download-models-2-1-0 --verify
 ```
 
 `~/autoware_data` then holds your own directories with symlinks into the
-root-owned `/opt/autoware/1.9.0/data`, so TensorRT can still write its
+root-owned `/opt/autoware/2.1.0/data`, so TensorRT can still write its
 engines there.
 
 ## Network Configuration
 
 Step 4 above applies the DDS settings. To apply them again later:
 ```bash
-sudo /usr/share/autoware/1.9.0/activate-dds-config.sh
+sudo /usr/share/autoware/2.1.0/activate-dds-config.sh
 ```
 
 ## Testing
@@ -113,7 +115,7 @@ sudo /usr/share/autoware/1.9.0/activate-dds-config.sh
 Run planning simulation with the bundled sample map:
 ```bash
 ros2 launch autoware_launch planning_simulator.launch.xml \
-  map_path:=/opt/autoware/1.9.0/share/autoware_maps/sample-map-planning \
+  map_path:=/opt/autoware/2.1.0/share/autoware_maps/sample-map-planning \
   vehicle_model:=sample_vehicle \
   sensor_model:=sample_sensor_kit
 ```
@@ -128,7 +130,7 @@ See [Planning Simulation Demo](https://autowarefoundation.github.io/autoware-doc
 Turing or newer. Nothing is built for Volta or Pascal (V100, GTX 10xx), and
 TensorRT 10 does not support them.
 
-| GPU | amd64 1.5.0 | amd64 1.7.1, 1.9.0 | arm64 server | Jetson (jp62) |
+| GPU | amd64 1.5.0 | amd64 1.7.1 to 2.1.0 | arm64 server | Jetson (jp62) |
 |---|---|---|---|---|
 | Turing: RTX 20, T4, T4G | yes | yes | yes | |
 | A100, A30 | yes | yes | yes | |
@@ -142,7 +144,7 @@ TensorRT 10 does not support them.
 - **1.5.0 on Blackwell:** 1.5.0 is built with CUDA 12.4, which cannot target
   Blackwell GPUs. Most kernels would still run, compiled by the driver on first
   launch, but the occupancy grid map library carries only code for the exact
-  GPUs it was built for, so it fails on any Blackwell GPU. Use 1.9.0.
+  GPUs it was built for, so it fails on any Blackwell GPU. Use 1.9.0 or 2.1.0.
 - **arm64 servers:** these use TensorRT 10.3, the newest version NVIDIA
   publishes for Ubuntu 22.04 arm64 servers, and it cannot build engines for
   Blackwell (GB200, DGX Spark).
@@ -156,7 +158,7 @@ built without CUDA, cuDNN or TensorRT, and nothing in them depends on an NVIDIA
 library. Install them as above, but give the prerequisites script `--ros` alone:
 
 ```bash
-sudo /usr/share/autoware/1.9.0/setup-prerequisites.sh --non-interactive --ros
+sudo /usr/share/autoware/2.1.0/setup-prerequisites.sh --non-interactive --ros
 ```
 
 Autoware's GPU packages build their CPU half or nothing without CUDA, and the
@@ -184,8 +186,8 @@ Versions install side by side: every package name carries the version
 `/opt/autoware/<version>`. Install each version's localrepo package, then
 `apt install autoware-full-<version>`, and source the setup.bash of the
 version you want. Keep each version's models in their own directory:
-`autoware-download-models-1-9-0 --dir ~/autoware_data-1.9.0`, then launch with
-`data_path:=$HOME/autoware_data-1.9.0`.
+`autoware-download-models-2-1-0 --dir ~/autoware_data-2.1.0`, then launch with
+`data_path:=$HOME/autoware_data-2.1.0`.
 
 Releases before 1.5.0-3 and 1.7.1-2 all ship `/usr/bin/apply-autoware-theme`
 and cannot be installed beside another version. Upgrade them first; the
@@ -194,11 +196,11 @@ and cannot be installed beside another version. Upgrade them first; the
 ## Uninstallation
 
 ```bash
-# Remove Autoware 1.9.0, keeping its localrepo for a quick reinstall
-sudo /usr/share/autoware/1.9.0/uninstall-autoware.sh
+# Remove Autoware 2.1.0, keeping its localrepo for a quick reinstall
+sudo /usr/share/autoware/2.1.0/uninstall-autoware.sh
 
-# Remove 1.9.0 completely: config files, localrepo, /opt/autoware/1.9.0
-sudo /usr/share/autoware/1.9.0/uninstall-autoware.sh --purge
+# Remove 2.1.0 completely: config files, localrepo, /opt/autoware/2.1.0
+sudo /usr/share/autoware/2.1.0/uninstall-autoware.sh --purge
 ```
 
 Each version's script removes only that version. With several installed, run
