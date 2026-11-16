@@ -1,7 +1,11 @@
-# Rosdep packages extracted from build/log/rosdep_simulate.log
+# Rosdep packages for the Jazzy (noble) builder: build/logs/<run>/phases/phase5_rosdep_simulate.log
+# of a first build, plus the Humble list, less names noble has no candidate for
+# (libpcl-*1.12, libqt5*5 without t64, libgeographic-dev, python3-torch). One
+# missing name makes the Dockerfile's single apt-get install fail as a whole.
 # Install with: xargs apt-get install -y < rosdep-packages.txt
 bluez
 chrony
+edac-utils
 libboost-all-dev
 libboost-dev
 libboost-filesystem-dev
@@ -14,8 +18,9 @@ libcgal-dev
 libcpprest-dev
 libcrypto++-dev
 libeigen3-dev
+libexpected-dev
 libfmt-dev
-libgeographic-dev
+libgeographiclib-dev
 libgoogle-glog-dev
 libgtest-dev
 liblttng-ust-dev
@@ -23,45 +28,52 @@ libnl-3-dev
 libnl-genl-3-dev
 libnl-route-3-dev
 libopencv-dev
-libpcl-apps1.12
-libpcl-common1.12
+libpcl-apps1.14
+libpcl-common1.14
 libpcl-dev
-libpcl-features1.12
-libpcl-filters1.12
-libpcl-io1.12
-libpcl-kdtree1.12
-libpcl-keypoints1.12
-libpcl-ml1.12
-libpcl-octree1.12
-libpcl-outofcore1.12
-libpcl-people1.12
-libpcl-recognition1.12
-libpcl-registration1.12
-libpcl-sample-consensus1.12
-libpcl-search1.12
-libpcl-segmentation1.12
-libpcl-stereo1.12
-libpcl-surface1.12
-libpcl-tracking1.12
-libpcl-visualization1.12
+libpcl-features1.14
+libpcl-filters1.14
+libpcl-io1.14
+libpcl-kdtree1.14
+libpcl-keypoints1.14
+libpcl-ml1.14
+libpcl-octree1.14
+libpcl-outofcore1.14
+libpcl-people1.14
+libpcl-recognition1.14
+libpcl-registration1.14
+libpcl-sample-consensus1.14
+libpcl-search1.14
+libpcl-segmentation1.14
+libpcl-stereo1.14
+libpcl-surface1.14
+libpcl-tracking1.14
+libpcl-visualization1.14
 libpng++-dev
 libpng-dev
+libprotobuf32t64
+libprotobuf-dev
+libprotoc-dev
 libpugixml-dev
-libqt5core5a
-libqt5gui5
-libqt5widgets5
+libqt5core5t64
+libqt5gui5t64
+libqt5widgets5t64
 librange-v3-dev
 libyaml-cpp-dev
 nlohmann-json3-dev
+protobuf-compiler
 python3-bson
 python3-dev
 python3-flask
+python3-jinja2
+python3-jsonschema
 python3-matplotlib
+python3-numpy
 python3-pandas
 python3-pytest
 python3-scipy
-python3-torch
 python3-tornado
+python3-yaml
 qtbase5-dev
 ros-jazzy-ament-clang-format
 ros-jazzy-angles
@@ -75,6 +87,7 @@ ros-jazzy-generate-parameter-library
 ros-jazzy-geodesy
 ros-jazzy-geographic-info
 ros-jazzy-geographic-msgs
+ros-jazzy-geometric-shapes
 ros-jazzy-grid-map-core
 ros-jazzy-grid-map-costmap-2d
 ros-jazzy-grid-map-cv
@@ -114,6 +127,8 @@ ros-jazzy-rqt-reconfigure
 ros-jazzy-rqt-robot-monitor
 ros-jazzy-rqt-runtime-monitor
 ros-jazzy-rviz2
+ros-jazzy-rviz-2d-overlay-msgs
+ros-jazzy-rviz-2d-overlay-plugins
 ros-jazzy-rviz-common
 ros-jazzy-rviz-default-plugins
 ros-jazzy-rviz-ogre-vendor
