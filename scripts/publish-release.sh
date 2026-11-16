@@ -3,9 +3,16 @@
 #
 #   scripts/publish-release.sh [--dry-run] [--replace] [--add-platform] TAG DIR...
 #
-#   TAG    localrepo release tag, <version>-<revision>, e.g. 1.9.0-1
-#   DIR    one or more <version>/<platform> directories whose `just release`
-#          has run, e.g. 1.9.0/arm64 1.9.0/jp62
+#   TAG    localrepo release tag, <version>-<distro>-<revision>, e.g.
+#          2.1.0-jazzy-1 or 2.1.0-humble-2. The ROS distro is part of every
+#          new tag. The older <version>-<revision> form (1.9.0-2, 2.1.0-1)
+#          names a Humble release and is accepted only for a release that
+#          already exists, draft or published, so its drafts can be refilled
+#          and --add-platform still reaches it; no new tag is made in it.
+#   DIR    one or more directories of that version and distro whose
+#          `just release` has run: <version>/<platform> for Humble
+#          (2.1.0/arm64 2.1.0/jp62), <version>-<distro>/<platform> for any
+#          other distro (2.1.0-jazzy/amd64 2.1.0-jazzy/jp72)
 #
 # Each build host runs this for the platforms it built; the x86 machine for
 # <version>/amd64, the arm64 server for <version>/arm64 and <version>/jp62.
@@ -16,6 +23,8 @@
 #   TAG              the autoware-localrepo debs, one per platform.
 #                    Notes: release-notes/TAG.md
 #   data-<dataver>   the optional autoware-data debs, for offline installs.
+#                    The models do not depend on the ROS distro, so Humble
+#                    and Jazzy releases of a version share one data release.
 #                    <dataver> is their own Debian version (1.9.0-1), which
 #                    changes only when the models do, so several localrepo
 #                    revisions can share one data release.
@@ -48,7 +57,7 @@
 # Needs gh logged in with write access to the repository.
 set -euo pipefail
 
-usage() { sed -n '2,48p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
+usage() { sed -n '2,57p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
 
 DRY=0
 REPLACE=0
@@ -71,8 +80,20 @@ ROOT=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 cd "$ROOT"
 REPO="${GH_REPO:-NEWSLabNTU/autoware-localrepo}"
 
-[[ "$TAG" =~ ^([0-9]+\.[0-9]+\.[0-9]+)-[0-9]+$ ]] || { echo "error: tag must look like 1.9.0-1, not $TAG" >&2; exit 2; }
-VERSION="${BASH_REMATCH[1]}"
+LEGACY=0
+if [[ "$TAG" =~ ^([0-9]+\.[0-9]+\.[0-9]+)-(humble|jazzy)-[0-9]+$ ]]; then
+    VERSION="${BASH_REMATCH[1]}"
+    DISTRO="${BASH_REMATCH[2]}"
+elif [[ "$TAG" =~ ^([0-9]+\.[0-9]+\.[0-9]+)-[0-9]+$ ]]; then
+    VERSION="${BASH_REMATCH[1]}"
+    DISTRO=humble   # every release tagged before the distro joined the tag
+    LEGACY=1
+else
+    echo "error: tag must look like 2.1.0-jazzy-1 or 2.1.0-humble-1, not $TAG" >&2
+    exit 2
+fi
+# Humble builds live in <version>/, other distros in <version>-<distro>/.
+if [ "$DISTRO" = humble ]; then DIRVER="$VERSION"; else DIRVER="$VERSION-$DISTRO"; fi
 
 run() {
     if [ "$DRY" -eq 1 ]; then echo "  would run: $*"; else "$@"; fi
@@ -82,7 +103,7 @@ run() {
 DIRS=()
 for dir in "$@"; do
     dir="${dir%/}"
-    [ "${dir%%/*}" = "$VERSION" ] || { echo "error: $dir is not a $VERSION directory (tag $TAG)" >&2; exit 2; }
+    [ "${dir%%/*}" = "$DIRVER" ] || { echo "error: $dir is not a $DIRVER directory (tag $TAG is $VERSION for $DISTRO)" >&2; exit 2; }
     rel="$dir/packages/release"
     [ -f "$rel/SHA256SUMS.txt" ] || { echo "error: $rel/SHA256SUMS.txt missing; run 'just release' in $dir" >&2; exit 1; }
     (cd "$rel" && sha256sum --quiet -c SHA256SUMS.txt) || { echo "error: $rel does not match its SHA256SUMS.txt" >&2; exit 1; }
@@ -126,7 +147,10 @@ open_release() {  # $1 = tag, $2 = title, $3 = 1 if a published release may be r
     ADDING=0
     attached=()
     echo "== $tag"
-    if [ -z "$INFO" ]; then
+    if [ -z "$INFO" ] && [ "$LEGACY" -eq 1 ] && [ "$tag" = "$TAG" ]; then
+        echo "error: no release $tag exists, and a new tag names its distro: use $VERSION-$DISTRO-${TAG##*-}" >&2
+        exit 2
+    elif [ -z "$INFO" ]; then
         echo "Creating draft release $tag at $head"
         run gh release create "$tag" -R "$REPO" --draft --target "$head" --title "$title" --notes-file "$notes"
         [ "$DRY" -eq 1 ] || INFO=$(release_json "$tag")
