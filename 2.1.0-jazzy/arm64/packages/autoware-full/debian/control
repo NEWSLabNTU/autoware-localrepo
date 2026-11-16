@@ -1,0 +1,23 @@
+Source: autoware-full-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Jerry Lin <jerry73204@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: autoware-full-2-1-0
+Architecture: all
+Depends: ${misc:Depends},
+         autoware-config-2-1-0,
+         autoware-theme-2-1-0,
+         autoware-model-downloader-2-1-0,
+         autoware-maps-2-1-0,
+         autoware-ros-packages-2-1-0
+Suggests: autoware-data-2-1-0
+Description: Autoware complete installation meta-package
+ This meta-package installs all Autoware components including
+ configuration files, visual theme, sample maps, and runtime packages.
+ .
+ The ML models are not included. Fetch them as the user who launches
+ Autoware with autoware-download-models-2-1-0, which writes them to
+ ~/autoware_data, where TensorRT can also cache its engines.

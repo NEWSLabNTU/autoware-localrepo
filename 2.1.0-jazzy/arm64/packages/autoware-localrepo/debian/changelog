@@ -1,0 +1,7 @@
+autoware-localrepo-2-1-0 (2.1.0-1ubuntu2404sbsa) noble; urgency=medium
+
+  * First Jazzy build for generic arm64 servers (SBSA): Autoware 2.1.0 on
+    Ubuntu 24.04 with CUDA 13.0, TensorRT 10.13 and sm_80/sm_90 kernels
+    added to the CUDA packages.
+
+ -- Jerry Lin <jerry73204@gmail.com>  Sat, 14 Nov 2026 00:00:00 +0800
