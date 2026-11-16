@@ -19,7 +19,9 @@ export LDFLAGS=
 export PKG_CONFIG_PATH=/opt/autoware/2.1.0/lib/pkgconfig
 # Explicitly enable -DNDEBUG, see:
 # 	https://github.com/ros-infrastructure/bloom/issues/327
-export DEB_CXXFLAGS_MAINT_APPEND=-DNDEBUG
+# Build fix (GCC 13, Ubuntu 24.04): a warning inside a system header that
+# the package's -Werror makes fatal; see GCC13 in scripts/port-overrides.py.
+export DEB_CXXFLAGS_MAINT_APPEND=-DNDEBUG -Wno-error=maybe-uninitialized
 ifneq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
 	BUILD_TESTING_ARG=-DBUILD_TESTING=OFF
 endif

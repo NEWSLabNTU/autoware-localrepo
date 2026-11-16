@@ -23,6 +23,10 @@ the five delta types carried since 1.9.0:
   depends    debian/control: autoware_core_planning depends on
              mission-planner-universe, since the localrepo drops the core
              mission-planner deb
+  gcc13      debian/rules, Jazzy (Ubuntu 24.04) only: -Wno-error for the
+             warnings GCC 13 raises inside system headers at dpkg-buildflags'
+             -O2, which the package's own -Werror turns fatal; GCC 11 on
+             22.04 does not raise them
 
 The package lists below are the ones for 2.1.0. Check them on each new
 version: a package that no longer exists is an error here, and new CUDA
@@ -53,6 +57,14 @@ REPLACES = {  # package -> the package it replaces, without the version suffix
     "autoware_overlay_rviz_plugin": "ros-{distro}-autoware-mission-details-overlay-rviz-plugin",
 }
 CORE_PLANNING = "autoware_core_planning"
+# package -> warnings kept as warnings under GCC 13 (distros on Ubuntu 24.04)
+GCC13 = {
+    # boost 1.83 point_in_geometry.hpp:183, reached from geometry_utils.cpp
+    # isOutsideDrivableAreaFromRectangleFootprint: "'p' may be used
+    # uninitialized", a false positive in boost::geometry::intersects.
+    "autoware_path_optimizer": ["maybe-uninitialized"],
+}
+GCC13_DISTROS = {"jazzy"}
 
 LTO_LINES = (
     "# Disable LTO - causes conflicts with CUDA fatbin symbols\n"
@@ -109,7 +121,8 @@ def main() -> None:
     src = Path(args.src) if args.src else d / "build" / "packaging"
     out = d / "debian-overrides"
 
-    pkgs = sorted(set(LTO) | set(GLOG) | set(ACADOS) | set(REPLACES) | {CORE_PLANNING})
+    gcc13 = GCC13 if distro in GCC13_DISTROS else {}
+    pkgs = sorted(set(LTO) | set(GLOG) | set(ACADOS) | set(REPLACES) | {CORE_PLANNING} | set(gcc13))
     missing = [p for p in pkgs if not (src / p / "debian").is_dir()]
     if missing:
         die(f"no bloom output in {src} for: {' '.join(missing)}")
@@ -141,6 +154,14 @@ def main() -> None:
             libdir = "\t\t-DCMAKE_INSTALL_LIBDIR=lib \\\n"
             r = sub_once(r, libdir, libdir + "\t\t-Dglog_DIR=/usr/lib/$(DEB_HOST_MULTIARCH)/cmake/glog \\\n", f"{p} glog")
             rules.write_text(r)
+        if p in gcc13:
+            r = rules.read_text()
+            flags = " ".join(f"-Wno-error={w}" for w in gcc13[p])
+            r = sub_once(r, "export DEB_CXXFLAGS_MAINT_APPEND=-DNDEBUG\n",
+                         "# Build fix (GCC 13, Ubuntu 24.04): a warning inside a system header that\n"
+                         "# the package's -Werror makes fatal; see GCC13 in scripts/port-overrides.py.\n"
+                         f"export DEB_CXXFLAGS_MAINT_APPEND=-DNDEBUG {flags}\n", f"{p} gcc13")
+            rules.write_text(r)
         if p in ACADOS:
             control.write_text(add_to_depends(control.read_text(), f", autoware-acados-{sfx}", f"{p} acados"))
         if p in REPLACES:
@@ -155,7 +176,8 @@ def main() -> None:
             control.write_text(c)
 
     print(f"{out.relative_to(root)}: {len(pkgs)} overrides "
-          f"({len(LTO)} lto, {len(GLOG)} glog, {len(ACADOS)} acados, {len(REPLACES)} replaces, 1 depends)")
+          f"({len(LTO)} lto, {len(GLOG)} glog, {len(ACADOS)} acados, {len(REPLACES)} replaces, 1 depends, "
+          f"{len(gcc13)} gcc13)")
 
 
 if __name__ == "__main__":
