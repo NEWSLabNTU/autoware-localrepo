@@ -1,3 +1,13 @@
+autoware-localrepo-1-9-0 (1.9.0-2ubuntu2204) jammy; urgency=medium
+
+  * setup-prerequisites.sh installs the CUDA 12.8 runtime
+    (cuda-cudart-12-8) and the 12.8 math libraries, and cuDNN 9 for CUDA 12,
+    which the packages are built with. 1.9.0-1 installed the CUDA 12.4 math
+    libraries and cuDNN 8.9 without the runtime, so on a machine without
+    CUDA its GPU nodes could not load libcudart.so.12.
+
+ -- Jerry Lin <jerry73204@gmail.com>  Mon, 16 Nov 2026 00:00:00 +0800
+
 autoware-localrepo-1-9-0 (1.9.0-1ubuntu2204) jammy; urgency=medium
 
   * Autoware 1.9.0 AMD64 local repository configuration

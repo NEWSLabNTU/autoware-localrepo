@@ -86,3 +86,7 @@
 	path = 2.1.0/arm64-cpu/source
 	url = https://github.com/NEWSLabNTU/autoware.git
 	branch = 2.1.0-ws
+[submodule "2.1.0-jazzy/amd64/source"]
+	path = 2.1.0-jazzy/amd64/source
+	url = https://github.com/NEWSLabNTU/autoware.git
+	branch = 2.1.0-ws
