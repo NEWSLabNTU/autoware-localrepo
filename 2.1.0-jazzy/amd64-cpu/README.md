@@ -75,7 +75,7 @@ and has to link noble's libraries. Mount the host's `just`, since noble's
 docker run --rm --entrypoint "" -u root \
   -v "$PWD/../..:/repo" -v "$(which just):/usr/local/bin/just:ro" \
   -w /repo/2.1.0-jazzy/amd64 autoware-2.1.0-jazzy-amd64-builder bash -c \
-  'apt-get update && apt-get install -y aria2 dpkg-dev debhelper parallel git cmake build-essential &&
+  'apt-get update && apt-get install -y aria2 unzip ca-certificates dpkg-dev debhelper parallel git cmake build-essential &&
    git config --global --add safe.directory "*" && just meta localrepo;
    chown -R '"$(id -u):$(id -g)"' packages build'
 ```

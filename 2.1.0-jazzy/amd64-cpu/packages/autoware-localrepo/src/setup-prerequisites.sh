@@ -416,6 +416,21 @@ NVIDIA_ANY="n"
 if [ "$NVIDIA_ANY" = "y" ]; then
     log_info "Step 2/2: Installing NVIDIA libraries..."
 
+    # Drop CUDA repository entries that carry no signed-by. The
+    # nvidia/cuda:*-ubuntu24.04 images ship /etc/apt/sources.list.d/cuda.list
+    # without one, and cuda-keyring below adds the same repository with
+    # signed-by, which apt refuses outright ("Conflicting values set for
+    # option Signed-By"). Only .list files are touched; .sources files are
+    # left alone.
+    for list in /etc/apt/sources.list.d/*.list; do
+        [ -f "$list" ] || continue
+        if grep -Eq '^[[:space:]]*deb[[:space:]].*developer\.download\.nvidia\.com/compute/cuda/repos' "$list" &&
+           ! grep -q 'signed-by' "$list"; then
+            log_warn "Removing $list: CUDA repository without signed-by (conflicts with cuda-keyring)"
+            rm -f "$list"
+        fi
+    done
+
     # Set up NVIDIA CUDA repository
     if [ ! -f /usr/share/keyrings/cuda-archive-keyring.gpg ]; then
         wget -q https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb \
