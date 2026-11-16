@@ -1,0 +1,12 @@
+Source: ros-jazzy-autoware-core-planning-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Ryohsuke Mitsudome <ryohsuke.mitsudome@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-jazzy-ament-cmake-auto, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-autoware-cmake-2-1-0, ros-jazzy-autoware-lint-common-2-1-0 <!nocheck>
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-core-planning-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-autoware-behavior-velocity-planner-2-1-0, ros-jazzy-autoware-behavior-velocity-stop-line-module-2-1-0, ros-jazzy-autoware-mission-planner-universe-2-1-0, ros-jazzy-autoware-motion-velocity-obstacle-stop-module-2-1-0, ros-jazzy-autoware-motion-velocity-planner-2-1-0, ros-jazzy-autoware-path-generator-2-1-0, ros-jazzy-autoware-planning-topic-converter-2-1-0, ros-jazzy-autoware-velocity-smoother-2-1-0
+Description: The autoware_core_planning package

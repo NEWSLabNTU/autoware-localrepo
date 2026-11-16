@@ -1,0 +1,12 @@
+Source: ros-jazzy-autoware-tensorrt-yolox-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Dan Umeda <dan.umeda@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), libopencv-dev, ros-jazzy-ament-cmake-auto, ros-jazzy-ament-index-cpp <!nocheck>, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-autoware-cmake-2-1-0, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-internal-debug-msgs-2-1-0, ros-jazzy-autoware-lint-common-2-1-0 <!nocheck>, ros-jazzy-autoware-object-recognition-utils-2-1-0, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-autoware-tensorrt-common-2-1-0, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-cv-bridge, ros-jazzy-image-transport, ros-jazzy-perception-utils-2-1-0, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-tensorrt-cmake-module, ros-jazzy-tier4-perception-msgs-2-1-0, ros-jazzy-tl-expected
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-tensorrt-yolox-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libopencv-dev, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-image-transport-decompressor-2-1-0, ros-jazzy-autoware-internal-debug-msgs-2-1-0, ros-jazzy-autoware-object-recognition-utils-2-1-0, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-autoware-tensorrt-common-2-1-0, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-cv-bridge, ros-jazzy-image-transport, ros-jazzy-perception-utils-2-1-0, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-tensorrt-cmake-module, ros-jazzy-tier4-perception-msgs-2-1-0, ros-jazzy-tl-expected
+Description: tensorrt library implementation for yolox

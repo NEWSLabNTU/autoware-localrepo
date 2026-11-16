@@ -1,0 +1,13 @@
+Source: ros-jazzy-autoware-mission-planner-universe-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Takagi, Isamu <isamu.takagi@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-jazzy-ament-cmake-auto, ros-jazzy-ament-cmake-ros <!nocheck>, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-autoware-adapi-v1-msgs-2-1-0, ros-jazzy-autoware-agnocast-wrapper-2-1-0, ros-jazzy-autoware-cmake-2-1-0, ros-jazzy-autoware-lanelet2-utils-2-1-0, ros-jazzy-autoware-lint-common-2-1-0 <!nocheck>, ros-jazzy-autoware-map-msgs-2-1-0, ros-jazzy-autoware-motion-utils-2-1-0, ros-jazzy-autoware-planning-msgs-2-1-0, ros-jazzy-autoware-route-handler-2-1-0, ros-jazzy-autoware-test-utils-2-1-0 <!nocheck>, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-autoware-vehicle-info-utils-2-1-0, ros-jazzy-geometry-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-tf2-geometry-msgs, ros-jazzy-tf2-ros, ros-jazzy-tier4-planning-msgs-2-1-0
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-mission-planner-universe-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-autoware-adapi-v1-msgs-2-1-0, ros-jazzy-autoware-agnocast-wrapper-2-1-0, ros-jazzy-autoware-lanelet2-utils-2-1-0, ros-jazzy-autoware-map-msgs-2-1-0, ros-jazzy-autoware-motion-utils-2-1-0, ros-jazzy-autoware-planning-msgs-2-1-0, ros-jazzy-autoware-route-handler-2-1-0, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-autoware-vehicle-info-utils-2-1-0, ros-jazzy-geometry-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-tf2-geometry-msgs, ros-jazzy-tf2-ros, ros-jazzy-tier4-planning-msgs-2-1-0
+Replaces: ros-jazzy-autoware-mission-planner-2-1-0
+Description: The autoware_mission_planner_universe package

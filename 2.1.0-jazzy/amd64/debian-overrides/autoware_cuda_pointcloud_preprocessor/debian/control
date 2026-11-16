@@ -1,0 +1,12 @@
+Source: ros-jazzy-autoware-cuda-pointcloud-preprocessor-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-jazzy-ament-clang-format <!nocheck>, ros-jazzy-ament-cmake-auto, ros-jazzy-ament-cmake-gtest <!nocheck>, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-ament-lint-common <!nocheck>, ros-jazzy-autoware-agnocast-wrapper-2-1-0, ros-jazzy-autoware-cmake-2-1-0, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-point-types-2-1-0, ros-jazzy-autoware-pointcloud-preprocessor-2-1-0, ros-jazzy-autoware-sensing-msgs-2-1-0, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-cuda-blackboard-2-1-0, ros-jazzy-diagnostic-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-tf2, ros-jazzy-tf2-msgs, ros-jazzy-tier4-debug-msgs-2-1-0
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-cuda-pointcloud-preprocessor-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-autoware-agnocast-wrapper-2-1-0, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-point-types-2-1-0, ros-jazzy-autoware-pointcloud-preprocessor-2-1-0, ros-jazzy-autoware-sensing-msgs-2-1-0, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-cuda-blackboard-2-1-0, ros-jazzy-diagnostic-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-tf2, ros-jazzy-tf2-msgs, ros-jazzy-tier4-debug-msgs-2-1-0
+Description: autoware_cuda_pointcloud_preprocessor

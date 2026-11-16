@@ -1,0 +1,13 @@
+Source: ros-jazzy-agnocast-components-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Takahiro Ishikawa-Aso <sykwer@gmail.com>
+Build-Depends: debhelper (>= 12.0.0), libgoogle-glog-dev, ros-jazzy-agnocast-cie-config-msgs-2-1-0, ros-jazzy-agnocast-cie-thread-configurator-2-1-0, ros-jazzy-agnocastlib-2-1-0, ros-jazzy-ament-cmake-2-1-0, ros-jazzy-class-loader, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-agnocast-components-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgoogle-glog-dev, ros-jazzy-agnocast-cie-config-msgs-2-1-0, ros-jazzy-agnocast-cie-thread-configurator-2-1-0, ros-jazzy-agnocastlib-2-1-0, ros-jazzy-class-loader, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components
+Description: CMake tools for registering ROS 2 component nodes with Agnocast executor support.
+ Provides agnocast_components_register_node macro similar to rclcpp_components_register_node.
