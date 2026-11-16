@@ -13,7 +13,7 @@ Pick a version, then the localrepo deb for your machine from its release.
 | Version | Release | Universe | Offline ML models |
 |---|---|---|---|
 | 2.1.0 | [2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/2.1.0-1) | 0.53.2 | [data-2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-2.1.0-1) |
-| 1.9.0 | [1.9.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.9.0-1) | 0.52.0 | [data-1.9.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.9.0-1) |
+| 1.9.0 | [1.9.0-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.9.0-2) | 0.52.0 | [data-1.9.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.9.0-1) |
 | 1.7.1 | [1.7.1-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.7.1-2) | 0.50.0 | [data-1.7.1-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.7.1-1) |
 | 1.5.0 | [1.5.0-3](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.5.0-3) | 0.48.0 | [data-1.5.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.5.0-1) |
 
