@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """Derive a GPU-free build directory from its CUDA sibling.
 
-    scripts/derive-cpu.py <version>/<arch>            write <version>/<arch>-cpu
+    scripts/derive-cpu.py <version>[-<distro>]/<arch> write <version>[-<distro>]/<arch>-cpu
     scripts/derive-cpu.py --check <version>/<arch>    fail if <version>/<arch>-cpu has drifted
     scripts/derive-cpu.py --check-all                 --check every <version>/<arch>-cpu
 
-<arch> is amd64 or arm64. The CPU directory is never edited by hand: fixes land
+<arch> is amd64 or arm64. A Humble build lives in <version>/<arch>, a build for
+another ROS distro in <version>-<distro>/<arch> (2.1.0-jazzy/amd64); the distro
+comes from the sibling's config.yaml (build.ros_distro) and picks the Ubuntu
+release below (humble: 22.04, jazzy: 24.04). The CPU directory is never edited by hand: fixes land
 in the CUDA directory and reach the CPU one by running this again. It copies
 every tracked file of the CUDA directory except the source submodule, then:
 
@@ -15,11 +18,12 @@ every tracked file of the CUDA directory except the source submodule, then:
   config.yaml        builder image autoware-<ver>-<arch>-cpu-builder
   justfile           title, arch_label, and `test` also runs the smoke test
   localrepo          revision ubuntu2204 -> ubuntu2204cpu (amd64),
-                     ubuntu2204sbsa -> ubuntu2204arm64cpu (arm64)
+                     ubuntu2204sbsa -> ubuntu2204arm64cpu (arm64); for Jazzy
+                     the same with ubuntu2404
   debian-overrides   `make install` falls back to `cmake --install` when the
                      package has no install target (colcon2deb >= 0.4.2 does
                      this for generated rules; overrides are frozen copies)
-  test/              plain ubuntu:22.04, ROS-only prerequisites, asserts that
+  test/              plain ubuntu:22.04 (24.04 for Jazzy), ROS-only prerequisites, asserts that
                      no NVIDIA library is installed; adds a headless
                      planning-simulator smoke test
 
@@ -42,15 +46,45 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 TEMPLATES = ROOT / "scripts" / "cpu-variant"
 ARCHES = {
-    # arch: (CUDA revision suffix, CPU revision suffix, title)
-    "amd64": ("ubuntu2204", "ubuntu2204cpu", "AMD64 GPU-free (CPU-only)"),
-    "arm64": ("ubuntu2204sbsa", "ubuntu2204arm64cpu", "arm64 GPU-free (CPU-only)"),
+    # arch: (CUDA revision suffix, CPU revision suffix, title); {u} is the
+    # Ubuntu release without the dot (2204, 2404)
+    "amd64": ("ubuntu{u}", "ubuntu{u}cpu", "AMD64 GPU-free (CPU-only)"),
+    "arm64": ("ubuntu{u}sbsa", "ubuntu{u}arm64cpu", "arm64 GPU-free (CPU-only)"),
 }
+# ROS distro: (Ubuntu release, display name)
+DISTROS = {
+    "humble": ("22.04", "Humble"),
+    "jazzy": ("24.04", "Jazzy"),
+}
+SIBLING_RE = re.compile(r"(\d+\.\d+\.\d+)(?:-([a-z]+))?/(amd64|arm64)")
 
 
 def die(msg: str) -> None:
     print(f"error: {msg}", file=sys.stderr)
     sys.exit(1)
+
+
+def suffixes(arch: str, distro: str) -> tuple[str, str]:
+    u = DISTROS[distro][0].replace(".", "")
+    cuda, cpu, _ = ARCHES[arch]
+    return cuda.format(u=u), cpu.format(u=u)
+
+
+def ros_distro(sibling: str) -> str:
+    """build.ros_distro of the sibling's config.yaml, checked against its directory name."""
+    m = SIBLING_RE.fullmatch(sibling)
+    if not m:
+        die(f"{sibling}: expected <version>[-<distro>]/<arch>")
+    cfg = ROOT / sibling / "config.yaml"
+    cm = re.search(r"^\s*ros_distro:\s*(\w+)", cfg.read_text(), re.M) if cfg.is_file() else None
+    if not cm:
+        die(f"{cfg}: no build.ros_distro")
+    distro = cm.group(1)
+    if distro not in DISTROS:
+        die(f"{cfg}: ros_distro {distro} unknown (have {', '.join(DISTROS)})")
+    if (m.group(2) or "humble") != distro:
+        die(f"{sibling}: directory names {m.group(2) or 'no distro (humble)'}, config.yaml says {distro}")
+    return distro
 
 
 def tracked_files(sibling: str) -> list[str]:
@@ -158,8 +192,8 @@ def justfile(text: str, ver: str, arch: str) -> str:
     return out
 
 
-def changelog(text: str, arch: str) -> str:
-    cuda, cpu, _ = ARCHES[arch]
+def changelog(text: str, arch: str, distro: str) -> str:
+    cuda, cpu = suffixes(arch, distro)
     out, n = re.subn(rf"^(autoware-localrepo-\S+ \(\S+?){cuda}\)", rf"\g<1>{cpu})", text, count=1)
     if n != 1:
         die(f"localrepo changelog: first entry does not end in {cuda}")
@@ -183,13 +217,14 @@ def rules(text: str) -> str:
     )
 
 
-def test_dockerfile(text: str) -> str:
+def test_dockerfile(text: str, distro: str) -> str:
+    ubuntu, name = DISTROS[distro]
     out, n = re.subn(
         r"# Uses NVIDIA CUDA base image.*?\nFROM nvidia/cuda:\S+\n",
         "# GPU-free build: plain Ubuntu, and setup-prerequisites.sh installs ROS only,\n"
         "# so no CUDA, cuDNN or TensorRT library exists in the image. A package still\n"
         "# linked against one fails apt's dependency resolution below.\n"
-        "FROM ubuntu:22.04\n",
+        f"FROM ubuntu:{ubuntu}\n",
         text,
         count=1,
         flags=re.S,
@@ -197,9 +232,9 @@ def test_dockerfile(text: str) -> str:
     if n != 1:
         die("test/Dockerfile: NVIDIA FROM block not found")
     out = out.replace(
-        "# Installs: ROS 2 Humble, cuDNN, TensorRT, SpConv/Cumm\n"
+        f"# Installs: ROS 2 {name}, cuDNN, TensorRT, SpConv/Cumm\n"
         "# Use -y to skip interactive prompts and install everything\n",
-        "# Installs: ROS 2 Humble only (--non-interactive skips every NVIDIA component)\n",
+        f"# Installs: ROS 2 {name} only (--non-interactive skips every NVIDIA component)\n",
     )
     out, n = re.subn(
         r"/tmp/setup-prerequisites\.sh -y &&", "/tmp/setup-prerequisites.sh --non-interactive --ros &&", out
@@ -220,14 +255,14 @@ def test_dockerfile(text: str) -> str:
     return "# GENERATED by scripts/derive-cpu.py; edit the CUDA sibling instead.\n" + out
 
 
-def test_run(text: str, ver: str, arch: str) -> str:
+def test_run(text: str, ver: str, arch: str, distro: str) -> str:
     out, n = re.subn(
         rf"autoware-localrepo-test:{re.escape(ver)}(-arm64)?\b", f"autoware-localrepo-test:{ver}-{arch}-cpu", text
     )
     if n != 1:
         die("test/run.sh: test image tag not found")
     # Some versions glob the deb by its CUDA revision suffix (1.5.0: *ubuntu2204_all.deb).
-    cuda, cpu, _ = ARCHES[arch]
+    cuda, cpu = suffixes(arch, distro)
     out = out.replace(f"*{cuda}_all.deb", f"*{cpu}_all.deb")
     return out
 
@@ -236,7 +271,9 @@ def test_run(text: str, ver: str, arch: str) -> str:
 
 
 def derive(sibling: str, dst: Path) -> None:
-    ver, arch = sibling.split("/")
+    ver, arch = sibling.split("/")  # ver is the directory name: 2.1.0 or 2.1.0-jazzy
+    distro = ros_distro(sibling)
+    version = SIBLING_RE.fullmatch(sibling).group(1)  # the Autoware version alone
     src = ROOT / sibling
     for rel in tracked_files(sibling):
         s, d = src / rel, dst / rel
@@ -247,15 +284,17 @@ def derive(sibling: str, dst: Path) -> None:
         elif rel == "config.yaml":
             text = config_yaml(s.read_text(), ver, arch)
         elif rel == "justfile":
-            text = justfile(s.read_text(), ver, arch)
+            # Title: "2.1.0" for Humble, "2.1.0 Jazzy" for another distro
+            label = version if distro == "humble" else f"{version} {DISTROS[distro][1]}"
+            text = justfile(s.read_text(), label, arch)
         elif rel == "packages/autoware-localrepo/debian/changelog":
-            text = changelog(s.read_text(), arch)
+            text = changelog(s.read_text(), arch, distro)
         elif rel.startswith("debian-overrides/") and rel.endswith("/debian/rules"):
             text = rules(s.read_text())
         elif rel == "test/Dockerfile":
-            text = test_dockerfile(s.read_text())
+            text = test_dockerfile(s.read_text(), distro)
         elif rel == "test/run.sh":
-            text = test_run(s.read_text(), ver, arch)
+            text = test_run(s.read_text(), ver, arch, distro)
         if text is None:
             shutil.copy2(s, d)
         else:
@@ -263,7 +302,7 @@ def derive(sibling: str, dst: Path) -> None:
             shutil.copymode(s, d)
     for name in ("smoke.sh", "smoke-inner.sh"):
         t = (TEMPLATES / name).read_text()
-        t = t.replace("@VERSION@", ver).replace("@TAG@", f"{ver}-{arch}-cpu")
+        t = t.replace("@VERSION@", version).replace("@TAG@", f"{ver}-{arch}-cpu")
         (dst / "test" / name).write_text(t)
         (dst / "test" / name).chmod(0o755)
 
@@ -323,8 +362,8 @@ def main() -> None:
     if a.check_all:
         dirs = sorted(str(p.relative_to(ROOT)).removesuffix("-cpu") for p in ROOT.glob("*/*-cpu"))
         sys.exit(0 if all([check(d) for d in dirs]) else 1)
-    if not a.sibling or not re.fullmatch(r"[0-9.]+/(amd64|arm64)", a.sibling.rstrip("/")):
-        die("give <version>/<arch> with arch amd64 or arm64")
+    if not a.sibling or not SIBLING_RE.fullmatch(a.sibling.rstrip("/")):
+        die("give <version>[-<distro>]/<arch> with arch amd64 or arm64")
     sibling = a.sibling.rstrip("/")
     if not (ROOT / sibling).is_dir():
         die(f"{sibling} does not exist")

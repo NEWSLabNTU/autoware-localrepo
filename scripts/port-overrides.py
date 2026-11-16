@@ -49,8 +49,8 @@ LTO = [
 GLOG = ["agnocastlib", "agnocast_components", "agnocast_e2e_test", "agnocast_sample_application"]
 ACADOS = ["autoware_path_optimizer", "autoware_trajectory_modifier"]
 REPLACES = {  # package -> the package it replaces, without the version suffix
-    "autoware_mission_planner_universe": "ros-humble-autoware-mission-planner",
-    "autoware_overlay_rviz_plugin": "ros-humble-autoware-mission-details-overlay-rviz-plugin",
+    "autoware_mission_planner_universe": "ros-{distro}-autoware-mission-planner",
+    "autoware_overlay_rviz_plugin": "ros-{distro}-autoware-mission-details-overlay-rviz-plugin",
 }
 CORE_PLANNING = "autoware_core_planning"
 
@@ -87,15 +87,24 @@ def add_to_depends(control: str, extra: str, what: str) -> str:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("dir", help="<version>/<arch>, e.g. 2.1.0/arm64")
+    ap.add_argument("dir", help="<version>[-<distro>]/<arch>, e.g. 2.1.0/arm64 or 2.1.0-jazzy/amd64")
     ap.add_argument("--from", dest="src", help="bloom output to harvest (default: <dir>/build/packaging)")
     args = ap.parse_args()
 
     root = Path(__file__).resolve().parent.parent
     d = root / args.dir
-    version = args.dir.split("/")[0]
-    if not re.fullmatch(r"\d+\.\d+\.\d+", version):
-        die(f"{args.dir}: expected <version>/<arch>")
+    m = re.fullmatch(r"(\d+\.\d+\.\d+)(?:-[a-z]+)?", args.dir.split("/")[0])
+    if not m:
+        die(f"{args.dir}: expected <version>[-<distro>]/<arch>")
+    version = m.group(1)
+    # The ROS distro names the packages (ros-humble-*, ros-jazzy-*); take it
+    # from the build's own config rather than from the directory name.
+    if not (d / "config.yaml").is_file():
+        die(f"{args.dir}: no config.yaml")
+    cm = re.search(r"^\s*ros_distro:\s*(\w+)", (d / "config.yaml").read_text(), re.M)
+    if not cm:
+        die(f"{d / 'config.yaml'}: no build.ros_distro")
+    distro = cm.group(1)
     sfx = version.replace(".", "-")
     src = Path(args.src) if args.src else d / "build" / "packaging"
     out = d / "debian-overrides"
@@ -130,11 +139,11 @@ def main() -> None:
             c = control.read_text()
             if "\nReplaces:" in c:
                 die(f"{p}: bloom output already has Replaces")
-            control.write_text(add_to_depends(c, f"\nReplaces: {REPLACES[p]}-{sfx}", f"{p} replaces"))
+            control.write_text(add_to_depends(c, f"\nReplaces: {REPLACES[p].format(distro=distro)}-{sfx}", f"{p} replaces"))
         if p == CORE_PLANNING:
             c = control.read_text()
-            c = sub_once(c, f"ros-humble-autoware-mission-planner-{sfx},",
-                         f"ros-humble-autoware-mission-planner-universe-{sfx},", f"{p} depends")
+            c = sub_once(c, f"ros-{distro}-autoware-mission-planner-{sfx},",
+                         f"ros-{distro}-autoware-mission-planner-universe-{sfx},", f"{p} depends")
             control.write_text(c)
 
     print(f"{out.relative_to(root)}: {len(pkgs)} overrides "
