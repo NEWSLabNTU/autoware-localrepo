@@ -113,6 +113,14 @@ def main() -> None:
     missing = [p for p in pkgs if not (src / p / "debian").is_dir()]
     if missing:
         die(f"no bloom output in {src} for: {' '.join(missing)}")
+    # colcon2deb before 0b1f427 fixed ROS_BASE_PATH to /opt/ros/humble in every
+    # rules file; a frozen copy of that breaks every other distro. Checked
+    # before anything in debian-overrides/ is replaced.
+    for p in pkgs:
+        r = (src / p / "debian" / "rules").read_text()
+        wrong = re.findall(rf"^ROS_BASE_PATH \?= (?!/opt/ros/{distro}$)\S+$", r, re.M)
+        if wrong:
+            die(f"{src / p}/debian/rules: {wrong[0]}, not /opt/ros/{distro}; regenerate with colcon2deb >= 0b1f427")
 
     for p in pkgs:
         dst = out / p / "debian"
