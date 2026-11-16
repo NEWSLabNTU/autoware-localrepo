@@ -1,0 +1,12 @@
+Source: ros-jazzy-autoware-path-optimizer-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Takayuki Murooka <takayuki.murooka@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-jazzy-ament-cmake-auto, ros-jazzy-ament-cmake-export-link-flags, ros-jazzy-ament-cmake-ros <!nocheck>, ros-jazzy-ament-index-python <!nocheck>, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-autoware-agnocast-wrapper-2-1-0, ros-jazzy-autoware-cmake-2-1-0, ros-jazzy-autoware-fake-test-node-2-1-0 <!nocheck>, ros-jazzy-autoware-internal-debug-msgs-2-1-0, ros-jazzy-autoware-interpolation-2-1-0, ros-jazzy-autoware-lint-common-2-1-0 <!nocheck>, ros-jazzy-autoware-motion-utils-2-1-0, ros-jazzy-autoware-osqp-interface-2-1-0, ros-jazzy-autoware-planning-msgs-2-1-0, ros-jazzy-autoware-planning-test-manager-2-1-0, ros-jazzy-autoware-testing-2-1-0 <!nocheck>, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-autoware-utils-geometry-2-1-0, ros-jazzy-autoware-vehicle-info-utils-2-1-0, ros-jazzy-diagnostic-updater, ros-jazzy-geometry-msgs, ros-jazzy-nav-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-std-msgs, ros-jazzy-tf2-ros, ros-jazzy-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-path-optimizer-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-autoware-agnocast-wrapper-2-1-0, ros-jazzy-autoware-global-parameter-loader-2-1-0, ros-jazzy-autoware-internal-debug-msgs-2-1-0, ros-jazzy-autoware-interpolation-2-1-0, ros-jazzy-autoware-motion-utils-2-1-0, ros-jazzy-autoware-osqp-interface-2-1-0, ros-jazzy-autoware-planning-msgs-2-1-0, ros-jazzy-autoware-planning-test-manager-2-1-0, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-autoware-utils-geometry-2-1-0, ros-jazzy-autoware-vehicle-info-utils-2-1-0, ros-jazzy-diagnostic-updater, ros-jazzy-geometry-msgs, ros-jazzy-nav-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-std-msgs, ros-jazzy-tf2-ros, ros-jazzy-visualization-msgs, autoware-acados-2-1-0
+Description: The autoware_path_optimizer package

@@ -1,0 +1,12 @@
+Source: ros-jazzy-autoware-tensorrt-bevformer-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Selventhiran Rengaraj <selventhiran@multicorewareinc.com>
+Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, libopencv-dev, ros-jazzy-ament-cmake-auto, ros-jazzy-ament-index-cpp, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-ament-lint-common <!nocheck>, ros-jazzy-autoware-cmake-2-1-0, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-localization-msgs-2-1-0, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-cv-bridge, ros-jazzy-eigen3-cmake-module, ros-jazzy-geometry-msgs, ros-jazzy-message-filters, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-std-msgs, ros-jazzy-tf2, ros-jazzy-tf2-geometry-msgs, ros-jazzy-tf2-ros, ros-jazzy-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-tensorrt-bevformer-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, libopencv-dev, ros-jazzy-ament-index-cpp, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-localization-msgs-2-1-0, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-cv-bridge, ros-jazzy-geometry-msgs, ros-jazzy-message-filters, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-std-msgs, ros-jazzy-tf2, ros-jazzy-tf2-geometry-msgs, ros-jazzy-tf2-ros, ros-jazzy-visualization-msgs
+Description: TensorRT implementation of BEVFormer for Autoware

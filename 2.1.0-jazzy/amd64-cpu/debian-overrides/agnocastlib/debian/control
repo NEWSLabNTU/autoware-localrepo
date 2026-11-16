@@ -1,0 +1,12 @@
+Source: ros-jazzy-agnocastlib-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Takahiro Ishikawa-Aso <sykwer@gmail.com>
+Build-Depends: debhelper (>= 12.0.0), libgoogle-glog-dev, liblttng-ust-dev, ros-jazzy-agnocast-cie-config-msgs-2-1-0, ros-jazzy-agnocast-cie-thread-configurator-2-1-0, ros-jazzy-ament-cmake-2-1-0, ros-jazzy-ament-cmake-gmock <!nocheck>, ros-jazzy-ament-index-cpp, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-ament-lint-common <!nocheck>, ros-jazzy-diagnostic-msgs, ros-jazzy-diagnostic-updater, ros-jazzy-geometry-msgs, ros-jazzy-launch-testing-ament-cmake <!nocheck>, ros-jazzy-message-filters, ros-jazzy-rcl-yaml-param-parser, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rcpputils, ros-jazzy-rmw, ros-jazzy-rosgraph-msgs, ros-jazzy-rosidl-typesupport-introspection-cpp, ros-jazzy-service-msgs, ros-jazzy-std-msgs <!nocheck>, ros-jazzy-std-srvs <!nocheck>, ros-jazzy-tf2, ros-jazzy-tf2-msgs, ros-jazzy-tf2-ros, ros-jazzy-tracetools
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-agnocastlib-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgoogle-glog-dev, liblttng-ust-dev, ros-jazzy-agnocast-cie-config-msgs-2-1-0, ros-jazzy-agnocast-cie-thread-configurator-2-1-0, ros-jazzy-ament-index-cpp, ros-jazzy-diagnostic-msgs, ros-jazzy-diagnostic-updater, ros-jazzy-geometry-msgs, ros-jazzy-message-filters, ros-jazzy-rcl-yaml-param-parser, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-rcpputils, ros-jazzy-rmw, ros-jazzy-ros2agnocast-discovery-agent-2-1-0, ros-jazzy-rosgraph-msgs, ros-jazzy-rosidl-typesupport-introspection-cpp, ros-jazzy-service-msgs, ros-jazzy-tf2, ros-jazzy-tf2-msgs, ros-jazzy-tf2-ros, ros-jazzy-tracetools
+Description: True Zero Copy Communication Middleware for Unsized ROS 2 Message Types.

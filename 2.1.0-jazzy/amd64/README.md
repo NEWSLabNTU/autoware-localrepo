@@ -51,8 +51,34 @@ The versions are upstream's ansible defaults for Jazzy. The test image and
 Ported from the Humble 2.1.0 deltas by `scripts/port-overrides.py
 2.1.0-jazzy/amd64`, which takes the distro from `config.yaml` and writes
 `ros-jazzy-*` names. To regenerate them, run `just ros` once with an empty
-`debian-overrides/`, then the script. See `../../2.1.0/amd64/README.md` for
-what each delta is.
+`debian-overrides/`, then the script. It must harvest bloom's own output: on a
+build that already applied the overrides its anchors are gone and it stops.
+See `../../2.1.0/amd64/README.md` for what each delta is. Jazzy differs in two:
+
+| Delta | Packages |
+|---|---|
+| `ROS_BASE_PATH ?= /opt/ros/jazzy` in `debian/rules`. colcon2deb before 0b1f427 wrote `/opt/ros/humble`, and `debian/rules` then found no ROS package (`No 'rosidl_typesupport_c' found`) | all 25 |
+| gcc13: `-Wno-error=maybe-uninitialized`, for GCC 13's false positive in boost 1.83 `point_in_geometry.hpp`, fatal under the package's `-Werror` | `autoware_path_optimizer` |
+
+The first comes from colcon2deb itself once it is new enough; the second is
+`GCC13` in `scripts/port-overrides.py`, applied for Jazzy only. On arm64,
+GCC 13 did not raise that warning; the override is kept there for parity.
+
+## Meta-packages
+
+The build host is Ubuntu 22.04, so `just meta localrepo` runs inside the noble
+builder image rather than on the host: `autoware-acados-2-1-0` compiles acados
+and has to link noble's libraries. Mount the host's `just`, since noble's
+(1.21) cannot parse this justfile's `[confirm("...")]`:
+
+```bash
+docker run --rm --entrypoint "" -u root \
+  -v "$PWD/../..:/repo" -v "$(which just):/usr/local/bin/just:ro" \
+  -w /repo/2.1.0-jazzy/amd64 autoware-2.1.0-jazzy-amd64-builder bash -c \
+  'apt-get update && apt-get install -y aria2 dpkg-dev debhelper parallel git cmake build-essential &&
+   git config --global --add safe.directory "*" && just meta localrepo;
+   chown -R '"$(id -u):$(id -g)"' packages build'
+```
 
 ## Building
 
