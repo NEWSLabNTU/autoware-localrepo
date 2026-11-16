@@ -437,20 +437,24 @@ if [ "$NVIDIA_ANY" = "y" ]; then
     # Install CUDA runtime libraries
     if [ "$INSTALL_CUDA" = "y" ]; then
         log_info "Installing CUDA runtime libraries..."
+        # The packages are built with CUDA 12.8 (the 2.1.0 builder image), and
+        # their CUDA code links libcudart.so.12 and libcublas.so.12, so install
+        # the 12.8 runtime itself, not only the math libraries.
         apt-get install -y --allow-change-held-packages \
-            libcublas-12-4 \
-            libcurand-12-4 \
-            libcusparse-12-4 \
-            libcusolver-12-4 \
-            libcufft-12-4
+            cuda-cudart-12-8 \
+            libcublas-12-8 \
+            libcurand-12-8 \
+            libcusparse-12-8 \
+            libcusolver-12-8 \
+            libcufft-12-8
     fi
 
     # Install cuDNN
     if [ "$INSTALL_CUDNN" = "y" ]; then
         log_info "Installing cuDNN..."
         apt-get install -y --allow-change-held-packages \
-            libcudnn8=8.9.7.29-1+cuda12.2
-        apt-mark hold libcudnn8
+            libcudnn9-cuda-12
+        apt-mark hold libcudnn9-cuda-12
     fi
 
     # Install TensorRT
