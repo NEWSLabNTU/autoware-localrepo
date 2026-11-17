@@ -303,6 +303,16 @@ def derive(sibling: str, dst: Path) -> None:
     for name in ("smoke.sh", "smoke-inner.sh"):
         t = (TEMPLATES / name).read_text()
         t = t.replace("@VERSION@", version).replace("@TAG@", f"{ver}-{arch}-cpu")
+        if name == "smoke-inner.sh" and distro != "humble":
+            # Jazzy's rmw_cyclonedds_cpp caps automatic participant indices at
+            # 32, fewer than the planning simulator's processes; autoware-config's
+            # cyclonedds.xml raises the cap, so the drive must use it.
+            anchor = "export ROS_DOMAIN_ID=87\n"
+            if t.count(anchor) != 1:
+                die("smoke-inner.sh: ROS_DOMAIN_ID export not found")
+            t = t.replace(anchor, anchor + "# More than 32 processes: autoware-config's DDS profile raises the\n"
+                          "# participant-index cap of Jazzy's rmw_cyclonedds_cpp.\n"
+                          f"export CYCLONEDDS_URI=file:///opt/autoware/{version}/config/cyclonedds.xml\n")
         (dst / "test" / name).write_text(t)
         (dst / "test" / name).chmod(0o755)
 

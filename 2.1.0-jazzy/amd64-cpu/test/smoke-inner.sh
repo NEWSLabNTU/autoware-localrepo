@@ -9,6 +9,9 @@
 source /opt/autoware/2.1.0/setup.bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export ROS_DOMAIN_ID=87
+# More than 32 processes: autoware-config's DDS profile raises the
+# participant-index cap of Jazzy's rmw_cyclonedds_cpp.
+export CYCLONEDDS_URI=file:///opt/autoware/2.1.0/config/cyclonedds.xml
 MAP=/opt/autoware/2.1.0/share/autoware_maps/sample-map-planning
 # autoware-full pulls in the sample maps only from 1.9.0 on; before that they
 # are their own package, autoware-maps-<version>, in the same localrepo.

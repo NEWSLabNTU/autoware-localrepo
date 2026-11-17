@@ -8,16 +8,19 @@ side.
 ## Download
 
 Pick a version, then the localrepo deb for your machine from its release.
-2.1.0 is the newest; it is for ROS 2 Humble.
+2.1.0 is the newest, for ROS 2 Humble and, from 2.1.0-jazzy-1, ROS 2 Jazzy.
+Tags made from 2.1.0-jazzy-1 on name their ROS distro (`2.1.0-jazzy-1`,
+`2.1.0-humble-2`); earlier tags are Humble.
 
-| Version | Release | Universe | Offline ML models |
-|---|---|---|---|
-| 2.1.0 | [2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/2.1.0-1) | 0.53.2 | [data-2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-2.1.0-1) |
-| 1.9.0 | [1.9.0-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.9.0-2) | 0.52.0 | [data-1.9.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.9.0-1) |
-| 1.7.1 | [1.7.1-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.7.1-2) | 0.50.0 | [data-1.7.1-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.7.1-1) |
-| 1.5.0 | [1.5.0-3](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.5.0-3) | 0.48.0 | [data-1.5.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.5.0-1) |
+| Version | ROS 2 | Release | Universe | Offline ML models |
+|---|---|---|---|---|
+| 2.1.0 | Jazzy | [2.1.0-jazzy-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/2.1.0-jazzy-1) | 0.53.2 | [data-2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-2.1.0-1) (shared with Humble) |
+| 2.1.0 | Humble | [2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/2.1.0-1) | 0.53.2 | [data-2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-2.1.0-1) |
+| 1.9.0 | Humble | [1.9.0-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.9.0-2) | 0.52.0 | [data-1.9.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.9.0-1) |
+| 1.7.1 | Humble | [1.7.1-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.7.1-2) | 0.50.0 | [data-1.7.1-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.7.1-1) |
+| 1.5.0 | Humble | [1.5.0-3](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.5.0-3) | 0.48.0 | [data-1.5.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.5.0-1) |
 
-Every release has a localrepo deb for each platform:
+Every Humble release has a localrepo deb for each platform:
 
 | Suffix | Platform |
 |---|---|
@@ -26,6 +29,14 @@ Every release has a localrepo deb for each platform:
 | `jetpack62` | JetPack 6.2, Jetson Orin |
 | `ubuntu2204cpu` | Ubuntu 22.04, x86_64, no NVIDIA GPU needed |
 | `ubuntu2204arm64cpu` | Ubuntu 22.04, any arm64 machine, no NVIDIA GPU needed |
+
+Jazzy releases (Ubuntu 24.04):
+
+| Suffix | Platform |
+|---|---|
+| `ubuntu2404` | Ubuntu 24.04, x86_64 |
+| `ubuntu2404cpu` | Ubuntu 24.04, x86_64, no NVIDIA GPU needed |
+| `jetpack72` | JetPack 7.2, Jetson (pending) |
 
 The two `cpu` builds were added to the 1.x releases on 2026-11-14 and are part
 of 2.1.0 from its first release; see
