@@ -1,0 +1,31 @@
+version: 1
+
+# Docker configuration
+docker:
+  # Always prefer remote URLs to avoid maintaining Dockerfiles locally
+  dockerfile: Dockerfile
+
+  # Optional: Custom image name for caching
+  image_name: autoware-2.1.0-jazzy-jp72-builder
+
+  # Native build on an arm64 host (a JetPack 7.2 Orin, or an arm64 server:
+  # the builder needs no GPU). Under QEMU on amd64 it is very slow.
+  platform: linux/arm64
+
+# Output configuration with descriptive name
+output:
+  directory: ./build
+
+# Package configurations with descriptive name
+packages:
+  directory: ./debian-overrides
+
+# Build options
+build:
+  ros_distro: jazzy
+  parallel_jobs: 0
+  skip_tests: true
+  # Custom installation prefix for Autoware 2.1.0
+  install_prefix: /opt/autoware/2.1.0
+  # Package name suffix - appended to package names (e.g., ros-jazzy-pkg-2-1-0)
+  package_suffix: "2-1-0"

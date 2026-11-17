@@ -1,0 +1,12 @@
+Source: ros-jazzy-autoware-ptv3-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-jazzy-ament-cmake-auto, ros-jazzy-ament-cmake-gtest <!nocheck>, ros-jazzy-ament-cmake-ros <!nocheck>, ros-jazzy-autoware-cmake-2-1-0, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-object-recognition-utils-2-1-0, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-autoware-point-types-2-1-0, ros-jazzy-autoware-tensorrt-common-2-1-0, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-cuda-blackboard-2-1-0, ros-jazzy-launch-ros, ros-jazzy-perception-utils-2-1-0, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-tf2-eigen, ros-jazzy-tf2-ros
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-ptv3-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-object-recognition-utils-2-1-0, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-autoware-point-types-2-1-0, ros-jazzy-autoware-tensorrt-common-2-1-0, ros-jazzy-autoware-tensorrt-plugins-2-1-0, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-cuda-blackboard-2-1-0, ros-jazzy-launch-ros, ros-jazzy-perception-utils-2-1-0, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-tf2-eigen, ros-jazzy-tf2-ros
+Description: The autoware_ptv3 package

@@ -1,0 +1,12 @@
+Source: ros-jazzy-autoware-tensorrt-plugins-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-jazzy-ament-cmake-auto, ros-jazzy-ament-cmake-gtest <!nocheck>, ros-jazzy-ament-cmake-ros <!nocheck>, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-autoware-cmake-2-1-0, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-lint-common-2-1-0 <!nocheck>, ros-jazzy-tensorrt-cmake-module
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-tensorrt-plugins-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-tensorrt-cmake-module
+Description: The autoware_tensorrt_plugins package

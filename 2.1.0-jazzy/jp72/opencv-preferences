@@ -1,0 +1,15 @@
+# Prefer Ubuntu's OpenCV over the Jetson r39.2 repository's. jetson/common
+# carries libopencv-dev 4.8.0 (NVIDIA's build, without the contrib modules),
+# and its higher version wins over noble's 4.6.0, after which
+# libopencv-contrib-dev (yabloc's ximgproc) cannot be installed.
+Package: libopencv*
+Pin: release o=Ubuntu
+Pin-Priority: 1001
+
+Package: opencv-data
+Pin: release o=Ubuntu
+Pin-Priority: 1001
+
+Package: python3-opencv
+Pin: release o=Ubuntu
+Pin-Priority: 1001

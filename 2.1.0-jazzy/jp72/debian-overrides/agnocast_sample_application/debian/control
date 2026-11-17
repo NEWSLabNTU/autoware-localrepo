@@ -1,0 +1,12 @@
+Source: ros-jazzy-agnocast-sample-application-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Takahiro Ishikawa-Aso <sykwer@gmail.com>
+Build-Depends: debhelper (>= 12.0.0), ros-jazzy-agnocast-components-2-1-0, ros-jazzy-agnocast-sample-interfaces-2-1-0, ros-jazzy-agnocastlib-2-1-0, ros-jazzy-ament-cmake-2-1-0, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-ament-lint-common <!nocheck>, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-agnocast-sample-application-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-agnocast-components-2-1-0, ros-jazzy-agnocast-sample-interfaces-2-1-0, ros-jazzy-agnocastlib-2-1-0, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-ros2agnocast-discovery-agent-2-1-0
+Description: A sample application for Agnocast.

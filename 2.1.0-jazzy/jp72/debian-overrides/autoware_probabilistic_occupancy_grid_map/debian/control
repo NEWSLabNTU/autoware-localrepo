@@ -1,0 +1,12 @@
+Source: ros-jazzy-autoware-probabilistic-occupancy-grid-map-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Yukihiro Saito <yukihiro.saito@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-jazzy-ament-cmake-auto, ros-jazzy-ament-cmake-gtest <!nocheck>, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-autoware-agnocast-wrapper-2-1-0, ros-jazzy-autoware-cmake-2-1-0, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-lint-common-2-1-0 <!nocheck>, ros-jazzy-autoware-pointcloud-preprocessor-2-1-0 <!nocheck>, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-eigen3-cmake-module, ros-jazzy-grid-map-costmap-2d, ros-jazzy-grid-map-msgs, ros-jazzy-grid-map-ros, ros-jazzy-laser-geometry, ros-jazzy-launch <!nocheck>, ros-jazzy-launch-ros <!nocheck>, ros-jazzy-launch-testing <!nocheck>, ros-jazzy-launch-testing-ament-cmake <!nocheck>, ros-jazzy-launch-testing-ros <!nocheck>, ros-jazzy-message-filters, ros-jazzy-nav-msgs, ros-jazzy-nav2-costmap-2d, ros-jazzy-pcl-ros, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-tf2-eigen, ros-jazzy-tf2-ros, ros-jazzy-tf2-sensor-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-probabilistic-occupancy-grid-map-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-autoware-agnocast-wrapper-2-1-0, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-pointcloud-preprocessor-2-1-0, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-grid-map-costmap-2d, ros-jazzy-grid-map-msgs, ros-jazzy-grid-map-ros, ros-jazzy-laser-geometry, ros-jazzy-message-filters, ros-jazzy-nav-msgs, ros-jazzy-nav2-costmap-2d, ros-jazzy-pcl-ros, ros-jazzy-pointcloud-to-laserscan-2-1-0, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-tf2-eigen, ros-jazzy-tf2-ros, ros-jazzy-tf2-sensor-msgs
+Description: generate probabilistic occupancy grid map

@@ -1,0 +1,7 @@
+autoware-localrepo-2-1-0 (2.1.0-1jetpack72) noble; urgency=medium
+
+  * First JetPack 7.2 build (Jetson Linux r39.2, Ubuntu 24.04, ROS 2 Jazzy)
+    for Jetson AGX Orin: Autoware 2.1.0 with CUDA 13.2.2, cuDNN 9.20.0 and
+    TensorRT 10.16.2 from NVIDIA's Jetson apt repository.
+
+ -- Jerry Lin <jerry73204@gmail.com>  Sat, 14 Nov 2026 00:00:00 +0800

@@ -1,0 +1,12 @@
+Source: ros-jazzy-autoware-bevfusion-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Kenzo Lobos-Tsunekawa <kenzo.lobos@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-jazzy-ament-cmake-auto, ros-jazzy-ament-cmake-ros <!nocheck>, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-autoware-cmake-2-1-0, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-lint-common-2-1-0 <!nocheck>, ros-jazzy-autoware-object-recognition-utils-2-1-0, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-autoware-point-types-2-1-0, ros-jazzy-autoware-tensorrt-common-2-1-0, ros-jazzy-autoware-utils-debug-2-1-0, ros-jazzy-autoware-utils-diagnostics-2-1-0, ros-jazzy-autoware-utils-geometry-2-1-0, ros-jazzy-autoware-utils-math-2-1-0, ros-jazzy-autoware-utils-system-2-1-0, ros-jazzy-cuda-blackboard-2-1-0, ros-jazzy-image-transport, ros-jazzy-launch-ros, ros-jazzy-pcl-ros, ros-jazzy-perception-utils-2-1-0, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-tf2-eigen, ros-jazzy-tf2-geometry-msgs, ros-jazzy-tf2-sensor-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-bevfusion-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-object-recognition-utils-2-1-0, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-autoware-point-types-2-1-0, ros-jazzy-autoware-tensorrt-common-2-1-0, ros-jazzy-autoware-tensorrt-plugins-2-1-0, ros-jazzy-autoware-utils-debug-2-1-0, ros-jazzy-autoware-utils-diagnostics-2-1-0, ros-jazzy-autoware-utils-geometry-2-1-0, ros-jazzy-autoware-utils-math-2-1-0, ros-jazzy-autoware-utils-system-2-1-0, ros-jazzy-cuda-blackboard-2-1-0, ros-jazzy-image-transport, ros-jazzy-launch-ros, ros-jazzy-pcl-ros, ros-jazzy-perception-utils-2-1-0, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-tf2-eigen, ros-jazzy-tf2-geometry-msgs, ros-jazzy-tf2-sensor-msgs
+Description: The autoware_bevfusion package

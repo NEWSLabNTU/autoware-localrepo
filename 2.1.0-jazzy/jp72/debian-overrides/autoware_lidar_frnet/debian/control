@@ -1,0 +1,12 @@
+Source: ros-jazzy-autoware-lidar-frnet-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Amadeusz Szymko <amadeusz.szymko.2@tier4.jp>
+Build-Depends: debhelper (>= 12.0.0), ros-jazzy-ament-cmake-auto, ros-jazzy-ament-cmake-ros <!nocheck>, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-autoware-cmake-2-1-0, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-lint-common-2-1-0 <!nocheck>, ros-jazzy-autoware-object-recognition-utils-2-1-0, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-autoware-point-types-2-1-0, ros-jazzy-autoware-tensorrt-common-2-1-0, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-cuda-blackboard-2-1-0, ros-jazzy-diagnostic-updater, ros-jazzy-geometry-msgs, ros-jazzy-pcl-ros, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-lidar-frnet-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-object-recognition-utils-2-1-0, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-autoware-point-types-2-1-0, ros-jazzy-autoware-tensorrt-common-2-1-0, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-cuda-blackboard-2-1-0, ros-jazzy-diagnostic-updater, ros-jazzy-geometry-msgs, ros-jazzy-pcl-ros, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-visualization-msgs
+Description: LiDAR segmentation based on FRNet
