@@ -36,7 +36,9 @@ Jazzy releases (Ubuntu 24.04):
 |---|---|
 | `ubuntu2404` | Ubuntu 24.04, x86_64 |
 | `ubuntu2404cpu` | Ubuntu 24.04, x86_64, no NVIDIA GPU needed |
-| `jetpack72` | JetPack 7.2, Jetson (pending) |
+| `ubuntu2404sbsa` | Ubuntu 24.04, arm64 server (SBSA) |
+| `jetpack72` | JetPack 7.2, Jetson Orin |
+| `ubuntu2404arm64cpu` | Ubuntu 24.04, any arm64 machine, no NVIDIA GPU needed |
 
 The two `cpu` builds were added to the 1.x releases on 2026-11-14 and are part
 of 2.1.0 from its first release; see
