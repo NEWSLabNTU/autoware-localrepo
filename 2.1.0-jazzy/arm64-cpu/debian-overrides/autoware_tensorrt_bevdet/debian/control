@@ -1,0 +1,12 @@
+Source: ros-jazzy-autoware-tensorrt-bevdet-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Cynthia <cynthia.liu@autocore.ai>
+Build-Depends: debhelper (>= 12.0.0), libopencv-dev, ros-jazzy-ament-cmake-auto, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-autoware-cmake-2-1-0, ros-jazzy-autoware-lint-common-2-1-0 <!nocheck>, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-bevdet-vendor-2-1-0, ros-jazzy-cv-bridge, ros-jazzy-geometry-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-tf2-geometry-msgs, ros-jazzy-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-tensorrt-bevdet-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libopencv-dev, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-bevdet-vendor-2-1-0, ros-jazzy-cv-bridge, ros-jazzy-geometry-msgs, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-tf2-geometry-msgs, ros-jazzy-visualization-msgs
+Description: This package is ported version toward Autoware from bevdet_vendor

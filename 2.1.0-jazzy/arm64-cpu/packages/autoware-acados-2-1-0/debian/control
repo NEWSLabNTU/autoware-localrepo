@@ -1,0 +1,21 @@
+Source: autoware-acados-2-1-0
+Section: libs
+Priority: optional
+Maintainer: Jerry Lin <jerry73204@gmail.com>
+Build-Depends: debhelper-compat (= 13), cmake, git, build-essential
+Standards-Version: 4.6.2
+
+Package: autoware-acados-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: acados OCP/QP solver runtime for Autoware 2.1.0
+ Runtime libraries of the acados optimal control solver (with blasfeo,
+ hpipm, and qpOASES), built from the upstream v0.5.3 sources with the
+ same configuration as the Autoware 2.1.0 builder image.
+ .
+ Required at runtime by ros-jazzy-autoware-path-optimizer-2-1-0 and
+ ros-jazzy-autoware-trajectory-optimizer-2-1-0, whose MPC solvers link
+ libacados.so.
+ .
+ Installed to /opt/autoware/2.1.0 (resolved via the sourced Autoware
+ environment's LD_LIBRARY_PATH).

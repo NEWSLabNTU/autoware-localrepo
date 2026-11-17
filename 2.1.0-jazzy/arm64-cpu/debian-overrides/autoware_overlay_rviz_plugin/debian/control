@@ -1,0 +1,13 @@
+Source: ros-jazzy-autoware-overlay-rviz-plugin-2-1-0
+Section: misc
+Priority: optional
+Maintainer: Khalil Selyan <khalil@leodrive.ai>
+Build-Depends: debhelper (>= 12.0.0), libboost-all-dev, ros-jazzy-ament-cmake-auto, ros-jazzy-ament-index-cpp, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-autoware-internal-planning-msgs-2-1-0, ros-jazzy-autoware-lint-common-2-1-0 <!nocheck>, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-autoware-vehicle-msgs-2-1-0, ros-jazzy-rviz-2d-overlay-msgs, ros-jazzy-rviz-2d-overlay-plugins, ros-jazzy-rviz-common, ros-jazzy-rviz-ogre-vendor, ros-jazzy-rviz-rendering
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-overlay-rviz-plugin-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, ros-jazzy-ament-index-cpp, ros-jazzy-autoware-internal-planning-msgs-2-1-0, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-autoware-vehicle-msgs-2-1-0, ros-jazzy-rviz-2d-overlay-msgs, ros-jazzy-rviz-2d-overlay-plugins, ros-jazzy-rviz-common, ros-jazzy-rviz-ogre-vendor, ros-jazzy-rviz-rendering
+Replaces: ros-jazzy-autoware-mission-details-overlay-rviz-plugin-2-1-0
+Description: RViz2 plugin for 2D overlays in the 3D view for Autoware.

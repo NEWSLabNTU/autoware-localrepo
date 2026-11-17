@@ -1,0 +1,12 @@
+Source: ros-jazzy-autoware-camera-streampetr-2-1-0
+Section: misc
+Priority: optional
+Maintainer: samrat <samratthapa120@gmail.com>
+Build-Depends: debhelper (>= 12.0.0), libeigen3-dev, libyaml-cpp-dev, ros-jazzy-ament-clang-format <!nocheck>, ros-jazzy-ament-cmake-auto, ros-jazzy-ament-lint-auto <!nocheck>, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-lint-common-2-1-0 <!nocheck>, ros-jazzy-autoware-object-recognition-utils-2-1-0, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-autoware-tensorrt-common-2-1-0, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-cv-bridge, ros-jazzy-diagnostic-msgs, ros-jazzy-diagnostic-updater, ros-jazzy-geometry-msgs, ros-jazzy-image-transport, ros-jazzy-nav-msgs, ros-jazzy-perception-utils-2-1-0, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-tf2-geometry-msgs, ros-jazzy-tf2-msgs, ros-jazzy-tf2-ros
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-jazzy-autoware-camera-streampetr-2-1-0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, libyaml-cpp-dev, ros-jazzy-autoware-cuda-dependency-meta-2-1-0, ros-jazzy-autoware-cuda-utils-2-1-0, ros-jazzy-autoware-object-recognition-utils-2-1-0, ros-jazzy-autoware-perception-msgs-2-1-0, ros-jazzy-autoware-tensorrt-common-2-1-0, ros-jazzy-autoware-utils-2-1-0, ros-jazzy-cv-bridge, ros-jazzy-diagnostic-msgs, ros-jazzy-diagnostic-updater, ros-jazzy-geometry-msgs, ros-jazzy-image-transport, ros-jazzy-nav-msgs, ros-jazzy-perception-utils-2-1-0, ros-jazzy-rclcpp, ros-jazzy-rclcpp-components, ros-jazzy-sensor-msgs, ros-jazzy-tf2-geometry-msgs, ros-jazzy-tf2-msgs, ros-jazzy-tf2-ros
+Description: autoware_camera_streampetr
