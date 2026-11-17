@@ -8,6 +8,15 @@
       <AllowMulticast>default</AllowMulticast>
       <MaxMessageSize>65500B</MaxMessageSize>
     </General>
+    <!-- Jazzy's rmw_cyclonedds_cpp gives each process an automatic participant
+         index, at most 32 by default. Autoware runs more processes than that in
+         one domain, and the ones past 32 abort at start: "Failed to find a free
+         participant index". On loopback without multicast the index is also
+         what discovery probes, so it stays auto, with room for 120. -->
+    <Discovery>
+      <ParticipantIndex>auto</ParticipantIndex>
+      <MaxAutoParticipantIndex>120</MaxAutoParticipantIndex>
+    </Discovery>
     <Internal>
       <SocketReceiveBufferSize min="10MB"/>
       <Watermarks>
