@@ -7,6 +7,8 @@ autoware-localrepo-1-5-0 (1.5.0-4ubuntu2204sbsa) jammy; urgency=medium
     it, shipped compare_map_segmentation, concatenate_data, lidar_centerpoint,
     lidar_transfusion, bevfusion and cuda_pointcloud_preprocessor without that
     library, so they failed to load unless another component had loaded it.
+  * setup-prerequisites.sh installs cuda-cudart-12-4. The CUDA packages link
+    libcudart.so.12, and the script installed only the CUDA math libraries.
 
  -- Jerry Lin <jerry73204@gmail.com>  Tue, 17 Nov 2026 00:00:00 +0800
 

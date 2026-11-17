@@ -437,7 +437,11 @@ if [ "$NVIDIA_ANY" = "y" ]; then
     # Install CUDA runtime libraries
     if [ "$INSTALL_CUDA" = "y" ]; then
         log_info "Installing CUDA runtime libraries..."
+        # The packages are built with CUDA 12.4 (the 1.5.0 builder image), and
+        # their CUDA code links libcudart.so.12, so install the runtime itself,
+        # not only the math libraries.
         apt-get install -y --allow-change-held-packages \
+            cuda-cudart-12-4 \
             libcublas-12-4 \
             libcurand-12-4 \
             libcusparse-12-4 \
