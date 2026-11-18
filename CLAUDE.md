@@ -481,6 +481,99 @@ The builder image additionally needs the full upstream layout at
 `/opt/acados` (source + venv + tera renderer) because the codegen step
 hardcodes those paths.
 
+## Release Practices (learned on 1.5.0-humble-4 / -5, 2026-11)
+
+### Tags name the distro; Debian versions do not
+
+Release tags are `<version>-<distro>-<rev>` (`1.5.0-humble-4`,
+`2.1.0-jazzy-1`). The localrepo deb's version stays `<version>-<rev><suffix>`
+(`1.5.0-4ubuntu2204`). Anything that turns a tag into a deb file name or
+compares installed versions must drop the distro first; comparing
+`1.5.0-4` against `1.5.0-humble-4` with `dpkg --compare-versions` calls the
+install older forever (the golf cart's installer had exactly that bug).
+`scripts/publish-release.sh` accepts the old `<version>-<rev>` form only for
+releases that already exist.
+
+### A rebuild must change the ROS packages' versions
+
+colcon2deb always writes Debian revision 0 (`0.48.0-0jammy`). Rebuilt ROS
+debs under an unchanged version are invisible to `apt upgrade`: 1.5.0-humble-4
+fixed six libraries, yet a 1.5.0-3 host that upgraded kept all of them broken
+(75 packages with new files under old versions). Set `ros-revision` (see
+"Publishing a Release") whenever the ROS packages are rebuilt, and never for
+a meta-only release.
+
+### Test the upgrade, not only the fresh install
+
+`just test` installs into a clean container, so it cannot see the problem
+above. Before publishing a revision, install the previous published release
+in an `ubuntu:22.04` container, then `dpkg -i` the new localrepo,
+`apt update && apt upgrade`, and run the check that proves the fix. The
+release notes' upgrade section must be the commands that test ran.
+
+### Gate every release on a link check of the installed tree
+
+ROS Humble dependencies change ABI underneath us: diagnostic_updater 4.0.7
+(2026-07) moved `Updater`'s vtable into `libdiagnostic_updater.so`, and every
+package that used `Updater` without `ament_target_dependencies(diagnostic_updater)`
+built fine and failed at dlopen, depending on load order. `just test` passed.
+What catches it: after a clean install with the deb's own
+`setup-prerequisites.sh`, run `ldd -r` over every ELF under
+`/opt/autoware/<version>` and classify undefined symbols. Undefined functions
+in plugin libraries are normal (resolved by the loader); an undefined DATA
+symbol (vtable, typeinfo) is a load failure. Compare against the previous
+release's baseline and explain every new file. The same check found the
+missing `cuda-cudart` (below).
+
+### setup-prerequisites.sh must install the CUDA runtime
+
+Twice a release shipped CUDA packages without `cuda-cudart-<ver>` in
+`setup-prerequisites.sh` (1.9.0-1, 1.5.0-3): the math libraries were there,
+`libcudart.so.12` was not, and every GPU node failed on a host without its
+own toolkit. In the link check it shows as `libcudart.so.12 => not found` in
+dozens of files. JetPack ships the runtime; only x86_64 and SBSA need it.
+
+### Tie launch defaults to what the packages install
+
+Autoware 1.9.0 moved `data_path`'s default to `~/autoware_data/ml_models`
+while the downloader kept writing `~/autoware_data`; nothing noticed for
+three releases. The install test now greps `autoware.launch.xml`'s
+`data_path` default and checks the downloader wrote there. When packaging
+something a launch file consumes, assert the two agree in `test/Dockerfile`.
+
+### Publishing across build hosts
+
+- Create the draft from one host (`scripts/publish-release.sh TAG DIRS...`);
+  the other hosts run the same script into it, and it merges
+  `SHA256SUMS.txt`. Never publish from a host that did not create the draft.
+- Before `--draft=false`, list the assets through the API
+  (`gh api repos/NEWSLabNTU/autoware-localrepo/releases --jq ...`) and match
+  every size and `digest` against the values recorded when each deb passed
+  its gate, then download and read `SHA256SUMS.txt`.
+- A draft's `untagged-...` URL changes whenever it is edited; identify drafts
+  by `tag_name`, not by URL.
+- Retarget the draft to the commit that has the final notes
+  (`gh release edit TAG --target <sha> --notes-file ...`) when publishing,
+  so the tag carries them.
+
+### Shared build server hygiene
+
+- `/home` is shared and fills up (it hit 0 bytes free on 2026-11-18). A
+  set's `build/` is ~60 GB; move old trees aside only briefly, and delete them
+  once the release they belong to is published. Check `df` before a build.
+- Other users' jobs can push the host into memory reaping, which kills a
+  build mid-way. On a busy host set `parallel_jobs: 8` in `config.yaml`, and
+  move a killed build's partial `build/` aside before restarting.
+- A meta-only revision still runs `just meta`, which rebuilds
+  `autoware-data` and re-downloads its ~2.4 GB of models; expect that.
+
+### Committing
+
+Stage explicit paths. `git add -A` on a glob also takes untracked build
+outputs that match it (debhelper's `debian/<pkg>/opt/...` staging trees);
+check `git diff --cached --stat` for added files before committing. History
+is linear and never force-pushed: undo a slip with a follow-up commit.
+
 ## Package Types
 
 Each version has the same set of meta-packages. The package name carries the version suffix (e.g., `autoware-full-1-5-0`, `autoware-full-1-7-1`).
@@ -636,11 +729,14 @@ All files installed outside `/opt/autoware/1.5.0/` use version suffixes to allow
 
 ### Publishing a Release
 
-1. **Tag the autoware repo** at the workspace HEAD:
+1. **Tag the autoware repo** at the workspace commit the build used
+   (`git -C <version>/<arch>/source rev-parse HEAD`), with the release tag
+   `<version>-<distro>-<rev>`. Skip it when the sources did not change: a
+   meta-only release names the previous source tag in its notes.
    ```bash
    cd ~/repos/autoware
-   git tag -a <version>-<rev> newslab/<version>-ws -m "Autoware <version>-<rev> (NEWSLab build)"
-   git push newslab <version>-<rev>
+   git tag -a 1.5.0-humble-4 <commit> -m "Autoware 1.5.0-humble-4 (NEWSLab build)"
+   git push newslab 1.5.0-humble-4
    ```
 2. **If the release rebuilds the ROS packages**, set each set's
    `ros-revision` to the new localrepo revision (1.5.0 justfiles only so
