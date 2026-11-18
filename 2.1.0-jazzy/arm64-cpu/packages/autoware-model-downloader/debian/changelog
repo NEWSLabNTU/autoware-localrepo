@@ -1,3 +1,14 @@
+autoware-model-downloader-2-1-0 (2.1.0-2) noble; urgency=medium
+
+  * Download into $HOME/autoware_data/ml_models by default, the data_path
+    Autoware 2.1.0's launch files default to. 1.9.0 moved it there from
+    $HOME/autoware_data, where this script kept writing, so launches with
+    no data_path:= found no models.
+  * Models found in $HOME/autoware_data for this version stop the run with
+    the command that moves them, instead of downloading them again.
+
+ -- Jerry Lin <jerry73204@gmail.com>  Wed, 18 Nov 2026 00:00:00 +0800
+
 autoware-model-downloader-2-1-0 (2.1.0-1) noble; urgency=medium
 
   * Initial release: download the Autoware 2.1.0 ML models into a
