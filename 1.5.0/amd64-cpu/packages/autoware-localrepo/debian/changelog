@@ -1,3 +1,13 @@
+autoware-localrepo-1-5-0 (1.5.0-5ubuntu2204cpu) jammy; urgency=medium
+
+  * The ROS packages carry Debian revision 5 (0.48.0-5jammy), set from
+    ros-revision by scripts/restamp-ros-debs.sh. 1.5.0-4 rebuilt them but
+    kept 0.48.0-0jammy, so on a host with 1.5.0-3 `apt upgrade` left the
+    broken libraries installed. The files are the 1.5.0-4 builds, byte for
+    byte; only the version changed.
+
+ -- Jerry Lin <jerry73204@gmail.com>  Wed, 18 Nov 2026 00:00:00 +0800
+
 autoware-localrepo-1-5-0 (1.5.0-4ubuntu2204cpu) jammy; urgency=medium
 
   * Rebuilt from autoware 1.5.0-ws e206191 (autoware_universe 1.5.0-patches

@@ -642,14 +642,22 @@ All files installed outside `/opt/autoware/1.5.0/` use version suffixes to allow
    git tag -a <version>-<rev> newslab/<version>-ws -m "Autoware <version>-<rev> (NEWSLab build)"
    git push newslab <version>-<rev>
    ```
-2. **Build, test, stage** (per arch):
+2. **If the release rebuilds the ROS packages**, set each set's
+   `ros-revision` to the new localrepo revision (1.5.0 justfiles only so
+   far). colcon2deb always writes revision 0 (`0.48.0-0jammy`); rebuilt debs
+   under the old version are invisible to `apt upgrade`, which is how
+   1.5.0-humble-4 left 1.5.0-3 hosts broken. `just localrepo` restamps them
+   with `scripts/restamp-ros-debs.sh` (control Version only, files byte for
+   byte). Leave it unchanged for a meta-only release (1.9.0-humble-3), or
+   every host reinstalls ~450 unchanged packages.
+3. **Build, test, stage** (per arch):
    ```bash
    cd <version>/<arch>
    just all       # ROS debs → meta → localrepo
    just test      # verify install in clean Docker
    just release   # stage artifacts under packages/release/
    ```
-3. **Publish to `NEWSLabNTU/autoware-localrepo`**:
+4. **Publish to `NEWSLabNTU/autoware-localrepo`**:
    ```bash
    gh release create <version>-<rev> --repo NEWSLabNTU/autoware-localrepo \
      --title "Autoware <version>-<rev>" \

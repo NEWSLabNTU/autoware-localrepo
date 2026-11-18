@@ -61,7 +61,14 @@ localrepo:
 
     # Copy ROS packages
     echo "Copying ROS packages..."
-    cp "$BASEDIR/build/debs/"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
+    # With a ros-revision file the ROS debs get that Debian revision on the way
+    # in, so `apt upgrade` replaces rebuilt ones (scripts/restamp-ros-debs.sh).
+    if [ -f "$BASEDIR/ros-revision" ]; then
+        "$BASEDIR/../../scripts/restamp-ros-debs.sh" "$(cat "$BASEDIR/ros-revision")" \
+            "$BASEDIR/build/debs" "$REPODIR/pool/main"
+    else
+        cp "$BASEDIR/build/debs/"*.deb "$REPODIR/pool/main/" 2>/dev/null || true
+    fi
 
     # Copy meta-packages (except autoware-localrepo itself, and autoware-data).
     #
