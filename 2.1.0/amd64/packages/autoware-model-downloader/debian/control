@@ -12,7 +12,7 @@ Suggests: autoware-data-2-1-0
 Description: Downloader for the Autoware 2.1.0 ML models
  Provides autoware-download-models-2-1-0, which fetches the ML models used by
  Autoware 2.1.0 from their upstream URLs into a directory owned by the user
- (default: ~/autoware_data, Autoware's default data_path) and verifies each
+ (default: ~/autoware_data/ml_models, Autoware's default data_path) and verifies each
  file against a recorded sha256.
  .
  The models are not shipped in the local repository. They must sit in a

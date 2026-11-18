@@ -70,8 +70,8 @@ source /opt/autoware/2.1.0/autoware-env.bash   # DDS, CycloneDDS, Qt
 ## Install the ML models
 
 The localrepo does not carry the ML models (it did up to 1.5.0-2 and
-1.7.1-1). They go into `~/autoware_data`, Autoware's default `data_path`,
-owned by the user who launches Autoware: on first launch TensorRT compiles
+1.7.1-1). They go into Autoware's default `data_path`, `~/autoware_data`
+up to 1.7.1 and `~/autoware_data/ml_models` from 1.9.0, owned by the user who launches Autoware: on first launch TensorRT compiles
 each model into an `.engine` file next to it, so that user must be able to
 write there. Set them up as that user, **not with sudo**; the tool refuses to
 run as root unless given `--dir`.
@@ -87,6 +87,17 @@ Re-running resumes partial downloads and skips files that already verify.
 `--list` shows the models; `--only lidar_centerpoint,tensorrt_yolox` or
 `--group perception3d|planning|vision` fetches a subset.
 
+### Models from an earlier 1.9.0 or 2.1.0 release
+
+Up to 1.9.0-2, 2.1.0-1 and 2.1.0-jazzy-1 the downloader put the models in
+`~/autoware_data`, but the launch files of 1.9.0 and later read
+`~/autoware_data/ml_models`, so a launch without `data_path:=` found none.
+From 1.9.0-humble-3, 2.1.0-humble-2 and 2.1.0-jazzy-2 it writes to
+`~/autoware_data/ml_models`, and when it finds this version's models in the
+old place it stops and prints the command that moves them (keeping the
+TensorRT engines). Alternatively keep them there and launch with
+`data_path:=$HOME/autoware_data`.
+
 ### Offline, from the autoware-data debs
 
 For a machine that cannot reach the model servers (`awf.ml.dev.web.auto`,
@@ -99,7 +110,7 @@ autoware-download-models-2-1-0 --link-from /opt/autoware/2.1.0/data
 autoware-download-models-2-1-0 --verify
 ```
 
-`~/autoware_data` then holds your own directories with symlinks into the
+The default directory then holds your own directories with symlinks into the
 root-owned `/opt/autoware/2.1.0/data`, so TensorRT can still write its
 engines there.
 

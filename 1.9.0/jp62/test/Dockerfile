@@ -101,10 +101,12 @@ RUN useradd -m tester && \
     ! autoware-download-models-1-9-0 --only lidar_centerpoint && \
     su tester -c 'autoware-download-models-1-9-0 --only lidar_centerpoint,yabloc_pose_initializer && \
         autoware-download-models-1-9-0 --only lidar_centerpoint,yabloc_pose_initializer --verify && \
-        test -O ~/autoware_data/lidar_centerpoint/pts_backbone_neck_head_centerpoint_tiny.onnx && \
-        test -d ~/autoware_data/yabloc_pose_initializer/saved_model && \
-        test -w ~/autoware_data/lidar_centerpoint' && \
-    test ! -e /opt/autoware/1.9.0/data
+        test -O ~/autoware_data/ml_models/lidar_centerpoint/pts_backbone_neck_head_centerpoint_tiny.onnx && \
+        test -d ~/autoware_data/ml_models/yabloc_pose_initializer/saved_model && \
+        test -w ~/autoware_data/ml_models/lidar_centerpoint' && \
+    test ! -e /opt/autoware/1.9.0/data && \
+    grep -qF 'name="data_path" default="$(env HOME)/autoware_data/ml_models"' \
+        /opt/autoware/1.9.0/share/autoware_launch/launch/autoware.launch.xml
 
 # =============================================================================
 # Verify installation

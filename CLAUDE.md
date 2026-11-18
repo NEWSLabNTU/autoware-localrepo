@@ -72,7 +72,7 @@ sudo /usr/share/autoware/1.9.0/setup-prerequisites.sh
 sudo apt update
 sudo apt install autoware-full-1-9-0        # ROS packages, maps, model downloader
 sudo /usr/share/autoware/1.9.0/activate-dds-config.sh
-autoware-download-models-1-9-0              # no sudo; into ~/autoware_data
+autoware-download-models-1-9-0              # no sudo; into ~/autoware_data/ml_models
 source /opt/autoware/1.9.0/setup.bash
 source /opt/autoware/1.9.0/autoware-env.bash
 ```
@@ -88,14 +88,15 @@ writes the manifest from the same `tasks.yaml` that generates the
 `autoware-data` packages, so the two always list the same files.
 
 **Why a user-owned directory, not the deb.** Autoware's launch files default
-`data_path` to `$HOME/autoware_data`, and every TensorRT node writes its
+`data_path` to `$HOME/autoware_data` (up to 1.7.1) or
+`$HOME/autoware_data/ml_models` (from 1.9.0), and every TensorRT node writes its
 compiled `.engine` next to the `.onnx` it reads
 (`autoware_tensorrt_common`, `TrtCommonConfig`: the engine path defaults to the
 onnx path with the extension replaced). A deb installs into root-owned
 `/opt/autoware/1.9.0/data`, where that write fails with
 `Fail to open engine file`, the node exits, and the engine build is repeated on
 every launch. Nothing points `data_path` at `/opt` either. Downloaded into the
-user's `~/autoware_data`, the models are where the launch looks by default and
+user's default `data_path`, the models are where the launch looks by default and
 the engines can be cached beside them.
 
 What the script guarantees:
@@ -114,6 +115,12 @@ What the script guarantees:
   without `--force`, because several models differ between releases. Keep a
   second version apart with `--dir ~/autoware_data-<ver>` and launch with
   `data_path:=`.
+- **Follows the version's default `data_path`**: `~/autoware_data` for 1.5.0
+  and 1.7.1, `~/autoware_data/ml_models` from 1.9.0 (`DATA_SUBDIR`, from the
+  install prefix's version). Until 1.9.0-humble-3 / 2.1.0-humble-2 /
+  2.1.0-jazzy-2 it used `~/autoware_data` for every version, which 1.9.0+
+  launches never read. If it finds this version's models there (by the
+  stamp) and nothing at the new default, it stops with the `mv` command.
 - **Subsets**: `--list`, `--group vision|perception3d|planning`,
   `--only lidar_centerpoint,tensorrt_yolox`. A lidar-only vehicle needs tens
   of MB, not 2.4 GB.

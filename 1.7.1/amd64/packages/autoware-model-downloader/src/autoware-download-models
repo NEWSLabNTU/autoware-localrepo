@@ -8,13 +8,18 @@ each file against the sha256 recorded in the manifest at build time.
 
 Why the models must live in a user-owned directory
 --------------------------------------------------
-Autoware's launch files take `data_path` (default: $HOME/autoware_data) and
-every TensorRT node writes its compiled .engine NEXT TO the .onnx it reads. In
+Autoware's launch files take `data_path` and every TensorRT node writes its compiled .engine NEXT TO the .onnx it reads. In
 a root-owned directory such as /opt/autoware/<version>/data that write fails
 ("Fail to open engine file"), the node dies, and the engine build -- minutes
 per model -- is thrown away and repeated on every launch. So run this as the
 user who will launch Autoware, not with sudo. The default target is the
 default `data_path`, so launches need no extra arguments.
+
+That default moved in Autoware 1.9.0: up to 1.7.1 it is $HOME/autoware_data,
+from 1.9.0 $HOME/autoware_data/ml_models. Releases of this script before
+1.9.0-humble-3 and 2.1.0-humble-2 wrote to $HOME/autoware_data for every
+version, which the launch files of 1.9.0 and later do not read; models found
+there are reported with the command that moves them.
 
 Run with --help for usage.
 """
@@ -36,6 +41,11 @@ PREFIX = Path(__file__).resolve().parent.parent  # /opt/autoware/<version>
 VERSION = PREFIX.name
 MANIFEST = PREFIX / "share" / "autoware-model-downloader" / "models.tsv"
 STAMP = ".autoware-version"
+# Autoware's own default data_path, relative to $HOME: autoware_launch changed
+# it from autoware_data to autoware_data/ml_models in 1.9.0.
+DATA_SUBDIR = (Path("autoware_data", "ml_models")
+               if tuple(int(x) for x in VERSION.split(".")[:3]) >= (1, 9, 0)
+               else Path("autoware_data"))
 CHUNK = 1 << 20
 RETRIES = 4
 
@@ -282,8 +292,26 @@ def check_version_stamp(root, force):
         f"  or replace them in place with --force.")
 
 
+def old_location_hint(default_dir):
+    """Models this version's older downloader put in ~/autoware_data, or ''."""
+    old = default_dir.parent
+    if DATA_SUBDIR.name != "ml_models" or (default_dir / STAMP).is_file():
+        return ""
+    stamp = old / STAMP
+    if not stamp.is_file() or stamp.read_text().strip() != VERSION:
+        return ""
+    return (
+        f"note: {old} holds Autoware {VERSION} models from an earlier release of this\n"
+        f"  script, but Autoware {VERSION}'s launch files read {default_dir}.\n"
+        f"  Move them there instead of downloading again (keeps the TensorRT engines):\n"
+        f"      mkdir -p {default_dir} && find {old} -mindepth 1 -maxdepth 1 \\\n"
+        f"        ! -name {default_dir.name} -exec mv -t {default_dir} {{}} +\n"
+        f"  then run this again; it keeps every file that verifies.\n"
+        f"  Or keep them where they are and launch with data_path:={old}")
+
+
 def main():
-    default_dir = Path(os.environ.get("HOME", "~")) / "autoware_data"
+    default_dir = Path(os.environ.get("HOME", "~")) / DATA_SUBDIR
     ap = argparse.ArgumentParser(
         prog=Path(sys.argv[0]).name,
         description=f"Download the Autoware {VERSION} ML models into a directory you own.",
@@ -292,7 +320,7 @@ def main():
             "compiled engines next to the models, so the directory must be writable by\n"
             "that user. Re-running resumes partial downloads and skips verified files.\n\n"
             "examples:\n"
-            "  %(prog)s                                # everything, into ~/autoware_data\n"
+            f"  %(prog)s                                # everything, into ~/{DATA_SUBDIR}\n"
             "  %(prog)s --only lidar_centerpoint,tensorrt_yolox\n"
             "  %(prog)s --group perception3d --dir /data/autoware_data\n"
             f"  %(prog)s --link-from /opt/autoware/{VERSION}/data   # offline, from autoware-data debs"),
@@ -333,6 +361,12 @@ def main():
             print(f"  missing or wrong: {p}")
         print(f"{len(chosen) - len(bad)}/{len(chosen)} file(s) verified in {root}")
         sys.exit(1 if bad else 0)
+
+    if args.dir is None and not args.link_from:
+        hint = old_location_hint(default_dir)
+        if hint:
+            sys.exit(hint.replace("note:", "error:", 1) +
+                     "\n  (or pass --dir to download anyway)")
 
     check_version_stamp(root, args.force)
     root.mkdir(parents=True, exist_ok=True)

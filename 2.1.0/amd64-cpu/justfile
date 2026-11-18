@@ -79,7 +79,7 @@ localrepo:
     # engines next to each .onnx, and /opt/autoware/2.1.0/data is root-owned.
     # Instead autoware-full pulls autoware-model-downloader, whose
     # autoware-download-models-2-1-0 fetches them as the user into
-    # ~/autoware_data (Autoware's default data_path). The autoware-data debs
+    # ~/autoware_data/ml_models (Autoware's default data_path). The autoware-data debs
     # are still built, for offline sites, and staged by `just release`.
     echo "Copying meta-packages..."
     for pkg in autoware-config-2-1-0 autoware-theme-2-1-0 autoware-ros-packages-2-1-0 autoware-maps-2-1-0 autoware-model-downloader-2-1-0 autoware-acados-2-1-0 autoware-full-2-1-0; do

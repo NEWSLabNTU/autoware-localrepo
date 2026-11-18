@@ -1,3 +1,11 @@
+autoware-localrepo-1-9-0 (1.9.0-3ubuntu2204sbsa) jammy; urgency=medium
+
+  * autoware-model-downloader-1-9-0 1.9.0-2: models go to
+    $HOME/autoware_data/ml_models, the default data_path of Autoware
+    1.9.0. The ROS packages are unchanged.
+
+ -- Jerry Lin <jerry73204@gmail.com>  Wed, 18 Nov 2026 00:00:00 +0800
+
 autoware-localrepo-1-9-0 (1.9.0-2ubuntu2204sbsa) jammy; urgency=medium
 
   * setup-prerequisites.sh installs the CUDA 12.8 runtime

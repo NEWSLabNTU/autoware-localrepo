@@ -20,4 +20,4 @@ Description: Autoware complete installation meta-package
  .
  The ML models are not included. Fetch them as the user who launches
  Autoware with autoware-download-models-1-9-0, which writes them to
- ~/autoware_data, where TensorRT can also cache its engines.
+ ~/autoware_data/ml_models, where TensorRT can also cache its engines.
