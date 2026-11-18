@@ -33,7 +33,7 @@ From `1.5.0-3` the localrepo no longer bundles the ML models (~1.85 GiB before,
 `1.5.0-2` and earlier bundle them in `/opt/autoware/1.5.0/data`.
 
 ```bash
-sudo dpkg -i autoware-localrepo-1-5-0_1.5.0-3ubuntu2204_all.deb  # or 3jetpack62 for Jetson, 3ubuntu2204sbsa for arm64 servers
+sudo dpkg -i autoware-localrepo-1-5-0_1.5.0-4ubuntu2204_all.deb  # or 4jetpack62 for Jetson, 4ubuntu2204sbsa for arm64 servers
 sudo /usr/share/autoware/1.5.0/setup-prerequisites.sh
 sudo apt update
 sudo apt install autoware-full-1-5-0
