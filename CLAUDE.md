@@ -564,8 +564,12 @@ something a launch file consumes, assert the two agree in `test/Dockerfile`.
 - Other users' jobs can push the host into memory reaping, which kills a
   build mid-way. On a busy host set `parallel_jobs: 8` in `config.yaml`, and
   move a killed build's partial `build/` aside before restarting.
-- A meta-only revision still runs `just meta`, which rebuilds
-  `autoware-data` and re-downloads its ~2.4 GB of models; expect that.
+- `just meta` rebuilds `autoware-data` and re-downloads its ~2.4 GB of
+  models (from S3 this ran at ~68 KiB/s for over an hour). When only one meta
+  package changed, build that one and reuse the rest, since `just localrepo`
+  takes the newest deb of each from `packages/`:
+  `(cd packages/autoware-model-downloader && dpkg-buildpackage -us -uc -b) && just localrepo`.
+  The `data-*` release stays as published.
 
 ### Committing
 
