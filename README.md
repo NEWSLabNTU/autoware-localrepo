@@ -12,8 +12,8 @@ Pick a version, then the localrepo deb for your machine from its release.
 
 | Version | Release | Universe | Offline ML models |
 |---|---|---|---|
-| 2.1.0 | [2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/2.1.0-1) | 0.53.2 | [data-2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-2.1.0-1) |
-| 1.9.0 | [1.9.0-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.9.0-2) | 0.52.0 | [data-1.9.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.9.0-1) |
+| 2.1.0 | [2.1.0-humble-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/2.1.0-humble-2) | 0.53.2 | [data-2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-2.1.0-1) |
+| 1.9.0 | [1.9.0-humble-3](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.9.0-humble-3) | 0.52.0 | [data-1.9.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.9.0-1) |
 | 1.7.1 | [1.7.1-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.7.1-2) | 0.50.0 | [data-1.7.1-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.7.1-1) |
 | 1.5.0 | [1.5.0-humble-5](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.5.0-humble-5) | 0.48.0 | [data-1.5.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.5.0-1) |
 
@@ -50,7 +50,7 @@ The commands use 2.1.0 on x86_64; substitute your version (`2.1.0` in paths,
 
 ```bash
 # 1. Install the localrepo package
-sudo dpkg -i autoware-localrepo-2-1-0_2.1.0-1ubuntu2204_all.deb
+sudo dpkg -i autoware-localrepo-2-1-0_2.1.0-2ubuntu2204_all.deb
 
 # 2. Install prerequisites (ROS 2 Humble, optionally CUDA, TensorRT, SpConv)
 sudo /usr/share/autoware/2.1.0/setup-prerequisites.sh
