@@ -14,11 +14,11 @@ Tags made from 2.1.0-jazzy-1 on name their ROS distro (`2.1.0-jazzy-1`,
 
 | Version | ROS 2 | Release | Universe | Offline ML models |
 |---|---|---|---|---|
-| 2.1.0 | Jazzy | [2.1.0-jazzy-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/2.1.0-jazzy-1) | 0.53.2 | [data-2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-2.1.0-1) (shared with Humble) |
-| 2.1.0 | Humble | [2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/2.1.0-1) | 0.53.2 | [data-2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-2.1.0-1) |
-| 1.9.0 | Humble | [1.9.0-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.9.0-2) | 0.52.0 | [data-1.9.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.9.0-1) |
+| 2.1.0 | Jazzy | [2.1.0-jazzy-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/2.1.0-jazzy-2) | 0.53.2 | [data-2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-2.1.0-1) (shared with Humble) |
+| 2.1.0 | Humble | [2.1.0-humble-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/2.1.0-humble-2) | 0.53.2 | [data-2.1.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-2.1.0-1) |
+| 1.9.0 | Humble | [1.9.0-humble-3](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.9.0-humble-3) | 0.52.0 | [data-1.9.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.9.0-1) |
 | 1.7.1 | Humble | [1.7.1-2](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.7.1-2) | 0.50.0 | [data-1.7.1-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.7.1-1) |
-| 1.5.0 | Humble | [1.5.0-3](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.5.0-3) | 0.48.0 | [data-1.5.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.5.0-1) |
+| 1.5.0 | Humble | [1.5.0-humble-5](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/1.5.0-humble-5) | 0.48.0 | [data-1.5.0-1](https://github.com/NEWSLabNTU/autoware-localrepo/releases/tag/data-1.5.0-1) |
 
 Every Humble release has a localrepo deb for each platform:
 
